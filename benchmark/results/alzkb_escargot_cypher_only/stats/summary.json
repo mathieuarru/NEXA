@@ -1,0 +1,45 @@
+{
+  "note": "Percentages; open-ended answers scored with the shared scorer at load time.",
+  "sets": {
+    "True_or_False_1hop.json": {
+      "n": 560,
+      "n_questions": 560,
+      "accuracy": 60.535714285714285
+    },
+    "True_or_False_2hop.json": {
+      "n": 540,
+      "n_questions": 540,
+      "accuracy": 52.96296296296296
+    },
+    "MCQ_1hop.json": {
+      "n": 497,
+      "n_questions": 498,
+      "accuracy": 51.10663983903421
+    },
+    "MCQ_2hop.json": {
+      "n": 419,
+      "n_questions": 419,
+      "accuracy": 5.011933174224343
+    },
+    "OpenEnded_1hop.json": {
+      "n": 508,
+      "n_questions": 508,
+      "exact_match": 79.5275590551181,
+      "precision": 86.3588806806876,
+      "recall": 86.39146104999023,
+      "f1": 86.24591920627361,
+      "jaccard": 86.18165424745906,
+      "overlap": 86.55550304474089
+    },
+    "OpenEnded_2hop.json": {
+      "n": 450,
+      "n_questions": 450,
+      "exact_match": 13.777777777777779,
+      "precision": 35.784402709010486,
+      "recall": 82.93884311170483,
+      "f1": 43.576187927158834,
+      "jaccard": 35.74758670719771,
+      "overlap": 82.94320041017977
+    }
+  }
+}

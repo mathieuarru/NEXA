@@ -1,0 +1,670 @@
+[
+  {
+    "question": "Which of the following binds to the drug Leucovorin? 1. CAD 2. PDS5B 3. SEL1L 4. ABCC2 5. RMI1",
+    "answer": "4"
+  },
+  {
+    "question": "Which of the following binds to the drug Ethchlorvynol? 1. RMI1 2. GABRB3 3. SEL1L 4. PDS5B 5. CAD",
+    "answer": "2"
+  },
+  {
+    "question": "Which of the following binds to the drug Amoxapine? 1. RMI1 2. SEL1L 3. CAD 4. PDS5A 5. HTR1A",
+    "answer": "5"
+  },
+  {
+    "question": "Which of the following binds to the drug Amobarbital? 1. PDS5B 2. RMI1 3. GABRA5 4. PDS5A 5. CAD",
+    "answer": "3"
+  },
+  {
+    "question": "Which of the following is subject to increased expression by the drug Sparfloxacin? 1. PDS5A 2. RMI1 3. CAD 4. PDS5B 5. PAX8",
+    "answer": "5"
+  },
+  {
+    "question": "Which of the following is subject to increased expression by the drug Terbinafine? 1. RMI1 2. SEL1L 3. CAD 4. PDS5A 5. ETS1",
+    "answer": "5"
+  },
+  {
+    "question": "Which of the following is subject to increased expression by the drug Testosterone? 1. PDS5B 2. SEL1L 3. CAD 4. PDS5A 5. P4HA2",
+    "answer": "5"
+  },
+  {
+    "question": "Which of the following is subject to decreased expression by the drug Nalbuphine? 1. SEL1L 2. CAD 3. PDS5B 4. PDS5A 5. ATP6V1D",
+    "answer": "5"
+  },
+  {
+    "question": "Which of the following is subject to decreased expression by the drug Azithromycin? 1. PSMB8 2. SEL1L 3. RMI1 4. PDS5B 5. CAD",
+    "answer": "1"
+  },
+  {
+    "question": "Which of the following classes includes the drug Ibandronate? 1. Dyes 2. Cytochrome P450 2C19 Inhibitors 3. Diphosphonates 4. Serotonin Uptake Inhibitors 5. Opioid Antagonists",
+    "answer": "3"
+  },
+  {
+    "question": "Which of the following classes includes the drug Tigecycline? 1. Dyes 2. Serotonin Uptake Inhibitors 3. Tetracyclines 4. Cytochrome P450 2C19 Inhibitors 5. GABA B Agonists",
+    "answer": "3"
+  },
+  {
+    "question": "Which of the following can be affected by the drug Naltrexone? 1. Alzheimer Disease, Familial, 3, with Spastic Paraparesis and Apraxia 2. Alzheimer Disease, Early Onset 3. Alzheimer disease, familial, type 3 4. Alzheimer Disease, Late Onset 5. Alzheimer's Disease",
+    "answer": "5"
+  },
+  {
+    "question": "Which of the following binds to the gene CXCR4? 1. Insulin pork 2. Framycetin 3. Streptokinase 4. Ibritumomab tiuxetan 5. Pancrelipase",
+    "answer": "2"
+  },
+  {
+    "question": "Which of the following binds to the gene SEC14L3? 1. Pancrelipase 2. Digoxin Immune Fab (Ovine) 3. Rituximab 4. Muromonab 5. Vitamin E",
+    "answer": "5"
+  },
+  {
+    "question": "Which of the following binds to the gene NOS3? 1. Botulinum toxin type A 2. Muromonab 3. Trastuzumab 4. Arginine 5. Digoxin Immune Fab (Ovine)",
+    "answer": "4"
+  },
+  {
+    "question": "Which of the following increases the gene expression of FOXM1? 1. Treprostinil 2. Rituximab 3. Insulin pork 4. Muromonab 5. Trastuzumab",
+    "answer": "1"
+  },
+  {
+    "question": "Which of the following increases the gene expression of APAF1? 1. Treprostinil 2. Botulinum toxin type A 3. Insulin pork 4. Ibritumomab tiuxetan 5. Trastuzumab",
+    "answer": "1"
+  },
+  {
+    "question": "Which of the following increases the gene expression of FDXR? 1. Insulin pork 2. Clofarabine 3. Streptokinase 4. Ibritumomab tiuxetan 5. Pancrelipase",
+    "answer": "2"
+  },
+  {
+    "question": "Which of the following increases the gene expression of YIF1A? 1. Pancrelipase 2. Digoxin Immune Fab (Ovine) 3. Rituximab 4. Muromonab 5. Estradiol",
+    "answer": "5"
+  },
+  {
+    "question": "Which of the following increases the gene expression of ECM1? 1. Digoxin Immune Fab (Ovine) 2. Insulin pork 3. Hyaluronidase (ovine) 4. Botulinum toxin type A 5. Mycophenolic acid",
+    "answer": "5"
+  },
+  {
+    "question": "Which of the following increases the gene expression of ACD? 1. Crizotinib 2. Insulin pork 3. Streptokinase 4. Hyaluronidase (ovine) 5. Muromonab",
+    "answer": "1"
+  },
+  {
+    "question": "Which of the following increases the gene expression of CTNND1? 1. Botulinum toxin type A 2. Muromonab 3. Trastuzumab 4. Methoxsalen 5. Digoxin Immune Fab (Ovine)",
+    "answer": "4"
+  },
+  {
+    "question": "Which of the following increases the gene expression of ITFG1? 1. Muromonab 2. Streptokinase 3. Busulfan 4. Hyaluronidase (ovine) 5. Digoxin Immune Fab (Ovine)",
+    "answer": "3"
+  },
+  {
+    "question": "Which of the following decreases the gene expression of USO1? 1. Digoxin Immune Fab (Ovine) 2. Streptokinase 3. Botulinum toxin type A 4. Insulin pork 5. Menadione",
+    "answer": "5"
+  },
+  {
+    "question": "Which of the following decreases the gene expression of CAVIN3? 1. Ouabain 2. Botulinum toxin type A 3. Insulin pork 4. Ibritumomab tiuxetan 5. Trastuzumab",
+    "answer": "1"
+  },
+  {
+    "question": "Which of the following decreases the gene expression of EXOSC4? 1. Botulinum toxin type A 2. Muromonab 3. Trastuzumab 4. Tamoxifen 5. Digoxin Immune Fab (Ovine)",
+    "answer": "4"
+  },
+  {
+    "question": "Which of the following decreases the gene expression of STN1? 1. Muromonab 2. Streptokinase 3. Digoxin 4. Hyaluronidase (ovine) 5. Digoxin Immune Fab (Ovine)",
+    "answer": "3"
+  },
+  {
+    "question": "Which of the following decreases the gene expression of FBL? 1. Epirubicin 2. Trastuzumab 3. Insulin pork 4. Hyaluronidase (ovine) 5. Streptokinase",
+    "answer": "1"
+  },
+  {
+    "question": "Which of the following biological processes involves the gene KIAA0753? 1. purine nucleotide metabolic process 2. microtubule-based process 3. response to lipopolysaccharide 4. response to low-density lipoprotein particle 5. positive regulation of dopamine metabolic process",
+    "answer": "2"
+  },
+  {
+    "question": "Which of the following biological processes involves the gene CAMTA2? 1. renal system vasculature development 2. regulation of nervous system development 3. negative regulation of protein complex assembly 4. cardiac muscle adaptation 5. tube morphogenesis",
+    "answer": "4"
+  },
+  {
+    "question": "Which of the following pathways contains the gene PHKG1? 1. Timolol Action Pathway 2. Insulin signaling pathway - Homo sapiens (human) 3. Bopindolol Action Pathway 4. Metabolism of lipids and lipoproteins 5. Carteolol Action Pathway",
+    "answer": "2"
+  },
+  {
+    "question": "Which of the following pathways contains the gene SYCE1? 1. Carteolol Action Pathway 2. Interaction between L1 and Ankyrins 3. Activation of TRKA receptors 4. beta-Alanine metabolism - Homo sapiens (human) 5. Meiotic synapsis",
+    "answer": "5"
+  },
+  {
+    "question": "Which of the following pathways contains the gene ENY2? 1. Interaction between L1 and Ankyrins 2. Timolol Action Pathway 3. Warburg Effect 4. Hypertrophy Model 5. Chromatin organization",
+    "answer": "5"
+  },
+  {
+    "question": "Which of the following is a gene which interacts with the gene NDUFAF5? 1. MAT2B 2. RMI1 3. SEL1L 4. PDS5A 5. UBC",
+    "answer": "5"
+  },
+  {
+    "question": "Which of the following is a gene which interacts with the gene MFF? 1. PDS5A 2. DNAJC10 3. UBC 4. FASN 5. RMI1",
+    "answer": "3"
+  },
+  {
+    "question": "Which of the following is a gene which interacts with the gene BHMT? 1. BBS1 2. PDS5B 3. NR2F6 4. FASN 5. DNAJC10",
+    "answer": "1"
+  },
+  {
+    "question": "Which of the following is a gene which interacts with the gene IMPA1? 1. FASN 2. MAT2B 3. DNAJC10 4. CALB1 5. PDS5A",
+    "answer": "4"
+  },
+  {
+    "question": "Which of the following molecular functions is attributed to the gene SULT6B1? 1. polyubiquitin binding 2. bradykinin receptor binding 3. alcohol dehydrogenase activity, zinc-dependent 4. transferase activity, transferring sulfur-containing groups 5. lipid binding",
+    "answer": "4"
+  },
+  {
+    "question": "Which of the following molecular functions is attributed to the gene PML? 1. bradykinin receptor binding 2. transcription coactivator activity 3. lipid binding 4. oxidoreductase activity, acting on the aldehyde or oxo group of donors, oxygen as acceptor 5. primary amine oxidase activity",
+    "answer": "2"
+  },
+  {
+    "question": "Which of the following cellular components is linked to the gene PRR5? 1. peroxisomal membrane 2. proteinaceous extracellular matrix 3. endoplasmic reticulum membrane 4. membrane microdomain 5. TOR complex",
+    "answer": "5"
+  },
+  {
+    "question": "Which of the following cellular components is linked to the gene KIFC2? 1. podosome 2. endosome membrane 3. microtubule 4. endoplasmic reticulum membrane 5. peroxisomal membrane",
+    "answer": "3"
+  },
+  {
+    "question": "Which of the following cellular components is linked to the gene USP39? 1. intracellular ribonucleoprotein complex 2. perinuclear region of cytoplasm 3. proteinaceous extracellular matrix 4. endoplasmic reticulum membrane 5. endosome membrane",
+    "answer": "1"
+  },
+  {
+    "question": "Which of the following cellular components is linked to the gene CDKN1B? 1. endoplasmic reticulum membrane 2. coated membrane 3. endosome membrane 4. Cul4A-RING E3 ubiquitin ligase complex 5. podosome",
+    "answer": "4"
+  },
+  {
+    "question": "Which of the following cellular components is linked to the gene GAD1? 1. podosome 2. clathrin-coated vesicle 3. peroxisomal membrane 4. endosome membrane 5. endoplasmic reticulum membrane",
+    "answer": "2"
+  },
+  {
+    "question": "Which of the following cellular components is linked to the gene P2RY1? 1. axolemma 2. endoplasmic reticulum membrane 3. clathrin-coated endocytic vesicle 4. podosome 5. postsynaptic density",
+    "answer": "5"
+  },
+  {
+    "question": "Which of the following is associated with the gene IDE? 1. Alzheimer Disease, Familial, 3, with Spastic Paraparesis and Apraxia 2. Alzheimer Disease 12 3. Alzheimer Disease, Late Onset 4. Alzheimer Disease 7 5. Prodromal Alzheimer's disease",
+    "answer": "3"
+  },
+  {
+    "question": "Which of the following is associated with the gene MIR4467? 1. Alzheimer Disease, Familial, 3, with Spastic Paraparesis and Apraxia 2. Alzheimer's Disease 3. Prodromal Alzheimer's disease 4. Alzheimer Disease 12 5. Alzheimer Disease 7",
+    "answer": "2"
+  },
+  {
+    "question": "Which of the following is associated with the gene CD33? 1. Alzheimer Disease 9 2. Alzheimer Disease 7 3. Non-amnestic Alzheimer disease 4. Alzheimer Disease, Familial, 3, with Spastic Paraparesis and Apraxia 5. Alzheimer's Disease",
+    "answer": "5"
+  },
+  {
+    "question": "Which of the following over-expresses the gene BCCIP? 1. peripheral nervous system 2. sense organ 3. tendon 4. uterine cervix 5. lymph node",
+    "answer": "4"
+  },
+  {
+    "question": "Which of the following over-expresses the gene GTF2H5? 1. islet of Langerhans 2. peripheral nervous system 3. pituitary gland 4. lymph node 5. testis",
+    "answer": "5"
+  },
+  {
+    "question": "Which of the following under-expresses the gene ASB7? 1. adipose tissue 2. parasympathetic nervous system 3. sympathetic nervous system 4. peripheral nervous system 5. uterine cervix",
+    "answer": "1"
+  },
+  {
+    "question": "Which of the following under-expresses the gene FANCI? 1. islet of Langerhans 2. medulla oblongata 3. uterine cervix 4. tendon 5. pituitary gland",
+    "answer": "2"
+  },
+  {
+    "question": "Which of the following under-expresses the gene DHRS3? 1. sympathetic nervous system 2. blood 3. pituitary gland 4. sense organ 5. nose",
+    "answer": "2"
+  },
+  {
+    "question": "Which of the following belongs to the drug class Non-Nucleoside Analog? 1. Rituximab 2. Etravirine 3. Streptokinase 4. Botulinum toxin type A 5. Ibritumomab tiuxetan",
+    "answer": "2"
+  },
+  {
+    "question": "Which of the following belongs to the drug class Neuromuscular Nondepolarizing Blockade? 1. Ibritumomab tiuxetan 2. Hyaluronidase (ovine) 3. Streptokinase 4. Insulin pork 5. Rocuronium",
+    "answer": "5"
+  },
+  {
+    "question": "Which of the following belongs to the drug class Prostaglandin Receptor Agonists? 1. Muromonab 2. Ibritumomab tiuxetan 3. Botulinum toxin type A 4. Tafluprost 5. Streptokinase",
+    "answer": "4"
+  },
+  {
+    "question": "Which of the following is a gene associated with the disease Familial Alzheimer-like prion disease? 1. PDS5A 2. PRNP 3. RMI1 4. DNAJC10 5. FASN",
+    "answer": "2"
+  },
+  {
+    "question": "Which of the following is a gene associated with the disease Alzheimer Disease 9? 1. CAD 2. FASN 3. DNAJC10 4. NR2F6 5. ABCA7",
+    "answer": "5"
+  },
+  {
+    "question": "Which of the following is a gene associated with the disease Alzheimer Disease, Late Onset? 1. NR2F6 2. NPY 3. CAD 4. MAT2B 5. RMI1",
+    "answer": "2"
+  },
+  {
+    "question": "Which of the following is a gene associated with the disease Alzheimer disease, familial, type 3? 1. PSEN1 2. FASN 3. RMI1 4. CAD 5. MAT2B",
+    "answer": "1"
+  },
+  {
+    "question": "Which of the following is associated with the disease Familial Alzheimer Disease (FAD)? 1. Alzheimer Disease 9 2. Alzheimer Disease, Late Onset 3. Alzheimer's Disease 4. Familial Alzheimer-like prion disease 5. Prodromal Alzheimer's disease",
+    "answer": "3"
+  },
+  {
+    "question": "Which of the following is a gene which participates in the biological process negative regulation of mast cell activation involved in immune response? 1. NR2F6 2. RABGEF1 3. CAD 4. MAT2B 5. RMI1",
+    "answer": "2"
+  },
+  {
+    "question": "Which of the following is a gene which participates in the biological process aromatic compound catabolic process? 1. NR2F6 2. SEL1L 3. PDS5A 4. ETF1 5. FASN",
+    "answer": "4"
+  },
+  {
+    "question": "Which of the following is a gene which participates in the biological process positive regulation of T-helper 17 cell differentiation? 1. IL23R 2. PDS5B 3. CAD 4. DNAJC10 5. SEL1L",
+    "answer": "1"
+  },
+  {
+    "question": "Which of the following is a gene which participates in the biological process regulation of arginine metabolic process? 1. DNAJC10 2. RMI1 3. LRRC41 4. SLC7A7 5. CAD",
+    "answer": "4"
+  },
+  {
+    "question": "Which of the following is a gene which participates in the biological process C-terminal protein amino acid modification? 1. MAT2B 2. PIGW 3. SEL1L 4. DNAJC10 5. LRRC41",
+    "answer": "2"
+  },
+  {
+    "question": "Which of the following is a gene which participates in the biological process positive regulation of pancreatic juice secretion? 1. PDS5A 2. DNAJC10 3. MAT2B 4. LRRC41 5. NR1H2",
+    "answer": "5"
+  },
+  {
+    "question": "Which of the following is a gene in the pathway Regulation of the apoptosome activity? 1. NR2F6 2. AVEN 3. CAD 4. MAT2B 5. RMI1",
+    "answer": "2"
+  },
+  {
+    "question": "Which of the following is a gene in the pathway Macroautophagy? 1. NR2F6 2. SEL1L 3. PDS5A 4. ATG3 5. FASN",
+    "answer": "4"
+  },
+  {
+    "question": "Which of the following is a gene in the pathway S33 mutants of beta-catenin aren't phosphorylated? 1. AMER1 2. FASN 3. RMI1 4. CAD 5. MAT2B",
+    "answer": "1"
+  },
+  {
+    "question": "Which of the following is a gene in the pathway Formation of the cornified envelope? 1. PI3 2. PDS5B 3. CAD 4. DNAJC10 5. SEL1L",
+    "answer": "1"
+  },
+  {
+    "question": "Which of the following is a gene in the pathway Insulin receptor recycling? 1. DNAJC10 2. RMI1 3. LRRC41 4. ATP6V1C2 5. CAD",
+    "answer": "4"
+  },
+  {
+    "question": "Which of the following is a gene in the pathway Adrenergic signaling in cardiomyocytes - Homo sapiens (human)? 1. CAD 2. PDS5B 3. CACNB3 4. PDS5A 5. FASN",
+    "answer": "3"
+  },
+  {
+    "question": "Which of the following genes performs the molecular function succinate-CoA ligase (ADP-forming) activity? 1. SUCLG1 2. FASN 3. RMI1 4. CAD 5. MAT2B",
+    "answer": "1"
+  },
+  {
+    "question": "Which of the following genes performs the molecular function RNA-DNA hybrid ribonuclease activity? 1. MAT2B 2. RNASEH1 3. SEL1L 4. DNAJC10 5. LRRC41",
+    "answer": "2"
+  },
+  {
+    "question": "Which of the following is a gene associated with the cellular component dense body? 1. NR2F6 2. SEL1L 3. PDS5A 4. SYBU 5. FASN",
+    "answer": "4"
+  },
+  {
+    "question": "Which of the following is a gene associated with the cellular component postsynapse? 1. DNAJC10 2. RMI1 3. LRRC41 4. CHRNE 5. CAD",
+    "answer": "4"
+  },
+  {
+    "question": "Which of the following is a gene associated with the cellular component nuclear outer membrane-endoplasmic reticulum membrane network? 1. PDS5A 2. LRRC41 3. DNAJC10 4. BGLAP 5. DAD1",
+    "answer": "5"
+  },
+  {
+    "question": "Which of the following genes is over-expressed in telencephalon? 1. SEL1L 2. PDS5A 3. CAD 4. RAC1 5. BGLAP",
+    "answer": "4"
+  },
+  {
+    "question": "Which of the following genes is under-expressed in adipose tissue? 1. LRRC41 2. CIBAR2 3. SEL1L 4. NUP62 5. BGLAP",
+    "answer": "2"
+  },
+  {
+    "question": "Which of the following genes is under-expressed in brain? 1. MAT2B 2. FASN 3. SEL1L 4. PLA2G2A 5. NR2F6",
+    "answer": "4"
+  },
+  {
+    "question": "Which of the following diseases localizes to central nervous system? 1. Alzheimer Disease, Familial, 3, with Spastic Paraparesis and Apraxia 2. Alzheimer Disease, Early Onset 3. Familial Alzheimer Disease (FAD) 4. Alzheimer's Disease, Focal Onset 5. Alzheimer Disease 9",
+    "answer": "3"
+  },
+  {
+    "question": "Which of the following diseases localizes to pupil? 1. Alzheimer Disease, Late Onset 2. Alzheimer Disease 7 3. Alzheimer disease, familial, type 3 4. Alzheimer's Disease 5. Prodromal Alzheimer's disease",
+    "answer": "4"
+  },
+  {
+    "question": "Which of the following diseases localizes to lymphoid tissue? 1. Alzheimer Disease, Familial, 3, with Spastic Paraparesis and Apraxia 2. Non-amnestic Alzheimer disease 3. Alzheimer Disease, Late Onset 4. Alzheimer Disease, Early Onset 5. Familial Alzheimer Disease (FAD)",
+    "answer": "5"
+  },
+  {
+    "question": "Which of the following diseases presents the symptom Insomnia, Fatal Familial? 1. Alzheimer Disease, Late Onset 2. Alzheimer Disease 7 3. Alzheimer disease, familial, type 3 4. Familial Alzheimer Disease (FAD) 5. Prodromal Alzheimer's disease",
+    "answer": "4"
+  },
+  {
+    "question": "Which of the following diseases presents the symptom Paraparesis, Spastic? 1. Alzheimer Disease, Familial, 3, with Spastic Paraparesis and Apraxia 2. Non-amnestic Alzheimer disease 3. Alzheimer Disease, Late Onset 4. Alzheimer Disease, Early Onset 5. Alzheimer's Disease",
+    "answer": "5"
+  },
+  {
+    "question": "Which of the following does not bind to the drug Temazepam? 1. GABRA1 2. CYP3A4 3. GABRA3 4. GABRD 5. SEL1L",
+    "answer": "5"
+  },
+  {
+    "question": "Which of the following does not bind to the drug Ibutilide? 1. PDS5B 2. KCNH6 3. KCNK6 4. KCNH2 5. CACNA2D1",
+    "answer": "1"
+  },
+  {
+    "question": "Which of the following is not subject to increased expression by the drug Amlodipine? 1. ACAT2 2. FADS2 3. FOXO4 4. RMI1 5. NPC1",
+    "answer": "4"
+  },
+  {
+    "question": "Which of the following is not subject to increased expression by the drug Dextromethorphan? 1. MTHFD2 2. PYCR1 3. MAL 4. PDS5B 5. AGL",
+    "answer": "4"
+  },
+  {
+    "question": "Which of the following is not subject to increased expression by the drug Aminohippuric acid? 1. PROS1 2. SQOR 3. NNT 4. SEL1L 5. PIP4K2B",
+    "answer": "4"
+  },
+  {
+    "question": "Which of the following is not subject to increased expression by the drug Hexetidine? 1. CCDC92 2. RAB27A 3. CYTH1 4. ARID5B 5. CAD",
+    "answer": "5"
+  },
+  {
+    "question": "Which of the following is not subject to increased expression by the drug Pravastatin? 1. PDS5B 2. ERAP2 3. CEBPZ 4. PIGB 5. GPATCH8",
+    "answer": "1"
+  },
+  {
+    "question": "Which of the following is not subject to reduced expression by the drug Thiotepa? 1. ATP11B 2. PDS5A 3. RSU1 4. CORO1A 5. ZNF395",
+    "answer": "2"
+  },
+  {
+    "question": "Which of the following is not subject to reduced expression by the drug Donepezil? 1. IER3 2. ARL4C 3. CCL2 4. PDS5A 5. CDC20",
+    "answer": "4"
+  },
+  {
+    "question": "Which of the following is not subject to reduced expression by the drug Gefitinib? 1. TEX10 2. PDS5A 3. HNRNPAB 4. DUSP4 5. PFN1",
+    "answer": "2"
+  },
+  {
+    "question": "Which of the following classes does not include the drug Pioglitazone? 1. Peroxisome Proliferator-activated Receptor Activity 2. Thiazolidinediones 3. Opioid Antagonists 4. PPAR gamma 5. PPAR alpha",
+    "answer": "3"
+  },
+  {
+    "question": "Which of the following classes does not include the drug Clidinium? 1. Digestive/GI System Activity Alteration 2. Dyes 3. Decreased Parasympathetic Acetylcholine Activity 4. GI Motility Alteration 5. Cholinergic Antagonists",
+    "answer": "2"
+  },
+  {
+    "question": "Which of the following classes does not include the drug Fluconazole? 1. Cytochrome P450 3A4 Inhibitors 2. Cytochrome P450 2C9 Inhibitors 3. Dyes 4. Azoles 5. Cytochrome P450 2C19 Inhibitors",
+    "answer": "3"
+  },
+  {
+    "question": "Which of the following does not bind to the gene GSS? 1. Streptokinase 2. Acetylcysteine 3. Cysteine 4. Glutathione 5. Glycine",
+    "answer": "1"
+  },
+  {
+    "question": "Which of the following does not bind to the gene HTR2C? 1. Nefazodone 2. Insulin pork 3. Cisapride 4. Mianserin 5. Pramipexole",
+    "answer": "2"
+  },
+  {
+    "question": "Which of the following does not bind to the gene EPHA6? 1. Vandetanib 2. Hyaluronidase (ovine) 3. Gefitinib 4. Erlotinib 5. Sorafenib",
+    "answer": "2"
+  },
+  {
+    "question": "Which of the following does not bind to the gene CA6? 1. Nilotinib 2. Spermine 3. Botulinum toxin type A 4. Sulpiride 5. Methazolamide",
+    "answer": "3"
+  },
+  {
+    "question": "Which of the following does not increase the gene expression of SFTPA2? 1. Gabapentin 2. Topotecan 3. Flurbiprofen 4. Digoxin Immune Fab (Ovine) 5. Clarithromycin",
+    "answer": "4"
+  },
+  {
+    "question": "Which of the following does not decrease the gene expression of ELP1? 1. Mitoxantrone 2. Pentamidine 3. Ibritumomab tiuxetan 4. Treprostinil 5. Menadione",
+    "answer": "3"
+  },
+  {
+    "question": "Which of the following does not decrease the gene expression of C2CD5? 1. Etoposide 2. Cladribine 3. Mitoxantrone 4. Paroxetine 5. Rituximab",
+    "answer": "5"
+  },
+  {
+    "question": "Which of the following does not decrease the gene expression of VDAC3? 1. Niclosamide 2. Botulinum toxin type A 3. Cyclosporine 4. Crizotinib 5. Thioridazine",
+    "answer": "2"
+  },
+  {
+    "question": "Which of the following does not decrease the gene expression of RAE1? 1. Ibritumomab tiuxetan 2. Pitavastatin 3. Simvastatin 4. Tamoxifen 5. Amodiaquine",
+    "answer": "1"
+  },
+  {
+    "question": "Which of the following does not decrease the gene expression of RRP7A? 1. Fulvestrant 2. Ibritumomab tiuxetan 3. Everolimus 4. Dabrafenib 5. Lovastatin",
+    "answer": "2"
+  },
+  {
+    "question": "Which of the following biological processes does not involve F11R? 1. entry into cell of other organism involved in symbiotic interaction 2. interaction with host 3. transmembrane receptor protein serine/threonine kinase signaling pathway 4. viral entry into host cell 5. negative regulation of transmembrane transport",
+    "answer": "5"
+  },
+  {
+    "question": "Which of the following pathways does not contain the genes ZBTB32? 1. Recognition of DNA damage by PCNA-containing replication complex 2. Hypertrophy Model 3. Fanconi Anemia pathway 4. Regulation of the Fanconi anemia pathway 5. DNA Repair",
+    "answer": "2"
+  },
+  {
+    "question": "Which of the following pathways does not contain the genes THOC7? 1. RNA transport - Homo sapiens (human) 2. Cleavage of Growing Transcript in the Termination Region  3. Metabolism of lipids and lipoproteins 4. mRNA 3'-end processing 5. Transport of Mature mRNA derived from an Intron-Containing Transcript",
+    "answer": "3"
+  },
+  {
+    "question": "Which of the following pathways does not contain the genes CD247? 1. Warburg Effect 2. Immune System 3. Downstream signaling in na&#xef;ve CD8+ T cells 4. Translocation of ZAP-70 to Immunological synapse 5. PD-L1 expression and PD-1 checkpoint pathway in cancer",
+    "answer": "1"
+  },
+  {
+    "question": "Which of the following pathways does not contain the genes AP1S2? 1. Metabolism of lipids and lipoproteins 2. Vesicle-mediated transport 3. Immune System 4. Human immunodeficiency virus 1 infection 5. Nef-mediates down modulation of cell surface receptors by recruiting them to clathrin adapters",
+    "answer": "1"
+  },
+  {
+    "question": "Which of the following pathways does not contain the genes RLN1? 1. Peptide ligand-binding receptors 2. Signaling by GPCR 3. Cellular response to heat stress 4. Class A/1 (Rhodopsin-like receptors) 5. Ketobemidone  Action Pathway",
+    "answer": "5"
+  },
+  {
+    "question": "Which of the following pathways does not contain the genes NLRP1? 1. Immune System 2. NOD-like receptor signaling pathway - Homo sapiens (human) 3. Nucleotide-binding domain, leucine rich repeat containing receptor (NLR) signaling pathways 4. Cellular roles of Anthrax toxin 5. Activation of TRKA receptors",
+    "answer": "5"
+  },
+  {
+    "question": "Which of the following is not a gene which interacts with the gene RGS5? 1. MAT2B 2. GNAI2 3. GNAI3 4. APP 5. GNAQ",
+    "answer": "1"
+  },
+  {
+    "question": "Which of the following is not a gene which interacts with the gene PDE6G? 1. FNBP1 2. DNM2 3. SRC 4. LRRC41 5. BHLHE40",
+    "answer": "4"
+  },
+  {
+    "question": "Which of the following molecular functions is not attributed to TLR9? 1. growth factor receptor binding 2. siRNA binding 3. protein kinase activity 4. cytokine receptor binding 5. interleukin-1 receptor binding",
+    "answer": "3"
+  },
+  {
+    "question": "Which of the following molecular functions is not attributed to TAL2? 1. lipid binding 2. regulatory region nucleic acid binding 3. sequence-specific double-stranded DNA binding 4. regulatory region DNA binding 5. transcription regulatory region sequence-specific DNA binding",
+    "answer": "1"
+  },
+  {
+    "question": "Which of the following molecular functions is not attributed to SLC5A7? 1. transmembrane transporter activity 2. quaternary ammonium group binding 3. inorganic cation transmembrane transporter activity 4. alcohol transmembrane transporter activity 5. alcohol dehydrogenase activity, zinc-dependent",
+    "answer": "5"
+  },
+  {
+    "question": "Which of the following molecular functions is not attributed to CCR1? 1. peptide receptor activity 2. phospholipase activity 3. protein kinase activity 4. phosphoric ester hydrolase activity 5. phosphoric diester hydrolase activity",
+    "answer": "3"
+  },
+  {
+    "question": "Which of the following molecular functions is not attributed to LNX1? 1. ubiquitin-like protein transferase activity 2. protein domain specific binding 3. serine-type peptidase activity 4. PDZ domain binding 5. ubiquitin-protein transferase activity",
+    "answer": "3"
+  },
+  {
+    "question": "Which of the following cellular components is not linked to SDHB? 1. respiratory chain 2. oxidoreductase complex 3. membrane microdomain 4. respiratory chain complex 5. mitochondrial protein complex",
+    "answer": "3"
+  },
+  {
+    "question": "Which of the following cellular components is not linked to EEF2K? 1. excitatory synapse 2. axolemma 3. postsynapse 4. postsynaptic specialization 5. postsynaptic density",
+    "answer": "2"
+  },
+  {
+    "question": "Which of the following cellular components is not linked to NAA16? 1. protein acetyltransferase complex 2. NatA complex 3. transferase complex 4. transcription factor complex 5. endoplasmic reticulum membrane",
+    "answer": "5"
+  },
+  {
+    "question": "Which of the following cellular components is not linked to PF4? 1. membrane microdomain 2. platelet alpha granule 3. secretory granule 4. vesicle lumen 5. platelet alpha granule lumen",
+    "answer": "1"
+  },
+  {
+    "question": "Which of the following cellular components is not linked to AGFG1? 1. somatodendritic compartment 2. podosome 3. neuronal cell body 4. nuclear pore 5. nuclear envelope",
+    "answer": "2"
+  },
+  {
+    "question": "Which of the following is not associated with the gene CRH? 1. Alzheimer Disease 12 2. Alzheimer Disease, Late Onset 3. Alzheimer's Disease, Focal Onset 4. Familial Alzheimer Disease (FAD) 5. Alzheimer Disease, Early Onset",
+    "answer": "1"
+  },
+  {
+    "question": "Which of the following is not associated with the gene BCL2? 1. Alzheimer Disease, Early Onset 2. Alzheimer's Disease 3. Familial Alzheimer Disease (FAD) 4. Dementia due to Alzheimer's disease (disorder) 5. Alzheimer Disease, Late Onset",
+    "answer": "4"
+  },
+  {
+    "question": "Which of the following does not over-express the gene ANKS6? 1. cortex of kidney 2. pituitary gland 3. adrenal gland 4. trachea 5. adipose tissue",
+    "answer": "2"
+  },
+  {
+    "question": "Which of the following does not over-express the gene ZNF835? 1. prostate gland 2. brain 3. cerebellum 4. sympathetic nervous system 5. female gonad",
+    "answer": "4"
+  },
+  {
+    "question": "Which of the following does not over-express the gene POLDIP3? 1. endometrium 2. female gonad 3. blood 4. sympathetic nervous system 5. myometrium",
+    "answer": "4"
+  },
+  {
+    "question": "Which of the following does not over-express the gene SHOC1? 1. cortex of kidney 2. blood 3. adrenal cortex 4. sympathetic nervous system 5. testis",
+    "answer": "4"
+  },
+  {
+    "question": "Which of the following does not over-express the gene ZNF585A? 1. cardiac atrium 2. trigeminal ganglion 3. pituitary gland 4. testis 5. cerebellum",
+    "answer": "4"
+  },
+  {
+    "question": "Which of the following does not under-express the gene ETV5? 1. saliva-secreting gland 2. parasympathetic nervous system 3. cardiac atrium 4. mammalian vulva 5. blood",
+    "answer": "2"
+  },
+  {
+    "question": "Which of the following does not under-express the gene CDC27? 1. mammalian vulva 2. blood 3. medulla oblongata 4. cortex of kidney 5. peripheral nervous system",
+    "answer": "5"
+  },
+  {
+    "question": "Which of the following does not under-express the gene ERMN? 1. female gonad 2. macula 3. bronchus 4. endometrium 5. cardiac ventricle",
+    "answer": "2"
+  },
+  {
+    "question": "Which of the following does not under-express the gene FLNC? 1. cortex of kidney 2. sympathetic nervous system 3. adrenal cortex 4. blood 5. telencephalon",
+    "answer": "2"
+  },
+  {
+    "question": "Which of the following does not under-express the gene ZNF337? 1. saliva-secreting gland 2. tendon 3. blood 4. nipple 5. cortex of kidney",
+    "answer": "2"
+  },
+  {
+    "question": "Which of the following does not belong to the drug class Increased Sympathetic Activity? 1. Diethylpropion 2. Botulinum toxin type A 3. Phentermine 4. Metamfetamine 5. Modafinil",
+    "answer": "2"
+  },
+  {
+    "question": "Which of the following drugs does not treat Alzheimer's Disease? 1. Donepezil 2. Rituximab 3. Haloperidol 4. Ropinirole 5. Quetiapine",
+    "answer": "2"
+  },
+  {
+    "question": "Which of the following is not a gene associated with the disease Alzheimer Disease, Late Onset? 1. GAPDHS 2. PDS5B 3. SOD2 4. MIR100 5. BDNF",
+    "answer": "2"
+  },
+  {
+    "question": "Which of the following is not a gene associated with the disease Alzheimer's Disease, Focal Onset? 1. NPY 2. TREM2 3. TNF 4. PDS5B 5. EPHA1",
+    "answer": "4"
+  },
+  {
+    "question": "Which of the following is not a gene associated with the disease Alzheimer's Disease? 1. LEP 2. UNC5C 3. ABI3 4. MAOB 5. PDS5A",
+    "answer": "5"
+  },
+  {
+    "question": "Which of the following is not a site of localization of Familial Alzheimer Disease (FAD)? 1. lymphoid tissue 2. dura mater 3. spinal cord 4. cerebellum 5. nose",
+    "answer": "5"
+  },
+  {
+    "question": "Which of the following is not a gene which participates in the biological process positive regulation of chromatin modification? 1. LRRC41 2. H1-5 3. RNF20 4. SMARCB1 5. SKIC8",
+    "answer": "1"
+  },
+  {
+    "question": "Which of the following is not a gene which participates in the biological process negative regulation of fertilization? 1. SPINK13 2. ZP4 3. ASTL 4. TPST2 5. FASN",
+    "answer": "5"
+  },
+  {
+    "question": "Which of the following is not a gene which participates in the biological process nucleobase-containing compound catabolic process? 1. DCP2 2. PRPF18 3. DNAJC10 4. PABPC4 5. CNOT2",
+    "answer": "3"
+  },
+  {
+    "question": "Which of the following is not a gene which participates in the biological process Mo-molybdopterin cofactor metabolic process? 1. MOCS2 2. CAD 3. NFS1 4. MOCOS 5. MOCS3",
+    "answer": "2"
+  },
+  {
+    "question": "Which of the following is not a gene which participates in the biological process regulation of proteasomal protein catabolic process? 1. NSMCE2 2. TRIB3 3. PDS5A 4. RNF180 5. HSPBP1",
+    "answer": "3"
+  },
+  {
+    "question": "Which of the following is not a gene which participates in the biological process Toll signaling pathway? 1. TRAF3 2. PALM3 3. NR2F6 4. PELI1 5. PELI2",
+    "answer": "3"
+  },
+  {
+    "question": "Which of the following is not a gene in the pathway Oncogene Induced Senescence? 1. RPS27A 2. TNRC6B 3. UBB 4. UBC 5. PDS5A",
+    "answer": "5"
+  },
+  {
+    "question": "Which of the following is not a gene in the pathway AP-1 transcription factor network? 1. FOSB 2. CXCL8 3. PDS5B 4. CREB1 5. MT2A",
+    "answer": "3"
+  },
+  {
+    "question": "Which of the following is not a gene in the pathway Activation of NOXA and translocation to mitochondria? 1. TFDP1 2. TP53 3. E2F1 4. TFDP2 5. CAD",
+    "answer": "5"
+  },
+  {
+    "question": "Which of the following is not a gene in the pathway Levobunolol Action Pathway? 1. LRRC41 2. SLC8A1 3. KCNK1 4. TNNT1 5. KCNH2",
+    "answer": "1"
+  },
+  {
+    "question": "Which of the following genes does not perform the molecular function androgen receptor binding? 1. FOXP1 2. RB1 3. NRIP1 4. MAT2B 5. CALR",
+    "answer": "4"
+  },
+  {
+    "question": "Which of the following genes does not perform the molecular function myosin light chain binding? 1. MYH8 2. IQGAP3 3. NR2F6 4. MYOC 5. SPATA6",
+    "answer": "3"
+  },
+  {
+    "question": "Which of the following genes does not perform the molecular function guanylate kinase activity? 1. DLG2 2. GUK1 3. SEL1L 4. CARD11 5. MAGI3",
+    "answer": "3"
+  },
+  {
+    "question": "Which of the following is not a gene associated with the cellular component insulin-responsive compartment? 1. DENND4C 2. RAB10 3. MYO5A 4. RAB4B 5. NR2F6",
+    "answer": "5"
+  },
+  {
+    "question": "Which of the following is not a gene associated with the cellular component transcription factor TFIIIC complex? 1. GTF3C2 2. GTF3C3 3. GTF3C5 4. GTF3C1 5. MAT2B",
+    "answer": "5"
+  },
+  {
+    "question": "Which of the following is not a gene associated with the cellular component CD40 receptor complex? 1. TRAF3 2. HTRA2 3. BIRC2 4. CD40 5. MAT2B",
+    "answer": "5"
+  },
+  {
+    "question": "Which of the following genes is not over-expressed in saliva-secreting gland? 1. NR2F6 2. PERP 3. SHISA2 4. SVIL 5. ASCL2",
+    "answer": "1"
+  },
+  {
+    "question": "Which of the following genes is not over-expressed in urethra? 1. ERCC5 2. FASN 3. CD34 4. CLDN3 5. CCDC50",
+    "answer": "2"
+  },
+  {
+    "question": "Which of the following genes is not over-expressed in prostate gland? 1. DNAJC10 2. TRIM4 3. RFPL1 4. ZIC5 5. FBXL9P",
+    "answer": "1"
+  },
+  {
+    "question": "Which of the following genes is not under-expressed in telencephalon? 1. MAT2B 2. SEC61A1 3. P4HA2 4. GPSM3 5. EPPIN",
+    "answer": "1"
+  },
+  {
+    "question": "Which of the following genes is not under-expressed in prostate gland? 1. FASN 2. CNGB3 3. DDX4 4. PIK3R5 5. MTPN",
+    "answer": "1"
+  }
+]

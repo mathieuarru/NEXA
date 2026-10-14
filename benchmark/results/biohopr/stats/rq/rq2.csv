@@ -1,0 +1,3 @@
+a,b,backbone,label,dataset,metric,status,n,test,set_size,score_a,score_b,delta,p,p_floor,b_only_a,c_only_b,set_label,p_holm,significant,ci95_lo,ci95_hi
+nexa-flex_gpt-5-mini,nexa-direct_gpt-5-mini,GPT-5-mini,Flex − Direct,BioHopR_2hop.json,jaccard,ok,7633,paired_bootstrap_bca,7633,95.18368319855627,97.01408827752716,-1.830405078970914,1e-05,1e-05,,,BioHopR 2-hop,0.00011,True,-2.188480462869733,-1.478579160077659
+nexa-flex_qwen3.8-27b,nexa-direct_qwen3.8-27b,Qwen3.8-27B,Flex − Direct,BioHopR_2hop.json,jaccard,ok,7633,paired_bootstrap_bca,7633,95.84306876617684,83.11740641274703,12.725662353429817,1e-05,1e-05,,,BioHopR 2-hop,0.00011,True,11.866561486360368,13.625599332098998

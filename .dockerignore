@@ -1,0 +1,16 @@
+# Build context of every image except neo4j-primekg (see Dockerfile.primekg.dockerignore).
+# Keeps secrets and large local data out of the context sent to the Docker daemon.
+.env
+.env.*
+!.env_example
+.git/
+archive/
+**/__pycache__/
+.pytest_cache/
+
+benchmark/
+figures/
+tests/
+
+alzkb/*.json*
+primekg/data/

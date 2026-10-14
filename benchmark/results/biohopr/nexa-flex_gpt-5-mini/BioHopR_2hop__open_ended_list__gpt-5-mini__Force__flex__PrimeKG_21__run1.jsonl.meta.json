@@ -1,0 +1,35 @@
+{
+  "dataset_file": "BioHopR_2hop.json",
+  "model": "gpt-5-mini",
+  "provider": "openai",
+  "git_commit": "e65c3e4",
+  "config": {
+    "agent_mode": "flex",
+    "kg_mode": "Force",
+    "profile_name": "PrimeKG 21",
+    "examples_mode": null,
+    "generation_mode": "one_shot_fallback",
+    "recursion_limit": 150,
+    "checkpointer": "memory",
+    "limit": null,
+    "overwrite": false,
+    "retry_errors": false,
+    "retry_all_errors": false,
+    "max_retries": 2,
+    "run_tag": "run1",
+    "out_subdir": "biohopr_full/nexa-flex_gpt-5-mini"
+  },
+  "flags": {
+    "NEXA_COMPLETENESS_GUARD": false,
+    "NEXA_NO_LIMIT_PROMPT": false,
+    "NEXA_FLEX_ANSWER_RESCUE": false,
+    "NEXA_PROPERTY_MATCHING": "composite",
+    "NEXA_LLM_MAX_OUTPUT_TOKENS": 32768,
+    "NEXA_LLM_MAX_PROPERTY_TOKENS": 1024
+  },
+  "started_at": "2026-09-18T15:07:23.268022+00:00",
+  "finished_at": "2026-09-21T04:11:30.707505+00:00",
+  "n_questions_in_dataset": 7633,
+  "n_run_this_session": 7633,
+  "n_correct_this_session": 6796
+}

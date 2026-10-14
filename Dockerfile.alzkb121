@@ -1,0 +1,37 @@
+# AlzKB v1.2.1, downloaded at build time from its official release
+# (https://github.com/EpistasisLab/AlzKB/releases/tag/v1.2.1, a Memgraph CYPHERL
+# export hosted on Box) and converted to the JSON the Neo4j loader imports.
+# AlzKB is not redistributed with this repository. To build offline, put the
+# release file at alzkb/source/alzkb-v1-2-1_memgraph: it is used when its MD5 matches.
+
+FROM python:3.12-slim-bookworm AS prepare
+
+ARG ALZKB_URL="https://cedars.app.box.com/index.php?rm=box_download_shared_file&vanity_name=alzkb-v1-2-1&file_id=f_1626913122617"
+ARG ALZKB_MD5=990a4b306291663302575f7bc0f892d1
+
+WORKDIR /build
+COPY docker/fetch_verified.py alzkb/cypherl_to_json.py /build/
+COPY alzkb/source/ /build/local/
+RUN python /build/fetch_verified.py "${ALZKB_URL}" "${ALZKB_MD5}" /build/alzkb-v1-2-1_memgraph \
+        /build/local/alzkb-v1-2-1_memgraph \
+    && mkdir -p /prepared \
+    && python /build/cypherl_to_json.py /build/alzkb-v1-2-1_memgraph /prepared/alzkb.json.gz \
+    && rm /build/alzkb-v1-2-1_memgraph
+
+FROM neo4j:5.26.0-community-bullseye
+
+ENV NEO4J_AUTH=neo4j/password \
+    NEO4J_PLUGINS='["apoc"]' \
+    NEO4J_server_databases_read__only=neo4j
+
+COPY docker/neo4j_read_only.sh docker/neo4j_healthcheck.sh /opt/nexa/
+RUN chmod +x /opt/nexa/*.sh
+
+COPY --from=prepare /prepared/alzkb.json.gz /var/lib/neo4j/import/alzkb.json.gz
+COPY alzkb/load_alzkb121.sh /load_alzkb121.sh
+RUN chmod +x /load_alzkb121.sh
+
+HEALTHCHECK --interval=30s --timeout=15s --start-period=30s --retries=120 \
+  CMD /opt/nexa/neo4j_healthcheck.sh
+
+CMD ["/bin/bash", "-lc", "/load_alzkb121.sh"]

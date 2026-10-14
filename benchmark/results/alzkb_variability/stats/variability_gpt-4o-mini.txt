@@ -1,0 +1,61 @@
+==============================================================================
+RUN-TO-RUN VARIABILITY
+==============================================================================
+
+[gpt-4o-mini | direct | mcq | MCQ_1hop_sub.json]
+  runs: 5 (run1, run2, run3, run4, run5)   questions (in all runs): 100
+  accuracy: 0.946 ± 0.017  (min 0.920, max 0.960)  [95% CI on the 5-run mean 0.925-0.967]
+  per-run: run1=0.940  run2=0.960  run3=0.920  run4=0.950  run5=0.960
+  answer consensus:      0.930  (93/100 questions with identical answer across all runs)
+  correctness consensus: 0.930  (flip rate 0.070)
+  majority-vote accuracy: 0.950
+
+[gpt-4o-mini | direct | mcq | MCQ_2hop_sub.json]
+  runs: 5 (run1, run2, run3, run4, run5)   questions (in all runs): 100
+  accuracy: 0.938 ± 0.019  (min 0.910, max 0.960)  [95% CI on the 5-run mean 0.914-0.962]
+  per-run: run1=0.950  run2=0.960  run3=0.940  run4=0.930  run5=0.910
+  answer consensus:      0.900  (90/100 questions with identical answer across all runs)
+  correctness consensus: 0.900  (flip rate 0.100)
+  majority-vote accuracy: 0.940
+
+[gpt-4o-mini | direct | open_ended | OpenEnded_1hop_sub.json]
+  runs: 5 (run1, run2, run3, run4, run5)   questions (in all runs): 100
+  accuracy: 0.856 ± 0.009  (min 0.850, max 0.870)  [95% CI on the 5-run mean 0.845-0.867]
+  per-run: run1=0.860  run2=0.870  run3=0.850  run4=0.850  run5=0.850
+  answer consensus:      0.940  (94/100 questions with identical answer set across all runs)
+  correctness consensus: 0.960  (flip rate 0.040)
+  majority-vote accuracy: 0.850
+  content stability:     0.988  (mean pairwise Jaccard of answer sets; 1.0 = identical, order-insensitive)
+
+[gpt-4o-mini | direct | open_ended | OpenEnded_2hop_sub.json]
+  runs: 5 (run1, run2, run3, run4, run5)   questions (in all runs): 100
+  accuracy: 0.748 ± 0.020  (min 0.730, max 0.780)  [95% CI on the 5-run mean 0.723-0.773]
+  per-run: run1=0.750  run2=0.780  run3=0.730  run4=0.750  run5=0.730
+  answer consensus:      0.710  (71/100 questions with identical answer set across all runs)
+  correctness consensus: 0.850  (flip rate 0.150)
+  majority-vote accuracy: 0.770
+  content stability:     0.885  (mean pairwise Jaccard of answer sets; 1.0 = identical, order-insensitive)
+
+[gpt-4o-mini | direct | tf | True_or_False_1hop_sub.json]
+  runs: 5 (run1, run2, run3, run4, run5)   questions (in all runs): 100
+  accuracy: 0.970 ± 0.010  (min 0.960, max 0.980)  [95% CI on the 5-run mean 0.958-0.982]
+  per-run: run1=0.960  run2=0.980  run3=0.980  run4=0.960  run5=0.970
+  answer consensus:      0.970  (97/100 questions with identical answer across all runs)
+  correctness consensus: 0.970  (flip rate 0.030)
+  majority-vote accuracy: 0.980
+
+[gpt-4o-mini | direct | tf | True_or_False_2hop_atleastone_sub.json]
+  runs: 5 (run1, run2, run3, run4, run5)   questions (in all runs): 100
+  accuracy: 0.962 ± 0.015  (min 0.940, max 0.980)  [95% CI on the 5-run mean 0.944-0.980]
+  per-run: run1=0.970  run2=0.960  run3=0.960  run4=0.940  run5=0.980
+  answer consensus:      0.920  (92/100 questions with identical answer across all runs)
+  correctness consensus: 0.920  (flip rate 0.080)
+  majority-vote accuracy: 0.960
+
+[gpt-4o-mini | direct | tf | True_or_False_2hop_sub.json]
+  runs: 5 (run1, run2, run3, run4, run5)   questions (in all runs): 100
+  accuracy: 0.918 ± 0.011  (min 0.910, max 0.930)  [95% CI on the 5-run mean 0.904-0.932]
+  per-run: run1=0.930  run2=0.910  run3=0.930  run4=0.910  run5=0.910
+  answer consensus:      0.970  (97/100 questions with identical answer across all runs)
+  correctness consensus: 0.970  (flip rate 0.030)
+  majority-vote accuracy: 0.920

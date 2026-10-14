@@ -1,0 +1,62 @@
+
+==============================================================================================================
+biohopr: BioHopR 2-hop, 1 000 stratified questions
+==============================================================================================================
+  Δ = arm − full on the same questions (pp). +gained/−lost: questions the arm gets right/wrong that full does not.
+  triggered = questions whose one-shot query came back empty in the full run: the only ones on which a component acts.
+
+  --- one-shot: removes staged regeneration: the loop repairs the one-shot query   (tokens/question 7315 vs 7798 full; latency 6.1s vs 6.6s)
+    BioHopR_2hop.json Jaccard          n=1000   82.5 vs  84.7  Δ  -2.2 [ -3.7,  -0.7]  +36/-56  p 4.50e-03  p Holm 1.35e-02 *
+       triggered                       n= 221   47.2 vs  55.8  Δ  -8.6 [-14.7,  -2.7]  +20/-36  p 5.22e-03
+       exact set match                 n=1000   78.3 vs  80.7  Δ  -2.4 [ -4.1,  -0.7]  +26/-50  p 7.91e-03
+
+  --- decomposed: removes one-shot first: every question takes the staged path   (tokens/question 9101 vs 7798 full; latency 8.8s vs 6.6s)
+    BioHopR_2hop.json Jaccard          n=1000   78.7 vs  84.7  Δ  -6.0 [ -8.4,  -3.7]  +62/-125  p 1.00e-05  p Holm 9.00e-05 *
+       triggered                       n= 221   55.0 vs  55.8  Δ  -0.8 [ -5.3,  +3.7]  +16/-15  p 7.69e-01
+       exact set match                 n=1000   75.3 vs  80.7  Δ  -5.4 [ -7.9,  -3.0]  +52/-106  p 2.09e-05
+
+  --- no-empty-loop: removes the empty-result correction loop   (tokens/question 6567 vs 7798 full; latency 5.1s vs 6.6s)
+    BioHopR_2hop.json Jaccard          n=1000   76.7 vs  84.7  Δ  -8.0 [-10.0,  -6.2]  +23/-105  p 1.00e-05  p Holm 9.00e-05 *
+       triggered                       n= 221   23.5 vs  55.8  Δ -32.3 [-39.2, -25.3]  +7/-85  p 1.00e-05
+       exact set match                 n=1000   73.4 vs  80.7  Δ  -7.3 [ -9.3,  -5.3]  +18/-91  p 6.37e-13
+
+  --- no-db-matching: removes database value matching   (tokens/question 7598 vs 7798 full; latency 6.0s vs 6.6s)
+    BioHopR_2hop.json Jaccard          n=1000   81.9 vs  84.7  Δ  -2.8 [ -4.3,  -1.4]  +23/-61  p 1.30e-04  p Holm 5.20e-04 *
+       triggered                       n= 221   43.1 vs  55.8  Δ -12.7 [-18.7,  -7.0]  +10/-43  p 2.00e-05
+       exact set match                 n=1000   77.9 vs  80.7  Δ  -2.8 [ -4.4,  -1.2]  +18/-46  p 6.17e-04
+
+  --- no-llm-selection: removes LLM choice among candidates and synonyms   (tokens/question 7665 vs 7798 full; latency 6.3s vs 6.6s)
+    BioHopR_2hop.json Jaccard          n=1000   83.1 vs  84.7  Δ  -1.6 [ -3.0,  -0.3]  +34/-45  p 1.82e-02  p Holm 3.64e-02 *
+       triggered                       n= 221   48.6 vs  55.8  Δ  -7.2 [-12.4,  -2.3]  +14/-29  p 5.61e-03
+       exact set match                 n=1000   79.4 vs  80.7  Δ  -1.3 [ -2.8,  +0.2]  +24/-37  p 1.24e-01
+
+  --- no-syntax: removes syntax repair of Neo4j errors   (tokens/question 7754 vs 7798 full; latency 6.8s vs 6.6s)
+    BioHopR_2hop.json Jaccard          n=1000   84.5 vs  84.7  Δ  -0.2 [ -1.4,  +1.1]  +37/-33  p 7.93e-01  p Holm 7.93e-01
+       triggered                       n= 221   55.1 vs  55.8  Δ  -0.7 [ -5.7,  +4.3]  +19/-18  p 8.02e-01
+       exact set match                 n=1000   80.8 vs  80.7  Δ  +0.1 [ -1.4,  +1.6]  +29/-28  p 1.00e+00
+
+  --- bare: removes everything: one-shot, executed once   (tokens/question 5696 vs 7798 full; latency 4.5s vs 6.6s)
+    BioHopR_2hop.json Jaccard          n=1000   73.4 vs  84.7  Δ -11.3 [-13.4,  -9.4]  +17/-137  p 1.00e-05  p Holm 9.00e-05 *
+       triggered                       n= 221   10.0 vs  55.8  Δ -45.8 [-52.4, -39.4]  +0/-109  p 1.00e-05
+       exact set match                 n=1000   70.3 vs  80.7  Δ -10.4 [-12.6,  -8.3]  +14/-118  p 1.14e-21
+
+  --- no-examples: removes the few-shot examples: every prompt is zero-shot   (tokens/question 9350 vs 7798 full; latency 10.0s vs 6.6s)
+    BioHopR_2hop.json Jaccard          n=1000   69.4 vs  84.7  Δ -15.3 [-18.0, -12.8]  +44/-190  p 1.00e-05  p Holm 9.00e-05 *
+       triggered                       n= 221   43.1 vs  55.8  Δ -12.7 [-19.2,  -6.4]  +17/-46  p 9.00e-05
+       exact set match                 n=1000   66.5 vs  80.7  Δ -14.2 [-16.9, -11.5]  +37/-179  p 1.56e-23
+       cites an example entity           (no question in this group)
+       no example entity               n=1000   69.4 vs  84.7  Δ -15.3 [-18.0, -12.8]  +44/-190  p 1.00e-05
+
+  --- generic-examples: removes the graph's content in the examples: same shapes with <LABEL>/<REL_TYPE> placeholders   (tokens/question 8688 vs 7798 full; latency 7.9s vs 6.6s)
+    BioHopR_2hop.json Jaccard          n=1000   76.7 vs  84.7  Δ  -8.0 [-10.4,  -5.6]  +63/-132  p 1.00e-05  p Holm 9.00e-05 *
+       triggered                       n= 221   55.0 vs  55.8  Δ  -0.8 [ -7.8,  +6.2]  +36/-36  p 8.13e-01
+       exact set match                 n=1000   74.1 vs  80.7  Δ  -6.6 [ -9.2,  -4.0]  +57/-123  p 9.69e-07
+       cites an example entity           (no question in this group)
+       no example entity               n=1000   76.7 vs  84.7  Δ  -8.0 [-10.4,  -5.6]  +63/-132  p 1.00e-05
+
+  one-shot came back empty in the full run (fallback triggered): BioHopR_2hop.json 22.1%
+
+  run-to-run reference: the full arm against the earlier complete run of the same code on the same questions
+    BioHopR_2hop.json (full − reference run) n=1000   84.7 vs  85.3  Δ  -0.6 [ -1.9,  +0.8]  +29/-35  p 4.05e-01
+
+  * Holm-adjusted p < 0.05 within this experiment's family of 9 comparisons (all questions, primary metric).

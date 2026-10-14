@@ -1,0 +1,49 @@
+{
+    "Hetionet": {
+        "name": "Hetionet",
+        "host": "localhost",
+        "port": "7687",
+        "username": "neo4j",
+        "password": "password",
+        "db_name": "neo4j",
+        "browser_port": "7474",
+        "description_file_name": null,
+        "examples_mode": "llm",
+        "identifying_properties": null
+    },
+    "Alzkb 121": {
+        "name": "Alzkb 121",
+        "host": "localhost",
+        "port": "7688",
+        "username": "neo4j",
+        "password": "password",
+        "db_name": "neo4j",
+        "browser_port": "7475",
+        "description_file_name": null,
+        "examples_mode": "llm",
+        "identifying_properties": null
+    },
+    "PrimeKG 21": {
+        "name": "PrimeKG 21",
+        "host": "localhost",
+        "port": "7689",
+        "username": "neo4j",
+        "password": "password",
+        "db_name": "neo4j",
+        "browser_port": "7476",
+        "description_file_name": null,
+        "examples_mode": "llm",
+        "identifying_properties": {
+            "Drug": "name",
+            "Disease": "name",
+            "EffectPhenotype": "name",
+            "GeneProtein": "name",
+            "Anatomy": "name",
+            "BiologicalProcess": "name",
+            "MolecularFunction": "name",
+            "CellularComponent": "name",
+            "Pathway": "name",
+            "Exposure": "name"
+        }
+    }
+}

@@ -1,0 +1,293 @@
+--- NEXA Benchmark Evaluation ---
+Files processed: 1
+  - benchmark/results/biohopr/vanilla_qwen3.8-27b/baseline_vanilla_qwen3.8_27b-q8_0_merged.jsonl
+
+=== Dataset: BioHopR_2hop.json__vanilla | Type: open_ended_list | Mode: vanilla | Model: qwen3.8:27b-q8_0 ===
+Count: 7633  |  Correct: 12  |  Accuracy: 0.002 [95% CI 0.001-0.003]
+Average set metrics: exact_match=0.002  precision=0.065  recall=0.078  f1=0.050  jaccard=0.031  overlap=0.105
+By |expected| size:
+  -    1: n=1088  acc=0.009 f1=0.040
+  -  2-5: n=1567  acc=0.001 f1=0.044
+  - 6-20: n=2281  acc=0.000 f1=0.048
+  -  >20: n=2697  acc=0.000 f1=0.060
+Telemetry:
+  - latency ms: mean=218500 p50=144546 p95=499752 (n=7633)
+  - tokens: avg in=167 out=2266 | total in=1137908 out=15429635
+  - records with error: 0.108 (n=7633)
+
+-- Incorrect Questions (7621 total, showing 15) --
+Q [08b594b9e449]: Name all diseases that are related to a effect/phenotype that is associated with drug Benzyl benzoate.
+  Expected: ['very long chain acyl-CoA dehydrogenase deficiency', 'POEMS syndrome', 'retinal capillary malformation', 'oromandibular dystonia', 'amyotrophic lateral sclerosis', 'systemic sclerosis', 'postpoliomyelitis syndrome', 'familial focal epilepsy with variable foci', 'interstitial cystitis', 'acatalasia', 'chromosome 17q11.2 deletion syndrome, 1.4Mb', 'scleroderma (disease)', 'polycystic kidney disease', 'Parkes Weber syndrome', 'intermediate Charcot-Marie-Tooth disease', 'fibular hemimelia', 'paraparetic variant of Guillain-Barre syndrome', 'obsolete rare circulatory system disease', 'subependymoma', 'thyroid gland undifferentiated (anaplastic) carcinoma', 'tufted angioma (disease)', 'hereditary spastic paraplegia', 'familial papillary or follicular thyroid carcinoma', 'snakebite envenomation', 'spinocerebellar ataxia', 'epidermal nevus syndrome', 'ABeta2M amyloidosis', 'thromboangiitis obliterans', 'kyphoscoliosis-lateral tongue atrophy-hereditary spastic paraplegia syndrome', 'hereditary painful callosities', 'primary hyperoxaluria', 'metachromatic leukodystrophy', 'Charcot-Marie-Tooth disease-deafness-intellectual disability syndrome', 'leukocyte adhesion deficiency', 'optic atrophy', 'scorpion envenomation', 'IgG4-related retroperitoneal fibrosis', 'ependymoma', 'Charcot-Marie-Tooth disease', 'bone osteosarcoma', 'poliomyelitis', 'schwannoma']
+  Got:      ['Scabies', 'Pediculosis']
+  Thinking: The question asks for diseases related to an effect/phenotype associated with Benzyl benzoate. Benzyl benzoate is a topical scabicide and pediculicide. Its primary associated effects/phenotypes are the treatment of mite and lice infestations. The diseases directly related to these are scabies and pediculosis.
+  Metrics: exact_match=0.000  precision=0.000  recall=0.000  f1=0.000  jaccard=0.000  overlap=0.000
+  Missing (in expected, not in got): ABeta2M amyloidosis, Charcot-Marie-Tooth disease, Charcot-Marie-Tooth disease-deafness-intellectual disability syndrome, IgG4-related retroperitoneal fibrosis, POEMS syndrome, Parkes Weber syndrome, acatalasia, amyotrophic lateral sclerosis, bone osteosarcoma, chromosome 17q11.2 deletion syndrome, 1.4Mb, ependymoma, epidermal nevus syndrome, familial focal epilepsy with variable foci, familial papillary or follicular thyroid carcinoma, fibular hemimelia, hereditary painful callosities, hereditary spastic paraplegia, intermediate Charcot-Marie-Tooth disease, interstitial cystitis, kyphoscoliosis-lateral tongue atrophy-hereditary spastic paraplegia syndrome, leukocyte adhesion deficiency, metachromatic leukodystrophy, obsolete rare circulatory system disease, optic atrophy, oromandibular dystonia, paraparetic variant of Guillain-Barre syndrome, poliomyelitis, polycystic kidney disease, postpoliomyelitis syndrome, primary hyperoxaluria, retinal capillary malformation, schwannoma, scleroderma (disease), scorpion envenomation, snakebite envenomation, spinocerebellar ataxia, subependymoma, systemic sclerosis, thromboangiitis obliterans, thyroid gland undifferentiated (anaplastic) carcinoma, tufted angioma (disease), very long chain acyl-CoA dehydrogenase deficiency
+  Extra (in got, not in expected):   Pediculosis, Scabies
+
+Q [2273a5cc3503]: Name all diseases that are related to a effect/phenotype that is associated with drug Idoxuridine.
+  Expected: ['Cornelia de Lange syndrome', 'chromosome 17q23.1-q23.2 deletion syndrome', 'leukonychia totalis', 'lichen planus pemphigoides', 'sea-blue histiocyte syndrome', 'dyskeratosis congenita', 'keratoconjunctivitis', 'xeroderma pigmentosum', 'ectodermal dysplasia', 'cutaneous porphyria', 'multiple congenital anomalies-hypotonia-seizures syndrome', 'Mobius syndrome', 'Clouston syndrome', 'candidiasis, familial', 'IFAP syndrome with or without BRESHECK syndrome', 'neonatal inflammatory skin and bowel disease', 'Wiskott-Aldrich syndrome', 'limb-mammary syndrome', 'Olmsted syndrome', 'poikiloderma with neutropenia', 'xanthogranuloma', 'EEC syndrome', 'ectrodactyly, ectodermal dysplasia, and cleft lip-palate syndrome']
+  Got:      ['herpes simplex keratitis', 'herpes simplex virus infection', 'herpes zoster', 'corneal ulcer']
+  Thinking: Idoxuridine (IDU) is a pyrimidine nucleoside analog antiviral drug. Its primary effect/phenotype is antiviral activity against herpes simplex virus (HSV), and it was used topically for ocular herpes. It also has a known effect of corneal toxicity/ulceration. The diseases related to these effects/phenotypes include herpes simplex keratitis, herpes simplex virus infection, herpes zoster, and corneal ulcer.
+  Metrics: exact_match=0.000  precision=0.000  recall=0.000  f1=0.000  jaccard=0.000  overlap=0.000
+  Missing (in expected, not in got): Clouston syndrome, Cornelia de Lange syndrome, EEC syndrome, IFAP syndrome with or without BRESHECK syndrome, Mobius syndrome, Olmsted syndrome, Wiskott-Aldrich syndrome, candidiasis, familial, chromosome 17q23.1-q23.2 deletion syndrome, cutaneous porphyria, dyskeratosis congenita, ectodermal dysplasia, ectrodactyly, ectodermal dysplasia, and cleft lip-palate syndrome, keratoconjunctivitis, leukonychia totalis, lichen planus pemphigoides, limb-mammary syndrome, multiple congenital anomalies-hypotonia-seizures syndrome, neonatal inflammatory skin and bowel disease, poikiloderma with neutropenia, sea-blue histiocyte syndrome, xanthogranuloma, xeroderma pigmentosum
+  Extra (in got, not in expected):   corneal ulcer, herpes simplex keratitis, herpes simplex virus infection, herpes zoster
+
+Q [b78f779526e2]: Name all diseases that are related to a effect/phenotype that is associated with drug Vitamin A.
+  Expected: ['cystic echinococcosis', 'aggressive systemic mastocytosis']
+  Got:      ['Xerophthalmia', 'Night blindness', 'Keratomalacia', 'Hypervitaminosis A', 'Vitamin A deficiency', 'Pseudotumor cerebri', 'Hypertriglyceridemia', 'Acne vulgaris', 'Psoriasis', 'Hepatotoxicity', 'Osteoporosis', 'Follicular hyperkeratosis', 'Ichthyosis', 'Teratogenicity', 'Hypercalcemia', "Bitot's spots", 'Retinoblastoma', 'Peeling skin syndrome', 'Idiopathic intracranial hypertension', 'Bone pain']
+  Thinking: The question asks me to name all diseases that are related to an effect/phenotype that is associated with the drug Vitamin A.
+
+Let me think about this carefully. Vitamin A (retinol) has various effects/phenotypes associated with it, and I need to find diseases related to those effects/phenotypes.
+
+Vitamin A is associated with several effects/phenotypes:
+- Hypervitaminosis A (excess vitamin A)
+- Vitamin A deficiency
+- Retinoid effects
+- Teratogenicity (birth defects)
+- Hypertriglyceridemia
+- Hepatotoxicity
+- Bone density changes
+- Skin effects (dryness, peeling)
+- Increased intracranial pressure (pseudotumor cerebri)
+- Xerophthalmia
+- Night blindness
+- Keratomalacia
+- Bitot's spots
+- Follicular hyperkeratosis
+- Immune dysfunction
+
+Diseases related to these effects/phenotypes:
+
+1. Hypervitaminosis A - this is a disease/condition related to excess vitamin A
+2. Vitamin A deficiency - a disease/condition
+3. Xerophthalmia - related to vitamin A deficiency
+4. Night blindness (nyctalopia) - related to vitamin A deficiency
+5. Keratomalacia - related to vitamin A deficiency
+6. Bitot's spots - related to vitamin A deficiency
+7. Pseudotumor cerebri (idiopathic intracranial hypertension) - related to vitamin A excess
+8. Hypertriglyceridemia - related to retinoid use
+9. Hepatotoxicity/liver damage - related to vitamin A excess
+10. Teratogenicity/birth defects - related to retinoid use
+11. Follicular hyperkeratosis - related to vitamin A deficiency
+12. Osteoporosis - related to vitamin A excess
+13. Acne - treated with vitamin A derivatives (retinoids)
+14. Psoriasis - treated with retinoids
+15. Retinoblastoma - related to retinoid effects
+16. Hypercalcemia - related to vitamin A excess
+17. Peeling skin syndrome - related to vitamin A
+18. Ichthyosis - related to vitamin A
+19. Scurvy - no, that's vitamin C
+20. Rickets - no, that's vitamin D
+
+Let me think more specifically about what "effect/phenotype associated with drug Vitamin A" means in a biomedical knowledge graph context.
+
+In drug-disease relationships, Vitamin A is associated with:
+- Treatment of: xerophthalmia, night blindness, keratomalacia, acne, psoriasis, vitamin A deficiency
+- Adverse effects: hypervitaminosis A, hepatotoxicity, teratogenicity, hypertriglyceridemia, pseudotumor cerebri, bone pain, skin peeling
+
+Diseases related to these effects/phenotypes:
+
+Let me think about this from a knowledge graph perspective (like OpenTargets or similar):
+
+Vitamin A → associated phenotypes/effects → related diseases
+
+Phenotypes associated with Vitamin A:
+- Xerophthalmia
+- Night blindness
+- Keratomalacia
+- Bitot's spots
+- Follicular hyperkeratosis
+- Hypervitaminosis A
+- Hepatomegaly
+- Hypertriglyceridemia
+- Teratogenicity
+- Pseudotumor cerebri
+- Bone pain
+- Skin dryness/peeling
+- Increased intracranial pressure
+
+Diseases related to these:
+- Xerophthalmia
+- Night blindness (nyctalopia)
+- Keratomalacia
+- Hypervitaminosis A
+- Vitamin A deficiency
+- Pseudotumor cerebri / Idiopathic intracranial hypertension
+- Hypertriglyceridemia
+- Acne vulgaris
+- Psoriasis
+- Hepatotoxicity
+- Osteoporosis
+- Follicular hyperkeratosis
+- Ichthyosis
+- Teratogenicity
+- Hypercalcemia
+- Peeling skin syndrome
+- Ichthyosis
+- Retinoblastoma (treated with retinoids)
+- Hypercalcemia
+
+Let me be more careful. The question is: "Name all diseases that are related to an effect/phenotype that is associated with drug Vitamin A."
+
+So the chain is: Vitamin A → effect/phenotype → disease
+
+Let me list diseases:
+1. Xerophthalmia
+2. Night blindness
+3. Keratomalacia
+4. Hypervitaminosis A
+5. Vitamin A deficiency
+6. Pseudotumor cerebri
+7. Hypertriglyceridemia
+8. Acne vulgaris
+9. Psoriasis
+10. Hepatotoxicity
+11. Osteoporosis
+12. Follicular hyperkeratosis
+13. Ichthyosis
+14. Teratogenicity
+15. Hypercalcemia
+16. Bitot's spots
+17. Retinoblastoma
+18. Peeling skin syndrome
+19. Dry skin
+20. Bone pain
+
+Actually, let me reconsider. In biomedical ontologies, the "effect/phenotype" associated with a drug might be more specific. Let me think about what phenotypes are directly linked to Vitamin A in databases like OpenTargets, DrugBank, or similar.
+
+Vitamin A (retinol) is associated with:
+- Treatment: xerophthalmia, night blindness, keratomalacia, vitamin A deficiency, acne, psoriasis
+- Side effects: hypervitaminosis A, hepatotoxicity, teratogenicity, hypertriglyceridemia, pseudotumor cerebri, bone pain, skin effects
+
+I'll provide a comprehensive list of diseases related to effects/phenotypes of Vitamin A.
+  Metrics: exact_match=0.000  precision=0.000  recall=0.000  f1=0.000  jaccard=0.000  overlap=0.000
+  Missing (in expected, not in got): aggressive systemic mastocytosis, cystic echinococcosis
+  Extra (in got, not in expected):   Acne vulgaris, Bitot's spots, Bone pain, Follicular hyperkeratosis, Hepatotoxicity, Hypercalcemia, Hypertriglyceridemia, Hypervitaminosis A, Ichthyosis, Idiopathic intracranial hypertension, Keratomalacia, Night blindness, Osteoporosis, Peeling skin syndrome, Pseudotumor cerebri, Psoriasis, Retinoblastoma, Teratogenicity, Vitamin A deficiency, Xerophthalmia
+
+Q [75a305a6738a]: Name all diseases that are related to a effect/phenotype that is associated with drug Zinc chloride.
+  Expected: ['COG2-CDG', 'IRIDA syndrome', 'MEDNIK syndrome']
+  Got:      ['Keratitis', 'Corneal dystrophy', 'Contact dermatitis', 'Chemical burn', 'Verruca vulgaris', 'Verruca plana']
+  Thinking: Let me reason through this step by step.
+
+1. Zinc chloride – what effects/phenotypes is it associated with?
+   - Corneal erosion / corneal damage (used in ophthalmic staining)
+   - Skin burn / chemical burn / tissue necrosis (cauterizing agent)
+   - Skin irritation / contact dermatitis
+   - Warts (verruca) – used as a treatment
+
+2. Diseases related to those phenotypes:
+   - Corneal erosion → Keratitis, Corneal dystrophy
+   - Skin burn / chemical burn → Chemical burn, Contact dermatitis
+   - Warts → Verruca vulgaris, Verruca plana
+   - Tissue necrosis → Gangrene
+
+Let me compile the most relevant diseases.
+  Metrics: exact_match=0.000  precision=0.000  recall=0.000  f1=0.000  jaccard=0.000  overlap=0.000
+  Missing (in expected, not in got): COG2-CDG, IRIDA syndrome, MEDNIK syndrome
+  Extra (in got, not in expected):   Chemical burn, Contact dermatitis, Corneal dystrophy, Keratitis, Verruca plana, Verruca vulgaris
+
+Q [41036ee71e88]: Name all diseases that are related to a effect/phenotype that is associated with drug Zinc sulfate.
+  Expected: ['graft versus host disease', 'mercury poisoning', 'Fabry disease', 'fructose intolerance', 'migraine, familial typical, susceptibility to, 2', 'toxic shock syndrome', 'tick-borne encephalitis', 'urticaria', 'hypervitaminosis a, susceptibility to', 'acute disseminated encephalomyelitis', 'multiple acyl-CoA dehydrogenase deficiency', 'choroid plexus papilloma', 'SUNCT syndrome', 'hypokalemic alkalosis, familial, with specific renal tubulopathy', 'variegate porphyria', 'Ehlers-Danlos syndrome, classic type', 'amoebiasis due to free-living amoebae', 'anterior cutaneous nerve entrapment syndrome', 'lysinuric protein intolerance', 'ovarian hyperstimulation syndrome', 'human African trypanosomiasis', 'mitochondrial neurogastrointestinal encephalomyopathy', 'Parkinson disease', 'Turcot syndrome with polyposis', 'lead poisoning', 'angiostrongyliasis', 'Zygomycosis', 'cyclic vomiting syndrome', 'familial lipoprotein lipase deficiency']
+  Got:      ['zinc deficiency', 'acrodermatitis enteropathica', 'diarrhea', 'acne vulgaris', 'common cold', 'upper respiratory tract infection', 'immune deficiency', 'anemia', 'iron deficiency anemia', 'growth retardation', 'hypogonadism', 'alopecia', 'dermatitis', 'nausea', 'vomiting', 'abdominal pain', 'anorexia', 'rotavirus infection', 'wound healing impairment']
+  Thinking: The question asks for diseases related to an effect/phenotype associated with the drug Zinc sulfate. Let me trace the chain: Zinc sulfate → associated effects/phenotypes → diseases related to those phenotypes. Zinc sulfate is associated with zinc supplementation, anti-diarrheal effects, immune modulation, wound healing, acne treatment, common cold treatment, and GI side effects (nausea, vomiting, abdominal pain, anorexia). Diseases related to these phenotypes include zinc deficiency, acrodermatitis enteropathica, diarrhea, acne vulgaris, common cold, upper respiratory tract infection, immune deficiency, anemia, growth retardation, hypogonadism, alopecia, dermatitis, nausea, vomiting, abdominal pain, anorexia, rotavirus infection, and iron deficiency anemia.
+  Metrics: exact_match=0.000  precision=0.000  recall=0.000  f1=0.000  jaccard=0.000  overlap=0.000
+  Missing (in expected, not in got): Ehlers-Danlos syndrome, classic type, Fabry disease, Parkinson disease, SUNCT syndrome, Turcot syndrome with polyposis, Zygomycosis, acute disseminated encephalomyelitis, amoebiasis due to free-living amoebae, angiostrongyliasis, anterior cutaneous nerve entrapment syndrome, choroid plexus papilloma, cyclic vomiting syndrome, familial lipoprotein lipase deficiency, fructose intolerance, graft versus host disease, human African trypanosomiasis, hypervitaminosis a, susceptibility to, hypokalemic alkalosis, familial, with specific renal tubulopathy, lead poisoning, lysinuric protein intolerance, mercury poisoning, migraine, familial typical, susceptibility to, 2, mitochondrial neurogastrointestinal encephalomyopathy, multiple acyl-CoA dehydrogenase deficiency, ovarian hyperstimulation syndrome, tick-borne encephalitis, toxic shock syndrome, urticaria, variegate porphyria
+  Extra (in got, not in expected):   abdominal pain, acne vulgaris, acrodermatitis enteropathica, alopecia, anemia, anorexia, common cold, dermatitis, diarrhea, growth retardation, hypogonadism, immune deficiency, iron deficiency anemia, nausea, rotavirus infection, upper respiratory tract infection, vomiting, wound healing impairment, zinc deficiency
+
+Q [5e50f779a9fa]: Name all diseases that are related to a gene/protein that is associated with drug (+)-2-(4-biphenyl)propionic acid.
+  Expected: ['carcinoma of esophagus', 'corpus luteum cyst', 'gastric ulcer (disease)', 'hereditary breast ovarian cancer syndrome', 'ovarian cyst (disease)', 'chronic renal failure syndrome', 'undifferentiated carcinoma', 'intestinal polyp (disease)', 'heart failure', 'sarcomatoid carcinoma', 'hereditary breast carcinoma', 'asthma', 'end stage renal failure', 'platelet-type bleeding disorder', 'ischemia reperfusion injury', 'breast cancer', 'undifferentiated carcinoma of the corpus uteri', 'chronic kidney disease', 'esophageal cancer', 'breast neoplasm', 'carcinoma', 'rheumatoid arthritis', 'schizophrenia', 'occupational asthma', 'breast carcinoma', 'congestive heart failure', 'squamous cell carcinoma of the corpus uteri']
+  Got:      ['rheumatoid arthritis', 'osteoarthritis', 'ankylosing spondylitis', 'psoriatic arthritis', 'inflammatory bowel disease', 'colorectal cancer', 'psoriasis', 'gout', 'reactive arthritis', 'systemic lupus erythematosus', 'fibromyalgia', 'osteoarthritis of the knee', 'osteoarthritis of the hip', 'rheumatoid arthritis, juvenile', 'psoriatic arthritis, familial', 'inflammatory bowel disease, familial', 'colorectal neoplasms', 'breast neoplasms', 'prostate neoplasms', 'lung neoplasms']
+  Thinking: The drug (+)-2-(4-biphenyl)propionic acid is a propionic acid derivative, structurally related to NSAIDs. Its most likely molecular targets are the cyclooxygenase enzymes COX-1 (PTGS1) and COX-2 (PTGS2). I need to list diseases associated with these gene/protein targets.
+  Metrics: exact_match=0.000  precision=0.050  recall=0.037  f1=0.043  jaccard=0.022  overlap=0.050
+  Missing (in expected, not in got): asthma, breast cancer, breast carcinoma, breast neoplasm, carcinoma, carcinoma of esophagus, chronic kidney disease, chronic renal failure syndrome, congestive heart failure, corpus luteum cyst, end stage renal failure, esophageal cancer, gastric ulcer (disease), heart failure, hereditary breast carcinoma, hereditary breast ovarian cancer syndrome, intestinal polyp (disease), ischemia reperfusion injury, occupational asthma, ovarian cyst (disease), platelet-type bleeding disorder, sarcomatoid carcinoma, schizophrenia, squamous cell carcinoma of the corpus uteri, undifferentiated carcinoma, undifferentiated carcinoma of the corpus uteri
+  Extra (in got, not in expected):   ankylosing spondylitis, breast neoplasms, colorectal cancer, colorectal neoplasms, fibromyalgia, gout, inflammatory bowel disease, inflammatory bowel disease, familial, lung neoplasms, osteoarthritis, osteoarthritis of the hip, osteoarthritis of the knee, prostate neoplasms, psoriasis, psoriatic arthritis, psoriatic arthritis, familial, reactive arthritis, rheumatoid arthritis, juvenile, systemic lupus erythematosus
+
+Q [bd8908ac56f7]: Name all diseases that are related to a gene/protein that is associated with drug (+)-Rutamarin alcohol.
+  Expected: ['Alzheimer disease without neurofibrillary tangles', 'Creutzfeldt Jacob disease', 'cerebellar degeneration', 'Alzheimer disease', 'Pick disease', 'Reye syndrome']
+  Got:      ['warfarin resistance', 'phenytoin resistance', 'sulfonamide resistance']
+  Thinking: I need to identify the gene/protein associated with (+)-Rutamarin alcohol, then list all diseases related to that gene/protein. (+)-Rutamarin alcohol is a prenylated flavonoid. In drug-target databases, it is associated with CYP2C9 (cytochrome P450 2C9). Diseases related to CYP2C9 include conditions involving altered drug metabolism due to CYP2C9 variants.
+  Metrics: exact_match=0.000  precision=0.000  recall=0.000  f1=0.000  jaccard=0.000  overlap=0.000
+  Missing (in expected, not in got): Alzheimer disease, Alzheimer disease without neurofibrillary tangles, Creutzfeldt Jacob disease, Pick disease, Reye syndrome, cerebellar degeneration
+  Extra (in got, not in expected):   phenytoin resistance, sulfonamide resistance, warfarin resistance
+
+Q [7fc7914f1f2a]: Name all diseases that are related to a gene/protein that is associated with drug (1'R,2'S)-9-(2-Hydroxy-3'-Keto-Cyclopenten-1-yl)Adenine.
+  Expected: ['glycine N-methyltransferase deficiency', 'non-alcoholic steatohepatitis', 'inherited amino acid metabolic disorder', 'lung cancer', 'lung adenocarcinoma', 'fatty liver disease', 'hereditary hemochromatosis', 'hypermethioninemia with deficiency of S-adenosylhomocysteine hydrolase', 'iron metabolism disease', 'Wilson disease', 'methionine adenosyltransferase deficiency']
+  Got:      ['purine nucleoside phosphorylase deficiency', 'severe combined immunodeficiency', 'adenosine deaminase deficiency', 'Lesch-Nyhan syndrome', 'Kelley-Seegmiller syndrome']
+  Thinking: The question asks for diseases related to a gene/protein associated with the drug (1'R,2'S)-9-(2-Hydroxy-3'-Keto-Cyclopenten-1-yl)Adenine. This is a 9-substituted adenine purine analog with a cyclopentenyl ring bearing hydroxy and keto groups. This compound is a purine nucleoside analog/metabolite. In drug databases, purine analogs are typically associated with enzymes in purine metabolism such as purine nucleoside phosphorylase (NTP), adenosine deaminase (ADA), or hypoxanthine-guanine phosphoribosyltransferase (HPRT1). The diseases associated with these genes include purine nucleoside phosphorylase deficiency, adenosine deaminase deficiency, severe combined immunodeficiency (SCID), Lesch-Nyhan syndrome, and Kelley-Seegmiller syndrome.
+  Metrics: exact_match=0.000  precision=0.000  recall=0.000  f1=0.000  jaccard=0.000  overlap=0.000
+  Missing (in expected, not in got): Wilson disease, fatty liver disease, glycine N-methyltransferase deficiency, hereditary hemochromatosis, hypermethioninemia with deficiency of S-adenosylhomocysteine hydrolase, inherited amino acid metabolic disorder, iron metabolism disease, lung adenocarcinoma, lung cancer, methionine adenosyltransferase deficiency, non-alcoholic steatohepatitis
+  Extra (in got, not in expected):   Kelley-Seegmiller syndrome, Lesch-Nyhan syndrome, adenosine deaminase deficiency, purine nucleoside phosphorylase deficiency, severe combined immunodeficiency
+
+Q [27efdcfe4827]: Name all diseases that are related to a gene/protein that is associated with drug (1,10 Phenanthroline)-(Tri-Carbon Monoxide) Rhenium (I).
+  Expected: ['colorectal neoplasm', 'visual epilepsy', 'partial epilepsy', 'esophageal squamous cell carcinoma', 'hyperbilirubinemia', 'pseudopelade of Brocq', 'cholestasis', 'partial motor epilepsy', 'Gilbert syndrome', 'status epilepticus', 'Dubin-Johnson syndrome', 'androgenetic alopecia', 'non-alcoholic steatohepatitis', 'squamous cell carcinoma', 'hereditary hyperbilirubinemia', 'familial intrahepatic cholestasis', 'intrahepatic cholestasis', 'colorectal cancer', 'digestive system disease', 'drug-induced liver injury', 'epilepsy', 'primary biliary cholangitis', 'functional gastric disease', 'cholestasis, intrahepatic, of pregnancy', 'rheumatoid arthritis', 'Reynolds syndrome', 'colorectal carcinoma', 'fatty liver disease', 'benign recurrent intrahepatic cholestasis', 'alopecia']
+  Got:      ['Carbonic anhydrase II deficiency syndrome', 'Osteopetrosis', 'Renal tubular acidosis', 'Glaucoma', 'Edema', 'Epilepsy']
+  Thinking: The drug (1,10-Phenanthroline)-(Tri-Carbon Monoxide) Rhenium(I) is a rhenium(I) tricarbonyl complex. In drug databases, this compound is associated with carbonic anhydrase as a target protein/gene. Carbonic anhydrase (particularly CA2) is the well-known protein target for rhenium carbonyl complexes. The diseases associated with carbonic anhydrase genes include carbonic anhydrase II deficiency syndrome, osteopetrosis, renal tubular acidosis, and other conditions.
+  Metrics: exact_match=0.000  precision=0.167  recall=0.033  f1=0.056  jaccard=0.029  overlap=0.167
+  Missing (in expected, not in got): Dubin-Johnson syndrome, Gilbert syndrome, Reynolds syndrome, alopecia, androgenetic alopecia, benign recurrent intrahepatic cholestasis, cholestasis, cholestasis, intrahepatic, of pregnancy, colorectal cancer, colorectal carcinoma, colorectal neoplasm, digestive system disease, drug-induced liver injury, epilepsy, esophageal squamous cell carcinoma, familial intrahepatic cholestasis, fatty liver disease, functional gastric disease, hereditary hyperbilirubinemia, hyperbilirubinemia, intrahepatic cholestasis, non-alcoholic steatohepatitis, partial epilepsy, partial motor epilepsy, primary biliary cholangitis, pseudopelade of Brocq, rheumatoid arthritis, squamous cell carcinoma, status epilepticus, visual epilepsy
+  Extra (in got, not in expected):   Carbonic anhydrase II deficiency syndrome, Edema, Epilepsy, Glaucoma, Osteopetrosis, Renal tubular acidosis
+
+Q [2c40b12547e3]: Name all diseases that are related to a gene/protein that is associated with drug (1-Benzyl-5-methoxy-2-methyl-1H-indol-3-yl)acetic acid.
+  Expected: ['neurotic disorder', 'endometriosis (disease)', 'arteriolosclerosis', 'dysthymic disorder', 'arteriosclerosis disorder', 'major affective disorder', 'ovarian endometriosis', 'atherosclerosis', 'major depressive disorder', 'ischemia reperfusion injury', 'myocardial ischemia', 'coronary artery disease', 'anxiety disorder', 'endometriosis of uterus', 'bipolar disorder']
+  Got:      ['major depressive disorder', 'generalized anxiety disorder', 'panic disorder', 'social anxiety disorder', 'post-traumatic stress disorder', 'schizophrenia', 'autism spectrum disorder', 'obsessive-compulsive disorder', 'irritable bowel syndrome', 'migraine']
+  Thinking: The drug (1-Benzyl-5-methoxy-2-methyl-1H-indol-3-yl)acetic acid is a serotonin (5-HT) analog/indole-3-acetic acid derivative. The 5-methoxy group on the indole ring is characteristic of serotonin receptor ligands (particularly 5-HT1A and 5-HT2A agonists/antagonists). The associated gene/protein is most likely a serotonin receptor (e.g., HTR1A, HTR2A) or the serotonin transporter (SLC6A4). Diseases linked to these genes include mood and anxiety disorders, schizophrenia, autism, and related conditions.
+  Metrics: exact_match=0.000  precision=0.100  recall=0.067  f1=0.080  jaccard=0.042  overlap=0.100
+  Missing (in expected, not in got): anxiety disorder, arteriolosclerosis, arteriosclerosis disorder, atherosclerosis, bipolar disorder, coronary artery disease, dysthymic disorder, endometriosis (disease), endometriosis of uterus, ischemia reperfusion injury, major affective disorder, myocardial ischemia, neurotic disorder, ovarian endometriosis
+  Extra (in got, not in expected):   autism spectrum disorder, generalized anxiety disorder, irritable bowel syndrome, migraine, obsessive-compulsive disorder, panic disorder, post-traumatic stress disorder, schizophrenia, social anxiety disorder
+
+Q [d54a01e41c3c]: Name all diseases that are related to a gene/protein that is associated with drug (13R,15S)-13-METHYL-16-OXA-8,9,12,22,24-PENTAAZAHEXACYCLO[15.6.2.16,9.1,12,15.0,2,7.0,21,25]HEPTACOSA-1(24),2,4,6,17(25),18,20-HEPTAENE-23,26-DIONE.
+  Expected: ["obsolete Hodgkin's granuloma", 'diffuse large B-cell lymphoma of the central nervous system', 'diffuse large B-cell lymphoma', 'glioma susceptibility', 'squamous cell carcinoma', 'ALK-positive large B-cell lymphoma', 'classic Hodgkin lymphoma, lymphocyte-rich type', "Hodgkin's paragranuloma", 'Hodgkins lymphoma', 'classic Hodgkin lymphoma', 'Epstein-Barr virus-positive diffuse large B-cell lymphoma of the elderly', 'melanoma', 'plasmablastic lymphoma', 'intravascular large B-cell lymphoma', 'primary cutaneous diffuse large B-cell lymphoma, Leg type', 'primary central nervous system lymphoma', 'glioblastoma (disease)', 'T-cell/histiocyte rich large B cell lymphoma', 'primary mediastinal large B-cell lymphoma']
+  Got:      ['tuberous sclerosis', 'lymphangioleiomyomatosis', 'renal cell carcinoma', 'breast carcinoma', 'hepatocellular carcinoma', 'glioblastoma', 'rhabdomyosarcoma', 'transplant rejection', 'autoimmune disease', 'psoriasis', 'rheumatoid arthritis', 'systemic lupus erythematosus', 'multiple sclerosis', 'type 1 diabetes mellitus', 'inflammatory bowel disease']
+  Thinking: The question asks me to identify diseases related to a gene/protein associated with a specific drug identified by its IUPAC name: (13R,15S)-13-METHYL-16-OXA-8,9,12,22,24-PENTAAZAHEXACYCLO[15.6.2.16,9.1,12,15.0,2,7.0,21,25]HEPTACOSA-1(24),2,4,6,17(25),18,20-HEPTAENE-23,26-DIONE.
+
+This is an extremely complex IUPAC name describing a 27-carbon polycyclic molecule with 5 nitrogens, 1 ring oxygen, 6 rings, 7 double bonds, and 2 ketone groups. This level of structural complexity is characteristic of certain well-known drugs in biomedical databases.
+
+Given the structural features (pentaaza, hexacyclo, heptacosa, heptaene, dione), this appears to be a complex drug whose target protein/gene is linked to specific diseases in biomedical knowledge graphs.
+
+Based on the structural complexity and the type of molecule described, this is most likely associated with a drug targeting a protein such as mTOR, calcineurin, or a similar well-studied target. The diseases associated with such targets in biomedical databases typically include various cancers, autoimmune conditions, and transplant-related conditions.
+
+I'll provide my best answer listing the diseases most commonly associated with the target gene/protein of this drug in biomedical knowledge graphs.
+  Metrics: exact_match=0.000  precision=0.000  recall=0.000  f1=0.000  jaccard=0.000  overlap=0.000
+  Missing (in expected, not in got): ALK-positive large B-cell lymphoma, Epstein-Barr virus-positive diffuse large B-cell lymphoma of the elderly, Hodgkin's paragranuloma, Hodgkins lymphoma, T-cell/histiocyte rich large B cell lymphoma, classic Hodgkin lymphoma, classic Hodgkin lymphoma, lymphocyte-rich type, diffuse large B-cell lymphoma, diffuse large B-cell lymphoma of the central nervous system, glioblastoma (disease), glioma susceptibility, intravascular large B-cell lymphoma, melanoma, obsolete Hodgkin's granuloma, plasmablastic lymphoma, primary central nervous system lymphoma, primary cutaneous diffuse large B-cell lymphoma, Leg type, primary mediastinal large B-cell lymphoma, squamous cell carcinoma
+  Extra (in got, not in expected):   autoimmune disease, breast carcinoma, glioblastoma, hepatocellular carcinoma, inflammatory bowel disease, lymphangioleiomyomatosis, multiple sclerosis, psoriasis, renal cell carcinoma, rhabdomyosarcoma, rheumatoid arthritis, systemic lupus erythematosus, transplant rejection, tuberous sclerosis, type 1 diabetes mellitus
+
+Q [18bb39716512]: Name all diseases that are related to a gene/protein that is associated with drug (17beta)-17-(cyanomethyl)-2-methoxyestra-1(10),2,4-trien-3-yl sulfamate.
+  Expected: ['liver cancer', 'autism susceptibility 1', 'esophageal squamous cell carcinoma', 'tubular adenocarcinoma', 'gastric carcinoma', 'gastric linitis plastica', 'autism spectrum disorder', 'autism (disease)', 'cribriform carcinoma of breast', 'squamous cell carcinoma of liver and intrahepatic biliary tract', 'hepatocellular carcinoma', 'osteoporosis', 'cribriform carcinoma', 'undifferentiated carcinoma of liver and intrahepatic biliary tract', 'osteopetrosis', 'granular cell carcinoma', 'renal tubular acidosis', 'gastric neoplasm', 'salivary gland basal cell adenocarcinoma', 'pediatric hepatocellular carcinoma', 'adenocarcinoma', 'postmenopausal osteoporosis', 'adenocarcinoma of liver and intrahepatic biliary tract', 'gastric cancer', 'diffuse gastric adenocarcinoma', 'fibrolamellar hepatocellular carcinoma', 'complex regional pain syndrome']
+  Got:      ['breast carcinoma', 'endometrial carcinoma', 'ovarian carcinoma', 'osteoporosis', 'menopausal syndrome', 'hypogonadism', 'Turner syndrome', 'Klinefelter syndrome', 'polycystic ovary syndrome', 'endometriosis', 'uterine leiomyoma', 'prostate neoplasms', 'estrogen receptor positive breast cancer', 'estrogen-dependent breast cancer']
+  Thinking: The drug (17beta)-17-(cyanomethyl)-2-methoxyestra-1(10),2,4-trien-3-yl sulfamate is a synthetic estrogen/estrogen-receptor ligand based on its estra-1(10),2,4-triene core structure. Its primary molecular target is the Estrogen Receptor (ESR1/ESR2). I need to list diseases associated with ESR1 (and ESR2).
+  Metrics: exact_match=0.000  precision=0.071  recall=0.037  f1=0.049  jaccard=0.025  overlap=0.071
+  Missing (in expected, not in got): adenocarcinoma, adenocarcinoma of liver and intrahepatic biliary tract, autism (disease), autism spectrum disorder, autism susceptibility 1, complex regional pain syndrome, cribriform carcinoma, cribriform carcinoma of breast, diffuse gastric adenocarcinoma, esophageal squamous cell carcinoma, fibrolamellar hepatocellular carcinoma, gastric cancer, gastric carcinoma, gastric linitis plastica, gastric neoplasm, granular cell carcinoma, hepatocellular carcinoma, liver cancer, osteopetrosis, pediatric hepatocellular carcinoma, postmenopausal osteoporosis, renal tubular acidosis, salivary gland basal cell adenocarcinoma, squamous cell carcinoma of liver and intrahepatic biliary tract, tubular adenocarcinoma, undifferentiated carcinoma of liver and intrahepatic biliary tract
+  Extra (in got, not in expected):   Klinefelter syndrome, Turner syndrome, breast carcinoma, endometrial carcinoma, endometriosis, estrogen receptor positive breast cancer, estrogen-dependent breast cancer, hypogonadism, menopausal syndrome, ovarian carcinoma, polycystic ovary syndrome, prostate neoplasms, uterine leiomyoma
+
+Q [88fce9293bf4]: Name all diseases that are related to a gene/protein that is associated with drug (1E)-5-(1-piperidin-4-yl-3-pyridin-4-yl-1H-pyrazol-4-yl)-2,3-dihydro-1H-inden-1-one oxime.
+  Expected: ['syringoma', 'familial atypical multiple mole melanoma syndrome', 'astrocytic tumor', 'low-grade astrocytoma', 'mixed glioma', 'malignant non-dysgerminomatous germ cell tumor of ovary', 'hair nevus', 'benign breast phyllodes tumor', 'yolk sac tumor', 'astrocytoma (excluding glioblastoma)', 'bile duct carcinoma', 'hereditary breast carcinoma', 'pituicytoma', 'malignant Sertoli-Leydig cell tumor of ovary', 'exocrine pancreatic carcinoma', 'ovarian carcinosarcoma', 'lung adenocarcinoma', 'type 2 diabetes mellitus', 'familial ovarian cancer', 'thyroid adenoma (disease)', 'prostate cancer', 'colorectal cancer', 'childhood cerebral astrocytoma', 'embryonal carcinoma of the central nervous system', 'undifferentiated carcinoma of liver and intrahepatic biliary tract', 'anaplastic ependymoma', 'breast neoplasm', 'Sezary syndrome', 'gastric neoplasm', 'ovarian neoplasm', 'thyroid tumor', 'ovarian endometrioid adenocarcinoma', 'malignant dysgerminomatous germ cell tumor of ovary', 'juvenile pilocytic astrocytoma', 'brain cancer', 'colorectal carcinoma', 'gonadoblastoma', 'adenocarcinoma of liver and intrahepatic biliary tract', 'skin papilloma', 'Noonan syndrome', 'ovarian small cell carcinoma', 'liver cancer', 'thyroid cancer', 'lung neoplasm', 'papillary renal cell carcinoma', 'Richter syndrome', 'familial papillary thyroid carcinoma with renal papillary neoplasia', 'familial prostate carcinoma', 'hereditary breast ovarian cancer syndrome', 'maligant granulosa cell tumor of ovary', 'borderline epithelial tumor of ovary', 'ovarian adenocarcinoma', 'astroblastoma', 'diffuse astrocytoma', 'oligodendroglial tumor', 'ovarian cancer', 'thyroid gland undifferentiated (anaplastic) carcinoma', 'syringocystadenoma papilliferum', 'medullary thyroid gland carcinoma', 'familial papillary or follicular thyroid carcinoma', 'craniopharyngioma', 'squamous cell carcinoma of liver and intrahepatic biliary tract', 'hepatocellular carcinoma', 'lymphoma', 'ovarian gynandroblastoma', 'Costello syndrome', 'ovarian clear cell adenocarcinoma', 'skin tag', 'Prader-Willi syndrome', 'breast adenocarcinoma', 'cardiofaciocutaneous syndrome', 'undifferentiated carcinoma of the corpus uteri', 'subependymal giant cell astrocytoma', 'peripheral primitive neuroectodermal tumor', 'anaplastic astrocytoma', 'benign neoplasm of stomach', 'hereditary site-specific ovarian cancer syndrome', 'nongerminomatous germ cell tumor', 'bronchogenic carcinoma', 'fibrillary astrocytoma', 'hidradenoma', 'testicular germ cell tumor', 'gemistocytic astrocytoma', 'diffuse gastric adenocarcinoma', 'adrenal cortex carcinoma', 'colorectal neoplasm', 'malignant colon neoplasm', 'cutaneous fibrous histiocytoma', 'hand-Schuller-Christian disease', 'bile duct adenocarcinoma', 'thyroid cancer, nonmedullary', 'neuroepithelial neoplasm', 'embryonal carcinoma', 'anaplastic oligoastrocytoma', 'glioma susceptibility', 'oligoastrocytoma', 'melanoma, cutaneous malignant, susceptibility to', 'protoplasmic astrocytoma', 'malignant germ cell tumor of ovary', 'prostate carcinoma', 'stomach carcinoma in situ', 'non-Hodgkin lymphoma', 'hairy cell leukemia', 'colorectal adenocarcinoma', 'adamantinous craniopharyngioma', 'gliosarcoma', 'prostate adenocarcinoma', 'familial pancreatic carcinoma', 'kidney cancer', 'chronic myelogenous leukemia, BCR-ABL1 positive', 'melanoma', 'brain astrocytoma', 'mantle cell lymphoma', 'squamous cell carcinoma of colon', 'breast cancer', 'ameloblastoma', 'angiocentric glioma', 'lung carcinoma', 'diabetes mellitus (disease)', 'malignant glioma', 'LEOPARD syndrome', 'glioma', 'primary cutaneous T-cell lymphoma', 'ovarian mucinous adenocarcinoma', 'kidney neoplasm', 'immature ovarian teratoma', 'pleomorphic xanthoastrocytoma', 'breast carcinoma', 'squamous cell carcinoma of the corpus uteri', 'colon carcinoma', 'Noonan syndrome with multiple lentigines', 'Noonan syndrome-like disorder with loose anagen hair', 'gastric carcinoma', 'papillary adenocarcinoma', 'lung cancer', 'leukemia (disease)', 'childhood astrocytic tumor', 'gastric linitis plastica', 'ependymoblastoma', 'malignant sex cord stromal tumor of ovary', 'lymphosarcoma', 'primary cutaneous T-cell non-Hodgkin lymphoma', 'anaplastic oligodendroglioma', 'granulomatous slack skin disease', 'familial thyroid carcinoma', 'Langerhans cell histiocytosis', 'pilomyxoid astrocytoma', 'B-cell neoplasm', 'giant cell glioblastoma', 'melanocytic nevus', 'childhood brain stem glioma', 'follicular thyroid adenoma', 'non-small cell lung carcinoma (disease)', 'cholangiocarcinoma', 'colonic neoplasm', 'papillary craniopharyngioma', 'lymphoma, non-Hodgkin, familial', 'hairy cell leukemia variant', 'plasma cell myeloma', 'acute lymphoblastic/lymphocytic leukemia', 'differentiated thyroid carcinoma', 'pediatric hepatocellular carcinoma', 'theca steroid-producing cell malignant tumor of ovary, not further specified', 'glioblastoma (disease)', 'primary non-gestational choriocarcinoma of ovary', 'Erdheim-Chester disease', 'gastric cancer', 'chordoid glioma of the third ventricle', 'fibrolamellar hepatocellular carcinoma', 'thyroid gland carcinoma', 'bronchus cancer']
+  Got:      ['prostate cancer', 'androgen insensitivity syndrome, complete', 'androgen insensitivity syndrome, partial', 'benign prostatic hyperplasia', 'polycystic ovary syndrome', 'hirsutism', 'virilization']
+  Thinking: The drug (1E)-5-(1-piperidin-4-yl-3-pyridin-4-yl-1H-pyrazol-4-yl)-2,3-dihydro-1H-inden-1-one oxime is a compound whose structure (indanone-oxime core with pyrazole, piperidine, and pyridine substituents) is associated with the androgen receptor (AR) as its target gene/protein. Diseases related to the androgen receptor include prostate cancer, androgen insensitivity syndromes, benign prostatic hyperplasia, and other androgen-related conditions.
+  Metrics: exact_match=0.000  precision=0.143  recall=0.006  f1=0.011  jaccard=0.006  overlap=0.143
+  Missing (in expected, not in got): B-cell neoplasm, Costello syndrome, Erdheim-Chester disease, LEOPARD syndrome, Langerhans cell histiocytosis, Noonan syndrome, Noonan syndrome with multiple lentigines, Noonan syndrome-like disorder with loose anagen hair, Prader-Willi syndrome, Richter syndrome, Sezary syndrome, acute lymphoblastic/lymphocytic leukemia, adamantinous craniopharyngioma, adenocarcinoma of liver and intrahepatic biliary tract, adrenal cortex carcinoma, ameloblastoma, anaplastic astrocytoma, anaplastic ependymoma, anaplastic oligoastrocytoma, anaplastic oligodendroglioma, angiocentric glioma, astroblastoma, astrocytic tumor, astrocytoma (excluding glioblastoma), benign breast phyllodes tumor, benign neoplasm of stomach, bile duct adenocarcinoma, bile duct carcinoma, borderline epithelial tumor of ovary, brain astrocytoma, brain cancer, breast adenocarcinoma, breast cancer, breast carcinoma, breast neoplasm, bronchogenic carcinoma, bronchus cancer, cardiofaciocutaneous syndrome, childhood astrocytic tumor, childhood brain stem glioma, childhood cerebral astrocytoma, cholangiocarcinoma, chordoid glioma of the third ventricle, chronic myelogenous leukemia, BCR-ABL1 positive, colon carcinoma, colonic neoplasm, colorectal adenocarcinoma, colorectal cancer, colorectal carcinoma, colorectal neoplasm, craniopharyngioma, cutaneous fibrous histiocytoma, diabetes mellitus (disease), differentiated thyroid carcinoma, diffuse astrocytoma, diffuse gastric adenocarcinoma, embryonal carcinoma, embryonal carcinoma of the central nervous system, ependymoblastoma, exocrine pancreatic carcinoma, familial atypical multiple mole melanoma syndrome, familial ovarian cancer, familial pancreatic carcinoma, familial papillary or follicular thyroid carcinoma, familial papillary thyroid carcinoma with renal papillary neoplasia, familial prostate carcinoma, familial thyroid carcinoma, fibrillary astrocytoma, fibrolamellar hepatocellular carcinoma, follicular thyroid adenoma, gastric cancer, gastric carcinoma, gastric linitis plastica, gastric neoplasm, gemistocytic astrocytoma, giant cell glioblastoma, glioblastoma (disease), glioma, glioma susceptibility, gliosarcoma, gonadoblastoma, granulomatous slack skin disease, hair nevus, hairy cell leukemia, hairy cell leukemia variant, hand-Schuller-Christian disease, hepatocellular carcinoma, hereditary breast carcinoma, hereditary breast ovarian cancer syndrome, hereditary site-specific ovarian cancer syndrome, hidradenoma, immature ovarian teratoma, juvenile pilocytic astrocytoma, kidney cancer, kidney neoplasm, leukemia (disease), liver cancer, low-grade astrocytoma, lung adenocarcinoma, lung cancer, lung carcinoma, lung neoplasm, lymphoma, lymphoma, non-Hodgkin, familial, lymphosarcoma, maligant granulosa cell tumor of ovary, malignant Sertoli-Leydig cell tumor of ovary, malignant colon neoplasm, malignant dysgerminomatous germ cell tumor of ovary, malignant germ cell tumor of ovary, malignant glioma, malignant non-dysgerminomatous germ cell tumor of ovary, malignant sex cord stromal tumor of ovary, mantle cell lymphoma, medullary thyroid gland carcinoma, melanocytic nevus, melanoma, melanoma, cutaneous malignant, susceptibility to, mixed glioma, neuroepithelial neoplasm, non-Hodgkin lymphoma, non-small cell lung carcinoma (disease), nongerminomatous germ cell tumor, oligoastrocytoma, oligodendroglial tumor, ovarian adenocarcinoma, ovarian cancer, ovarian carcinosarcoma, ovarian clear cell adenocarcinoma, ovarian endometrioid adenocarcinoma, ovarian gynandroblastoma, ovarian mucinous adenocarcinoma, ovarian neoplasm, ovarian small cell carcinoma, papillary adenocarcinoma, papillary craniopharyngioma, papillary renal cell carcinoma, pediatric hepatocellular carcinoma, peripheral primitive neuroectodermal tumor, pilomyxoid astrocytoma, pituicytoma, plasma cell myeloma, pleomorphic xanthoastrocytoma, primary cutaneous T-cell lymphoma, primary cutaneous T-cell non-Hodgkin lymphoma, primary non-gestational choriocarcinoma of ovary, prostate adenocarcinoma, prostate carcinoma, protoplasmic astrocytoma, skin papilloma, skin tag, squamous cell carcinoma of colon, squamous cell carcinoma of liver and intrahepatic biliary tract, squamous cell carcinoma of the corpus uteri, stomach carcinoma in situ, subependymal giant cell astrocytoma, syringocystadenoma papilliferum, syringoma, testicular germ cell tumor, theca steroid-producing cell malignant tumor of ovary, not further specified, thyroid adenoma (disease), thyroid cancer, thyroid cancer, nonmedullary, thyroid gland carcinoma, thyroid gland undifferentiated (anaplastic) carcinoma, thyroid tumor, type 2 diabetes mellitus, undifferentiated carcinoma of liver and intrahepatic biliary tract, undifferentiated carcinoma of the corpus uteri, yolk sac tumor
+  Extra (in got, not in expected):   androgen insensitivity syndrome, complete, androgen insensitivity syndrome, partial, benign prostatic hyperplasia, hirsutism, polycystic ovary syndrome, virilization
+
+Q [3d92253120f5]: Name all diseases that are related to a gene/protein that is associated with drug (1H-indol-3-yl)-(2-mercapto-ethoxyimino)-acetic acid.
+  Expected: ['benign neoplasm of brain', 'liver cancer', 'autism susceptibility 1', 'lung neoplasm', 'familial prostate carcinoma', 'endogenous depression', 'vaginal rhabdomyosarcoma', 'bipolar disorder', 'lung cancer', 'leukemia (disease)', 'unipolar depression', 'major depressive disorder', 'allergic contact dermatitis', 'embryonal carcinoma', 'anaplastic oligoastrocytoma', 'diffuse astrocytoma', 'oligoastrocytoma', 'autoimmune hepatitis', 'glioma susceptibility', 'protoplasmic astrocytoma', 'oligodendroglial tumor', 'prostate carcinoma', 'ependymoblastoma', 'autism spectrum disorder', 'pituitary gland adenoma', 'autism (disease)', 'macrocytic anemia (disease)', 'acoustic neuroma', 'hypotensive disorder', 'pituicytoma', 'anaplastic oligodendroglioma', 'urinary bladder neoplasm', 'kidney cancer', 'pilomyxoid astrocytoma', 'melanoma', 'hepatocellular carcinoma', 'glomerulonephritis', 'vaginal cancer', 'giant cell glioblastoma', 'angiocentric glioma', 'prostate cancer', 'paranoid schizophrenia', 'neuroepithelial neoplasm', 'meningioma (disease)', 'adult T-cell leukemia/lymphoma', 'amnestic disorder', 'embryonal carcinoma of the central nervous system', 'urinary bladder small cell neuroendocrine carcinoma', 'urinary bladder cancer', 'leukopenia', 'anaplastic astrocytoma', 'peripheral primitive neuroectodermal tumor', 'anaplastic ependymoma', 'anemia (disease)', 'vaginal carcinoma', 'primary brain neoplasm', 'anxiety disorder', 'nephritis', 'urinary bladder carcinoma', 'fibrillary astrocytoma', 'dissociative amnesia', 'schizophrenia', 'amebiasis', 'HIV infectious disease', 'astroblastoma', 'juvenile pilocytic astrocytoma', 'glioblastoma (disease)', 'brain cancer', 'kidney neoplasm', 'T-cell leukemia', 'non-papillary transitional cell carcinoma of the bladder', 'gemistocytic astrocytoma', 'pleomorphic xanthoastrocytoma', 'delusional disorder', 'chordoid glioma of the third ventricle', 'vaginal germ cell malignant tumor']
+  Got:      ['major depressive disorder', 'schizophrenia', 'autism spectrum disorder', "Parkinson's disease", 'tryptophan metabolism disorders', 'pellagra', 'anxiety disorder', 'attention deficit hyperactivity disorder', 'bipolar disorder', 'obsessive-compulsive disorder']
+  Thinking: The compound (1H-indol-3-yl)-(2-mercapto-ethoxyimino)-acetic acid contains an indole ring (characteristic of tryptophan/serotonin), an acetic acid side chain, and an oxime ether with a thiol group. This structure is consistent with a tryptophan/serotonin analog or probe compound. The most likely gene/protein targets in a drug database would be enzymes involved in tryptophan/serotonin metabolism, such as tryptophan 2,3-dioxygenase (TDO), indoleamine 2,3-dioxygenase (IDO1), tryptophan hydroxylase (TPH1/TPH2), or monoamine oxidase (MAOA/MAOB). I will list diseases associated with these genes/proteins.
+  Metrics: exact_match=0.000  precision=0.500  recall=0.066  f1=0.116  jaccard=0.062  overlap=0.500
+  Missing (in expected, not in got): HIV infectious disease, T-cell leukemia, acoustic neuroma, adult T-cell leukemia/lymphoma, allergic contact dermatitis, amebiasis, amnestic disorder, anaplastic astrocytoma, anaplastic ependymoma, anaplastic oligoastrocytoma, anaplastic oligodendroglioma, anemia (disease), angiocentric glioma, astroblastoma, autism (disease), autism susceptibility 1, autoimmune hepatitis, benign neoplasm of brain, brain cancer, chordoid glioma of the third ventricle, delusional disorder, diffuse astrocytoma, dissociative amnesia, embryonal carcinoma, embryonal carcinoma of the central nervous system, endogenous depression, ependymoblastoma, familial prostate carcinoma, fibrillary astrocytoma, gemistocytic astrocytoma, giant cell glioblastoma, glioblastoma (disease), glioma susceptibility, glomerulonephritis, hepatocellular carcinoma, hypotensive disorder, juvenile pilocytic astrocytoma, kidney cancer, kidney neoplasm, leukemia (disease), leukopenia, liver cancer, lung cancer, lung neoplasm, macrocytic anemia (disease), melanoma, meningioma (disease), nephritis, neuroepithelial neoplasm, non-papillary transitional cell carcinoma of the bladder, oligoastrocytoma, oligodendroglial tumor, paranoid schizophrenia, peripheral primitive neuroectodermal tumor, pilomyxoid astrocytoma, pituicytoma, pituitary gland adenoma, pleomorphic xanthoastrocytoma, primary brain neoplasm, prostate cancer, prostate carcinoma, protoplasmic astrocytoma, unipolar depression, urinary bladder cancer, urinary bladder carcinoma, urinary bladder neoplasm, urinary bladder small cell neuroendocrine carcinoma, vaginal cancer, vaginal carcinoma, vaginal germ cell malignant tumor, vaginal rhabdomyosarcoma
+  Extra (in got, not in expected):   Parkinson's disease, attention deficit hyperactivity disorder, obsessive-compulsive disorder, pellagra, tryptophan metabolism disorders
+
+Q [140272003979]: Name all diseases that are related to a gene/protein that is associated with drug (1R)-1-{[(4'-methoxy-1,1'-biphenyl-4-yl)sulfonyl]amino}-2-methylpropylphosphonic acid.
+  Expected: ['contact dermatitis', 'endogenous depression', 'melanoma', 'unipolar depression', 'major depressive disorder', 'anxiety disorder', 'occupational dermatitis']
+  Got:      ['breast cancer', 'prostate cancer', 'lung cancer', 'colorectal cancer', 'hepatocellular carcinoma', 'ovarian cancer', 'pancreatic cancer']
+  Thinking: The drug (1R)-1-{[(4'-methoxy-1,1'-biphenyl-4-yl)sulfonyl]amino}-2-methylpropylphosphonic acid is a phosphonate-based compound. Based on its structure (a phosphonic acid with an arylsulfonamide pharmacophore), this compound is associated with the target protein FASN (fatty acid synthase, EC 2.3.1.85). FASN is a key enzyme in de novo fatty acid synthesis and is overexpressed in many cancers. The diseases associated with FASN include various malignancies where fatty acid synthesis is upregulated.
+  Metrics: exact_match=0.000  precision=0.000  recall=0.000  f1=0.000  jaccard=0.000  overlap=0.000
+  Missing (in expected, not in got): anxiety disorder, contact dermatitis, endogenous depression, major depressive disorder, melanoma, occupational dermatitis, unipolar depression
+  Extra (in got, not in expected):   breast cancer, colorectal cancer, hepatocellular carcinoma, lung cancer, ovarian cancer, pancreatic cancer, prostate cancer
+
+
+==== Overall Summary (record-weighted) ====
+
+Type: open_ended_list | Mode: vanilla | Model: qwen3.8:27b-q8_0
+  Total: 7633  |  Correct: 12  |  Accuracy: 0.002 [95% CI 0.001-0.003]
+  Avg set metrics: exact_match=0.002  precision=0.065  recall=0.078  f1=0.050  jaccard=0.031  overlap=0.105
+  - latency ms: mean=218500 p50=144546 p95=499752 (n=7633)
+  - tokens: avg in=167 out=2266 | total in=1137908 out=15429635
+  - records with error: 0.108 (n=7633)

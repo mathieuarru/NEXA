@@ -1,0 +1,402 @@
+[
+  {
+    "question": "True or False Question: Penbutolol binds to the gene HTR1B",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: Lysine binds to the gene SLC22A4",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: Loratadine increases the gene expression of HMOX1",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: Entecavir increases the gene expression of RRS1",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: Oxymetazoline increases the gene expression of CPVL",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: Cyclizine decreases the gene expression of UBQLN2",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: Haloperidol treats Alzheimer's Disease",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: Naltrexone affects Alzheimer's Disease",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: BHMT binds to the drug Methionine",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: PMVK is subject to reduced expression by the drug Digoxin",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: SRSF2 is a gene which participates in the biological process nuclear export",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: DRAXIN is a gene which participates in the biological process negative regulation of cell morphogenesis involved in differentiation",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: SH3GL2 is a gene in the pathway Membrane Trafficking",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: CCL5 is a gene in the pathway Human cytomegalovirus infection",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: ZFAND6 is a gene which interacts with the gene TRAF5",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: UBE2O is a gene which interacts with the gene GRK5",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: CCL8 is a gene which interacts with the gene CCL2",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: COPRS performs the molecular function histone binding",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: DYRK3 performs the molecular function phosphotransferase activity, alcohol group as acceptor",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: KLHL42 performs the molecular function ubiquitin-like protein transferase activity",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: GAPDHS is a gene associated with the disease Alzheimer Disease, Early Onset",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: UBXN10 is over-expressed in trachea",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: ERGIC1 is over-expressed in trachea",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: ZBTB7B is under-expressed in blood",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: MELTF is under-expressed in blood",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: Alzheimer's Disease presents the symptom Apraxia, Ideomotor",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: positive regulation of T cell activation via T cell receptor contact with antigen bound to MHC molecule on antigen presenting cell involves the gene LGALS9",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: bone marrow over-expresses the gene PTPN22",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: mammalian vulva over-expresses the gene SBSN",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: cardiac atrium over-expresses the gene PHACTR2",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: myometrium under-expresses the gene PLCZ1",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: Urinary Incontinence, Urge is a symptom of Alzheimer's Disease",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: Cerebellar Ataxia is a symptom of Familial Alzheimer Disease (FAD)",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: Pefloxacin increases the gene expression of PDS5A",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: Oxymetazoline decreases the gene expression of PDS5A",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: Spaglumic acid decreases the gene expression of SEL1L",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: Ropinirole treats Alzheimer disease, familial, type 3",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: CHDH binds to the drug Botulinum toxin type A",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: SLC12A4 binds to the drug Streptokinase",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: CNIH4 is subject to increased expression by the drug Rituximab",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: ARNT2 is subject to reduced expression by the drug Trastuzumab",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: SHOC2 is subject to reduced expression by the drug Muromonab",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: ATP6V1B1 is a gene which participates in the biological process negative regulation of protein complex assembly",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: PPCS is a gene which participates in the biological process negative regulation of protein complex assembly",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: RO60 performs the molecular function carbon-oxygen lyase activity",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: SRPK2 is a gene associated with the cellular component endosome membrane",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: ESR1 is a gene associated with the disease Alzheimer Disease 12",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: B3GNT8 is under-expressed in tendon",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: TNFRSF25 is under-expressed in lymph node",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: Cytochrome P450 2C9 Inhibitors includes the drug Digoxin Immune Fab (Ovine)",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: Chemokine Co-receptor 5 Antagonists includes the drug Hyaluronidase (ovine)",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: Alzheimer Disease, Familial, 3, with Spastic Paraparesis and Apraxia is associated with the gene SEL1L",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: Displacement of DNA glycosylase by APEX1 contains the gene NR2F6",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: Rac guanyl-nucleotide exchange factor activity is attributed to CAD",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: CST complex is linked to the gene FASN",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: high-density lipoprotein particle is linked to the gene SEL1L",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: heart under-expresses the gene NR2F6",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: Confusion is a symptom of Familial Alzheimer-like prion disease",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: Supranuclear Palsy, Progressive is a symptom of Alzheimer disease, familial, type 3",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: Maprotiline does not increase the gene expression of SEL1L",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: Cefalotin does not decrease the gene expression of RMI1",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: Budesonide does not belong to the drug class GABA B Agonists",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: Chlorpropamide does not belong to the drug class Dyes",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: Quetiapine does not treat Alzheimer disease, familial, type 3",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: UBE2A is not subject to increased expression by the drug Trastuzumab",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: ZNF786 is not a gene which interacts with the gene PDS5A",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: IVL does not perform the molecular function protein kinase activity",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: PPAR alpha does not include the drug Hyaluronidase (ovine)",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: Alzheimer's Disease is not be treated by the drug Muromonab",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: regulation of lipid transport by positive regulation of transcription from RNA polymerase II promoter does not involve the gene PDS5A",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: endothelial cell migration does not involve the gene DNAJC10",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: negative regulation of cell adhesion involved in substrate-bound cell migration does not involve the gene NR2F6",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: voltage-gated potassium channel activity is not attributed to the gene CAD",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: cortex of kidney does not over-express the gene NR2F6",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: adrenal cortex does not under-express the gene NR2F6",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: Cerebellar Ataxia is not a symptom of Prodromal Alzheimer's disease",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: Isoetharine does not bind to the gene ADRB2",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: Pralidoxime does not increase the gene expression of APOA2",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: Ziprasidone does not affect Alzheimer's Disease",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: PGR does not bind to the drug Megestrol acetate",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: CARTPT does not bind to the drug Amphetamine",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: GALE does not bind to the drug Haloprogin",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: RNF187 is not subject to decreased expression by the drug Omacetaxine mepesuccinate",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: BCAS2 is not a gene in the pathway Spliceosome - Homo sapiens (human)",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: ZNF343 is not a gene in the pathway Gene Expression",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: SENP1 is not a gene in the pathway Metabolism of proteins",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: ACHE is not a gene associated with the disease Alzheimer's Disease",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: GVQW3 is not over-expressed in adrenal gland",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: PSMD5 is not under-expressed in blood",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: Organic Anion Transporting Polypeptide 1B1 Inhibitors does not include the drug Dabrafenib",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: Increased Platelet Production does not include the drug Eltrombopag",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: Estradiol does not include the drug Estramustine",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: Alzheimer Disease 9 is not associated with the gene ABCA7",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: peptidyl-glutamic acid carboxylation does not involve the gene VKORC1L1",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: ErbB1 downstream signaling does not contain the gene MAPK3",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: nuclear heterochromatin is not linked to the gene ZFP57",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: cardiac ventricle does not over-express the gene APOBEC3G",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: blood does not under-express the gene MAMLD1",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: mammalian vulva does not under-express the gene NOSTRIN",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: cerebellar nuclear complex is not a site of localization of Alzheimer's Disease",
+    "answer": "False"
+  }
+]

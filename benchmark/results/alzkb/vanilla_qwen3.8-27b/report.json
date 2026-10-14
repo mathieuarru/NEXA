@@ -1,0 +1,418 @@
+{
+  "generated_at": "2026-10-13T23:23:45.392796",
+  "files": [
+    "benchmark/results/alzkb/vanilla_qwen3.8-27b/baseline_vanilla_qwen3.8_27b-q8_0_20260921_115147.jsonl",
+    "benchmark/results/alzkb/vanilla_qwen3.8-27b/baseline_vanilla_qwen3.8_27b-q8_0__atleastone_20260929_105838.jsonl"
+  ],
+  "groups": [
+    {
+      "type": "mcq",
+      "agent_mode": "vanilla",
+      "model": "qwen3.8:27b-q8_0",
+      "file": "MCQ_1hop.json__vanilla",
+      "count": 498,
+      "correct": 300,
+      "accuracy": 0.6024096385542169,
+      "accuracy_ci95": [
+        0.5587995065049535,
+        0.644451877995654
+      ],
+      "telemetry": {
+        "latency_ms": {
+          "mean": 61549.590361445786,
+          "p50": 59623.0,
+          "p95": 100635.75,
+          "n": 498
+        },
+        "tokens": {
+          "avg_input": 112.04627766599597,
+          "avg_output": 758.4386317907445,
+          "total_input": 55687.0,
+          "total_output": 376944.0,
+          "n": 497
+        },
+        "error_rate": {
+          "value": 0.002008032128514056,
+          "n": 498
+        }
+      }
+    },
+    {
+      "type": "mcq",
+      "agent_mode": "vanilla",
+      "model": "qwen3.8:27b-q8_0",
+      "file": "MCQ_2hop.json__vanilla",
+      "count": 419,
+      "correct": 270,
+      "accuracy": 0.6443914081145584,
+      "accuracy_ci95": [
+        0.5974330679635093,
+        0.6887260989680318
+      ],
+      "telemetry": {
+        "latency_ms": {
+          "mean": 62983.90214797136,
+          "p50": 59445.0,
+          "p95": 98176.3,
+          "n": 419
+        },
+        "tokens": {
+          "avg_input": 127.18854415274463,
+          "avg_output": 775.4677804295943,
+          "total_input": 53292.0,
+          "total_output": 324921.0,
+          "n": 419
+        },
+        "error_rate": {
+          "value": 0.0,
+          "n": 419
+        }
+      }
+    },
+    {
+      "type": "open_ended",
+      "agent_mode": "vanilla",
+      "model": "qwen3.8:27b-q8_0",
+      "file": "OpenEnded_1hop.json__vanilla",
+      "count": 508,
+      "correct": 9,
+      "accuracy": 0.017716535433070866,
+      "accuracy_ci95": [
+        0.009348071180968788,
+        0.03332450564748751
+      ],
+      "avg_metrics": {
+        "exact_match": 0.017716535433070866,
+        "precision": 0.12609079851957722,
+        "recall": 0.1397571149431211,
+        "f1": 0.09425877194278197,
+        "jaccard": 0.06618208365104622,
+        "overlap": 0.190373189026648
+      },
+      "by_expected_size": {
+        "1": {
+          "count": 124,
+          "accuracy": 0.04838709677419355,
+          "f1": 0.10071761482434823
+        },
+        "2-5": {
+          "count": 145,
+          "accuracy": 0.020689655172413793,
+          "f1": 0.12049545781290204
+        },
+        "6-20": {
+          "count": 127,
+          "accuracy": 0.0,
+          "f1": 0.0791938177932827
+        },
+        ">20": {
+          "count": 112,
+          "accuracy": 0.0,
+          "f1": 0.07022335416157469
+        }
+      },
+      "telemetry": {
+        "latency_ms": {
+          "mean": 130228.79527559056,
+          "p50": 71085.0,
+          "p95": 290013.3,
+          "n": 508
+        },
+        "tokens": {
+          "avg_input": 67.94181034482759,
+          "avg_output": 1207.926724137931,
+          "total_input": 31525.0,
+          "total_output": 560478.0,
+          "n": 464
+        },
+        "error_rate": {
+          "value": 0.08661417322834646,
+          "n": 508
+        }
+      }
+    },
+    {
+      "type": "open_ended",
+      "agent_mode": "vanilla",
+      "model": "qwen3.8:27b-q8_0",
+      "file": "OpenEnded_2hop.json__vanilla",
+      "count": 450,
+      "correct": 3,
+      "accuracy": 0.006666666666666667,
+      "accuracy_ci95": [
+        0.0022697646116495405,
+        0.019415334330360183
+      ],
+      "avg_metrics": {
+        "exact_match": 0.006666666666666667,
+        "precision": 0.1549278230807678,
+        "recall": 0.10280911913320079,
+        "f1": 0.08838587723851883,
+        "jaccard": 0.057812891032597916,
+        "overlap": 0.18958537115280194
+      },
+      "by_expected_size": {
+        "1": {
+          "count": 69,
+          "accuracy": 0.028985507246376812,
+          "f1": 0.10505919201571376
+        },
+        "2-5": {
+          "count": 104,
+          "accuracy": 0.009615384615384616,
+          "f1": 0.08949551404510918
+        },
+        "6-20": {
+          "count": 121,
+          "accuracy": 0.0,
+          "f1": 0.11055572751097661
+        },
+        ">20": {
+          "count": 156,
+          "accuracy": 0.0,
+          "f1": 0.06307553858160062
+        }
+      },
+      "telemetry": {
+        "latency_ms": {
+          "mean": 161547.7511111111,
+          "p50": 91380.5,
+          "p95": 391902.49999999977,
+          "n": 450
+        },
+        "tokens": {
+          "avg_input": 73.9710843373494,
+          "avg_output": 1570.7277108433734,
+          "total_input": 30698.0,
+          "total_output": 651852.0,
+          "n": 415
+        },
+        "error_rate": {
+          "value": 0.07777777777777778,
+          "n": 450
+        }
+      }
+    },
+    {
+      "type": "tf",
+      "agent_mode": "vanilla",
+      "model": "qwen3.8:27b-q8_0",
+      "file": "True_or_False_1hop.json__vanilla",
+      "count": 560,
+      "correct": 376,
+      "accuracy": 0.6714285714285714,
+      "accuracy_ci95": [
+        0.6314733049063027,
+        0.7090478627407809
+      ],
+      "telemetry": {
+        "latency_ms": {
+          "mean": 44224.71785714286,
+          "p50": 43706.0,
+          "p95": 66395.79999999997,
+          "n": 560
+        },
+        "tokens": {
+          "avg_input": 63.82289803220036,
+          "avg_output": 540.5313059033989,
+          "total_input": 35677.0,
+          "total_output": 302157.0,
+          "n": 559
+        },
+        "error_rate": {
+          "value": 0.0017857142857142857,
+          "n": 560
+        }
+      }
+    },
+    {
+      "type": "tf",
+      "agent_mode": "vanilla",
+      "model": "qwen3.8:27b-q8_0",
+      "file": "True_or_False_2hop.json__vanilla",
+      "count": 540,
+      "correct": 325,
+      "accuracy": 0.6018518518518519,
+      "accuracy_ci95": [
+        0.5599839458223962,
+        0.6422808312744644
+      ],
+      "telemetry": {
+        "latency_ms": {
+          "mean": 50765.835185185184,
+          "p50": 46973.5,
+          "p95": 81404.2,
+          "n": 540
+        },
+        "tokens": {
+          "avg_input": 71.93703703703704,
+          "avg_output": 622.5092592592592,
+          "total_input": 38846.0,
+          "total_output": 336155.0,
+          "n": 540
+        },
+        "error_rate": {
+          "value": 0.0,
+          "n": 540
+        }
+      }
+    },
+    {
+      "type": "tf",
+      "agent_mode": "vanilla",
+      "model": "qwen3.8:27b-q8_0",
+      "file": "True_or_False_2hop_atleastone.json__vanilla",
+      "count": 540,
+      "correct": 327,
+      "accuracy": 0.6055555555555555,
+      "accuracy_ci95": [
+        0.5637270087583093,
+        0.6458928511420734
+      ],
+      "telemetry": {
+        "latency_ms": {
+          "mean": 55447.51296296297,
+          "p50": 52445.5,
+          "p95": 89618.9,
+          "n": 540
+        },
+        "tokens": {
+          "avg_input": 73.93703703703704,
+          "avg_output": 680.9740740740741,
+          "total_input": 39926.0,
+          "total_output": 367726.0,
+          "n": 540
+        },
+        "error_rate": {
+          "value": 0.0,
+          "n": 540
+        }
+      }
+    }
+  ],
+  "overall": [
+    {
+      "type": "mcq",
+      "agent_mode": "vanilla",
+      "model": "qwen3.8:27b-q8_0",
+      "count": 917,
+      "correct": 570,
+      "accuracy": 0.6215921483097055,
+      "accuracy_ci95": [
+        0.58975539264713,
+        0.6524143790052368
+      ],
+      "telemetry": {
+        "latency_ms": {
+          "mean": 62204.962922573606,
+          "p50": 59544.0,
+          "p95": 100567.4,
+          "n": 917
+        },
+        "tokens": {
+          "avg_input": 118.97270742358079,
+          "avg_output": 766.2281659388647,
+          "total_input": 108979.0,
+          "total_output": 701865.0,
+          "n": 916
+        },
+        "error_rate": {
+          "value": 0.0010905125408942203,
+          "n": 917
+        }
+      }
+    },
+    {
+      "type": "open_ended",
+      "agent_mode": "vanilla",
+      "model": "qwen3.8:27b-q8_0",
+      "count": 958,
+      "correct": 12,
+      "accuracy": 0.012526096033402923,
+      "accuracy_ci95": [
+        0.007179694030965687,
+        0.021766444293681533
+      ],
+      "avg_metrics": {
+        "exact_match": 0.012526096033402923,
+        "precision": 0.1396363737309924,
+        "recall": 0.12240158455223997,
+        "f1": 0.09150010532804459,
+        "jaccard": 0.06225083450876883,
+        "overlap": 0.19000312843872447
+      },
+      "by_expected_size": {
+        "1": {
+          "count": 193,
+          "accuracy": 0.04145077720207254,
+          "f1": 0.10226978490830793
+        },
+        "2-5": {
+          "count": 249,
+          "accuracy": 0.01606425702811245,
+          "f1": 0.10754769013478775
+        },
+        "6-20": {
+          "count": 248,
+          "accuracy": 0.0,
+          "f1": 0.09449539471199626
+        },
+        ">20": {
+          "count": 268,
+          "accuracy": 0.0,
+          "f1": 0.06606268539114202
+        }
+      },
+      "telemetry": {
+        "latency_ms": {
+          "mean": 144940.2045929019,
+          "p50": 81220.5,
+          "p95": 342331.4999999998,
+          "n": 958
+        },
+        "tokens": {
+          "avg_input": 70.78839590443685,
+          "avg_output": 1379.2150170648465,
+          "total_input": 62223.0,
+          "total_output": 1212330.0,
+          "n": 879
+        },
+        "error_rate": {
+          "value": 0.0824634655532359,
+          "n": 958
+        }
+      }
+    },
+    {
+      "type": "tf",
+      "agent_mode": "vanilla",
+      "model": "qwen3.8:27b-q8_0",
+      "count": 1640,
+      "correct": 1028,
+      "accuracy": 0.6268292682926829,
+      "accuracy_ci95": [
+        0.6031504556914161,
+        0.6499152898159369
+      ],
+      "telemetry": {
+        "latency_ms": {
+          "mean": 50073.810975609755,
+          "p50": 47304.0,
+          "p95": 81085.9,
+          "n": 1640
+        },
+        "tokens": {
+          "avg_input": 69.82855399633924,
+          "avg_output": 613.8120805369127,
+          "total_input": 114449.0,
+          "total_output": 1006038.0,
+          "n": 1639
+        },
+        "error_rate": {
+          "value": 0.0006097560975609756,
+          "n": 1640
+        }
+      }
+    }
+  ]
+}

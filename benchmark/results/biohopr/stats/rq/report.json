@@ -1,0 +1,458 @@
+{
+  "RQ1": {
+    "key": "RQ1",
+    "title": "With the same backbone, does NEXA outperform GraphCypherQAChain?",
+    "delta": "NEXA − GraphCypherQAChain",
+    "kind": "difference",
+    "rows": [
+      {
+        "a": "nexa-direct_gpt-4o-mini",
+        "b": "graphcypher_gpt-4o-mini",
+        "backbone": "GPT-4o-mini",
+        "label": "Direct",
+        "dataset": "BioHopR_2hop.json",
+        "metric": "jaccard",
+        "status": "ok",
+        "n": 7633,
+        "test": "paired_bootstrap_bca",
+        "partial": [],
+        "set_size": 7633,
+        "score_a": 84.74900436188636,
+        "score_b": 50.355218073437754,
+        "delta": 34.39378628844862,
+        "ci95": [
+          32.98727256194002,
+          35.80374397193922
+        ],
+        "p": 1e-05,
+        "p_floor": 1e-05,
+        "b_only_a": null,
+        "c_only_b": null,
+        "set_label": "BioHopR 2-hop",
+        "p_holm": 0.0002,
+        "significant": true
+      },
+      {
+        "a": "nexa-direct_gpt-5-mini",
+        "b": "graphcypher_gpt-5-mini",
+        "backbone": "GPT-5-mini",
+        "label": "Direct",
+        "dataset": "BioHopR_2hop.json",
+        "metric": "jaccard",
+        "status": "ok",
+        "n": 7633,
+        "test": "paired_bootstrap_bca",
+        "partial": [],
+        "set_size": 7633,
+        "score_a": 97.01408827752716,
+        "score_b": 81.22309517385762,
+        "delta": 15.79099310366956,
+        "ci95": [
+          14.959431268706425,
+          16.64635915768482
+        ],
+        "p": 1e-05,
+        "p_floor": 1e-05,
+        "b_only_a": null,
+        "c_only_b": null,
+        "set_label": "BioHopR 2-hop",
+        "p_holm": 0.0002,
+        "significant": true
+      },
+      {
+        "a": "nexa-flex_gpt-5-mini",
+        "b": "graphcypher_gpt-5-mini",
+        "backbone": "GPT-5-mini",
+        "label": "Flex",
+        "dataset": "BioHopR_2hop.json",
+        "metric": "jaccard",
+        "status": "ok",
+        "n": 7633,
+        "test": "paired_bootstrap_bca",
+        "partial": [],
+        "set_size": 7633,
+        "score_a": 95.18368319855627,
+        "score_b": 81.22309517385762,
+        "delta": 13.960588024698644,
+        "ci95": [
+          13.120341533953175,
+          14.824690131693389
+        ],
+        "p": 1e-05,
+        "p_floor": 1e-05,
+        "b_only_a": null,
+        "c_only_b": null,
+        "set_label": "BioHopR 2-hop",
+        "p_holm": 0.0002,
+        "significant": true
+      },
+      {
+        "a": "nexa-direct_qwen3.8-27b",
+        "b": "graphcypher_qwen3.8-27b",
+        "backbone": "Qwen3.8-27B",
+        "label": "Direct",
+        "dataset": "BioHopR_2hop.json",
+        "metric": "jaccard",
+        "status": "ok",
+        "n": 7633,
+        "test": "paired_bootstrap_bca",
+        "partial": [],
+        "set_size": 7633,
+        "score_a": 83.11740641274703,
+        "score_b": 86.97381643722545,
+        "delta": -3.8564100244784174,
+        "ci95": [
+          -4.80114968003146,
+          -2.9179967182539364
+        ],
+        "p": 1e-05,
+        "p_floor": 1e-05,
+        "b_only_a": null,
+        "c_only_b": null,
+        "set_label": "BioHopR 2-hop",
+        "p_holm": 0.0002,
+        "significant": true
+      },
+      {
+        "a": "nexa-flex_qwen3.8-27b",
+        "b": "graphcypher_qwen3.8-27b",
+        "backbone": "Qwen3.8-27B",
+        "label": "Flex",
+        "dataset": "BioHopR_2hop.json",
+        "metric": "jaccard",
+        "status": "ok",
+        "n": 7633,
+        "test": "paired_bootstrap_bca",
+        "partial": [],
+        "set_size": 7633,
+        "score_a": 95.84306876617684,
+        "score_b": 86.97381643722545,
+        "delta": 8.869252328951397,
+        "ci95": [
+          8.242200419174246,
+          9.52077186940773
+        ],
+        "p": 1e-05,
+        "p_floor": 1e-05,
+        "b_only_a": null,
+        "c_only_b": null,
+        "set_label": "BioHopR 2-hop",
+        "p_holm": 0.0002,
+        "significant": true
+      }
+    ],
+    "family": {
+      "size": 35,
+      "pending": 0,
+      "provisional": false,
+      "members": {
+        "alzkb": 30,
+        "biohopr": 5
+      }
+    }
+  },
+  "RQ1_secondary": {
+    "key": "RQ1_secondary",
+    "title": "Secondary: with the same backbone, does NEXA outperform the LLM alone?",
+    "delta": "NEXA − LLM only",
+    "kind": "difference",
+    "rows": [
+      {
+        "a": "nexa-direct_gpt-4o-mini",
+        "b": "vanilla_gpt-4o-mini",
+        "backbone": "GPT-4o-mini",
+        "label": "Direct",
+        "dataset": "BioHopR_2hop.json",
+        "metric": "jaccard",
+        "status": "ok",
+        "n": 7633,
+        "test": "paired_bootstrap_bca",
+        "partial": [],
+        "set_size": 7633,
+        "score_a": 84.74900436188636,
+        "score_b": 2.4869113300333203,
+        "delta": 82.26209303185303,
+        "ci95": [
+          81.40825981653255,
+          83.08151780756778
+        ],
+        "p": 1e-05,
+        "p_floor": 1e-05,
+        "b_only_a": null,
+        "c_only_b": null,
+        "set_label": "BioHopR 2-hop",
+        "p_holm": 0.00016,
+        "significant": true
+      },
+      {
+        "a": "nexa-direct_gpt-5-mini",
+        "b": "vanilla_gpt-5-mini",
+        "backbone": "GPT-5-mini",
+        "label": "Direct",
+        "dataset": "BioHopR_2hop.json",
+        "metric": "jaccard",
+        "status": "ok",
+        "n": 7633,
+        "test": "paired_bootstrap_bca",
+        "partial": [],
+        "set_size": 7633,
+        "score_a": 97.01408827752716,
+        "score_b": 4.153088717139137,
+        "delta": 92.86099956038804,
+        "ci95": [
+          92.47908538252415,
+          93.21863674757503
+        ],
+        "p": 1e-05,
+        "p_floor": 1e-05,
+        "b_only_a": null,
+        "c_only_b": null,
+        "set_label": "BioHopR 2-hop",
+        "p_holm": 0.00016,
+        "significant": true
+      },
+      {
+        "a": "nexa-flex_gpt-5-mini",
+        "b": "vanilla_gpt-5-mini",
+        "backbone": "GPT-5-mini",
+        "label": "Flex",
+        "dataset": "BioHopR_2hop.json",
+        "metric": "jaccard",
+        "status": "ok",
+        "n": 7633,
+        "test": "paired_bootstrap_bca",
+        "partial": [],
+        "set_size": 7633,
+        "score_a": 95.18368319855627,
+        "score_b": 4.153088717139137,
+        "delta": 91.03059448141713,
+        "ci95": [
+          90.59967500310997,
+          91.43971754676943
+        ],
+        "p": 1e-05,
+        "p_floor": 1e-05,
+        "b_only_a": null,
+        "c_only_b": null,
+        "set_label": "BioHopR 2-hop",
+        "p_holm": 0.00016,
+        "significant": true
+      },
+      {
+        "a": "nexa-direct_qwen3.8-27b",
+        "b": "vanilla_qwen3.8-27b",
+        "backbone": "Qwen3.8-27B",
+        "label": "Direct",
+        "dataset": "BioHopR_2hop.json",
+        "metric": "jaccard",
+        "status": "ok",
+        "n": 7633,
+        "test": "paired_bootstrap_bca",
+        "partial": [],
+        "set_size": 7633,
+        "score_a": 83.11740641274703,
+        "score_b": 3.052538637533664,
+        "delta": 80.06486777521336,
+        "ci95": [
+          79.20437675133913,
+          80.88735746448843
+        ],
+        "p": 1e-05,
+        "p_floor": 1e-05,
+        "b_only_a": null,
+        "c_only_b": null,
+        "set_label": "BioHopR 2-hop",
+        "p_holm": 0.00016,
+        "significant": true
+      },
+      {
+        "a": "nexa-flex_qwen3.8-27b",
+        "b": "vanilla_qwen3.8-27b",
+        "backbone": "Qwen3.8-27B",
+        "label": "Flex",
+        "dataset": "BioHopR_2hop.json",
+        "metric": "jaccard",
+        "status": "ok",
+        "n": 7633,
+        "test": "paired_bootstrap_bca",
+        "partial": [],
+        "set_size": 7633,
+        "score_a": 95.84306876617684,
+        "score_b": 3.052538637533664,
+        "delta": 92.79053012864318,
+        "ci95": [
+          92.37786788902046,
+          93.18138246362051
+        ],
+        "p": 1e-05,
+        "p_floor": 1e-05,
+        "b_only_a": null,
+        "c_only_b": null,
+        "set_label": "BioHopR 2-hop",
+        "p_holm": 0.00016,
+        "significant": true
+      }
+    ],
+    "family": {
+      "size": 35,
+      "pending": 0,
+      "provisional": false,
+      "members": {
+        "alzkb": 30,
+        "biohopr": 5
+      }
+    }
+  },
+  "RQ2": {
+    "key": "RQ2",
+    "title": "With the same backbone, does Flex improve on Direct?",
+    "delta": "Flex − Direct",
+    "kind": "difference",
+    "rows": [
+      {
+        "a": "nexa-flex_gpt-5-mini",
+        "b": "nexa-direct_gpt-5-mini",
+        "backbone": "GPT-5-mini",
+        "label": "Flex − Direct",
+        "dataset": "BioHopR_2hop.json",
+        "metric": "jaccard",
+        "status": "ok",
+        "n": 7633,
+        "test": "paired_bootstrap_bca",
+        "partial": [],
+        "set_size": 7633,
+        "score_a": 95.18368319855627,
+        "score_b": 97.01408827752716,
+        "delta": -1.830405078970914,
+        "ci95": [
+          -2.188480462869733,
+          -1.478579160077659
+        ],
+        "p": 1e-05,
+        "p_floor": 1e-05,
+        "b_only_a": null,
+        "c_only_b": null,
+        "set_label": "BioHopR 2-hop",
+        "p_holm": 0.00011,
+        "significant": true
+      },
+      {
+        "a": "nexa-flex_qwen3.8-27b",
+        "b": "nexa-direct_qwen3.8-27b",
+        "backbone": "Qwen3.8-27B",
+        "label": "Flex − Direct",
+        "dataset": "BioHopR_2hop.json",
+        "metric": "jaccard",
+        "status": "ok",
+        "n": 7633,
+        "test": "paired_bootstrap_bca",
+        "partial": [],
+        "set_size": 7633,
+        "score_a": 95.84306876617684,
+        "score_b": 83.11740641274703,
+        "delta": 12.725662353429817,
+        "ci95": [
+          11.866561486360368,
+          13.625599332098998
+        ],
+        "p": 1e-05,
+        "p_floor": 1e-05,
+        "b_only_a": null,
+        "c_only_b": null,
+        "set_label": "BioHopR 2-hop",
+        "p_holm": 0.00011,
+        "significant": true
+      }
+    ],
+    "family": {
+      "size": 14,
+      "pending": 0,
+      "provisional": false,
+      "members": {
+        "alzkb": 12,
+        "biohopr": 2
+      }
+    }
+  },
+  "RQ3": {
+    "key": "RQ3",
+    "title": "With the same mode, does the local model perform differently from GPT-5-mini?",
+    "delta": "Qwen3.8-27B − GPT-5-mini (same mode)",
+    "kind": "difference",
+    "rows": [
+      {
+        "a": "nexa-direct_qwen3.8-27b",
+        "b": "nexa-direct_gpt-5-mini",
+        "backbone": "Qwen − GPT-5-mini",
+        "label": "Direct",
+        "dataset": "BioHopR_2hop.json",
+        "metric": "jaccard",
+        "status": "ok",
+        "n": 7633,
+        "test": "paired_bootstrap_bca",
+        "partial": [],
+        "set_size": 7633,
+        "score_a": 83.11740641274703,
+        "score_b": 97.01408827752716,
+        "delta": -13.896681864780136,
+        "ci95": [
+          -14.76805699169721,
+          -13.063629653759037
+        ],
+        "p": 1e-05,
+        "p_floor": 1e-05,
+        "b_only_a": null,
+        "c_only_b": null,
+        "set_label": "BioHopR 2-hop",
+        "p_holm": 0.00012000000000000002,
+        "significant": true
+      },
+      {
+        "a": "nexa-flex_qwen3.8-27b",
+        "b": "nexa-flex_gpt-5-mini",
+        "backbone": "Qwen − GPT-5-mini",
+        "label": "Flex",
+        "dataset": "BioHopR_2hop.json",
+        "metric": "jaccard",
+        "status": "ok",
+        "n": 7633,
+        "test": "paired_bootstrap_bca",
+        "partial": [],
+        "set_size": 7633,
+        "score_a": 95.84306876617684,
+        "score_b": 95.18368319855627,
+        "delta": 0.6593855676205912,
+        "ci95": [
+          0.34105926318956614,
+          0.9826131820660796
+        ],
+        "p": 4e-05,
+        "p_floor": 1e-05,
+        "b_only_a": null,
+        "c_only_b": null,
+        "set_label": "BioHopR 2-hop",
+        "p_holm": 0.00044,
+        "significant": true
+      }
+    ],
+    "family": {
+      "size": 14,
+      "pending": 0,
+      "provisional": false,
+      "members": {
+        "alzkb": 12,
+        "biohopr": 2
+      }
+    }
+  },
+  "settings": {
+    "benchmark": "biohopr",
+    "title": "BioHopR / PrimeKG v2.1",
+    "metric_note": "Jaccard index",
+    "n_boot": 100000,
+    "primary_metric": {
+      "BioHopR_2hop.json": "jaccard"
+    },
+    "holm_families": "one per research question, across both benchmarks"
+  }
+}

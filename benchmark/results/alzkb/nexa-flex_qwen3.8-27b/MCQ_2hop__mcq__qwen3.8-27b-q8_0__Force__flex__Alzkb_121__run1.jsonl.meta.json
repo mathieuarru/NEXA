@@ -1,0 +1,35 @@
+{
+  "dataset_file": "MCQ_2hop.json",
+  "model": "qwen3.8:27b-q8_0",
+  "provider": "ollama",
+  "git_commit": "bf1b556",
+  "config": {
+    "agent_mode": "flex",
+    "kg_mode": "Force",
+    "profile_name": "Alzkb 121",
+    "examples_mode": null,
+    "generation_mode": "one_shot_fallback",
+    "recursion_limit": 150,
+    "checkpointer": "memory",
+    "limit": null,
+    "overwrite": false,
+    "retry_errors": false,
+    "retry_all_errors": false,
+    "max_retries": 2,
+    "run_tag": "run1",
+    "out_subdir": "qwen38_full/flex"
+  },
+  "flags": {
+    "NEXA_COMPLETENESS_GUARD": false,
+    "NEXA_NO_LIMIT_PROMPT": false,
+    "NEXA_FLEX_ANSWER_RESCUE": true,
+    "NEXA_PROPERTY_MATCHING": "composite",
+    "NEXA_LLM_MAX_OUTPUT_TOKENS": 8192,
+    "NEXA_LLM_MAX_PROPERTY_TOKENS": 1024
+  },
+  "started_at": "2026-09-15T00:23:47.626226+00:00",
+  "finished_at": "2026-09-15T09:20:26.409271+00:00",
+  "n_questions_in_dataset": 419,
+  "n_run_this_session": 419,
+  "n_correct_this_session": 419
+}

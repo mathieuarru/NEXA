@@ -1,0 +1,52 @@
+============================================================================================================
+BioHopR / PrimeKG v2.1: pre-declared comparisons (primary metric: Jaccard index)
+============================================================================================================
+
+  bootstrap resamples: 100,000
+
+------------------------------------------------------------------------------------------------------------
+RQ1  With the same backbone, does NEXA outperform GraphCypherQAChain?
+     Delta = NEXA − GraphCypherQAChain   (percentage points)
+     Holm family: 35 comparisons across both benchmarks (30 AlzKB + 5 BioHopR)
+------------------------------------------------------------------------------------------------------------
+  set                        backbone     contrast        n      A      B   Delta            95% CI      b/c         p    p Holm
+  BioHopR 2-hop              GPT-4o-mini  Direct Jac 7633   84.7   50.4   +34.4 [ +33.0, +35.8]        —    <1e-05    <2e-04  *
+  BioHopR 2-hop              GPT-5-mini   Direct Jac 7633   97.0   81.2   +15.8 [ +15.0, +16.6]        —    <1e-05    <2e-04  *
+  BioHopR 2-hop              GPT-5-mini   Flex   Jac 7633   95.2   81.2   +14.0 [ +13.1, +14.8]        —    <1e-05    <2e-04  *
+  BioHopR 2-hop              Qwen3.8-27B  Direct Jac 7633   83.1   87.0    -3.9 [  -4.8,  -2.9]        —    <1e-05    <2e-04  *
+  BioHopR 2-hop              Qwen3.8-27B  Flex   Jac 7633   95.8   87.0    +8.9 [  +8.2,  +9.5]        —    <1e-05    <2e-04  *
+
+------------------------------------------------------------------------------------------------------------
+RQ2  With the same backbone, does Flex improve on Direct?
+     Delta = Flex − Direct   (percentage points)
+     Holm family: 14 comparisons across both benchmarks (12 AlzKB + 2 BioHopR)
+------------------------------------------------------------------------------------------------------------
+  set                        backbone     contrast             n      A      B   Delta            95% CI      b/c         p    p Holm
+  BioHopR 2-hop              GPT-5-mini   Flex − Direct Jac 7633   95.2   97.0    -1.8 [  -2.2,  -1.5]        —    <1e-05    <1e-04  *
+  BioHopR 2-hop              Qwen3.8-27B  Flex − Direct Jac 7633   95.8   83.1   +12.7 [ +11.9, +13.6]        —    <1e-05    <1e-04  *
+
+------------------------------------------------------------------------------------------------------------
+RQ3  With the same mode, does the local model perform differently from GPT-5-mini?
+     Delta = Qwen3.8-27B − GPT-5-mini (same mode)   (percentage points)
+     Holm family: 14 comparisons across both benchmarks (12 AlzKB + 2 BioHopR)
+------------------------------------------------------------------------------------------------------------
+  set                        backbone          contrast        n      A      B   Delta            95% CI      b/c         p    p Holm
+  BioHopR 2-hop              Qwen − GPT-5-mini Direct Jac 7633   83.1   97.0   -13.9 [ -14.8, -13.1]        —    <1e-05    <1e-04  *
+  BioHopR 2-hop              Qwen − GPT-5-mini Flex   Jac 7633   95.8   95.2    +0.7 [  +0.3,  +1.0]        —   4.0e-05   4.4e-04  *
+
+------------------------------------------------------------------------------------------------------------
+RQ1_secondary  Secondary: with the same backbone, does NEXA outperform the LLM alone?
+     Delta = NEXA − LLM only   (percentage points)
+     Holm family: 35 comparisons across both benchmarks (30 AlzKB + 5 BioHopR)
+------------------------------------------------------------------------------------------------------------
+  set                        backbone     contrast        n      A      B   Delta            95% CI      b/c         p    p Holm
+  BioHopR 2-hop              GPT-4o-mini  Direct Jac 7633   84.7    2.5   +82.3 [ +81.4, +83.1]        —    <1e-05    <2e-04  *
+  BioHopR 2-hop              GPT-5-mini   Direct Jac 7633   97.0    4.2   +92.9 [ +92.5, +93.2]        —    <1e-05    <2e-04  *
+  BioHopR 2-hop              GPT-5-mini   Flex   Jac 7633   95.2    4.2   +91.0 [ +90.6, +91.4]        —    <1e-05    <2e-04  *
+  BioHopR 2-hop              Qwen3.8-27B  Direct Jac 7633   83.1    3.1   +80.1 [ +79.2, +80.9]        —    <1e-05    <2e-04  *
+  BioHopR 2-hop              Qwen3.8-27B  Flex   Jac 7633   95.8    3.1   +92.8 [ +92.4, +93.2]        —    <1e-05    <2e-04  *
+
+
+* significant after Holm correction within its family (alpha = 0.05); the RQ families
+  span both benchmarks, the sensitivity and ESCARGOT families are AlzKB only.
+

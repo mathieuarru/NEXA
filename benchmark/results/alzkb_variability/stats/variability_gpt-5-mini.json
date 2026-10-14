@@ -1,0 +1,494 @@
+{
+  "groups": [
+    {
+      "model": "gpt-5-mini",
+      "agent_mode": "direct",
+      "type": "mcq",
+      "file": "MCQ_1hop_sub.json",
+      "n_runs": 5,
+      "run_tags": [
+        "run1",
+        "run2",
+        "run3",
+        "run4",
+        "run5"
+      ],
+      "n_questions": 100,
+      "accuracy_mean": 0.922,
+      "accuracy_sd": 0.010954451150103286,
+      "accuracy_min": 0.91,
+      "accuracy_max": 0.94,
+      "accuracy_mean_ci95_across_runs": [
+        0.908398252386835,
+        0.9356017476131651
+      ],
+      "per_run_accuracy": {
+        "run1": 0.92,
+        "run2": 0.92,
+        "run3": 0.91,
+        "run4": 0.94,
+        "run5": 0.92
+      },
+      "answer_consensus_rate": 0.78,
+      "correctness_consensus_rate": 0.78,
+      "flip_rate": 0.21999999999999997,
+      "majority_vote_accuracy": 0.95,
+      "mean_jaccard": null
+    },
+    {
+      "model": "gpt-5-mini",
+      "agent_mode": "direct",
+      "type": "mcq",
+      "file": "MCQ_2hop_sub.json",
+      "n_runs": 5,
+      "run_tags": [
+        "run1",
+        "run2",
+        "run3",
+        "run4",
+        "run5"
+      ],
+      "n_questions": 100,
+      "accuracy_mean": 0.976,
+      "accuracy_sd": 0.01140175425099139,
+      "accuracy_min": 0.96,
+      "accuracy_max": 0.99,
+      "accuracy_mean_ci95_across_runs": [
+        0.9618428522301773,
+        0.9901571477698227
+      ],
+      "per_run_accuracy": {
+        "run1": 0.98,
+        "run2": 0.99,
+        "run3": 0.96,
+        "run4": 0.97,
+        "run5": 0.98
+      },
+      "answer_consensus_rate": 0.96,
+      "correctness_consensus_rate": 0.96,
+      "flip_rate": 0.040000000000000036,
+      "majority_vote_accuracy": 0.98,
+      "mean_jaccard": null
+    },
+    {
+      "model": "gpt-5-mini",
+      "agent_mode": "direct",
+      "type": "open_ended",
+      "file": "OpenEnded_1hop_sub.json",
+      "n_runs": 5,
+      "run_tags": [
+        "run1",
+        "run2",
+        "run3",
+        "run4",
+        "run5"
+      ],
+      "n_questions": 100,
+      "accuracy_mean": 0.946,
+      "accuracy_sd": 0.005477225575051666,
+      "accuracy_min": 0.94,
+      "accuracy_max": 0.95,
+      "accuracy_mean_ci95_across_runs": [
+        0.9391991261934174,
+        0.9528008738065825
+      ],
+      "per_run_accuracy": {
+        "run1": 0.95,
+        "run2": 0.94,
+        "run3": 0.94,
+        "run4": 0.95,
+        "run5": 0.95
+      },
+      "answer_consensus_rate": 0.93,
+      "correctness_consensus_rate": 0.98,
+      "flip_rate": 0.020000000000000018,
+      "majority_vote_accuracy": 0.95,
+      "mean_jaccard": 0.964705354566207
+    },
+    {
+      "model": "gpt-5-mini",
+      "agent_mode": "direct",
+      "type": "open_ended",
+      "file": "OpenEnded_2hop_sub.json",
+      "n_runs": 5,
+      "run_tags": [
+        "run1",
+        "run2",
+        "run3",
+        "run4",
+        "run5"
+      ],
+      "n_questions": 100,
+      "accuracy_mean": 0.8859999999999999,
+      "accuracy_sd": 0.018165902124584965,
+      "accuracy_min": 0.87,
+      "accuracy_max": 0.91,
+      "accuracy_mean_ci95_across_runs": [
+        0.8634440533370095,
+        0.9085559466629903
+      ],
+      "per_run_accuracy": {
+        "run1": 0.9,
+        "run2": 0.91,
+        "run3": 0.87,
+        "run4": 0.88,
+        "run5": 0.87
+      },
+      "answer_consensus_rate": 0.87,
+      "correctness_consensus_rate": 0.91,
+      "flip_rate": 0.08999999999999997,
+      "majority_vote_accuracy": 0.89,
+      "mean_jaccard": 0.9590107235170003
+    },
+    {
+      "model": "gpt-5-mini",
+      "agent_mode": "direct",
+      "type": "tf",
+      "file": "True_or_False_1hop_sub.json",
+      "n_runs": 5,
+      "run_tags": [
+        "run1",
+        "run2",
+        "run3",
+        "run4",
+        "run5"
+      ],
+      "n_questions": 100,
+      "accuracy_mean": 0.9099999999999999,
+      "accuracy_sd": 0.012247448713915901,
+      "accuracy_min": 0.89,
+      "accuracy_max": 0.92,
+      "accuracy_mean_ci95_across_runs": [
+        0.8947927838620835,
+        0.9252072161379163
+      ],
+      "per_run_accuracy": {
+        "run1": 0.92,
+        "run2": 0.91,
+        "run3": 0.92,
+        "run4": 0.91,
+        "run5": 0.89
+      },
+      "answer_consensus_rate": 0.81,
+      "correctness_consensus_rate": 0.81,
+      "flip_rate": 0.18999999999999995,
+      "majority_vote_accuracy": 0.93,
+      "mean_jaccard": null
+    },
+    {
+      "model": "gpt-5-mini",
+      "agent_mode": "direct",
+      "type": "tf",
+      "file": "True_or_False_2hop_atleastone_sub.json",
+      "n_runs": 5,
+      "run_tags": [
+        "run1",
+        "run2",
+        "run3",
+        "run4",
+        "run5"
+      ],
+      "n_questions": 100,
+      "accuracy_mean": 0.85,
+      "accuracy_sd": 0.018708286933869726,
+      "accuracy_min": 0.82,
+      "accuracy_max": 0.87,
+      "accuracy_mean_ci95_across_runs": [
+        0.826770593646148,
+        0.8732294063538519
+      ],
+      "per_run_accuracy": {
+        "run1": 0.87,
+        "run2": 0.82,
+        "run3": 0.86,
+        "run4": 0.85,
+        "run5": 0.85
+      },
+      "answer_consensus_rate": 0.74,
+      "correctness_consensus_rate": 0.74,
+      "flip_rate": 0.26,
+      "majority_vote_accuracy": 0.86,
+      "mean_jaccard": null
+    },
+    {
+      "model": "gpt-5-mini",
+      "agent_mode": "direct",
+      "type": "tf",
+      "file": "True_or_False_2hop_sub.json",
+      "n_runs": 5,
+      "run_tags": [
+        "run1",
+        "run2",
+        "run3",
+        "run4",
+        "run5"
+      ],
+      "n_questions": 100,
+      "accuracy_mean": 0.766,
+      "accuracy_sd": 0.03049590136395384,
+      "accuracy_min": 0.73,
+      "accuracy_max": 0.8,
+      "accuracy_mean_ci95_across_runs": [
+        0.7281343371836054,
+        0.8038656628163946
+      ],
+      "per_run_accuracy": {
+        "run1": 0.74,
+        "run2": 0.77,
+        "run3": 0.79,
+        "run4": 0.73,
+        "run5": 0.8
+      },
+      "answer_consensus_rate": 0.81,
+      "correctness_consensus_rate": 0.81,
+      "flip_rate": 0.18999999999999995,
+      "majority_vote_accuracy": 0.76,
+      "mean_jaccard": null
+    },
+    {
+      "model": "gpt-5-mini",
+      "agent_mode": "flex",
+      "type": "mcq",
+      "file": "MCQ_1hop_sub.json",
+      "n_runs": 5,
+      "run_tags": [
+        "run1",
+        "run2",
+        "run3",
+        "run4",
+        "run5"
+      ],
+      "n_questions": 100,
+      "accuracy_mean": 0.994,
+      "accuracy_sd": 0.008944271909999166,
+      "accuracy_min": 0.98,
+      "accuracy_max": 1.0,
+      "accuracy_mean_ci95_across_runs": [
+        0.9828942195792089,
+        1.0
+      ],
+      "per_run_accuracy": {
+        "run1": 0.99,
+        "run2": 0.98,
+        "run3": 1.0,
+        "run4": 1.0,
+        "run5": 1.0
+      },
+      "answer_consensus_rate": 0.98,
+      "correctness_consensus_rate": 0.98,
+      "flip_rate": 0.020000000000000018,
+      "majority_vote_accuracy": 1.0,
+      "mean_jaccard": null
+    },
+    {
+      "model": "gpt-5-mini",
+      "agent_mode": "flex",
+      "type": "mcq",
+      "file": "MCQ_2hop_sub.json",
+      "n_runs": 5,
+      "run_tags": [
+        "run1",
+        "run2",
+        "run3",
+        "run4",
+        "run5"
+      ],
+      "n_questions": 100,
+      "accuracy_mean": 0.986,
+      "accuracy_sd": 0.008944271909999166,
+      "accuracy_min": 0.98,
+      "accuracy_max": 1.0,
+      "accuracy_mean_ci95_across_runs": [
+        0.9748942195792089,
+        0.9971057804207911
+      ],
+      "per_run_accuracy": {
+        "run1": 0.98,
+        "run2": 0.98,
+        "run3": 0.98,
+        "run4": 0.99,
+        "run5": 1.0
+      },
+      "answer_consensus_rate": 0.97,
+      "correctness_consensus_rate": 0.97,
+      "flip_rate": 0.030000000000000027,
+      "majority_vote_accuracy": 0.99,
+      "mean_jaccard": null
+    },
+    {
+      "model": "gpt-5-mini",
+      "agent_mode": "flex",
+      "type": "open_ended",
+      "file": "OpenEnded_1hop_sub.json",
+      "n_runs": 5,
+      "run_tags": [
+        "run1",
+        "run2",
+        "run3",
+        "run4",
+        "run5"
+      ],
+      "n_questions": 100,
+      "accuracy_mean": 0.938,
+      "accuracy_sd": 0.010954451150103286,
+      "accuracy_min": 0.92,
+      "accuracy_max": 0.95,
+      "accuracy_mean_ci95_across_runs": [
+        0.9243982523868349,
+        0.951601747613165
+      ],
+      "per_run_accuracy": {
+        "run1": 0.94,
+        "run2": 0.94,
+        "run3": 0.95,
+        "run4": 0.94,
+        "run5": 0.92
+      },
+      "answer_consensus_rate": 0.92,
+      "correctness_consensus_rate": 0.97,
+      "flip_rate": 0.030000000000000027,
+      "majority_vote_accuracy": 0.94,
+      "mean_jaccard": 0.9556965052439171
+    },
+    {
+      "model": "gpt-5-mini",
+      "agent_mode": "flex",
+      "type": "open_ended",
+      "file": "OpenEnded_2hop_sub.json",
+      "n_runs": 5,
+      "run_tags": [
+        "run1",
+        "run2",
+        "run3",
+        "run4",
+        "run5"
+      ],
+      "n_questions": 100,
+      "accuracy_mean": 0.884,
+      "accuracy_sd": 0.01140175425099139,
+      "accuracy_min": 0.87,
+      "accuracy_max": 0.9,
+      "accuracy_mean_ci95_across_runs": [
+        0.8698428522301773,
+        0.8981571477698227
+      ],
+      "per_run_accuracy": {
+        "run1": 0.87,
+        "run2": 0.9,
+        "run3": 0.88,
+        "run4": 0.88,
+        "run5": 0.89
+      },
+      "answer_consensus_rate": 0.82,
+      "correctness_consensus_rate": 0.86,
+      "flip_rate": 0.14,
+      "majority_vote_accuracy": 0.89,
+      "mean_jaccard": 0.9559476946444279
+    },
+    {
+      "model": "gpt-5-mini",
+      "agent_mode": "flex",
+      "type": "tf",
+      "file": "True_or_False_1hop_sub.json",
+      "n_runs": 5,
+      "run_tags": [
+        "run1",
+        "run2",
+        "run3",
+        "run4",
+        "run5"
+      ],
+      "n_questions": 100,
+      "accuracy_mean": 0.9800000000000001,
+      "accuracy_sd": 0.007071067811865481,
+      "accuracy_min": 0.97,
+      "accuracy_max": 0.99,
+      "accuracy_mean_ci95_across_runs": [
+        0.9712201096691493,
+        0.9887798903308509
+      ],
+      "per_run_accuracy": {
+        "run1": 0.99,
+        "run2": 0.98,
+        "run3": 0.98,
+        "run4": 0.97,
+        "run5": 0.98
+      },
+      "answer_consensus_rate": 0.95,
+      "correctness_consensus_rate": 0.95,
+      "flip_rate": 0.050000000000000044,
+      "majority_vote_accuracy": 0.99,
+      "mean_jaccard": null
+    },
+    {
+      "model": "gpt-5-mini",
+      "agent_mode": "flex",
+      "type": "tf",
+      "file": "True_or_False_2hop_atleastone_sub.json",
+      "n_runs": 5,
+      "run_tags": [
+        "run1",
+        "run2",
+        "run3",
+        "run4",
+        "run5"
+      ],
+      "n_questions": 100,
+      "accuracy_mean": 0.974,
+      "accuracy_sd": 0.016733200530681527,
+      "accuracy_min": 0.95,
+      "accuracy_max": 0.99,
+      "accuracy_mean_ci95_across_runs": [
+        0.9532229873263286,
+        0.9947770126736714
+      ],
+      "per_run_accuracy": {
+        "run1": 0.97,
+        "run2": 0.99,
+        "run3": 0.97,
+        "run4": 0.95,
+        "run5": 0.99
+      },
+      "answer_consensus_rate": 0.89,
+      "correctness_consensus_rate": 0.89,
+      "flip_rate": 0.10999999999999999,
+      "majority_vote_accuracy": 0.99,
+      "mean_jaccard": null
+    },
+    {
+      "model": "gpt-5-mini",
+      "agent_mode": "flex",
+      "type": "tf",
+      "file": "True_or_False_2hop_sub.json",
+      "n_runs": 5,
+      "run_tags": [
+        "run1",
+        "run2",
+        "run3",
+        "run4",
+        "run5"
+      ],
+      "n_questions": 100,
+      "accuracy_mean": 0.712,
+      "accuracy_sd": 0.013038404810405309,
+      "accuracy_min": 0.7,
+      "accuracy_max": 0.73,
+      "accuracy_mean_ci95_across_runs": [
+        0.695810682152913,
+        0.728189317847087
+      ],
+      "per_run_accuracy": {
+        "run1": 0.71,
+        "run2": 0.72,
+        "run3": 0.7,
+        "run4": 0.73,
+        "run5": 0.7
+      },
+      "answer_consensus_rate": 0.93,
+      "correctness_consensus_rate": 0.94,
+      "flip_rate": 0.06000000000000005,
+      "majority_vote_accuracy": 0.72,
+      "mean_jaccard": null
+    }
+  ]
+}

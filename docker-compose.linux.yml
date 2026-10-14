@@ -1,0 +1,174 @@
+# Docker Compose for Linux (network_mode: host to access Ollama on localhost)
+# Usage: docker compose -f docker-compose.linux.yml --profile full up -d
+
+services:
+  # =============================================================================
+  # DATABASE SERVICES (Profile: db, full)
+  # =============================================================================
+
+  neo4j-hetionet:
+    build:
+      context: .
+      dockerfile: Dockerfile.hetionet
+    image: neo4j-hetionet:latest
+    container_name: neo4j-hetionet
+    profiles:
+      - db
+      - full
+    environment:
+      - NEO4J_AUTH=neo4j/password
+      - NEO4J_dbms_security_allow__csv__import__from__file__urls=true
+      - NEO4J_PLUGINS=["apoc"]
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    volumes:
+      - hetionet_data:/data
+      - hetionet_logs:/logs
+    # Healthy only after import and startup with read-only configuration
+    healthcheck:
+      test: ["CMD", "/opt/nexa/neo4j_healthcheck.sh"]
+      interval: 30s
+      timeout: 15s
+      retries: 60
+      start_period: 30s
+    restart: unless-stopped
+
+  neo4j-alzkb121:
+    build:
+      context: .
+      dockerfile: Dockerfile.alzkb121
+    image: neo4j-alzkb121:latest
+    container_name: neo4j-alzkb121
+    profiles:
+      - db
+      - full
+    environment:
+      - NEO4J_AUTH=neo4j/password
+      - NEO4J_PLUGINS=["apoc"]
+    ports:
+      - "7475:7474"
+      - "7688:7687"
+    volumes:
+      - alzkb121_data:/data
+      - alzkb121_logs:/logs
+    # Healthy only after import and startup with read-only configuration
+    healthcheck:
+      test: ["CMD", "/opt/nexa/neo4j_healthcheck.sh"]
+      interval: 30s
+      timeout: 15s
+      retries: 60
+      start_period: 30s
+    restart: unless-stopped
+
+  neo4j-primekg:
+    build:
+      context: .
+      dockerfile: Dockerfile.primekg
+    image: neo4j-primekg:2.1
+    container_name: neo4j-primekg
+    profiles:
+      - db
+      - full
+    environment:
+      - NEO4J_AUTH=neo4j/password
+      - NEO4J_PLUGINS=["apoc"]
+    ports:
+      - "7476:7474"
+      - "7689:7687"
+    volumes:
+      - primekg_data:/data
+      - primekg_logs:/logs
+    # Healthy only after import and startup with read-only configuration
+    healthcheck:
+      test: ["CMD", "/opt/nexa/neo4j_healthcheck.sh"]
+      interval: 30s
+      timeout: 15s
+      retries: 120
+      start_period: 30s
+    restart: unless-stopped
+
+  postgres:
+    image: postgres:17.2-bullseye
+    container_name: postgres_db
+    profiles:
+      - db
+      - full
+    environment:
+      POSTGRES_USER: langgraph_user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: langgraph_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+  # =============================================================================
+  # APPLICATION SERVICES (Profile: app, full)
+  # =============================================================================
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    image: neo4j-agent-api:latest
+    container_name: neo4j-agent-api
+    profiles:
+      - app
+      - full
+    network_mode: "host"
+    environment:
+      - DB_URI=postgresql://langgraph_user:password@localhost:5432/langgraph_db
+      - OLLAMA_BASE_URL=${OLLAMA_BASE_URL:-http://localhost:11434}
+      - DEFAULT_MODEL_NAME=${DEFAULT_MODEL_NAME:-}
+      - OLLAMA_DEFAULT_MODEL=${OLLAMA_DEFAULT_MODEL:-}
+      - ANTHROPIC_DEFAULT_MODEL=${ANTHROPIC_DEFAULT_MODEL:-}
+      - GOOGLE_DEFAULT_MODEL=${GOOGLE_DEFAULT_MODEL:-}
+      - AZURE_OPENAI_API_VERSION=${AZURE_OPENAI_API_VERSION:-}
+      - AZURE_OPENAI_CHAT_DEPLOYMENT=${AZURE_OPENAI_CHAT_DEPLOYMENT:-}
+      - OPENAI_API_KEY=${OPENAI_API_KEY:-}
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY:-}
+      - GOOGLE_API_KEY=${GOOGLE_API_KEY:-}
+      - AZURE_API_KEY=${AZURE_API_KEY:-}
+      - AZURE_OPENAI_ENDPOINT=${AZURE_OPENAI_ENDPOINT:-}
+    volumes:
+      - ./api_data:/app/api_data
+    depends_on:
+      # Optional: the app profile runs without the database services
+      postgres:
+        condition: service_started
+        required: false
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/config/defaults"]
+      interval: 3s
+      timeout: 3s
+      retries: 5
+      start_period: 30s
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    image: neo4j-agent-frontend:latest
+    container_name: neo4j-agent-frontend
+    profiles:
+      - app
+      - full
+    network_mode: "host"
+    environment:
+      - API_URL=http://localhost:8000
+    depends_on:
+      api:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  hetionet_data:
+  hetionet_logs:
+  alzkb121_data:
+  alzkb121_logs:
+  primekg_data:
+  primekg_logs:
+  postgres_data:

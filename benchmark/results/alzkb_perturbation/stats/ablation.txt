@@ -1,0 +1,62 @@
+
+==============================================================================================================
+alzkb-perturbation: AlzKB 1-hop questions with a perturbed anchor entity name
+==============================================================================================================
+  accuracy (exact answer) per perturbation; open-ended and MCQ pooled
+    arm                       original            case            typo           alias
+    full                   92.0 (n=150)     90.7 (n=150)     71.3 (n=122)     64.8 (n= 71)
+    no-empty-loop          92.7 (n=150)     16.7 (n=150)     35.2 (n=122)     40.8 (n= 71)
+    no-db-matching         92.0 (n=150)     36.7 (n=150)     45.9 (n=122)     54.9 (n= 71)
+    no-llm-selection       93.3 (n=150)     91.3 (n=150)     75.4 (n=122)     46.5 (n= 71)
+
+  Jaccard (open-ended items) per perturbation
+    full                   99.1 (n= 77)     96.2 (n= 77)     67.9 (n= 62)     62.2 (n= 39)
+    no-empty-loop          97.8 (n= 77)      1.3 (n= 77)     22.3 (n= 62)     36.1 (n= 39)
+    no-db-matching         97.3 (n= 77)     32.0 (n= 77)     36.3 (n= 62)     49.3 (n= 39)
+    no-llm-selection       99.0 (n= 77)     96.2 (n= 77)     72.4 (n= 62)     41.6 (n= 39)
+
+  accuracy by anchor type: gene symbols vs every other name (descriptive)
+    full               original  genes  91.5 (n= 71)   other names  92.4 (n= 79)
+    full               case      genes  91.5 (n= 71)   other names  89.9 (n= 79)
+    full               typo      genes  39.5 (n= 43)   other names  88.6 (n= 79)
+    full               alias     genes  64.8 (n= 71)   other names   nan (n=  0)
+    no-empty-loop      original  genes  90.1 (n= 71)   other names  94.9 (n= 79)
+    no-empty-loop      case      genes   8.5 (n= 71)   other names  24.1 (n= 79)
+    no-empty-loop      typo      genes  11.6 (n= 43)   other names  48.1 (n= 79)
+    no-empty-loop      alias     genes  40.8 (n= 71)   other names   nan (n=  0)
+    no-db-matching     original  genes  91.5 (n= 71)   other names  92.4 (n= 79)
+    no-db-matching     case      genes  46.5 (n= 71)   other names  27.8 (n= 79)
+    no-db-matching     typo      genes  11.6 (n= 43)   other names  64.6 (n= 79)
+    no-db-matching     alias     genes  54.9 (n= 71)   other names   nan (n=  0)
+    no-llm-selection   original  genes  91.5 (n= 71)   other names  94.9 (n= 79)
+    no-llm-selection   case      genes  91.5 (n= 71)   other names  91.1 (n= 79)
+    no-llm-selection   typo      genes  51.2 (n= 43)   other names  88.6 (n= 79)
+    no-llm-selection   alias     genes  46.5 (n= 71)   other names   nan (n=  0)
+
+  each perturbation against the original question, same arm (paired by base question)
+    full · case − original             n= 150   90.7 vs  92.0  Δ  -1.3 [ -6.0,  +3.1]  +4/-6  p 7.54e-01
+    full · typo − original             n= 122   71.3 vs  91.0  Δ -19.7 [-28.2, -11.2]  +4/-28  p 1.93e-05
+    full · alias − original            n=  71   64.8 vs  91.5  Δ -26.8 [-37.9, -15.6]  +1/-20  p 2.10e-05
+    no-empty-loop · case − original    n= 150   16.7 vs  92.7  Δ -76.0 [-81.7, -67.9]  +0/-114  p 9.63e-35
+    no-empty-loop · typo − original    n= 122   35.2 vs  91.8  Δ -56.6 [-64.7, -46.6]  +1/-70  p 6.10e-20
+    no-empty-loop · alias − original   n=  71   40.8 vs  90.1  Δ -49.3 [-59.8, -36.7]  +0/-35  p 5.82e-11
+    no-db-matching · case − original   n= 150   36.7 vs  92.0  Δ -55.3 [-62.8, -46.5]  +1/-84  p 4.45e-24
+    no-db-matching · typo − original   n= 122   45.9 vs  91.8  Δ -45.9 [-54.7, -35.9]  +2/-58  p 3.18e-15
+    no-db-matching · alias − original  n=  71   54.9 vs  91.5  Δ -36.6 [-48.0, -24.2]  +1/-27  p 2.16e-07
+    no-llm-selection · case − original n= 150   91.3 vs  93.3  Δ  -2.0 [ -6.9,  +2.6]  +4/-7  p 5.49e-01
+    no-llm-selection · typo − original n= 122   75.4 vs  92.6  Δ -17.2 [-24.8, -10.3]  +1/-22  p 5.72e-06
+    no-llm-selection · alias − original n=  71   46.5 vs  91.5  Δ -45.1 [-56.3, -31.9]  +1/-33  p 4.07e-09
+
+  each arm against full, per perturbation (Holm over 12 comparisons)
+    no-empty-loop − full · original    n= 150   92.7 vs  92.0  Δ  +0.7 [ -2.3,  +3.8]  +2/-1  p 1.00e+00  p Holm 1.00e+00
+    no-empty-loop − full · case        n= 150   16.7 vs  90.7  Δ -74.0 [-80.2, -65.2]  +2/-113  p 3.21e-31  p Holm 3.85e-30 *
+    no-empty-loop − full · typo        n= 122   35.2 vs  71.3  Δ -36.1 [-44.2, -26.8]  +1/-45  p 1.34e-12  p Holm 1.34e-11 *
+    no-empty-loop − full · alias       n=  71   40.8 vs  64.8  Δ -23.9 [-34.4, -12.2]  +2/-19  p 2.21e-04  p Holm 1.77e-03 *
+    no-db-matching − full · original   n= 150   92.0 vs  92.0  Δ  +0.0 [ -3.3,  +3.3]  +2/-2  p 1.00e+00  p Holm 1.00e+00
+    no-db-matching − full · case       n= 150   36.7 vs  90.7  Δ -54.0 [-61.7, -44.9]  +2/-83  p 1.89e-22  p Holm 2.08e-21 *
+    no-db-matching − full · typo       n= 122   45.9 vs  71.3  Δ -25.4 [-33.0, -17.1]  +1/-32  p 7.92e-09  p Holm 7.12e-08 *
+    no-db-matching − full · alias      n=  71   54.9 vs  64.8  Δ  -9.9 [-20.6,  +1.3]  +5/-12  p 1.43e-01  p Holm 8.61e-01
+    no-llm-selection − full · original n= 150   93.3 vs  92.0  Δ  +1.3 [ -1.8,  +4.8]  +3/-1  p 6.25e-01  p Holm 1.00e+00
+    no-llm-selection − full · case     n= 150   91.3 vs  90.7  Δ  +0.7 [ -3.3,  +4.7]  +4/-3  p 1.00e+00  p Holm 1.00e+00
+    no-llm-selection − full · typo     n= 122   75.4 vs  71.3  Δ  +4.1 [ -2.9, +11.1]  +12/-7  p 3.59e-01  p Holm 1.00e+00
+    no-llm-selection − full · alias    n=  71   46.5 vs  64.8  Δ -18.3 [-28.2,  -7.6]  +2/-15  p 2.35e-03  p Holm 1.64e-02 *

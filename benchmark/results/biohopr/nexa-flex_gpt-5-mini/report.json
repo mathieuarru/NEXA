@@ -1,0 +1,205 @@
+{
+  "generated_at": "2026-10-13T23:23:48.878259",
+  "files": [
+    "benchmark/results/biohopr/nexa-flex_gpt-5-mini/BioHopR_2hop__open_ended_list__gpt-5-mini__Force__flex__PrimeKG_21__run1.jsonl"
+  ],
+  "groups": [
+    {
+      "type": "open_ended_list",
+      "agent_mode": "flex",
+      "model": "gpt-5-mini",
+      "file": "BioHopR_2hop.json",
+      "count": 7633,
+      "correct": 6796,
+      "accuracy": 0.8903445565308529,
+      "accuracy_ci95": [
+        0.883137461445772,
+        0.8971589375262846
+      ],
+      "avg_metrics": {
+        "exact_match": 0.8903445565308529,
+        "precision": 0.9525314170672207,
+        "recall": 0.9985980718545908,
+        "f1": 0.9637627171753699,
+        "jaccard": 0.9518368319855626,
+        "overlap": 0.9991053488030159
+      },
+      "by_expected_size": {
+        "1": {
+          "count": 1088,
+          "accuracy": 0.8943014705882353,
+          "f1": 0.9361869461853212
+        },
+        "2-5": {
+          "count": 1567,
+          "accuracy": 0.8551372048500319,
+          "f1": 0.931053319552797
+        },
+        "6-20": {
+          "count": 2281,
+          "accuracy": 0.8855765015344147,
+          "f1": 0.9709916152285045
+        },
+        ">20": {
+          "count": 2697,
+          "accuracy": 0.9132369299221357,
+          "f1": 0.9877779001388644
+        }
+      },
+      "telemetry": {
+        "first_attempt_success_rate": {
+          "value": 0.9427485916415564,
+          "n": 7633
+        },
+        "avg_correction_iterations": {
+          "value": 0.06563605397615617,
+          "n": 7633
+        },
+        "latency_ms": {
+          "mean": 28801.251408358443,
+          "p50": 26322.0,
+          "p95": 47839.999999999985,
+          "n": 7633
+        },
+        "tokens": {
+          "avg_input": 34663.34560461155,
+          "avg_output": 1906.216559675095,
+          "total_input": 264585317.0,
+          "total_output": 14550151.0,
+          "n": 7633
+        },
+        "avg_tool_calls": {
+          "value": 4.937508188130486,
+          "n": 7633
+        },
+        "avg_execute_cypher": {
+          "value": 1.0653740338006026,
+          "n": 7633
+        },
+        "no_cypher_rate": {
+          "value": 0.00026202017555351765,
+          "n": 7633
+        },
+        "recursion_hit_rate": {
+          "value": 0.0,
+          "n": 7633
+        },
+        "truncated_cypher_rate": {
+          "value": 0.0,
+          "n": 7633
+        },
+        "cited_incomplete_rate": {
+          "value": 0.0,
+          "n": 7633
+        },
+        "answer_rescued_rate": {
+          "value": 0.0,
+          "n": 7633
+        },
+        "error_rate": {
+          "value": 0.0,
+          "n": 7633
+        }
+      }
+    }
+  ],
+  "overall": [
+    {
+      "type": "open_ended_list",
+      "agent_mode": "flex",
+      "model": "gpt-5-mini",
+      "count": 7633,
+      "correct": 6796,
+      "accuracy": 0.8903445565308529,
+      "accuracy_ci95": [
+        0.883137461445772,
+        0.8971589375262846
+      ],
+      "avg_metrics": {
+        "exact_match": 0.8903445565308529,
+        "precision": 0.9525314170672207,
+        "recall": 0.9985980718545908,
+        "f1": 0.9637627171753699,
+        "jaccard": 0.9518368319855626,
+        "overlap": 0.9991053488030159
+      },
+      "by_expected_size": {
+        "1": {
+          "count": 1088,
+          "accuracy": 0.8943014705882353,
+          "f1": 0.9361869461853212
+        },
+        "2-5": {
+          "count": 1567,
+          "accuracy": 0.8551372048500319,
+          "f1": 0.931053319552797
+        },
+        "6-20": {
+          "count": 2281,
+          "accuracy": 0.8855765015344147,
+          "f1": 0.9709916152285045
+        },
+        ">20": {
+          "count": 2697,
+          "accuracy": 0.9132369299221357,
+          "f1": 0.9877779001388644
+        }
+      },
+      "telemetry": {
+        "first_attempt_success_rate": {
+          "value": 0.9427485916415564,
+          "n": 7633
+        },
+        "avg_correction_iterations": {
+          "value": 0.06563605397615617,
+          "n": 7633
+        },
+        "latency_ms": {
+          "mean": 28801.251408358443,
+          "p50": 26322.0,
+          "p95": 47839.999999999985,
+          "n": 7633
+        },
+        "tokens": {
+          "avg_input": 34663.34560461155,
+          "avg_output": 1906.216559675095,
+          "total_input": 264585317.0,
+          "total_output": 14550151.0,
+          "n": 7633
+        },
+        "avg_tool_calls": {
+          "value": 4.937508188130486,
+          "n": 7633
+        },
+        "avg_execute_cypher": {
+          "value": 1.0653740338006026,
+          "n": 7633
+        },
+        "no_cypher_rate": {
+          "value": 0.00026202017555351765,
+          "n": 7633
+        },
+        "recursion_hit_rate": {
+          "value": 0.0,
+          "n": 7633
+        },
+        "truncated_cypher_rate": {
+          "value": 0.0,
+          "n": 7633
+        },
+        "cited_incomplete_rate": {
+          "value": 0.0,
+          "n": 7633
+        },
+        "answer_rescued_rate": {
+          "value": 0.0,
+          "n": 7633
+        },
+        "error_rate": {
+          "value": 0.0,
+          "n": 7633
+        }
+      }
+    }
+  ]
+}

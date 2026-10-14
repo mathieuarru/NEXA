@@ -1,0 +1,38 @@
+# PrimeKG v2.1, downloaded at build time from Harvard Dataverse
+# (doi:10.7910/DVN/IXA7BM, file 6180620, CC0 1.0). A copy already at
+# primekg/data/kg.csv (primekg/download_primekg.sh) is used when its MD5
+# matches, so an existing download is not repeated.
+FROM python:3.12-slim-bookworm AS prepare
+
+ARG PRIMEKG_URL=https://dataverse.harvard.edu/api/access/datafile/6180620
+ARG PRIMEKG_MD5=aac8191d4fbc5bf09cdf8c3c78b4e75f
+
+WORKDIR /build
+COPY docker/fetch_verified.py primekg/prepare_primekg.py /build/
+COPY primekg/data/ /build/local/
+RUN python /build/fetch_verified.py "${PRIMEKG_URL}" "${PRIMEKG_MD5}" /build/kg.csv /build/local/kg.csv \
+    && rm -rf /build/local
+RUN python /build/prepare_primekg.py \
+      --input /build/kg.csv \
+      --output-dir /prepared \
+      --source-version 2.1 \
+      --source-file-id 6180620 \
+      --source-md5 "${PRIMEKG_MD5}"
+
+FROM neo4j:5.26.0-community-bullseye
+
+ENV NEO4J_AUTH=neo4j/password \
+    NEO4J_PLUGINS='["apoc"]' \
+    NEO4J_server_databases_read__only=neo4j
+
+COPY docker/neo4j_read_only.sh docker/neo4j_healthcheck.sh /opt/nexa/
+RUN chmod +x /opt/nexa/*.sh
+
+COPY --from=prepare /prepared/ /var/lib/neo4j/import/primekg/
+COPY primekg/load_primekg.sh /load_primekg.sh
+RUN chmod +x /load_primekg.sh
+
+HEALTHCHECK --interval=30s --timeout=15s --start-period=30s --retries=120 \
+  CMD /opt/nexa/neo4j_healthcheck.sh
+
+CMD ["/bin/bash", "-lc", "/load_primekg.sh"]

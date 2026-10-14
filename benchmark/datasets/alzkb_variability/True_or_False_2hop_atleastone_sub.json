@@ -1,0 +1,402 @@
+[
+  {
+    "question": "True or False Question: BAD and CNDP2 are genes commonly subject to decreased expression by the drug Darifenacin",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: Nucleoside Analog and Purines are classes which commonly include the drug Azathioprine",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: Estradiol Congeners and Estrogen Receptor Agonists are classes which commonly include the drug Estradiol",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: Arsenic trioxide and Isoprenaline are drugs which commonly bind to the gene MAPK1",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: Mitoxantrone and Epirubicin are drugs which commonly increase expression of the gene YIPF3",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: Raloxifene and Teniposide are drugs which commonly decrease expression of the gene ARHGAP19",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: Signal Transduction and CDC42 signaling events are pathways which commonly contain the gene ARPC2",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: Recruitment of mitotic centrosome proteins and complexes and AURKA Activation by TPX2 are pathways which commonly contain the gene CEP43",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: Nitric oxide stimulates guanylate cyclase and Platelet homeostasis are pathways which commonly contain the gene PDE9A",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: G-protein coupled receptor binding and cytokine activity are molecular functions commonly attributed to the gene CCL17",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: Alzheimer's Disease and Alzheimer's Disease, Focal Onset are diseases commonly associated with the gene CRH",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: brain and liver are body parts/anatomy which commonly over-express the gene SPDYE3",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: brain and prostate gland are body parts/anatomy which commonly under-express the gene KMT2D",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: female gonad and myometrium are body parts/anatomy which commonly under-express the gene TOMM40L",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: Bupivacaine and Mepivacaine are drugs which commonly belong to the drug class Amides",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: Ziprasidone and Naltrexone are drugs which commonly affect Alzheimer's Disease",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: PLCG2 and PSEN1 are genes commonly associated with the disease Alzheimer Disease, Late Onset",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: TRAF4 and ACTN4 are genes which commonly participate in the biological process positive regulation of NIK/NF-kappaB signaling",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: ACSL1 and ACAT1 are genes common in the pathway Very-long-chain acyl coa dehydrogenase deficiency (VLCAD)",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: MAP2K1 and PTPN11 are genes common in the pathway Signaling of Hepatocyte Growth Factor Receptor",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: RAD51AP1 and SPIDR are genes common in the pathway Resolution of D-loop Structures through Holliday Junction Intermediates",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: COL4A2 and COL15A1 are genes commonly associated with the cellular component basement membrane collagen trimer",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: BUB1 and REC8 are genes commonly associated with the cellular component condensed nuclear chromosome kinetochore",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: TMTC3 and DDAH2 are genes which are commonly over-expressed in uterine cervix",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: JKAMP and FLYWCH1 are genes which are commonly over-expressed in midbrain",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: MGAT4A and ACSS1 are genes which are commonly under-expressed in mammalian vulva",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: HINT1 and DMRT1 are genes which are commonly under-expressed in cardiac ventricle",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: Alzheimer's Disease and Familial Alzheimer Disease (FAD) are diseases which commonly present the symptom Perceptual Disorders",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: CYP19A1 and RMI1 are genes which commonly bind to the drug Testolactone",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: MAEA and PDS5B are genes which commonly bind to the drug Tetrachlorodecaoxide",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: CAD and ADRA1B are genes which commonly bind to the drug Silodosin",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: CAD and SQOR are genes commonly subject to increased expression by the drug Gemfibrozil",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: NPTX2 and CAD are genes commonly subject to decreased expression by the drug Varenicline",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: Gonadotropin Releasing Hormone Receptor Antagonists and Dyes are classes which commonly include the drug Cetrorelix",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: Alzheimer's Disease and Alzheimer Disease, Familial, 3, with Spastic Paraparesis and Apraxia are diseases which can be commonly treated by the drug Benzatropine",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: Insulin pork and Isoleucine are drugs which commonly bind to the gene BCAT2",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: Insulin pork and Lipoic acid are drugs which commonly bind to the gene SLC5A6",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: Digoxin Immune Fab (Ovine) and Chlorpromazine are drugs which commonly increase expression of the gene PPARG",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: PDS5B and TNK2 are genes which commonly interact with the gene HSH2D",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: LRRC41 and NEDD4 are genes which commonly interact with the gene NDFIP1",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: membrane microdomain and organelle inner membrane are cellular components commonly linked to the gene UCP3",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: mammalian vulva and islet of Langerhans are body parts/anatomy which commonly under-express the gene PRRC2A",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: tendon and brain are body parts/anatomy which commonly under-express the gene DBNL",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: Streptokinase and Sirolimus are drugs which commonly belong to the drug class Decreased Immunologic Activity",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: DNAJC10 and PSEN1 are genes commonly associated with the disease Alzheimer Disease, Familial, 3, with Spastic Paraparesis and Apraxia",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: Memory Disorders and Virilism are common symptoms of Familial Alzheimer Disease (FAD)",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: FASN and NCF1 are genes which commonly participate in the biological process cellular defense response",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: RMI1 and PLK2 are genes common in the pathway TP53 regulates transcription of additional cell cycle genes whose exact role in the p53 pathway remain uncertain",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: NR2F6 and PCK2 are genes which commonly perform the molecular function phosphoenolpyruvate carboxykinase activity",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: At least one of GABRA2 and PDS5B is not genes which commonly bind to the drug Temazepam",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: At least one of CYP1A1 and PDS5A is not genes which commonly bind to the drug Nitroprusside",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: At least one of CCR1 and CAD is not genes which commonly bind to the drug Raltegravir",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: At least one of Non-Nucleoside Reverse Transcriptase Inhibitors and GABA B Agonists is not classes which commonly include the drug Delavirdine",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: At least one of Alzheimer's Disease and Alzheimer disease, familial, type 3 is not diseases which can be commonly treated by the drug Ropinirole",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: At least one of Alzheimer's Disease and Alzheimer disease, familial, type 3 is not diseases which can be commonly treated by the drug Memantine",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: At least one of Pindolol and Muromonab is not drugs which commonly decrease expression of the gene PPP1R13B",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: At least one of amine biosynthetic process and cerebellar granular layer development is not biological processes commonly involving the gene PROX1",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: At least one of beta-Alanine metabolism - Homo sapiens (human) and Phosphatidylinositol signaling system - Homo sapiens (human) is not pathways which commonly contain the gene MTMR1",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: At least one of CD1A and PDS5A is not genes which commonly interact with the gene UBTD1",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: At least one of FASN and ILK is not genes which commonly interact with the gene SF3A1",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: At least one of bradykinin receptor binding and hydrolase activity, acting on acid anhydrides, in phosphorus-containing anhydrides is not molecular functions commonly attributed to the gene DSCC1",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: At least one of oxidoreductase activity, acting on the aldehyde or oxo group of donors, oxygen as acceptor and fatty acid transporter activity is not molecular functions commonly attributed to the gene FABP1",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: At least one of anchored component of membrane and podosome is not cellular components commonly linked to the gene CD160",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: At least one of lymph node and brain is not body parts/anatomy which commonly under-express the gene CD55",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: At least one of Muromonab and Norelgestromin is not drugs which commonly belong to the drug class Progesterone Congeners",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: At least one of telencephalon and tendon is not common sites of localization of Alzheimer's Disease",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: At least one of Alzheimer's Disease and Alzheimer Disease, Late Onset is not diseases commonly associated with the disease Familial Alzheimer Disease (FAD)",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: At least one of PDS5A and TDRD5 is not genes commonly associated with the cellular component chromatoid body",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: At least one of LDHB and SEL1L is not genes which are commonly over-expressed in cardiac ventricle",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: At least one of MAT2B and AFTPH is not genes which are commonly over-expressed in saliva-secreting gland",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: At least one of Alzheimer's Disease and Alzheimer Disease, Late Onset is not diseases which commonly localize to neuropil",
+    "answer": "True"
+  },
+  {
+    "question": "True or False Question: At least one of ADRB2 and KCNH2 is not genes which commonly bind to the drug Sotalol",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: At least one of SLC25A4 and CLTB is not genes commonly subject to decreased expression by the drug Chlormezanone",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: At least one of DNA Polymerase Inhibitors and Nucleoside Analog is not classes which commonly include the drug Valaciclovir",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: At least one of Vitamin K and Reversed Anticoagulation Activity is not classes which commonly include the drug Phylloquinone",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: At least one of Bosutinib and Crizotinib is not drugs which commonly bind to the gene FGR",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: At least one of Afatinib and Dabrafenib is not drugs which commonly decrease expression of the gene DKC1",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: At least one of spinal cord development and pattern specification process is not biological processes commonly involving the gene DBX1",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: At least one of negative regulation of oxidoreductase activity and regulation of oxidoreductase activity is not biological processes commonly involving the gene DAOA",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: At least one of Pathways in cancer - Homo sapiens (human) and GPCR downstream signaling is not pathways which commonly contain the gene LPAR6",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: At least one of Neuronal System and Potassium Channels is not pathways which commonly contain the gene KCNH6",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: At least one of CSNK1D and CSNK1G3 is not genes which commonly interact with the gene DBNDD2",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: At least one of UBC and APP is not genes which commonly interact with the gene OARD1",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: At least one of ubiquitin-like protein transferase activity and protein tag is not molecular functions commonly attributed to the gene SUMO2",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: At least one of vacuolar membrane and vacuole is not cellular components commonly linked to the gene PCYOX1L",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: At least one of Alzheimer's Disease and Alzheimer's Disease, Focal Onset is not diseases commonly associated with the gene PCDH11X",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: At least one of Alzheimer's Disease and Familial Alzheimer Disease (FAD) is not diseases commonly associated with the gene CALM1",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: At least one of Trimethoprim and Crizotinib is not drugs which commonly belong to the drug class Organic Cation Transporter 2 Inhibitors",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: At least one of Memantine and Selegiline is not drugs which commonly treat Alzheimer's Disease",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: At least one of CALM2 and NOS3 is not genes common in the pathway Metabolism of nitric oxide",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: At least one of DLG1 and LIN7C is not genes which commonly perform the molecular function L27 domain binding",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: At least one of SLC18A2 and SLC6A4 is not genes which commonly perform the molecular function monoamine transmembrane transporter activity",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: At least one of NAGK and GNE is not genes which commonly perform the molecular function N-acylmannosamine kinase activity",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: At least one of DICER1 and TARBP2 is not genes commonly associated with the cellular component micro-ribonucleoprotein complex",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: At least one of TGFBR3 and NPR2 is not genes which are commonly over-expressed in uterus",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: At least one of CCL8 and S100A6 is not genes which are commonly over-expressed in smooth muscle tissue",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: At least one of VWA3B and ODF2 is not genes which are commonly under-expressed in nipple",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: At least one of IL1RN and MAN1C1 is not genes which are commonly under-expressed in smooth muscle tissue",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: At least one of Alzheimer's Disease and Familial Alzheimer Disease (FAD) is not diseases which commonly localize to cerebellum",
+    "answer": "False"
+  },
+  {
+    "question": "True or False Question: At least one of Familial Alzheimer Disease (FAD) and Alzheimer's Disease is not diseases which commonly localize to cerebellar cortex",
+    "answer": "False"
+  }
+]

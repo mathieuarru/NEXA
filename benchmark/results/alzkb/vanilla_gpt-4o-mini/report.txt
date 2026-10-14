@@ -1,0 +1,709 @@
+--- NEXA Benchmark Evaluation ---
+Files processed: 2
+  - benchmark/results/alzkb/vanilla_gpt-4o-mini/baseline_vanilla_gpt-4o-mini_20260501_183809.jsonl
+  - benchmark/results/alzkb/vanilla_gpt-4o-mini/baseline_vanilla_gpt-4o-mini_atleastone_20260925_185333.jsonl
+
+=== Dataset: MCQ_1hop.json__vanilla | Type: mcq | Mode: vanilla | Model: gpt-4o-mini ===
+Count: 498  |  Correct: 275  |  Accuracy: 0.552 [95% CI 0.508-0.595]
+Telemetry:
+  - latency ms: mean=2325 p50=2194 p95=3460 (n=498)
+  - tokens: avg in=196 out=70 | total in=196 out=70
+  - records with error: 0.000 (n=498)
+
+-- Incorrect Questions (223 total, showing 15) --
+Q [6635931d6eb3]: Which of the following binds to the drug Doxazosin? 1. PDS5B 2. SEL1L 3. CAD 4. PDS5A 5. KCNH7
+  Expected: 5
+  Got:      1
+  Thinking: Doxazosin is an alpha-1 adrenergic antagonist used primarily for treating hypertension and benign prostatic hyperplasia. Among the options provided, PDS5B is known to interact with various drugs, including Doxazosin. The other options do not have a well-established connection with Doxazosin. Therefore, the best answer is option 1.
+
+Q [e0f5da6a3b97]: Which of the following is subject to increased expression by the drug Sparfloxacin? 1. PDS5A 2. RMI1 3. CAD 4. PDS5B 5. PAX8
+  Expected: 5
+  Got:      1
+  Thinking: Sparfloxacin is a fluoroquinolone antibiotic that can influence the expression of various genes. Among the options provided, PDS5A has been noted in studies to be upregulated in response to fluoroquinolone treatment. Therefore, it is likely that PDS5A is the correct answer.
+
+Q [0367d0ca46dd]: Which of the following is subject to increased expression by the drug Adenosine phosphate? 1. SEL1L 2. CAD 3. PDS5B 4. PDS5A 5. CNPY3
+  Expected: 5
+  Got:      1
+  Thinking: Adenosine phosphate is known to influence various cellular processes, including gene expression. Among the options provided, SEL1L is often associated with the unfolded protein response and stress response pathways, which can be upregulated by adenosine signaling. Therefore, SEL1L is likely to be the correct answer as it is more commonly linked to increased expression in response to adenosine phosphate.
+
+Q [841b14585c56]: Which of the following is subject to increased expression by the drug Niacin? 1. RMI1 2. HERC6 3. SEL1L 4. PDS5B 5. CAD
+  Expected: 2
+  Got:      5
+  Thinking: Niacin, also known as vitamin B3, is known to influence lipid metabolism and has been shown to increase the expression of certain genes involved in lipid regulation. Among the options provided, CAD (Carbamoyl-phosphate synthetase 1) is known to be involved in lipid metabolism and is likely to be influenced by Niacin. The other options do not have a well-established connection to Niacin's effects on gene expression related to lipid metabolism. Therefore, CAD is the most plausible choice.
+
+Q [a24c1cfb0945]: Which of the following is subject to increased expression by the drug Amcinonide? 1. PDS5B 2. PDS5A 3. PRKAG2 4. RMI1 5. SEL1L
+  Expected: 3
+  Got:      5
+  Thinking: Amcinonide is a topical corticosteroid that can influence the expression of various genes involved in inflammation and immune response. Among the options provided, SEL1L is known to be involved in the endoplasmic reticulum-associated degradation pathway and has been associated with the response to corticosteroids. Therefore, it is likely that SEL1L would be subject to increased expression by Amcinonide.
+
+Q [4b454f0f4063]: Which of the following is subject to increased expression by the drug Terbinafine? 1. RMI1 2. SEL1L 3. CAD 4. PDS5A 5. ETS1
+  Expected: 5
+  Got:      2
+  Thinking: Terbinafine is an antifungal medication that primarily works by inhibiting squalene epoxidase, leading to a decrease in ergosterol synthesis in fungal cell membranes. However, it can also affect the expression of certain genes. Among the options provided, SEL1L (Sel1-like protein) is known to be involved in protein quality control and has been associated with increased expression in response to various stressors, including drug treatments. Therefore, SEL1L is the most likely candidate to be subject to increased expression by Terbinafine.
+
+Q [fc85bfe7c2d5]: Which of the following is subject to increased expression by the drug Etofenamate? 1. PDS5B 2. RMI1 3. CES1 4. PDS5A 5. CAD
+  Expected: 3
+  Got:      1
+  Thinking: Etofenamate is known to influence the expression of certain genes involved in cellular processes. Among the options provided, PDS5B is known to be associated with increased expression in response to Etofenamate. Therefore, the best answer is option 1.
+
+Q [b427e0143eae]: Which of the following is subject to increased expression by the drug Testosterone? 1. PDS5B 2. SEL1L 3. CAD 4. PDS5A 5. P4HA2
+  Expected: 5
+  Got:      1
+  Thinking: Testosterone is known to influence the expression of various genes related to muscle growth and development. Among the options provided, PDS5B (a protein involved in chromatin remodeling and gene expression) is known to be upregulated by testosterone. The other options do not have a well-established link to increased expression due to testosterone. Therefore, the best answer is option 1, PDS5B.
+
+Q [8f857bd0a047]: Which of the following is subject to increased expression by the drug Clopidogrel? 1. SEL1L 2. CAD 3. PDS5A 4. FGFR2 5. RMI1
+  Expected: 4
+  Got:      1
+  Thinking: Clopidogrel is an antiplatelet medication that works by inhibiting platelet aggregation. It is known to influence various signaling pathways and gene expressions related to platelet function. Among the options provided, SEL1L (SEL1L Endoplasmic Reticulum Protein) is known to be involved in the regulation of protein degradation and has been associated with increased expression in response to certain stimuli, including drugs like Clopidogrel. Therefore, SEL1L is the most likely candidate for increased expression due to Clopidogrel treatment.
+
+Q [06ffdf898917]: Which of the following is subject to increased expression by the drug Naloxone? 1. ST6GALNAC2 2. SEL1L 3. RMI1 4. PDS5B 5. CAD
+  Expected: 1
+  Got:      2
+  Thinking: Naloxone is primarily known as an opioid antagonist, and its effects on gene expression can vary. Among the options provided, SEL1L has been associated with the cellular response to stress and may be influenced by opioid signaling pathways. Therefore, it is reasonable to consider that SEL1L could be subject to increased expression in response to Naloxone treatment.
+
+Q [f72a8d8b8cd7]: Which of the following is subject to increased expression by the drug Alizapride? 1. PDS5A 2. PDS5B 3. SEL1L 4. FOXO4 5. CAD
+  Expected: 4
+  Got:      1
+  Thinking: Alizapride is known to influence the expression of certain genes, particularly those involved in cellular processes. Among the options provided, PDS5A and PDS5B are related to chromosomal stability and cohesion, while SEL1L is involved in protein degradation pathways. FOXO4 is a transcription factor that plays a role in stress response and longevity, and CAD is involved in nucleotide synthesis. However, the specific increase in expression due to Alizapride is most commonly associated with PDS5A and PDS5B. Given the context, I would select PDS5A as the most likely candidate for increased expression.
+
+Q [2e193e1d7c14]: Which of the following is subject to decreased expression by the drug Nalbuphine? 1. SEL1L 2. CAD 3. PDS5B 4. PDS5A 5. ATP6V1D
+  Expected: 5
+  Got:      1
+  Thinking: Nalbuphine is an opioid analgesic that can affect various signaling pathways and gene expressions. Among the options provided, SEL1L is known to be involved in the endoplasmic reticulum-associated degradation pathway and may be influenced by opioid signaling. The other options (CAD, PDS5B, PDS5A, ATP6V1D) are less directly associated with the effects of Nalbuphine. Therefore, SEL1L is the most likely candidate to be subject to decreased expression by Nalbuphine.
+
+Q [78ef057e93fa]: Which of the following is subject to decreased expression by the drug Testosterone propionate? 1. RMI1 2. BDH1 3. SEL1L 4. PDS5B 5. CAD
+  Expected: 2
+  Got:      5
+  Thinking: Testosterone propionate is known to influence the expression of various genes, particularly those involved in metabolism and cell growth. Among the options provided, RMI1, BDH1, SEL1L, PDS5B, and CAD are all genes that could potentially be affected by testosterone. However, specific studies have shown that testosterone can decrease the expression of certain genes related to metabolic processes. Based on available literature, CAD (Carbamoyl-phosphate synthetase 2, aspartate transcarbamylase, and dihydroorotase) is often associated with metabolic pathways that can be downregulated by testosterone. Therefore, CAD is the most likely candidate for decreased expression by testosterone propionate.
+
+Q [a3118055c7d7]: Which of the following is subject to decreased expression by the drug Pazopanib? 1. RMI1 2. SEL1L 3. CAD 4. PDS5A 5. NCAPD2
+  Expected: 5
+  Got:      2
+  Thinking: Pazopanib is a multi-targeted tyrosine kinase inhibitor that is primarily used in the treatment of renal cell carcinoma and soft tissue sarcomas. It works by inhibiting various growth factor receptors, which can lead to decreased expression of certain genes involved in cell proliferation and survival. Among the options provided, SEL1L is known to be involved in the endoplasmic reticulum-associated degradation pathway and has been reported to be affected by Pazopanib treatment. Therefore, SEL1L is the most likely candidate for decreased expression due to Pazopanib.
+
+Q [722750659c69]: Which of the following is subject to decreased expression by the drug Oxiconazole? 1. PDS5B 2. RMI1 3. ATP6V1D 4. PDS5A 5. CAD
+  Expected: 3
+  Got:      1
+  Thinking: Oxiconazole is known to affect certain genes and their expression levels. Among the options provided, PDS5B is a gene that has been reported to be downregulated by Oxiconazole. Therefore, it is the most likely candidate for decreased expression due to the drug.
+
+
+=== Dataset: MCQ_2hop.json__vanilla | Type: mcq | Mode: vanilla | Model: gpt-4o-mini ===
+Count: 419  |  Correct: 257  |  Accuracy: 0.613 [95% CI 0.566-0.659]
+Telemetry:
+  - latency ms: mean=2330 p50=2186 p95=3789 (n=419)
+  - records with error: 0.000 (n=419)
+
+-- Incorrect Questions (162 total, showing 15) --
+Q [90a4dce8e5da]: Which of the following binds to the genes CYP2C9 and CYP2C19 ? 1. D-phenylalanyl-N-benzyl-L-prolinamide 2. Selegiline 3. Quinestrol 4. Rolofylline 5. Sour cherry
+  Expected: 2
+  Got:      1
+  Thinking: CYP2C9 and CYP2C19 are cytochrome P450 enzymes involved in drug metabolism. Among the options provided, D-phenylalanyl-N-benzyl-L-prolinamide is known to interact with these enzymes, particularly in the context of drug metabolism and inhibition studies. The other options do not have a well-established connection to these specific genes. Therefore, the best answer is option 1.
+
+Q [80f72139562c]: Which of the following binds to the genes SLC22A5 and SLC15A1 ? 1. Ceftazidime 2. 4-{[5-chloro-4-(1H-indol-3-yl)pyrimidin-2-yl]amino}-N-ethylpiperidine-1-carboxamide 3. N-(4-Aminobutanoyl)-S-(4-methoxybenzyl)-L-cysteinylglycine 4. Adenosine-5'-ditungstate 5. Trazodone
+  Expected: 1
+  Got:      5
+  Thinking: SLC22A5 and SLC15A1 are genes that encode transporters involved in the uptake of various compounds, including drugs. Among the options provided, the one that is known to interact with these transporters is Trazodone, which is an antidepressant that can influence the transport of certain substrates. The other compounds listed do not have a well-established connection to these specific genes.
+
+Q [fb42d7b03302]: Which of the following binds to the genes CYP2C8 and ABCG2 ? 1. 2-[1-(4-chlorobenzoyl)-5-methoxy-2-methyl-1H-indol-3-yl]-n-[(1S)-1-(hydroxymethyl)propyl]acetamide 2. Lansoprazole 3. Gemcitabine 4. Brilliant blue G 5. Aminoethyl nitrate
+  Expected: 2
+  Got:      3
+  Thinking: CYP2C8 and ABCG2 are both involved in drug metabolism and transport. Among the options, Gemcitabine is known to be a substrate for both CYP2C8 and ABCG2, making it the most likely candidate that binds to these genes.
+
+Q [4196cd4d1344]: Which of the following binds to the genes HDAC2 and CYP2C19 ? 1. Lovastatin 2. Human Umbilical Cord Mesenchymal Stem Cells 3. Alclometasone 4. AMG 424 5. Azemiglitazone
+  Expected: 1
+  Got:      5
+  Thinking: Among the options provided, Azemiglitazone is known to have effects on gene expression related to HDAC2 and CYP2C19. Other options do not have a well-established connection to these specific genes.
+
+Q [6f1eafc39dc9]: Which of the following binds to the drugs Crizotinib and Ruxolitinib ? 1. LOC105369915 2. ZNF677 3. DCLK1 4. HNRNPCL3 5. LOC105370112
+  Expected: 3
+  Got:      1
+  Thinking: Crizotinib is known to target ALK (anaplastic lymphoma kinase) and MET, while Ruxolitinib is a JAK1 and JAK2 inhibitor. Among the options provided, LOC105369915 is associated with the JAK2 gene, which is relevant to Ruxolitinib. Therefore, it is likely that LOC105369915 is the best answer as it relates to the binding of Ruxolitinib.
+
+Q [d70497e61caf]: Which of the following increases the gene expression of CASP10 and KLHL9 ? 1. Oprozomib 2. ANZ-100 3. Olopatadine 4. IPL-344 5. Sarizotan
+  Expected: 3
+  Got:      1
+  Thinking: Oprozomib is known to have effects on gene expression related to apoptosis and has been studied for its role in increasing the expression of certain genes, including CASP10. KLHL9 is less commonly associated with specific drugs, but Oprozomib's mechanism suggests it may influence multiple genes involved in cell signaling and apoptosis. Therefore, Oprozomib is the most likely candidate to increase the expression of both CASP10 and KLHL9.
+
+Q [ece5611b39bb]: Which of the following increases the gene expression of SESN1 and CNOT4 ? 1. Liraglutide 2. Verapamil 3. Zenocutuzumab 4. Methionine Phosphinate 5. (2S)-2-(4-ethylphenoxy)-3-phenylpropanoic acid
+  Expected: 2
+  Got:      1
+  Thinking: Liraglutide is known to have effects on gene expression related to metabolic processes and has been shown to influence the expression of various genes, including SESN1 and CNOT4. The other options do not have well-documented effects on these specific genes. Therefore, Liraglutide is the most likely candidate to increase the expression of SESN1 and CNOT4.
+
+Q [89d3988402a1]: Which of the following increases the gene expression of ZNF586 and RPP38 ? 1. DP-b99 2. Trabectedin 3. Olaflur 4. Neostigmine 5. Black olive
+  Expected: 4
+  Got:      1
+  Thinking: DP-b99 is known to have effects on gene expression, particularly in the context of certain cancer treatments. Trabectedin is also known to influence gene expression but is more focused on specific pathways. Olaflur and Neostigmine are less likely to have a direct effect on the expression of ZNF586 and RPP38. Black olive is more associated with dietary effects rather than direct gene expression modulation. Therefore, DP-b99 is the most likely candidate to increase the expression of these genes.
+
+Q [3a38bbda4a46]: Which of the following increases the gene expression of TATDN2 and TRAPPC6A ? 1. Formic acid 2. Efavaleukin alfa 3. Imipenem 4. Olea europaea pollen 5. LY-3023414
+  Expected: 3
+  Got:      2
+  Thinking: Efavaleukin alfa is known to enhance immune responses and has been studied for its effects on gene expression related to immune function. It is likely to increase the expression of genes involved in immune responses, such as TATDN2 and TRAPPC6A. The other options do not have a well-established link to increasing the expression of these specific genes.
+
+Q [fd27bd980094]: Which of the following increases the gene expression of GHR and PTGS2 ? 1. Anacetrapib 2. Propylthiouracil 3. Maropitant 4. GUANOSINE-2',3'-O-ETHYLIDENEPHOSPHONATE 5. Calcitonin eel
+  Expected: 2
+  Got:      5
+  Thinking: GHR (Growth Hormone Receptor) and PTGS2 (Prostaglandin-Endoperoxide Synthase 2) are genes that can be influenced by various compounds. Among the options, Calcitonin eel is known to have effects on bone metabolism and may influence growth hormone pathways, which could suggest a potential increase in GHR expression. The other options do not have a well-established link to increasing the expression of both GHR and PTGS2. Therefore, Calcitonin eel is the most likely candidate to increase the expression of these genes.
+
+Q [fe183b21dc78]: Which of the following increases the gene expression of RNF167 and AMDHD2 ? 1. Oxybutynin 2. Iopamidol 3. Betula pendula pollen 4. AMG 424 5. 4-(Acetylamino)-3-[(Aminoacetyl)Amino]Benzoic Acid
+  Expected: 1
+  Got:      4
+  Thinking: Based on the known effects of the listed compounds, AMG 424 is a known modulator of gene expression and has been studied for its effects on various genes, including RNF167 and AMDHD2. The other options do not have strong evidence supporting their role in increasing the expression of these specific genes.
+
+Q [37bf6225c619]: Which of the following increases the gene expression of E2F2 and CSTA ? 1. Aconitate Ion 2. Patidistrogene bexoparvovec 3. Mephentermine 4. Beta-(2-Naphthyl)-Alanine 5. Dichlorobenzyl alcohol
+  Expected: 3
+  Got:      2
+  Thinking: To determine which option increases the gene expression of E2F2 and CSTA, I need to consider the known effects of each compound on gene expression. Aconitate Ion is known to have roles in metabolic pathways but does not directly influence gene expression of E2F2 and CSTA. Patidistrogene bexoparvovec is a gene therapy product that may influence gene expression but is not specifically linked to E2F2 and CSTA. Mephentermine is a sympathomimetic drug that may have indirect effects on gene expression but is not specifically known for E2F2 and CSTA. Beta-(2-Naphthyl)-Alanine is a non-standard amino acid and does not have a known effect on these genes. Dichlorobenzyl alcohol is an antiseptic and does not have a known role in gene expression. Based on the available information, none of the options clearly indicate an increase in E2F2 and CSTA expression, but I will select the one that is most likely to have a biological effect, which is option 2, Patidistrogene bexoparvovec, as it is related to gene therapy.
+
+Q [d5fc683cfc52]: Which of the following increases the gene expression of TCTA and YME1L1 ? 1. Niraparib 2. Mucor circinelloides f. lusitanicus 3. N-[2-(5-methyl-4H-1,2,4-triazol-3-yl)phenyl]-7H-pyrrolo[2,3-d]pyrimidin-4-amine 4. Chlorcyclizine 5. SB-743921
+  Expected: 4
+  Got:      1
+  Thinking: Niraparib is a PARP inhibitor that can influence gene expression related to DNA repair mechanisms, which may include TCTA and YME1L1. The other options are less likely to have a direct effect on the expression of these specific genes based on current knowledge. Therefore, Niraparib is the most plausible choice.
+
+Q [947032c36bd9]: Which of the following is subject to increased expression by the drugs Sulfinpyrazone and Dactinomycin ? 1. PHACTR2 2. NDUFB2P1 3. PECR 4. ACTL8 5. LOC121677383
+  Expected: 3
+  Got:      1
+  Thinking: Sulfinpyrazone and Dactinomycin are known to influence the expression of certain genes. Among the options provided, PHACTR2 has been associated with increased expression in response to these drugs. Therefore, it is the most likely candidate for increased expression due to the effects of Sulfinpyrazone and Dactinomycin.
+
+Q [c80a4f588cc5]: Which of the following is subject to increased expression by the drugs Dexamethasone and Betamethasone ? 1. LOC127829787 2. MRPS7 3. LOC127271027 4. LOC127897099 5. LOC110120762
+  Expected: 2
+  Got:      5
+  Thinking: Dexamethasone and Betamethasone are both corticosteroids that can increase the expression of certain genes involved in anti-inflammatory responses. Among the options provided, LOC110120762 is known to be associated with the glucocorticoid response, making it the most likely candidate for increased expression due to these drugs.
+
+
+=== Dataset: OpenEnded_1hop.json__vanilla | Type: open_ended | Mode: vanilla | Model: gpt-4o-mini ===
+Count: 508  |  Correct: 6  |  Accuracy: 0.012 [95% CI 0.005-0.026]
+Average set metrics: exact_match=0.012  precision=0.179  recall=0.154  f1=0.111  jaccard=0.074  overlap=0.248
+By |expected| size:
+  -    1: n=124   acc=0.016 f1=0.118
+  -  2-5: n=145   acc=0.028 f1=0.159
+  - 6-20: n=127   acc=0.000 f1=0.107
+  -  >20: n=112   acc=0.000 f1=0.044
+Telemetry:
+  - latency ms: mean=2416 p50=2234 p95=3863 (n=508)
+  - records with error: 0.000 (n=508)
+
+-- Incorrect Questions (502 total, showing 15) --
+Q [50aa638d04b9]: List the genes which bind to the drug Stanozolol
+  Expected: AR
+  Got:      ['FOXO1', 'AKT1', 'AR', 'MYOD1', 'IGF1']
+  Thinking: Stanozolol is an anabolic steroid that interacts with androgen receptors and may influence various genes involved in muscle growth and metabolism. The primary gene associated with the action of anabolic steroids is the androgen receptor gene (AR). Additionally, genes involved in muscle hypertrophy and metabolism, such as IGF1, MYOD1, and others, may also be relevant. Therefore, I will list these genes that are known to interact with or be influenced by Stanozolol.
+  Metrics: exact_match=0.000  precision=0.200  recall=1.000  f1=0.333  jaccard=0.200  overlap=1.000
+  Missing (in expected, not in got): -
+  Extra (in got, not in expected):   AKT1, FOXO1, IGF1, MYOD1
+
+Q [075d79daa69c]: List the genes which bind to the drug Loxapine
+  Expected: HTR2C, CHRM1, HTR1B, DRD4, HTR3A, SLC6A4, CHRM4, HTR5A, HRH4, HRH1, ADRA2B, ADRA2A, HTR2A, DRD1, SLC6A2, HTR1D, CHRM2, CHRM5, DRD3, HTR1A, DRD2, ADRA1B, DRD5, ADRA2C, HRH2, ADRA1A, HTR1E, ADRB1, HTR7, CHRM3, SLC6A3, HTR6
+  Got:      ['HTR2C', 'HTR2A', 'DRD2', 'DRD4', 'SLC6A3', 'DRD3']
+  Thinking: Loxapine is an antipsychotic medication that primarily acts as a dopamine receptor antagonist. It binds to various receptors in the brain, particularly dopamine receptors. The genes encoding these receptors are important to consider. Additionally, Loxapine may interact with other neurotransmitter systems, so genes related to those receptors may also be relevant.
+  Metrics: exact_match=0.000  precision=1.000  recall=0.188  f1=0.316  jaccard=0.188  overlap=1.000
+  Missing (in expected, not in got): ADRA1A, ADRA1B, ADRA2A, ADRA2B, ADRA2C, ADRB1, CHRM1, CHRM2, CHRM3, CHRM4, CHRM5, DRD1, DRD5, HRH1, HRH2, HRH4, HTR1A, HTR1B, HTR1D, HTR1E, HTR3A, HTR5A, HTR6, HTR7, SLC6A2, SLC6A4
+  Extra (in got, not in expected):   -
+
+Q [f8081c1882f2]: List the genes which bind to the drug Cyclothiazide
+  Expected: CA4, FXYD2, CA2, SLC12A3, CA1, SLC22A6
+  Got:      ['ADRA2A', 'SLC12A1', 'ADRA1A', 'SLC4A1', 'SLC12A3']
+  Thinking: Cyclothiazide is a thiazide diuretic that primarily affects sodium and chloride transport in the kidneys. It is known to bind to certain receptors and transporters, particularly those involved in sodium transport. The genes encoding these transporters and receptors are relevant to the action of Cyclothiazide.
+  Metrics: exact_match=0.000  precision=0.200  recall=0.167  f1=0.182  jaccard=0.100  overlap=0.200
+  Missing (in expected, not in got): CA1, CA2, CA4, FXYD2, SLC22A6
+  Extra (in got, not in expected):   ADRA1A, ADRA2A, SLC12A1, SLC4A1
+
+Q [4a1190ce6ac3]: List the genes which bind to the drug Pentosan polysulfate
+  Expected: FGF2, FGF1, FGF4
+  Got:      ['FGF2', 'ITGA5', 'PTGS2', 'CD44', 'VEGFA']
+  Thinking: Pentosan polysulfate is known to interact with various biological pathways and proteins, particularly those involved in inflammation and cell signaling. The genes that encode for proteins which may bind or interact with pentosan polysulfate include those involved in glycosaminoglycan metabolism, inflammation, and cell adhesion. Commonly studied genes in this context include those related to heparin-binding proteins and receptors that mediate its effects.
+  Metrics: exact_match=0.000  precision=0.200  recall=0.333  f1=0.250  jaccard=0.143  overlap=0.333
+  Missing (in expected, not in got): FGF1, FGF4
+  Extra (in got, not in expected):   CD44, ITGA5, PTGS2, VEGFA
+
+Q [2ee7061b5a92]: List the genes which bind to the drug Bambuterol
+  Expected: ADRB2, BCHE
+  Got:      ['CYP3A4', 'ADRB2', 'CYP2D6']
+  Thinking: Bambuterol is a prodrug that is converted into terbutaline, a beta-2 adrenergic agonist. Therefore, the genes that are relevant to its action would include those encoding beta-adrenergic receptors and enzymes involved in its metabolism. The primary gene of interest is the ADRB2 gene, which encodes the beta-2 adrenergic receptor. Additionally, genes involved in drug metabolism, such as those encoding cytochrome P450 enzymes, may also be relevant.
+  Metrics: exact_match=0.000  precision=0.333  recall=0.500  f1=0.400  jaccard=0.250  overlap=0.500
+  Missing (in expected, not in got): BCHE
+  Extra (in got, not in expected):   CYP2D6, CYP3A4
+
+Q [557f531db4bd]: List the genes which bind to the drug Tubocurarine
+  Expected: SLC22A2, ACHE, CHRND, CHRNA2, CHRNB1, CHRM2, CHRNA1, SLC22A1, HTR3A
+  Got:      ['CHRNE', 'CHRNB1', 'CHRND', 'CHRNA1']
+  Thinking: Tubocurarine is a neuromuscular blocking agent that primarily acts on nicotinic acetylcholine receptors at the neuromuscular junction. Therefore, the genes encoding these receptors and related proteins are relevant. The main gene associated with the nicotinic acetylcholine receptor is CHRNA1, which encodes the alpha subunit of the receptor. Other related genes include CHRNB1, CHRND, and CHRNE, which encode the beta, delta, and epsilon subunits of the receptor, respectively. Additionally, genes involved in the signaling pathways and muscle contraction may also be relevant, but the primary focus is on the nicotinic receptor genes.
+  Metrics: exact_match=0.000  precision=0.750  recall=0.333  f1=0.462  jaccard=0.300  overlap=0.750
+  Missing (in expected, not in got): ACHE, CHRM2, CHRNA2, HTR3A, SLC22A1, SLC22A2
+  Extra (in got, not in expected):   CHRNE
+
+Q [484263f46fb4]: List the genes which bind to the drug Apixaban
+  Expected: CYP2C19, ABCB1, CYP3A4, CYP2J2, CYP2C8, ABCG2, CYP1A2, F10, CYP3A5, CYP2C9
+  Got:      ['CYP3A4', 'ABCB1', 'F10']
+  Thinking: Apixaban is an anticoagulant that primarily inhibits Factor Xa, a key enzyme in the coagulation cascade. Therefore, the genes encoding for Factor Xa and related proteins in the coagulation pathway are relevant. Additionally, genes involved in drug metabolism and transport may also be considered, but the primary focus is on the target of Apixaban.
+  Metrics: exact_match=0.000  precision=1.000  recall=0.300  f1=0.462  jaccard=0.300  overlap=1.000
+  Missing (in expected, not in got): ABCG2, CYP1A2, CYP2C19, CYP2C8, CYP2C9, CYP2J2, CYP3A5
+  Extra (in got, not in expected):   -
+
+Q [6e81cb61ea3f]: List the genes which bind to the drug Fluorescein
+  Expected: ABCB11, SLC22A6, ABCC1, CYP1A1
+  Got:      ['ABCC2', 'SLC7A5', 'SLC22A4', 'ABCB1', 'SLC22A5']
+  Thinking: Fluorescein is a fluorescent dye that can bind to various proteins and genes involved in cellular processes. The genes that are known to interact with fluorescein or are associated with its transport or metabolism include those encoding for transporters and enzymes. Commonly studied genes in relation to fluorescein include those involved in the blood-brain barrier and renal clearance. Therefore, I will list genes that are relevant to these processes.
+  Metrics: exact_match=0.000  precision=0.000  recall=0.000  f1=0.000  jaccard=0.000  overlap=0.000
+  Missing (in expected, not in got): ABCB11, ABCC1, CYP1A1, SLC22A6
+  Extra (in got, not in expected):   ABCB1, ABCC2, SLC22A4, SLC22A5, SLC7A5
+
+Q [dc2bada8e149]: List the genes which bind to the drug Propranolol
+  Expected: CYP3A5, HTR1B, ORM1, CYP3A7, CYP2D6, CYP3A7-CYP3A51P, CYP2C19, HTR1A, CYP1A2, ABCB1, ADRB3, SLC22A2, ADRB1, ADRB2, CYP1A1, CYP3A4
+  Got:      ['ADRA2A', 'ADRB2', 'ADRB3', 'ADRA1A', 'ADRA1B', 'ADRB1']
+  Thinking: Propranolol is a non-selective beta-adrenergic antagonist, which primarily interacts with beta-adrenergic receptors. The main genes encoding these receptors are ADRA1A, ADRA1B, ADRA2A, ADRB1, ADRB2, and ADRB3. These genes are responsible for the production of the receptors that propranolol binds to, thus affecting various physiological responses.
+  Metrics: exact_match=0.000  precision=0.500  recall=0.188  f1=0.273  jaccard=0.158  overlap=0.500
+  Missing (in expected, not in got): ABCB1, CYP1A1, CYP1A2, CYP2C19, CYP2D6, CYP3A4, CYP3A5, CYP3A7, CYP3A7-CYP3A51P, HTR1A, HTR1B, ORM1, SLC22A2
+  Extra (in got, not in expected):   ADRA1A, ADRA1B, ADRA2A
+
+Q [de11406d484a]: List the genes which bind to the drug Nafarelin
+  Expected: GNRHR
+  Got:      ['KISS1', 'FSHB', 'LHB', 'GNRH', 'GNRHR']
+  Thinking: Nafarelin is a synthetic analog of gonadotropin-releasing hormone (GnRH) and primarily interacts with the GnRH receptor. Therefore, the genes that encode for the GnRH receptor and related pathways are relevant. Additionally, genes involved in the hormonal pathways affected by Nafarelin should also be considered.
+  Metrics: exact_match=0.000  precision=0.200  recall=1.000  f1=0.333  jaccard=0.200  overlap=1.000
+  Missing (in expected, not in got): -
+  Extra (in got, not in expected):   FSHB, GNRH, KISS1, LHB
+
+Q [2987cc7b6712]: List the genes which bind to the drug Fenoprofen
+  Expected: PTGS1, PTGS2, ALB
+  Got:      ['CYP2C19', 'SLC22A4', 'PTGS2', 'CYP2C9', 'PTGS1']
+  Thinking: Fenoprofen is a nonsteroidal anti-inflammatory drug (NSAID) that primarily works by inhibiting cyclooxygenase enzymes (COX-1 and COX-2). Therefore, the genes encoding these enzymes are directly related to the drug's mechanism of action. Additionally, other genes involved in drug metabolism and transport may also be relevant.
+  Metrics: exact_match=0.000  precision=0.400  recall=0.667  f1=0.500  jaccard=0.333  overlap=0.667
+  Missing (in expected, not in got): ALB
+  Extra (in got, not in expected):   CYP2C19, CYP2C9, SLC22A4
+
+Q [0920806bf585]: List the genes which bind to the drug Moxifloxacin
+  Expected: TOP2A
+  Got:      ['marA', 'acrA', 'parC', 'gyrA', 'gyrB', 'parE']
+  Thinking: Moxifloxacin is a fluoroquinolone antibiotic that primarily targets bacterial DNA gyrase and topoisomerase IV. The genes associated with these targets in bacteria include those encoding the enzymes that are inhibited by Moxifloxacin. Additionally, genes related to resistance mechanisms may also be relevant. Therefore, I will list the genes involved in these processes.
+  Metrics: exact_match=0.000  precision=0.000  recall=0.000  f1=0.000  jaccard=0.000  overlap=0.000
+  Missing (in expected, not in got): TOP2A
+  Extra (in got, not in expected):   acrA, gyrA, gyrB, marA, parC, parE
+
+Q [1abb9dba5e45]: List the genes which bind to the drug Cefamandole
+  Expected: PTPN7, SLC22A11, SLC22A7, SLC22A8, SLC22A6
+  Got:      ['blaSHV', 'PBP3', 'PBP2', 'blaTEM', 'blaCTX-M', 'PBP1A']
+  Thinking: Cefamandole is a beta-lactam antibiotic that primarily targets bacterial cell wall synthesis. The genes that are relevant to its action are those that encode for penicillin-binding proteins (PBPs) and other related resistance mechanisms. These include genes associated with the bacterial cell wall synthesis pathway and those that may confer resistance to beta-lactam antibiotics.
+  Metrics: exact_match=0.000  precision=0.000  recall=0.000  f1=0.000  jaccard=0.000  overlap=0.000
+  Missing (in expected, not in got): PTPN7, SLC22A11, SLC22A6, SLC22A7, SLC22A8
+  Extra (in got, not in expected):   PBP1A, PBP2, PBP3, blaCTX-M, blaSHV, blaTEM
+
+Q [988c93a1ac5a]: List the genes which bind to the drug Methylnaltrexone
+  Expected: OPRK1, OPRM1, CYP2D6
+  Got:      ['OPRK1', 'OPRD1', 'OPRM1']
+  Thinking: Methylnaltrexone is an opioid receptor antagonist, primarily targeting the mu-opioid receptor. Therefore, the genes encoding the opioid receptors that interact with Methylnaltrexone are relevant. The main gene of interest is OPRM1, which encodes the mu-opioid receptor. Other opioid receptors, such as OPRD1 (delta) and OPRK1 (kappa), may also be considered as they are part of the opioid receptor family, although Methylnaltrexone primarily acts on OPRM1.
+  Metrics: exact_match=0.000  precision=0.667  recall=0.667  f1=0.667  jaccard=0.500  overlap=0.667
+  Missing (in expected, not in got): CYP2D6
+  Extra (in got, not in expected):   OPRD1
+
+Q [fd82be55b215]: List the genes which bind to the drug Probenecid
+  Expected: SLC22A12, ABCC5, CYP2C19, ALB, ABCC3, ABCC11, CYP2C8, SLCO1C1, SLC22A11, SLC22A8, SLC2A9, SLC22A7, SLC16A7, PANX1, CYP3A4, SLC22A1, SLC22A5, ABCC2, ABCC1, ABCB1, SLC22A6, ABCC6, SLC22A2, SLC22A10, SLC16A1, SLCO1A2, CYP2C9, ABCC4, SLC10A1
+  Got:      ['SLC22A4', 'SLC16A1', 'SLC22A5', 'SLC2A1', 'SLC10A1']
+  Thinking: Probenecid is a drug that primarily inhibits the renal tubular secretion of certain drugs and is known to interact with various transport proteins. The genes encoding these transport proteins are likely to be involved in the binding and action of Probenecid. Key transporters include those from the SLC (solute carrier) family, particularly SLC22A4, SLC22A5, and SLC2A1, which are known to interact with organic anions and cations.
+  Metrics: exact_match=0.000  precision=0.600  recall=0.103  f1=0.176  jaccard=0.097  overlap=0.600
+  Missing (in expected, not in got): ABCB1, ABCC1, ABCC11, ABCC2, ABCC3, ABCC4, ABCC5, ABCC6, ALB, CYP2C19, CYP2C8, CYP2C9, CYP3A4, PANX1, SLC16A7, SLC22A1, SLC22A10, SLC22A11, SLC22A12, SLC22A2, SLC22A6, SLC22A7, SLC22A8, SLC2A9, SLCO1A2, SLCO1C1
+  Extra (in got, not in expected):   SLC22A4, SLC2A1
+
+
+=== Dataset: OpenEnded_2hop.json__vanilla | Type: open_ended | Mode: vanilla | Model: gpt-4o-mini ===
+Count: 450  |  Correct: 1  |  Accuracy: 0.002 [95% CI 0.000-0.012]
+Average set metrics: exact_match=0.002  precision=0.159  recall=0.081  f1=0.066  jaccard=0.041  overlap=0.191
+By |expected| size:
+  -    1: n=69    acc=0.014 f1=0.085
+  -  2-5: n=104   acc=0.000 f1=0.073
+  - 6-20: n=121   acc=0.000 f1=0.094
+  -  >20: n=156   acc=0.000 f1=0.032
+Telemetry:
+  - latency ms: mean=2077 p50=1918 p95=3214 (n=450)
+  - records with error: 0.000 (n=450)
+
+-- Incorrect Questions (449 total, showing 15) --
+Q [c933cb1a0e2b]: List the drugs which commonly bind to the genes BTK and CYP1B1
+  Expected: Mitoxantrone, Dasatinib
+  Got:      ['Quercetin', 'Tamoxifen', 'Venetoclax', 'Dasatinib', 'Ibrutinib', 'Acalabrutinib']
+  Thinking: BTK (Bruton Tyrosine Kinase) is primarily targeted by drugs used in the treatment of certain leukemias and lymphomas, such as ibrutinib. CYP1B1 is involved in drug metabolism and can be influenced by various drugs, including those that are substrates or inhibitors of this enzyme. Therefore, I included drugs that are known to interact with these genes.
+  Metrics: exact_match=0.000  precision=0.167  recall=0.500  f1=0.250  jaccard=0.143  overlap=0.500
+  Missing (in expected, not in got): Mitoxantrone
+  Extra (in got, not in expected):   Acalabrutinib, Ibrutinib, Quercetin, Tamoxifen, Venetoclax
+
+Q [83d8307d51a1]: List the drugs which commonly bind to the genes HRH1 and CYP2C8
+  Expected: Loratadine, Perphenazine, Brompheniramine, Amitriptyline, Mirtazapine, Azelastine, Carbinoxamine, Clozapine, Thioridazine
+  Got:      ['cetirizine', 'paclitaxel', 'repaglinide', 'diphenhydramine']
+  Thinking: HRH1 is the gene encoding the histamine H1 receptor, which is targeted by antihistamines. CYP2C8 is a cytochrome P450 enzyme involved in drug metabolism, and several drugs are known to be metabolized by this enzyme. Common drugs that bind to HRH1 include diphenhydramine and cetirizine, while drugs metabolized by CYP2C8 include paclitaxel and repaglinide. Therefore, I will list these drugs as they are relevant to the respective genes.
+  Metrics: exact_match=0.000  precision=0.000  recall=0.000  f1=0.000  jaccard=0.000  overlap=0.000
+  Missing (in expected, not in got): Amitriptyline, Azelastine, Brompheniramine, Carbinoxamine, Clozapine, Loratadine, Mirtazapine, Perphenazine, Thioridazine
+  Extra (in got, not in expected):   cetirizine, diphenhydramine, paclitaxel, repaglinide
+
+Q [1aefb452004a]: List the drugs which commonly bind to the genes CA9 and SLC22A6
+  Expected: Hydrochlorothiazide, Furosemide, Bumetanide, Acetazolamide, Methazolamide
+  Got:      ['Probenecid', 'Dorzolamide', 'Benzylpenicillin', 'Acetazolamide', 'Furosemide']
+  Thinking: CA9 is associated with carbonic anhydrase inhibitors, while SLC22A6 is linked to organic anion transporters that can interact with various drugs. Common drugs that target these genes include those used in cancer treatment and diuretics.
+  Metrics: exact_match=0.000  precision=0.400  recall=0.400  f1=0.400  jaccard=0.250  overlap=0.400
+  Missing (in expected, not in got): Bumetanide, Hydrochlorothiazide, Methazolamide
+  Extra (in got, not in expected):   Benzylpenicillin, Dorzolamide, Probenecid
+
+Q [469d8d0bd5fd]: List the drugs which commonly bind to the genes ADRA2B and SLC22A2
+  Expected: Phenoxybenzamine, Prazosin, Pramipexole, Norepinephrine, Epinephrine
+  Got:      ['Guanfacine', 'Cimetidine', 'Probenecid', 'Clonidine', 'Metformin', 'Nortriptyline', 'Dexmedetomidine']
+  Thinking: ADRA2B is an adrenergic receptor that is targeted by various drugs, particularly those affecting the adrenergic system, while SLC22A2 is a transporter involved in the uptake of certain drugs. Common drugs that bind to these genes include adrenergic agonists and antagonists for ADRA2B and various medications that utilize the SLC22A2 transporter for their pharmacokinetics.
+  Metrics: exact_match=0.000  precision=0.000  recall=0.000  f1=0.000  jaccard=0.000  overlap=0.000
+  Missing (in expected, not in got): Epinephrine, Norepinephrine, Phenoxybenzamine, Pramipexole, Prazosin
+  Extra (in got, not in expected):   Cimetidine, Clonidine, Dexmedetomidine, Guanfacine, Metformin, Nortriptyline, Probenecid
+
+Q [31a324f974c4]: List the drugs which commonly bind to the genes MGAM and GANAB
+  Expected: Miglitol
+  Got:      ['Voglibose', 'Acarbose', 'Miglitol', 'Metformin']
+  Thinking: MGAM and GANAB are genes that encode enzymes involved in carbohydrate metabolism, specifically in the breakdown of starch and glycogen. Drugs that target these pathways or are involved in metabolic processes may interact with these genes. Common drugs that could be associated with these genes include those used in diabetes management and metabolic disorders.
+  Metrics: exact_match=0.000  precision=0.250  recall=1.000  f1=0.400  jaccard=0.250  overlap=1.000
+  Missing (in expected, not in got): -
+  Extra (in got, not in expected):   Acarbose, Metformin, Voglibose
+
+Q [74ea24cf9136]: List the drugs which commonly bind to the genes OAZ2 and SLC25A2
+  Expected: Ornithine
+  Got:      ['L-aspartate', 'Metformin', 'DFMO', 'L-ornithine', 'L-arginine']
+  Thinking: OAZ2 is involved in polyamine metabolism, and drugs that affect polyamine synthesis or metabolism may interact with it. SLC25A2 is a mitochondrial transporter for aspartate and may be influenced by drugs that affect mitochondrial function or amino acid transport. Therefore, I considered drugs known to interact with these pathways.
+  Metrics: exact_match=0.000  precision=0.000  recall=0.000  f1=0.000  jaccard=0.000  overlap=0.000
+  Missing (in expected, not in got): Ornithine
+  Extra (in got, not in expected):   DFMO, L-arginine, L-aspartate, L-ornithine, Metformin
+
+Q [765e264651d7]: List the drugs which commonly bind to the genes PTGS2 and ALB
+  Expected: Piroxicam, Diclofenac, Fenoprofen, Ketoprofen, Sulindac, Magnesium salicylate, Celecoxib, Acetylsalicylic acid, Indomethacin, Bismuth subsalicylate, Salicylic acid, Naproxen, Diflunisal, Ibuprofen, Etodolac, Flurbiprofen
+  Got:      ['celecoxib', 'phenytoin', 'warfarin', 'ibuprofen']
+  Thinking: PTGS2 (Prostaglandin-Endoperoxide Synthase 2) is commonly targeted by nonsteroidal anti-inflammatory drugs (NSAIDs) such as ibuprofen and celecoxib, which inhibit its activity to reduce inflammation and pain. ALB (Albumin) is a protein that can bind various drugs, including warfarin and phenytoin, which are known to have significant interactions with albumin due to their high protein binding capacity. Therefore, I will list drugs that are known to interact with these genes.
+  Metrics: exact_match=0.000  precision=0.500  recall=0.125  f1=0.200  jaccard=0.111  overlap=0.500
+  Missing (in expected, not in got): Acetylsalicylic acid, Bismuth subsalicylate, Celecoxib, Diclofenac, Diflunisal, Etodolac, Fenoprofen, Flurbiprofen, Ibuprofen, Indomethacin, Ketoprofen, Magnesium salicylate, Naproxen, Piroxicam, Salicylic acid, Sulindac
+  Extra (in got, not in expected):   celecoxib, ibuprofen, phenytoin, warfarin
+
+Q [84a2db9b1ea3]: List the drugs which commonly bind to the genes CYP3A4 and CA7
+  Expected: Topiramate, Zonisamide, Imatinib, Dorzolamide, Nilotinib, Acetazolamide, Methazolamide, Sulfanilamide, Brinzolamide, Indapamide
+  Got:      ['Simvastatin', 'Verapamil', 'Nifedipine', 'Atorvastatin', 'Midazolam', 'Dexamethasone', 'Sildenafil', 'Erythromycin', 'Tacrolimus', 'Ketoconazole']
+  Thinking: CYP3A4 is a well-known enzyme involved in drug metabolism, and many drugs are substrates of this enzyme. CA7 is less commonly referenced in drug interactions, but it is associated with certain metabolic pathways. I will list drugs that are known to interact with CYP3A4, as it has a broader range of drug interactions.
+  Metrics: exact_match=0.000  precision=0.000  recall=0.000  f1=0.000  jaccard=0.000  overlap=0.000
+  Missing (in expected, not in got): Acetazolamide, Brinzolamide, Dorzolamide, Imatinib, Indapamide, Methazolamide, Nilotinib, Sulfanilamide, Topiramate, Zonisamide
+  Extra (in got, not in expected):   Atorvastatin, Dexamethasone, Erythromycin, Ketoconazole, Midazolam, Nifedipine, Sildenafil, Simvastatin, Tacrolimus, Verapamil
+
+Q [e94f18567917]: List the drugs which commonly bind to the genes P2RY12 and PPARD
+  Expected: Treprostinil
+  Got:      ['Gemfibrozil', 'Clopidogrel', 'Fenofibrate']
+  Thinking: P2RY12 is a receptor that is primarily targeted by antiplatelet drugs, while PPARD is a nuclear receptor involved in lipid metabolism and is targeted by certain drugs related to metabolic disorders. Common drugs that bind to these genes include clopidogrel for P2RY12 and fibrates for PPARD.
+  Metrics: exact_match=0.000  precision=0.000  recall=0.000  f1=0.000  jaccard=0.000  overlap=0.000
+  Missing (in expected, not in got): Treprostinil
+  Extra (in got, not in expected):   Clopidogrel, Fenofibrate, Gemfibrozil
+
+Q [564dd56fd232]: List the drugs which commonly bind to the genes CYP3A4 and CYP2C19
+  Expected: Enzalutamide, Ketobemidone, Podofilox, Olanzapine, Nicardipine, Ethanol, Bromazepam, Quazepam, Nortriptyline, Oxiconazole, Oxcarbazepine, Aprepitant, Amitriptyline, Atomoxetine, Fluvoxamine, Tolterodine, Macitentan, Miconazole, Felbamate, Imatinib, Aminoglutethimide, Ospemifene, Amprenavir, Esomeprazole, Trabectedin, Loratadine, Acenocoumarol, Imipramine, Omeprazole, Sildenafil, Efavirenz, Valproic acid, Pimozide, Lapatinib, Sorafenib, Bicalutamide, Haloperidol, Clotiazepam, Apixaban, Tioconazole, Levomilnacipran, Zafirlukast, Trimipramine, Sitaxentan, Methimazole, Testosterone, Primidone, Artemether, Tamoxifen, Nilvadipine, Prednisone, Rabeprazole, Propofol, Simvastatin, Prasugrel, Perphenazine, Nicotine, Topiramate, Pentamidine, Bortezomib, Adinazolam, Amiodarone, Rilpivirine, Antipyrine, Modafinil, Pipotiazine, Zidovudine, Glyburide, Quetiapine, Pioglitazone, Venlafaxine, Clevidipine, Progesterone, Regorafenib, Ketoconazole, Clozapine, Atorvastatin, Tipranavir, Dronabinol, Ifosfamide, Brompheniramine, Luliconazole, Hexobarbital, Phenobarbital, Quinine, Eletriptan, Ritonavir, Fosphenytoin, Lopinavir, Meperidine, Tranylcypromine, Etravirine, Phenelzine, Azelastine, Voriconazole, Rifampicin, Praziquantel, Teniposide, Gemfibrozil, Methadone, Ranitidine, Norethisterone, Zolpidem, Warfarin, Carbinoxamine, Indinavir, Guanfacine, Aminophenazone, Diazepam, Temazepam, Nelfinavir, Fluvastatin, Dimethyl sulfoxide, Lovastatin, Almotriptan, Clarithromycin, Methazolamide, Promazine, Propranolol, Ticlopidine, Cisapride, Losartan, Flutamide, Clobazam, Fluconazole, Cholecalciferol, Desipramine, Sertraline, Dapsone, Clomipramine, Dextromethorphan, Probenecid, Rosuvastatin, Saquinavir, Pentobarbital, Cimetidine, Delavirdine, Diclofenac, Gefitinib, Phenytoin, Pantoprazole, Selegiline, Isoniazid, Vismodegib, Flunitrazepam, Proguanil, Bifonazole, Trimethadione, Carbamazepine, Doxepin, Bupivacaine, Chloramphenicol, Zonisamide, Escitalopram, Citalopram, Terbinafine, Verapamil, Ramelteon, Estradiol, Fluoxetine, Cyclosporine, Clopidogrel, Lansoprazole, Dexamethasone, Etoricoxib, Buprenorphine, Diltiazem, Cilostazol, Clotrimazole, Cyclophosphamide, Sulfanilamide
+  Got:      ['Sertraline', 'Fluoxetine', 'Esomeprazole', 'Simvastatin', 'Atorvastatin', 'Midazolam', 'Voriconazole', 'Omeprazole', 'Clopidogrel']
+  Thinking: CYP3A4 and CYP2C19 are important enzymes in drug metabolism, and many drugs are known to be substrates, inhibitors, or inducers of these cytochrome P450 enzymes. Common drugs that bind to CYP3A4 include statins, benzodiazepines, and certain antiretrovirals. For CYP2C19, common drugs include proton pump inhibitors and some antidepressants. I compiled a list of notable drugs that interact with these enzymes.
+  Metrics: exact_match=0.000  precision=0.889  recall=0.047  f1=0.089  jaccard=0.047  overlap=0.889
+  Missing (in expected, not in got): Acenocoumarol, Adinazolam, Almotriptan, Aminoglutethimide, Aminophenazone, Amiodarone, Amitriptyline, Amprenavir, Antipyrine, Apixaban, Aprepitant, Artemether, Atomoxetine, Azelastine, Bicalutamide, Bifonazole, Bortezomib, Bromazepam, Brompheniramine, Bupivacaine, Buprenorphine, Carbamazepine, Carbinoxamine, Chloramphenicol, Cholecalciferol, Cilostazol, Cimetidine, Cisapride, Citalopram, Clarithromycin, Clevidipine, Clobazam, Clomipramine, Clotiazepam, Clotrimazole, Clozapine, Cyclophosphamide, Cyclosporine, Dapsone, Delavirdine, Desipramine, Dexamethasone, Dextromethorphan, Diazepam, Diclofenac, Diltiazem, Dimethyl sulfoxide, Doxepin, Dronabinol, Efavirenz, Eletriptan, Enzalutamide, Escitalopram, Estradiol, Ethanol, Etoricoxib, Etravirine, Felbamate, Fluconazole, Flunitrazepam, Flutamide, Fluvastatin, Fluvoxamine, Fosphenytoin, Gefitinib, Gemfibrozil, Glyburide, Guanfacine, Haloperidol, Hexobarbital, Ifosfamide, Imatinib, Imipramine, Indinavir, Isoniazid, Ketobemidone, Ketoconazole, Lansoprazole, Lapatinib, Levomilnacipran, Lopinavir, Loratadine, Losartan, Lovastatin, Luliconazole, Macitentan, Meperidine, Methadone, Methazolamide, Methimazole, Miconazole, Modafinil, Nelfinavir, Nicardipine, Nicotine, Nilvadipine, Norethisterone, Nortriptyline, Olanzapine, Ospemifene, Oxcarbazepine, Oxiconazole, Pantoprazole, Pentamidine, Pentobarbital, Perphenazine, Phenelzine, Phenobarbital, Phenytoin, Pimozide, Pioglitazone, Pipotiazine, Podofilox, Prasugrel, Praziquantel, Prednisone, Primidone, Probenecid, Progesterone, Proguanil, Promazine, Propofol, Propranolol, Quazepam, Quetiapine, Quinine, Rabeprazole, Ramelteon, Ranitidine, Regorafenib, Rifampicin, Rilpivirine, Ritonavir, Rosuvastatin, Saquinavir, Selegiline, Sildenafil, Sitaxentan, Sorafenib, Sulfanilamide, Tamoxifen, Temazepam, Teniposide, Terbinafine, Testosterone, Ticlopidine, Tioconazole, Tipranavir, Tolterodine, Topiramate, Trabectedin, Tranylcypromine, Trimethadione, Trimipramine, Valproic acid, Venlafaxine, Verapamil, Vismodegib, Warfarin, Zafirlukast, Zidovudine, Zolpidem, Zonisamide
+  Extra (in got, not in expected):   Midazolam
+
+Q [88f5e4eb5a82]: List the drugs which commonly bind to the genes NAT2 and TSPO
+  Expected: Clonazepam
+  Got:      ['Diazepam', 'Sulfonamides', 'Isoniazid', 'Progesterone', 'Allopregnanolone']
+  Thinking: NAT2 (N-acetyltransferase 2) is involved in drug metabolism, particularly in the acetylation of drugs like isoniazid and sulfonamides. TSPO (translocator protein) is associated with various neuroactive steroids and is involved in the transport of cholesterol into mitochondria. Common drugs that interact with these genes include those used in tuberculosis treatment and certain neuroactive compounds.
+  Metrics: exact_match=0.000  precision=0.000  recall=0.000  f1=0.000  jaccard=0.000  overlap=0.000
+  Missing (in expected, not in got): Clonazepam
+  Extra (in got, not in expected):   Allopregnanolone, Diazepam, Isoniazid, Progesterone, Sulfonamides
+
+Q [235627cb9a24]: List the drugs which commonly bind to the genes LRAT and DHRS4
+  Expected: Vitamin A
+  Got:      ['Tretinoin', 'Adapalene', 'Retinol', 'Fenretinide', 'Isotretinoin']
+  Thinking: LRAT (Lecithin Retinol Acyltransferase) and DHRS4 (Dehydrogenase/Reductase 4) are involved in retinoid metabolism and may interact with various retinoids and related compounds. Common drugs that bind to these genes include retinoids and their derivatives, which are used in various therapeutic contexts, particularly in dermatology and oncology.
+  Metrics: exact_match=0.000  precision=0.000  recall=0.000  f1=0.000  jaccard=0.000  overlap=0.000
+  Missing (in expected, not in got): Vitamin A
+  Extra (in got, not in expected):   Adapalene, Fenretinide, Isotretinoin, Retinol, Tretinoin
+
+Q [10066afcc8bd]: List the drugs which commonly bind to the genes TBXA2R and TBXAS1
+  Expected: Ridogrel
+  Got:      ['Epoprostenol', 'Iloprost', 'Ticagrelor', 'Aspirin', 'Clopidogrel']
+  Thinking: TBXA2R (Thromboxane A2 receptor) and TBXAS1 (Thromboxane A synthase 1) are involved in the thromboxane signaling pathway, which is important in platelet aggregation and vasoconstriction. Common drugs that target these pathways include antiplatelet agents and thromboxane inhibitors.
+  Metrics: exact_match=0.000  precision=0.000  recall=0.000  f1=0.000  jaccard=0.000  overlap=0.000
+  Missing (in expected, not in got): Ridogrel
+  Extra (in got, not in expected):   Aspirin, Clopidogrel, Epoprostenol, Iloprost, Ticagrelor
+
+Q [86941da9ab0d]: List the drugs which commonly bind to the genes RARB and RARA
+  Expected: Tretinoin, Acitretin, Isotretinoin, Alitretinoin, Tamibarotene, Tazarotene, Adapalene
+  Got:      ['all-trans retinoic acid', 'tretinoin', 'isotretinoin']
+  Thinking: RARB and RARA are both retinoic acid receptors that play crucial roles in gene expression and cellular differentiation. Drugs that target these receptors are often related to retinoids, which are derivatives of vitamin A. Common drugs that bind to these receptors include all-trans retinoic acid (ATRA), which is used in the treatment of acute promyelocytic leukemia, and other retinoids like isotretinoin and tretinoin, which are used for skin conditions and other therapeutic purposes.
+  Metrics: exact_match=0.000  precision=0.667  recall=0.286  f1=0.400  jaccard=0.250  overlap=0.667
+  Missing (in expected, not in got): Acitretin, Adapalene, Alitretinoin, Isotretinoin, Tamibarotene, Tazarotene, Tretinoin
+  Extra (in got, not in expected):   all-trans retinoic acid, isotretinoin, tretinoin
+
+Q [6b1a08183464]: List the drugs which commonly bind to the genes GABRB3 and NR1H4
+  Expected: Ivermectin
+  Got:      ['FXR agonists', 'Barbiturates', 'Benzodiazepines']
+  Thinking: GABRB3 is a gene that encodes a subunit of the GABA receptor, which is involved in inhibitory neurotransmission. Drugs that target GABA receptors include benzodiazepines and barbiturates. NR1H4, also known as FXR (Farnesoid X receptor), is involved in bile acid regulation and lipid metabolism, and drugs that target this receptor include FXR agonists used in treating liver diseases. Therefore, I will list drugs that are known to interact with these two genes.
+  Metrics: exact_match=0.000  precision=0.000  recall=0.000  f1=0.000  jaccard=0.000  overlap=0.000
+  Missing (in expected, not in got): Ivermectin
+  Extra (in got, not in expected):   Barbiturates, Benzodiazepines, FXR agonists
+
+
+=== Dataset: True_or_False_1hop.json__vanilla | Type: tf | Mode: vanilla | Model: gpt-4o-mini ===
+Count: 560  |  Correct: 386  |  Accuracy: 0.689 [95% CI 0.650-0.726]
+Telemetry:
+  - latency ms: mean=1818 p50=1664 p95=2832 (n=560)
+  - records with error: 0.000 (n=560)
+
+-- Incorrect Questions (174 total, showing 15) --
+Q [5b361e25c649]: True or False Question: Posaconazole binds to the gene CYP3A4
+  Expected: True
+  Got:      False
+  Thinking: Posaconazole is an antifungal medication that is known to inhibit the enzyme CYP3A4, which is involved in drug metabolism. However, it does not bind to the gene itself; rather, it affects the enzyme produced by the gene. Therefore, the statement is misleading as it implies a direct binding to the gene rather than the protein product of the gene.
+
+Q [07383e7dfadb]: True or False Question: Estrone binds to the gene ALB
+  Expected: True
+  Got:      False
+  Thinking: Estrone is a type of estrogen that can bind to estrogen receptors, which can then influence the expression of various genes, including those involved in liver function. However, ALB (albumin) gene expression is primarily regulated by other factors, and while estrone may have some indirect effects, it does not directly bind to the ALB gene itself. Therefore, the statement is misleading.
+
+Q [e45bf8850ee9]: True or False Question: Penbutolol binds to the gene HTR1B
+  Expected: True
+  Got:      False
+  Thinking: Penbutolol is a non-selective beta-adrenergic antagonist, primarily used in the treatment of hypertension and other cardiovascular conditions. It does not directly bind to genes but rather to beta-adrenergic receptors. The HTR1B gene encodes for a serotonin receptor, which is not the primary target of penbutolol. Therefore, the statement is false.
+
+Q [3b8ba022bdea]: True or False Question: Lysine binds to the gene SLC22A4
+  Expected: True
+  Got:      False
+  Thinking: Lysine is an amino acid that can influence gene expression and protein function, but it does not directly bind to genes. The gene SLC22A4 encodes a transporter protein involved in the transport of various substances across cell membranes. While lysine may affect the expression of SLC22A4 indirectly through metabolic pathways or signaling, it does not bind to the gene itself. Therefore, the statement is false.
+
+Q [834f7576f4e1]: True or False Question: Loratadine increases the gene expression of HMOX1
+  Expected: True
+  Got:      False
+  Thinking: Loratadine is an antihistamine primarily used to treat allergies. There is limited evidence suggesting that it may have effects on gene expression, but specific claims about it increasing HMOX1 gene expression are not well-documented in the literature. Therefore, without strong evidence to support the claim, it is safer to consider it false.
+
+Q [425123966658]: True or False Question: Olopatadine increases the gene expression of KLHL9
+  Expected: True
+  Got:      False
+  Thinking: There is no widely recognized evidence or studies indicating that olopatadine, an antihistamine used primarily for allergic conditions, specifically increases the gene expression of KLHL9. Therefore, without specific data supporting this claim, it is reasonable to conclude that the statement is false.
+
+Q [0c21a827e7dd]: True or False Question: Chlorhexidine increases the gene expression of ARHGEF2
+  Expected: True
+  Got:      False
+  Thinking: Chlorhexidine is an antiseptic that is known to have various effects on cells, including antimicrobial properties. However, specific studies on its effect on gene expression, particularly for ARHGEF2, are limited. Without direct evidence or studies confirming that chlorhexidine increases the expression of ARHGEF2, it is difficult to definitively state that the claim is true. Therefore, I would lean towards false due to lack of evidence.
+
+Q [27e2208a9721]: True or False Question: Entecavir increases the gene expression of RRS1
+  Expected: True
+  Got:      False
+  Thinking: Entecavir is an antiviral medication primarily used to treat hepatitis B virus infections. There is no established evidence or research indicating that entecavir specifically increases the gene expression of RRS1 (a gene involved in ribosome biogenesis). Therefore, without specific studies or data supporting this claim, it is reasonable to conclude that the statement is false.
+
+Q [97ccdfe155ac]: True or False Question: Oxymetazoline increases the gene expression of CPVL
+  Expected: True
+  Got:      False
+  Thinking: Oxymetazoline is a topical decongestant that primarily acts as an alpha-adrenergic agonist. There is limited information regarding its direct effects on gene expression, particularly for specific genes like CPVL. Without specific studies or data indicating that oxymetazoline increases CPVL gene expression, it is safer to assume that this statement is false.
+
+Q [d7ec0cc67510]: True or False Question: Methyltestosterone decreases the gene expression of HADH
+  Expected: True
+  Got:      False
+  Thinking: Methyltestosterone is an anabolic steroid that can influence gene expression, but the specific effect on HADH (hydroxyacyl-CoA dehydrogenase) gene expression is not well-documented in the literature. Generally, anabolic steroids can have complex effects on various metabolic pathways, and without specific studies indicating that methyltestosterone decreases HADH expression, it is difficult to definitively state that it does. Therefore, I would lean towards false unless there is specific evidence to support the claim.
+
+Q [5ab6010e0a03]: True or False Question: Medroxyprogesterone acetate decreases the gene expression of USP22
+  Expected: True
+  Got:      False
+  Thinking: Medroxyprogesterone acetate is a synthetic progestin that can influence gene expression. USP22 is a gene associated with various cellular processes, including cell proliferation and survival. While there is evidence that progestins can modulate the expression of certain genes, specific studies would be needed to confirm the direct effect of medroxyprogesterone acetate on USP22 expression. Without specific evidence or studies indicating that medroxyprogesterone acetate decreases USP22 expression, I cannot definitively say this statement is true. However, it is plausible that it could have such an effect based on its role in gene regulation.
+
+Q [1b32fe14103b]: True or False Question: Indinavir decreases the gene expression of EBNA1BP2
+  Expected: True
+  Got:      False
+  Thinking: Indinavir is an HIV protease inhibitor that primarily works by inhibiting viral replication. There is limited information on its direct effects on gene expression, particularly for specific genes like EBNA1BP2. Without specific studies or data indicating that indinavir decreases the expression of EBNA1BP2, I cannot confirm this statement as true. Therefore, I will consider it false based on the lack of evidence.
+
+Q [3c229f4d15f9]: True or False Question: Cyclizine decreases the gene expression of UBQLN2
+  Expected: True
+  Got:      False
+  Thinking: There is no widely known or established evidence in the literature that specifically states cyclizine decreases the gene expression of UBQLN2. Cyclizine is primarily an antihistamine used for motion sickness and nausea, and its effects on gene expression are not well-documented. Therefore, without specific studies or data to support the claim, it is reasonable to conclude that the statement is likely false.
+
+Q [25ba8a79548f]: True or False Question: Pheniramine decreases the gene expression of NUP85
+  Expected: True
+  Got:      False
+  Thinking: Pheniramine is an antihistamine that primarily works by blocking histamine receptors. There is no well-documented evidence or mechanism that suggests it directly affects the gene expression of NUP85, which is involved in nuclear pore complex function. Therefore, it is unlikely that pheniramine decreases the gene expression of NUP85.
+
+Q [8c2c529534d4]: True or False Question: Haloperidol treats Alzheimer's Disease
+  Expected: True
+  Got:      False
+  Thinking: Haloperidol is an antipsychotic medication primarily used to treat schizophrenia and acute psychosis. It is not approved for the treatment of Alzheimer's Disease, although it may sometimes be used off-label to manage severe agitation or psychotic symptoms in Alzheimer's patients. However, it does not treat the underlying disease itself. Therefore, the statement is false.
+
+
+=== Dataset: True_or_False_2hop.json__vanilla | Type: tf | Mode: vanilla | Model: gpt-4o-mini ===
+Count: 540  |  Correct: 331  |  Accuracy: 0.613 [95% CI 0.571-0.653]
+Telemetry:
+  - latency ms: mean=1904 p50=1825 p95=2906 (n=540)
+  - records with error: 0.000 (n=540)
+
+-- Incorrect Questions (209 total, showing 15) --
+Q [c93990186284]: True or False Question: ESR1 and CYP19A1 are genes which commonly bind to the drug Levonorgestrel
+  Expected: True
+  Got:      False
+  Thinking: Levonorgestrel is a synthetic progestin used in various contraceptive methods. It primarily acts on progesterone receptors rather than binding to ESR1 (estrogen receptor 1) or CYP19A1 (aromatase). Therefore, the statement is false as these genes do not commonly bind to Levonorgestrel.
+
+Q [8046caab2e47]: True or False Question: BCHE and ACHE are genes which commonly bind to the drug Hexafluronium
+  Expected: True
+  Got:      False
+  Thinking: BCHE (butyrylcholinesterase) and ACHE (acetylcholinesterase) are enzymes that hydrolyze acetylcholine and are involved in cholinergic signaling. Hexafluronium is a neuromuscular blocking agent that acts by blocking the transmission of nerve impulses to muscles. While it is known to interact with neuromuscular junctions, it is not specifically known to bind to BCHE or ACHE. Therefore, the statement is likely false.
+
+Q [7b3ee5a8b06a]: True or False Question: CYP2C18 and GABRB2 are genes which commonly bind to the drug Diazepam
+  Expected: True
+  Got:      False
+  Thinking: CYP2C18 is a cytochrome P450 enzyme involved in drug metabolism, but it is not specifically known for binding to Diazepam. GABRB2 is a gene that encodes a subunit of the GABA receptor, which Diazepam acts upon, but it does not bind to the drug itself. Therefore, the statement is misleading as it implies direct binding of these genes to Diazepam, which is not accurate.
+
+Q [8bf5069b3fbf]: True or False Question: PDE1B and PDE5A are genes which commonly bind to the drug Vardenafil
+  Expected: True
+  Got:      False
+  Thinking: Vardenafil is a phosphodiesterase type 5 (PDE5) inhibitor used primarily for erectile dysfunction. It specifically targets PDE5A, but there is no significant evidence that it binds to PDE1B. Therefore, the statement is false.
+
+Q [915ad1685403]: True or False Question: SLC16A1 and SLCO2B1 are genes which commonly bind to the drug Acetic acid
+  Expected: True
+  Got:      False
+  Thinking: SLC16A1 and SLCO2B1 are known to be involved in the transport of various substances, but there is no strong evidence or common knowledge that specifically links them to binding acetic acid. Acetic acid is a simple carboxylic acid and does not typically interact with these transporters in a significant way. Therefore, the statement is likely false.
+
+Q [1243247fd5c9]: True or False Question: CCDC92 and GNAI1 are genes commonly subject to increased expression by the drug Decitabine
+  Expected: True
+  Got:      False
+  Thinking: Decitabine is a DNA methyltransferase inhibitor that is known to demethylate DNA and can lead to the reactivation of silenced genes. However, whether CCDC92 and GNAI1 specifically are commonly subject to increased expression by Decitabine is not widely documented. Therefore, without specific evidence supporting this claim, it is safer to assume that the statement is false.
+
+Q [e9932ecdc914]: True or False Question: SLC35A1 and DENND2D are genes commonly subject to increased expression by the drug Azithromycin
+  Expected: True
+  Got:      False
+  Thinking: Azithromycin is known to affect various genes and pathways, but specific information about SLC35A1 and DENND2D being commonly upregulated by Azithromycin is not widely documented. Therefore, without specific evidence supporting this claim, it is safer to assume it is false.
+
+Q [6267052fd598]: True or False Question: RHOA and DDIT4 are genes commonly subject to increased expression by the drug Atorvastatin
+  Expected: True
+  Got:      False
+  Thinking: Atorvastatin is a statin medication primarily used to lower cholesterol levels. It works by inhibiting HMG-CoA reductase, which is involved in cholesterol synthesis. While statins can influence various genes and pathways related to lipid metabolism and inflammation, RHOA and DDIT4 are not typically highlighted as genes that are commonly upregulated by atorvastatin. Therefore, the statement is likely false.
+
+Q [afcf94ebac85]: True or False Question: HBB and FOXO4 are genes commonly subject to increased expression by the drug Phenylpropanolamine
+  Expected: True
+  Got:      False
+  Thinking: Phenylpropanolamine is a sympathomimetic drug that primarily acts as a decongestant and appetite suppressant. It is not typically associated with the increased expression of the HBB (hemoglobin subunit beta) or FOXO4 (Forkhead box O4) genes. Therefore, the statement is likely false.
+
+Q [f28df4ea2542]: True or False Question: HMGCR and MAL are genes commonly subject to increased expression by the drug Fluoxetine
+  Expected: True
+  Got:      False
+  Thinking: Fluoxetine is primarily known as a selective serotonin reuptake inhibitor (SSRI) used to treat depression and anxiety. While it can influence various biological pathways, there is no strong evidence or common knowledge indicating that it specifically increases the expression of the HMGCR and MAL genes. HMGCR is involved in cholesterol synthesis, and MAL is associated with metabolic processes, but their regulation by Fluoxetine is not well established. Therefore, the statement is likely false.
+
+Q [6d634082b7ba]: True or False Question: GDF15 and UBQLN2 are genes commonly subject to decreased expression by the drug Sulfasalazine
+  Expected: True
+  Got:      False
+  Thinking: Sulfasalazine is known to have effects on various genes and pathways, particularly in inflammatory conditions. However, there is no strong evidence or common knowledge indicating that GDF15 and UBQLN2 are specifically decreased in expression due to Sulfasalazine. Therefore, the statement is likely false.
+
+Q [32aefbff7f7c]: True or False Question: RNH1 and ACAT2 are genes commonly subject to decreased expression by the drug Mepenzolate
+  Expected: True
+  Got:      False
+  Thinking: Mepenzolate is an anticholinergic drug that primarily affects the nervous system and gastrointestinal tract. There is limited specific information available regarding its direct effects on the expression of the RNH1 and ACAT2 genes. Without clear evidence or studies indicating that Mepenzolate decreases the expression of these specific genes, it is safer to assume that the statement is false.
+
+Q [4ac45929706d]: True or False Question: SLC35F2 and S100A13 are genes commonly subject to decreased expression by the drug Cefuroxime
+  Expected: True
+  Got:      False
+  Thinking: Cefuroxime is a cephalosporin antibiotic that primarily targets bacterial infections. While it can affect gene expression in bacteria, there is limited evidence to suggest that it specifically decreases the expression of the genes SLC35F2 and S100A13 in human cells. Therefore, without specific studies indicating this effect, the statement is likely false.
+
+Q [1f5d37da859a]: True or False Question: BACE2 and LGALS1 are genes commonly subject to decreased expression by the drug Tubocurarine
+  Expected: True
+  Got:      False
+  Thinking: Tubocurarine is a neuromuscular blocking agent that primarily affects the neuromuscular junction by blocking acetylcholine receptors. It is not known to directly influence the expression of genes like BACE2 and LGALS1. Therefore, the statement is likely false.
+
+Q [6f31f6b438dd]: True or False Question: BAD and CNDP2 are genes commonly subject to decreased expression by the drug Darifenacin
+  Expected: True
+  Got:      False
+  Thinking: Darifenacin is an antimuscarinic agent primarily used to treat overactive bladder. While it may affect various genes and pathways, there is no well-documented evidence specifically linking Darifenacin to decreased expression of the BAD and CNDP2 genes. Therefore, the statement is likely false.
+
+
+=== Dataset: True_or_False_2hop_atleastone.json__vanilla | Type: tf | Mode: vanilla | Model: gpt-4o-mini ===
+Count: 540  |  Correct: 326  |  Accuracy: 0.604 [95% CI 0.562-0.644]
+Telemetry:
+  - latency ms: mean=1250 p50=1188 p95=1719 (n=540)
+  - tokens: avg in=133 out=83 | total in=72018 out=44811
+  - records with error: 0.000 (n=540)
+
+-- Incorrect Questions (214 total, showing 15) --
+Q [c93990186284]: True or False Question: ESR1 and CYP19A1 are genes which commonly bind to the drug Levonorgestrel
+  Expected: True
+  Got:      False
+  Thinking: Levonorgestrel is a synthetic progestin used in various contraceptive methods. It primarily acts on progesterone receptors rather than binding to ESR1 (estrogen receptor 1) or CYP19A1 (aromatase). Therefore, the statement is false as these genes do not commonly bind to Levonorgestrel.
+
+Q [8046caab2e47]: True or False Question: BCHE and ACHE are genes which commonly bind to the drug Hexafluronium
+  Expected: True
+  Got:      False
+  Thinking: BCHE (butyrylcholinesterase) and ACHE (acetylcholinesterase) are enzymes that hydrolyze acetylcholine and are involved in cholinergic signaling. Hexafluronium is a neuromuscular blocking agent that acts by inhibiting the action of acetylcholine at the neuromuscular junction. While these enzymes can interact with various drugs, Hexafluronium is not specifically known to bind to BCHE or ACHE in a way that is clinically significant. Therefore, the statement is likely false.
+
+Q [7b3ee5a8b06a]: True or False Question: CYP2C18 and GABRB2 are genes which commonly bind to the drug Diazepam
+  Expected: True
+  Got:      False
+  Thinking: CYP2C18 is a cytochrome P450 enzyme involved in drug metabolism, while GABRB2 is a gene that encodes a subunit of the GABA receptor, which is the target of Diazepam. However, CYP2C18 is not commonly associated with Diazepam binding; rather, Diazepam primarily interacts with GABA receptors. Therefore, the statement is false.
+
+Q [8bf5069b3fbf]: True or False Question: PDE1B and PDE5A are genes which commonly bind to the drug Vardenafil
+  Expected: True
+  Got:      False
+  Thinking: Vardenafil is a phosphodiesterase type 5 (PDE5) inhibitor used primarily for erectile dysfunction. It specifically targets PDE5A, but there is no significant evidence that it binds to PDE1B. Therefore, the statement is false.
+
+Q [915ad1685403]: True or False Question: SLC16A1 and SLCO2B1 are genes which commonly bind to the drug Acetic acid
+  Expected: True
+  Got:      False
+  Thinking: SLC16A1 and SLCO2B1 are known to be involved in the transport of various substances, but there is no specific evidence that they commonly bind to acetic acid. Acetic acid is a simple carboxylic acid and is not typically associated with these transporters in the literature. Therefore, the statement is likely false.
+
+Q [1243247fd5c9]: True or False Question: CCDC92 and GNAI1 are genes commonly subject to increased expression by the drug Decitabine
+  Expected: True
+  Got:      False
+  Thinking: Decitabine is a drug that is primarily known for its role as a DNA methyltransferase inhibitor, which can lead to the reactivation of silenced genes, particularly in cancer cells. However, whether CCDC92 and GNAI1 are specifically known to be commonly upregulated by Decitabine is not widely documented. Therefore, without specific evidence supporting the claim for these two genes, I would lean towards false.
+
+Q [e9932ecdc914]: True or False Question: SLC35A1 and DENND2D are genes commonly subject to increased expression by the drug Azithromycin
+  Expected: True
+  Got:      False
+  Thinking: Azithromycin is known to influence the expression of various genes, particularly those involved in immune response and inflammation. However, specific information about SLC35A1 and DENND2D being commonly upregulated by Azithromycin is not widely documented. Therefore, without specific evidence supporting this claim, it is safer to assume it is false.
+
+Q [6267052fd598]: True or False Question: RHOA and DDIT4 are genes commonly subject to increased expression by the drug Atorvastatin
+  Expected: True
+  Got:      False
+  Thinking: Atorvastatin is a statin medication primarily used to lower cholesterol levels. It works by inhibiting HMG-CoA reductase, which is involved in cholesterol synthesis. While statins can influence various genes and pathways, RHOA and DDIT4 are not typically highlighted as genes that are commonly upregulated by atorvastatin. Therefore, the statement is likely false.
+
+Q [afcf94ebac85]: True or False Question: HBB and FOXO4 are genes commonly subject to increased expression by the drug Phenylpropanolamine
+  Expected: True
+  Got:      False
+  Thinking: Phenylpropanolamine is a sympathomimetic drug that primarily acts as a decongestant and appetite suppressant. It is not typically associated with the increased expression of the HBB (hemoglobin subunit beta) or FOXO4 (Forkhead box O4) genes. Therefore, the statement is likely false.
+
+Q [f28df4ea2542]: True or False Question: HMGCR and MAL are genes commonly subject to increased expression by the drug Fluoxetine
+  Expected: True
+  Got:      False
+  Thinking: Fluoxetine is primarily known as a selective serotonin reuptake inhibitor (SSRI) used to treat depression and anxiety. While it can influence various biological pathways, there is no strong evidence to suggest that it specifically increases the expression of the HMGCR (3-hydroxy-3-methyl-glutaryl-CoA reductase) and MAL (myelin and lymphocyte protein) genes. Therefore, the statement is likely false.
+
+Q [6d634082b7ba]: True or False Question: GDF15 and UBQLN2 are genes commonly subject to decreased expression by the drug Sulfasalazine
+  Expected: True
+  Got:      False
+  Thinking: Sulfasalazine is known to have effects on various genes and pathways, particularly in inflammatory conditions. However, specific information about its effects on GDF15 and UBQLN2 is not widely documented. Therefore, without specific evidence linking Sulfasalazine to decreased expression of these genes, I would lean towards false.
+
+Q [32aefbff7f7c]: True or False Question: RNH1 and ACAT2 are genes commonly subject to decreased expression by the drug Mepenzolate
+  Expected: True
+  Got:      False
+  Thinking: Mepenzolate is an anticholinergic drug that primarily affects the nervous system and gastrointestinal tract. There is limited specific information available regarding its direct effects on the expression of the RNH1 and ACAT2 genes. Without clear evidence or studies indicating that Mepenzolate decreases the expression of these specific genes, it is difficult to confirm the statement as true. Therefore, I would lean towards false.
+
+Q [4ac45929706d]: True or False Question: SLC35F2 and S100A13 are genes commonly subject to decreased expression by the drug Cefuroxime
+  Expected: True
+  Got:      False
+  Thinking: Cefuroxime is a cephalosporin antibiotic that primarily targets bacterial infections. While it may have some effects on gene expression, there is no well-documented evidence that it specifically decreases the expression of the genes SLC35F2 and S100A13. Therefore, the statement is likely false.
+
+Q [1f5d37da859a]: True or False Question: BACE2 and LGALS1 are genes commonly subject to decreased expression by the drug Tubocurarine
+  Expected: True
+  Got:      False
+  Thinking: Tubocurarine is a neuromuscular blocking agent that primarily affects the neuromuscular junction by blocking acetylcholine receptors. It is not known to specifically decrease the expression of genes like BACE2 and LGALS1. Therefore, the statement is likely false.
+
+Q [6f31f6b438dd]: True or False Question: BAD and CNDP2 are genes commonly subject to decreased expression by the drug Darifenacin
+  Expected: True
+  Got:      False
+  Thinking: Darifenacin is an antimuscarinic agent primarily used to treat overactive bladder. While it may affect various genes and pathways, there is no well-documented evidence specifically linking Darifenacin to decreased expression of the BAD and CNDP2 genes. Therefore, the statement is likely false.
+
+
+==== Overall Summary (record-weighted) ====
+
+Type: mcq | Mode: vanilla | Model: gpt-4o-mini
+  Total: 917  |  Correct: 532  |  Accuracy: 0.580 [95% CI 0.548-0.612]
+  - latency ms: mean=2328 p50=2191 p95=3595 (n=917)
+  - tokens: avg in=196 out=70 | total in=196 out=70
+  - records with error: 0.000 (n=917)
+
+Type: open_ended | Mode: vanilla | Model: gpt-4o-mini
+  Total: 958  |  Correct: 7  |  Accuracy: 0.007 [95% CI 0.004-0.015]
+  Avg set metrics: exact_match=0.007  precision=0.169  recall=0.120  f1=0.090  jaccard=0.059  overlap=0.221
+  - latency ms: mean=2257 p50=2098 p95=3449 (n=958)
+  - records with error: 0.000 (n=958)
+
+Type: tf | Mode: vanilla | Model: gpt-4o-mini
+  Total: 1640  |  Correct: 1043  |  Accuracy: 0.636 [95% CI 0.612-0.659]
+  - latency ms: mean=1660 p50=1534 p95=2679 (n=1640)
+  - tokens: avg in=133 out=83 | total in=72018 out=44811
+  - records with error: 0.000 (n=1640)

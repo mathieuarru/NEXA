@@ -1,0 +1,32 @@
+# Dockerfile for the Streamlit frontend
+FROM python:3.13.0-slim
+
+WORKDIR /app
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    curl \
+    libpq-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN pip install --no-cache-dir poetry==2.1.3
+
+COPY pyproject.toml poetry.lock* ./
+
+# Install into the image's Python, without a virtualenv
+RUN poetry config virtualenvs.create false
+
+RUN poetry install --no-interaction --no-ansi --no-root
+
+COPY nexa_frontend/ ./nexa_frontend/
+COPY nexa/ ./nexa/
+COPY docker/preflight.sh /usr/local/bin/preflight
+RUN chmod +x /usr/local/bin/preflight
+
+ENV PYTHONPATH=/app
+
+EXPOSE 8501
+
+# Run Streamlit, aborting early if port 8501 is already taken
+ENTRYPOINT ["preflight", "8501"]
+CMD ["streamlit", "run", "nexa_frontend/app.py", "--server.port", "8501", "--server.address", "0.0.0.0", "--server.headless", "true"]

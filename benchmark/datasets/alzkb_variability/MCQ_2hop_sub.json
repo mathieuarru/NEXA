@@ -1,0 +1,402 @@
+[
+  {
+    "question": "Which of the following binds to the genes ABCB1 and CYP2C8 ? 1. Letosteine 2. 4-(4-FLUOROPHENYL)-1-CYCLOROPROPYLMETHYL-5-(4-PYRIDYL)-IMIDAZOLE 3. Eptacog alfa pegol (activated) 4. Corynebacterium diphtheriae 5. Ketamine",
+    "answer": "5"
+  },
+  {
+    "question": "Which of the following binds to the drugs Arsenic trioxide and ATP ? 1. LOC126806746 2. AKT1 3. LOC127269832 4. LOC129389284 5. HOXB-AS4",
+    "answer": "2"
+  },
+  {
+    "question": "Which of the following binds to the drugs Acitretin and Vitamin A ? 1. PHACTR2 2. NDUFB2P1 3. RBP1 4. LINC01896 5. LOC121677383",
+    "answer": "3"
+  },
+  {
+    "question": "Which of the following binds to the drugs Methadone and Imipramine ? 1. LOC127830012 2. CYP2C18 3. AKR7L 4. LOC124908462 5. RNU6-862P",
+    "answer": "2"
+  },
+  {
+    "question": "Which of the following increases the gene expression of ZNF586 and RPP38 ? 1. DP-b99 2. Trabectedin 3. Olaflur 4. Neostigmine 5. Black olive",
+    "answer": "4"
+  },
+  {
+    "question": "Which of the following increases the gene expression of TCTA and YME1L1 ? 1. Niraparib 2. Mucor circinelloides f. lusitanicus 3. N-[2-(5-methyl-4H-1,2,4-triazol-3-yl)phenyl]-7H-pyrrolo[2,3-d]pyrimidin-4-amine 4. Chlorcyclizine 5. SB-743921",
+    "answer": "4"
+  },
+  {
+    "question": "Which of the following is subject to increased expression by the drugs Dexamethasone and Betamethasone ? 1. LOC127829787 2. MRPS7 3. LOC127271027 4. LOC127897099 5. LOC110120762",
+    "answer": "2"
+  },
+  {
+    "question": "Which of the following is subject to increased expression by the drugs Bisacodyl and Podofilox ? 1. MAP7D1 2. LOC127827555 3. PTPRK-AS1 4. LOC127819199 5. LOC127891215",
+    "answer": "1"
+  },
+  {
+    "question": "Which of the following is subject to increased expression by the drugs Digoxin and Digitoxin ? 1. LOC121175364 2. LOC124908268 3. LOC124900771 4. CRKL 5. LOC127891320",
+    "answer": "4"
+  },
+  {
+    "question": "Which of the following is subject to increased expression by the drugs Desipramine and Amiodarone ? 1. HAPLN3 2. LOC127828197 3. ACAT2 4. LOC127895053 5. LOC127889212",
+    "answer": "3"
+  },
+  {
+    "question": "Which of the following decreases the gene expression of PLK1 and MRPL12 ? 1. Milrinone 2. Tacrolimus 3. ONT-093 4. Mardepodect 5. Heptamolybdate",
+    "answer": "2"
+  },
+  {
+    "question": "Which of the following decreases the gene expression of GDF15 and COTL1 ? 1. Mirfentanil 2. Bumadizone 3. Quinethazone 4. 3-(7-DIAMINOMETHYL-NAPHTHALEN-2-YL)-PROPIONIC ACID ETHYL ESTER 5. beta-Escin",
+    "answer": "3"
+  },
+  {
+    "question": "Which of the following decreases the gene expression of VPS28 and LAP3 ? 1. Influenza A virus A/Christchurch/16/2010 NIB-74XP (H1N1) hemagglutinin antigen (formaldehyde inactivated) 2. 1,2-Benzodiazepine 3. PF-06305591 4. N-(5-chloro-1,3-benzodioxol-4-yl)-6-methoxy-7-(3-piperidin-1-ylpropoxy)quinazolin-4-amine 5. Fenbufen",
+    "answer": "5"
+  },
+  {
+    "question": "Which of the following decreases the gene expression of PCNA and POLR2L ? 1. (2s,5s)-5-Carboxymethylproline 2. Influenza A virus A/Brisbane/10/2010 (H1N1) antigen (MDCK cell derived, propiolactone inactivated) 3. Tenamfetamine 4. Sertindole 5. Samarium",
+    "answer": "4"
+  },
+  {
+    "question": "Which of the following decreases the gene expression of MBOAT7 and PRKAG2 ? 1. ATL1102 2. 2-(Beta-D-Glucopyranosyl)-5-Methyl-1,2,3-Benzimidazole 3. TZP-102 4. Vildagliptin 5. Ruxolitinib",
+    "answer": "5"
+  },
+  {
+    "question": "Which of the following is subject to decreased expression by the drugs Cerulenin and Afatinib ? 1. MIR4471 2. LOC127886157 3. LOC129662571 4. LOC127828177 5. ATAD3A",
+    "answer": "5"
+  },
+  {
+    "question": "Which of the following is subject to decreased expression by the drugs Mebendazole and Vinorelbine ? 1. FWS 2. LOC127407369 3. MAT2B 4. LRP4-AS1 5. LOC127399092",
+    "answer": "3"
+  },
+  {
+    "question": "Which of the following belongs to the drug classes Androgen Receptor Agonists and Androstanes ? 1. [[4-(Aminomethyl)Phenyl]Amino]Oxo-Acetic Acid, 2. Danazol 3. Quinapril 4. 1-(3-(2,4-DIMETHYLTHIAZOL-5-YL)-4-OXO-2,4-DIHYDROINDENO[1,2-C]PYRAZOL-5-YL)-3-(4-METHYLPIPERAZIN-1-YL)UREA 5. Nicotinaldehyde",
+    "answer": "2"
+  },
+  {
+    "question": "Which of the following belongs to the drug classes GABA B Agonists and GABA A Agonists ? 1. Baclofen 2. Castanospermine 3. Poractant alfa 4. Etomidate 5. Silmitasertib",
+    "answer": "1"
+  },
+  {
+    "question": "Which of the following classes includes the drugs Colistimethate and Polymyxin B ? 1. Polymyxins 2. Vitamin A 3. P-Glycoprotein Inducers 4. Increased Medullary Respiratory Drive 5. Vinca Alkaloids",
+    "answer": "1"
+  },
+  {
+    "question": "Which of the following is a gene which participates in the biological processes regulation of chemotaxis and inflammatory response ? 1. LOC124902573 2. LOC127897982 3. CXCL8 4. MIR6877 5. LOC127817259",
+    "answer": "3"
+  },
+  {
+    "question": "Which of the following is a gene which participates in the biological processes regulation of actin cytoskeleton organization and muscle cell differentiation ? 1. LOC127823904 2. MIR297 3. LOC127817734 4. FHOD3 5. LOC126806971",
+    "answer": "4"
+  },
+  {
+    "question": "Which of the following is a gene which participates in the biological processes second-messenger-mediated signaling and calcium-mediated signaling ? 1. LOC127888865 2. LOC127886504 3. RCAN1 4. LOC127405374 5. LOC127404023",
+    "answer": "3"
+  },
+  {
+    "question": "Which of the following biological processes involves the genes TINF2 and PUM3 ? 1. pyrimidine deoxyribonucleoside diphosphate biosynthetic process 2. organ senescence 3. regulation of actin filament depolymerization 4. regulation of protein ADP-ribosylation 5. regulation of synaptic vesicle recycling",
+    "answer": "4"
+  },
+  {
+    "question": "Which of the following biological processes involves the genes PRAM1 and ABR ? 1. regulation of neutrophil activation 2. spliceosomal snRNP assembly 3. regulation of protein linear polyubiquitination 4. CD40 signaling pathway 5. regulation of nucleotide-binding oligomerization domain containing 2 signaling pathway",
+    "answer": "1"
+  },
+  {
+    "question": "Which of the following biological processes involves the genes NOS3 and FAS ? 1. neutrophil mediated killing of gram-negative bacterium 2. heme oxidation 3. negative regulation of t-circle formation 4. spinal cord ventral commissure morphogenesis 5. cellular response to reactive oxygen species",
+    "answer": "5"
+  },
+  {
+    "question": "Which of the following is a gene in the pathways Intraflagellar transport and Cilium Assembly ? 1. LOC107986494 2. IFT20 3. LOC127397082 4. LOC127826004 5. LOC127889686",
+    "answer": "2"
+  },
+  {
+    "question": "Which of the following pathways contains the genes ABCG2 and ABCB1 ? 1. Activated NTRK3 signals through PI3K 2. Lamivudine Pathway, Pharmacokinetics/Pharmacodynamics 3. Glycosphingolipid metabolism 4. Defective ABCC2 causes Dubin-Johnson syndrome 5. Betazole Action Pathway",
+    "answer": "2"
+  },
+  {
+    "question": "Which of the following pathways contains the genes UBC and RPA3 ? 1. PTK6 Expression 2. Graft-versus-host disease - Homo sapiens (human) 3. Rosuvastatin Pathway, Pharmacokinetics 4. Aromatase deficiency 5. Formation of Incision Complex in GG-NER",
+    "answer": "5"
+  },
+  {
+    "question": "Which of the following is a gene which interacts with the genes EPS8 and TRIP6 ? 1. SRGN 2. SLC7A13 3. GON4L 4. LOC105374883 5. LOC129662220",
+    "answer": "1"
+  },
+  {
+    "question": "Which of the following is a gene which interacts with the genes MBP and EEF2 ? 1. DEL10Q26 2. MGAT4EP 3. NNO3 4. TRPM7 5. LOC112840925",
+    "answer": "4"
+  },
+  {
+    "question": "Which of the following molecular functions is attributed to the genes SESTD1 and DAPP1 ? 1. chloride channel inhibitor activity 2. chondroitin sulfate binding 3. octanoyltransferase activity 4. phosphatidylinositol-3,4-bisphosphate binding 5. alpha-1,6-mannosylglycoprotein 6-beta-N-acetylglucosaminyltransferase activity",
+    "answer": "4"
+  },
+  {
+    "question": "Which of the following is a gene associated with the cellular components mitochondrial matrix and mitochondrial envelope ? 1. LOC127819012 2. LOC127408216 3. TP53TG3GP 4. SUCLG1 5. LOC124907522",
+    "answer": "4"
+  },
+  {
+    "question": "Which of the following is a gene associated with the cellular components ESC/E(Z) complex and histone methyltransferase complex ? 1. LOC124907342 2. OR7E41P 3. C1orf105 4. LOC100420449 5. PHF19",
+    "answer": "5"
+  },
+  {
+    "question": "Which of the following is a gene associated with the cellular components NuA4 histone acetyltransferase complex and acetyltransferase complex ? 1. MEAF6 2. LOC124903812 3. LOC124901239 4. LOC127895661 5. LOC124629378",
+    "answer": "1"
+  },
+  {
+    "question": "Which of the following cellular components is linked to the genes DDN and DRP2 ? 1. Golgi cisterna membrane 2. Dsl1p complex 3. endoplasmic reticulum palmitoyltransferase complex 4. mitochondrial inner membrane protein insertion complex 5. synaptic membrane",
+    "answer": "5"
+  },
+  {
+    "question": "Which of the following cellular components is linked to the genes FBL and UTP6 ? 1. mitochondrial ribosome 2. small-subunit processome 3. MLL1/2 complex 4. cAMP-dependent protein kinase complex 5. BRCA1-BARD1 complex",
+    "answer": "2"
+  },
+  {
+    "question": "Which of the following cellular components is linked to the genes EID3 and NSMCE4A ? 1. Smc5-Smc6 complex 2. DNA ligase IV complex 3. kinesin II complex 4. NatC complex 5. glycine-gated chloride channel complex",
+    "answer": "1"
+  },
+  {
+    "question": "Which of the following is a gene associated with the diseases Alzheimer Disease, Early Onset and Alzheimer Disease, Late Onset ? 1. LOC127458948 2. LOC122787139 3. TF 4. LOC127403702 5. LOC127828867",
+    "answer": "3"
+  },
+  {
+    "question": "Which of the following is a gene associated with the diseases Alzheimer Disease, Early Onset and Familial Alzheimer Disease (FAD) ? 1. LINC02546 2. SNAR-I 3. LOC127821497 4. LOC127267148 5. LOC105369851",
+    "answer": "2"
+  },
+  {
+    "question": "Which of the following over-expresses the genes MRPS36 and KLHL31 ? 1. cerumen 2. meninx 3. scapula 4. cardiac ventricle 5. fourth ventricle",
+    "answer": "4"
+  },
+  {
+    "question": "Which of the following genes is over-expressed in cardiac atrium and trigeminal ganglion ? 1. LOC127884932 2. PDLIM7 3. LOC124902905 4. LOC127822321 5. KCTD9",
+    "answer": "5"
+  },
+  {
+    "question": "Which of the following genes is over-expressed in mammalian vulva and nipple ? 1. LOC107985460 2. SERPINA12 3. MIRLET7IHG 4. LOC127400827 5. LOC121832823",
+    "answer": "2"
+  },
+  {
+    "question": "Which of the following under-expresses the genes HMMR and ISY1-RAB43 ? 1. jaw skeleton 2. ventral pancreatic duct 3. abducens nerve 4. sebaceous gland 5. midbrain",
+    "answer": "5"
+  },
+  {
+    "question": "Which of the following under-expresses the genes BTF3 and GPM6B ? 1. scrotum 2. renal papilla 3. cardiac ventricle 4. external ear 5. popliteal artery",
+    "answer": "3"
+  },
+  {
+    "question": "Which of the following genes is under-expressed in spinal cord and trigeminal ganglion ? 1. LOC127888035 2. LOC111216273 3. LOC127815751 4. LOC124908983 5. ZNF574",
+    "answer": "5"
+  },
+  {
+    "question": "Which of the following is a symptom of Alzheimer's Disease and Familial Alzheimer Disease (FAD) ? 1. Hearing Loss, Bilateral 2. Fetal Weight 3. Primary Progressive Nonfluent Aphasia 4. Decerebrate State 5. Kleine-Levin Syndrome",
+    "answer": "3"
+  },
+  {
+    "question": "Which of the following is a symptom of Familial Alzheimer Disease (FAD) and Alzheimer's Disease ? 1. Dysgeusia 2. Neuroacanthocytosis 3. Intellectual Disability 4. Agnosia 5. Neuralgia, Postherpetic",
+    "answer": "4"
+  },
+  {
+    "question": "Which of the following is a symptom of Alzheimer's Disease and Familial Alzheimer Disease (FAD) ? 1. Musculoskeletal Pain 2. Thinness 3. Alkalosis, Respiratory 4. Aphasia, Conduction 5. Hallucinations",
+    "answer": "5"
+  },
+  {
+    "question": "Which of the following diseases presents the symptoms Urinary Incontinence, Urge and Aging, Premature ? 1. Alzheimer Disease, Familial, 3, with Spastic Paraparesis and Apraxia 2. Alzheimer's Disease 3. Alzheimer Disease, Late Onset 4. Familial Alzheimer's disease of early onset 5. Alzheimer disease, familial, type 3",
+    "answer": "2"
+  },
+  {
+    "question": "Which of the following is a site of localization of Familial Alzheimer Disease (FAD) and Alzheimer's Disease ? 1. area postrema 2. radial nerve 3. brain 4. eyelid 5. cochlear duct of membranous labyrinth",
+    "answer": "3"
+  },
+  {
+    "question": "Which of the following drugs does not commonly bind to the genes ALB and HTR1A ? 1. Chlorpromazine 2. Thioproperazine 3. Queuine 4. Acepromazine 5. Pipotiazine",
+    "answer": "3"
+  },
+  {
+    "question": "Which of the following drugs does not commonly bind to the genes CYP1A2 and CYP3A4 ? 1. Zafirlukast 2. Clomifene 3. Perphenazine 4. Roxithromycin 5. 1-[3,3-Dimethyl-2-(2-Methylamino-Propionylamino)-Butyryl]-Pyrrolidine-2-Carboxylic Acid(1,2,3,4-Tetrahydro-Naphthalen-1-Yl)-Amide",
+    "answer": "5"
+  },
+  {
+    "question": "Which of the following drugs does not commonly bind to the genes CYP2B6 and ALB ? 1. 8-Bromo-Adenosine-5'-Monophosphate 2. Propofol 3. Methyltestosterone 4. Isoflurane 5. Halothane",
+    "answer": "1"
+  },
+  {
+    "question": "Which of the following drugs does not commonly bind to the genes ABCG2 and CYP2C9 ? 1. N-[(2R)-5-(aminosulfonyl)-2,3-dihydro-1H-inden-2-yl]-2-propylpentanamide 2. Cyclosporine 3. Rabeprazole 4. Gefitinib 5. Teniposide",
+    "answer": "1"
+  },
+  {
+    "question": "Which of the following drugs does not commonly bind to the genes UGT2B7 and SLCO2B1 ? 1. KRN-5500 2. Fluvastatin 3. Ibuprofen 4. Pitavastatin 5. Atorvastatin",
+    "answer": "1"
+  },
+  {
+    "question": "Which of the following is not a gene which binds to both the drugs Sunitinib and Bosutinib ? 1. RN7SL557P 2. ABCB1 3. PHKG1 4. HIPK4 5. NUAK2",
+    "answer": "1"
+  },
+  {
+    "question": "Which of the following is not a drug which commonly increases expression of the genes GHR and PROS1 ? 1. Cefuroxime 2. Bretylium 3. Varenicline 4. Sulfamethizole 5. Lenzumestrocel",
+    "answer": "5"
+  },
+  {
+    "question": "Which of the following is not a gene subject to increased expression by both the drugs Cyclosporine and Dabrafenib ? 1. NUPR1 2. LOC124908314 3. TSC22D3 4. CTSD 5. PYCR1",
+    "answer": "2"
+  },
+  {
+    "question": "Which of the following is not a drug which commonly decreases expression of the genes TP53BP1 and RAP1GAP ? 1. Betamethasone 2. Donepezil 3. Tretinoin 4. Dexamethasone 5. Everolimus",
+    "answer": "3"
+  },
+  {
+    "question": "Which of the following is not a drug which commonly decreases expression of the genes CCDC86 and MBOAT7 ? 1. Alitretinoin 2. Ceforanide 3. Lometrexol 4. Ethotoin 5. Galantamine",
+    "answer": "3"
+  },
+  {
+    "question": "Which of the following is not a drug which commonly decreases expression of the genes IER3 and IL1B ? 1. 3-[1-(3-AMINOPROPYL)-1H-INDOL-3-YL]-4-(1H-INDOL-3-YL)-1H-PYRROLE-2,5-DIONE 2. Dexamethasone 3. Fluorometholone 4. Budesonide 5. Methylprednisolone",
+    "answer": "1"
+  },
+  {
+    "question": "Which of the following is not a gene subject to decreased expression by both the drugs Thioridazine and Vincristine ? 1. LOC129662701 2. LIG1 3. MCM5 4. BRCA1 5. RPA2",
+    "answer": "1"
+  },
+  {
+    "question": "Which of the following is not a gene which commonly participates in the biological processes multicellular organismal homeostasis and anatomical structure homeostasis ? 1. SRC 2. STRAP 3. ZNF787 4. RAB3D 5. KLHL10",
+    "answer": "3"
+  },
+  {
+    "question": "Which of the following is not a gene which commonly participates in the biological processes hemostasis and regulation of mitotic cell cycle ? 1. APP 2. HRAS 3. SIN3A 4. LOC127405166 5. PDPN",
+    "answer": "4"
+  },
+  {
+    "question": "Which of the following biological processes does not involve both the genes PPP1R15B and NCK1 ? 1. positive regulation of myeloid leukocyte cytokine production involved in immune response 2. negative regulation of response to endoplasmic reticulum stress 3. protein dephosphorylation 4. posttranscriptional regulation of gene expression 5. negative regulation of protein phosphorylation",
+    "answer": "1"
+  },
+  {
+    "question": "Which of the following biological processes does not involve both the genes ASCL2 and ZFP36L1 ? 1. in utero embryonic development 2. embryonic organ development 3. prostate gland stromal morphogenesis 4. spongiotrophoblast layer development 5. embryonic placenta development",
+    "answer": "3"
+  },
+  {
+    "question": "Which of the following is not a gene commonly involved in the pathways TNFalpha and RIG-I-like receptor signaling pathway - Homo sapiens (human) ? 1. MAPK8 2. TRAF6 3. CHUK 4. MAPK14 5. LOC127401194",
+    "answer": "5"
+  },
+  {
+    "question": "Which of the following is not a gene commonly involved in the pathways Doxorubicin Metabolism Pathway and Lamivudine Metabolism Pathway ? 1. ABCG2 2. LOC127882942 3. ABCC1 4. ABCC2 5. ABCB1",
+    "answer": "2"
+  },
+  {
+    "question": "Which of the following is not a pathway which contains both the genes SLC29A4 and SLC29A2 ? 1. C-MYB transcription factor network 2. SLC-mediated transmembrane transport 3. Transport of vitamins, nucleosides, and related molecules 4. Transmembrane transport of small molecules 5. Transport of nucleosides and free purine and pyrimidine bases across the plasma membrane",
+    "answer": "1"
+  },
+  {
+    "question": "Which of the following is not a pathway which contains both the genes TFDP2 and LIN9 ? 1. Mitotic G1-G1/S phases 2. Dual incision reaction in TC-NER 3. Transcription of E2F targets under negative control by DREAM complex 4. Cell Cycle, Mitotic 5. Cyclin E associated events during G1/S transition ",
+    "answer": "2"
+  },
+  {
+    "question": "Which of the following is not a pathway which contains both the genes PRKAR1A and PRKACB ? 1. CDK-mediated phosphorylation and removal of Cdc6 2. Signaling by PDGF 3. regulation of bad phosphorylation 4. Downstream signaling of activated FGFR4 5. cystic fibrosis transmembrane conductance regulator (cftr) and beta 2 adrenergic receptor (b2ar) pathway",
+    "answer": "1"
+  },
+  {
+    "question": "Which of the following is not a gene which commonly interacts with the genes PML and SMARCA5 ? 1. SATB1 2. LOC127408703 3. CDK2 4. MYC 5. HDAC2",
+    "answer": "2"
+  },
+  {
+    "question": "Which of the following is not a gene which commonly interacts with the genes AR and ESR1 ? 1. LOC127267913 2. RNF14 3. NRIP1 4. KAT5 5. KDM1A",
+    "answer": "1"
+  },
+  {
+    "question": "Which of the following is not a gene which commonly interacts with the genes EIF4A2 and MYC ? 1. LOC126806242 2. RPL11 3. DDX3X 4. ACTB 5. EIF3I",
+    "answer": "1"
+  },
+  {
+    "question": "Which of the following is not a gene which commonly performs the molecular functions lipid binding and modified amino acid binding ? 1. LOC127274609 2. SCARB1 3. CAVIN2 4. SCIN 5. ANXA13",
+    "answer": "1"
+  },
+  {
+    "question": "Which of the following is not a gene which commonly performs the molecular functions kinase activity and phosphotransferase activity, alcohol group as acceptor ? 1. GSK3B 2. MST1R 3. LOC127883612 4. KALRN 5. STK32C",
+    "answer": "3"
+  },
+  {
+    "question": "Which of the following is not a gene which commonly performs the molecular functions passive transmembrane transporter activity and substrate-specific transmembrane transporter activity ? 1. SCNN1B 2. TRPM8 3. ANO8 4. LOC127271685 5. CATSPER4",
+    "answer": "4"
+  },
+  {
+    "question": "Which of the following is not a gene commonly associated with the cellular components microtubule organizing center and actin cytoskeleton ? 1. CLIC5 2. HSP90B2P 3. CROCC 4. PRKCZ 5. TOPBP1",
+    "answer": "2"
+  },
+  {
+    "question": "Which of the following is not a gene commonly associated with the cellular components transferase complex, transferring phosphorus-containing groups and ribose phosphate diphosphokinase complex ? 1. PRPSAP1 2. PRPS2 3. LINC02731 4. PRPSAP2 5. PRPS1",
+    "answer": "3"
+  },
+  {
+    "question": "Which of the following is not a gene commonly associated with the cellular components microtubule and supramolecular fiber ? 1. TUBB4B 2. LOC127403221 3. KIF4A 4. TUBGCP2 5. NCOR1",
+    "answer": "2"
+  },
+  {
+    "question": "Which of the following is not a gene commonly associated with the cellular components cell surface and cell division site ? 1. RAB11A 2. PPP1CC 3. RALA 4. RBMY1A1 5. PSTPIP1",
+    "answer": "4"
+  },
+  {
+    "question": "Which of the following cellular components is not linked to both the genes HUS1B and HUS1 ? 1. nucleolus 2. condensed chromosome 3. endoplasmic reticulum exit site 4. nuclear chromosome 5. condensed nuclear chromosome",
+    "answer": "3"
+  },
+  {
+    "question": "Which of the following genes is not commonly associated with the diseases Alzheimer's Disease and Alzheimer Disease, Early Onset ? 1. CRH 2. HLA-DRB5 3. MIR100 4. LOC127406786 5. GAPDHS",
+    "answer": "4"
+  },
+  {
+    "question": "Which of the following genes is not commonly associated with the diseases Alzheimer's Disease, Focal Onset and Alzheimer Disease, Early Onset ? 1. ATP5F1A 2. MIR766 3. LOC129389345 4. INPP5D 5. IGF2",
+    "answer": "3"
+  },
+  {
+    "question": "Which of the following genes is not commonly associated with the diseases Alzheimer's Disease and Alzheimer Disease, Late Onset ? 1. MIR766 2. TNF 3. CHRNB2 4. LOC127883796 5. ESR1",
+    "answer": "4"
+  },
+  {
+    "question": "Which of the following genes is not commonly associated with the diseases Alzheimer's Disease, Focal Onset and Familial Alzheimer Disease (FAD) ? 1. INPP5D 2. VSNL1 3. SLC30A4 4. CYP46A1 5. LOC105371734",
+    "answer": "5"
+  },
+  {
+    "question": "Which of the following is a disease not commonly associated with the genes SNAR-I and CR1 ? 1. Alzheimer Disease, Late Onset 2. Alzheimer Disease, Early Onset 3. Alzheimer's Disease 4. Familial Alzheimer Disease (FAD) 5. Lewy Body Variant of Alzheimer Disease",
+    "answer": "5"
+  },
+  {
+    "question": "Which of the following does not over-express the genes MID1 and RPS16 ? 1. adrenal gland 2. myometrium 3. tibial nerve 4. endometrium 5. nipple",
+    "answer": "3"
+  },
+  {
+    "question": "Which of the following does not over-express the genes UBE2D3 and ZNF451 ? 1. adrenal cortex 2. nipple 3. bone marrow 4. sinoatrial node 5. endometrium",
+    "answer": "4"
+  },
+  {
+    "question": "Which of the following does not over-express the genes ELK3 and GAS1 ? 1. uterine cervix 2. bronchus 3. popliteal artery 4. mammalian vulva 5. adrenal cortex",
+    "answer": "3"
+  },
+  {
+    "question": "Which of the following genes is not over-expressed in both adrenal gland and testis ? 1. LPAR2 2. LOC101928988 3. FEN1 4. CPSF3 5. EGLN2",
+    "answer": "2"
+  },
+  {
+    "question": "Which of the following genes is not over-expressed in both heart and brain ? 1. OR4R3P 2. DOK5 3. COX7A2 4. PAG1 5. HK1",
+    "answer": "1"
+  },
+  {
+    "question": "Which of the following does not under-express the genes ESF1 and MAP6D1 ? 1. mammalian vulva 2. pituitary gland 3. gastric juice 4. blood 5. nipple",
+    "answer": "3"
+  },
+  {
+    "question": "Which of the following does not under-express the genes CLDN3 and OVOL2 ? 1. adrenal gland 2. midbrain 3. medulla oblongata 4. tunica intima 5. trigeminal ganglion",
+    "answer": "4"
+  },
+  {
+    "question": "Which of the following genes is not under-expressed in both adrenal gland and smooth muscle tissue ? 1. LOC127895611 2. TRAPPC8 3. FAM234B 4. VEGFD 5. AMD1",
+    "answer": "1"
+  },
+  {
+    "question": "Which of the following genes is not under-expressed in both adrenal gland and adipose tissue ? 1. ADCY2 2. DLG2 3. UNC5D 4. LOC126806510 5. GABARAPL2",
+    "answer": "4"
+  },
+  {
+    "question": "Which of the following is not a symptom of both Alzheimer's Disease and Familial Alzheimer Disease (FAD) ? 1. Aphasia, Wernicke 2. Learning Disorders 3. Supranuclear Palsy, Progressive 4. Agnosia 5. Sleep Initiation and Maintenance Disorders",
+    "answer": "2"
+  },
+  {
+    "question": "Which of the following is not a symptom of both Familial Alzheimer Disease (FAD) and Alzheimer's Disease ? 1. Hypokinesia 2. Aphasia, Wernicke 3. Apraxias 4. Confusion 5. Myoclonus",
+    "answer": "1"
+  },
+  {
+    "question": "Which of the following is not a site of localization of both Familial Alzheimer Disease (FAD) and Alzheimer's Disease ? 1. cerebellar cortex 2. brain 3. central nervous system 4. cerebellum 5. renal vein",
+    "answer": "5"
+  }
+]

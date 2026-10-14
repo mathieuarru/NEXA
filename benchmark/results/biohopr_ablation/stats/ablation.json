@@ -1,0 +1,702 @@
+{
+  "experiment": "biohopr_ablation",
+  "arms": {
+    "one-shot": {
+      "removes": "staged regeneration: the loop repairs the one-shot query",
+      "sets": {
+        "BioHopR_2hop.json": {
+          "metric": "jaccard",
+          "all": {
+            "n": 1000,
+            "a": 0.8252883797079335,
+            "b": 0.8471033479984446,
+            "delta": -0.021814968290511126,
+            "ci": [
+              -0.03738834738110096,
+              -0.007162961248410044
+            ],
+            "gained": 36,
+            "lost": 56,
+            "p": 0.0045,
+            "test": "paired_bootstrap_bca",
+            "p_holm": 0.013499999999999998
+          },
+          "triggered": {
+            "n": 221,
+            "a": 0.4722956774283514,
+            "b": 0.5579597368343799,
+            "delta": -0.08566405940602848,
+            "ci": [
+              -0.14663790868434937,
+              -0.026962457419219942
+            ],
+            "gained": 20,
+            "lost": 36,
+            "p": 0.00522,
+            "test": "paired_bootstrap_bca"
+          },
+          "not_triggered": {
+            "n": 779,
+            "a": 0.9254313671325645,
+            "b": 0.9291325367882499,
+            "delta": -0.003701169655685279,
+            "ci": [
+              -0.012964111090946542,
+              0.00474662189971848
+            ],
+            "gained": 16,
+            "lost": 20,
+            "p": 0.41452,
+            "test": "paired_bootstrap_bca"
+          },
+          "exact_match_all": {
+            "n": 1000,
+            "a": 0.783,
+            "b": 0.807,
+            "delta": -0.02400000000000002,
+            "ci": [
+              -0.04123331725293668,
+              -0.006956670324317755
+            ],
+            "gained": 26,
+            "lost": 50,
+            "p": 0.007905180027859783,
+            "test": "mcnemar_exact"
+          }
+        }
+      },
+      "usage": {
+        "tokens_per_q": 7314.901,
+        "latency_s_per_q": 6.106062
+      }
+    },
+    "decomposed": {
+      "removes": "one-shot first: every question takes the staged path",
+      "sets": {
+        "BioHopR_2hop.json": {
+          "metric": "jaccard",
+          "all": {
+            "n": 1000,
+            "a": 0.7866572231005992,
+            "b": 0.8471033479984446,
+            "delta": -0.06044612489784542,
+            "ci": [
+              -0.08436780500790853,
+              -0.03710987757560906
+            ],
+            "gained": 62,
+            "lost": 125,
+            "p": 1e-05,
+            "test": "paired_bootstrap_bca",
+            "p_holm": 9e-05
+          },
+          "triggered": {
+            "n": 221,
+            "a": 0.5501883671036618,
+            "b": 0.5579597368343799,
+            "delta": -0.0077713697307181095,
+            "ci": [
+              -0.05301918378858186,
+              0.037339224006093866
+            ],
+            "gained": 16,
+            "lost": 15,
+            "p": 0.76915,
+            "test": "paired_bootstrap_bca"
+          },
+          "not_triggered": {
+            "n": 779,
+            "a": 0.8537427393718741,
+            "b": 0.9291325367882499,
+            "delta": -0.07538979741637575,
+            "ci": [
+              -0.10295759938483554,
+              -0.04829395333914803
+            ],
+            "gained": 46,
+            "lost": 110,
+            "p": 1e-05,
+            "test": "paired_bootstrap_bca"
+          },
+          "exact_match_all": {
+            "n": 1000,
+            "a": 0.753,
+            "b": 0.807,
+            "delta": -0.05400000000000005,
+            "ci": [
+              -0.0785108843923537,
+              -0.029599814275448506
+            ],
+            "gained": 52,
+            "lost": 106,
+            "p": 2.0869841862447653e-05,
+            "test": "mcnemar_exact"
+          }
+        }
+      },
+      "usage": {
+        "tokens_per_q": 9100.795,
+        "latency_s_per_q": 8.819882999999999
+      }
+    },
+    "no-empty-loop": {
+      "removes": "the empty-result correction loop",
+      "sets": {
+        "BioHopR_2hop.json": {
+          "metric": "jaccard",
+          "all": {
+            "n": 1000,
+            "a": 0.7668427666128617,
+            "b": 0.8471033479984446,
+            "delta": -0.08026058138558295,
+            "ci": [
+              -0.10023046875718264,
+              -0.06194906438078479
+            ],
+            "gained": 23,
+            "lost": 105,
+            "p": 1e-05,
+            "test": "paired_bootstrap_bca",
+            "p_holm": 9e-05
+          },
+          "triggered": {
+            "n": 221,
+            "a": 0.23530438314961752,
+            "b": 0.5579597368343799,
+            "delta": -0.3226553536847624,
+            "ci": [
+              -0.39239205953901013,
+              -0.2533148324760747
+            ],
+            "gained": 7,
+            "lost": 85,
+            "p": 1e-05,
+            "test": "paired_bootstrap_bca"
+          },
+          "not_triggered": {
+            "n": 779,
+            "a": 0.9176386366326011,
+            "b": 0.9291325367882499,
+            "delta": -0.011493900155648861,
+            "ci": [
+              -0.022610836659293913,
+              -0.0021794537030697453
+            ],
+            "gained": 16,
+            "lost": 20,
+            "p": 0.02717,
+            "test": "paired_bootstrap_bca"
+          },
+          "exact_match_all": {
+            "n": 1000,
+            "a": 0.734,
+            "b": 0.807,
+            "delta": -0.07300000000000006,
+            "ci": [
+              -0.09317596100504481,
+              -0.0531275764759582
+            ],
+            "gained": 18,
+            "lost": 91,
+            "p": 6.366602155148437e-13,
+            "test": "mcnemar_exact"
+          }
+        }
+      },
+      "usage": {
+        "tokens_per_q": 6566.55,
+        "latency_s_per_q": 5.102519
+      }
+    },
+    "no-db-matching": {
+      "removes": "database value matching",
+      "sets": {
+        "BioHopR_2hop.json": {
+          "metric": "jaccard",
+          "all": {
+            "n": 1000,
+            "a": 0.8189824352156116,
+            "b": 0.8471033479984446,
+            "delta": -0.028120912782832852,
+            "ci": [
+              -0.043435211562347226,
+              -0.01417078877226168
+            ],
+            "gained": 23,
+            "lost": 61,
+            "p": 0.00013,
+            "test": "paired_bootstrap_bca",
+            "p_holm": 0.00052
+          },
+          "triggered": {
+            "n": 221,
+            "a": 0.43116165190823924,
+            "b": 0.5579597368343799,
+            "delta": -0.12679808492614073,
+            "ci": [
+              -0.18664041353666477,
+              -0.07036724303819072
+            ],
+            "gained": 10,
+            "lost": 43,
+            "p": 2e-05,
+            "test": "paired_bootstrap_bca"
+          },
+          "not_triggered": {
+            "n": 779,
+            "a": 0.929006046397806,
+            "b": 0.9291325367882499,
+            "delta": -0.00012649039044383865,
+            "ci": [
+              -0.008329655431002446,
+              0.007937856700033243
+            ],
+            "gained": 13,
+            "lost": 18,
+            "p": 0.97154,
+            "test": "paired_bootstrap_bca"
+          },
+          "exact_match_all": {
+            "n": 1000,
+            "a": 0.779,
+            "b": 0.807,
+            "delta": -0.028000000000000025,
+            "ci": [
+              -0.04384202397805606,
+              -0.012414403699580382
+            ],
+            "gained": 18,
+            "lost": 46,
+            "p": 0.0006173782640671298,
+            "test": "mcnemar_exact"
+          }
+        }
+      },
+      "usage": {
+        "tokens_per_q": 7598.108,
+        "latency_s_per_q": 6.022327000000001
+      }
+    },
+    "no-llm-selection": {
+      "removes": "LLM choice among candidates and synonyms",
+      "sets": {
+        "BioHopR_2hop.json": {
+          "metric": "jaccard",
+          "all": {
+            "n": 1000,
+            "a": 0.8309987659756033,
+            "b": 0.8471033479984446,
+            "delta": -0.01610458202284123,
+            "ci": [
+              -0.02991740630283898,
+              -0.0032190553239093756
+            ],
+            "gained": 34,
+            "lost": 45,
+            "p": 0.01818,
+            "test": "paired_bootstrap_bca",
+            "p_holm": 0.03636
+          },
+          "triggered": {
+            "n": 221,
+            "a": 0.48612719665311216,
+            "b": 0.5579597368343799,
+            "delta": -0.07183254018126763,
+            "ci": [
+              -0.12398991125118082,
+              -0.022916305664027622
+            ],
+            "gained": 14,
+            "lost": 29,
+            "p": 0.00561,
+            "test": "paired_bootstrap_bca"
+          },
+          "not_triggered": {
+            "n": 779,
+            "a": 0.928837811957979,
+            "b": 0.9291325367882499,
+            "delta": -0.0002947248302709683,
+            "ci": [
+              -0.009465824303622972,
+              0.008680631074294207
+            ],
+            "gained": 20,
+            "lost": 16,
+            "p": 0.95026,
+            "test": "paired_bootstrap_bca"
+          },
+          "exact_match_all": {
+            "n": 1000,
+            "a": 0.794,
+            "b": 0.807,
+            "delta": -0.013000000000000012,
+            "ci": [
+              -0.028495751688042324,
+              0.0023637445760748207
+            ],
+            "gained": 24,
+            "lost": 37,
+            "p": 0.12373144253809215,
+            "test": "mcnemar_exact"
+          }
+        }
+      },
+      "usage": {
+        "tokens_per_q": 7665.172,
+        "latency_s_per_q": 6.322185
+      }
+    },
+    "no-syntax": {
+      "removes": "syntax repair of Neo4j errors",
+      "sets": {
+        "BioHopR_2hop.json": {
+          "metric": "jaccard",
+          "all": {
+            "n": 1000,
+            "a": 0.845416321722078,
+            "b": 0.8471033479984446,
+            "delta": -0.0016870262763664754,
+            "ci": [
+              -0.014143059743955159,
+              0.01072561455938098
+            ],
+            "gained": 37,
+            "lost": 33,
+            "p": 0.79337,
+            "test": "paired_bootstrap_bca",
+            "p_holm": 0.79337
+          },
+          "triggered": {
+            "n": 221,
+            "a": 0.5512411132644426,
+            "b": 0.5579597368343799,
+            "delta": -0.006718623569937384,
+            "ci": [
+              -0.05732250944540642,
+              0.04288883463279194
+            ],
+            "gained": 19,
+            "lost": 18,
+            "p": 0.80178,
+            "test": "paired_bootstrap_bca"
+          },
+          "not_triggered": {
+            "n": 779,
+            "a": 0.9288729598082622,
+            "b": 0.9291325367882499,
+            "delta": -0.00025957697998756497,
+            "ci": [
+              -0.007761966958880269,
+              0.007258954526066256
+            ],
+            "gained": 18,
+            "lost": 15,
+            "p": 0.94981,
+            "test": "paired_bootstrap_bca"
+          },
+          "exact_match_all": {
+            "n": 1000,
+            "a": 0.808,
+            "b": 0.807,
+            "delta": 0.0010000000000000009,
+            "ci": [
+              -0.013949834203509275,
+              0.015961267851643268
+            ],
+            "gained": 29,
+            "lost": 28,
+            "p": 1.0,
+            "test": "mcnemar_exact"
+          }
+        }
+      },
+      "usage": {
+        "tokens_per_q": 7753.976,
+        "latency_s_per_q": 6.82047
+      }
+    },
+    "bare": {
+      "removes": "everything: one-shot, executed once",
+      "sets": {
+        "BioHopR_2hop.json": {
+          "metric": "jaccard",
+          "all": {
+            "n": 1000,
+            "a": 0.7338994248093303,
+            "b": 0.8471033479984446,
+            "delta": -0.1132039231891143,
+            "ci": [
+              -0.1343658856961978,
+              -0.09411842715614256
+            ],
+            "gained": 17,
+            "lost": 137,
+            "p": 1e-05,
+            "test": "paired_bootstrap_bca",
+            "p_holm": 9e-05
+          },
+          "triggered": {
+            "n": 221,
+            "a": 0.09962230283085897,
+            "b": 0.5579597368343799,
+            "delta": -0.4583374340035209,
+            "ci": [
+              -0.5238590879525193,
+              -0.3940542941095207
+            ],
+            "gained": 0,
+            "lost": 109,
+            "p": 1e-05,
+            "test": "paired_bootstrap_bca"
+          },
+          "not_triggered": {
+            "n": 779,
+            "a": 0.9138419716093844,
+            "b": 0.9291325367882499,
+            "delta": -0.01529056517886547,
+            "ci": [
+              -0.026861470363085407,
+              -0.005718520266943676
+            ],
+            "gained": 17,
+            "lost": 28,
+            "p": 0.00349,
+            "test": "paired_bootstrap_bca"
+          },
+          "exact_match_all": {
+            "n": 1000,
+            "a": 0.703,
+            "b": 0.807,
+            "delta": -0.10400000000000009,
+            "ci": [
+              -0.12575409141897298,
+              -0.08251008791119023
+            ],
+            "gained": 14,
+            "lost": 118,
+            "p": 1.1384055538138498e-21,
+            "test": "mcnemar_exact"
+          }
+        }
+      },
+      "usage": {
+        "tokens_per_q": 5695.654,
+        "latency_s_per_q": 4.491128
+      }
+    },
+    "no-examples": {
+      "removes": "the few-shot examples: every prompt is zero-shot",
+      "sets": {
+        "BioHopR_2hop.json": {
+          "metric": "jaccard",
+          "all": {
+            "n": 1000,
+            "a": 0.6939457383026484,
+            "b": 0.8471033479984446,
+            "delta": -0.15315760969579628,
+            "ci": [
+              -0.17971701280784433,
+              -0.12813168267536723
+            ],
+            "gained": 44,
+            "lost": 190,
+            "p": 1e-05,
+            "test": "paired_bootstrap_bca",
+            "p_holm": 9e-05
+          },
+          "triggered": {
+            "n": 221,
+            "a": 0.43051730232780855,
+            "b": 0.5579597368343799,
+            "delta": -0.1274424345065713,
+            "ci": [
+              -0.1921093791591569,
+              -0.06427452717516513
+            ],
+            "gained": 17,
+            "lost": 46,
+            "p": 9e-05,
+            "test": "paired_bootstrap_bca"
+          },
+          "not_triggered": {
+            "n": 779,
+            "a": 0.7686796078154078,
+            "b": 0.9291325367882499,
+            "delta": -0.1604529289728421,
+            "ci": [
+              -0.18945208198878516,
+              -0.13376900357259508
+            ],
+            "gained": 27,
+            "lost": 144,
+            "p": 1e-05,
+            "test": "paired_bootstrap_bca"
+          },
+          "exact_match_all": {
+            "n": 1000,
+            "a": 0.665,
+            "b": 0.807,
+            "delta": -0.14200000000000002,
+            "ci": [
+              -0.16939931429623417,
+              -0.11452651493977031
+            ],
+            "gained": 37,
+            "lost": 179,
+            "p": 1.5560321653622646e-23,
+            "test": "mcnemar_exact"
+          },
+          "cites_example_entity": {
+            "n": 0,
+            "a": NaN,
+            "b": NaN,
+            "delta": NaN,
+            "ci": [
+              NaN,
+              NaN
+            ],
+            "gained": 0,
+            "lost": 0,
+            "p": 1.0,
+            "test": "paired_bootstrap_bca"
+          },
+          "no_example_entity": {
+            "n": 1000,
+            "a": 0.6939457383026484,
+            "b": 0.8471033479984446,
+            "delta": -0.15315760969579628,
+            "ci": [
+              -0.17971701280784433,
+              -0.12813168267536723
+            ],
+            "gained": 44,
+            "lost": 190,
+            "p": 1e-05,
+            "test": "paired_bootstrap_bca"
+          }
+        }
+      },
+      "usage": {
+        "tokens_per_q": 9349.627,
+        "latency_s_per_q": 10.022632
+      }
+    },
+    "generic-examples": {
+      "removes": "the graph's content in the examples: same shapes with <LABEL>/<REL_TYPE> placeholders",
+      "sets": {
+        "BioHopR_2hop.json": {
+          "metric": "jaccard",
+          "all": {
+            "n": 1000,
+            "a": 0.7670857842675286,
+            "b": 0.8471033479984446,
+            "delta": -0.0800175637309159,
+            "ci": [
+              -0.10424483745495935,
+              -0.05640358062701251
+            ],
+            "gained": 63,
+            "lost": 132,
+            "p": 1e-05,
+            "test": "paired_bootstrap_bca",
+            "p_holm": 9e-05
+          },
+          "triggered": {
+            "n": 221,
+            "a": 0.5497341324165609,
+            "b": 0.5579597368343799,
+            "delta": -0.00822560441781902,
+            "ci": [
+              -0.07839716461201335,
+              0.0618463996014744
+            ],
+            "gained": 36,
+            "lost": 36,
+            "p": 0.81288,
+            "test": "paired_bootstrap_bca"
+          },
+          "not_triggered": {
+            "n": 779,
+            "a": 0.8287478061661987,
+            "b": 0.9291325367882499,
+            "delta": -0.1003847306220512,
+            "ci": [
+              -0.12491511956625448,
+              -0.07792844830004896
+            ],
+            "gained": 27,
+            "lost": 96,
+            "p": 1e-05,
+            "test": "paired_bootstrap_bca"
+          },
+          "exact_match_all": {
+            "n": 1000,
+            "a": 0.741,
+            "b": 0.807,
+            "delta": -0.06600000000000006,
+            "ci": [
+              -0.09204655235015662,
+              -0.040024747250128626
+            ],
+            "gained": 57,
+            "lost": 123,
+            "p": 9.693304653209904e-07,
+            "test": "mcnemar_exact"
+          },
+          "cites_example_entity": {
+            "n": 0,
+            "a": NaN,
+            "b": NaN,
+            "delta": NaN,
+            "ci": [
+              NaN,
+              NaN
+            ],
+            "gained": 0,
+            "lost": 0,
+            "p": 1.0,
+            "test": "paired_bootstrap_bca"
+          },
+          "no_example_entity": {
+            "n": 1000,
+            "a": 0.7670857842675286,
+            "b": 0.8471033479984446,
+            "delta": -0.0800175637309159,
+            "ci": [
+              -0.10424483745495935,
+              -0.05640358062701251
+            ],
+            "gained": 63,
+            "lost": 132,
+            "p": 1e-05,
+            "test": "paired_bootstrap_bca"
+          }
+        }
+      },
+      "usage": {
+        "tokens_per_q": 8687.675,
+        "latency_s_per_q": 7.8589080000000004
+      }
+    }
+  },
+  "noise": {
+    "BioHopR_2hop.json": {
+      "n": 1000,
+      "a": 0.8471033479984446,
+      "b": 0.8527184226015028,
+      "delta": -0.005615074603058178,
+      "ci": [
+        -0.018836803382192617,
+        0.007545405938301231
+      ],
+      "gained": 29,
+      "lost": 35,
+      "p": 0.40511,
+      "test": "paired_bootstrap_bca"
+    }
+  },
+  "holm_family": 9,
+  "full_trigger_rate": {
+    "BioHopR_2hop.json": 0.221
+  }
+}

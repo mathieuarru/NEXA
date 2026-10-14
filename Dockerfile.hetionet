@@ -1,0 +1,45 @@
+# Hetionet v1.0, downloaded at build time: the 35 node and edge CSV files of the
+# CSV edition (github.com/nickzren/hetionet, a fork of hetio/hetionet), pinned to
+# commit e1318df01909. hetionet/checksums.tsv holds the MD5 of each download and
+# CSV. Hetionet is not redistributed with this repository. To build offline, put
+# the CSV files in hetionet/data/: each is used when its MD5 matches.
+
+FROM python:3.12-slim-bookworm AS prepare
+
+ARG HETIONET_BASE=https://media.githubusercontent.com/media/nickzren/hetionet/e1318df01909/hetnet/csv/data
+
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+WORKDIR /build
+COPY docker/fetch_verified.py hetionet/checksums.tsv /build/
+COPY hetionet/data/ /build/local/
+RUN mkdir -p /prepared \
+    && tail -n +2 /build/checksums.tsv | while IFS=$'\t' read -r name gz_md5 csv_md5; do \
+         if [[ -f "/build/local/${name}" ]] && echo "${csv_md5}  /build/local/${name}" | md5sum --check --status -; then \
+           cp "/build/local/${name}" "/prepared/${name}"; \
+         else \
+           python /build/fetch_verified.py "${HETIONET_BASE}/${name}.gz" "${gz_md5}" "/build/${name}.gz" \
+           && gunzip -c "/build/${name}.gz" > "/prepared/${name}" && rm "/build/${name}.gz" \
+           && echo "${csv_md5}  /prepared/${name}" | md5sum --check --strict -; \
+         fi; \
+       done \
+    && test "$(ls /prepared | wc -l)" -eq "$(($(wc -l < /build/checksums.tsv) - 1))"
+
+FROM neo4j:5.26.0-community-bullseye
+
+ENV NEO4J_AUTH=neo4j/password \
+    NEO4J_PLUGINS='["apoc"]' \
+    NEO4J_server_databases_read__only=neo4j
+
+COPY docker/neo4j_read_only.sh docker/neo4j_healthcheck.sh /opt/nexa/
+RUN chmod +x /opt/nexa/*.sh
+
+COPY --from=prepare /prepared/ /var/lib/neo4j/import/
+COPY hetionet/cypher /opt/cypher/
+
+COPY hetionet/load_hetionet.sh /load_hetionet.sh
+RUN chmod +x /load_hetionet.sh
+
+HEALTHCHECK --interval=30s --timeout=15s --start-period=30s --retries=120 \
+  CMD /opt/nexa/neo4j_healthcheck.sh
+
+CMD ["/bin/bash", "-lc", "/load_hetionet.sh"]

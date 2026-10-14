@@ -1,0 +1,718 @@
+--- NEXA Benchmark Evaluation ---
+Files processed: 1
+  - benchmark/results/biohopr/graphcypher_qwen3.8-27b/baseline_graphcypher_qwen3.8-27b-q8_0_PrimeKG_21_merged.jsonl
+
+=== Dataset: BioHopR_2hop.json__graphcypher | Type: open_ended_list | Mode: graphcypher | Model: qwen3.8:27b-q8_0 ===
+Count: 7633  |  Correct: 5056  |  Accuracy: 0.662 [95% CI 0.652-0.673]
+Average set metrics: exact_match=0.662  precision=0.902  recall=0.898  f1=0.895  jaccard=0.870  overlap=0.913
+By |expected| size:
+  -    1: n=1088  acc=0.847 f1=0.860
+  -  2-5: n=1567  acc=0.870 f1=0.925
+  - 6-20: n=2281  acc=0.740 f1=0.924
+  -  >20: n=2697  acc=0.401 f1=0.867
+Telemetry:
+  - first attempt success rate: 0.995 (n=7633)
+  - avg correction iterations: 0.000 (n=7633)
+  - latency ms: mean=139259 p50=75442 p95=490715 (n=7633)
+  - tokens: avg in=3223 out=1666 | total in=24603836 out=12719440
+  - records with error: 0.003 (n=7633)
+
+-- Incorrect Questions (2577 total, showing 15) --
+Q [08b594b9e449]: Name all diseases that are related to a effect/phenotype that is associated with drug Benzyl benzoate.
+  Expected: ['very long chain acyl-CoA dehydrogenase deficiency', 'POEMS syndrome', 'retinal capillary malformation', 'oromandibular dystonia', 'amyotrophic lateral sclerosis', 'systemic sclerosis', 'postpoliomyelitis syndrome', 'familial focal epilepsy with variable foci', 'interstitial cystitis', 'acatalasia', 'chromosome 17q11.2 deletion syndrome, 1.4Mb', 'scleroderma (disease)', 'polycystic kidney disease', 'Parkes Weber syndrome', 'intermediate Charcot-Marie-Tooth disease', 'fibular hemimelia', 'paraparetic variant of Guillain-Barre syndrome', 'obsolete rare circulatory system disease', 'subependymoma', 'thyroid gland undifferentiated (anaplastic) carcinoma', 'tufted angioma (disease)', 'hereditary spastic paraplegia', 'familial papillary or follicular thyroid carcinoma', 'snakebite envenomation', 'spinocerebellar ataxia', 'epidermal nevus syndrome', 'ABeta2M amyloidosis', 'thromboangiitis obliterans', 'kyphoscoliosis-lateral tongue atrophy-hereditary spastic paraplegia syndrome', 'hereditary painful callosities', 'primary hyperoxaluria', 'metachromatic leukodystrophy', 'Charcot-Marie-Tooth disease-deafness-intellectual disability syndrome', 'leukocyte adhesion deficiency', 'optic atrophy', 'scorpion envenomation', 'IgG4-related retroperitoneal fibrosis', 'ependymoma', 'Charcot-Marie-Tooth disease', 'bone osteosarcoma', 'poliomyelitis', 'schwannoma']
+  Got:      ['Acatalasia', 'Familial focal epilepsy with variable foci', 'IgG4-related retroperitoneal fibrosis', 'Charcot-Marie-Tooth disease-deafness-intellectual disability syndrome', 'Snakebite envenomation', 'Spinocerebellar ataxia', 'Obsolete rare circulatory system disease', 'Epidermal nevus syndrome', 'ABeta2M amyloidosis', 'Thyroid gland undifferentiated (anaplastic) carcinoma', 'Oromandibular dystonia', 'Hereditary spastic paraplegia', 'Very long chain acyl-CoA dehydrogenase deficiency', 'Intermediate Charcot-Marie-Tooth disease', "O'Sullivan-McLeod syndrome", 'Ependymoma', 'Subependymoma', 'Epithelial recurrent erosion dystrophy', 'Filarial elephantiasis', 'Graft versus host disease', 'Primary hyperoxaluria', 'Infantile digital fibromatosis', 'Schwannoma', 'Duplication of urethra', 'Dopa-responsive dystonia', 'Retinal capillary malformation', 'Sickle cell anemia', 'Hereditary painful callosities', 'Familial episodic pain syndrome with predominantly upper body involvement', 'Metachromatic leukodystrophy', 'Toxic shock syndrome', 'Familial episodic pain syndrome with predominantly lower limb involvement', 'Thromboangiitis obliterans', 'Combined oxidative phosphorylation defect', 'Familial papillary or follicular thyroid carcinoma', 'POEMS syndrome', 'Angiostrongyliasis', 'Poliomyelitis', 'Sweet syndrome', 'Postpoliomyelitis syndrome', 'Vulvovaginal gingival syndrome', 'Fibular hemimelia', 'NGLY1-deficiency', 'Interstitial cystitis', 'Optic atrophy', 'Systemic sclerosis', 'Thyroid lymphoma', 'Polycystic kidney disease', 'Zygomycosis', 'Bone osteosarcoma', 'Paraparetic variant of Guillain-Barré syndrome', 'Kyphoscoliosis-lateral tongue atrophy-hereditary spastic paraplegia syndrome', 'Parkes Weber syndrome', 'Coenzyme Q10 deficiency, primary', 'Scorpion envenomation', 'Cluster headache, familial', 'Amyotrophic lateral sclerosis', 'Scleroderma (disease)', 'Leukocyte adhesion deficiency', 'Tufted angioma (disease)', 'Chromosome 17q11.2 deletion syndrome, 1.4Mb', 'Charcot-Marie-Tooth disease', 'Primary erythermalgia', 'Cutaneous neuroendocrine carcinoma', 'Congenital panfollicular nevus (disease)']
+  Thinking: The following diseases are related to an effect/phenotype associated with **Benzyl benzoate**:
+
+1. Acatalasia
+2. Familial focal epilepsy with variable foci
+3. IgG4-related retroperitoneal fibrosis
+4. Charcot-Marie-Tooth disease-deafness-intellectual disability syndrome
+5. Snakebite envenomation
+6. Spinocerebellar ataxia
+7. Obsolete rare circulatory system disease
+8. Epidermal nevus syndrome
+9. ABeta2M amyloidosis
+10. Thyroid gland undifferentiated (anaplastic) carcinoma
+11. Oromandibular dystonia
+12. Hereditary spastic paraplegia
+13. Very long chain acyl-CoA dehydrogenase deficiency
+14. Intermediate Charcot-Marie-Tooth disease
+15. O'Sullivan-McLeod syndrome
+16. Ependymoma
+17. Subependymoma
+18. Epithelial recurrent erosion dystrophy
+19. Filarial elephantiasis
+20. Graft versus host disease
+21. Primary hyperoxaluria
+22. Infantile digital fibromatosis
+23. Schwannoma
+24. Duplication of urethra
+25. Dopa-responsive dystonia
+26. Retinal capillary malformation
+27. Sickle cell anemia
+28. Hereditary painful callosities
+29. Familial episodic pain syndrome with predominantly upper body involvement
+30. Metachromatic leukodystrophy
+31. Toxic shock syndrome
+32. Familial episodic pain syndrome with predominantly lower limb involvement
+33. Thromboangiitis obliterans
+34. Combined oxidative phosphorylation defect
+35. Familial papillary or follicular thyroid carcinoma
+36. POEMS syndrome
+37. Angiostrongyliasis
+38. Poliomyelitis
+39. Sweet syndrome
+40. Postpoliomyelitis syndrome
+41. Vulvovaginal gingival syndrome
+42. Fibular hemimelia
+43. NGLY1-deficiency
+44. Interstitial cystitis
+45. Optic atrophy
+46. Systemic sclerosis
+47. Thyroid lymphoma
+48. Polycystic kidney disease
+49. Zygomycosis
+50. Bone osteosarcoma
+51. Paraparetic variant of Guillain-Barré syndrome
+52. Kyphoscoliosis-lateral tongue atrophy-hereditary spastic paraplegia syndrome
+53. Parkes Weber syndrome
+54. Coenzyme Q10 deficiency, primary
+55. Scorpion envenomation
+56. Cluster headache, familial
+57. Amyotrophic lateral sclerosis
+58. Scleroderma (disease)
+59. Leukocyte adhesion deficiency
+60. Tufted angioma (disease)
+61. Chromosome 17q11.2 deletion syndrome, 1.4Mb
+62. Charcot-Marie-Tooth disease
+63. Primary erythermalgia
+64. Cutaneous neuroendocrine carcinoma
+65. Congenital panfollicular nevus (disease)
+  Cypher (1st attempt): MATCH (d:Drug {name: "Benzyl benzoate"})-[:DRUG_EFFECT]->(ep:EffectPhenotype)-[:DISEASE_PHENOTYPE_POSITIVE|DISEASE_PHENOTYPE_NEGATIVE]->(dis:Disease) RETURN dis.name
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.631  recall=0.976  f1=0.766  jaccard=0.621  overlap=0.976
+  Missing (in expected, not in got): acatalasia, amyotrophic lateral sclerosis, bone osteosarcoma, chromosome 17q11.2 deletion syndrome, 1.4Mb, ependymoma, epidermal nevus syndrome, familial focal epilepsy with variable foci, familial papillary or follicular thyroid carcinoma, fibular hemimelia, hereditary painful callosities, hereditary spastic paraplegia, intermediate Charcot-Marie-Tooth disease, interstitial cystitis, kyphoscoliosis-lateral tongue atrophy-hereditary spastic paraplegia syndrome, leukocyte adhesion deficiency, metachromatic leukodystrophy, obsolete rare circulatory system disease, optic atrophy, oromandibular dystonia, paraparetic variant of Guillain-Barre syndrome, poliomyelitis, polycystic kidney disease, postpoliomyelitis syndrome, primary hyperoxaluria, retinal capillary malformation, schwannoma, scleroderma (disease), scorpion envenomation, snakebite envenomation, spinocerebellar ataxia, subependymoma, systemic sclerosis, thromboangiitis obliterans, thyroid gland undifferentiated (anaplastic) carcinoma, tufted angioma (disease), very long chain acyl-CoA dehydrogenase deficiency
+  Extra (in got, not in expected):   Acatalasia, Amyotrophic lateral sclerosis, Angiostrongyliasis, Bone osteosarcoma, Chromosome 17q11.2 deletion syndrome, 1.4Mb, Cluster headache, familial, Coenzyme Q10 deficiency, primary, Combined oxidative phosphorylation defect, Congenital panfollicular nevus (disease), Cutaneous neuroendocrine carcinoma, Dopa-responsive dystonia, Duplication of urethra, Ependymoma, Epidermal nevus syndrome, Epithelial recurrent erosion dystrophy, Familial episodic pain syndrome with predominantly lower limb involvement, Familial episodic pain syndrome with predominantly upper body involvement, Familial focal epilepsy with variable foci, Familial papillary or follicular thyroid carcinoma, Fibular hemimelia, Filarial elephantiasis, Graft versus host disease, Hereditary painful callosities, Hereditary spastic paraplegia, Infantile digital fibromatosis, Intermediate Charcot-Marie-Tooth disease, Interstitial cystitis, Kyphoscoliosis-lateral tongue atrophy-hereditary spastic paraplegia syndrome, Leukocyte adhesion deficiency, Metachromatic leukodystrophy, NGLY1-deficiency, O'Sullivan-McLeod syndrome, Obsolete rare circulatory system disease, Optic atrophy, Oromandibular dystonia, Paraparetic variant of Guillain-Barré syndrome, Poliomyelitis, Polycystic kidney disease, Postpoliomyelitis syndrome, Primary erythermalgia, Primary hyperoxaluria, Retinal capillary malformation, Schwannoma, Scleroderma (disease), Scorpion envenomation, Sickle cell anemia, Snakebite envenomation, Spinocerebellar ataxia, Subependymoma, Sweet syndrome, Systemic sclerosis, Thromboangiitis obliterans, Thyroid gland undifferentiated (anaplastic) carcinoma, Thyroid lymphoma, Toxic shock syndrome, Tufted angioma (disease), Very long chain acyl-CoA dehydrogenase deficiency, Vulvovaginal gingival syndrome, Zygomycosis
+
+Q [2273a5cc3503]: Name all diseases that are related to a effect/phenotype that is associated with drug Idoxuridine.
+  Expected: ['Cornelia de Lange syndrome', 'chromosome 17q23.1-q23.2 deletion syndrome', 'leukonychia totalis', 'lichen planus pemphigoides', 'sea-blue histiocyte syndrome', 'dyskeratosis congenita', 'keratoconjunctivitis', 'xeroderma pigmentosum', 'ectodermal dysplasia', 'cutaneous porphyria', 'multiple congenital anomalies-hypotonia-seizures syndrome', 'Mobius syndrome', 'Clouston syndrome', 'candidiasis, familial', 'IFAP syndrome with or without BRESHECK syndrome', 'neonatal inflammatory skin and bowel disease', 'Wiskott-Aldrich syndrome', 'limb-mammary syndrome', 'Olmsted syndrome', 'poikiloderma with neutropenia', 'xanthogranuloma', 'EEC syndrome', 'ectrodactyly, ectodermal dysplasia, and cleft lip-palate syndrome']
+  Got:      ['Xeroderma pigmentosum', 'Wiskott-Aldrich syndrome', 'Cornelia de Lange syndrome', 'Keratoconjunctivitis', 'Lichen planus pemphigoides', 'Cutaneous porphyria', 'Dyskeratosis congenita', 'Ectodermal dysplasia', 'Limb-mammary syndrome', 'Dyskeratosis congenita, X-linked', 'Sea-blue histiocyte syndrome', 'Xanthogranuloma', 'IFAP syndrome with or without BRESHECK syndrome', 'FLOTCH syndrome', 'Olmsted syndrome', 'Mobius syndrome', 'Clouston syndrome', 'Ectrodactyly, ectodermal dysplasia, and cleft lip-palate syndrome', 'Microcephaly-congenital cataract-psoriasiform dermatitis syndrome', 'Acrodermatitis enteropathica', 'Chromosome 17q23.1-q23.2 deletion syndrome', 'EEC syndrome', 'Multiple congenital anomalies-hypotonia-seizures syndrome', 'Ankyloblepharon-ectodermal defects-cleft lip/palate syndrome', 'Leukonychia totalis', 'Keratosis follicularis spinulosa decalvans, autosomal dominant', 'Keratosis follicularis spinulosa decalvans, X-linked', 'Autosomal recessive congenital ichthyosis', 'Poikiloderma with neutropenia', 'Candidiasis, familial', 'Neonatal inflammatory skin and bowel disease']
+  Thinking: The following diseases are related to an effect/phenotype associated with **Idoxuridine**:
+
+1. Xeroderma pigmentosum
+2. Wiskott-Aldrich syndrome
+3. Cornelia de Lange syndrome
+4. Keratoconjunctivitis
+5. Lichen planus pemphigoides
+6. Cutaneous porphyria
+7. Dyskeratosis congenita
+8. Ectodermal dysplasia
+9. Limb-mammary syndrome
+10. Dyskeratosis congenita, X-linked
+11. Sea-blue histiocyte syndrome
+12. Xanthogranuloma
+13. IFAP syndrome with or without BRESHECK syndrome
+14. FLOTCH syndrome
+15. Olmsted syndrome
+16. Mobius syndrome
+17. Clouston syndrome
+18. Ectrodactyly, ectodermal dysplasia, and cleft lip-palate syndrome
+19. Microcephaly-congenital cataract-psoriasiform dermatitis syndrome
+20. Acrodermatitis enteropathica
+21. Chromosome 17q23.1-q23.2 deletion syndrome
+22. EEC syndrome
+23. Multiple congenital anomalies-hypotonia-seizures syndrome
+24. Ankyloblepharon-ectodermal defects-cleft lip/palate syndrome
+25. Leukonychia totalis
+26. Keratosis follicularis spinulosa decalvans, autosomal dominant
+27. Keratosis follicularis spinulosa decalvans, X-linked
+28. Autosomal recessive congenital ichthyosis
+29. Poikiloderma with neutropenia
+30. Candidiasis, familial
+31. Neonatal inflammatory skin and bowel disease
+  Cypher (1st attempt): MATCH (d:Drug {name: "Idoxuridine"})-[:DRUG_EFFECT]->(ep:EffectPhenotype)-[:DISEASE_PHENOTYPE_POSITIVE|DISEASE_PHENOTYPE_NEGATIVE]->(dis:Disease) RETURN dis.name
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.742  recall=1.000  f1=0.852  jaccard=0.742  overlap=1.000
+  Missing (in expected, not in got): candidiasis, familial, chromosome 17q23.1-q23.2 deletion syndrome, cutaneous porphyria, dyskeratosis congenita, ectodermal dysplasia, ectrodactyly, ectodermal dysplasia, and cleft lip-palate syndrome, keratoconjunctivitis, leukonychia totalis, lichen planus pemphigoides, limb-mammary syndrome, multiple congenital anomalies-hypotonia-seizures syndrome, neonatal inflammatory skin and bowel disease, poikiloderma with neutropenia, sea-blue histiocyte syndrome, xanthogranuloma, xeroderma pigmentosum
+  Extra (in got, not in expected):   Acrodermatitis enteropathica, Ankyloblepharon-ectodermal defects-cleft lip/palate syndrome, Autosomal recessive congenital ichthyosis, Candidiasis, familial, Chromosome 17q23.1-q23.2 deletion syndrome, Cutaneous porphyria, Dyskeratosis congenita, Dyskeratosis congenita, X-linked, Ectodermal dysplasia, Ectrodactyly, ectodermal dysplasia, and cleft lip-palate syndrome, FLOTCH syndrome, Keratoconjunctivitis, Keratosis follicularis spinulosa decalvans, X-linked, Keratosis follicularis spinulosa decalvans, autosomal dominant, Leukonychia totalis, Lichen planus pemphigoides, Limb-mammary syndrome, Microcephaly-congenital cataract-psoriasiform dermatitis syndrome, Multiple congenital anomalies-hypotonia-seizures syndrome, Neonatal inflammatory skin and bowel disease, Poikiloderma with neutropenia, Sea-blue histiocyte syndrome, Xanthogranuloma, Xeroderma pigmentosum
+
+Q [b78f779526e2]: Name all diseases that are related to a effect/phenotype that is associated with drug Vitamin A.
+  Expected: ['cystic echinococcosis', 'aggressive systemic mastocytosis']
+  Got:      ['Aggressive systemic mastocytosis', 'Cystic echinococcosis', 'Urticaria', 'Diffuse cutaneous mastocytosis', 'Congenital fibrinogen deficiency']
+  Thinking: The diseases related to an effect/phenotype associated with **Vitamin A** are:
+
+1. Aggressive systemic mastocytosis
+2. Cystic echinococcosis
+3. Urticaria
+4. Diffuse cutaneous mastocytosis
+5. Congenital fibrinogen deficiency
+  Cypher (1st attempt): MATCH (d:Drug {name: "Vitamin A"})-[:DRUG_EFFECT]->(ep:EffectPhenotype)-[:DISEASE_PHENOTYPE_POSITIVE|DISEASE_PHENOTYPE_NEGATIVE]->(dis:Disease)
+RETURN dis.name
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.400  recall=1.000  f1=0.571  jaccard=0.400  overlap=1.000
+  Missing (in expected, not in got): aggressive systemic mastocytosis, cystic echinococcosis
+  Extra (in got, not in expected):   Aggressive systemic mastocytosis, Congenital fibrinogen deficiency, Cystic echinococcosis, Diffuse cutaneous mastocytosis, Urticaria
+
+Q [75a305a6738a]: Name all diseases that are related to a effect/phenotype that is associated with drug Zinc chloride.
+  Expected: ['COG2-CDG', 'IRIDA syndrome', 'MEDNIK syndrome']
+  Got:      ['IRIDA syndrome', 'COG2-CDG', 'Familial benign copper deficiency', 'MEDNIK syndrome', 'Aceruloplasminemia']
+  Thinking: The diseases related to an effect/phenotype associated with **Zinc chloride** are:
+
+1. IRIDA syndrome
+2. COG2-CDG
+3. Familial benign copper deficiency
+4. MEDNIK syndrome
+5. Aceruloplasminemia
+  Cypher (1st attempt): MATCH (d:Drug {name: "Zinc chloride"})-[:DRUG_EFFECT]->(ep:EffectPhenotype)-[:DISEASE_PHENOTYPE_POSITIVE|DISEASE_PHENOTYPE_NEGATIVE]->(dis:Disease)
+RETURN dis.name
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.600  recall=1.000  f1=0.750  jaccard=0.600  overlap=1.000
+  Missing (in expected, not in got): -
+  Extra (in got, not in expected):   Aceruloplasminemia, Familial benign copper deficiency
+
+Q [41036ee71e88]: Name all diseases that are related to a effect/phenotype that is associated with drug Zinc sulfate.
+  Expected: ['graft versus host disease', 'mercury poisoning', 'Fabry disease', 'fructose intolerance', 'migraine, familial typical, susceptibility to, 2', 'toxic shock syndrome', 'tick-borne encephalitis', 'urticaria', 'hypervitaminosis a, susceptibility to', 'acute disseminated encephalomyelitis', 'multiple acyl-CoA dehydrogenase deficiency', 'choroid plexus papilloma', 'SUNCT syndrome', 'hypokalemic alkalosis, familial, with specific renal tubulopathy', 'variegate porphyria', 'Ehlers-Danlos syndrome, classic type', 'amoebiasis due to free-living amoebae', 'anterior cutaneous nerve entrapment syndrome', 'lysinuric protein intolerance', 'ovarian hyperstimulation syndrome', 'human African trypanosomiasis', 'mitochondrial neurogastrointestinal encephalomyopathy', 'Parkinson disease', 'Turcot syndrome with polyposis', 'lead poisoning', 'angiostrongyliasis', 'Zygomycosis', 'cyclic vomiting syndrome', 'familial lipoprotein lipase deficiency']
+  Got:      ['Sheehan syndrome', 'Zollinger-Ellison syndrome', 'Hyperammonemia due to N-acetylglutamate synthase deficiency', 'Aldosterone-producing adrenal cortex adenoma', 'Trichinellosis', 'Ectopic aldosterone-producing tumor', 'Familial hyperaldosteronism', 'Glycogen storage disease due to liver phosphorylase kinase deficiency', 'Microsporidiosis', 'AA amyloidosis', 'Superficial siderosis', 'IgG4-related hepatopathy', 'Caroli disease', 'Adenohypophysitis', 'Panhypophysitis', 'Cryptosporidiosis', 'HELLP syndrome', 'Hereditary coproporphyria', 'Variegate porphyria', 'Fabry disease', 'Boutonneuse fever', 'Mal de Debarquement', 'Pseudotumor cerebri', 'Aldosterone-producing adenoma with seizures and neurological abnormalities', 'Graft versus host disease', 'Glucocorticoid-remediable aldosteronism', 'Hepatitis, fulminant viral, susceptibility to', 'Human African trypanosomiasis', 'Acute disseminated encephalomyelitis', 'Non-secreting paraganglioma', 'Hereditary renal hypouricemia', 'Neuroleptic malignant syndrome', 'Mitochondrial DNA depletion syndrome', 'Hereditary pheochromocytoma-paraganglioma', 'Hypervitaminosis A, susceptibility to', 'Neuromyelitis optica', 'Parkinson disease', 'Ehlers-Danlos syndrome, classic type', 'Tick-borne encephalitis', 'Mitochondrial neurogastrointestinal encephalomyopathy', 'Renal nutcracker syndrome', 'Familial lipoprotein lipase deficiency', 'SUNCT syndrome', 'Toxic shock syndrome', 'Cyclic vomiting syndrome', 'Optic pathway glioma', 'Episodic ataxia', 'Listeriosis', 'Multiple acyl-CoA dehydrogenase deficiency', 'Angiostrongyliasis', 'Poliomyelitis', 'Amoebiasis due to free-living amoebae', 'Charcot-Marie-Tooth disease with ptosis and parkinsonism', 'Monosodium glutamate sensitivity', 'Seizures-scoliosis-macrocephaly syndrome', 'Anterior cutaneous nerve entrapment syndrome', 'Turcot syndrome with polyposis', 'Hyperthermia, cutaneous, with headaches and nausea', 'Migraine with or without aura, susceptibility to', 'Hypokalemic alkalosis, familial, with specific renal tubulopathy', 'Gastric mucosal hypertrophy', 'Mercury poisoning', 'Lead poisoning', 'Sporadic pheochromocytoma/secreting paraganglioma', 'Choroid plexus papilloma', 'Zygomycosis', 'Migraine, familial typical, susceptibility to, 2', 'Multiple endocrine neoplasia', 'Urticaria', 'Fructose intolerance', 'Hereditary angioedema', 'Ileal neuroendocrine tumor, well differentiated, low or intermediate grade', 'Jejunal neuroendocrine tumor, well differentiated, low or intermediate grade', 'Duodenal neuroendocrine tumor, well differentiated, low or intermediate grade', 'Liver neuroendocrine carcinoma', 'Gallbladder neuroendocrine tumor, grade 1/2', 'Serotonin syndrome', 'Ovarian hyperstimulation syndrome', 'Lysinuric protein intolerance', 'Ethylene glycol poisoning', 'Colchicine poisoning', 'Acute intermittent porphyria', 'Shigellosis', 'Primary unilateral adrenal hyperplasia', 'Cocaine intoxication', 'Brucellosis', 'Acquired aneurysmal subarachnoid hemorrhage', 'Acute liver failure', 'Charcot-Marie-Tooth disease, Guadalajara neuronal type']
+  Thinking: The following diseases are related to an effect/phenotype associated with **Zinc sulfate**:
+
+1. Sheehan syndrome
+2. Zollinger-Ellison syndrome
+3. Hyperammonemia due to N-acetylglutamate synthase deficiency
+4. Aldosterone-producing adrenal cortex adenoma
+5. Trichinellosis
+6. Ectopic aldosterone-producing tumor
+7. Familial hyperaldosteronism
+8. Glycogen storage disease due to liver phosphorylase kinase deficiency
+9. Microsporidiosis
+10. AA amyloidosis
+11. Superficial siderosis
+12. IgG4-related hepatopathy
+13. Caroli disease
+14. Adenohypophysitis
+15. Panhypophysitis
+16. Cryptosporidiosis
+17. HELLP syndrome
+18. Hereditary coproporphyria
+19. Variegate porphyria
+20. Fabry disease
+21. Boutonneuse fever
+22. Mal de Debarquement
+23. Pseudotumor cerebri
+24. Aldosterone-producing adenoma with seizures and neurological abnormalities
+25. Graft versus host disease
+26. Glucocorticoid-remediable aldosteronism
+27. Hepatitis, fulminant viral, susceptibility to
+28. Human African trypanosomiasis
+29. Acute disseminated encephalomyelitis
+30. Non-secreting paraganglioma
+31. Hereditary renal hypouricemia
+32. Neuroleptic malignant syndrome
+33. Mitochondrial DNA depletion syndrome
+34. Hereditary pheochromocytoma-paraganglioma
+35. Hypervitaminosis A, susceptibility to
+36. Neuromyelitis optica
+37. Parkinson disease
+38. Ehlers-Danlos syndrome, classic type
+39. Tick-borne encephalitis
+40. Mitochondrial neurogastrointestinal encephalomyopathy
+41. Renal nutcracker syndrome
+42. Familial lipoprotein lipase deficiency
+43. SUNCT syndrome
+44. Toxic shock syndrome
+45. Cyclic vomiting syndrome
+46. Optic pathway glioma
+47. Episodic ataxia
+48. Listeriosis
+49. Multiple acyl-CoA dehydrogenase deficiency
+50. Angiostrongyliasis
+51. Poliomyelitis
+52. Amoebiasis due to free-living amoebae
+53. Charcot-Marie-Tooth disease with ptosis and parkinsonism
+54. Monosodium glutamate sensitivity
+55. Seizures-scoliosis-macrocephaly syndrome
+56. Anterior cutaneous nerve entrapment syndrome
+57. Turcot syndrome with polyposis
+58. Hyperthermia, cutaneous, with headaches and nausea
+59. Migraine with or without aura, susceptibility to
+60. Hypokalemic alkalosis, familial, with specific renal tubulopathy
+61. Gastric mucosal hypertrophy
+62. Mercury poisoning
+63. Lead poisoning
+64. Sporadic pheochromocytoma/secreting paraganglioma
+65. Choroid plexus papilloma
+66. Zygomycosis
+67. Migraine, familial typical, susceptibility to, 2
+68. Multiple endocrine neoplasia
+69. Urticaria
+70. Fructose intolerance
+71. Hereditary angioedema
+72. Ileal neuroendocrine tumor, well differentiated, low or intermediate grade
+73. Jejunal neuroendocrine tumor, well differentiated, low or intermediate grade
+74. Duodenal neuroendocrine tumor, well differentiated, low or intermediate grade
+75. Liver neuroendocrine carcinoma
+76. Gallbladder neuroendocrine tumor, grade 1/2
+77. Serotonin syndrome
+78. Ovarian hyperstimulation syndrome
+79. Lysinuric protein intolerance
+80. Ethylene glycol poisoning
+81. Colchicine poisoning
+82. Acute intermittent porphyria
+83. Shigellosis
+84. Primary unilateral adrenal hyperplasia
+85. Cocaine intoxication
+86. Brucellosis
+87. Acquired aneurysmal subarachnoid hemorrhage
+88. Acute liver failure
+89. Charcot-Marie-Tooth disease, Guadalajara neuronal type
+  Cypher (1st attempt): MATCH (d:Drug {name: "Zinc sulfate"})-[:DRUG_EFFECT]->(ep:EffectPhenotype)-[:DISEASE_PHENOTYPE_POSITIVE|DISEASE_PHENOTYPE_NEGATIVE]->(dis:Disease) RETURN dis.name
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.326  recall=1.000  f1=0.492  jaccard=0.326  overlap=1.000
+  Missing (in expected, not in got): acute disseminated encephalomyelitis, amoebiasis due to free-living amoebae, angiostrongyliasis, anterior cutaneous nerve entrapment syndrome, choroid plexus papilloma, cyclic vomiting syndrome, familial lipoprotein lipase deficiency, fructose intolerance, graft versus host disease, human African trypanosomiasis, hypervitaminosis a, susceptibility to, hypokalemic alkalosis, familial, with specific renal tubulopathy, lead poisoning, lysinuric protein intolerance, mercury poisoning, migraine, familial typical, susceptibility to, 2, mitochondrial neurogastrointestinal encephalomyopathy, multiple acyl-CoA dehydrogenase deficiency, ovarian hyperstimulation syndrome, tick-borne encephalitis, toxic shock syndrome, urticaria, variegate porphyria
+  Extra (in got, not in expected):   AA amyloidosis, Acquired aneurysmal subarachnoid hemorrhage, Acute disseminated encephalomyelitis, Acute intermittent porphyria, Acute liver failure, Adenohypophysitis, Aldosterone-producing adenoma with seizures and neurological abnormalities, Aldosterone-producing adrenal cortex adenoma, Amoebiasis due to free-living amoebae, Angiostrongyliasis, Anterior cutaneous nerve entrapment syndrome, Boutonneuse fever, Brucellosis, Caroli disease, Charcot-Marie-Tooth disease with ptosis and parkinsonism, Charcot-Marie-Tooth disease, Guadalajara neuronal type, Choroid plexus papilloma, Cocaine intoxication, Colchicine poisoning, Cryptosporidiosis, Cyclic vomiting syndrome, Duodenal neuroendocrine tumor, well differentiated, low or intermediate grade, Ectopic aldosterone-producing tumor, Episodic ataxia, Ethylene glycol poisoning, Familial hyperaldosteronism, Familial lipoprotein lipase deficiency, Fructose intolerance, Gallbladder neuroendocrine tumor, grade 1/2, Gastric mucosal hypertrophy, Glucocorticoid-remediable aldosteronism, Glycogen storage disease due to liver phosphorylase kinase deficiency, Graft versus host disease, HELLP syndrome, Hepatitis, fulminant viral, susceptibility to, Hereditary angioedema, Hereditary coproporphyria, Hereditary pheochromocytoma-paraganglioma, Hereditary renal hypouricemia, Human African trypanosomiasis, Hyperammonemia due to N-acetylglutamate synthase deficiency, Hyperthermia, cutaneous, with headaches and nausea, Hypervitaminosis A, susceptibility to, Hypokalemic alkalosis, familial, with specific renal tubulopathy, IgG4-related hepatopathy, Ileal neuroendocrine tumor, well differentiated, low or intermediate grade, Jejunal neuroendocrine tumor, well differentiated, low or intermediate grade, Lead poisoning, Listeriosis, Liver neuroendocrine carcinoma, Lysinuric protein intolerance, Mal de Debarquement, Mercury poisoning, Microsporidiosis, Migraine with or without aura, susceptibility to, Migraine, familial typical, susceptibility to, 2, Mitochondrial DNA depletion syndrome, Mitochondrial neurogastrointestinal encephalomyopathy, Monosodium glutamate sensitivity, Multiple acyl-CoA dehydrogenase deficiency, Multiple endocrine neoplasia, Neuroleptic malignant syndrome, Neuromyelitis optica, Non-secreting paraganglioma, Optic pathway glioma, Ovarian hyperstimulation syndrome, Panhypophysitis, Poliomyelitis, Primary unilateral adrenal hyperplasia, Pseudotumor cerebri, Renal nutcracker syndrome, Seizures-scoliosis-macrocephaly syndrome, Serotonin syndrome, Sheehan syndrome, Shigellosis, Sporadic pheochromocytoma/secreting paraganglioma, Superficial siderosis, Tick-borne encephalitis, Toxic shock syndrome, Trichinellosis, Urticaria, Variegate porphyria, Zollinger-Ellison syndrome
+
+Q [5e50f779a9fa]: Name all diseases that are related to a gene/protein that is associated with drug (+)-2-(4-biphenyl)propionic acid.
+  Expected: ['carcinoma of esophagus', 'corpus luteum cyst', 'gastric ulcer (disease)', 'hereditary breast ovarian cancer syndrome', 'ovarian cyst (disease)', 'chronic renal failure syndrome', 'undifferentiated carcinoma', 'intestinal polyp (disease)', 'heart failure', 'sarcomatoid carcinoma', 'hereditary breast carcinoma', 'asthma', 'end stage renal failure', 'platelet-type bleeding disorder', 'ischemia reperfusion injury', 'breast cancer', 'undifferentiated carcinoma of the corpus uteri', 'chronic kidney disease', 'esophageal cancer', 'breast neoplasm', 'carcinoma', 'rheumatoid arthritis', 'schizophrenia', 'occupational asthma', 'breast carcinoma', 'congestive heart failure', 'squamous cell carcinoma of the corpus uteri']
+  Got:      ['Intestinal polyp', 'Platelet-type bleeding disorder', 'Occupational asthma', 'Asthma', 'Undifferentiated carcinoma', 'Sarcomatoid carcinoma', 'Carcinoma', 'Heart failure', 'Congestive heart failure', 'Carcinoma of esophagus', 'Esophageal cancer', 'End stage renal failure', 'Chronic renal failure syndrome', 'Chronic kidney disease', 'Breast carcinoma', 'Undifferentiated carcinoma of the corpus uteri', 'Squamous cell carcinoma of the corpus uteri', 'Hereditary breast ovarian cancer syndrome', 'Breast neoplasm', 'Hereditary breast carcinoma', 'Breast cancer', 'Corpus luteum cyst', 'Ovarian cyst', 'Ischemia reperfusion injury', 'Rheumatoid arthritis', 'Gastric ulcer', 'Schizophrenia']
+  Thinking: The following diseases are related to a gene/protein associated with (+)-2-(4-biphenyl)propionic acid:
+
+- Intestinal polyp
+- Platelet-type bleeding disorder
+- Occupational asthma
+- Asthma
+- Undifferentiated carcinoma
+- Sarcomatoid carcinoma
+- Carcinoma
+- Heart failure
+- Congestive heart failure
+- Carcinoma of esophagus
+- Esophageal cancer
+- End stage renal failure
+- Chronic renal failure syndrome
+- Chronic kidney disease
+- Breast carcinoma
+- Undifferentiated carcinoma of the corpus uteri
+- Squamous cell carcinoma of the corpus uteri
+- Hereditary breast ovarian cancer syndrome
+- Breast neoplasm
+- Hereditary breast carcinoma
+- Breast cancer
+- Corpus luteum cyst
+- Ovarian cyst
+- Ischemia reperfusion injury
+- Rheumatoid arthritis
+- Gastric ulcer
+- Schizophrenia
+  Cypher (1st attempt): MATCH (d:Drug {name: "(+)-2-(4-biphenyl)propionic acid"})-[:DRUG_PROTEIN]->(g:GeneProtein)-[:DISEASE_PROTEIN]->(dis:Disease) RETURN dis.name
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.889  recall=0.889  f1=0.889  jaccard=0.800  overlap=0.889
+  Missing (in expected, not in got): asthma, breast cancer, breast carcinoma, breast neoplasm, carcinoma, carcinoma of esophagus, chronic kidney disease, chronic renal failure syndrome, congestive heart failure, corpus luteum cyst, end stage renal failure, esophageal cancer, gastric ulcer (disease), heart failure, hereditary breast carcinoma, hereditary breast ovarian cancer syndrome, intestinal polyp (disease), ischemia reperfusion injury, occupational asthma, ovarian cyst (disease), platelet-type bleeding disorder, rheumatoid arthritis, sarcomatoid carcinoma, schizophrenia, squamous cell carcinoma of the corpus uteri, undifferentiated carcinoma, undifferentiated carcinoma of the corpus uteri
+  Extra (in got, not in expected):   Asthma, Breast cancer, Breast carcinoma, Breast neoplasm, Carcinoma, Carcinoma of esophagus, Chronic kidney disease, Chronic renal failure syndrome, Congestive heart failure, Corpus luteum cyst, End stage renal failure, Esophageal cancer, Gastric ulcer, Heart failure, Hereditary breast carcinoma, Hereditary breast ovarian cancer syndrome, Intestinal polyp, Ischemia reperfusion injury, Occupational asthma, Ovarian cyst, Platelet-type bleeding disorder, Rheumatoid arthritis, Sarcomatoid carcinoma, Schizophrenia, Squamous cell carcinoma of the corpus uteri, Undifferentiated carcinoma, Undifferentiated carcinoma of the corpus uteri
+
+Q [bd8908ac56f7]: Name all diseases that are related to a gene/protein that is associated with drug (+)-Rutamarin alcohol.
+  Expected: ['Alzheimer disease without neurofibrillary tangles', 'Creutzfeldt Jacob disease', 'cerebellar degeneration', 'Alzheimer disease', 'Pick disease', 'Reye syndrome']
+  Got:      ['Creutzfeldt-Jakob disease', 'Pick disease', 'Reye syndrome', 'Cerebellar degeneration', 'Alzheimer disease without neurofibrillary tangles', 'Alzheimer disease']
+  Thinking: The diseases related to a gene/protein associated with the drug **(+)-Rutamarin alcohol** are:
+
+1. Creutzfeldt-Jakob disease
+2. Pick disease
+3. Reye syndrome
+4. Cerebellar degeneration
+5. Alzheimer disease without neurofibrillary tangles
+6. Alzheimer disease
+  Cypher (1st attempt): MATCH (d:Drug {name: "(+)-Rutamarin alcohol"})-[:DRUG_PROTEIN]->(g:GeneProtein)-[:DISEASE_PROTEIN]->(dis:Disease) RETURN dis.name
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.833  recall=0.833  f1=0.833  jaccard=0.714  overlap=0.833
+  Missing (in expected, not in got): Creutzfeldt Jacob disease, cerebellar degeneration
+  Extra (in got, not in expected):   Cerebellar degeneration, Creutzfeldt-Jakob disease
+
+Q [d54a01e41c3c]: Name all diseases that are related to a gene/protein that is associated with drug (13R,15S)-13-METHYL-16-OXA-8,9,12,22,24-PENTAAZAHEXACYCLO[15.6.2.16,9.1,12,15.0,2,7.0,21,25]HEPTACOSA-1(24),2,4,6,17(25),18,20-HEPTAENE-23,26-DIONE.
+  Expected: ["obsolete Hodgkin's granuloma", 'diffuse large B-cell lymphoma of the central nervous system', 'diffuse large B-cell lymphoma', 'glioma susceptibility', 'squamous cell carcinoma', 'ALK-positive large B-cell lymphoma', 'classic Hodgkin lymphoma, lymphocyte-rich type', "Hodgkin's paragranuloma", 'Hodgkins lymphoma', 'classic Hodgkin lymphoma', 'Epstein-Barr virus-positive diffuse large B-cell lymphoma of the elderly', 'melanoma', 'plasmablastic lymphoma', 'intravascular large B-cell lymphoma', 'primary cutaneous diffuse large B-cell lymphoma, Leg type', 'primary central nervous system lymphoma', 'glioblastoma (disease)', 'T-cell/histiocyte rich large B cell lymphoma', 'primary mediastinal large B-cell lymphoma']
+  Got:      ['Classic Hodgkin lymphoma, lymphocyte-rich type', "Hodgkin's paragranuloma", 'Classic Hodgkin lymphoma', "Hodgkin's lymphoma", "Obsolete Hodgkin's granuloma", 'Intravascular large B-cell lymphoma', 'Primary mediastinal large B-cell lymphoma', 'ALK-positive large B-cell lymphoma', 'T-cell/histiocyte rich large B cell lymphoma', 'Diffuse large B-cell lymphoma of the central nervous system', 'Plasmablastic lymphoma', 'Epstein-Barr virus-positive diffuse large B-cell lymphoma of the elderly', 'Primary cutaneous diffuse large B-cell lymphoma, Leg type', 'Primary central nervous system lymphoma', 'Diffuse large B-cell lymphoma', 'Squamous cell carcinoma', 'Glioma susceptibility', 'Glioblastoma (disease)', 'Melanoma']
+  Thinking: The following diseases are related to a gene/protein associated with that drug:
+
+1. Classic Hodgkin lymphoma, lymphocyte-rich type
+2. Hodgkin's paragranuloma
+3. Classic Hodgkin lymphoma
+4. Hodgkin's lymphoma
+5. Obsolete Hodgkin's granuloma
+6. Intravascular large B-cell lymphoma
+7. Primary mediastinal large B-cell lymphoma
+8. ALK-positive large B-cell lymphoma
+9. T-cell/histiocyte rich large B cell lymphoma
+10. Diffuse large B-cell lymphoma of the central nervous system
+11. Plasmablastic lymphoma
+12. Epstein-Barr virus-positive diffuse large B-cell lymphoma of the elderly
+13. Primary cutaneous diffuse large B-cell lymphoma, Leg type
+14. Primary central nervous system lymphoma
+15. Diffuse large B-cell lymphoma
+16. Squamous cell carcinoma
+17. Glioma susceptibility
+18. Glioblastoma (disease)
+19. Melanoma
+  Cypher (1st attempt): MATCH (d:Disease)-[:DISEASE_PROTEIN]->(gp:GeneProtein)<-[:DRUG_PROTEIN]-(drug:Drug {name: "(13R,15S)-13-METHYL-16-OXA-8,9,12,22,24-PENTAAZAHEXACYCLO[15.6.2.16,9.1,12,15.0,2,7.0,21,25]HEPTACOSA-1(24),2,4,6,17(25),18,20-HEPTAENE-23,26-DIONE"}) RETURN d.name
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.947  recall=0.947  f1=0.947  jaccard=0.900  overlap=0.947
+  Missing (in expected, not in got): Hodgkins lymphoma, classic Hodgkin lymphoma, classic Hodgkin lymphoma, lymphocyte-rich type, diffuse large B-cell lymphoma, diffuse large B-cell lymphoma of the central nervous system, glioblastoma (disease), glioma susceptibility, intravascular large B-cell lymphoma, melanoma, obsolete Hodgkin's granuloma, plasmablastic lymphoma, primary central nervous system lymphoma, primary cutaneous diffuse large B-cell lymphoma, Leg type, primary mediastinal large B-cell lymphoma, squamous cell carcinoma
+  Extra (in got, not in expected):   Classic Hodgkin lymphoma, Classic Hodgkin lymphoma, lymphocyte-rich type, Diffuse large B-cell lymphoma, Diffuse large B-cell lymphoma of the central nervous system, Glioblastoma (disease), Glioma susceptibility, Hodgkin's lymphoma, Intravascular large B-cell lymphoma, Melanoma, Obsolete Hodgkin's granuloma, Plasmablastic lymphoma, Primary central nervous system lymphoma, Primary cutaneous diffuse large B-cell lymphoma, Leg type, Primary mediastinal large B-cell lymphoma, Squamous cell carcinoma
+
+Q [88fce9293bf4]: Name all diseases that are related to a gene/protein that is associated with drug (1E)-5-(1-piperidin-4-yl-3-pyridin-4-yl-1H-pyrazol-4-yl)-2,3-dihydro-1H-inden-1-one oxime.
+  Expected: ['syringoma', 'familial atypical multiple mole melanoma syndrome', 'astrocytic tumor', 'low-grade astrocytoma', 'mixed glioma', 'malignant non-dysgerminomatous germ cell tumor of ovary', 'hair nevus', 'benign breast phyllodes tumor', 'yolk sac tumor', 'astrocytoma (excluding glioblastoma)', 'bile duct carcinoma', 'hereditary breast carcinoma', 'pituicytoma', 'malignant Sertoli-Leydig cell tumor of ovary', 'exocrine pancreatic carcinoma', 'ovarian carcinosarcoma', 'lung adenocarcinoma', 'type 2 diabetes mellitus', 'familial ovarian cancer', 'thyroid adenoma (disease)', 'prostate cancer', 'colorectal cancer', 'childhood cerebral astrocytoma', 'embryonal carcinoma of the central nervous system', 'undifferentiated carcinoma of liver and intrahepatic biliary tract', 'anaplastic ependymoma', 'breast neoplasm', 'Sezary syndrome', 'gastric neoplasm', 'ovarian neoplasm', 'thyroid tumor', 'ovarian endometrioid adenocarcinoma', 'malignant dysgerminomatous germ cell tumor of ovary', 'juvenile pilocytic astrocytoma', 'brain cancer', 'colorectal carcinoma', 'gonadoblastoma', 'adenocarcinoma of liver and intrahepatic biliary tract', 'skin papilloma', 'Noonan syndrome', 'ovarian small cell carcinoma', 'liver cancer', 'thyroid cancer', 'lung neoplasm', 'papillary renal cell carcinoma', 'Richter syndrome', 'familial papillary thyroid carcinoma with renal papillary neoplasia', 'familial prostate carcinoma', 'hereditary breast ovarian cancer syndrome', 'maligant granulosa cell tumor of ovary', 'borderline epithelial tumor of ovary', 'ovarian adenocarcinoma', 'astroblastoma', 'diffuse astrocytoma', 'oligodendroglial tumor', 'ovarian cancer', 'thyroid gland undifferentiated (anaplastic) carcinoma', 'syringocystadenoma papilliferum', 'medullary thyroid gland carcinoma', 'familial papillary or follicular thyroid carcinoma', 'craniopharyngioma', 'squamous cell carcinoma of liver and intrahepatic biliary tract', 'hepatocellular carcinoma', 'lymphoma', 'ovarian gynandroblastoma', 'Costello syndrome', 'ovarian clear cell adenocarcinoma', 'skin tag', 'Prader-Willi syndrome', 'breast adenocarcinoma', 'cardiofaciocutaneous syndrome', 'undifferentiated carcinoma of the corpus uteri', 'subependymal giant cell astrocytoma', 'peripheral primitive neuroectodermal tumor', 'anaplastic astrocytoma', 'benign neoplasm of stomach', 'hereditary site-specific ovarian cancer syndrome', 'nongerminomatous germ cell tumor', 'bronchogenic carcinoma', 'fibrillary astrocytoma', 'hidradenoma', 'testicular germ cell tumor', 'gemistocytic astrocytoma', 'diffuse gastric adenocarcinoma', 'adrenal cortex carcinoma', 'colorectal neoplasm', 'malignant colon neoplasm', 'cutaneous fibrous histiocytoma', 'hand-Schuller-Christian disease', 'bile duct adenocarcinoma', 'thyroid cancer, nonmedullary', 'neuroepithelial neoplasm', 'embryonal carcinoma', 'anaplastic oligoastrocytoma', 'glioma susceptibility', 'oligoastrocytoma', 'melanoma, cutaneous malignant, susceptibility to', 'protoplasmic astrocytoma', 'malignant germ cell tumor of ovary', 'prostate carcinoma', 'stomach carcinoma in situ', 'non-Hodgkin lymphoma', 'hairy cell leukemia', 'colorectal adenocarcinoma', 'adamantinous craniopharyngioma', 'gliosarcoma', 'prostate adenocarcinoma', 'familial pancreatic carcinoma', 'kidney cancer', 'chronic myelogenous leukemia, BCR-ABL1 positive', 'melanoma', 'brain astrocytoma', 'mantle cell lymphoma', 'squamous cell carcinoma of colon', 'breast cancer', 'ameloblastoma', 'angiocentric glioma', 'lung carcinoma', 'diabetes mellitus (disease)', 'malignant glioma', 'LEOPARD syndrome', 'glioma', 'primary cutaneous T-cell lymphoma', 'ovarian mucinous adenocarcinoma', 'kidney neoplasm', 'immature ovarian teratoma', 'pleomorphic xanthoastrocytoma', 'breast carcinoma', 'squamous cell carcinoma of the corpus uteri', 'colon carcinoma', 'Noonan syndrome with multiple lentigines', 'Noonan syndrome-like disorder with loose anagen hair', 'gastric carcinoma', 'papillary adenocarcinoma', 'lung cancer', 'leukemia (disease)', 'childhood astrocytic tumor', 'gastric linitis plastica', 'ependymoblastoma', 'malignant sex cord stromal tumor of ovary', 'lymphosarcoma', 'primary cutaneous T-cell non-Hodgkin lymphoma', 'anaplastic oligodendroglioma', 'granulomatous slack skin disease', 'familial thyroid carcinoma', 'Langerhans cell histiocytosis', 'pilomyxoid astrocytoma', 'B-cell neoplasm', 'giant cell glioblastoma', 'melanocytic nevus', 'childhood brain stem glioma', 'follicular thyroid adenoma', 'non-small cell lung carcinoma (disease)', 'cholangiocarcinoma', 'colonic neoplasm', 'papillary craniopharyngioma', 'lymphoma, non-Hodgkin, familial', 'hairy cell leukemia variant', 'plasma cell myeloma', 'acute lymphoblastic/lymphocytic leukemia', 'differentiated thyroid carcinoma', 'pediatric hepatocellular carcinoma', 'theca steroid-producing cell malignant tumor of ovary, not further specified', 'glioblastoma (disease)', 'primary non-gestational choriocarcinoma of ovary', 'Erdheim-Chester disease', 'gastric cancer', 'chordoid glioma of the third ventricle', 'fibrolamellar hepatocellular carcinoma', 'thyroid gland carcinoma', 'bronchus cancer']
+  Got:      ['Diabetes mellitus', 'Type 2 diabetes mellitus', 'Prader-Willi syndrome', 'Noonan syndrome', 'Noonan syndrome with multiple lentigines (LEOPARD syndrome)', 'Noonan syndrome-like disorder with loose anagen hair', 'Cardiofaciocutaneous syndrome', 'Costello syndrome', 'Familial atypical multiple mole melanoma syndrome', 'Hereditary breast-ovarian cancer syndrome', 'Hereditary site-specific ovarian cancer syndrome', 'Familial ovarian cancer', 'Familial pancreatic carcinoma', 'Familial prostate carcinoma', 'Familial papillary or follicular thyroid carcinoma', 'Familial papillary thyroid carcinoma with renal papillary neoplasia', 'Familial thyroid carcinoma', 'Lymphoma, non-Hodgkin, familial', 'Glioblastoma (incl. giant cell glioblastoma)', 'Glioma', 'Malignant glioma', 'Gliosarcoma', 'Glioma susceptibility', 'Astrocytoma (diffuse, anaplastic, fibrillary, gemistocytic, protoplasmic, low-grade, juvenile pilocytic, pilomyxoid, pleomorphic xanthoastrocytoma, subependymal giant cell, brain astrocytoma, childhood cerebral astrocytoma, childhood brain stem glioma, childhood astrocytic tumor, astrocytic tumor, astrocytoma excluding glioblastoma)', 'Oligoastrocytoma', 'Anaplastic oligoastrocytoma', 'Oligodendroglial tumor', 'Anaplastic oligodendroglioma', 'Ependymoblastoma', 'Anaplastic ependymoma', 'Astroblastoma', 'Chordoid glioma of the third ventricle', 'Angiocentric glioma', 'Pituicytoma', 'Embryonal carcinoma (CNS)', 'Peripheral primitive neuroectodermal tumor', 'Neuroepithelial neoplasm', 'Craniopharyngioma (adamantinous, papillary)', 'Brain cancer', 'Lung carcinoma', 'Lung cancer', 'Lung neoplasm', 'Non-small cell lung carcinoma', 'Lung adenocarcinoma', 'Bronchus cancer', 'Bronchogenic carcinoma', 'Colon carcinoma', 'Colorectal carcinoma', 'Colorectal cancer', 'Colorectal adenocarcinoma', 'Colonic neoplasm', 'Malignant colon neoplasm', 'Squamous cell carcinoma of colon', 'Gastric carcinoma', 'Gastric cancer', 'Gastric neoplasm', 'Gastric linitis plastica', 'Diffuse gastric adenocarcinoma', 'Stomach carcinoma in situ', 'Benign neoplasm of stomach', 'Bile duct carcinoma', 'Bile duct adenocarcinoma', 'Cholangiocarcinoma', 'Liver cancer', 'Hepatocellular carcinoma (incl. pediatric, fibrolamellar)', 'Adenocarcinoma of liver', 'Squamous cell carcinoma of liver', 'Undifferentiated carcinoma of liver', 'Adrenal cortex carcinoma', 'Thyroid cancer', 'Thyroid gland carcinoma', 'Thyroid cancer, nonmedullary', 'Medullary thyroid gland carcinoma', 'Differentiated thyroid carcinoma', 'Thyroid gland undifferentiated (anaplastic) carcinoma', 'Thyroid adenoma', 'Follicular thyroid adenoma', 'Thyroid tumor', 'Breast carcinoma', 'Breast cancer', 'Breast neoplasm', 'Breast adenocarcinoma', 'Hereditary breast carcinoma', 'Benign breast phyllodes tumor', 'Ovarian cancer', 'Ovarian neoplasm', 'Ovarian adenocarcinoma (endometrioid, clear cell, mucinous, small cell, carcinosarcoma)', 'Malignant germ cell tumor of ovary (dysgerminomatous, non-dysgerminomatous)', 'Yolk sac tumor', 'Immature ovarian teratoma', 'Primary non-gestational choriocarcinoma of ovary', 'Malignant sex cord stromal tumor of ovary', 'Malignant Sertoli-Leydig cell tumor', 'Malignant granulosa cell tumor', 'Theca steroid-producing cell malignant tumor', 'Borderline epithelial tumor of ovary', 'Ovarian gynandroblastoma', 'Gonadoblastoma', 'Undifferentiated carcinoma of the corpus uteri', 'Squamous cell carcinoma of the corpus uteri', 'Prostate cancer', 'Prostate carcinoma', 'Prostate adenocarcinoma', 'Kidney cancer', 'Kidney neoplasm', 'Papillary renal cell carcinoma', 'Papillary adenocarcinoma', 'Leukemia', 'Acute lymphoblastic (lymphocytic) leukemia', 'Hairy cell leukemia (incl. variant)', 'Chronic myelogenous leukemia (BCR-ABL1+)', 'Lymphoma', 'Non-Hodgkin lymphoma', 'Lymphosarcoma', 'Mantle cell lymphoma', 'B-cell neoplasm', 'Primary cutaneous T-cell lymphoma', 'Primary cutaneous T-cell non-Hodgkin lymphoma', 'Granulomatous slack skin disease', 'Sezary syndrome', 'Richter syndrome', 'Plasma cell myeloma', 'Melanoma', 'Melanoma, cutaneous malignant, susceptibility to', 'Melanocytic nevus', 'Hair nevus', 'Skin tag', 'Skin papilloma', 'Syringoma', 'Hidradenoma', 'Cutaneous fibrous histiocytoma', 'Syringocystadenoma papilliferum', 'Testicular germ cell tumor', 'Nongerminomatous germ cell tumor', 'Langerhans cell histiocytosis', 'Hand-Schüller-Christian disease', 'Erdheim-Chester disease', 'Ameloblastoma']
+  Thinking: The following diseases are associated with a gene/protein linked to the drug **(1E)-5-(1-piperidin-4-yl-3-pyridin-4-yl-1H-pyrazol-4-yl)-2,3-dihydro-1H-inden-1-one oxime**:
+
+**Metabolic / Endocrine**
+- Diabetes mellitus / Type 2 diabetes mellitus
+- Prader-Willi syndrome
+
+**Genetic / Syndromic**
+- Noonan syndrome
+- Noonan syndrome with multiple lentigines (LEOPARD syndrome)
+- Noonan syndrome-like disorder with loose anagen hair
+- Cardiofaciocutaneous syndrome
+- Costello syndrome
+- Familial atypical multiple mole melanoma syndrome
+- Hereditary breast-ovarian cancer syndrome
+- Hereditary site-specific ovarian cancer syndrome
+- Familial ovarian cancer
+- Familial pancreatic carcinoma
+- Familial prostate carcinoma
+- Familial papillary or follicular thyroid carcinoma
+- Familial papillary thyroid carcinoma with renal papillary neoplasia
+- Familial thyroid carcinoma
+- Lymphoma, non-Hodgkin, familial
+
+**Brain / CNS Tumors**
+- Glioblastoma (incl. giant cell glioblastoma)
+- Glioma / Malignant glioma / Gliosarcoma / Glioma susceptibility
+- Astrocytoma (diffuse, anaplastic, fibrillary, gemistocytic, protoplasmic, low-grade, juvenile pilocytic, pilomyxoid, pleomorphic xanthoastrocytoma, subependymal giant cell, brain astrocytoma, childhood cerebral astrocytoma, childhood brain stem glioma, childhood astrocytic tumor, astrocytic tumor, astrocytoma excluding glioblastoma)
+- Oligoastrocytoma / Anaplastic oligoastrocytoma / Oligodendroglial tumor / Anaplastic oligodendroglioma
+- Ependymoblastoma / Anaplastic ependymoma
+- Astroblastoma / Chordoid glioma of the third ventricle / Angiocentric glioma
+- Pituicytoma
+- Embryonal carcinoma (CNS) / Peripheral primitive neuroectodermal tumor / Neuroepithelial neoplasm
+- Craniopharyngioma (adamantinous, papillary)
+- Brain cancer
+
+**Lung / Thoracic**
+- Lung carcinoma / Lung cancer / Lung neoplasm
+- Non-small cell lung carcinoma / Lung adenocarcinoma
+- Bronchus cancer / Bronchogenic carcinoma
+
+**Gastrointestinal / Hepatobiliary**
+- Colon carcinoma / Colorectal carcinoma / Colorectal cancer / Colorectal adenocarcinoma / Colonic neoplasm / Malignant colon neoplasm / Squamous cell carcinoma of colon
+- Gastric carcinoma / Gastric cancer / Gastric neoplasm / Gastric linitis plastica / Diffuse gastric adenocarcinoma / Stomach carcinoma in situ / Benign neoplasm of stomach
+- Bile duct carcinoma / Bile duct adenocarcinoma / Cholangiocarcinoma
+- Liver cancer / Hepatocellular carcinoma (incl. pediatric, fibrolamellar) / Adenocarcinoma of liver / Squamous cell carcinoma of liver / Undifferentiated carcinoma of liver
+- Adrenal cortex carcinoma
+
+**Thyroid**
+- Thyroid cancer / Thyroid gland carcinoma / Thyroid cancer, nonmedullary
+- Medullary thyroid gland carcinoma / Differentiated thyroid carcinoma / Thyroid gland undifferentiated (anaplastic) carcinoma
+- Thyroid adenoma / Follicular thyroid adenoma / Thyroid tumor
+
+**Breast / Ovarian / Gynecologic**
+- Breast carcinoma / Breast cancer / Breast neoplasm / Breast adenocarcinoma / Hereditary breast carcinoma / Benign breast phyllodes tumor
+- Ovarian cancer / Ovarian neoplasm / Ovarian adenocarcinoma (endometrioid, clear cell, mucinous, small cell, carcinosarcoma)
+- Malignant germ cell tumor of ovary (dysgerminomatous, non-dysgerminomatous) / Yolk sac tumor / Immature ovarian teratoma / Primary non-gestational choriocarcinoma of ovary
+- Malignant sex cord stromal tumor of ovary / Malignant Sertoli-Leydig cell tumor / Malignant granulosa cell tumor / Theca steroid-producing cell malignant tumor
+- Borderline epithelial tumor of ovary / Ovarian gynandroblastoma / Gonadoblastoma
+- Undifferentiated carcinoma of the corpus uteri / Squamous cell carcinoma of the corpus uteri
+
+**Prostate / Kidney**
+- Prostate cancer / Prostate carcinoma / Prostate adenocarcinoma
+- Kidney cancer / Kidney neoplasm / Papillary renal cell carcinoma / Papillary adenocarcinoma
+
+**Hematologic / Lymphoid**
+- Leukemia / Acute lymphoblastic (lymphocytic) leukemia / Hairy cell leukemia (incl. variant) / Chronic myelogenous leukemia (BCR-ABL1+)
+- Lymphoma / Non-Hodgkin lymphoma / Lymphosarcoma / Mantle cell lymphoma / B-cell neoplasm
+- Primary cutaneous T-cell lymphoma / Primary cutaneous T-cell non-Hodgkin lymphoma / Granulomatous slack skin disease / Sezary syndrome
+- Richter syndrome
+- Plasma cell myeloma
+
+**Skin / Melanocytic**
+- Melanoma / Melanoma, cutaneous malignant, susceptibility to
+- Melanocytic nevus / Hair nevus / Skin tag / Skin papilloma / Syringoma / Hidradenoma / Cutaneous fibrous histiocytoma
+- Syringocystadenoma papilliferum
+
+**Other**
+- Testicular germ cell tumor / Nongerminomatous germ cell tumor
+- Langerhans cell histiocytosis / Hand-Schüller-Christian disease
+- Erdheim-Chester disease
+- Ameloblastoma
+  Cypher (1st attempt): MATCH (d:Drug {name: "(1E)-5-(1-piperidin-4-yl-3-pyridin-4-yl-1H-pyrazol-4-yl)-2,3-dihydro-1H-inden-1-one oxime"})-[:DRUG_PROTEIN]->(g:GeneProtein)-[:DISEASE_PROTEIN]->(dis:Disease) RETURN dis.name
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.833  recall=0.673  f1=0.744  jaccard=0.593  overlap=0.833
+  Missing (in expected, not in got): LEOPARD syndrome, Noonan syndrome with multiple lentigines, acute lymphoblastic/lymphocytic leukemia, adamantinous craniopharyngioma, adenocarcinoma of liver and intrahepatic biliary tract, adrenal cortex carcinoma, ameloblastoma, anaplastic astrocytoma, anaplastic ependymoma, anaplastic oligoastrocytoma, anaplastic oligodendroglioma, angiocentric glioma, astroblastoma, astrocytic tumor, astrocytoma (excluding glioblastoma), benign breast phyllodes tumor, benign neoplasm of stomach, bile duct adenocarcinoma, bile duct carcinoma, borderline epithelial tumor of ovary, brain astrocytoma, brain cancer, breast adenocarcinoma, breast cancer, breast carcinoma, breast neoplasm, bronchogenic carcinoma, bronchus cancer, cardiofaciocutaneous syndrome, childhood astrocytic tumor, childhood brain stem glioma, childhood cerebral astrocytoma, cholangiocarcinoma, chordoid glioma of the third ventricle, chronic myelogenous leukemia, BCR-ABL1 positive, colon carcinoma, colonic neoplasm, colorectal adenocarcinoma, colorectal cancer, colorectal carcinoma, colorectal neoplasm, craniopharyngioma, cutaneous fibrous histiocytoma, diabetes mellitus (disease), differentiated thyroid carcinoma, diffuse astrocytoma, diffuse gastric adenocarcinoma, embryonal carcinoma, embryonal carcinoma of the central nervous system, ependymoblastoma, exocrine pancreatic carcinoma, familial atypical multiple mole melanoma syndrome, familial ovarian cancer, familial pancreatic carcinoma, familial papillary or follicular thyroid carcinoma, familial papillary thyroid carcinoma with renal papillary neoplasia, familial prostate carcinoma, familial thyroid carcinoma, fibrillary astrocytoma, fibrolamellar hepatocellular carcinoma, follicular thyroid adenoma, gastric cancer, gastric carcinoma, gastric linitis plastica, gastric neoplasm, gemistocytic astrocytoma, giant cell glioblastoma, glioblastoma (disease), glioma, glioma susceptibility, gliosarcoma, gonadoblastoma, granulomatous slack skin disease, hair nevus, hairy cell leukemia, hairy cell leukemia variant, hand-Schuller-Christian disease, hepatocellular carcinoma, hereditary breast carcinoma, hereditary breast ovarian cancer syndrome, hereditary site-specific ovarian cancer syndrome, hidradenoma, immature ovarian teratoma, juvenile pilocytic astrocytoma, kidney cancer, kidney neoplasm, leukemia (disease), liver cancer, low-grade astrocytoma, lung adenocarcinoma, lung cancer, lung carcinoma, lung neoplasm, lymphoma, lymphoma, non-Hodgkin, familial, lymphosarcoma, maligant granulosa cell tumor of ovary, malignant Sertoli-Leydig cell tumor of ovary, malignant colon neoplasm, malignant dysgerminomatous germ cell tumor of ovary, malignant germ cell tumor of ovary, malignant glioma, malignant non-dysgerminomatous germ cell tumor of ovary, malignant sex cord stromal tumor of ovary, mantle cell lymphoma, medullary thyroid gland carcinoma, melanocytic nevus, melanoma, melanoma, cutaneous malignant, susceptibility to, mixed glioma, neuroepithelial neoplasm, non-Hodgkin lymphoma, non-small cell lung carcinoma (disease), nongerminomatous germ cell tumor, oligoastrocytoma, oligodendroglial tumor, ovarian adenocarcinoma, ovarian cancer, ovarian carcinosarcoma, ovarian clear cell adenocarcinoma, ovarian endometrioid adenocarcinoma, ovarian gynandroblastoma, ovarian mucinous adenocarcinoma, ovarian neoplasm, ovarian small cell carcinoma, papillary adenocarcinoma, papillary craniopharyngioma, papillary renal cell carcinoma, pediatric hepatocellular carcinoma, peripheral primitive neuroectodermal tumor, pilomyxoid astrocytoma, pituicytoma, plasma cell myeloma, pleomorphic xanthoastrocytoma, primary cutaneous T-cell lymphoma, primary cutaneous T-cell non-Hodgkin lymphoma, primary non-gestational choriocarcinoma of ovary, prostate adenocarcinoma, prostate cancer, prostate carcinoma, protoplasmic astrocytoma, skin papilloma, skin tag, squamous cell carcinoma of colon, squamous cell carcinoma of liver and intrahepatic biliary tract, squamous cell carcinoma of the corpus uteri, stomach carcinoma in situ, subependymal giant cell astrocytoma, syringocystadenoma papilliferum, syringoma, testicular germ cell tumor, theca steroid-producing cell malignant tumor of ovary, not further specified, thyroid adenoma (disease), thyroid cancer, thyroid cancer, nonmedullary, thyroid gland carcinoma, thyroid gland undifferentiated (anaplastic) carcinoma, thyroid tumor, type 2 diabetes mellitus, undifferentiated carcinoma of liver and intrahepatic biliary tract, undifferentiated carcinoma of the corpus uteri, yolk sac tumor
+  Extra (in got, not in expected):   Acute lymphoblastic (lymphocytic) leukemia, Adenocarcinoma of liver, Adrenal cortex carcinoma, Ameloblastoma, Anaplastic ependymoma, Anaplastic oligoastrocytoma, Anaplastic oligodendroglioma, Angiocentric glioma, Astroblastoma, Astrocytoma (diffuse, anaplastic, fibrillary, gemistocytic, protoplasmic, low-grade, juvenile pilocytic, pilomyxoid, pleomorphic xanthoastrocytoma, subependymal giant cell, brain astrocytoma, childhood cerebral astrocytoma, childhood brain stem glioma, childhood astrocytic tumor, astrocytic tumor, astrocytoma excluding glioblastoma), Benign breast phyllodes tumor, Benign neoplasm of stomach, Bile duct adenocarcinoma, Bile duct carcinoma, Borderline epithelial tumor of ovary, Brain cancer, Breast adenocarcinoma, Breast cancer, Breast carcinoma, Breast neoplasm, Bronchogenic carcinoma, Bronchus cancer, Cardiofaciocutaneous syndrome, Cholangiocarcinoma, Chordoid glioma of the third ventricle, Chronic myelogenous leukemia (BCR-ABL1+), Colon carcinoma, Colonic neoplasm, Colorectal adenocarcinoma, Colorectal cancer, Colorectal carcinoma, Craniopharyngioma (adamantinous, papillary), Cutaneous fibrous histiocytoma, Diabetes mellitus, Differentiated thyroid carcinoma, Diffuse gastric adenocarcinoma, Embryonal carcinoma (CNS), Ependymoblastoma, Familial atypical multiple mole melanoma syndrome, Familial ovarian cancer, Familial pancreatic carcinoma, Familial papillary or follicular thyroid carcinoma, Familial papillary thyroid carcinoma with renal papillary neoplasia, Familial prostate carcinoma, Familial thyroid carcinoma, Follicular thyroid adenoma, Gastric cancer, Gastric carcinoma, Gastric linitis plastica, Gastric neoplasm, Glioblastoma (incl. giant cell glioblastoma), Glioma, Glioma susceptibility, Gliosarcoma, Gonadoblastoma, Granulomatous slack skin disease, Hair nevus, Hairy cell leukemia (incl. variant), Hand-Schüller-Christian disease, Hepatocellular carcinoma (incl. pediatric, fibrolamellar), Hereditary breast carcinoma, Hereditary breast-ovarian cancer syndrome, Hereditary site-specific ovarian cancer syndrome, Hidradenoma, Immature ovarian teratoma, Kidney cancer, Kidney neoplasm, Leukemia, Liver cancer, Lung adenocarcinoma, Lung cancer, Lung carcinoma, Lung neoplasm, Lymphoma, Lymphoma, non-Hodgkin, familial, Lymphosarcoma, Malignant Sertoli-Leydig cell tumor, Malignant colon neoplasm, Malignant germ cell tumor of ovary (dysgerminomatous, non-dysgerminomatous), Malignant glioma, Malignant granulosa cell tumor, Malignant sex cord stromal tumor of ovary, Mantle cell lymphoma, Medullary thyroid gland carcinoma, Melanocytic nevus, Melanoma, Melanoma, cutaneous malignant, susceptibility to, Neuroepithelial neoplasm, Non-Hodgkin lymphoma, Non-small cell lung carcinoma, Nongerminomatous germ cell tumor, Noonan syndrome with multiple lentigines (LEOPARD syndrome), Oligoastrocytoma, Oligodendroglial tumor, Ovarian adenocarcinoma (endometrioid, clear cell, mucinous, small cell, carcinosarcoma), Ovarian cancer, Ovarian gynandroblastoma, Ovarian neoplasm, Papillary adenocarcinoma, Papillary renal cell carcinoma, Peripheral primitive neuroectodermal tumor, Pituicytoma, Plasma cell myeloma, Primary cutaneous T-cell lymphoma, Primary cutaneous T-cell non-Hodgkin lymphoma, Primary non-gestational choriocarcinoma of ovary, Prostate adenocarcinoma, Prostate cancer, Prostate carcinoma, Skin papilloma, Skin tag, Squamous cell carcinoma of colon, Squamous cell carcinoma of liver, Squamous cell carcinoma of the corpus uteri, Stomach carcinoma in situ, Syringocystadenoma papilliferum, Syringoma, Testicular germ cell tumor, Theca steroid-producing cell malignant tumor, Thyroid adenoma, Thyroid cancer, Thyroid cancer, nonmedullary, Thyroid gland carcinoma, Thyroid gland undifferentiated (anaplastic) carcinoma, Thyroid tumor, Type 2 diabetes mellitus, Undifferentiated carcinoma of liver, Undifferentiated carcinoma of the corpus uteri, Yolk sac tumor
+
+Q [3d92253120f5]: Name all diseases that are related to a gene/protein that is associated with drug (1H-indol-3-yl)-(2-mercapto-ethoxyimino)-acetic acid.
+  Expected: ['benign neoplasm of brain', 'liver cancer', 'autism susceptibility 1', 'lung neoplasm', 'familial prostate carcinoma', 'endogenous depression', 'vaginal rhabdomyosarcoma', 'bipolar disorder', 'lung cancer', 'leukemia (disease)', 'unipolar depression', 'major depressive disorder', 'allergic contact dermatitis', 'embryonal carcinoma', 'anaplastic oligoastrocytoma', 'diffuse astrocytoma', 'oligoastrocytoma', 'autoimmune hepatitis', 'glioma susceptibility', 'protoplasmic astrocytoma', 'oligodendroglial tumor', 'prostate carcinoma', 'ependymoblastoma', 'autism spectrum disorder', 'pituitary gland adenoma', 'autism (disease)', 'macrocytic anemia (disease)', 'acoustic neuroma', 'hypotensive disorder', 'pituicytoma', 'anaplastic oligodendroglioma', 'urinary bladder neoplasm', 'kidney cancer', 'pilomyxoid astrocytoma', 'melanoma', 'hepatocellular carcinoma', 'glomerulonephritis', 'vaginal cancer', 'giant cell glioblastoma', 'angiocentric glioma', 'prostate cancer', 'paranoid schizophrenia', 'neuroepithelial neoplasm', 'meningioma (disease)', 'adult T-cell leukemia/lymphoma', 'amnestic disorder', 'embryonal carcinoma of the central nervous system', 'urinary bladder small cell neuroendocrine carcinoma', 'urinary bladder cancer', 'leukopenia', 'anaplastic astrocytoma', 'peripheral primitive neuroectodermal tumor', 'anaplastic ependymoma', 'anemia (disease)', 'vaginal carcinoma', 'primary brain neoplasm', 'anxiety disorder', 'nephritis', 'urinary bladder carcinoma', 'fibrillary astrocytoma', 'dissociative amnesia', 'schizophrenia', 'amebiasis', 'HIV infectious disease', 'astroblastoma', 'juvenile pilocytic astrocytoma', 'glioblastoma (disease)', 'brain cancer', 'kidney neoplasm', 'T-cell leukemia', 'non-papillary transitional cell carcinoma of the bladder', 'gemistocytic astrocytoma', 'pleomorphic xanthoastrocytoma', 'delusional disorder', 'chordoid glioma of the third ventricle', 'vaginal germ cell malignant tumor']
+  Got:      ['Amebiasis', 'HIV infectious disease', 'Autoimmune hepatitis', 'Nephritis / Glomerulonephritis', 'Allergic contact dermatitis', 'Vaginal rhabdomyosarcoma', 'vaginal germ cell malignant tumor', 'vaginal carcinoma', 'vaginal cancer', 'Kidney neoplasm / kidney cancer', 'Prostate carcinoma (incl. familial)', 'prostate cancer', 'Urinary bladder neoplasm', 'carcinoma', 'cancer (incl. non-papillary transitional cell & small cell neuroendocrine)', 'Lung neoplasm / lung cancer', 'Hepatocellular carcinoma / liver cancer', 'Melanoma', 'Leukemia (incl. T-cell, adult T-cell leukemia/lymphoma)', 'primary brain neoplasm', 'brain cancer', 'glioblastoma (incl. giant cell)', 'glioma susceptibility', 'meningioma', 'pituitary gland adenoma', 'acoustic neuroma', 'benign neoplasm of brain', 'embryonal carcinoma (CNS & general)', 'peripheral primitive neuroectodermal tumor', 'neuroepithelial neoplasm', 'ependymoblastoma', 'astroblastoma', 'chordoid glioma', 'angiocentric glioma', 'anaplastic oligoastrocytoma', 'oligoastrocytoma', 'anaplastic ependymoma', 'anaplastic oligodendroglioma', 'oligodendroglial tumor', 'pilomyxoid astrocytoma', 'juvenile pilocytic astrocytoma', 'pleomorphic xanthoastrocytoma', 'gemistocytic astrocytoma', 'fibrillary astrocytoma', 'protoplasmic astrocytoma', 'diffuse astrocytoma', 'anaplastic astrocytoma', 'pituicytoma', 'Bipolar disorder', 'Schizophrenia (incl. paranoid)', 'Delusional disorder', 'Dissociative amnesia / Amnestic disorder', 'Anxiety disorder', 'Major depressive disorder (incl. endogenous, unipolar)', 'Autism spectrum disorder / autism susceptibility 1', 'Macrocytic anemia / anemia', 'Leukopenia', 'Hypotensive disorder']
+  Thinking: The following diseases are related to a gene/protein associated with **(1H-indol-3-yl)-(2-mercapto-ethoxyimino)-acetic acid**:
+
+**Infectious / Inflammatory**
+- Amebiasis
+- HIV infectious disease
+- Autoimmune hepatitis
+- Nephritis / Glomerulonephritis
+- Allergic contact dermatitis
+
+**Neoplasms / Cancers**
+- Vaginal rhabdomyosarcoma, vaginal germ cell malignant tumor, vaginal carcinoma, vaginal cancer
+- Kidney neoplasm / kidney cancer
+- Prostate carcinoma (incl. familial), prostate cancer
+- Urinary bladder neoplasm, carcinoma, cancer (incl. non-papillary transitional cell & small cell neuroendocrine)
+- Lung neoplasm / lung cancer
+- Hepatocellular carcinoma / liver cancer
+- Melanoma
+- Leukemia (incl. T-cell, adult T-cell leukemia/lymphoma)
+- Brain / CNS neoplasms: primary brain neoplasm, brain cancer, glioblastoma (incl. giant cell), glioma susceptibility, meningioma, pituitary gland adenoma, acoustic neuroma, benign neoplasm of brain, embryonal carcinoma (CNS & general), peripheral primitive neuroectodermal tumor, neuroepithelial neoplasm, ependymoblastoma, astroblastoma, chordoid glioma, angiocentric glioma, anaplastic oligoastrocytoma, oligoastrocytoma, anaplastic ependymoma, anaplastic oligodendroglioma, oligodendroglial tumor, pilomyxoid astrocytoma, juvenile pilocytic astrocytoma, pleomorphic xanthoastrocytoma, gemistocytic astrocytoma, fibrillary astrocytoma, protoplasmic astrocytoma, diffuse astrocytoma, anaplastic astrocytoma, pituicytoma
+
+**Neuropsychiatric / Mental Health**
+- Bipolar disorder
+- Schizophrenia (incl. paranoid)
+- Delusional disorder
+- Dissociative amnesia / Amnestic disorder
+- Anxiety disorder
+- Major depressive disorder (incl. endogenous, unipolar)
+- Autism spectrum disorder / autism susceptibility 1
+
+**Hematologic / Other**
+- Macrocytic anemia / anemia
+- Leukopenia
+- Hypotensive disorder
+  Cypher (1st attempt): MATCH (d:Drug {name: "(1H-indol-3-yl)-(2-mercapto-ethoxyimino)-acetic acid"})-[:DRUG_PROTEIN]->(gp:GeneProtein)<-[:DISEASE_PROTEIN]-(dis:Disease)
+RETURN dis.name
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.707  recall=0.539  f1=0.612  jaccard=0.441  overlap=0.707
+  Missing (in expected, not in got): T-cell leukemia, adult T-cell leukemia/lymphoma, allergic contact dermatitis, amebiasis, amnestic disorder, anemia (disease), anxiety disorder, autism (disease), autism spectrum disorder, autism susceptibility 1, autoimmune hepatitis, bipolar disorder, chordoid glioma of the third ventricle, delusional disorder, dissociative amnesia, embryonal carcinoma, embryonal carcinoma of the central nervous system, endogenous depression, familial prostate carcinoma, giant cell glioblastoma, glioblastoma (disease), glomerulonephritis, hepatocellular carcinoma, hypotensive disorder, kidney cancer, kidney neoplasm, leukemia (disease), leukopenia, liver cancer, lung cancer, lung neoplasm, macrocytic anemia (disease), major depressive disorder, melanoma, meningioma (disease), nephritis, non-papillary transitional cell carcinoma of the bladder, paranoid schizophrenia, prostate carcinoma, schizophrenia, unipolar depression, urinary bladder cancer, urinary bladder carcinoma, urinary bladder neoplasm, urinary bladder small cell neuroendocrine carcinoma, vaginal rhabdomyosarcoma
+  Extra (in got, not in expected):   Allergic contact dermatitis, Amebiasis, Anxiety disorder, Autism spectrum disorder / autism susceptibility 1, Autoimmune hepatitis, Bipolar disorder, Delusional disorder, Dissociative amnesia / Amnestic disorder, Hepatocellular carcinoma / liver cancer, Hypotensive disorder, Kidney neoplasm / kidney cancer, Leukemia (incl. T-cell, adult T-cell leukemia/lymphoma), Leukopenia, Lung neoplasm / lung cancer, Macrocytic anemia / anemia, Major depressive disorder (incl. endogenous, unipolar), Melanoma, Nephritis / Glomerulonephritis, Prostate carcinoma (incl. familial), Schizophrenia (incl. paranoid), Urinary bladder neoplasm, Vaginal rhabdomyosarcoma, cancer (incl. non-papillary transitional cell & small cell neuroendocrine), carcinoma, chordoid glioma, embryonal carcinoma (CNS & general), glioblastoma (incl. giant cell), meningioma
+
+Q [4808029a1362]: Name all diseases that are related to a gene/protein that is associated with drug (1R)-menthyl hexyl phosphonate group.
+  Expected: ['Alzheimer disease without neurofibrillary tangles', 'autosomal dominant limb-girdle muscular dystrophy type 1E (DES)', 'bipolar disorder', 'distal myopathy with anterior tibial onset', 'hereditary breast carcinoma', 'congenital central hypoventilation syndrome', 'autosomal dominant limb-girdle muscular dystrophy type 1D (DNAJB6)', 'distal myopathy, Welander type', 'nebulin-related early-onset distal myopathy', 'butyrylcholinesterase deficiency', 'complex sleep apnea', 'hereditary proximal myopathy with early respiratory failure', 'breast neoplasm', 'oculopharyngodistal myopathy', 'autosomal recessive distal myopathy', 'substance abuse/dependence', 'limb-girdle muscular dystrophy due to POMK deficiency', 'limb-girdle muscular dystrophy', 'Pick disease', 'progressive scapulohumeroperoneal distal myopathy', 'renal cell carcinoma (disease)', 'partial epilepsy', 'papillary renal cell carcinoma', 'muscular dystrophy-dystroglycanopathy (congenital with brain and eye anomalies), type a', 'Haddad syndrome', 'hereditary breast ovarian cancer syndrome', 'morphine dependence', 'X-linked Emery-Dreifuss muscular dystrophy', 'adult-onset distal myopathy due to VCP mutation', 'muscular dystrophy', 'encephalopathy', 'sleep apnea syndrome', 'Bethlem myopathy', 'chromophobe renal cell carcinoma', 'Emery-Dreifuss muscular dystrophy', 'undifferentiated carcinoma of the corpus uteri', 'myofibrillar myopathy', 'cerebellar degeneration', 'epilepsy with generalized tonic-clonic seizures', 'Becker muscular dystrophy', 'sarcomatoid renal cell carcinoma', 'Miyoshi myopathy', 'monogenic obesity', 'obstructive sleep apnea syndrome', 'neuroblastoma', 'Reye syndrome', 'visual epilepsy', 'X-linked scapuloperoneal muscular dystrophy', 'distal myopathy with vocal cord weakness', 'partial motor epilepsy', 'intellectual disability-hyperkinetic movement-truncal ataxia syndrome', 'Bamforth-Lazarus syndrome', 'glioma susceptibility', 'autosomal recessive Emery-Dreifuss muscular dystrophy', 'collecting duct carcinoma', 'KLHL9-related early-onset distal myopathy', 'autosomal dominant distal myopathy', 'breast cancer', 'clear cell renal carcinoma', 'Miyoshi muscular dystrophy', 'renal cell adenocarcinoma', 'Parkinson disease', 'distal myopathy with posterior leg and anterior hand involvement', 'Finnish upper limb-onset distal myopathy', 'facioscapulohumeral muscular dystrophy', 'nonpapillary renal cell carcinoma', 'multiple sclerosis', 'breast carcinoma', 'squamous cell carcinoma of the corpus uteri', 'Duchenne and Becker muscular dystrophy', 'MYH7-related late-onset scapuloperoneal muscular dystrophy', 'Creutzfeldt Jacob disease', 'tibial muscular dystrophy', 'papillary adenocarcinoma', 'obsolete autosomal dominant limb-girdle muscular dystrophy type 1C', 'progressive muscular dystrophy', 'symptomatic form of muscular dystrophy of Duchenne and Becker in female carriers', 'oculogastrointestinal muscular dystrophy', 'major affective disorder', 'obesity disorder', 'giant cell glioblastoma', 'oculopharyngeal muscular dystrophy', 'distal myopathy', 'MYH7-related skeletal myopathy', 'epilepsy', 'X-linked myopathy with postural muscle atrophy', 'Alzheimer disease', 'autosomal dominant Emery-Dreifuss muscular dystrophy', 'Duchenne muscular dystrophy', 'glioblastoma (disease)', 'renal carcinoma', 'thyroid gland carcinoma']
+  Got:      ['Bamforth-Lazarus syndrome', 'Complex sleep apnea', 'Congenital central hypoventilation syndrome', 'Sleep apnea syndrome', 'Obstructive sleep apnea syndrome', 'Parkinson disease', 'Epilepsy (incl. generalized tonic-clonic, partial, visual, partial motor)', 'Multiple sclerosis', 'Encephalopathy', 'Creutzfeldt-Jakob disease', 'Pick disease', 'Reye syndrome', 'Cerebellar degeneration', 'Alzheimer disease (incl. without neurofibrillary tangles)', 'Intellectual disability–hyperkinetic movement–truncal ataxia syndrome', 'Butyrylcholinesterase deficiency', 'Haddad syndrome', 'Oculopharyngodistal myopathy', 'Autosomal dominant limb-girdle muscular dystrophy type 1D (DNAJB6)', 'Autosomal dominant limb-girdle muscular dystrophy type 1E (DES)', 'Autosomal dominant Emery-Dreifuss muscular dystrophy', 'Autosomal recessive Emery-Dreifuss muscular dystrophy', 'X-linked Emery-Dreifuss muscular dystrophy', 'Emery-Dreifuss muscular dystrophy', 'Distal myopathy (incl. autosomal dominant, autosomal recessive, Welander type, with vocal cord weakness, with posterior leg/anterior hand involvement, with anterior tibial onset)', 'Nebulin-related early-onset distal myopathy', 'KLHL9-related early-onset distal myopathy', 'Adult-onset distal myopathy due to VCP mutation', 'Progressive scapulohumeroperoneal distal myopathy', 'Limb-girdle muscular dystrophy (incl. due to POMK deficiency)', 'Miyoshi muscular dystrophy / Miyoshi myopathy', 'Finnish upper limb-onset distal myopathy', 'Myofibrillar myopathy', 'Obsolete autosomal dominant limb-girdle muscular dystrophy type 1C', 'Hereditary proximal myopathy with early respiratory failure', 'Tibial muscular dystrophy', 'X-linked myopathy with postural muscle atrophy', 'X-linked scapuloperoneal muscular dystrophy', 'Duchenne and Becker muscular dystrophy (incl. symptomatic form in female carriers)', 'Duchenne muscular dystrophy', 'Becker muscular dystrophy', 'Oculogastrointestinal muscular dystrophy', 'Muscular dystrophy–dystroglycanopathy (congenital, type a)', 'Limb-girdle muscular dystrophy', 'MYH7-related late-onset scapuloperoneal muscular dystrophy', 'MYH7-related skeletal myopathy', 'Bethlem myopathy', 'Facioscapulohumeral muscular dystrophy', 'Oculopharyngeal muscular dystrophy', 'Progressive muscular dystrophy', 'Muscular dystrophy', 'Thyroid gland carcinoma', 'Papillary adenocarcinoma', 'Papillary renal cell carcinoma', 'Collecting duct carcinoma', 'Sarcomatoid renal cell carcinoma', 'Chromophobe renal cell carcinoma', 'Renal carcinoma', 'Clear cell renal carcinoma', 'Renal cell carcinoma (disease)', 'Renal cell adenocarcinoma', 'Nonpapillary renal cell carcinoma', 'Neuroblastoma', 'Breast carcinoma / breast cancer / breast neoplasm / hereditary breast carcinoma', 'Undifferentiated carcinoma of the corpus uteri', 'Squamous cell carcinoma of the corpus uteri', 'Hereditary breast–ovarian cancer syndrome', 'Glioma susceptibility', 'Giant cell glioblastoma', 'Glioblastoma (disease)', 'Major affective disorder', 'Bipolar disorder', 'Monogenic obesity', 'Obesity disorder', 'Morphine dependence', 'Substance abuse/dependence']
+  Thinking: The following diseases are related to a gene/protein associated with **(1R)-menthyl hexyl phosphonate group**:
+
+**Neurological / Sleep**
+- Bamforth-Lazarus syndrome
+- Complex sleep apnea
+- Congenital central hypoventilation syndrome
+- Sleep apnea syndrome
+- Obstructive sleep apnea syndrome
+- Parkinson disease
+- Epilepsy (incl. generalized tonic-clonic, partial, visual, partial motor)
+- Multiple sclerosis
+- Encephalopathy
+- Creutzfeldt-Jakob disease
+- Pick disease
+- Reye syndrome
+- Cerebellar degeneration
+- Alzheimer disease (incl. without neurofibrillary tangles)
+- Intellectual disability–hyperkinetic movement–truncal ataxia syndrome
+
+**Muscular / Myopathy**
+- Butyrylcholinesterase deficiency
+- Haddad syndrome
+- Oculopharyngodistal myopathy
+- Autosomal dominant limb-girdle muscular dystrophy type 1D (DNAJB6)
+- Autosomal dominant limb-girdle muscular dystrophy type 1E (DES)
+- Autosomal dominant Emery-Dreifuss muscular dystrophy
+- Autosomal recessive Emery-Dreifuss muscular dystrophy
+- X-linked Emery-Dreifuss muscular dystrophy
+- Emery-Dreifuss muscular dystrophy
+- Distal myopathy (incl. autosomal dominant, autosomal recessive, Welander type, with vocal cord weakness, with posterior leg/anterior hand involvement, with anterior tibial onset)
+- Nebulin-related early-onset distal myopathy
+- KLHL9-related early-onset distal myopathy
+- Adult-onset distal myopathy due to VCP mutation
+- Progressive scapulohumeroperoneal distal myopathy
+- Limb-girdle muscular dystrophy (incl. due to POMK deficiency)
+- Miyoshi muscular dystrophy / Miyoshi myopathy
+- Finnish upper limb-onset distal myopathy
+- Myofibrillar myopathy
+- Obsolete autosomal dominant limb-girdle muscular dystrophy type 1C
+- Hereditary proximal myopathy with early respiratory failure
+- Tibial muscular dystrophy
+- X-linked myopathy with postural muscle atrophy
+- X-linked scapuloperoneal muscular dystrophy
+- Duchenne and Becker muscular dystrophy (incl. symptomatic form in female carriers)
+- Duchenne muscular dystrophy
+- Becker muscular dystrophy
+- Oculogastrointestinal muscular dystrophy
+- Muscular dystrophy–dystroglycanopathy (congenital, type a)
+- Limb-girdle muscular dystrophy
+- MYH7-related late-onset scapuloperoneal muscular dystrophy
+- MYH7-related skeletal myopathy
+- Bethlem myopathy
+- Facioscapulohumeral muscular dystrophy
+- Oculopharyngeal muscular dystrophy
+- Progressive muscular dystrophy
+- Muscular dystrophy
+
+**Oncology / Carcinoma**
+- Thyroid gland carcinoma
+- Papillary adenocarcinoma
+- Papillary renal cell carcinoma
+- Collecting duct carcinoma
+- Sarcomatoid renal cell carcinoma
+- Chromophobe renal cell carcinoma
+- Renal carcinoma
+- Clear cell renal carcinoma
+- Renal cell carcinoma (disease)
+- Renal cell adenocarcinoma
+- Nonpapillary renal cell carcinoma
+- Neuroblastoma
+- Breast carcinoma / breast cancer / breast neoplasm / hereditary breast carcinoma
+- Undifferentiated carcinoma of the corpus uteri
+- Squamous cell carcinoma of the corpus uteri
+- Hereditary breast–ovarian cancer syndrome
+- Glioma susceptibility
+- Giant cell glioblastoma
+- Glioblastoma (disease)
+
+**Other**
+- Major affective disorder
+- Bipolar disorder
+- Monogenic obesity
+- Obesity disorder
+- Morphine dependence
+- Substance abuse/dependence
+  Cypher (1st attempt): MATCH (d:Drug {name: "(1R)-menthyl hexyl phosphonate group"})-[:DRUG_PROTEIN]->(g:GeneProtein)-[:DISEASE_PROTEIN]->(dis:Disease) RETURN dis.name
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.868  recall=0.717  f1=0.786  jaccard=0.647  overlap=0.868
+  Missing (in expected, not in got): Alzheimer disease, Alzheimer disease without neurofibrillary tangles, Creutzfeldt Jacob disease, Duchenne and Becker muscular dystrophy, Miyoshi muscular dystrophy, Miyoshi myopathy, adult-onset distal myopathy due to VCP mutation, autosomal dominant Emery-Dreifuss muscular dystrophy, autosomal dominant distal myopathy, autosomal dominant limb-girdle muscular dystrophy type 1D (DNAJB6), autosomal dominant limb-girdle muscular dystrophy type 1E (DES), autosomal recessive Emery-Dreifuss muscular dystrophy, autosomal recessive distal myopathy, bipolar disorder, breast cancer, breast carcinoma, breast neoplasm, butyrylcholinesterase deficiency, cerebellar degeneration, chromophobe renal cell carcinoma, clear cell renal carcinoma, collecting duct carcinoma, complex sleep apnea, congenital central hypoventilation syndrome, distal myopathy, distal myopathy with anterior tibial onset, distal myopathy with posterior leg and anterior hand involvement, distal myopathy with vocal cord weakness, distal myopathy, Welander type, encephalopathy, epilepsy, epilepsy with generalized tonic-clonic seizures, facioscapulohumeral muscular dystrophy, giant cell glioblastoma, glioblastoma (disease), glioma susceptibility, hereditary breast carcinoma, hereditary breast ovarian cancer syndrome, hereditary proximal myopathy with early respiratory failure, intellectual disability-hyperkinetic movement-truncal ataxia syndrome, limb-girdle muscular dystrophy, limb-girdle muscular dystrophy due to POMK deficiency, major affective disorder, monogenic obesity, morphine dependence, multiple sclerosis, muscular dystrophy, muscular dystrophy-dystroglycanopathy (congenital with brain and eye anomalies), type a, myofibrillar myopathy, nebulin-related early-onset distal myopathy, neuroblastoma, nonpapillary renal cell carcinoma, obesity disorder, obsolete autosomal dominant limb-girdle muscular dystrophy type 1C, obstructive sleep apnea syndrome, oculogastrointestinal muscular dystrophy, oculopharyngeal muscular dystrophy, oculopharyngodistal myopathy, papillary adenocarcinoma, papillary renal cell carcinoma, partial epilepsy, partial motor epilepsy, progressive muscular dystrophy, progressive scapulohumeroperoneal distal myopathy, renal carcinoma, renal cell adenocarcinoma, renal cell carcinoma (disease), sarcomatoid renal cell carcinoma, sleep apnea syndrome, squamous cell carcinoma of the corpus uteri, substance abuse/dependence, symptomatic form of muscular dystrophy of Duchenne and Becker in female carriers, thyroid gland carcinoma, tibial muscular dystrophy, undifferentiated carcinoma of the corpus uteri, visual epilepsy
+  Extra (in got, not in expected):   Adult-onset distal myopathy due to VCP mutation, Alzheimer disease (incl. without neurofibrillary tangles), Autosomal dominant Emery-Dreifuss muscular dystrophy, Autosomal dominant limb-girdle muscular dystrophy type 1D (DNAJB6), Autosomal dominant limb-girdle muscular dystrophy type 1E (DES), Autosomal recessive Emery-Dreifuss muscular dystrophy, Bipolar disorder, Breast carcinoma / breast cancer / breast neoplasm / hereditary breast carcinoma, Butyrylcholinesterase deficiency, Cerebellar degeneration, Chromophobe renal cell carcinoma, Clear cell renal carcinoma, Collecting duct carcinoma, Complex sleep apnea, Congenital central hypoventilation syndrome, Creutzfeldt-Jakob disease, Distal myopathy (incl. autosomal dominant, autosomal recessive, Welander type, with vocal cord weakness, with posterior leg/anterior hand involvement, with anterior tibial onset), Duchenne and Becker muscular dystrophy (incl. symptomatic form in female carriers), Encephalopathy, Epilepsy (incl. generalized tonic-clonic, partial, visual, partial motor), Facioscapulohumeral muscular dystrophy, Giant cell glioblastoma, Glioblastoma (disease), Glioma susceptibility, Hereditary breast–ovarian cancer syndrome, Hereditary proximal myopathy with early respiratory failure, Intellectual disability–hyperkinetic movement–truncal ataxia syndrome, Limb-girdle muscular dystrophy, Limb-girdle muscular dystrophy (incl. due to POMK deficiency), Major affective disorder, Miyoshi muscular dystrophy / Miyoshi myopathy, Monogenic obesity, Morphine dependence, Multiple sclerosis, Muscular dystrophy, Muscular dystrophy–dystroglycanopathy (congenital, type a), Myofibrillar myopathy, Nebulin-related early-onset distal myopathy, Neuroblastoma, Nonpapillary renal cell carcinoma, Obesity disorder, Obsolete autosomal dominant limb-girdle muscular dystrophy type 1C, Obstructive sleep apnea syndrome, Oculogastrointestinal muscular dystrophy, Oculopharyngeal muscular dystrophy, Oculopharyngodistal myopathy, Papillary adenocarcinoma, Papillary renal cell carcinoma, Progressive muscular dystrophy, Progressive scapulohumeroperoneal distal myopathy, Renal carcinoma, Renal cell adenocarcinoma, Renal cell carcinoma (disease), Sarcomatoid renal cell carcinoma, Sleep apnea syndrome, Squamous cell carcinoma of the corpus uteri, Substance abuse/dependence, Thyroid gland carcinoma, Tibial muscular dystrophy, Undifferentiated carcinoma of the corpus uteri
+
+Q [6866824027a8]: Name all diseases that are related to a gene/protein that is associated with drug (1R,2R)-N-(2-Aminoethyl)-2-{[(4-methoxyphenyl)sulfonyl]methyl}cyclohexanecarboxamide.
+  Expected: ['giant cell glioblastoma', 'schizophrenia', 'glioblastoma (disease)', 'arthropathy', 'osteoarthritis susceptibility', 'osteoarthritis', 'glioma susceptibility', 'pycnodysostosis']
+  Got:      ['Pycnodysostosis', 'Glioma susceptibility', 'Giant cell glioblastoma', 'Glioblastoma', 'Schizophrenia', 'Arthropathy', 'Osteoarthritis', 'Osteoarthritis susceptibility']
+  Thinking: The diseases related to a gene/protein associated with this drug are:
+
+1. Pycnodysostosis
+2. Glioma susceptibility
+3. Giant cell glioblastoma
+4. Glioblastoma
+5. Schizophrenia
+6. Arthropathy
+7. Osteoarthritis
+8. Osteoarthritis susceptibility
+  Cypher (1st attempt): MATCH (d:Drug {name: "(1R,2R)-N-(2-Aminoethyl)-2-{[(4-methoxyphenyl)sulfonyl]methyl}cyclohexanecarboxamide"})-[:DRUG_PROTEIN]->(gp:GeneProtein)<-[:DISEASE_PROTEIN]-(dis:Disease) RETURN dis.name
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.875  recall=0.875  f1=0.875  jaccard=0.778  overlap=0.875
+  Missing (in expected, not in got): arthropathy, giant cell glioblastoma, glioblastoma (disease), glioma susceptibility, osteoarthritis, osteoarthritis susceptibility, pycnodysostosis, schizophrenia
+  Extra (in got, not in expected):   Arthropathy, Giant cell glioblastoma, Glioblastoma, Glioma susceptibility, Osteoarthritis, Osteoarthritis susceptibility, Pycnodysostosis, Schizophrenia
+
+Q [f3d910b4149b]: Name all diseases that are related to a gene/protein that is associated with drug (1R,2R,3S,4R,6S)-3,4,6-Trihydroxy-5-{[(S)-hydroxy(3-hydroxy-2-oxopropoxy)phosphoryl]oxy}-1,2-cyclohexanediyl bis[dihydrogen (phosphate)].
+  Expected: ['retinitis pigmentosa', 'retinal dystrophy and obesity']
+  Got:      NO_RESPONSE
+  Error:    chain_error: {neo4j_code: Neo.ClientError.Statement.SyntaxError} {message: Invalid input ']': expected an expression, ',' or '}' (line 1, column 159 (offset: 158))
+"MATCH (d:Drug {name: "(1R,2R,3S,4R,6S)-3,4,6-Trihydroxy-5-{[(S)-hydroxy(3-hydroxy-2-oxopropoxy)phosphoryl]oxy}-1,2-cyclohexanediyl bis[dihydrogen (phosphate)"]})-[:DRUG_PROTEIN]->(gp:GeneProtein)-[:DISEASE_PROTEIN]->(dis:Disease) RETURN dis.name"
+                                                                                                                                                               ^} {gql_status: 50N42} {gql_status_description: error: general processing exception - unexpected error. Unexpected error has occurred. See debug log for details.}
+  Thinking: 
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.000  recall=0.000  f1=0.000  jaccard=0.000  overlap=0.000
+  Missing (in expected, not in got): retinal dystrophy and obesity, retinitis pigmentosa
+  Extra (in got, not in expected):   NO_RESPONSE
+
+Q [69e66c664c35]: Name all diseases that are related to a gene/protein that is associated with drug (1S)-1-(3-chlorophenyl)-2-oxo-2-[(1,3,4-trioxo-1,2,3,4-tetrahydroisoquinolin-5-yl)amino]ethyl acetate.
+  Expected: ['Alzheimer disease without neurofibrillary tangles', 'diabetic retinopathy', 'Creutzfeldt Jacob disease', 'acquired aneurysmal subarachnoid hemorrhage', 'hemoglobinopathy', 'myocardial infarction', 'Pick disease', 'cryptorchidism (disease)', 'status epilepticus', 'autoimmune hepatitis', 'brain ischemia', 'transient ischemic attack (disease)', 'retinal detachment', 'hepatitis', 'diabetic cataract', 'diabetic polyneuropathy', 'encephalopathy', 'diabetic autonomic neuropathy', 'type 2 diabetes mellitus', 'diabetic nephropathy', 'ischemia reperfusion injury', 'cirrhosis, familial', 'diabetes mellitus (disease)', 'subarachnoid hemorrhage (disease)', 'familial tumoral calcinosis', 'inflammatory bowel disease', 'cerebellar degeneration', 'Alzheimer disease', 'schizophrenia', 'diabetic neuropathy', 'myocardial infarction (disease)', 'ulcerative colitis (disease)', 'coronary thrombosis', 'diabetic peripheral angiopathy', 'calcinosis', 'Reye syndrome']
+  Got:      ['Diabetic autonomic neuropathy', 'Diabetic polyneuropathy', 'Diabetic nephropathy', 'Diabetic neuropathy', 'Inflammatory bowel disease', 'Ulcerative colitis', 'Diabetes mellitus', 'Type 2 diabetes mellitus', 'Diabetic peripheral angiopathy', 'Cirrhosis, familial', 'Autoimmune hepatitis', 'Hemoglobinopathy', 'Myocardial infarction', 'Coronary thrombosis', 'Hepatitis', 'Cryptorchidism', 'Transient ischemic attack', 'Brain ischemia', 'Retinal detachment', 'Status epilepticus', 'Familial tumoral calcinosis', 'Calcinosis', 'Diabetic cataract', 'Diabetic retinopathy', 'Ischemia reperfusion injury', 'Acquired aneurysmal subarachnoid hemorrhage', 'Subarachnoid hemorrhage', 'Encephalopathy', 'Creutzfeldt-Jakob disease', 'Pick disease', 'Reye syndrome', 'Cerebellar degeneration', 'Alzheimer disease without neurofibrillary tangles', 'Alzheimer disease', 'Schizophrenia']
+  Thinking: The following diseases are related to a gene/protein associated with this drug:
+
+1. Diabetic autonomic neuropathy
+2. Diabetic polyneuropathy
+3. Diabetic nephropathy
+4. Diabetic neuropathy
+5. Inflammatory bowel disease
+6. Ulcerative colitis
+7. Diabetes mellitus
+8. Type 2 diabetes mellitus
+9. Diabetic peripheral angiopathy
+10. Cirrhosis, familial
+11. Autoimmune hepatitis
+12. Hemoglobinopathy
+13. Myocardial infarction
+14. Coronary thrombosis
+15. Hepatitis
+16. Cryptorchidism
+17. Transient ischemic attack
+18. Brain ischemia
+19. Retinal detachment
+20. Status epilepticus
+21. Familial tumoral calcinosis
+22. Calcinosis
+23. Diabetic cataract
+24. Diabetic retinopathy
+25. Ischemia reperfusion injury
+26. Acquired aneurysmal subarachnoid hemorrhage
+27. Subarachnoid hemorrhage
+28. Encephalopathy
+29. Creutzfeldt-Jakob disease
+30. Pick disease
+31. Reye syndrome
+32. Cerebellar degeneration
+33. Alzheimer disease without neurofibrillary tangles
+34. Alzheimer disease
+35. Schizophrenia
+  Cypher (1st attempt): MATCH (d:Drug {name: "(1S)-1-(3-chlorophenyl)-2-oxo-2-[(1,3,4-trioxo-1,2,3,4-tetrahydroisoquinolin-5-yl)amino]ethyl acetate"})-[:DRUG_PROTEIN]->(g:GeneProtein)-[:DISEASE_PROTEIN]->(dis:Disease) RETURN dis.name
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.829  recall=0.806  f1=0.817  jaccard=0.690  overlap=0.829
+  Missing (in expected, not in got): Creutzfeldt Jacob disease, acquired aneurysmal subarachnoid hemorrhage, autoimmune hepatitis, brain ischemia, calcinosis, cerebellar degeneration, cirrhosis, familial, coronary thrombosis, cryptorchidism (disease), diabetes mellitus (disease), diabetic autonomic neuropathy, diabetic cataract, diabetic nephropathy, diabetic neuropathy, diabetic peripheral angiopathy, diabetic polyneuropathy, diabetic retinopathy, encephalopathy, familial tumoral calcinosis, hemoglobinopathy, hepatitis, inflammatory bowel disease, ischemia reperfusion injury, myocardial infarction, myocardial infarction (disease), retinal detachment, schizophrenia, status epilepticus, subarachnoid hemorrhage (disease), transient ischemic attack (disease), type 2 diabetes mellitus, ulcerative colitis (disease)
+  Extra (in got, not in expected):   Acquired aneurysmal subarachnoid hemorrhage, Autoimmune hepatitis, Brain ischemia, Calcinosis, Cerebellar degeneration, Cirrhosis, familial, Coronary thrombosis, Creutzfeldt-Jakob disease, Cryptorchidism, Diabetes mellitus, Diabetic autonomic neuropathy, Diabetic cataract, Diabetic nephropathy, Diabetic neuropathy, Diabetic peripheral angiopathy, Diabetic polyneuropathy, Diabetic retinopathy, Encephalopathy, Familial tumoral calcinosis, Hemoglobinopathy, Hepatitis, Inflammatory bowel disease, Ischemia reperfusion injury, Myocardial infarction, Retinal detachment, Schizophrenia, Status epilepticus, Subarachnoid hemorrhage, Transient ischemic attack, Type 2 diabetes mellitus, Ulcerative colitis
+
+Q [fc1309288be0]: Name all diseases that are related to a gene/protein that is associated with drug (1S)-2-oxo-1-phenyl-2-[(1,3,4-trioxo-1,2,3,4-tetrahydroisoquinolin-5-yl)amino]ethyl acetate.
+  Expected: ['Alzheimer disease without neurofibrillary tangles', 'diabetic retinopathy', 'Creutzfeldt Jacob disease', 'acquired aneurysmal subarachnoid hemorrhage', 'hemoglobinopathy', 'myocardial infarction', 'Pick disease', 'cryptorchidism (disease)', 'status epilepticus', 'autoimmune hepatitis', 'brain ischemia', 'transient ischemic attack (disease)', 'retinal detachment', 'hepatitis', 'diabetic cataract', 'diabetic polyneuropathy', 'encephalopathy', 'diabetic autonomic neuropathy', 'type 2 diabetes mellitus', 'diabetic nephropathy', 'ischemia reperfusion injury', 'cirrhosis, familial', 'diabetes mellitus (disease)', 'subarachnoid hemorrhage (disease)', 'familial tumoral calcinosis', 'inflammatory bowel disease', 'cerebellar degeneration', 'Alzheimer disease', 'schizophrenia', 'diabetic neuropathy', 'myocardial infarction (disease)', 'ulcerative colitis (disease)', 'coronary thrombosis', 'diabetic peripheral angiopathy', 'calcinosis', 'Reye syndrome']
+  Got:      ['Diabetic autonomic neuropathy', 'Diabetic polyneuropathy', 'Diabetic nephropathy', 'Diabetic neuropathy', 'Cryptorchidism', 'Retinal detachment', 'Status epilepticus', 'Familial tumoral calcinosis', 'Calcinosis', 'Diabetic cataract', 'Diabetic retinopathy', 'Ischemia reperfusion injury', 'Acquired aneurysmal subarachnoid hemorrhage', 'Subarachnoid hemorrhage', 'Encephalopathy', 'Creutzfeldt-Jakob disease', 'Pick disease', 'Reye syndrome', 'Cerebellar degeneration', 'Alzheimer disease without neurofibrillary tangles', 'Alzheimer disease', 'Inflammatory bowel disease', 'Ulcerative colitis', 'Diabetes mellitus', 'Type 2 diabetes mellitus', 'Diabetic peripheral angiopathy', 'Schizophrenia', 'Cirrhosis, familial', 'Autoimmune hepatitis', 'Hemoglobinopathy', 'Myocardial infarction', 'Coronary thrombosis', 'Hepatitis', 'Transient ischemic attack', 'Brain ischemia']
+  Thinking: The following diseases are related to a gene/protein associated with the drug **(1S)-2-oxo-1-phenyl-2-[(1,3,4-trioxo-1,2,3,4-tetrahydroisoquinolin-5-yl)amino]ethyl acetate**:
+
+1. Diabetic autonomic neuropathy
+2. Diabetic polyneuropathy
+3. Diabetic nephropathy
+4. Diabetic neuropathy
+5. Cryptorchidism
+6. Retinal detachment
+7. Status epilepticus
+8. Familial tumoral calcinosis
+9. Calcinosis
+10. Diabetic cataract
+11. Diabetic retinopathy
+12. Ischemia reperfusion injury
+13. Acquired aneurysmal subarachnoid hemorrhage
+14. Subarachnoid hemorrhage
+15. Encephalopathy
+16. Creutzfeldt-Jakob disease
+17. Pick disease
+18. Reye syndrome
+19. Cerebellar degeneration
+20. Alzheimer disease without neurofibrillary tangles
+21. Alzheimer disease
+22. Inflammatory bowel disease
+23. Ulcerative colitis
+24. Diabetes mellitus
+25. Type 2 diabetes mellitus
+26. Diabetic peripheral angiopathy
+27. Schizophrenia
+28. Cirrhosis, familial
+29. Autoimmune hepatitis
+30. Hemoglobinopathy
+31. Myocardial infarction
+32. Coronary thrombosis
+33. Hepatitis
+34. Transient ischemic attack
+35. Brain ischemia
+  Cypher (1st attempt): MATCH (d:Drug {name: "(1S)-2-oxo-1-phenyl-2-[(1,3,4-trioxo-1,2,3,4-tetrahydroisoquinolin-5-yl)amino]ethyl acetate"})-[:DRUG_PROTEIN]->(gp:GeneProtein)<-[:DISEASE_PROTEIN]-(dis:Disease) RETURN dis.name
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.829  recall=0.806  f1=0.817  jaccard=0.690  overlap=0.829
+  Missing (in expected, not in got): Creutzfeldt Jacob disease, acquired aneurysmal subarachnoid hemorrhage, autoimmune hepatitis, brain ischemia, calcinosis, cerebellar degeneration, cirrhosis, familial, coronary thrombosis, cryptorchidism (disease), diabetes mellitus (disease), diabetic autonomic neuropathy, diabetic cataract, diabetic nephropathy, diabetic neuropathy, diabetic peripheral angiopathy, diabetic polyneuropathy, diabetic retinopathy, encephalopathy, familial tumoral calcinosis, hemoglobinopathy, hepatitis, inflammatory bowel disease, ischemia reperfusion injury, myocardial infarction, myocardial infarction (disease), retinal detachment, schizophrenia, status epilepticus, subarachnoid hemorrhage (disease), transient ischemic attack (disease), type 2 diabetes mellitus, ulcerative colitis (disease)
+  Extra (in got, not in expected):   Acquired aneurysmal subarachnoid hemorrhage, Autoimmune hepatitis, Brain ischemia, Calcinosis, Cerebellar degeneration, Cirrhosis, familial, Coronary thrombosis, Creutzfeldt-Jakob disease, Cryptorchidism, Diabetes mellitus, Diabetic autonomic neuropathy, Diabetic cataract, Diabetic nephropathy, Diabetic neuropathy, Diabetic peripheral angiopathy, Diabetic polyneuropathy, Diabetic retinopathy, Encephalopathy, Familial tumoral calcinosis, Hemoglobinopathy, Hepatitis, Inflammatory bowel disease, Ischemia reperfusion injury, Myocardial infarction, Retinal detachment, Schizophrenia, Status epilepticus, Subarachnoid hemorrhage, Transient ischemic attack, Type 2 diabetes mellitus, Ulcerative colitis
+
+
+==== Overall Summary (record-weighted) ====
+
+Type: open_ended_list | Mode: graphcypher | Model: qwen3.8:27b-q8_0
+  Total: 7633  |  Correct: 5056  |  Accuracy: 0.662 [95% CI 0.652-0.673]
+  Avg set metrics: exact_match=0.662  precision=0.902  recall=0.898  f1=0.895  jaccard=0.870  overlap=0.913
+  - first attempt success rate: 0.995 (n=7633)
+  - avg correction iterations: 0.000 (n=7633)
+  - latency ms: mean=139259 p50=75442 p95=490715 (n=7633)
+  - tokens: avg in=3223 out=1666 | total in=24603836 out=12719440
+  - records with error: 0.003 (n=7633)

@@ -1,0 +1,1212 @@
+--- NEXA Benchmark Evaluation ---
+Files processed: 2
+  - benchmark/results/alzkb/graphcypher_gpt-5-mini/baseline_graphcypher_gpt-5-mini_Alzkb_121_atleastone_20260729_120049.jsonl
+  - benchmark/results/alzkb/graphcypher_gpt-5-mini/baseline_graphcypher_gpt-5-mini_Alzkb_121_run1_20260615_132913.jsonl
+
+=== Dataset: MCQ_1hop.json__graphcypher | Type: mcq | Mode: graphcypher | Model: gpt-5-mini ===
+Count: 498  |  Correct: 350  |  Accuracy: 0.703 [95% CI 0.661-0.741]
+Telemetry:
+  - first attempt success rate: 0.839 (n=498)
+  - avg correction iterations: 0.000 (n=498)
+  - latency ms: mean=52996 p50=15898 p95=31437 (n=498)
+  - tokens: avg in=1190 out=997 | total in=592629 out=496595
+  - records with error: 0.036 (n=498)
+
+-- Incorrect Questions (148 total, showing 15) --
+Q [5cda3157482d]: Which of the following can be treated by the drug Memantine? 1. Alzheimer Disease, Familial, 3, with Spastic Paraparesis and Apraxia 2. Alzheimer Disease, Early Onset 3. Alzheimer disease, familial, type 3 4. Alzheimer Disease, Late Onset 5. Alzheimer's Disease
+  Expected: 5
+  Got:      NO_RESPONSE
+  Error:    chain_error: {neo4j_code: Neo.ClientError.Statement.SyntaxError} {message: Invalid input ''s disease'': expected an expression, ',' or ']' (line 8, column 16 (offset: 339))
+"    'alzheimer''s disease'"
+                ^} {gql_status: 50N42} {gql_status_description: error: general processing exception - unexpected error. Unexpected error has occurred. See debug log for details.}
+  Thinking: 
+  Correction iters:     0
+
+Q [8abaad466e6e]: Which of the following can be treated by the drug Benzatropine? 1. Alzheimer's Disease 2. Alzheimer Disease, Early Onset 3. Alzheimer Disease, Familial, 3, with Spastic Paraparesis and Apraxia 4. Alzheimer's Disease, Focal Onset 5. Alzheimer disease, familial, type 3
+  Expected: 1
+  Got:      NO_RESPONSE
+  Error:    chain_error: {neo4j_code: Neo.ClientError.Statement.SyntaxError} {message: Invalid input ''s Disease'': expected an expression, ',' or ']' (line 2, column 72 (offset: 123))
+"WHERE drug.commonName = 'Benzatropine' AND d.commonName IN ['Alzheimer''s Disease','Alzheimer Disease, Early Onset','Alzheimer Disease, Familial, 3, with Spastic Paraparesis and Apraxia','Alzheimer''s Disease, Focal Onset','Alzheimer disease, familial, type 3']"
+                                                                        ^} {gql_status: 50N42} {gql_status_description: error: general processing exception - unexpected error. Unexpected error has occurred. See debug log for details.}
+  Thinking: 
+  Correction iters:     0
+
+Q [788d6bb2c708]: Which of the following can be treated by the drug Rivastigmine? 1. Alzheimer Disease, Late Onset 2. Alzheimer's Disease, Focal Onset 3. Alzheimer Disease, Early Onset 4. Alzheimer's Disease 5. Alzheimer disease, familial, type 3
+  Expected: 4
+  Got:      NO_RESPONSE
+  Error:    chain_error: {neo4j_code: Neo.ClientError.Statement.SyntaxError} {message: Invalid input ''s Disease, Focal Onset'': expected an expression, ',' or ']' (line 2, column 67 (offset: 147))
+"WHERE d.commonName IN ['Alzheimer Disease, Late Onset','Alzheimer''s Disease, Focal Onset','Alzheimer Disease, Early Onset','Alzheimer''s Disease','Alzheimer disease, familial, type 3']"
+                                                                   ^} {gql_status: 50N42} {gql_status_description: error: general processing exception - unexpected error. Unexpected error has occurred. See debug log for details.}
+  Thinking: 
+  Correction iters:     0
+
+Q [afcbcc3b602b]: Which of the following can be affected by the drug Naltrexone? 1. Alzheimer Disease, Familial, 3, with Spastic Paraparesis and Apraxia 2. Alzheimer Disease, Early Onset 3. Alzheimer disease, familial, type 3 4. Alzheimer Disease, Late Onset 5. Alzheimer's Disease
+  Expected: 5
+  Got:      0
+  Thinking: I can’t determine that from the available tool data — the information query returned no results. Please provide source information about Naltrexone’s indications/effects or allow me to search for evidence, and I’ll map which of items 1–5 are affected.
+  Cypher (1st attempt): MATCH (drug:Drug {commonName: "Naltrexone"})-[:DRUGTREATSDISEASE]->(d:Disease)
+WHERE toLower(d.commonName) IN [
+  "alzheimer disease, familial, 3, with spastic paraparesis and apraxia",
+  "alzheimer disease, early onset",
+  "alzheimer disease, familial, type 3",
+  "alzheimer disease, late onset",
+  "alzheimer's disease"
+]
+RETURN d.commonName AS disease, d.nodeID AS nodeID;
+  Correction iters:     0
+
+Q [0890cfba62b3]: Which of the following can be affected by the drug Ziprasidone? 1. Alzheimer's Disease, Focal Onset 2. Alzheimer Disease, Familial, 3, with Spastic Paraparesis and Apraxia 3. Alzheimer's Disease 4. Alzheimer Disease, Late Onset 5. Alzheimer disease, familial, type 3
+  Expected: 3
+  Got:      0
+  Thinking: I have no information from the provided sources to determine which of those conditions Ziprasidone can affect. Please provide the relevant data or allow me to look up ziprasidone’s indications/interactions.
+  Cypher (1st attempt): MATCH (drug:Drug)-[:DRUGTREATSDISEASE]->(disease:Disease)
+WHERE drug.commonName = 'Ziprasidone' AND disease.commonName IN ['Alzheimer\'s Disease, Focal Onset', 'Alzheimer Disease, Familial, 3, with Spastic Paraparesis and Apraxia', 'Alzheimer\'s Disease', 'Alzheimer Disease, Late Onset', 'Alzheimer disease, familial, type 3']
+RETURN DISTINCT disease.commonName AS disease, disease.nodeID AS nodeID;
+  Correction iters:     0
+
+Q [59956a4e2caa]: Which of the following increases the gene expression of APAF1? 1. Treprostinil 2. Botulinum toxin type A 3. Insulin pork 4. Ibritumomab tiuxetan 5. Trastuzumab
+  Expected: 1
+  Got:      0
+  Thinking: I cannot determine the answer from the tool output. The tool returned only an entry for Treprostinil (drug_db00374) and provided no information about APAF1 gene-expression effects for any of the listed drugs. Provide additional data or allow a further query.
+  Cypher (1st attempt): MATCH (d:Drug)-[:CHEMICALINCREASESEXPRESSION]->(g:Gene {geneSymbol: 'APAF1'})
+WHERE d.commonName IN ['Treprostinil','Botulinum toxin type A','Insulin pork','Ibritumomab tiuxetan','Trastuzumab']
+RETURN d.commonName, d.nodeID, d.uri;
+  Correction iters:     0
+
+Q [11cc1da14910]: Which of the following decreases the gene expression of NCAPG? 1. Ivermectin 2. Insulin pork 3. Streptokinase 4. Hyaluronidase (ovine) 5. Muromonab
+  Expected: 1
+  Got:      0
+  Thinking: From the provided data, only "Ivermectin" was returned (drugNodeID 1990). No information was provided showing any of the listed agents decrease NCAPG expression. I cannot identify a correct choice based on the available tool output.
+  Cypher (1st attempt): MATCH (d:Drug)-[:CHEMICALDECREASESEXPRESSION]->(g:Gene {geneSymbol: 'NCAPG'})
+WHERE d.commonName IN ['Ivermectin','Insulin pork','Streptokinase','Hyaluronidase (ovine)','Muromonab']
+RETURN DISTINCT d.commonName AS drug, d.nodeID AS drugNodeID
+  Correction iters:     0
+
+Q [0f857a24037f]: Which of the following is associated with the gene HFE? 1. Alzheimer Disease, Late Onset 2. Dementia due to Alzheimer's disease (disorder) 3. Alzheimer Disease 12 4. Alzheimer Disease 7 5. Alzheimer Disease, Familial, 3, with Spastic Paraparesis and Apraxia
+  Expected: 1
+  Got:      0
+  Thinking: I couldn't find any association data for HFE in the provided tools. Please provide the data/source to check or allow me to look it up (e.g., OMIM, NCBI Gene, ClinVar) so I can answer which option, if any, is correct.
+  Cypher (1st attempt): MATCH (g:Gene {geneSymbol: 'HFE'})<-[:BODYPARTUNDEREXPRESSESGENE|:BODYPARTOVEREXPRESSESGENE]-(b:BodyPart)<-[:DISEASELOCALIZESTOANATOMY]-(d:Disease)
+WHERE d.commonName IN ['Alzheimer Disease, Late Onset','Dementia due to Alzheimer\'s disease (disorder)','Alzheimer Disease 12','Alzheimer Disease 7','Alzheimer Disease, Familial, 3, with Spastic Paraparesis and Apraxia']
+RETURN DISTINCT d.commonName, d.nodeID, d.uri
+  Correction iters:     0
+
+Q [d5eb83911add]: Which of the following is associated with the gene ACE? 1. Non-Alzheimer's dementia (e.g., Lewy body dementia, vascular or multi-infarct dementia; mixed dementia; frontotemporal dementia such as Pick's disease; and dementia related to stroke, Parkinson's or Creutzfeldt-Jakob diseases) 2. Alzheimer Disease, Familial, 3, with Spastic Paraparesis and Apraxia 3. Familial Alzheimer-like prion disease 4. Alzheimer Disease, Late Onset 5. Prodromal Alzheimer's disease
+  Expected: 4
+  Got:      NO_RESPONSE
+  Error:    chain_error: {neo4j_code: Neo.ClientError.Statement.SyntaxError} {message: Invalid input ''s dementia (e.g., Lewy body dementia, vascular or multi-infarct dementia; mixed dementia; frontotemporal dementia such as Pick'': expected an expression, ',' or ']' (line 4, column 16 (offset: 92))
+"'Non-Alzheimer''s dementia (e.g., Lewy body dementia, vascular or multi-infarct dementia; mixed dementia; frontotemporal dementia such as Pick''s disease; and dementia related to stroke, Parkinson''s or Creutzfeldt-Jakob diseases)',"
+                ^} {gql_status: 50N42} {gql_status_description: error: general processing exception - unexpected error. Unexpected error has occurred. See debug log for details.}
+  Thinking: 
+  Correction iters:     0
+
+Q [5e9aaa24ad95]: Which of the following is associated with the gene IDE? 1. Alzheimer Disease, Familial, 3, with Spastic Paraparesis and Apraxia 2. Alzheimer Disease 12 3. Alzheimer Disease, Late Onset 4. Alzheimer Disease 7 5. Prodromal Alzheimer's disease
+  Expected: 3
+  Got:      NO_RESPONSE
+  Error:    chain_error: {neo4j_code: Neo.ClientError.Statement.SyntaxError} {message: Invalid input ''s disease'': expected an expression, ',' or ']' (line 4, column 193 (offset: 374))
+"WHERE d.commonName IN ['Alzheimer Disease, Familial, 3, with Spastic Paraparesis and Apraxia','Alzheimer Disease 12','Alzheimer Disease, Late Onset','Alzheimer Disease 7','Prodromal Alzheimer''s disease']"
+                                                                                                                                                                                                 ^} {gql_status: 50N42} {gql_status_description: error: general processing exception - unexpected error. Unexpected error has occurred. See debug log for details.}
+  Thinking: 
+  Correction iters:     0
+
+Q [b5a74fa88412]: Which of the following is associated with the gene CASP3? 1. Familial Alzheimer Disease (FAD) 2. Familial Alzheimer-like prion disease 3. Dementia due to Alzheimer's disease (disorder) 4. Alzheimer Disease 7 5. Alzheimer Disease 12
+  Expected: 1
+  Got:      NO_RESPONSE
+  Error:    chain_error: {neo4j_code: Neo.ClientError.Statement.SyntaxError} {message: Invalid input ''s disease (disorder)'': expected an expression, ',' or ']' (line 2, column 128 (offset: 276))
+"WHERE d.commonName IN ['Familial Alzheimer Disease (FAD)', 'Familial Alzheimer-like prion disease', 'Dementia due to Alzheimer''s disease (disorder)', 'Alzheimer Disease 7', 'Alzheimer Disease 12']"
+                                                                                                                                ^} {gql_status: 50N42} {gql_status_description: error: general processing exception - unexpected error. Unexpected error has occurred. See debug log for details.}
+  Thinking: 
+  Correction iters:     0
+
+Q [45a57a660501]: Which of the following is associated with the gene SOD2? 1. Alzheimer Disease 9 2. Alzheimer's Disease 3. Alzheimer Disease 12 4. Non-Alzheimer's dementia (e.g., Lewy body dementia, vascular or multi-infarct dementia; mixed dementia; frontotemporal dementia such as Pick's disease; and dementia related to stroke, Parkinson's or Creutzfeldt-Jakob diseases) 5. Non-amnestic Alzheimer disease
+  Expected: 2
+  Got:      0
+  Thinking: I have no information returned from the tools about SOD2 and cannot determine which option is correct. Would you like me to search external sources or run another query to find the association?
+  Cypher (1st attempt): MATCH (g:Gene {geneSymbol: 'SOD2'})<-[:CHEMICALBINDSGENE|CHEMICALINCREASESEXPRESSION|CHEMICALDECREASESEXPRESSION]-(drug:Drug)-[:DRUGTREATSDISEASE]->(d:Disease)
+RETURN DISTINCT d.commonName, d.nodeID
+  Correction iters:     0
+
+Q [b12e159c883c]: Which of the following is associated with the gene BCHE? 1. Alzheimer Disease 7 2. Alzheimer Disease 14 3. Alzheimer Disease 12 4. Alzheimer Disease, Late Onset 5. Alzheimer Disease, Familial, 3, with Spastic Paraparesis and Apraxia
+  Expected: 4
+  Got:      0
+  Thinking: I couldn’t retrieve any information about BCHE from the available tools, so I can’t determine which option is correct. Please allow a database lookup (e.g., OMIM/NCBI) or provide the source data to proceed.
+  Cypher (1st attempt): MATCH (g:Gene {geneSymbol: 'BCHE'})<-[:BODYPARTUNDEREXPRESSESGENE|:BODYPARTOVEREXPRESSESGENE]-(bp:BodyPart)<-[:DISEASELOCALIZESTOANATOMY]-(d:Disease)
+RETURN DISTINCT d.commonName AS disease
+  Correction iters:     0
+
+Q [368663cb17f0]: Which of the following is associated with the gene MIR4467? 1. Alzheimer Disease, Familial, 3, with Spastic Paraparesis and Apraxia 2. Alzheimer's Disease 3. Prodromal Alzheimer's disease 4. Alzheimer Disease 12 5. Alzheimer Disease 7
+  Expected: 2
+  Got:      0
+  Thinking: No information was returned for MIR4467 in the queried data, so none of the listed options can be confirmed.
+  Cypher (1st attempt): MATCH (d:Disease)-[:DISEASELOCALIZESTOANATOMY]->(bp:BodyPart)-[:BODYPARTUNDEREXPRESSESGENE|BODYPARTOVEREXPRESSESGENE]->(g:Gene {geneSymbol:"MIR4467"})
+WHERE d.commonName IN ["Alzheimer Disease, Familial, 3, with Spastic Paraparesis and Apraxia","Alzheimer's Disease","Prodromal Alzheimer's disease","Alzheimer Disease 12","Alzheimer Disease 7"]
+RETURN DISTINCT d.commonName, d.nodeID, d.uri;
+  Correction iters:     0
+
+Q [d688b18f58e9]: Which of the following is associated with the gene CD33? 1. Alzheimer Disease 9 2. Alzheimer Disease 7 3. Non-amnestic Alzheimer disease 4. Alzheimer Disease, Familial, 3, with Spastic Paraparesis and Apraxia 5. Alzheimer's Disease
+  Expected: 5
+  Got:      0
+  Thinking: I couldn't find any tool output about CD33 — no data was returned. I can't determine which option is correct without source information. 
+
+Please either:
+- Paste the tool/database output linking CD33 to disease(s), or
+- Allow me to look up CD33 associations so I can answer.
+  Cypher (1st attempt): MATCH (g:Gene {geneSymbol:'CD33'})
+MATCH (d:Disease)-[:DISEASELOCALIZESTOANATOMY]->(b:BodyPart)-[:BODYPARTUNDEREXPRESSESGENE|BODYPARTOVEREXPRESSESGENE]->(g)
+WHERE d.commonName IN ['Alzheimer Disease 9','Alzheimer Disease 7','Non-amnestic Alzheimer disease 4','Alzheimer Disease, Familial, 3, with Spastic Paraparesis and Apraxia','Alzheimer\'s Disease']
+RETURN DISTINCT d.commonName, d.nodeID;
+  Correction iters:     0
+
+
+=== Dataset: MCQ_2hop.json__graphcypher | Type: mcq | Mode: graphcypher | Model: gpt-5-mini ===
+Count: 419  |  Correct: 322  |  Accuracy: 0.768 [95% CI 0.726-0.806]
+Telemetry:
+  - first attempt success rate: 0.881 (n=419)
+  - avg correction iterations: 0.000 (n=419)
+  - latency ms: mean=17926 p50=16123 p95=31605 (n=419)
+  - tokens: avg in=1298 out=1205 | total in=543993 out=504939
+  - records with error: 0.019 (n=419)
+
+-- Incorrect Questions (97 total, showing 15) --
+Q [6c99170439b6]: Which of the following binds to the genes ABCB1 and CYP2C8 ? 1. Letosteine 2. 4-(4-FLUOROPHENYL)-1-CYCLOROPROPYLMETHYL-5-(4-PYRIDYL)-IMIDAZOLE 3. Eptacog alfa pegol (activated) 4. Corynebacterium diphtheriae 5. Ketamine
+  Expected: 5
+  Got:      0
+  Thinking: I can’t determine that from the provided data — my information tool returned no results. Please supply supporting evidence (e.g., binding data or annotations) or allow me to search external databases so I can identify which item(s) bind ABCB1 and CYP2C8.
+  Correction iters:     0
+
+Q [80f72139562c]: Which of the following binds to the genes SLC22A5 and SLC15A1 ? 1. Ceftazidime 2. 4-{[5-chloro-4-(1H-indol-3-yl)pyrimidin-2-yl]amino}-N-ethylpiperidine-1-carboxamide 3. N-(4-Aminobutanoyl)-S-(4-methoxybenzyl)-L-cysteinylglycine 4. Adenosine-5'-ditungstate 5. Trazodone
+  Expected: 1
+  Got:      0
+  Thinking: I can’t determine that — the tool returned no information about binding to SLC22A5 or SLC15A1. Please provide supporting data or allow me to query external databases so I can check each compound.
+  Correction iters:     0
+
+Q [fe183b21dc78]: Which of the following increases the gene expression of RNF167 and AMDHD2 ? 1. Oxybutynin 2. Iopamidol 3. Betula pendula pollen 4. AMG 424 5. 4-(Acetylamino)-3-[(Aminoacetyl)Amino]Benzoic Acid
+  Expected: 1
+  Got:      0
+  Thinking: I found no information in the provided data/tools linking any of the five items to increased expression of RNF167 or AMDHD2. I cannot determine which (if any) increases those genes. Would you like me to search external literature/databases?
+  Correction iters:     0
+
+Q [c94cbbadc3f9]: Which of the following decreases the gene expression of POLR2G and DDIT4 ? 1. Vincristine 2. Carbazochrome sulfonic acid 3. alpha-methylthiofentanyl 4. Pegteograstim 5. Latanoprostene bunod
+  Expected: 1
+  Got:      0
+  Thinking: I can’t determine that from the available tool output — no data was returned about these drugs’ effects on POLR2G or DDIT4. 
+
+If you want, I can search literature/databases (PubMed, GEO, Connectivity Map, DrugBank) or run a differential‑expression query to find which of those drugs decreases POLR2G and DDIT4. Which should I use?
+  Correction iters:     0
+
+Q [3aaaa4033c5b]: Which of the following is subject to decreased expression by the drugs Fluconazole and Omacetaxine mepesuccinate ? 1. WFS1 2. LMOD1 3. LOC127886202 4. LOC105370601 5. LOC127897131
+  Expected: 1
+  Got:      0
+  Thinking: Only WFS1 is present in the provided data (WFS1 — wolframin ER transmembrane glycoprotein, nodeID 4910). No information was given about decreased expression by Fluconazole or Omacetaxine mepesuccinate for any of the five items, so the question cannot be answered from the supplied data.
+  Cypher (1st attempt): MATCH (d1:Drug {commonName: 'Fluconazole'})-[:CHEMICALDECREASESEXPRESSION]->(g:Gene)<-[:CHEMICALDECREASESEXPRESSION]-(d2:Drug {commonName: 'Omacetaxine mepesuccinate'})
+RETURN g.geneSymbol AS geneSymbol, g.commonName AS commonName, g.nodeID AS nodeID;
+  Correction iters:     0
+
+Q [836ecfe99df8]: Which of the following belongs to the drug classes Esters and Local Anesthesia ? 1. Chloroprocaine 2. Iopamidol 3. Icariin 4. Manganese gluconate 5. Delafloxacin
+  Expected: 1
+  Got:      0
+  Thinking: I don't have any data from the tools to answer this. Please provide a reference/source or allow me to look up the items so I can identify which belongs to Esters and Local Anesthesia.
+  Correction iters:     0
+
+Q [0eec1508eb1c]: Which of the following belongs to the drug classes GABA B Agonists and GABA A Agonists ? 1. Baclofen 2. Castanospermine 3. Poractant alfa 4. Etomidate 5. Silmitasertib
+  Expected: 1
+  Got:      0
+  Thinking: GABA-B agonist: 1 (Baclofen)
+GABA-A agonist: 4 (Etomidate)
+  Correction iters:     0
+
+Q [b3d551cec539]: Which of the following belongs to the drug classes Calcium Channel Antagonists and Dihydropyridines ? 1. Rheinanthrone 2. Trimazosin 3. Clevidipine 4. Chloroform 5. 4-HYDROXY-5-IODO-3-NITROPHENYLACETYL-EPSILON-AMINOCAPROIC ACID ANION
+  Expected: 3
+  Got:      0
+  Thinking: I couldn't find any information in the provided sources to determine this. If you want, I can (a) search external references now or (b) answer from general pharmacology knowledge. Which do you prefer?
+  Correction iters:     0
+
+Q [ee725d13c3dd]: Which of the following can be affected by the drugs Ziprasidone and Naltrexone ? 1. Alzheimer's Disease 2. Alzheimer disease type 1 3. Alzheimer Disease 7 4. Alzheimer Disease, Familial, 3, with Spastic Paraparesis and Unusual Plaques 5. Lewy Body Variant of Alzheimer Disease
+  Expected: 1
+  Got:      0
+  Thinking: I couldn’t retrieve any information from the tool about Ziprasidone or Naltrexone and their disease associations. I can’t determine which of the listed items are affected.
+
+Would you like me to:
+- query a database for drug–disease associations for these two drugs, or
+- have you provide the relevant data so I can analyze it?
+  Cypher (1st attempt): MATCH (drug:Drug)-[:DRUGTREATSDISEASE]->(d:Disease)
+WHERE drug.commonName IN ['Ziprasidone','Naltrexone']
+  AND d.commonName IN ['Alzheimer\'s Disease','Alzheimer disease type 1','Alzheimer Disease 7','Alzheimer Disease, Familial, 3, with Spastic Paraparesis and Unusual Plaques','Lewy Body Variant of Alzheimer Disease']
+WITH d, collect(DISTINCT drug.commonName) AS drugs
+WHERE size(drugs) = 2
+RETURN d.commonName AS disease, drugs;
+  Correction iters:     0
+
+Q [a9bf4169b207]: Which of the following genes performs the molecular functions oxidoreductase activity, oxidizing metal ions and oxidoreductase activity ? 1. FTH1 2. LOC127895777 3. HECTD3 4. LOC127893025 5. LOC127273811
+  Expected: 1
+  Got:      0
+  Thinking: I can't determine that from the provided information — my data query returned no results. Please either supply the gene annotation data (e.g., GO terms or UniProt/NCBI entries) or allow me to look up these genes in public databases so I can identify which one has the oxidoreductase/metal‑ion oxidizing molecular function.
+  Cypher (1st attempt): MATCH (g:Gene)-[:GENEHASMOLECULARFUNCTION]->(mf:MolecularFunction)
+WHERE g.geneSymbol IN ['FTH1','LOC127895777','HECTD3','LOC127893025','LOC127273811']
+  AND mf.commonName IN ['oxidoreductase activity','oxidizing metal ions']
+WITH g, collect(DISTINCT mf.commonName) AS functions
+WHERE size(functions) = 2
+RETURN g.geneSymbol AS gene, functions;
+  Correction iters:     0
+
+Q [b4b30cb0852a]: Which of the following is a gene associated with the cellular components mitochondrial matrix and mitochondrial envelope ? 1. LOC127819012 2. LOC127408216 3. TP53TG3GP 4. SUCLG1 5. LOC124907522
+  Expected: 4
+  Got:      0
+  Thinking: I cannot determine the answer because the information tool returned no data for this query. Please provide the relevant annotation data or allow me to look it up so I can identify which gene is associated with mitochondrial matrix and mitochondrial envelope.
+  Correction iters:     0
+
+Q [5dd406568541]: Which of the following is a gene associated with the diseases Alzheimer Disease, Early Onset and Alzheimer Disease, Late Onset ? 1. LOC127458948 2. LOC122787139 3. TF 4. LOC127403702 5. LOC127828867
+  Expected: 3
+  Got:      0
+  Thinking: I don't have any data from the tools to determine this — the information call returned no results. I cannot answer which gene is associated without additional source data.
+
+Would you like me to look this up (search OMIM/ClinVar/GeneCards or other databases)? If yes, say which sources you prefer or allow me to search broadly.
+  Cypher (1st attempt): MATCH (d1:Disease {commonName: "Alzheimer Disease, Early Onset"})-[:DISEASELOCALIZESTOANATOMY]->(b1:BodyPart)-[:BODYPARTUNDEREXPRESSESGENE|BODYPARTOVEREXPRESSESGENE]->(g:Gene),
+      (d2:Disease {commonName: "Alzheimer Disease, Late Onset"})-[:DISEASELOCALIZESTOANATOMY]->(b2:BodyPart)-[:BODYPARTUNDEREXPRESSESGENE|BODYPARTOVEREXPRESSESGENE]->(g)
+WHERE g.geneSymbol IN ["LOC127458948","LOC122787139","TF","LOC127403702","LOC127828867"]
+RETURN DISTINCT g.geneSymbol AS gene
+  Correction iters:     0
+
+Q [3410cba08fc8]: Which of the following is a gene associated with the diseases Familial Alzheimer Disease (FAD) and Alzheimer Disease, Late Onset ? 1. RPS3AP49 2. P2RX3 3. IGF2 4. LOC127401848 5. ENDOVESL
+  Expected: 3
+  Got:      0
+  Thinking: I couldn’t determine the answer because the information query returned no results. Would you like me to look up gene–disease associations (e.g., OMIM/ClinVar/GeneCards/UniProt) for these five genes now? If yes, tell me which database(s) to use or I’ll search commonly used ones.
+  Cypher (1st attempt): MATCH (d1:Disease {commonName: "Familial Alzheimer Disease (FAD)"})-[:DISEASELOCALIZESTOANATOMY]->(bp1:BodyPart)-[:BODYPARTOVEREXPRESSESGENE|BODYPARTUNDEREXPRESSESGENE]->(g:Gene),
+      (d2:Disease {commonName: "Alzheimer Disease, Late Onset"})-[:DISEASELOCALIZESTOANATOMY]->(bp2:BodyPart)-[:BODYPARTOVEREXPRESSESGENE|BODYPARTUNDEREXPRESSESGENE]->(g)
+WHERE g.geneSymbol IN ["RPS3AP49","P2RX3","IGF2","LOC127401848","ENDOVESL"]
+RETURN DISTINCT g.geneSymbol;
+  Correction iters:     0
+
+Q [6f0435d85691]: Which of the following is a gene associated with the diseases Alzheimer Disease, Early Onset and Alzheimer Disease, Late Onset ? 1. LOC108281145 2. BACE1 3. LOC127459874 4. LOC126806786 5. LOC127822814
+  Expected: 2
+  Got:      0
+  Thinking: I couldn't find any data from the provided sources to answer this. No matching information was returned for those genes. 
+
+If you want, I can look up gene–disease associations for these IDs (e.g., query a gene/disease database) — shall I do that?
+  Cypher (1st attempt): MATCH (g:Gene)
+MATCH (d1:Disease {commonName: 'Alzheimer Disease, Early Onset'})-[:DISEASELOCALIZESTOANATOMY]->(bp1:BodyPart)-[:BODYPARTUNDEREXPRESSESGENE|BODYPARTOVEREXPRESSESGENE]->(g)
+MATCH (d2:Disease {commonName: 'Alzheimer Disease, Late Onset'})-[:DISEASELOCALIZESTOANATOMY]->(bp2:BodyPart)-[:BODYPARTUNDEREXPRESSESGENE|BODYPARTOVEREXPRESSESGENE]->(g)
+WHERE g.geneSymbol IN ['LOC108281145','BACE1','LOC127459874','LOC126806786','LOC127822814']
+RETURN DISTINCT g.geneSymbol AS gene
+  Correction iters:     0
+
+Q [d3c492fc40ab]: Which of the following is a gene associated with the diseases Alzheimer's Disease and Alzheimer Disease, Late Onset ? 1. LOC126806961 2. IL1B 3. LOC124489752 4. LOC127403048 5. LOC126807260
+  Expected: 2
+  Got:      0
+  Thinking: I couldn't find any data from the available tools about these genes or their disease associations, so I can't determine which one is associated with Alzheimer's Disease / Alzheimer Disease, Late Onset.
+
+If you want, I can:
+- look up these genes in public databases (NCBI/OMIM/UniProt) now, or
+- you can provide the association data and I will identify the matching gene.
+
+Which would you prefer?
+  Cypher (1st attempt): MATCH (d1:Disease {commonName: "Alzheimer's Disease"}), (d2:Disease {commonName: "Alzheimer Disease, Late Onset"})
+MATCH (g:Gene)
+WHERE g.geneSymbol IN ['LOC126806961','IL1B','LOC124489752','LOC127403048','LOC126807260']
+  AND (d1)-[:DISEASELOCALIZESTOANATOMY]->(:BodyPart)-[:BODYPARTUNDEREXPRESSESGENE|BODYPARTOVEREXPRESSESGENE]->(g)
+  AND (d2)-[:DISEASELOCALIZESTOANATOMY]->(:BodyPart)-[:BODYPARTUNDEREXPRESSESGENE|BODYPARTOVEREXPRESSESGENE]->(g)
+RETURN DISTINCT g.geneSymbol AS geneSymbol, g.nodeID AS nodeID
+  Correction iters:     0
+
+
+=== Dataset: OpenEnded_1hop.json__graphcypher | Type: open_ended | Mode: graphcypher | Model: gpt-5-mini ===
+Count: 508  |  Correct: 343  |  Accuracy: 0.675 [95% CI 0.633-0.714]
+Average set metrics: exact_match=0.675  precision=0.765  recall=0.724  f1=0.732  jaccard=0.722  overlap=0.766
+By |expected| size:
+  -    1: n=124   acc=0.742 f1=0.747
+  -  2-5: n=145   acc=0.800 f1=0.801
+  - 6-20: n=127   acc=0.630 f1=0.687
+  -  >20: n=112   acc=0.491 f1=0.677
+Telemetry:
+  - first attempt success rate: 0.994 (n=508)
+  - avg correction iterations: 0.000 (n=508)
+  - latency ms: mean=28135 p50=14660 p95=122648 (n=508)
+  - tokens: avg in=9331 out=2225 | total in=4739971 out=1130127
+  - records with error: 0.006 (n=508)
+
+-- Incorrect Questions (165 total, showing 15) --
+Q [50aa638d04b9]: List the genes which bind to the drug Stanozolol
+  Expected: AR
+  Got:      ['AR (nodeID: 4006)']
+  Thinking: AR (nodeID: 4006)
+  Cypher (1st attempt): MATCH (d:Drug {commonName: "Stanozolol"})-[:CHEMICALBINDSGENE]->(g:Gene)
+RETURN DISTINCT g.geneSymbol AS geneSymbol, g.nodeID AS nodeID
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.000  recall=0.000  f1=0.000  jaccard=0.000  overlap=0.000
+  Missing (in expected, not in got): AR
+  Extra (in got, not in expected):   AR (nodeID: 4006)
+
+Q [cb6667f5037c]: List the genes subject to decreased expression by the drug Yohimbine
+  Expected: PFN1
+  Got:      ['PFN1 (profilin 1)']
+  Thinking: Genes decreased by Yohimbine:
+- PFN1 (profilin 1)
+  Cypher (1st attempt): MATCH (d:Drug)-[:CHEMICALDECREASESEXPRESSION]->(g:Gene)
+WHERE d.commonName = 'Yohimbine'
+RETURN DISTINCT g.geneSymbol AS geneSymbol, g.commonName AS commonName, g.nodeID AS nodeID
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.000  recall=0.000  f1=0.000  jaccard=0.000  overlap=0.000
+  Missing (in expected, not in got): PFN1
+  Extra (in got, not in expected):   PFN1 (profilin 1)
+
+Q [4552df9860a8]: List the classes which include the drug Hydroxyzine
+  Expected: Histamine Receptor Antagonists
+  Got:      ['Histamine Receptor Antagonists (classId: 516)']
+  Thinking: - Histamine Receptor Antagonists (classId: 516)
+  Cypher (1st attempt): MATCH (d:Drug)-[:DRUGINCLASS]->(c:DrugClass)
+WHERE d.commonName = "Hydroxyzine"
+RETURN DISTINCT c.commonName AS className, c.nodeID AS classId
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.000  recall=0.000  f1=0.000  jaccard=0.000  overlap=0.000
+  Missing (in expected, not in got): Histamine Receptor Antagonists
+  Extra (in got, not in expected):   Histamine Receptor Antagonists (classId: 516)
+
+Q [69d4640ce2de]: List the diseases which can be affected by the drug Ziprasidone
+  Expected: Alzheimer's Disease
+  Got:      []
+  Thinking: I have no tool data for Ziprasidone — no diseases could be listed.  
+If you want, I can: (a) try the lookup again, or (b) use external sources you provide. Which do you prefer?
+  Cypher (1st attempt): MATCH (drug:Drug {commonName: 'Ziprasidone'})-[:DRUGTREATSDISEASE]->(d:Disease)
+RETURN DISTINCT d.commonName AS disease, d.nodeID AS nodeID, d.uri AS uri;
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.000  recall=0.000  f1=0.000  jaccard=0.000  overlap=0.000
+  Missing (in expected, not in got): Alzheimer's Disease
+  Extra (in got, not in expected):   -
+
+Q [f9f0177a580f]: List the diseases which can be affected by the drug Naltrexone
+  Expected: Alzheimer's Disease
+  Got:      []
+  Thinking: Searching for information on diseases affected by Naltrexone.
+{"question":"Naltrexone diseases affected list"}
+  Cypher (1st attempt): MATCH (drug:Drug {commonName: "Naltrexone"})-[:DRUGTREATSDISEASE]->(d:Disease)
+RETURN DISTINCT d.commonName AS disease, d.nodeID AS nodeID, d.uri AS uri;
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.000  recall=0.000  f1=0.000  jaccard=0.000  overlap=0.000
+  Missing (in expected, not in got): Alzheimer's Disease
+  Extra (in got, not in expected):   -
+
+Q [ebbe488134cf]: List the drugs which bind to the gene CTH
+  Expected: Cysteine
+  Got:      ['Cysteine (ID: 369)']
+  Thinking: Drugs that bind to gene CTH:
+- Cysteine (ID: 369)
+  Cypher (1st attempt): MATCH (d:Drug)-[:CHEMICALBINDSGENE]->(g:Gene {geneSymbol: "CTH"})
+RETURN DISTINCT d.commonName AS drug, d.nodeID AS id
+ORDER BY drug;
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.000  recall=0.000  f1=0.000  jaccard=0.000  overlap=0.000
+  Missing (in expected, not in got): Cysteine
+  Extra (in got, not in expected):   Cysteine (ID: 369)
+
+Q [88d32e5417e9]: List the drugs which bind to the gene ABAT
+  Expected: Alanine, Valproic acid, Pyruvic acid, Vigabatrin, Phenelzine
+  Got:      ['Alanine (DrugBank: DB00160)', 'Phenelzine (DrugBank: DB00780)', 'Pyruvic acid (DrugBank: DB00119)', 'Valproic acid (DrugBank: DB00313)', 'Vigabatrin (DrugBank: DB01080)']
+  Thinking: Drugs binding ABAT:
+- Alanine (DrugBank: DB00160)
+- Pyruvic acid (DrugBank: DB00119)
+- Valproic acid (DrugBank: DB00313)
+- Phenelzine (DrugBank: DB00780)
+- Vigabatrin (DrugBank: DB01080)
+  Cypher (1st attempt): MATCH (d:Drug)-[:CHEMICALBINDSGENE]->(g:Gene {geneSymbol: "ABAT"})
+RETURN DISTINCT d
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.000  recall=0.000  f1=0.000  jaccard=0.000  overlap=0.000
+  Missing (in expected, not in got): Alanine, Phenelzine, Pyruvic acid, Valproic acid, Vigabatrin
+  Extra (in got, not in expected):   Alanine (DrugBank: DB00160), Phenelzine (DrugBank: DB00780), Pyruvic acid (DrugBank: DB00119), Valproic acid (DrugBank: DB00313), Vigabatrin (DrugBank: DB01080)
+
+Q [d97bf1d8e593]: List the drugs which bind to the gene HCN4
+  Expected: Dronedarone
+  Got:      ['Dronedarone (nodeID: 11033)']
+  Thinking: Drugs binding HCN4:
+- Dronedarone (nodeID: 11033)
+  Cypher (1st attempt): MATCH (d:Drug)-[:CHEMICALBINDSGENE]->(g:Gene {geneSymbol: "HCN4"}) RETURN DISTINCT d.commonName AS drug, d.nodeID AS nodeID;
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.000  recall=0.000  f1=0.000  jaccard=0.000  overlap=0.000
+  Missing (in expected, not in got): Dronedarone
+  Extra (in got, not in expected):   Dronedarone (nodeID: 11033)
+
+Q [89c609203d66]: List the drugs which bind to the gene GSTA5
+  Expected: Glutathione
+  Got:      ['Glutathione (DrugBank: DB00143)']
+  Thinking: Drugs binding GSTA5:
+- Glutathione (DrugBank: DB00143)
+  Cypher (1st attempt): MATCH (d:Drug)-[:CHEMICALBINDSGENE]->(g:Gene {geneSymbol: 'GSTA5'}) RETURN DISTINCT d.commonName AS drugName, d.nodeID AS nodeID, d.xrefDrugbank AS xrefDrugbank, d.uri AS uri
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.000  recall=0.000  f1=0.000  jaccard=0.000  overlap=0.000
+  Missing (in expected, not in got): Glutathione
+  Extra (in got, not in expected):   Glutathione (DrugBank: DB00143)
+
+Q [cd1d37d33fae]: List the drugs which increase expression of the gene SAP18
+  Expected: Quinacrine
+  Got:      ['Quinacrine (nodeID: 6626', 'URI: http://jdr.bio/ontologies/alzkb.owl#drug_db01103)']
+  Thinking: Quinacrine (nodeID: 6626, URI: http://jdr.bio/ontologies/alzkb.owl#drug_db01103)
+  Cypher (1st attempt): MATCH (d:Drug)-[:CHEMICALINCREASESEXPRESSION]->(g:Gene {geneSymbol: "SAP18"})
+RETURN DISTINCT d.commonName AS drug, d.nodeID AS nodeID, d.uri AS uri;
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.000  recall=0.000  f1=0.000  jaccard=0.000  overlap=0.000
+  Missing (in expected, not in got): Quinacrine
+  Extra (in got, not in expected):   Quinacrine (nodeID: 6626, URI: http://jdr.bio/ontologies/alzkb.owl#drug_db01103)
+
+Q [c7f9ef4f56fc]: List the drugs which decrease expression of the gene TOR3A
+  Expected: Vinblastine
+  Got:      ['Vinblastine (drugID: 3180)']
+  Thinking: - Vinblastine (drugID: 3180)
+  Cypher (1st attempt): MATCH (d:Drug)-[:CHEMICALDECREASESEXPRESSION]->(g:Gene {geneSymbol: "TOR3A"})
+RETURN DISTINCT d.commonName AS drugName, d.nodeID AS drugID;
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.000  recall=0.000  f1=0.000  jaccard=0.000  overlap=0.000
+  Missing (in expected, not in got): Vinblastine
+  Extra (in got, not in expected):   Vinblastine (drugID: 3180)
+
+Q [95896a01cd60]: List the biological processes involving the gene FOXE1
+  Expected: embryonic organ development, regulation of hormone levels, skin epidermis development, molting cycle process, hair follicle development, thyroid hormone generation, embryonic morphogenesis, cell motility, skin development, digestive tract development, hair follicle morphogenesis, hematopoietic or lymphoid organ development, tissue morphogenesis, organ morphogenesis, soft palate development, embryo development, digestive system development, thymus development, negative regulation of transcription from RNA polymerase II promoter, tube development, epidermis morphogenesis, endocrine system development, epidermis development, thyroid hormone metabolic process, localization of cell, cell migration, organic hydroxy compound metabolic process, hormone metabolic process, phenol-containing compound metabolic process, embryonic organ morphogenesis, molting cycle, pharynx development, hair cycle process, hair cycle, hard palate development, immune system development, thyroid gland development, cellular modified amino acid metabolic process, palate development, morphogenesis of an epithelium, gland development
+  Got:      ['epidermis development (GO:0008544)', 'thyroid hormone metabolic process (GO:0042403)', 'cellular modified amino acid metabolic process (GO:0006575)', 'gland development (GO:0048732)', 'epidermis morphogenesis (GO:0048730)', 'localization of cell (GO:0051674)', 'embryonic organ development (GO:0048568)', 'thyroid hormone generation (GO:0006590)', 'molting cycle process (GO:0022404)', 'hair cycle (GO:0042633)', 'hard palate development (GO:0060022)', 'immune system development (GO:0002520)', 'morphogenesis of an epithelium (GO:0002009)', 'digestive system development (GO:0055123)', 'hormone metabolic process (GO:0042445)', 'molting cycle (GO:0042303)', 'pharynx development (GO:0060465)', 'hematopoietic or lymphoid organ development (GO:0048534)', 'soft palate development (GO:0060023)', 'hair follicle morphogenesis (GO:0031069)', 'skin development (GO:0043588)', 'skin epidermis development (GO:0098773)', 'negative regulation of transcription from RNA polymerase II promoter (GO:0000122)', 'embryo development (GO:0009790)', 'phenol-containing compound metabolic process (GO:0018958)', 'tube development (GO:0035295)', 'thyroid gland development (GO:0030878)', 'hair cycle process (GO:0022405)', 'endocrine system development (GO:0035270)', 'digestive tract development (GO:0048565)', 'tissue morphogenesis (GO:0048729)', 'cell migration (GO:0016477)', 'embryonic morphogenesis (GO:0048598)', 'hair follicle development (GO:0001942)', 'organ morphogenesis (GO:0009887)', 'embryonic organ morphogenesis (GO:0048562)', 'thymus development (GO:0048538)', 'cell motility (GO:0048870)', 'organic hydroxy compound metabolic process (GO:1901615)', 'regulation of hormone levels (GO:0010817)', 'palate development (GO:0060021)']
+  Thinking: Biological processes involving FOXE1:
+- pharynx development (GO:0060465)
+- localization of cell (GO:0051674)
+- hair cycle (GO:0042633)
+- hematopoietic or lymphoid organ development (GO:0048534)
+- thyroid hormone metabolic process (GO:0042403)
+- morphogenesis of an epithelium (GO:0002009)
+- cell migration (GO:0016477)
+- molting cycle (GO:0042303)
+- tissue morphogenesis (GO:0048729)
+- negative regulation of transcription from RNA polymerase II promoter (GO:0000122)
+- regulation of hormone levels (GO:0010817)
+- endocrine system development (GO:0035270)
+- tube development (GO:0035295)
+- thyroid gland development (GO:0030878)
+- embryonic organ morphogenesis (GO:0048562)
+- epidermis morphogenesis (GO:0048730)
+- soft palate development (GO:0060023)
+- digestive system development (GO:0055123)
+- thyroid hormone generation (GO:0006590)
+- molting cycle process (GO:0022404)
+- digestive tract development (GO:0048565)
+- embryonic organ development (GO:0048568)
+- gland development (GO:0048732)
+- hair follicle morphogenesis (GO:0031069)
+- skin development (GO:0043588)
+- hair cycle process (GO:0022405)
+- palate development (GO:0060021)
+- embryo development (GO:0009790)
+- hard palate development (GO:0060022)
+- hormone metabolic process (GO:0042445)
+- cell motility (GO:0048870)
+- cellular modified amino acid metabolic process (GO:0006575)
+- phenol-containing compound metabolic process (GO:0018958)
+- thymus development (GO:0048538)
+- embryonic morphogenesis (GO:0048598)
+- immune system development (GO:0002520)
+- organic hydroxy compound metabolic process (GO:1901615)
+- epidermis development (GO:0008544)
+- skin epidermis development (GO:0098773)
+- hair follicle development (GO:0001942)
+- organ morphogenesis (GO:0009887)
+  Cypher (1st attempt): MATCH (g:Gene {geneSymbol: "FOXE1"})-[:GENEPARTICIPATESINBIOLOGICALPROCESS]->(bp:BiologicalProcess)
+RETURN DISTINCT bp.commonName, bp.xrefGeneOntology, bp.nodeID, bp.uri;
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.000  recall=0.000  f1=0.000  jaccard=0.000  overlap=0.000
+  Missing (in expected, not in got): cell migration, cell motility, cellular modified amino acid metabolic process, digestive system development, digestive tract development, embryo development, embryonic morphogenesis, embryonic organ development, embryonic organ morphogenesis, endocrine system development, epidermis development, epidermis morphogenesis, gland development, hair cycle, hair cycle process, hair follicle development, hair follicle morphogenesis, hard palate development, hematopoietic or lymphoid organ development, hormone metabolic process, immune system development, localization of cell, molting cycle, molting cycle process, morphogenesis of an epithelium, negative regulation of transcription from RNA polymerase II promoter, organ morphogenesis, organic hydroxy compound metabolic process, palate development, pharynx development, phenol-containing compound metabolic process, regulation of hormone levels, skin development, skin epidermis development, soft palate development, thymus development, thyroid gland development, thyroid hormone generation, thyroid hormone metabolic process, tissue morphogenesis, tube development
+  Extra (in got, not in expected):   cell migration (GO:0016477), cell motility (GO:0048870), cellular modified amino acid metabolic process (GO:0006575), digestive system development (GO:0055123), digestive tract development (GO:0048565), embryo development (GO:0009790), embryonic morphogenesis (GO:0048598), embryonic organ development (GO:0048568), embryonic organ morphogenesis (GO:0048562), endocrine system development (GO:0035270), epidermis development (GO:0008544), epidermis morphogenesis (GO:0048730), gland development (GO:0048732), hair cycle (GO:0042633), hair cycle process (GO:0022405), hair follicle development (GO:0001942), hair follicle morphogenesis (GO:0031069), hard palate development (GO:0060022), hematopoietic or lymphoid organ development (GO:0048534), hormone metabolic process (GO:0042445), immune system development (GO:0002520), localization of cell (GO:0051674), molting cycle (GO:0042303), molting cycle process (GO:0022404), morphogenesis of an epithelium (GO:0002009), negative regulation of transcription from RNA polymerase II promoter (GO:0000122), organ morphogenesis (GO:0009887), organic hydroxy compound metabolic process (GO:1901615), palate development (GO:0060021), pharynx development (GO:0060465), phenol-containing compound metabolic process (GO:0018958), regulation of hormone levels (GO:0010817), skin development (GO:0043588), skin epidermis development (GO:0098773), soft palate development (GO:0060023), thymus development (GO:0048538), thyroid gland development (GO:0030878), thyroid hormone generation (GO:0006590), thyroid hormone metabolic process (GO:0042403), tissue morphogenesis (GO:0048729), tube development (GO:0035295)
+
+Q [443611b4d655]: List the biological processes involving the gene GLYR1
+  Expected: oxidation-reduction process
+  Got:      ['oxidation-reduction process (GO:0055114)']
+  Thinking: Biological processes involving GLYR1:
+- oxidation-reduction process (GO:0055114)
+  URI: http://jdr.bio/ontologies/alzkb.owl#biologicalprocess_oxidation-reduction_process
+  Cypher (1st attempt): MATCH (g:Gene {geneSymbol: "GLYR1"})-[:GENEPARTICIPATESINBIOLOGICALPROCESS]->(bp:BiologicalProcess)
+RETURN DISTINCT bp.commonName AS biologicalProcess, bp.xrefGeneOntology AS goId, bp.uri AS uri;
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.000  recall=0.000  f1=0.000  jaccard=0.000  overlap=0.000
+  Missing (in expected, not in got): oxidation-reduction process
+  Extra (in got, not in expected):   oxidation-reduction process (GO:0055114)
+
+Q [9e03faa6a475]: List the biological processes involving the gene SAMSN1
+  Expected: regulation of immune response, negative regulation of phosphate metabolic process, negative regulation of protein modification process, negative regulation of phosphorylation, negative regulation of leukocyte activation, negative regulation of peptidyl-tyrosine phosphorylation, negative regulation of adaptive immune response, regulation of lymphocyte activation, negative regulation of immune response, regulation of peptidyl-tyrosine phosphorylation, negative regulation of immune system process, regulation of B cell activation, negative regulation of phosphorus metabolic process, negative regulation of cell activation, negative regulation of lymphocyte activation, regulation of leukocyte activation, negative regulation of protein phosphorylation, regulation of adaptive immune response, negative regulation of B cell activation, regulation of cell activation
+  Got:      ['negative regulation of protein phosphorylation — GO:0001933', 'negative regulation of phosphate metabolic process — GO:0045936', 'negative regulation of phosphorus metabolic process — GO:0010563', 'regulation of immune response — GO:0050776', 'negative regulation of lymphocyte activation — GO:0051250', 'negative regulation of immune system process — GO:0002683', 'negative regulation of immune response — GO:0050777', 'regulation of B cell activation — GO:0050864', 'negative regulation of B cell activation — GO:0050869', 'negative regulation of peptidyl-tyrosine phosphorylation — GO:0050732', 'negative regulation of phosphorylation — GO:0042326', 'regulation of peptidyl-tyrosine phosphorylation — GO:0050730', 'regulation of lymphocyte activation — GO:0051249', 'negative regulation of protein modification process — GO:0031400', 'regulation of adaptive immune response — GO:0002819', 'negative regulation of cell activation — GO:0050866', 'negative regulation of leukocyte activation — GO:0002695', 'regulation of leukocyte activation — GO:0002694', 'regulation of cell activation — GO:0050865', 'negative regulation of adaptive immune response — GO:0002820']
+  Thinking: Biological processes involving SAMSN1:
+
+- regulation of cell activation — GO:0050865
+- negative regulation of phosphorylation — GO:0042326
+- negative regulation of leukocyte activation — GO:0002695
+- negative regulation of cell activation — GO:0050866
+- regulation of immune response — GO:0050776
+- negative regulation of immune response — GO:0050777
+- regulation of lymphocyte activation — GO:0051249
+- negative regulation of phosphate metabolic process — GO:0045936
+- negative regulation of protein phosphorylation — GO:0001933
+- regulation of adaptive immune response — GO:0002819
+- negative regulation of immune system process — GO:0002683
+- regulation of peptidyl-tyrosine phosphorylation — GO:0050730
+- regulation of B cell activation — GO:0050864
+- negative regulation of protein modification process — GO:0031400
+- negative regulation of peptidyl-tyrosine phosphorylation — GO:0050732
+- negative regulation of phosphorus metabolic process — GO:0010563
+- negative regulation of B cell activation — GO:0050869
+- negative regulation of adaptive immune response — GO:0002820
+- regulation of leukocyte activation — GO:0002694
+- negative regulation of lymphocyte activation — GO:0051250
+  Cypher (1st attempt): MATCH (g:Gene {geneSymbol: 'SAMSN1'})-[:GENEPARTICIPATESINBIOLOGICALPROCESS]->(bp:BiologicalProcess)
+RETURN DISTINCT bp.commonName AS biologicalProcess, bp.xrefGeneOntology AS goId, bp.nodeID AS nodeID, bp.uri AS uri;
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.000  recall=0.000  f1=0.000  jaccard=0.000  overlap=0.000
+  Missing (in expected, not in got): negative regulation of B cell activation, negative regulation of adaptive immune response, negative regulation of cell activation, negative regulation of immune response, negative regulation of immune system process, negative regulation of leukocyte activation, negative regulation of lymphocyte activation, negative regulation of peptidyl-tyrosine phosphorylation, negative regulation of phosphate metabolic process, negative regulation of phosphorus metabolic process, negative regulation of phosphorylation, negative regulation of protein modification process, negative regulation of protein phosphorylation, regulation of B cell activation, regulation of adaptive immune response, regulation of cell activation, regulation of immune response, regulation of leukocyte activation, regulation of lymphocyte activation, regulation of peptidyl-tyrosine phosphorylation
+  Extra (in got, not in expected):   negative regulation of B cell activation — GO:0050869, negative regulation of adaptive immune response — GO:0002820, negative regulation of cell activation — GO:0050866, negative regulation of immune response — GO:0050777, negative regulation of immune system process — GO:0002683, negative regulation of leukocyte activation — GO:0002695, negative regulation of lymphocyte activation — GO:0051250, negative regulation of peptidyl-tyrosine phosphorylation — GO:0050732, negative regulation of phosphate metabolic process — GO:0045936, negative regulation of phosphorus metabolic process — GO:0010563, negative regulation of phosphorylation — GO:0042326, negative regulation of protein modification process — GO:0031400, negative regulation of protein phosphorylation — GO:0001933, regulation of B cell activation — GO:0050864, regulation of adaptive immune response — GO:0002819, regulation of cell activation — GO:0050865, regulation of immune response — GO:0050776, regulation of leukocyte activation — GO:0002694, regulation of lymphocyte activation — GO:0051249, regulation of peptidyl-tyrosine phosphorylation — GO:0050730
+
+Q [7469363e99a9]: List the biological processes involving the gene TMEM265
+  Expected: response to biotic stimulus
+  Got:      ['response to biotic stimulus (GO:0009607) — http://jdr.bio/ontologies/alzkb.owl#biologicalprocess_response_to_biotic_stimulus']
+  Thinking: Biological process involving TMEM265:
+- response to biotic stimulus (GO:0009607) — http://jdr.bio/ontologies/alzkb.owl#biologicalprocess_response_to_biotic_stimulus
+  Cypher (1st attempt): MATCH (g:Gene {geneSymbol: "TMEM265"})-[:GENEPARTICIPATESINBIOLOGICALPROCESS]->(bp:BiologicalProcess)
+RETURN DISTINCT bp.commonName AS biologicalProcess, bp.xrefGeneOntology AS goId, bp.nodeID AS nodeID, bp.uri AS uri
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.000  recall=0.000  f1=0.000  jaccard=0.000  overlap=0.000
+  Missing (in expected, not in got): response to biotic stimulus
+  Extra (in got, not in expected):   response to biotic stimulus (GO:0009607) — http://jdr.bio/ontologies/alzkb.owl#biologicalprocess_response_to_biotic_stimulus
+
+
+=== Dataset: OpenEnded_2hop.json__graphcypher | Type: open_ended | Mode: graphcypher | Model: gpt-5-mini ===
+Count: 450  |  Correct: 306  |  Accuracy: 0.680 [95% CI 0.636-0.721]
+Average set metrics: exact_match=0.680  precision=0.753  recall=0.741  f1=0.742  jaccard=0.735  overlap=0.756
+By |expected| size:
+  -    1: n=69    acc=0.739 f1=0.739
+  -  2-5: n=104   acc=0.712 f1=0.722
+  - 6-20: n=121   acc=0.711 f1=0.743
+  -  >20: n=156   acc=0.609 f1=0.755
+Telemetry:
+  - first attempt success rate: 0.947 (n=450)
+  - avg correction iterations: 0.000 (n=450)
+  - latency ms: mean=41376 p50=21499 p95=131020 (n=450)
+  - tokens: avg in=5953 out=2881 | total in=2679000 out=1296551
+  - records with error: 0.004 (n=450)
+
+-- Incorrect Questions (144 total, showing 15) --
+Q [31a324f974c4]: List the drugs which commonly bind to the genes MGAM and GANAB
+  Expected: Miglitol
+  Got:      ['Miglitol (drugId: 3817)']
+  Thinking: Miglitol (drugId: 3817)
+  Cypher (1st attempt): MATCH (d:Drug)-[:CHEMICALBINDSGENE]->(g1:Gene {geneSymbol: "MGAM"}),
+      (d)-[:CHEMICALBINDSGENE]->(g2:Gene {geneSymbol: "GANAB"})
+RETURN DISTINCT d.commonName AS drug, d.nodeID AS drugId
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.000  recall=0.000  f1=0.000  jaccard=0.000  overlap=0.000
+  Missing (in expected, not in got): Miglitol
+  Extra (in got, not in expected):   Miglitol (drugId: 3817)
+
+Q [88f5e4eb5a82]: List the drugs which commonly bind to the genes NAT2 and TSPO
+  Expected: Clonazepam
+  Got:      []
+  Thinking: I couldn't find any results — the data source returned no information about drugs binding NAT2 or TSPO. 
+
+Would you like me to search external databases (PubChem/DrugBank/ChEMBL) or upload a dataset to check?
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.000  recall=0.000  f1=0.000  jaccard=0.000  overlap=0.000
+  Missing (in expected, not in got): Clonazepam
+  Extra (in got, not in expected):   -
+
+Q [235627cb9a24]: List the drugs which commonly bind to the genes LRAT and DHRS4
+  Expected: Vitamin A
+  Got:      ['Vitamin A (DrugBank ID: DB00162)']
+  Thinking: - Vitamin A (DrugBank ID: DB00162)
+  Cypher (1st attempt): MATCH (d:Drug)-[:CHEMICALBINDSGENE]->(g1:Gene {geneSymbol:'LRAT'}),
+      (d)-[:CHEMICALBINDSGENE]->(g2:Gene {geneSymbol:'DHRS4'})
+RETURN DISTINCT d.commonName AS commonName, d.xrefDrugbank AS xrefDrugbank, d.nodeID AS nodeID, d.uri AS uri
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.000  recall=0.000  f1=0.000  jaccard=0.000  overlap=0.000
+  Missing (in expected, not in got): Vitamin A
+  Extra (in got, not in expected):   Vitamin A (DrugBank ID: DB00162)
+
+Q [ab204899265c]: List the drugs which commonly bind to the genes HRH1 and PTK2
+  Expected: Chloropyramine
+  Got:      ['Chloropyramine (nodeID: 13910)']
+  Thinking: Chloropyramine (nodeID: 13910)
+  Cypher (1st attempt): MATCH (d:Drug)-[:CHEMICALBINDSGENE]->(g1:Gene {geneSymbol: 'HRH1'}), (d)-[:CHEMICALBINDSGENE]->(g2:Gene {geneSymbol: 'PTK2'}) RETURN DISTINCT d.commonName AS drug, d.nodeID AS nodeID
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.000  recall=0.000  f1=0.000  jaccard=0.000  overlap=0.000
+  Missing (in expected, not in got): Chloropyramine
+  Extra (in got, not in expected):   Chloropyramine (nodeID: 13910)
+
+Q [3c4f5024b93c]: List the genes which commonly bind to the drugs Amifostine and Ribavirin
+  Expected: ENPP1
+  Got:      ['ENPP1 (nodeID: 4496)']
+  Thinking: Common gene binding both Amifostine and Ribavirin:
+- ENPP1 (nodeID: 4496)
+  Cypher (1st attempt): MATCH (d1:Drug {commonName: 'Amifostine'})-[:CHEMICALBINDSGENE]->(g:Gene)<-[:CHEMICALBINDSGENE]-(d2:Drug {commonName: 'Ribavirin'})
+RETURN DISTINCT g.geneSymbol AS geneSymbol, g.nodeID AS nodeID
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.000  recall=0.000  f1=0.000  jaccard=0.000  overlap=0.000
+  Missing (in expected, not in got): ENPP1
+  Extra (in got, not in expected):   ENPP1 (nodeID: 4496)
+
+Q [0f0256d6609d]: List the drugs which commonly increase expression of the genes FOXO3 and GDPD5
+  Expected: Tretinoin, Norethisterone, Isotretinoin, Levonorgestrel, Danazol, Alitretinoin, Testosterone
+  Got:      []
+  Thinking: No entries found. The available data contain no drugs reported to commonly increase expression of both FOXO3 and GDPD5.
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.000  recall=0.000  f1=0.000  jaccard=0.000  overlap=0.000
+  Missing (in expected, not in got): Alitretinoin, Danazol, Isotretinoin, Levonorgestrel, Norethisterone, Testosterone, Tretinoin
+  Extra (in got, not in expected):   -
+
+Q [cb2623562041]: List the drugs which commonly increase expression of the genes RRP8 and MLLT11
+  Expected: Glyburide, Irinotecan, Quinacrine, Bortezomib, Ropinirole, Mitomycin, Cytarabine, Clofarabine
+  Got:      ['Mitomycin (DB00305)', 'Glyburide (DB01016)', 'Bortezomib (DB00188)', 'Quinacrine (DB01103)', 'Ropinirole (DB00268)', 'Clofarabine (DB00631)', 'Irinotecan (DB00762)', 'Cytarabine (DB00987)']
+  Thinking: - Bortezomib (DB00188)
+- Clofarabine (DB00631)
+- Mitomycin (DB00305)
+- Ropinirole (DB00268)
+- Cytarabine (DB00987)
+- Irinotecan (DB00762)
+- Quinacrine (DB01103)
+- Glyburide (DB01016)
+  Cypher (1st attempt): MATCH (d:Drug)-[:CHEMICALINCREASESEXPRESSION]->(g1:Gene {geneSymbol: 'RRP8'}),
+      (d)-[:CHEMICALINCREASESEXPRESSION]->(g2:Gene {geneSymbol: 'MLLT11'})
+RETURN DISTINCT d.commonName AS commonName, d.nodeID AS nodeID, d.xrefDrugbank AS xrefDrugbank, d.uri AS uri
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.000  recall=0.000  f1=0.000  jaccard=0.000  overlap=0.000
+  Missing (in expected, not in got): Bortezomib, Clofarabine, Cytarabine, Glyburide, Irinotecan, Mitomycin, Quinacrine, Ropinirole
+  Extra (in got, not in expected):   Bortezomib (DB00188), Clofarabine (DB00631), Cytarabine (DB00987), Glyburide (DB01016), Irinotecan (DB00762), Mitomycin (DB00305), Quinacrine (DB01103), Ropinirole (DB00268)
+
+Q [bf0a54df3498]: List the drugs which commonly increase expression of the genes STIMATE and NNT
+  Expected: Olanzapine
+  Got:      ['Olanzapine (DB00334)']
+  Thinking: Olanzapine (DB00334) — reported to commonly increase expression of STIMATE and NNT.
+Reference: http://jdr.bio/ontologies/alzkb.owl#drug_db00334
+  Cypher (1st attempt): MATCH (d:Drug)-[:CHEMICALINCREASESEXPRESSION]->(g1:Gene {geneSymbol: 'STIMATE'}), (d)-[:CHEMICALINCREASESEXPRESSION]->(g2:Gene {geneSymbol: 'NNT'})
+RETURN DISTINCT d.commonName AS drug, d.nodeID AS nodeID, d.uri AS uri
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.000  recall=0.000  f1=0.000  jaccard=0.000  overlap=0.000
+  Missing (in expected, not in got): Olanzapine
+  Extra (in got, not in expected):   Olanzapine (DB00334)
+
+Q [b1c5a498e581]: List the drugs which commonly increase expression of the genes PLCB3 and ACLY
+  Expected: Felbamate
+  Got:      ['Felbamate (nodeID: 5642)']
+  Thinking: Felbamate (nodeID: 5642)
+  Cypher (1st attempt): MATCH (d:Drug)-[:CHEMICALINCREASESEXPRESSION]->(g:Gene)
+WHERE g.geneSymbol IN ['PLCB3','ACLY']
+WITH d, collect(DISTINCT g.geneSymbol) AS genes
+WHERE size(genes) = 2
+RETURN d.commonName AS drug, d.nodeID AS nodeID
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.000  recall=0.000  f1=0.000  jaccard=0.000  overlap=0.000
+  Missing (in expected, not in got): Felbamate
+  Extra (in got, not in expected):   Felbamate (nodeID: 5642)
+
+Q [6530825605c9]: List the genes commonly subject to increased expression by the drugs Ropinirole and Trichlormethiazide
+  Expected: GHR
+  Got:      ['GHR — growth hormone receptor']
+  Thinking: GHR — growth hormone receptor
+  Cypher (1st attempt): MATCH (d1:Drug {commonName: 'Ropinirole'})-[:CHEMICALINCREASESEXPRESSION]->(g:Gene)<-[:CHEMICALINCREASESEXPRESSION]-(d2:Drug {commonName: 'Trichlormethiazide'})
+RETURN DISTINCT g.geneSymbol AS geneSymbol, g.commonName AS commonName, g.nodeID AS nodeID, g.uri AS uri;
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.000  recall=0.000  f1=0.000  jaccard=0.000  overlap=0.000
+  Missing (in expected, not in got): GHR
+  Extra (in got, not in expected):   GHR — growth hormone receptor
+
+Q [1255ba96bfa9]: List the genes commonly subject to increased expression by the drugs Dexamethasone and Vorinostat
+  Expected: METRN, CDKN1A, CCND3, CYTH1, RPS6KA1, TIPARP, GLRX, RGS2, PRKCD, DNAJB1, AMDHD2, DDIT4, MVP, PLCB3, NFIL3, PLA2G15, GADD45B, ABCF3
+  Got:      ['DDIT4 (DNA damage inducible transcript 4)', 'PLCB3 (phospholipase C beta 3)', 'RGS2 (regulator of G protein signaling 2)', 'DNAJB1 (DnaJ heat shock protein family (Hsp40) member B1)', 'TIPARP (TCDD inducible poly(ADP-ribose) polymerase)', 'MVP (major vault protein)', 'PRKCD (protein kinase C delta)', 'CDKN1A (cyclin dependent kinase inhibitor 1A)', 'NFIL3 (nuclear factor', 'CCND3 (cyclin D3)', 'interleukin 3 regulated)', 'ABCF3 (ATP binding cassette subfamily F member 3)', 'CYTH1 (cytohesin 1)', 'RPS6KA1 (ribosomal protein S6 kinase A1)', 'GLRX (glutaredoxin)', 'AMDHD2 (amidohydrolase domain containing 2)', 'PLA2G15 (phospholipase A2 group XV)', 'METRN (meteorin', 'glial cell differentiation regulator)', 'GADD45B (growth arrest and DNA damage inducible beta)']
+  Thinking: Genes commonly subject to increased expression by Dexamethasone and Vorinostat:
+
+- PLA2G15 (phospholipase A2 group XV)
+- CCND3 (cyclin D3)
+- RGS2 (regulator of G protein signaling 2)
+- GLRX (glutaredoxin)
+- TIPARP (TCDD inducible poly(ADP-ribose) polymerase)
+- DNAJB1 (DnaJ heat shock protein family (Hsp40) member B1)
+- METRN (meteorin, glial cell differentiation regulator)
+- AMDHD2 (amidohydrolase domain containing 2)
+- ABCF3 (ATP binding cassette subfamily F member 3)
+- DDIT4 (DNA damage inducible transcript 4)
+- RPS6KA1 (ribosomal protein S6 kinase A1)
+- CDKN1A (cyclin dependent kinase inhibitor 1A)
+- PRKCD (protein kinase C delta)
+- NFIL3 (nuclear factor, interleukin 3 regulated)
+- PLCB3 (phospholipase C beta 3)
+- GADD45B (growth arrest and DNA damage inducible beta)
+- MVP (major vault protein)
+- CYTH1 (cytohesin 1)
+  Cypher (1st attempt): MATCH (d1:Drug {commonName: "Dexamethasone"})-[:CHEMICALINCREASESEXPRESSION]->(g:Gene)<-[:CHEMICALINCREASESEXPRESSION]-(d2:Drug {commonName: "Vorinostat"})
+RETURN DISTINCT g.geneSymbol AS geneSymbol, g.commonName AS commonName, g.nodeID AS nodeID, g.uri AS uri;
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.000  recall=0.000  f1=0.000  jaccard=0.000  overlap=0.000
+  Missing (in expected, not in got): ABCF3, AMDHD2, CCND3, CDKN1A, CYTH1, DDIT4, DNAJB1, GADD45B, GLRX, METRN, MVP, NFIL3, PLA2G15, PLCB3, PRKCD, RGS2, RPS6KA1, TIPARP
+  Extra (in got, not in expected):   ABCF3 (ATP binding cassette subfamily F member 3), AMDHD2 (amidohydrolase domain containing 2), CCND3 (cyclin D3), CDKN1A (cyclin dependent kinase inhibitor 1A), CYTH1 (cytohesin 1), DDIT4 (DNA damage inducible transcript 4), DNAJB1 (DnaJ heat shock protein family (Hsp40) member B1), GADD45B (growth arrest and DNA damage inducible beta), GLRX (glutaredoxin), METRN (meteorin, MVP (major vault protein), NFIL3 (nuclear factor, PLA2G15 (phospholipase A2 group XV), PLCB3 (phospholipase C beta 3), PRKCD (protein kinase C delta), RGS2 (regulator of G protein signaling 2), RPS6KA1 (ribosomal protein S6 kinase A1), TIPARP (TCDD inducible poly(ADP-ribose) polymerase), glial cell differentiation regulator), interleukin 3 regulated)
+
+Q [72d0007c17fa]: List the drugs which commonly decrease expression of the genes DLD and TM9SF3
+  Expected: Praziquantel, Menadione, Nortriptyline
+  Got:      ['Menadione (DrugBank: DB00170)', 'Nortriptyline (DrugBank: DB00540)', 'Praziquantel (DrugBank: DB01058)']
+  Thinking: - Menadione (DrugBank: DB00170)
+- Nortriptyline (DrugBank: DB00540)
+- Praziquantel (DrugBank: DB01058)
+  Cypher (1st attempt): MATCH (drug:Drug)-[:CHEMICALDECREASESEXPRESSION]->(g1:Gene {geneSymbol:'DLD'}), (drug)-[:CHEMICALDECREASESEXPRESSION]->(g2:Gene {geneSymbol:'TM9SF3'})
+RETURN DISTINCT drug.commonName, drug.nodeID, drug.xrefDrugbank, drug.uri;
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.000  recall=0.000  f1=0.000  jaccard=0.000  overlap=0.000
+  Missing (in expected, not in got): Menadione, Nortriptyline, Praziquantel
+  Extra (in got, not in expected):   Menadione (DrugBank: DB00170), Nortriptyline (DrugBank: DB00540), Praziquantel (DrugBank: DB01058)
+
+Q [7448efa3de2e]: List the drugs which commonly decrease expression of the genes RPS4Y1 and HMGCS1
+  Expected: Tretinoin, Isotretinoin, Temsirolimus, Alitretinoin, Mitomycin, Erlotinib, Vemurafenib, Cinnarizine, Biperiden, Idarubicin
+  Got:      ['Cinnarizine (ID: 3147)', 'Biperiden (ID: 5880)', 'Tretinoin (ID: 6398)', 'Temsirolimus (ID: 9473)', 'Alitretinoin (ID: 3261)', 'Erlotinib (ID: 3312)', 'Vemurafenib (ID: 13792)', 'Mitomycin (ID: 4791)', 'Idarubicin (ID: 6205)', 'Isotretinoin (ID: 5585)']
+  Thinking: Drugs that commonly decrease expression of RPS4Y1 and HMGCS1:
+
+- Cinnarizine (ID: 3147)
+- Alitretinoin (ID: 3261)
+- Erlotinib (ID: 3312)
+- Mitomycin (ID: 4791)
+- Isotretinoin (ID: 5585)
+- Biperiden (ID: 5880)
+- Idarubicin (ID: 6205)
+- Tretinoin (ID: 6398)
+- Temsirolimus (ID: 9473)
+- Vemurafenib (ID: 13792)
+  Cypher (1st attempt): MATCH (d:Drug)-[:CHEMICALDECREASESEXPRESSION]->(g1:Gene {geneSymbol:'RPS4Y1'}), (d)-[:CHEMICALDECREASESEXPRESSION]->(g2:Gene {geneSymbol:'HMGCS1'}) RETURN DISTINCT d.commonName AS drugName, d.nodeID AS drugID;
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.000  recall=0.000  f1=0.000  jaccard=0.000  overlap=0.000
+  Missing (in expected, not in got): Alitretinoin, Biperiden, Cinnarizine, Erlotinib, Idarubicin, Isotretinoin, Mitomycin, Temsirolimus, Tretinoin, Vemurafenib
+  Extra (in got, not in expected):   Alitretinoin (ID: 3261), Biperiden (ID: 5880), Cinnarizine (ID: 3147), Erlotinib (ID: 3312), Idarubicin (ID: 6205), Isotretinoin (ID: 5585), Mitomycin (ID: 4791), Temsirolimus (ID: 9473), Tretinoin (ID: 6398), Vemurafenib (ID: 13792)
+
+Q [1fa67ca71322]: List the drugs which commonly belong to the drug classes Cytochrome P450 2D6 Inhibitors and Serotonin Uptake Inhibitors
+  Expected: Desvenlafaxine
+  Got:      []
+  Thinking: I couldn't find any data from the tools about drugs in those classes.
+
+Would you like me to:
+- search external sources now for lists of CYP2D6 inhibitors and serotonin (SRI) drugs, or
+- proceed using general knowledge (not from the tools)?
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.000  recall=0.000  f1=0.000  jaccard=0.000  overlap=0.000
+  Missing (in expected, not in got): Desvenlafaxine
+  Extra (in got, not in expected):   -
+
+Q [15a81cf0c6bc]: List the drugs which commonly belong to the drug classes Dihydropyridines and Calcium Channel Antagonists
+  Expected: Nimodipine, Clevidipine, Nicardipine, Nisoldipine, Isradipine, Amlodipine, Nifedipine, Felodipine
+  Got:      []
+  Thinking: I’m sorry — the information tool returned no results for that query, so I don’t have any drug names to list. 
+
+Would you like me to:
+- perform a web search for common dihydropyridine and calcium‑channel‑blocker drugs, or
+- you can upload/provide a source I should use?
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.000  recall=0.000  f1=0.000  jaccard=0.000  overlap=0.000
+  Missing (in expected, not in got): Amlodipine, Clevidipine, Felodipine, Isradipine, Nicardipine, Nifedipine, Nimodipine, Nisoldipine
+  Extra (in got, not in expected):   -
+
+
+=== Dataset: True_or_False_1hop.json__graphcypher | Type: tf | Mode: graphcypher | Model: gpt-5-mini ===
+Count: 560  |  Correct: 486  |  Accuracy: 0.868 [95% CI 0.837-0.893]
+Telemetry:
+  - first attempt success rate: 0.861 (n=560)
+  - avg correction iterations: 0.000 (n=560)
+  - latency ms: mean=15776 p50=14563 p95=25164 (n=560)
+  - tokens: avg in=1030 out=1093 | total in=576997 out=612269
+  - records with error: 0.029 (n=560)
+
+-- Incorrect Questions (74 total, showing 15) --
+Q [367ab92fdbb4]: True or False Question: Alitretinoin binds to the gene RXRB
+  Expected: True
+  Got:      False
+  Thinking: Insufficient information — no data was returned about alitretinoin binding to RXRB, so True/False cannot be determined.
+  Correction iters:     0
+
+Q [56e9d314647c]: True or False Question: Cytarabine belongs to the drug class Nucleic Acid Synthesis Inhibitors
+  Expected: True
+  Got:      False
+  Thinking: Cannot determine — no information was provided by the tools to answer True or False.
+  Correction iters:     0
+
+Q [0d901085ec77]: True or False Question: Galantamine treats Alzheimer's Disease
+  Expected: True
+  Got:      False
+  Thinking: Cannot determine — no information about galantamine or Alzheimer's disease was provided.
+  Correction iters:     0
+
+Q [68f64b6ec6ab]: True or False Question: Selegiline treats Alzheimer's Disease
+  Expected: True
+  Got:      False
+  Thinking: Cannot determine — no information was provided about whether selegiline treats Alzheimer's disease.
+  Correction iters:     0
+
+Q [e5a9a1439228]: True or False Question: Ziprasidone affects Alzheimer's Disease
+  Expected: True
+  Got:      False
+  Thinking: False
+  Cypher (1st attempt): MATCH (drug:Drug {commonName: "Ziprasidone"})
+OPTIONAL MATCH (drug)-[rel:DRUGTREATSDISEASE]->(disease:Disease {commonName: "Alzheimer's Disease"})
+RETURN rel IS NOT NULL AS affects
+  Correction iters:     0
+
+Q [47e21e0c90b7]: True or False Question: Naltrexone affects Alzheimer's Disease
+  Expected: True
+  Got:      False
+  Thinking: False
+  Cypher (1st attempt): OPTIONAL MATCH (drug:Drug {commonName: 'Naltrexone'})-[r:DRUGTREATSDISEASE]->(d:Disease)
+WHERE toLower(d.commonName) CONTAINS 'alzheimer'
+RETURN CASE WHEN COUNT(r) > 0 THEN true ELSE false END AS naltrexone_affects_alzheimers
+  Correction iters:     0
+
+Q [2fb332f03020]: True or False Question: TLE5 is subject to increased expression by the drug Fulvestrant
+  Expected: True
+  Got:      False
+  Thinking: Cannot determine — no information was provided showing that Fulvestrant increases TLE5 expression.
+  Correction iters:     0
+
+Q [b134f031c124]: True or False Question: CCL5 is a gene in the pathway Human cytomegalovirus infection
+  Expected: True
+  Got:      False
+  Thinking: Insufficient information to answer True or False — no data about this pathway/gene was provided.
+  Correction iters:     0
+
+Q [ec794cfea743]: True or False Question: COPRS performs the molecular function histone binding
+  Expected: True
+  Got:      False
+  Thinking: Cannot determine — no information provided.
+  Correction iters:     0
+
+Q [7b93cd3d9388]: True or False Question: TREM2 is a gene associated with the disease Alzheimer's Disease, Focal Onset
+  Expected: True
+  Got:      NO_RESPONSE
+  Error:    chain_error: {neo4j_code: Neo.ClientError.Statement.SyntaxError} {message: Invalid input ''s Disease, Focal Onset'': expected an expression, ',' or '}' (line 1, column 74 (offset: 73))
+"MATCH (g:Gene {geneSymbol: 'TREM2'}), (d:Disease {commonName: 'Alzheimer''s Disease, Focal Onset'})"
+                                                                          ^} {gql_status: 50N42} {gql_status_description: error: general processing exception - unexpected error. Unexpected error has occurred. See debug log for details.}
+  Thinking: 
+  Correction iters:     0
+
+Q [c7075808bc5b]: True or False Question: PSEN2 is a gene associated with the disease Alzheimer's Disease, Focal Onset
+  Expected: True
+  Got:      False
+  Thinking: False — PSEN2 is not associated with Alzheimer's Disease, Focal Onset.
+  Cypher (1st attempt): MATCH (g:Gene {geneSymbol: "PSEN2"}), (d:Disease {commonName: "Alzheimer's Disease, Focal Onset"})
+OPTIONAL MATCH p=shortestPath((g)-[:CHEMICALBINDSGENE|CHEMICALDECREASESEXPRESSION|CHEMICALINCREASESEXPRESSION|DRUGINCLASS|DRUGTREATSDISEASE|GENEPARTICIPATESINBIOLOGICALPROCESS|GENEINPATHWAY|GENEINTERACTSWITHGENE|GENEHASMOLECULARFUNCTION|GENEASSOCIATEDWITHCELLULARCOMPONENT|GENEREGULATESGENE|GENECOVARIESWITHGENE|SYMPTOMMANIFESTATIONOFDISEASE|BODYPARTUNDEREXPRESSESGENE|BODYPARTOVEREXPRESSESGENE|DISEASELOCALIZESTOANATOMY|DISEASEASSOCIATESWITHDISEASET*1..5]-(d))
+RETURN CASE WHEN p IS NULL THEN false ELSE true END AS isAssociated;
+  Correction iters:     0
+
+Q [873ce390586d]: True or False Question: GAPDHS is a gene associated with the disease Alzheimer Disease, Early Onset
+  Expected: True
+  Got:      False
+  Thinking: False — no information found linking GAPDHS to Alzheimer Disease, Early Onset.
+  Correction iters:     0
+
+Q [b35787d9572d]: True or False Question: ATP5F1A is a gene associated with the disease Alzheimer Disease, Early Onset
+  Expected: True
+  Got:      False
+  Thinking: False. ATP5F1A is not associated with Alzheimer Disease, Early Onset.
+  Cypher (1st attempt): MATCH (g:Gene {geneSymbol: 'ATP5F1A'}), (d:Disease {commonName: 'Alzheimer Disease, Early Onset'})
+OPTIONAL MATCH (g)<-[:CHEMICALBINDSGENE|:CHEMICALDECREASESEXPRESSION|:CHEMICALINCREASESEXPRESSION]-(drug:Drug)-[:DRUGTREATSDISEASE]->(d)
+RETURN CASE WHEN count(DISTINCT drug) > 0 THEN true ELSE false END AS associated
+  Correction iters:     0
+
+Q [84c9902e2f41]: True or False Question: ERGIC1 is over-expressed in trachea
+  Expected: True
+  Got:      False
+  Thinking: Unknown — no information provided about ERGIC1 expression in trachea, so True/False cannot be determined.
+  Correction iters:     0
+
+Q [c73193d8cfeb]: True or False Question: Decreased Parasympathetic Acetylcholine Activity includes the drug Clidinium
+  Expected: True
+  Got:      False
+  Thinking: False — Clidinium is not included.
+  Cypher (1st attempt): MATCH (drug:Drug {commonName: 'Clidinium'}), (bp:BiologicalProcess {commonName: 'Decreased Parasympathetic Acetylcholine Activity'})
+OPTIONAL MATCH (drug)-[:CHEMICALDECREASESEXPRESSION|CHEMICALINCREASESEXPRESSION|CHEMICALBINDSGENE]->(g:Gene)-[:GENEPARTICIPATESINBIOLOGICALPROCESS]->(bp)
+RETURN CASE WHEN count(g) > 0 THEN true ELSE false END AS includes
+  Correction iters:     0
+
+
+=== Dataset: True_or_False_2hop.json__graphcypher | Type: tf | Mode: graphcypher | Model: gpt-5-mini ===
+Count: 540  |  Correct: 381  |  Accuracy: 0.706 [95% CI 0.666-0.742]
+Telemetry:
+  - first attempt success rate: 0.856 (n=540)
+  - avg correction iterations: 0.000 (n=540)
+  - latency ms: mean=47354 p50=15820 p95=25390 (n=540)
+  - tokens: avg in=1082 out=1289 | total in=584326 out=696289
+  - records with error: 0.020 (n=540)
+
+-- Incorrect Questions (159 total, showing 15) --
+Q [c93990186284]: True or False Question: ESR1 and CYP19A1 are genes which commonly bind to the drug Levonorgestrel
+  Expected: True
+  Got:      False
+  Thinking: Cannot determine — the data source returned no information about binding between Levonorgestrel and ESR1 or CYP19A1, so I cannot answer True or False.
+  Correction iters:     0
+
+Q [6d634082b7ba]: True or False Question: GDF15 and UBQLN2 are genes commonly subject to decreased expression by the drug Sulfasalazine
+  Expected: True
+  Got:      False
+  Thinking: False — no information was provided showing that Sulfasalazine commonly decreases expression of GDF15 and UBQLN2.
+  Correction iters:     0
+
+Q [32aefbff7f7c]: True or False Question: RNH1 and ACAT2 are genes commonly subject to decreased expression by the drug Mepenzolate
+  Expected: True
+  Got:      False
+  Thinking: Insufficient information to determine — no data provided on Mepenzolate’s effects on RNH1 or ACAT2.
+  Correction iters:     0
+
+Q [cf03f4aa0119]: True or False Question: Mitoxantrone and Epirubicin are drugs which commonly increase expression of the gene YIPF3
+  Expected: True
+  Got:      False
+  Thinking: False. The provided information only lists Epirubicin and Mitoxantrone as found; it gives no evidence that they commonly increase YIPF3 expression.
+  Cypher (1st attempt): MATCH (g:Gene {geneSymbol: "YIPF3"})<-[:CHEMICALINCREASESEXPRESSION]-(d:Drug)
+WHERE d.commonName IN ["Mitoxantrone","Epirubicin"]
+RETURN collect(DISTINCT d.commonName) AS drugsFound, count(DISTINCT d) AS numDrugsFound
+  Correction iters:     0
+
+Q [59a381947def]: True or False Question: developmental process involved in reproduction and nucleobase-containing compound catabolic process are biological processes commonly involving the gene CSDE1
+  Expected: True
+  Got:      False
+  Thinking: Cannot determine — no information about CSDE1’s associated biological processes was returned by the tools, so I cannot conclude True or False.
+  Correction iters:     0
+
+Q [4627ce735269]: True or False Question: Signal Transduction and CDC42 signaling events are pathways which commonly contain the gene ARPC2
+  Expected: True
+  Got:      False
+  Thinking: Cannot determine — the provided tool returned no information about ARPC2 in those pathways.
+  Correction iters:     0
+
+Q [24cbc8570e50]: True or False Question: RUNX1 regulates genes involved in megakaryocyte differentiation and platelet function and Chromatin organization are pathways which commonly contain the gene SETD1A
+  Expected: True
+  Got:      False
+  Thinking: False. SETD1A is in Chromatin organization (True), but RUNX1 does not regulate those megakaryocyte/platelet genes (False), so the overall statement is False.
+  Cypher (1st attempt): MATCH (r:Gene {geneSymbol: 'RUNX1'})
+OPTIONAL MATCH (r)-[:GENEREGULATESGENE]->(g:Gene)-[:GENEPARTICIPATESINBIOLOGICALPROCESS]->(bp:BiologicalProcess)
+WHERE bp.commonName IN ['megakaryocyte differentiation','platelet function']
+WITH r, collect(DISTINCT bp.commonName) AS processes
+OPTIONAL MATCH (s:Gene {geneSymbol: 'SETD1A'})-[:GENEINPATHWAY]->(p:Pathway {commonName: 'Chromatin organization'})
+RETURN
+(size([x IN processes WHERE x = 'megakaryocyte differentiation']) > 0 AND size([x IN processes WHERE x = 'platelet function']) > 0) AS runx1_regulates_both,
+(p IS NOT NULL) AS setd1a_in_chromatin_organization,
+((size([x IN processes WHERE x = 'megakaryocyte differentiation']) > 0 AND size([x IN processes WHERE x = 'platelet function']) > 0) AND (p IS NOT NULL)) AS statement_true
+  Correction iters:     0
+
+Q [b8443b15625a]: True or False Question: cytoskeletal protein binding and muscle alpha-actinin binding are molecular functions commonly attributed to the gene MYPN
+  Expected: True
+  Got:      False
+  Thinking: Cannot determine — no information about MYPN’s molecular functions was provided.
+  Correction iters:     0
+
+Q [1b04198e295e]: True or False Question: Alzheimer's Disease, Focal Onset and Alzheimer Disease, Early Onset are diseases commonly associated with the gene HLA-DRB5
+  Expected: True
+  Got:      NO_RESPONSE
+  Error:    chain_error: {neo4j_code: Neo.ClientError.Statement.SyntaxError} {message: Invalid input ''s Disease, Focal Onset'': expected an expression, ',' or ']' (line 2, column 20 (offset: 58))
+"UNWIND ['Alzheimer''s Disease, Focal Onset','Alzheimer Disease, Early Onset'] AS name"
+                    ^} {gql_status: 50N42} {gql_status_description: error: general processing exception - unexpected error. Unexpected error has occurred. See debug log for details.}
+  Thinking: 
+  Correction iters:     0
+
+Q [42e1da184721]: True or False Question: Familial Alzheimer Disease (FAD) and Alzheimer Disease, Early Onset are diseases commonly associated with the gene PLAU
+  Expected: True
+  Got:      False
+  Thinking: False. Familial Alzheimer Disease and Early-Onset Alzheimer Disease are not commonly associated with PLAU.
+  Cypher (1st attempt): MATCH (g:Gene {geneSymbol: "PLAU"})
+OPTIONAL MATCH p1 = (d1:Disease {commonName: "Familial Alzheimer Disease"})-[:DISEASEASSOCIATESWITHDISEASET*0..2]->(dX:Disease)-[:DISEASELOCALIZESTOANATOMY]->(b:BodyPart)-[:BODYPARTUNDEREXPRESSESGENE|:BODYPARTOVEREXPRESSESGENE]->(g)
+OPTIONAL MATCH p2 = (d2:Disease {commonName: "Alzheimer Disease, Early Onset"})-[:DISEASEASSOCIATESWITHDISEASET*0..2]->(dY:Disease)-[:DISEASELOCALIZESTOANATOMY]->(b2:BodyPart)-[:BODYPARTUNDEREXPRESSESGENE|:BODYPARTOVEREXPRESSESGENE]->(g)
+RETURN (p1 IS NOT NULL) AS familialAlzheimerDiseaseAssociated, (p2 IS NOT NULL) AS earlyOnsetAlzheimerAssociated
+  Correction iters:     0
+
+Q [4d30adb9860e]: True or False Question: Alzheimer's Disease and Alzheimer's Disease, Focal Onset are diseases commonly associated with the gene NECTIN2
+  Expected: True
+  Got:      NO_RESPONSE
+  Error:    chain_error: {neo4j_code: Neo.ClientError.Statement.SyntaxError} {message: Invalid input ''s Disease'': expected an expression, ',' or ']' (line 3, column 35 (offset: 197))
+"WHERE d.commonName IN ['Alzheimer''s Disease','Alzheimer''s Disease, Focal Onset']"
+                                   ^} {gql_status: 50N42} {gql_status_description: error: general processing exception - unexpected error. Unexpected error has occurred. See debug log for details.}
+  Thinking: 
+  Correction iters:     0
+
+Q [4ce3311e9587]: True or False Question: Alzheimer's Disease and Alzheimer's Disease, Focal Onset are diseases commonly associated with the gene CRH
+  Expected: True
+  Got:      False
+  Thinking: False. Alzheimer's Disease is associated with CRH, but Alzheimer's Disease, Focal Onset is not.
+  Cypher (1st attempt): MATCH (g:Gene {geneSymbol: 'CRH'})
+UNWIND ["Alzheimer's Disease", "Alzheimer's Disease, Focal Onset"] AS diseaseName
+MATCH (d:Disease {commonName: diseaseName})
+OPTIONAL MATCH (d)-[:DISEASELOCALIZESTOANATOMY]->(bp:BodyPart)-[:BODYPARTUNDEREXPRESSESGENE|BODYPARTOVEREXPRESSESGENE]->(g)
+RETURN d.commonName AS disease, CASE WHEN bp IS NULL THEN false ELSE true END AS associatedWithCRH, collect(DISTINCT bp.commonName) AS bodyParts;
+  Correction iters:     0
+
+Q [02e05f07496b]: True or False Question: Alzheimer's Disease and Alzheimer's Disease, Focal Onset are diseases commonly associated with the gene PYY
+  Expected: True
+  Got:      False
+  Thinking: False. PYY is associated with Alzheimer's Disease (True) but not with Alzheimer's Disease, Focal Onset (False).
+  Cypher (1st attempt): MATCH (g:Gene {geneSymbol: "PYY"})
+OPTIONAL MATCH (d1:Disease {commonName: "Alzheimer's Disease"})-[:DISEASELOCALIZESTOANATOMY]->(:BodyPart)-[:BODYPARTOVEREXPRESSESGENE|BODYPARTUNDEREXPRESSESGENE]->(g)
+OPTIONAL MATCH (d2:Disease {commonName: "Alzheimer's Disease, Focal Onset"})-[:DISEASELOCALIZESTOANATOMY]->(:BodyPart)-[:BODYPARTOVEREXPRESSESGENE|BODYPARTUNDEREXPRESSESGENE]->(g)
+RETURN d1 IS NOT NULL AS alz_associated, d2 IS NOT NULL AS alz_focal_associated
+  Correction iters:     0
+
+Q [9eaf49d2282f]: True or False Question: Ziprasidone and Naltrexone are drugs which commonly affect Alzheimer's Disease
+  Expected: True
+  Got:      False
+  Thinking: False — the provided information indicates they do not commonly affect Alzheimer's Disease.
+  Cypher (1st attempt): OPTIONAL MATCH (ad:Disease {commonName: "Alzheimer's Disease"})
+OPTIONAL MATCH (zd:Drug {commonName: "Ziprasidone"})-[:DRUGTREATSDISEASE]->(ad)
+OPTIONAL MATCH (nd:Drug {commonName: "Naltrexone"})-[:DRUGTREATSDISEASE]->(ad)
+RETURN (zd IS NOT NULL AND nd IS NOT NULL) AS bothTreats
+  Correction iters:     0
+
+Q [50671286c92d]: True or False Question: PPARG and RELN are genes commonly associated with the disease Alzheimer Disease, Early Onset
+  Expected: True
+  Got:      False
+  Thinking: False. PPARG and RELN are not commonly associated with Alzheimer Disease, Early Onset.
+  Cypher (1st attempt): MATCH (d:Disease {commonName: "Alzheimer Disease, Early Onset"})-[:DISEASELOCALIZESTOANATOMY]->(b:BodyPart)-[:BODYPARTOVEREXPRESSESGENE|BODYPARTUNDEREXPRESSESGENE]->(g:Gene)
+WHERE g.geneSymbol IN ["PPARG","RELN"]
+RETURN collect(DISTINCT g.geneSymbol) AS genes_found, CASE WHEN COUNT(DISTINCT g.geneSymbol)=2 THEN true ELSE false END AS both_associated;
+  Correction iters:     0
+
+
+=== Dataset: True_or_False_2hop_atleastone.json__graphcypher | Type: tf | Mode: graphcypher | Model: gpt-5-mini ===
+Count: 540  |  Correct: 473  |  Accuracy: 0.876 [95% CI 0.845-0.901]
+Telemetry:
+  - first attempt success rate: 0.848 (n=540)
+  - avg correction iterations: 0.000 (n=540)
+  - latency ms: mean=19826 p50=18469 p95=32690 (n=540)
+  - tokens: avg in=1081 out=1221 | total in=583999 out=659535
+  - records with error: 0.022 (n=540)
+
+-- Incorrect Questions (67 total, showing 15) --
+Q [8bf5069b3fbf]: True or False Question: PDE1B and PDE5A are genes which commonly bind to the drug Vardenafil
+  Expected: True
+  Got:      False
+  Thinking: Cannot determine — no information was returned by the provided sources about PDE1B, PDE5A, or vardenafil.
+  Correction iters:     0
+
+Q [1243247fd5c9]: True or False Question: CCDC92 and GNAI1 are genes commonly subject to increased expression by the drug Decitabine
+  Expected: True
+  Got:      NO_RESPONSE
+  Error:    chain_error: {neo4j_code: Neo.ClientError.Statement.SyntaxError} {message: Invalid use of aggregating function collect(...) in this context (line 4, column 47 (offset: 198))
+"RETURN all(s IN ["CCDC92","GNAI1"] WHERE s IN collect(g.geneSymbol)) AS bothIncreased;"
+                                               ^} {gql_status: 50N42} {gql_status_description: error: general processing exception - unexpected error. Unexpected error has occurred. See debug log for details.}
+  Thinking: 
+  Correction iters:     0
+
+Q [1f5d37da859a]: True or False Question: BACE2 and LGALS1 are genes commonly subject to decreased expression by the drug Tubocurarine
+  Expected: True
+  Got:      False
+  Thinking: Insufficient information. The provided data contains no evidence about Tubocurarine effects on BACE2 or LGALS1, so True/False cannot be determined.
+  Correction iters:     0
+
+Q [a777ef006a5f]: True or False Question: Nilvadipine and Amlodipine are drugs which commonly bind to the gene CACNA2D3
+  Expected: True
+  Got:      False
+  Thinking: Cannot determine — no information was provided about binding of Nilvadipine or Amlodipine to CACNA2D3.
+  Correction iters:     0
+
+Q [a73bcc5d66d7]: True or False Question: Nafcillin and Dasatinib are drugs which commonly decrease expression of the gene TIMM9
+  Expected: True
+  Got:      False
+  Thinking: Unknown — no information was returned showing that Nafcillin or Dasatinib commonly decrease TIMM9 expression.
+  Correction iters:     0
+
+Q [59a381947def]: True or False Question: developmental process involved in reproduction and nucleobase-containing compound catabolic process are biological processes commonly involving the gene CSDE1
+  Expected: True
+  Got:      False
+  Thinking: Cannot determine — no information about CSDE1's associated biological processes was provided, so True/False cannot be answered.
+  Correction iters:     0
+
+Q [2a0bbeffe4ea]: True or False Question: regulation of gene expression, epigenetic and carbohydrate transmembrane transport are biological processes commonly involving the gene SLC50A1
+  Expected: True
+  Got:      False
+  Thinking: False. Only "carbohydrate transmembrane transport" is commonly associated with SLC50A1 (the other two are not).
+  Cypher (1st attempt): MATCH (g:Gene {geneSymbol: 'SLC50A1'})-[:GENEPARTICIPATESINBIOLOGICALPROCESS]->(bp:BiologicalProcess)
+WHERE bp.commonName IN ['regulation of gene expression','epigenetic','carbohydrate transmembrane transport']
+RETURN collect(DISTINCT bp.commonName) AS matchedProcesses, count(DISTINCT bp) AS matchesCount
+  Correction iters:     0
+
+Q [24cbc8570e50]: True or False Question: RUNX1 regulates genes involved in megakaryocyte differentiation and platelet function and Chromatin organization are pathways which commonly contain the gene SETD1A
+  Expected: True
+  Got:      False
+  Thinking: False.
+
+The provided data confirms SETD1A is commonly in the "Chromatin organization" pathway (and RUNX1 regulates genes in that pathway), but there is no provided evidence that SETD1A is in the "RUNX1 regulates genes involved in megakaryocyte differentiation and platelet function" pathway.
+  Cypher (1st attempt): MATCH (p:Pathway)
+WHERE p.commonName IN ['megakaryocyte differentiation and platelet function','Chromatin organization']
+OPTIONAL MATCH (r:Gene {geneSymbol: 'RUNX1'})-[:GENEREGULATESGENE]->(g:Gene)-[:GENEINPATHWAY]->(p)
+OPTIONAL MATCH (s:Gene {geneSymbol: 'SETD1A'})-[:GENEINPATHWAY]->(p)
+WITH p, collect(DISTINCT g) AS regulatedGenes, count(DISTINCT s) AS setd1a_count
+RETURN p.commonName AS pathway,
+       size(regulatedGenes) > 0 AS runx1_regulates_genes_in_pathway,
+       setd1a_count > 0 AS setd1a_in_pathway;
+  Correction iters:     0
+
+Q [f6940bd1e947]: True or False Question: Intraflagellar transport and Cilium Assembly are pathways which commonly contain the gene IFT122
+  Expected: True
+  Got:      False
+  Thinking: False — the provided data indicates bothContain: False (no common presence of IFT122 in those pathways).
+  Cypher (1st attempt): MATCH (g:Gene {geneSymbol: 'IFT122'})-[:GENEPARTICIPATESINBIOLOGICALPROCESS]->(bp:BiologicalProcess)
+WHERE bp.commonName IN ['Intraflagellar transport', 'Cilium Assembly']
+WITH collect(DISTINCT bp.commonName) AS bps
+RETURN CASE WHEN size(bps) = 2 THEN true ELSE false END AS bothContain, bps
+  Correction iters:     0
+
+Q [92db1454a6aa]: True or False Question: KASH5 and MED4 are genes which commonly interact with the gene FTCD
+  Expected: True
+  Got:      False
+  Thinking: Cannot determine — no information was provided showing whether KASH5 and MED4 commonly interact with FTCD.
+  Correction iters:     0
+
+Q [781c0ec12820]: True or False Question: mitochondrial inner membrane and ribosome are cellular components commonly linked to the gene MRPS30
+  Expected: True
+  Got:      False
+  Thinking: Insufficient information to answer — the provided tools returned no data about MRPS30.
+  Correction iters:     0
+
+Q [02e05f07496b]: True or False Question: Alzheimer's Disease and Alzheimer's Disease, Focal Onset are diseases commonly associated with the gene PYY
+  Expected: True
+  Got:      NO_RESPONSE
+  Error:    chain_error: {neo4j_code: Neo.ClientError.Statement.SyntaxError} {message: Invalid input ''s Disease'': expected an expression, ',' or '}' (line 2, column 85 (offset: 118))
+"OPTIONAL MATCH (g)-[:GENEASSOCIATESWITHDISEASE]->(d1:Disease {commonName:'Alzheimer''s Disease'})"
+                                                                                     ^} {gql_status: 50N42} {gql_status_description: error: general processing exception - unexpected error. Unexpected error has occurred. See debug log for details.}
+  Thinking: 
+  Correction iters:     0
+
+Q [ea640a3add57]: True or False Question: testis and brain are body parts/anatomy which commonly over-express the gene ZNF829
+  Expected: True
+  Got:      False
+  Thinking: Cannot determine — no information was provided about ZNF829 expression in testis or brain.
+  Correction iters:     0
+
+Q [5752224fce9c]: True or False Question: Bupivacaine and Mepivacaine are drugs which commonly belong to the drug class Amides
+  Expected: True
+  Got:      False
+  Thinking: I can't determine the answer because the tool returned no information. Please provide the source data or allow use of general knowledge to answer.
+  Correction iters:     0
+
+Q [4b5fd801f809]: True or False Question: Quetiapine and Memantine are drugs which commonly treat Alzheimer's Disease
+  Expected: True
+  Got:      False
+  Thinking: False.
+  Cypher (1st attempt): MATCH (d:Disease) 
+WHERE toLower(d.commonName) CONTAINS "alzheimer"
+MATCH (drug:Drug)-[:CHEMICALBINDSGENE|:CHEMICALDECREASESEXPRESSION|:CHEMICALINCREASESEXPRESSION]->(:Gene)-[:GENEASSOCIATESWITHDISEASE]->(d)
+WHERE drug.commonName IN ["Quetiapine","Memantine"]
+RETURN CASE WHEN count(DISTINCT drug.commonName)=2 THEN true ELSE false END AS both_treats_alzheimers
+  Correction iters:     0
+
+
+==== Overall Summary (record-weighted) ====
+
+Type: mcq | Mode: graphcypher | Model: gpt-5-mini
+  Total: 917  |  Correct: 672  |  Accuracy: 0.733 [95% CI 0.703-0.760]
+  - first attempt success rate: 0.858 (n=917)
+  - avg correction iterations: 0.000 (n=917)
+  - latency ms: mean=36972 p50=16013 p95=31611 (n=917)
+  - tokens: avg in=1240 out=1092 | total in=1136622 out=1001534
+  - records with error: 0.028 (n=917)
+
+Type: open_ended | Mode: graphcypher | Model: gpt-5-mini
+  Total: 958  |  Correct: 649  |  Accuracy: 0.677 [95% CI 0.647-0.706]
+  Avg set metrics: exact_match=0.677  precision=0.759  recall=0.732  f1=0.737  jaccard=0.728  overlap=0.762
+  - first attempt success rate: 0.972 (n=958)
+  - avg correction iterations: 0.000 (n=958)
+  - latency ms: mean=34355 p50=17820 p95=130337 (n=958)
+  - tokens: avg in=7744 out=2533 | total in=7418971 out=2426678
+  - records with error: 0.005 (n=958)
+
+Type: tf | Mode: graphcypher | Model: gpt-5-mini
+  Total: 1640  |  Correct: 1340  |  Accuracy: 0.817 [95% CI 0.798-0.835]
+  - first attempt success rate: 0.855 (n=1640)
+  - avg correction iterations: 0.000 (n=1640)
+  - latency ms: mean=27508 p50=16200 p95=29843 (n=1640)
+  - tokens: avg in=1064 out=1200 | total in=1745322 out=1968093
+  - records with error: 0.024 (n=1640)

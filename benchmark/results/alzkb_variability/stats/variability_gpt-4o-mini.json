@@ -1,0 +1,249 @@
+{
+  "groups": [
+    {
+      "model": "gpt-4o-mini",
+      "agent_mode": "direct",
+      "type": "mcq",
+      "file": "MCQ_1hop_sub.json",
+      "n_runs": 5,
+      "run_tags": [
+        "run1",
+        "run2",
+        "run3",
+        "run4",
+        "run5"
+      ],
+      "n_questions": 100,
+      "accuracy_mean": 0.946,
+      "accuracy_sd": 0.01673320053068148,
+      "accuracy_min": 0.92,
+      "accuracy_max": 0.96,
+      "accuracy_mean_ci95_across_runs": [
+        0.9252229873263287,
+        0.9667770126736712
+      ],
+      "per_run_accuracy": {
+        "run1": 0.94,
+        "run2": 0.96,
+        "run3": 0.92,
+        "run4": 0.95,
+        "run5": 0.96
+      },
+      "answer_consensus_rate": 0.93,
+      "correctness_consensus_rate": 0.93,
+      "flip_rate": 0.06999999999999995,
+      "majority_vote_accuracy": 0.95,
+      "mean_jaccard": null
+    },
+    {
+      "model": "gpt-4o-mini",
+      "agent_mode": "direct",
+      "type": "mcq",
+      "file": "MCQ_2hop_sub.json",
+      "n_runs": 5,
+      "run_tags": [
+        "run1",
+        "run2",
+        "run3",
+        "run4",
+        "run5"
+      ],
+      "n_questions": 100,
+      "accuracy_mean": 0.938,
+      "accuracy_sd": 0.01923538406167131,
+      "accuracy_min": 0.91,
+      "accuracy_max": 0.96,
+      "accuracy_mean_ci95_across_runs": [
+        0.9141161161190002,
+        0.9618838838809997
+      ],
+      "per_run_accuracy": {
+        "run1": 0.95,
+        "run2": 0.96,
+        "run3": 0.94,
+        "run4": 0.93,
+        "run5": 0.91
+      },
+      "answer_consensus_rate": 0.9,
+      "correctness_consensus_rate": 0.9,
+      "flip_rate": 0.09999999999999998,
+      "majority_vote_accuracy": 0.94,
+      "mean_jaccard": null
+    },
+    {
+      "model": "gpt-4o-mini",
+      "agent_mode": "direct",
+      "type": "open_ended",
+      "file": "OpenEnded_1hop_sub.json",
+      "n_runs": 5,
+      "run_tags": [
+        "run1",
+        "run2",
+        "run3",
+        "run4",
+        "run5"
+      ],
+      "n_questions": 100,
+      "accuracy_mean": 0.8560000000000001,
+      "accuracy_sd": 0.008944271909999166,
+      "accuracy_min": 0.85,
+      "accuracy_max": 0.87,
+      "accuracy_mean_ci95_across_runs": [
+        0.844894219579209,
+        0.8671057804207912
+      ],
+      "per_run_accuracy": {
+        "run1": 0.86,
+        "run2": 0.87,
+        "run3": 0.85,
+        "run4": 0.85,
+        "run5": 0.85
+      },
+      "answer_consensus_rate": 0.94,
+      "correctness_consensus_rate": 0.96,
+      "flip_rate": 0.040000000000000036,
+      "majority_vote_accuracy": 0.85,
+      "mean_jaccard": 0.987584548918441
+    },
+    {
+      "model": "gpt-4o-mini",
+      "agent_mode": "direct",
+      "type": "open_ended",
+      "file": "OpenEnded_2hop_sub.json",
+      "n_runs": 5,
+      "run_tags": [
+        "run1",
+        "run2",
+        "run3",
+        "run4",
+        "run5"
+      ],
+      "n_questions": 100,
+      "accuracy_mean": 0.748,
+      "accuracy_sd": 0.020493901531919215,
+      "accuracy_min": 0.73,
+      "accuracy_max": 0.78,
+      "accuracy_mean_ci95_across_runs": [
+        0.7225534602850829,
+        0.7734465397149171
+      ],
+      "per_run_accuracy": {
+        "run1": 0.75,
+        "run2": 0.78,
+        "run3": 0.73,
+        "run4": 0.75,
+        "run5": 0.73
+      },
+      "answer_consensus_rate": 0.71,
+      "correctness_consensus_rate": 0.85,
+      "flip_rate": 0.15000000000000002,
+      "majority_vote_accuracy": 0.77,
+      "mean_jaccard": 0.8854119126937857
+    },
+    {
+      "model": "gpt-4o-mini",
+      "agent_mode": "direct",
+      "type": "tf",
+      "file": "True_or_False_1hop_sub.json",
+      "n_runs": 5,
+      "run_tags": [
+        "run1",
+        "run2",
+        "run3",
+        "run4",
+        "run5"
+      ],
+      "n_questions": 100,
+      "accuracy_mean": 0.97,
+      "accuracy_sd": 0.010000000000000009,
+      "accuracy_min": 0.96,
+      "accuracy_max": 0.98,
+      "accuracy_mean_ci95_across_runs": [
+        0.9575833600179623,
+        0.9824166399820377
+      ],
+      "per_run_accuracy": {
+        "run1": 0.96,
+        "run2": 0.98,
+        "run3": 0.98,
+        "run4": 0.96,
+        "run5": 0.97
+      },
+      "answer_consensus_rate": 0.97,
+      "correctness_consensus_rate": 0.97,
+      "flip_rate": 0.030000000000000027,
+      "majority_vote_accuracy": 0.98,
+      "mean_jaccard": null
+    },
+    {
+      "model": "gpt-4o-mini",
+      "agent_mode": "direct",
+      "type": "tf",
+      "file": "True_or_False_2hop_atleastone_sub.json",
+      "n_runs": 5,
+      "run_tags": [
+        "run1",
+        "run2",
+        "run3",
+        "run4",
+        "run5"
+      ],
+      "n_questions": 100,
+      "accuracy_mean": 0.962,
+      "accuracy_sd": 0.014832396974191338,
+      "accuracy_min": 0.94,
+      "accuracy_max": 0.98,
+      "accuracy_mean_ci95_across_runs": [
+        0.9435831466700801,
+        0.9804168533299198
+      ],
+      "per_run_accuracy": {
+        "run1": 0.97,
+        "run2": 0.96,
+        "run3": 0.96,
+        "run4": 0.94,
+        "run5": 0.98
+      },
+      "answer_consensus_rate": 0.92,
+      "correctness_consensus_rate": 0.92,
+      "flip_rate": 0.07999999999999996,
+      "majority_vote_accuracy": 0.96,
+      "mean_jaccard": null
+    },
+    {
+      "model": "gpt-4o-mini",
+      "agent_mode": "direct",
+      "type": "tf",
+      "file": "True_or_False_2hop_sub.json",
+      "n_runs": 5,
+      "run_tags": [
+        "run1",
+        "run2",
+        "run3",
+        "run4",
+        "run5"
+      ],
+      "n_questions": 100,
+      "accuracy_mean": 0.9179999999999999,
+      "accuracy_sd": 0.010954451150103333,
+      "accuracy_min": 0.91,
+      "accuracy_max": 0.93,
+      "accuracy_mean_ci95_across_runs": [
+        0.9043982523868348,
+        0.931601747613165
+      ],
+      "per_run_accuracy": {
+        "run1": 0.93,
+        "run2": 0.91,
+        "run3": 0.93,
+        "run4": 0.91,
+        "run5": 0.91
+      },
+      "answer_consensus_rate": 0.97,
+      "correctness_consensus_rate": 0.97,
+      "flip_rate": 0.030000000000000027,
+      "majority_vote_accuracy": 0.92,
+      "mean_jaccard": null
+    }
+  ]
+}

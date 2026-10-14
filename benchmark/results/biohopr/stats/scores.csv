@@ -1,0 +1,67 @@
+benchmark,question_set,dataset,system,backbone,arm,metric,primary,status,n,set_size,n_failed,value_pct,ci95_lo_pct,ci95_hi_pct,ci_method
+biohopr,BioHopR 2-hop,BioHopR_2hop.json,LLM only,GPT-4o-mini,vanilla_gpt-4o-mini,jaccard,True,complete,7633,7633,1,2.4869,2.3273,2.6655,bca_bootstrap_mean
+biohopr,BioHopR 2-hop,BioHopR_2hop.json,LLM only,GPT-4o-mini,vanilla_gpt-4o-mini,exact_match,False,complete,7633,7633,1,0.1834,0.1093,0.3077,wilson
+biohopr,BioHopR 2-hop,BioHopR_2hop.json,LLM only,GPT-4o-mini,vanilla_gpt-4o-mini,f1,False,complete,7633,7633,1,4.1112,3.8874,4.3515,bca_bootstrap_mean
+biohopr,BioHopR 2-hop,BioHopR_2hop.json,LLM only,GPT-4o-mini,vanilla_gpt-4o-mini,precision,False,complete,7633,7633,1,10.3169,9.8847,10.7672,bca_bootstrap_mean
+biohopr,BioHopR 2-hop,BioHopR_2hop.json,LLM only,GPT-4o-mini,vanilla_gpt-4o-mini,recall,False,complete,7633,7633,1,4.2711,3.9654,4.6009,bca_bootstrap_mean
+biohopr,BioHopR 2-hop,BioHopR_2hop.json,LLM only,GPT-4o-mini,vanilla_gpt-4o-mini,overlap,False,complete,7633,7633,1,11.6524,11.1602,12.1621,bca_bootstrap_mean
+biohopr,BioHopR 2-hop,BioHopR_2hop.json,LLM only,GPT-5-mini,vanilla_gpt-5-mini,jaccard,True,complete,7633,7633,0,4.1531,3.9731,4.35,bca_bootstrap_mean
+biohopr,BioHopR 2-hop,BioHopR_2hop.json,LLM only,GPT-5-mini,vanilla_gpt-5-mini,exact_match,False,complete,7633,7633,0,0.1441,0.0805,0.2579,wilson
+biohopr,BioHopR 2-hop,BioHopR_2hop.json,LLM only,GPT-5-mini,vanilla_gpt-5-mini,f1,False,complete,7633,7633,0,7.0251,6.7637,7.3026,bca_bootstrap_mean
+biohopr,BioHopR 2-hop,BioHopR_2hop.json,LLM only,GPT-5-mini,vanilla_gpt-5-mini,precision,False,complete,7633,7633,0,10.3153,9.955,10.6985,bca_bootstrap_mean
+biohopr,BioHopR 2-hop,BioHopR_2hop.json,LLM only,GPT-5-mini,vanilla_gpt-5-mini,recall,False,complete,7633,7633,0,10.0184,9.5486,10.5191,bca_bootstrap_mean
+biohopr,BioHopR 2-hop,BioHopR_2hop.json,LLM only,GPT-5-mini,vanilla_gpt-5-mini,overlap,False,complete,7633,7633,0,15.0765,14.5448,15.6376,bca_bootstrap_mean
+biohopr,BioHopR 2-hop,BioHopR_2hop.json,GraphCypherQAChain,GPT-4o-mini,graphcypher_gpt-4o-mini,jaccard,True,complete,7633,7633,45,50.3552,49.2674,51.4377,bca_bootstrap_mean
+biohopr,BioHopR 2-hop,BioHopR_2hop.json,GraphCypherQAChain,GPT-4o-mini,graphcypher_gpt-4o-mini,exact_match,False,complete,7633,7633,45,43.836,42.7262,44.9519,wilson
+biohopr,BioHopR 2-hop,BioHopR_2hop.json,GraphCypherQAChain,GPT-4o-mini,graphcypher_gpt-4o-mini,f1,False,complete,7633,7633,45,51.2794,50.1875,52.3661,bca_bootstrap_mean
+biohopr,BioHopR 2-hop,BioHopR_2hop.json,GraphCypherQAChain,GPT-4o-mini,graphcypher_gpt-4o-mini,precision,False,complete,7633,7633,45,51.8744,50.7788,52.9643,bca_bootstrap_mean
+biohopr,BioHopR 2-hop,BioHopR_2hop.json,GraphCypherQAChain,GPT-4o-mini,graphcypher_gpt-4o-mini,recall,False,complete,7633,7633,45,51.9269,50.8315,53.0189,bca_bootstrap_mean
+biohopr,BioHopR 2-hop,BioHopR_2hop.json,GraphCypherQAChain,GPT-4o-mini,graphcypher_gpt-4o-mini,overlap,False,complete,7633,7633,45,53.0842,51.9848,54.1806,bca_bootstrap_mean
+biohopr,BioHopR 2-hop,BioHopR_2hop.json,GraphCypherQAChain,GPT-5-mini,graphcypher_gpt-5-mini,jaccard,True,complete,7633,7633,54,81.2231,80.3611,82.0495,bca_bootstrap_mean
+biohopr,BioHopR 2-hop,BioHopR_2hop.json,GraphCypherQAChain,GPT-5-mini,graphcypher_gpt-5-mini,exact_match,False,complete,7633,7633,54,76.9946,76.037,77.9251,wilson
+biohopr,BioHopR 2-hop,BioHopR_2hop.json,GraphCypherQAChain,GPT-5-mini,graphcypher_gpt-5-mini,f1,False,complete,7633,7633,54,81.9294,81.0773,82.7461,bca_bootstrap_mean
+biohopr,BioHopR 2-hop,BioHopR_2hop.json,GraphCypherQAChain,GPT-5-mini,graphcypher_gpt-5-mini,precision,False,complete,7633,7633,54,81.3234,80.4604,82.1491,bca_bootstrap_mean
+biohopr,BioHopR 2-hop,BioHopR_2hop.json,GraphCypherQAChain,GPT-5-mini,graphcypher_gpt-5-mini,recall,False,complete,7633,7633,54,83.9046,83.0685,84.7094,bca_bootstrap_mean
+biohopr,BioHopR 2-hop,BioHopR_2hop.json,GraphCypherQAChain,GPT-5-mini,graphcypher_gpt-5-mini,overlap,False,complete,7633,7633,54,83.9493,83.1139,84.7536,bca_bootstrap_mean
+biohopr,BioHopR 2-hop,BioHopR_2hop.json,NEXA Direct,GPT-4o-mini,nexa-direct_gpt-4o-mini,jaccard,True,complete,7633,7633,28,84.749,83.942,85.5242,bca_bootstrap_mean
+biohopr,BioHopR 2-hop,BioHopR_2hop.json,NEXA Direct,GPT-4o-mini,nexa-direct_gpt-4o-mini,exact_match,False,complete,7633,7633,28,80.9904,80.0947,81.855,wilson
+biohopr,BioHopR 2-hop,BioHopR_2hop.json,NEXA Direct,GPT-4o-mini,nexa-direct_gpt-4o-mini,f1,False,complete,7633,7633,28,85.1594,84.3641,85.9258,bca_bootstrap_mean
+biohopr,BioHopR 2-hop,BioHopR_2hop.json,NEXA Direct,GPT-4o-mini,nexa-direct_gpt-4o-mini,precision,False,complete,7633,7633,28,85.2718,84.4794,86.0361,bca_bootstrap_mean
+biohopr,BioHopR 2-hop,BioHopR_2hop.json,NEXA Direct,GPT-4o-mini,nexa-direct_gpt-4o-mini,recall,False,complete,7633,7633,28,86.2052,85.4193,86.9626,bca_bootstrap_mean
+biohopr,BioHopR 2-hop,BioHopR_2hop.json,NEXA Direct,GPT-4o-mini,nexa-direct_gpt-4o-mini,overlap,False,complete,7633,7633,28,86.705,85.9346,87.4488,bca_bootstrap_mean
+biohopr,BioHopR 2-hop,BioHopR_2hop.json,NEXA Direct,GPT-5-mini,nexa-direct_gpt-5-mini,jaccard,True,complete,7633,7633,24,97.0141,96.6825,97.3193,bca_bootstrap_mean
+biohopr,BioHopR 2-hop,BioHopR_2hop.json,NEXA Direct,GPT-5-mini,nexa-direct_gpt-5-mini,exact_match,False,complete,7633,7633,24,92.6372,92.0296,93.2019,wilson
+biohopr,BioHopR 2-hop,BioHopR_2hop.json,NEXA Direct,GPT-5-mini,nexa-direct_gpt-5-mini,f1,False,complete,7633,7633,24,97.6037,97.3135,97.868,bca_bootstrap_mean
+biohopr,BioHopR 2-hop,BioHopR_2hop.json,NEXA Direct,GPT-5-mini,nexa-direct_gpt-5-mini,precision,False,complete,7633,7633,24,97.0966,96.7662,97.4002,bca_bootstrap_mean
+biohopr,BioHopR 2-hop,BioHopR_2hop.json,NEXA Direct,GPT-5-mini,nexa-direct_gpt-5-mini,recall,False,complete,7633,7633,24,99.2845,99.0838,99.4472,bca_bootstrap_mean
+biohopr,BioHopR 2-hop,BioHopR_2hop.json,NEXA Direct,GPT-5-mini,nexa-direct_gpt-5-mini,overlap,False,complete,7633,7633,24,99.3504,99.1523,99.5097,bca_bootstrap_mean
+biohopr,BioHopR 2-hop,BioHopR_2hop.json,NEXA Flex,GPT-5-mini,nexa-flex_gpt-5-mini,jaccard,True,complete,7633,7633,0,95.1837,94.7962,95.5499,bca_bootstrap_mean
+biohopr,BioHopR 2-hop,BioHopR_2hop.json,NEXA Flex,GPT-5-mini,nexa-flex_gpt-5-mini,exact_match,False,complete,7633,7633,0,89.0345,88.3137,89.7159,wilson
+biohopr,BioHopR 2-hop,BioHopR_2hop.json,NEXA Flex,GPT-5-mini,nexa-flex_gpt-5-mini,f1,False,complete,7633,7633,0,96.3763,96.0605,96.6701,bca_bootstrap_mean
+biohopr,BioHopR 2-hop,BioHopR_2hop.json,NEXA Flex,GPT-5-mini,nexa-flex_gpt-5-mini,precision,False,complete,7633,7633,0,95.2531,94.8676,95.6168,bca_bootstrap_mean
+biohopr,BioHopR 2-hop,BioHopR_2hop.json,NEXA Flex,GPT-5-mini,nexa-flex_gpt-5-mini,recall,False,complete,7633,7633,0,99.8598,99.7746,99.9118,bca_bootstrap_mean
+biohopr,BioHopR 2-hop,BioHopR_2hop.json,NEXA Flex,GPT-5-mini,nexa-flex_gpt-5-mini,overlap,False,complete,7633,7633,0,99.9105,99.8288,99.9543,bca_bootstrap_mean
+biohopr,BioHopR 2-hop,BioHopR_2hop.json,NEXA Direct,Qwen3.8-27B,nexa-direct_qwen3.8-27b,jaccard,True,complete,7633,7633,325,83.1174,82.2628,83.9217,bca_bootstrap_mean
+biohopr,BioHopR 2-hop,BioHopR_2hop.json,NEXA Direct,Qwen3.8-27B,nexa-direct_qwen3.8-27b,exact_match,False,complete,7633,7633,325,82.1695,81.2947,83.012,wilson
+biohopr,BioHopR 2-hop,BioHopR_2hop.json,NEXA Direct,Qwen3.8-27B,nexa-direct_qwen3.8-27b,f1,False,complete,7633,7633,325,83.4117,82.5635,84.2093,bca_bootstrap_mean
+biohopr,BioHopR 2-hop,BioHopR_2hop.json,NEXA Direct,Qwen3.8-27B,nexa-direct_qwen3.8-27b,precision,False,complete,7633,7633,325,83.1922,82.3396,83.9945,bca_bootstrap_mean
+biohopr,BioHopR 2-hop,BioHopR_2hop.json,NEXA Direct,Qwen3.8-27B,nexa-direct_qwen3.8-27b,recall,False,complete,7633,7633,325,84.4686,83.6337,85.2615,bca_bootstrap_mean
+biohopr,BioHopR 2-hop,BioHopR_2hop.json,NEXA Direct,Qwen3.8-27B,nexa-direct_qwen3.8-27b,overlap,False,complete,7633,7633,325,84.5333,83.6997,85.3212,bca_bootstrap_mean
+biohopr,BioHopR 2-hop,BioHopR_2hop.json,NEXA Flex,Qwen3.8-27B,nexa-flex_qwen3.8-27b,jaccard,True,complete,7633,7633,0,95.8431,95.4711,96.1892,bca_bootstrap_mean
+biohopr,BioHopR 2-hop,BioHopR_2hop.json,NEXA Flex,Qwen3.8-27B,nexa-flex_qwen3.8-27b,exact_match,False,complete,7633,7633,0,91.314,90.6613,91.9252,wilson
+biohopr,BioHopR 2-hop,BioHopR_2hop.json,NEXA Flex,Qwen3.8-27B,nexa-flex_qwen3.8-27b,f1,False,complete,7633,7633,0,96.8352,96.5325,97.1159,bca_bootstrap_mean
+biohopr,BioHopR 2-hop,BioHopR_2hop.json,NEXA Flex,Qwen3.8-27B,nexa-flex_qwen3.8-27b,precision,False,complete,7633,7633,0,95.8647,95.4942,96.2099,bca_bootstrap_mean
+biohopr,BioHopR 2-hop,BioHopR_2hop.json,NEXA Flex,Qwen3.8-27B,nexa-flex_qwen3.8-27b,recall,False,complete,7633,7633,0,99.8531,99.7558,99.9157,bca_bootstrap_mean
+biohopr,BioHopR 2-hop,BioHopR_2hop.json,NEXA Flex,Qwen3.8-27B,nexa-flex_qwen3.8-27b,overlap,False,complete,7633,7633,0,99.8565,99.7591,99.919,bca_bootstrap_mean
+biohopr,BioHopR 2-hop,BioHopR_2hop.json,LLM only,Qwen3.8-27B,vanilla_qwen3.8-27b,jaccard,True,complete,7633,7633,822,3.0525,2.8758,3.246,bca_bootstrap_mean
+biohopr,BioHopR 2-hop,BioHopR_2hop.json,LLM only,Qwen3.8-27B,vanilla_qwen3.8-27b,exact_match,False,complete,7633,7633,822,0.1572,0.09,0.2746,wilson
+biohopr,BioHopR 2-hop,BioHopR_2hop.json,LLM only,Qwen3.8-27B,vanilla_qwen3.8-27b,f1,False,complete,7633,7633,822,5.0203,4.7679,5.2861,bca_bootstrap_mean
+biohopr,BioHopR 2-hop,BioHopR_2hop.json,LLM only,Qwen3.8-27B,vanilla_qwen3.8-27b,precision,False,complete,7633,7633,822,6.5327,6.2099,6.8826,bca_bootstrap_mean
+biohopr,BioHopR 2-hop,BioHopR_2hop.json,LLM only,Qwen3.8-27B,vanilla_qwen3.8-27b,recall,False,complete,7633,7633,822,7.7922,7.3666,8.2394,bca_bootstrap_mean
+biohopr,BioHopR 2-hop,BioHopR_2hop.json,LLM only,Qwen3.8-27B,vanilla_qwen3.8-27b,overlap,False,complete,7633,7633,822,10.4692,9.9826,10.9743,bca_bootstrap_mean
+biohopr,BioHopR 2-hop,BioHopR_2hop.json,GraphCypherQAChain,Qwen3.8-27B,graphcypher_qwen3.8-27b,jaccard,True,complete,7633,7633,23,86.9738,86.3463,87.564,bca_bootstrap_mean
+biohopr,BioHopR 2-hop,BioHopR_2hop.json,GraphCypherQAChain,Qwen3.8-27B,graphcypher_qwen3.8-27b,exact_match,False,complete,7633,7633,23,66.2387,65.1699,67.2912,wilson
+biohopr,BioHopR 2-hop,BioHopR_2hop.json,GraphCypherQAChain,Qwen3.8-27B,graphcypher_qwen3.8-27b,f1,False,complete,7633,7633,23,89.507,88.9236,90.0495,bca_bootstrap_mean
+biohopr,BioHopR 2-hop,BioHopR_2hop.json,GraphCypherQAChain,Qwen3.8-27B,graphcypher_qwen3.8-27b,precision,False,complete,7633,7633,23,90.1636,89.5924,90.6947,bca_bootstrap_mean
+biohopr,BioHopR 2-hop,BioHopR_2hop.json,GraphCypherQAChain,Qwen3.8-27B,graphcypher_qwen3.8-27b,recall,False,complete,7633,7633,23,89.7702,89.1965,90.3076,bca_bootstrap_mean
+biohopr,BioHopR 2-hop,BioHopR_2hop.json,GraphCypherQAChain,Qwen3.8-27B,graphcypher_qwen3.8-27b,overlap,False,complete,7633,7633,23,91.2672,90.7266,91.769,bca_bootstrap_mean

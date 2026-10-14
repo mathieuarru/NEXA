@@ -1,0 +1,224 @@
+====================================================================================================
+MARGINAL: accuracy with Wilson 95% CI (sampling uncertainty, per arm)
+====================================================================================================
+
+question set                           vanilla_gpt-4o-mini      vanilla_gpt-5-mini  graphcypher_gpt-4o-min  graphcypher_gpt-5-mini  nexa-direct_gpt-4o-min  nexa-direct_gpt-5-mini    nexa-flex_gpt-5-mini  nexa-direct_qwen3.8-27   nexa-flex_qwen3.8-27b     vanilla_qwen3.8-27b  graphcypher_qwen3.8-27
+True_or_False_1hop                     0.689 [0.650-0.726]     0.698 [0.659-0.735]     0.805 [0.771-0.836]     0.868 [0.837-0.893]     0.955 [0.935-0.970]     0.925 [0.900-0.944]     0.984 [0.970-0.992]     0.963 [0.943-0.975]     0.986 [0.972-0.993]     0.671 [0.631-0.709]     0.787 [0.752-0.819]
+True_or_False_2hop                     0.613 [0.571-0.653]     0.600 [0.558-0.640]     0.650 [0.609-0.689]     0.706 [0.666-0.742]     0.924 [0.899-0.944]     0.735 [0.696-0.771]     0.724 [0.685-0.760]     0.837 [0.804-0.866]     0.743 [0.704-0.778]     0.602 [0.560-0.642]     0.770 [0.733-0.804]
+True_or_False_2hop_atleastone          0.604 [0.562-0.644]     0.611 [0.569-0.651]     0.807 [0.772-0.838]     0.876 [0.845-0.901]     0.957 [0.937-0.971]     0.885 [0.856-0.909]     0.976 [0.959-0.986]     0.993 [0.981-0.997]     0.996 [0.987-0.999]     0.606 [0.564-0.646]     0.857 [0.825-0.884]
+MCQ_1hop                               0.552 [0.508-0.595]     0.697 [0.655-0.736]     0.647 [0.604-0.687]     0.703 [0.661-0.741]     0.910 [0.881-0.932]     0.930 [0.904-0.949]     0.996 [0.985-0.999]     0.996 [0.985-0.999]     0.994 [0.982-0.998]     0.602 [0.559-0.644]     0.867 [0.835-0.894]
+MCQ_2hop                               0.613 [0.566-0.659]     0.735 [0.691-0.775]     0.654 [0.607-0.698]     0.768 [0.726-0.806]     0.943 [0.916-0.961]     0.993 [0.979-0.998]     0.981 [0.963-0.990]     0.990 [0.976-0.996]     1.000 [0.991-1.000]     0.644 [0.597-0.689]     0.895 [0.862-0.921]
+OpenEnded_1hop                         0.012 [0.005-0.026]     0.014 [0.007-0.028]     0.783 [0.746-0.817]     0.675 [0.633-0.714]     0.841 [0.806-0.870]     0.909 [0.881-0.931]     0.906 [0.877-0.928]     0.898 [0.868-0.921]     0.919 [0.892-0.940]     0.018 [0.009-0.033]     0.809 [0.773-0.841]
+OpenEnded_2hop                         0.002 [0.000-0.012]     0.004 [0.001-0.016]     0.111 [0.085-0.144]     0.680 [0.636-0.721]     0.698 [0.654-0.738]     0.893 [0.861-0.919]     0.889 [0.856-0.915]     0.896 [0.864-0.921]     0.878 [0.844-0.905]     0.007 [0.002-0.019]     0.653 [0.608-0.696]
+
+Reading note: these intervals are marginal. Two of them overlapping does
+not mean the two arms are indistinguishable: all arms answered the same
+questions, so the comparison to read is the paired one below.
+
+====================================================================================================
+PAIRED (family: every arm against nexa-direct_gpt-5-mini; 150 comparisons)
+====================================================================================================
+
+  Delta = A - B on the same questions. b/c = discordant counts (A only / B only).
+  Binary outcomes: Newcombe 95% CI + exact McNemar. Graded: BCa bootstrap + sign-flip.
+  Holm is applied within each metric; family sizes: accuracy n=70, f1 n=20, jaccard n=20, precision n=20, recall n=20.
+  Graded p-values are Monte-Carlo and cannot go below 1/100000; they are
+  printed as '<floor' there, and the CI is the inference to read.
+
+--- True_or_False_1hop ---
+    A                          B                          metric         n       A       B    delta             95% CI        b/c         p    p Holm
+    nexa-direct_gpt-5-mini     vanilla_gpt-4o-mini        accuracy     560   0.925   0.689   +0.236    [+0.193,+0.278]     156/24  6.67e-25  3.27e-23 ***
+    nexa-direct_gpt-5-mini     vanilla_gpt-5-mini         accuracy     560   0.925   0.698   +0.227    [+0.183,+0.270]     154/27  8.52e-23  3.75e-21 ***
+    nexa-direct_gpt-5-mini     graphcypher_gpt-4o-mini    accuracy     560   0.925   0.805   +0.120    [+0.084,+0.156]      91/24  2.26e-10  8.13e-09 ***
+    nexa-direct_gpt-5-mini     graphcypher_gpt-5-mini     accuracy     560   0.925   0.868   +0.057    [+0.022,+0.092]      66/34  1.79e-03  3.40e-02 *
+    nexa-direct_gpt-5-mini     nexa-direct_gpt-4o-mini    accuracy     560   0.925   0.955   -0.030    [-0.058,-0.004]      20/37  3.31e-02  5.63e-01 ns
+    nexa-direct_gpt-5-mini     nexa-flex_gpt-5-mini       accuracy     560   0.925   0.984   -0.059    [-0.084,-0.037]       6/39  5.42e-07  1.52e-05 ***
+    nexa-direct_gpt-5-mini     nexa-direct_qwen3.8-27b    accuracy     560   0.925   0.963   -0.037    [-0.064,-0.013]      15/36  4.60e-03  8.28e-02 ns
+    nexa-direct_gpt-5-mini     nexa-flex_qwen3.8-27b      accuracy     560   0.925   0.986   -0.061    [-0.086,-0.038]       6/40  3.10e-07  9.00e-06 ***
+    nexa-direct_gpt-5-mini     vanilla_qwen3.8-27b        accuracy     560   0.925   0.671   +0.254    [+0.209,+0.298]     170/28  5.32e-26  2.71e-24 ***
+    nexa-direct_gpt-5-mini     graphcypher_qwen3.8-27b    accuracy     560   0.925   0.787   +0.138    [+0.096,+0.179]     114/37  2.53e-10  8.84e-09 ***
+
+--- True_or_False_2hop ---
+    A                          B                          metric         n       A       B    delta             95% CI        b/c         p    p Holm
+    nexa-direct_gpt-5-mini     vanilla_gpt-4o-mini        accuracy     540   0.735   0.613   +0.122    [+0.061,+0.182]    177/111  1.20e-04  2.77e-03 **
+    nexa-direct_gpt-5-mini     vanilla_gpt-5-mini         accuracy     540   0.735   0.600   +0.135    [+0.079,+0.190]     158/85  3.29e-06  8.87e-05 ***
+    nexa-direct_gpt-5-mini     graphcypher_gpt-4o-mini    accuracy     540   0.735   0.650   +0.085    [+0.039,+0.131]     106/60  4.43e-04  9.31e-03 **
+    nexa-direct_gpt-5-mini     graphcypher_gpt-5-mini     accuracy     540   0.735   0.706   +0.030    [-0.001,+0.060]      43/27  7.22e-02  1.00e+00 ns
+    nexa-direct_gpt-5-mini     nexa-direct_gpt-4o-mini    accuracy     540   0.735   0.924   -0.189    [-0.226,-0.153]      8/110  4.74e-24  2.13e-22 ***
+    nexa-direct_gpt-5-mini     nexa-flex_gpt-5-mini       accuracy     540   0.735   0.724   +0.011    [-0.012,+0.035]      24/18  4.41e-01  1.00e+00 ns
+    nexa-direct_gpt-5-mini     nexa-direct_qwen3.8-27b    accuracy     540   0.735   0.837   -0.102    [-0.132,-0.073]       8/63  1.03e-11  3.80e-10 ***
+    nexa-direct_gpt-5-mini     nexa-flex_qwen3.8-27b      accuracy     540   0.735   0.743   -0.007    [-0.029,+0.014]      15/19  6.08e-01  1.00e+00 ns
+    nexa-direct_gpt-5-mini     vanilla_qwen3.8-27b        accuracy     540   0.735   0.602   +0.133    [+0.075,+0.190]     167/95  1.02e-05  2.66e-04 ***
+    nexa-direct_gpt-5-mini     graphcypher_qwen3.8-27b    accuracy     540   0.735   0.770   -0.035    [-0.072,+0.002]      42/61  7.56e-02  1.00e+00 ns
+
+--- True_or_False_2hop_atleastone ---
+    A                          B                          metric         n       A       B    delta             95% CI        b/c         p    p Holm
+    nexa-direct_gpt-5-mini     vanilla_gpt-4o-mini        accuracy     540   0.885   0.604   +0.281    [+0.238,+0.324]     167/15  1.20e-33  6.87e-32 ***
+    nexa-direct_gpt-5-mini     vanilla_gpt-5-mini         accuracy     540   0.885   0.611   +0.274    [+0.230,+0.317]     165/17  1.25e-31  6.98e-30 ***
+    nexa-direct_gpt-5-mini     graphcypher_gpt-4o-mini    accuracy     540   0.885   0.807   +0.078    [+0.036,+0.119]      87/45  3.23e-04  7.11e-03 **
+    nexa-direct_gpt-5-mini     graphcypher_gpt-5-mini     accuracy     540   0.885   0.876   +0.009    [-0.031,+0.049]      62/57  7.14e-01  1.00e+00 ns
+    nexa-direct_gpt-5-mini     nexa-direct_gpt-4o-mini    accuracy     540   0.885   0.957   -0.072    [-0.105,-0.041]      20/59  1.30e-05  3.24e-04 ***
+    nexa-direct_gpt-5-mini     nexa-flex_gpt-5-mini       accuracy     540   0.885   0.976   -0.091    [-0.122,-0.062]      11/60  2.63e-09  8.95e-08 ***
+    nexa-direct_gpt-5-mini     nexa-direct_qwen3.8-27b    accuracy     540   0.885   0.993   -0.107    [-0.137,-0.081]       3/61  4.74e-15  1.90e-13 ***
+    nexa-direct_gpt-5-mini     nexa-flex_qwen3.8-27b      accuracy     540   0.885   0.996   -0.111    [-0.141,-0.086]       1/61  2.73e-17  1.15e-15 ***
+    nexa-direct_gpt-5-mini     vanilla_qwen3.8-27b        accuracy     540   0.885   0.606   +0.280    [+0.238,+0.320]      160/9  7.06e-37  4.10e-35 ***
+    nexa-direct_gpt-5-mini     graphcypher_qwen3.8-27b    accuracy     540   0.885   0.857   +0.028    [-0.010,+0.066]      61/46  1.76e-01  1.00e+00 ns
+
+--- MCQ_1hop ---
+    A                          B                          metric         n       A       B    delta             95% CI        b/c         p    p Holm
+    nexa-direct_gpt-5-mini     vanilla_gpt-4o-mini        accuracy     498   0.930   0.552   +0.378    [+0.334,+0.420]      190/2  5.90e-54  3.72e-52 ***
+    nexa-direct_gpt-5-mini     vanilla_gpt-5-mini         accuracy     498   0.930   0.697   +0.233    [+0.191,+0.275]     129/13  3.46e-25  1.73e-23 ***
+    nexa-direct_gpt-5-mini     graphcypher_gpt-4o-mini    accuracy     498   0.930   0.647   +0.283    [+0.237,+0.329]     158/17  7.97e-30  4.22e-28 ***
+    nexa-direct_gpt-5-mini     graphcypher_gpt-5-mini     accuracy     498   0.930   0.703   +0.227    [+0.185,+0.269]     126/13  2.08e-24  9.56e-23 ***
+    nexa-direct_gpt-5-mini     nexa-direct_gpt-4o-mini    accuracy     498   0.930   0.910   +0.020    [-0.011,+0.051]      35/25  2.45e-01  1.00e+00 ns
+    nexa-direct_gpt-5-mini     nexa-flex_gpt-5-mini       accuracy     498   0.930   0.996   -0.066    [-0.092,-0.044]       2/35  1.02e-08  3.28e-07 ***
+    nexa-direct_gpt-5-mini     nexa-direct_qwen3.8-27b    accuracy     498   0.930   0.996   -0.066    [-0.092,-0.044]       2/35  1.02e-08  3.28e-07 ***
+    nexa-direct_gpt-5-mini     nexa-flex_qwen3.8-27b      accuracy     498   0.930   0.994   -0.064    [-0.091,-0.042]       3/35  6.68e-08  2.00e-06 ***
+    nexa-direct_gpt-5-mini     vanilla_qwen3.8-27b        accuracy     498   0.930   0.602   +0.327    [+0.284,+0.371]      169/6  1.58e-42  9.50e-41 ***
+    nexa-direct_gpt-5-mini     graphcypher_qwen3.8-27b    accuracy     498   0.930   0.867   +0.062    [+0.029,+0.097]      53/22  4.50e-04  9.31e-03 **
+
+--- MCQ_2hop ---
+    A                          B                          metric         n       A       B    delta             95% CI        b/c         p    p Holm
+    nexa-direct_gpt-5-mini     vanilla_gpt-4o-mini        accuracy     419   0.993   0.613   +0.379    [+0.333,+0.427]      159/0  2.74e-48  1.70e-46 ***
+    nexa-direct_gpt-5-mini     vanilla_gpt-5-mini         accuracy     419   0.993   0.735   +0.258    [+0.217,+0.302]      109/1  1.71e-31  9.24e-30 ***
+    nexa-direct_gpt-5-mini     graphcypher_gpt-4o-mini    accuracy     419   0.993   0.654   +0.339    [+0.294,+0.386]      143/1  1.30e-41  7.67e-40 ***
+    nexa-direct_gpt-5-mini     graphcypher_gpt-5-mini     accuracy     419   0.993   0.768   +0.224    [+0.184,+0.267]       96/2  3.06e-26  1.59e-24 ***
+    nexa-direct_gpt-5-mini     nexa-direct_gpt-4o-mini    accuracy     419   0.993   0.943   +0.050    [+0.028,+0.077]       23/2  1.94e-05  4.66e-04 ***
+    nexa-direct_gpt-5-mini     nexa-flex_gpt-5-mini       accuracy     419   0.993   0.981   +0.012    [-0.003,+0.030]        7/2  1.80e-01  1.00e+00 ns
+    nexa-direct_gpt-5-mini     nexa-direct_qwen3.8-27b    accuracy     419   0.993   0.990   +0.002    [-0.013,+0.018]        4/3  1.00e+00  1.00e+00 ns
+    nexa-direct_gpt-5-mini     nexa-flex_qwen3.8-27b      accuracy     419   0.993   1.000   -0.007    [-0.021,+0.003]        0/3  2.50e-01  1.00e+00 ns
+    nexa-direct_gpt-5-mini     vanilla_qwen3.8-27b        accuracy     419   0.993   0.644   +0.348    [+0.303,+0.395]      147/1  8.35e-43  5.09e-41 ***
+    nexa-direct_gpt-5-mini     graphcypher_qwen3.8-27b    accuracy     419   0.993   0.895   +0.098    [+0.071,+0.130]       42/1  1.00e-11  3.80e-10 ***
+
+--- OpenEnded_1hop ---
+    A                          B                          metric         n       A       B    delta             95% CI        b/c         p    p Holm
+    nexa-direct_gpt-5-mini     vanilla_gpt-4o-mini        accuracy     508   0.909   0.012   +0.898    [+0.867,+0.920]      456/0 1.07e-137 7.52e-136 ***
+    nexa-direct_gpt-5-mini     vanilla_gpt-4o-mini        f1           508   0.928   0.111   +0.818    [+0.792,+0.841]          —    <1e-05    <2e-04 ***
+    nexa-direct_gpt-5-mini     vanilla_gpt-4o-mini        recall       508   0.925   0.154   +0.771    [+0.739,+0.802]          —    <1e-05    <2e-04 ***
+    nexa-direct_gpt-5-mini     vanilla_gpt-4o-mini        precision    508   0.970   0.179   +0.791    [+0.761,+0.818]          —    <1e-05    <2e-04 ***
+    nexa-direct_gpt-5-mini     vanilla_gpt-4o-mini        jaccard      508   0.924   0.074   +0.850    [+0.824,+0.872]          —    <1e-05    <2e-04 ***
+    nexa-direct_gpt-5-mini     vanilla_gpt-5-mini         accuracy     508   0.909   0.014   +0.896    [+0.865,+0.919]      455/0 2.15e-137 1.48e-135 ***
+    nexa-direct_gpt-5-mini     vanilla_gpt-5-mini         f1           508   0.928   0.124   +0.804    [+0.777,+0.829]          —    <1e-05    <2e-04 ***
+    nexa-direct_gpt-5-mini     vanilla_gpt-5-mini         recall       508   0.925   0.172   +0.754    [+0.720,+0.784]          —    <1e-05    <2e-04 ***
+    nexa-direct_gpt-5-mini     vanilla_gpt-5-mini         precision    508   0.970   0.172   +0.798    [+0.767,+0.825]          —    <1e-05    <2e-04 ***
+    nexa-direct_gpt-5-mini     vanilla_gpt-5-mini         jaccard      508   0.924   0.087   +0.837    [+0.810,+0.861]          —    <1e-05    <2e-04 ***
+    nexa-direct_gpt-5-mini     graphcypher_gpt-4o-mini    accuracy     508   0.909   0.783   +0.126    [+0.097,+0.157]       65/1  1.82e-18  7.81e-17 ***
+    nexa-direct_gpt-5-mini     graphcypher_gpt-4o-mini    f1           508   0.928   0.827   +0.101    [+0.080,+0.127]          —    <1e-05    <2e-04 ***
+    nexa-direct_gpt-5-mini     graphcypher_gpt-4o-mini    recall       508   0.925   0.834   +0.092    [+0.071,+0.117]          —    <1e-05    <2e-04 ***
+    nexa-direct_gpt-5-mini     graphcypher_gpt-4o-mini    precision    508   0.970   0.836   +0.134    [+0.107,+0.164]          —    <1e-05    <2e-04 ***
+    nexa-direct_gpt-5-mini     graphcypher_gpt-4o-mini    jaccard      508   0.924   0.819   +0.105    [+0.083,+0.132]          —    <1e-05    <2e-04 ***
+    nexa-direct_gpt-5-mini     graphcypher_gpt-5-mini     accuracy     508   0.909   0.675   +0.234    [+0.196,+0.273]      123/4  1.25e-31  6.98e-30 ***
+    nexa-direct_gpt-5-mini     graphcypher_gpt-5-mini     f1           508   0.928   0.732   +0.196    [+0.158,+0.236]          —    <1e-05    <2e-04 ***
+    nexa-direct_gpt-5-mini     graphcypher_gpt-5-mini     recall       508   0.925   0.724   +0.201    [+0.163,+0.242]          —    <1e-05    <2e-04 ***
+    nexa-direct_gpt-5-mini     graphcypher_gpt-5-mini     precision    508   0.970   0.765   +0.205    [+0.167,+0.245]          —    <1e-05    <2e-04 ***
+    nexa-direct_gpt-5-mini     graphcypher_gpt-5-mini     jaccard      508   0.924   0.722   +0.202    [+0.163,+0.242]          —    <1e-05    <2e-04 ***
+    nexa-direct_gpt-5-mini     nexa-direct_gpt-4o-mini    accuracy     508   0.909   0.841   +0.069    [+0.046,+0.094]       37/2  2.84e-09  9.38e-08 ***
+    nexa-direct_gpt-5-mini     nexa-direct_gpt-4o-mini    f1           508   0.928   0.961   -0.033    [-0.056,-0.011]          —  4.16e-03  2.08e-02 *
+    nexa-direct_gpt-5-mini     nexa-direct_gpt-4o-mini    recall       508   0.925   0.957   -0.031    [-0.056,-0.009]          —  8.61e-03  2.58e-02 *
+    nexa-direct_gpt-5-mini     nexa-direct_gpt-4o-mini    precision    508   0.970   0.971   -0.001    [-0.019,+0.018]          —  9.39e-01  1.00e+00 ns
+    nexa-direct_gpt-5-mini     nexa-direct_gpt-4o-mini    jaccard      508   0.924   0.956   -0.032    [-0.057,-0.010]          —  8.52e-03  4.26e-02 *
+    nexa-direct_gpt-5-mini     nexa-flex_gpt-5-mini       accuracy     508   0.909   0.906   +0.004    [-0.008,+0.017]        5/3  7.27e-01  1.00e+00 ns
+    nexa-direct_gpt-5-mini     nexa-flex_gpt-5-mini       f1           508   0.928   0.966   -0.038    [-0.055,-0.025]          —    <1e-05    <2e-04 ***
+    nexa-direct_gpt-5-mini     nexa-flex_gpt-5-mini       recall       508   0.925   0.963   -0.038    [-0.055,-0.025]          —    <1e-05    <2e-04 ***
+    nexa-direct_gpt-5-mini     nexa-flex_gpt-5-mini       precision    508   0.970   0.988   -0.018    [-0.034,-0.007]          —  3.69e-03  1.85e-02 *
+    nexa-direct_gpt-5-mini     nexa-flex_gpt-5-mini       jaccard      508   0.924   0.962   -0.038    [-0.055,-0.025]          —    <1e-05    <2e-04 ***
+    nexa-direct_gpt-5-mini     nexa-direct_qwen3.8-27b    accuracy     508   0.909   0.898   +0.012    [-0.004,+0.029]       11/5  2.10e-01  1.00e+00 ns
+    nexa-direct_gpt-5-mini     nexa-direct_qwen3.8-27b    f1           508   0.928   0.921   +0.008    [-0.001,+0.017]          —  9.96e-02  1.99e-01 ns
+    nexa-direct_gpt-5-mini     nexa-direct_qwen3.8-27b    recall       508   0.925   0.922   +0.004    [-0.005,+0.013]          —  4.26e-01  8.53e-01 ns
+    nexa-direct_gpt-5-mini     nexa-direct_qwen3.8-27b    precision    508   0.970   0.921   +0.049    [+0.032,+0.070]          —    <1e-05    <2e-04 ***
+    nexa-direct_gpt-5-mini     nexa-direct_qwen3.8-27b    jaccard      508   0.924   0.919   +0.004    [-0.005,+0.014]          —  3.54e-01  7.07e-01 ns
+    nexa-direct_gpt-5-mini     nexa-flex_qwen3.8-27b      accuracy     508   0.909   0.919   -0.010    [-0.025,+0.005]        4/9  2.67e-01  1.00e+00 ns
+    nexa-direct_gpt-5-mini     nexa-flex_qwen3.8-27b      f1           508   0.928   0.994   -0.065    [-0.088,-0.047]          —    <1e-05    <2e-04 ***
+    nexa-direct_gpt-5-mini     nexa-flex_qwen3.8-27b      recall       508   0.925   0.995   -0.070    [-0.094,-0.050]          —    <1e-05    <2e-04 ***
+    nexa-direct_gpt-5-mini     nexa-flex_qwen3.8-27b      precision    508   0.970   0.995   -0.025    [-0.042,-0.014]          —  1.10e-04  6.60e-04 ***
+    nexa-direct_gpt-5-mini     nexa-flex_qwen3.8-27b      jaccard      508   0.924   0.993   -0.069    [-0.093,-0.050]          —    <1e-05    <2e-04 ***
+    nexa-direct_gpt-5-mini     vanilla_qwen3.8-27b        accuracy     508   0.909   0.018   +0.892    [+0.860,+0.915]      453/0 8.60e-137 5.85e-135 ***
+    nexa-direct_gpt-5-mini     vanilla_qwen3.8-27b        f1           508   0.928   0.094   +0.834    [+0.807,+0.858]          —    <1e-05    <2e-04 ***
+    nexa-direct_gpt-5-mini     vanilla_qwen3.8-27b        recall       508   0.925   0.140   +0.786    [+0.754,+0.815]          —    <1e-05    <2e-04 ***
+    nexa-direct_gpt-5-mini     vanilla_qwen3.8-27b        precision    508   0.970   0.126   +0.844    [+0.816,+0.868]          —    <1e-05    <2e-04 ***
+    nexa-direct_gpt-5-mini     vanilla_qwen3.8-27b        jaccard      508   0.924   0.066   +0.858    [+0.831,+0.881]          —    <1e-05    <2e-04 ***
+    nexa-direct_gpt-5-mini     graphcypher_qwen3.8-27b    accuracy     508   0.909   0.809   +0.100    [+0.073,+0.130]       54/3  4.29e-13  1.67e-11 ***
+    nexa-direct_gpt-5-mini     graphcypher_qwen3.8-27b    f1           508   0.928   0.837   +0.091    [+0.070,+0.117]          —    <1e-05    <2e-04 ***
+    nexa-direct_gpt-5-mini     graphcypher_qwen3.8-27b    recall       508   0.925   0.835   +0.090    [+0.068,+0.116]          —    <1e-05    <2e-04 ***
+    nexa-direct_gpt-5-mini     graphcypher_qwen3.8-27b    precision    508   0.970   0.841   +0.129    [+0.102,+0.159]          —    <1e-05    <2e-04 ***
+    nexa-direct_gpt-5-mini     graphcypher_qwen3.8-27b    jaccard      508   0.924   0.832   +0.092    [+0.070,+0.118]          —    <1e-05    <2e-04 ***
+
+--- OpenEnded_2hop ---
+    A                          B                          metric         n       A       B    delta             95% CI        b/c         p    p Holm
+    nexa-direct_gpt-5-mini     vanilla_gpt-4o-mini        accuracy     450   0.893   0.002   +0.891    [+0.858,+0.916]      401/0 3.87e-121 2.59e-119 ***
+    nexa-direct_gpt-5-mini     vanilla_gpt-4o-mini        f1           450   0.952   0.066   +0.886    [+0.863,+0.905]          —    <1e-05    <2e-04 ***
+    nexa-direct_gpt-5-mini     vanilla_gpt-4o-mini        recall       450   0.946   0.081   +0.865    [+0.837,+0.889]          —    <1e-05    <2e-04 ***
+    nexa-direct_gpt-5-mini     vanilla_gpt-4o-mini        precision    450   0.974   0.159   +0.815    [+0.786,+0.841]          —    <1e-05    <2e-04 ***
+    nexa-direct_gpt-5-mini     vanilla_gpt-4o-mini        jaccard      450   0.945   0.041   +0.904    [+0.882,+0.923]          —    <1e-05    <2e-04 ***
+    nexa-direct_gpt-5-mini     vanilla_gpt-5-mini         accuracy     450   0.893   0.004   +0.889    [+0.855,+0.914]      400/0 7.75e-121 5.11e-119 ***
+    nexa-direct_gpt-5-mini     vanilla_gpt-5-mini         f1           450   0.952   0.096   +0.857    [+0.832,+0.877]          —    <1e-05    <2e-04 ***
+    nexa-direct_gpt-5-mini     vanilla_gpt-5-mini         recall       450   0.946   0.117   +0.829    [+0.799,+0.855]          —    <1e-05    <2e-04 ***
+    nexa-direct_gpt-5-mini     vanilla_gpt-5-mini         precision    450   0.974   0.187   +0.788    [+0.756,+0.816]          —    <1e-05    <2e-04 ***
+    nexa-direct_gpt-5-mini     vanilla_gpt-5-mini         jaccard      450   0.945   0.063   +0.882    [+0.858,+0.902]          —    <1e-05    <2e-04 ***
+    nexa-direct_gpt-5-mini     graphcypher_gpt-4o-mini    accuracy     450   0.893   0.111   +0.782    [+0.740,+0.816]      352/0 2.18e-106 1.40e-104 ***
+    nexa-direct_gpt-5-mini     graphcypher_gpt-4o-mini    f1           450   0.952   0.270   +0.682    [+0.646,+0.715]          —    <1e-05    <2e-04 ***
+    nexa-direct_gpt-5-mini     graphcypher_gpt-4o-mini    recall       450   0.946   0.509   +0.436    [+0.393,+0.480]          —    <1e-05    <2e-04 ***
+    nexa-direct_gpt-5-mini     graphcypher_gpt-4o-mini    precision    450   0.974   0.266   +0.708    [+0.670,+0.744]          —    <1e-05    <2e-04 ***
+    nexa-direct_gpt-5-mini     graphcypher_gpt-4o-mini    jaccard      450   0.945   0.221   +0.724    [+0.688,+0.757]          —    <1e-05    <2e-04 ***
+    nexa-direct_gpt-5-mini     graphcypher_gpt-5-mini     accuracy     450   0.893   0.680   +0.213    [+0.165,+0.261]     118/22  4.49e-17  1.84e-15 ***
+    nexa-direct_gpt-5-mini     graphcypher_gpt-5-mini     f1           450   0.952   0.742   +0.210    [+0.169,+0.254]          —    <1e-05    <2e-04 ***
+    nexa-direct_gpt-5-mini     graphcypher_gpt-5-mini     recall       450   0.946   0.741   +0.205    [+0.163,+0.250]          —    <1e-05    <2e-04 ***
+    nexa-direct_gpt-5-mini     graphcypher_gpt-5-mini     precision    450   0.974   0.753   +0.221    [+0.181,+0.264]          —    <1e-05    <2e-04 ***
+    nexa-direct_gpt-5-mini     graphcypher_gpt-5-mini     jaccard      450   0.945   0.735   +0.210    [+0.168,+0.255]          —    <1e-05    <2e-04 ***
+    nexa-direct_gpt-5-mini     nexa-direct_gpt-4o-mini    accuracy     450   0.893   0.698   +0.196    [+0.158,+0.234]       90/2  1.73e-24  8.12e-23 ***
+    nexa-direct_gpt-5-mini     nexa-direct_gpt-4o-mini    f1           450   0.952   0.851   +0.102    [+0.072,+0.134]          —    <1e-05    <2e-04 ***
+    nexa-direct_gpt-5-mini     nexa-direct_gpt-4o-mini    recall       450   0.946   0.864   +0.082    [+0.053,+0.113]          —    <1e-05    <2e-04 ***
+    nexa-direct_gpt-5-mini     nexa-direct_gpt-4o-mini    precision    450   0.974   0.867   +0.107    [+0.078,+0.140]          —    <1e-05    <2e-04 ***
+    nexa-direct_gpt-5-mini     nexa-direct_gpt-4o-mini    jaccard      450   0.945   0.839   +0.107    [+0.076,+0.140]          —    <1e-05    <2e-04 ***
+    nexa-direct_gpt-5-mini     nexa-flex_gpt-5-mini       accuracy     450   0.893   0.889   +0.004    [-0.022,+0.031]      18/16  8.64e-01  1.00e+00 ns
+    nexa-direct_gpt-5-mini     nexa-flex_gpt-5-mini       f1           450   0.952   0.972   -0.020    [-0.038,-0.003]          —  2.47e-02  9.89e-02 ns
+    nexa-direct_gpt-5-mini     nexa-flex_gpt-5-mini       recall       450   0.946   0.974   -0.028    [-0.047,-0.012]          —  1.49e-03  5.96e-03 **
+    nexa-direct_gpt-5-mini     nexa-flex_gpt-5-mini       precision    450   0.974   0.989   -0.015    [-0.034,+0.000]          —  7.77e-02  2.33e-01 ns
+    nexa-direct_gpt-5-mini     nexa-flex_gpt-5-mini       jaccard      450   0.945   0.967   -0.022    [-0.042,-0.004]          —  2.30e-02  9.20e-02 ns
+    nexa-direct_gpt-5-mini     nexa-direct_qwen3.8-27b    accuracy     450   0.893   0.896   -0.002    [-0.027,+0.022]      14/15  1.00e+00  1.00e+00 ns
+    nexa-direct_gpt-5-mini     nexa-direct_qwen3.8-27b    f1           450   0.952   0.950   +0.002    [-0.014,+0.019]          —  7.82e-01  7.82e-01 ns
+    nexa-direct_gpt-5-mini     nexa-direct_qwen3.8-27b    recall       450   0.946   0.948   -0.002    [-0.019,+0.014]          —  7.84e-01  8.53e-01 ns
+    nexa-direct_gpt-5-mini     nexa-direct_qwen3.8-27b    precision    450   0.974   0.956   +0.018    [+0.001,+0.038]          —  3.78e-02  1.51e-01 ns
+    nexa-direct_gpt-5-mini     nexa-direct_qwen3.8-27b    jaccard      450   0.945   0.947   -0.002    [-0.018,+0.015]          —  8.39e-01  8.39e-01 ns
+    nexa-direct_gpt-5-mini     nexa-flex_qwen3.8-27b      accuracy     450   0.893   0.878   +0.016    [-0.016,+0.048]      30/23  4.10e-01  1.00e+00 ns
+    nexa-direct_gpt-5-mini     nexa-flex_qwen3.8-27b      f1           450   0.952   0.976   -0.024    [-0.046,-0.004]          —  2.76e-02  9.89e-02 ns
+    nexa-direct_gpt-5-mini     nexa-flex_qwen3.8-27b      recall       450   0.946   0.996   -0.051    [-0.072,-0.033]          —    <1e-05    <2e-04 ***
+    nexa-direct_gpt-5-mini     nexa-flex_qwen3.8-27b      precision    450   0.974   0.971   +0.003    [-0.017,+0.022]          —  7.63e-01  1.00e+00 ns
+    nexa-direct_gpt-5-mini     nexa-flex_qwen3.8-27b      jaccard      450   0.945   0.970   -0.025    [-0.049,-0.003]          —  3.49e-02  1.05e-01 ns
+    nexa-direct_gpt-5-mini     vanilla_qwen3.8-27b        accuracy     450   0.893   0.007   +0.887    [+0.853,+0.912]      399/0 1.55e-120 1.01e-118 ***
+    nexa-direct_gpt-5-mini     vanilla_qwen3.8-27b        f1           450   0.952   0.088   +0.864    [+0.840,+0.884]          —    <1e-05    <2e-04 ***
+    nexa-direct_gpt-5-mini     vanilla_qwen3.8-27b        recall       450   0.946   0.103   +0.843    [+0.814,+0.868]          —    <1e-05    <2e-04 ***
+    nexa-direct_gpt-5-mini     vanilla_qwen3.8-27b        precision    450   0.974   0.155   +0.819    [+0.790,+0.844]          —    <1e-05    <2e-04 ***
+    nexa-direct_gpt-5-mini     vanilla_qwen3.8-27b        jaccard      450   0.945   0.058   +0.887    [+0.864,+0.907]          —    <1e-05    <2e-04 ***
+    nexa-direct_gpt-5-mini     graphcypher_qwen3.8-27b    accuracy     450   0.893   0.653   +0.240    [+0.196,+0.284]     118/10  1.45e-24  6.98e-23 ***
+    nexa-direct_gpt-5-mini     graphcypher_qwen3.8-27b    f1           450   0.952   0.774   +0.178    [+0.144,+0.214]          —    <1e-05    <2e-04 ***
+    nexa-direct_gpt-5-mini     graphcypher_qwen3.8-27b    recall       450   0.946   0.807   +0.138    [+0.106,+0.173]          —    <1e-05    <2e-04 ***
+    nexa-direct_gpt-5-mini     graphcypher_qwen3.8-27b    precision    450   0.974   0.784   +0.190    [+0.155,+0.227]          —    <1e-05    <2e-04 ***
+    nexa-direct_gpt-5-mini     graphcypher_qwen3.8-27b    jaccard      450   0.945   0.754   +0.191    [+0.156,+0.228]          —    <1e-05    <2e-04 ***
+
+====================================================================================================
+SUMMARY
+====================================================================================================
+  accuracy     70 comparisons,   52 significant after Holm
+  f1           20 comparisons,   16 significant after Holm
+  jaccard      20 comparisons,   16 significant after Holm
+  precision    20 comparisons,   16 significant after Holm
+  recall       20 comparisons,   18 significant after Holm
+
+  Diagnostic over all 385 arm pairs x question sets (raw p, outside the
+  declared family; descriptive, not a claim):
+    differences with p < 0.05 whose marginal CIs overlap: 21
+    i.e. real differences that a 'do the error bars overlap?' reading loses:
+      OpenEnded_1hop             nexa-direct_gpt-4o-mini  vs nexa-direct_qwen3.8-27b  -0.057 [-0.083,-0.033]  p=4.9e-06
+      OpenEnded_1hop             graphcypher_gpt-4o-mini  vs nexa-direct_gpt-4o-mini  -0.057 [-0.087,-0.028]  p=2.0e-04
+      True_or_False_2hop         graphcypher_gpt-5-mini   vs graphcypher_qwen3.8-27b  -0.065 [-0.099,-0.030]  p=3.7e-04
+      True_or_False_2hop         nexa-direct_qwen3.8-27b  vs graphcypher_qwen3.8-27b  +0.067 [+0.030,+0.103]  p=5.3e-04
+      True_or_False_1hop         nexa-direct_qwen3.8-27b  vs nexa-flex_qwen3.8-27b    -0.023 [-0.040,-0.010]  p=9.8e-04
+      OpenEnded_1hop             nexa-direct_qwen3.8-27b  vs nexa-flex_qwen3.8-27b    -0.022 [-0.037,-0.009]  p=9.8e-04
+      True_or_False_2hop         graphcypher_gpt-4o-mini  vs nexa-flex_gpt-5-mini     -0.074 [-0.120,-0.028]  p=2.4e-03
+      True_or_False_2hop         graphcypher_gpt-5-mini   vs nexa-flex_qwen3.8-27b    -0.037 [-0.062,-0.013]  p=4.5e-03
+      True_or_False_1hop         nexa-direct_gpt-5-mini   vs nexa-direct_qwen3.8-27b  -0.037 [-0.064,-0.013]  p=4.6e-03
+      True_or_False_2hop         nexa-flex_gpt-5-mini     vs nexa-flex_qwen3.8-27b    -0.019 [-0.032,-0.006]  p=6.3e-03
+      MCQ_2hop                   nexa-direct_gpt-4o-mini  vs graphcypher_qwen3.8-27b  +0.048 [+0.014,+0.082]  p=7.8e-03
+      MCQ_2hop                   vanilla_gpt-5-mini       vs graphcypher_gpt-4o-mini  +0.081 [+0.023,+0.139]  p=8.0e-03
+      ... and 9 more (see the JSON)

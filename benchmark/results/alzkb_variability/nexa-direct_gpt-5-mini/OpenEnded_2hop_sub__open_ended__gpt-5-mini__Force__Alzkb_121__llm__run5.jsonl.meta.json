@@ -1,0 +1,27 @@
+{
+  "dataset_file": "OpenEnded_2hop_sub.json",
+  "model": "gpt-5-mini",
+  "provider": "openai",
+  "git_commit": "0070f30",
+  "config": {
+    "agent_mode": "direct",
+    "kg_mode": "Force",
+    "profile_name": "Alzkb 121",
+    "examples_mode": "llm",
+    "generation_mode": "one_shot_fallback",
+    "recursion_limit": 150,
+    "checkpointer": "memory",
+    "limit": null,
+    "overwrite": false,
+    "retry_errors": false,
+    "retry_all_errors": false,
+    "max_retries": 2,
+    "run_tag": "run5",
+    "out_subdir": "variability_gpt-5-mini"
+  },
+  "started_at": "2026-07-23T12:55:40.799411+00:00",
+  "finished_at": "2026-07-23T13:36:27.091033+00:00",
+  "n_questions_in_dataset": 100,
+  "n_run_this_session": 100,
+  "n_correct_this_session": 87
+}

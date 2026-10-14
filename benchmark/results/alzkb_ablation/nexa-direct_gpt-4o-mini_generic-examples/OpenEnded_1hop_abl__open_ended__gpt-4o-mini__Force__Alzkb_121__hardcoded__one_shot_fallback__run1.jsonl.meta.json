@@ -1,0 +1,41 @@
+{
+  "dataset_file": "OpenEnded_1hop_abl.json",
+  "model": "gpt-4o-mini",
+  "provider": "openai",
+  "git_commit": "21dc642",
+  "config": {
+    "agent_mode": "direct",
+    "kg_mode": "Force",
+    "profile_name": "Alzkb 121",
+    "examples_mode": "hardcoded",
+    "generation_mode": "one_shot_fallback",
+    "recursion_limit": 150,
+    "checkpointer": "memory",
+    "limit": null,
+    "overwrite": false,
+    "retry_errors": false,
+    "retry_all_errors": false,
+    "max_retries": 2,
+    "run_tag": "run1",
+    "out_subdir": "alzkb_ablation/nexa-direct_gpt-4o-mini_generic-examples"
+  },
+  "flags": {
+    "NEXA_COMPLETENESS_GUARD": false,
+    "NEXA_NO_LIMIT_PROMPT": false,
+    "NEXA_FLEX_ANSWER_RESCUE": false,
+    "NEXA_PROPERTY_MATCHING": "composite",
+    "NEXA_LLM_MAX_OUTPUT_TOKENS": 32768,
+    "NEXA_LLM_MAX_PROPERTY_TOKENS": 1024,
+    "NEXA_ABLATE_EMPTY_RESULT_LOOP": false,
+    "NEXA_ABLATE_DB_MATCHING": false,
+    "NEXA_ABLATE_LLM_SELECTION": false,
+    "NEXA_ABLATE_SYNTAX_CORRECTION": false,
+    "NEXA_ABLATE_FEWSHOT_EXAMPLES": false,
+    "NEXA_ABLATE_RESULT_STORE": false
+  },
+  "started_at": "2026-09-28T11:45:42.113731+00:00",
+  "finished_at": "2026-09-28T12:31:57.382246+00:00",
+  "n_questions_in_dataset": 171,
+  "n_run_this_session": 171,
+  "n_correct_this_session": 148
+}

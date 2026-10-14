@@ -1,0 +1,3524 @@
+--- NEXA Benchmark Evaluation ---
+Files processed: 2
+  - benchmark/results/alzkb/graphcypher_gpt-4o-mini/baseline_graphcypher_gpt-4o-mini_Alzkb_121_atleastone_20260925_154159.jsonl
+  - benchmark/results/alzkb/graphcypher_gpt-4o-mini/baseline_graphcypher_gpt-4o-mini_Alzkb_121_topk10000_20260609_130314.jsonl
+
+=== Dataset: MCQ_1hop.json__graphcypher | Type: mcq | Mode: graphcypher | Model: gpt-4o-mini ===
+Count: 498  |  Correct: 322  |  Accuracy: 0.647 [95% CI 0.604-0.687]
+Telemetry:
+  - first attempt success rate: 0.771 (n=498)
+  - avg correction iterations: 0.000 (n=498)
+  - latency ms: mean=4025 p50=3514 p95=8382 (n=498)
+  - tokens: avg in=1288 out=125 | total in=1288 out=125
+  - records with error: 0.127 (n=498)
+
+-- Incorrect Questions (176 total, showing 15) --
+Q [78ef057e93fa]: Which of the following is subject to decreased expression by the drug Testosterone propionate? 1. RMI1 2. BDH1 3. SEL1L 4. PDS5B 5. CAD
+  Expected: 2
+  Got:      0
+  Thinking: The drug Testosterone propionate is subject to decreased expression of the following: 
+
+1. RMI1
+2. BDH1
+3. SEL1L
+4. PDS5B
+5. CAD
+
+However, specific information on which of these is affected was not provided.
+  Cypher (1st attempt): MATCH (d:Drug {commonName: 'Testosterone propionate'})-[:CHEMICALDECREASESEXPRESSION]->(g:Gene)
+RETURN g.commonName
+
+  Correction iters:     0
+
+Q [f197aaff12b4]: Which of the following is subject to decreased expression by the drug Chlorthalidone? 1. PDS5A 2. PDS5B 3. SEL1L 4. TUBB6 5. CAD
+  Expected: 4
+  Got:      0
+  Thinking: The provided information does not specify which of the listed genes is subject to decreased expression by Chlorthalidone.
+  Cypher (1st attempt): MATCH (d:Drug {commonName: 'Chlorthalidone'})-[:CHEMICALDECREASESEXPRESSION]->(g:Gene)
+RETURN g.commonName
+
+  Correction iters:     0
+
+Q [5cda3157482d]: Which of the following can be treated by the drug Memantine? 1. Alzheimer Disease, Familial, 3, with Spastic Paraparesis and Apraxia 2. Alzheimer Disease, Early Onset 3. Alzheimer disease, familial, type 3 4. Alzheimer Disease, Late Onset 5. Alzheimer's Disease
+  Expected: 5
+  Got:      4
+  Thinking: Memantine can be used to treat Alzheimer's Disease, including Late Onset and general Alzheimer's Disease. The specific familial types and early onset are not typically indicated for Memantine based on the provided information.
+  Correction iters:     0
+
+Q [24d8e9c50a96]: Which of the following can be treated by the drug Haloperidol? 1. Alzheimer's Disease, Focal Onset 2. Alzheimer Disease, Familial, 3, with Spastic Paraparesis and Apraxia 3. Alzheimer's Disease 4. Alzheimer Disease, Late Onset 5. Alzheimer disease, familial, type 3
+  Expected: 3
+  Got:      0
+  Thinking: Haloperidol is not indicated for the treatment of any form of Alzheimer's disease.
+  Correction iters:     0
+
+Q [8cf38ee9d450]: Which of the following can be treated by the drug Selegiline? 1. Alzheimer's Disease, Focal Onset 2. Alzheimer Disease, Early Onset 3. Alzheimer disease, familial, type 3 4. Alzheimer Disease, Late Onset 5. Alzheimer's Disease
+  Expected: 5
+  Got:      0
+  Thinking: Selegiline is not indicated for the treatment of any type of Alzheimer's Disease.
+  Correction iters:     0
+
+Q [7d36636bf4e2]: Which of the following can be treated by the drug Ropinirole? 1. Alzheimer Disease, Early Onset 2. Alzheimer disease, familial, type 3 3. Alzheimer Disease, Late Onset 4. Alzheimer's Disease 5. Alzheimer Disease, Familial, 3, with Spastic Paraparesis and Apraxia
+  Expected: 4
+  Got:      0
+  Thinking: Ropinirole is not indicated for the treatment of any form of Alzheimer's disease.
+  Correction iters:     0
+
+Q [8abaad466e6e]: Which of the following can be treated by the drug Benzatropine? 1. Alzheimer's Disease 2. Alzheimer Disease, Early Onset 3. Alzheimer Disease, Familial, 3, with Spastic Paraparesis and Apraxia 4. Alzheimer's Disease, Focal Onset 5. Alzheimer disease, familial, type 3
+  Expected: 1
+  Got:      0
+  Thinking: Benzatropine is not indicated for the treatment of any form of Alzheimer's disease.
+  Correction iters:     0
+
+Q [afcbcc3b602b]: Which of the following can be affected by the drug Naltrexone? 1. Alzheimer Disease, Familial, 3, with Spastic Paraparesis and Apraxia 2. Alzheimer Disease, Early Onset 3. Alzheimer disease, familial, type 3 4. Alzheimer Disease, Late Onset 5. Alzheimer's Disease
+  Expected: 5
+  Got:      0
+  Thinking: Naltrexone does not appear to have any documented effects on the listed types of Alzheimer's disease.
+  Cypher (1st attempt): MATCH (d:Drug {commonName: 'Naltrexone'})-[:CHEMICALBINDSGENE]->(g:Gene)-[:GENEASSOCIATESWITHDISEASE]->(ds:Disease)
+RETURN ds.commonName
+
+  Correction iters:     0
+
+Q [0890cfba62b3]: Which of the following can be affected by the drug Ziprasidone? 1. Alzheimer's Disease, Focal Onset 2. Alzheimer Disease, Familial, 3, with Spastic Paraparesis and Apraxia 3. Alzheimer's Disease 4. Alzheimer Disease, Late Onset 5. Alzheimer disease, familial, type 3
+  Expected: 3
+  Got:      0
+  Thinking: There is no information available regarding the effects of Ziprasidone on the listed types of Alzheimer's disease.
+  Cypher (1st attempt): MATCH (d:Drug {commonName: 'Ziprasidone'})-[:CHEMICALINCREASESEXPRESSION|CHEMICALDECREASESEXPRESSION]->(g:Gene)-[:GENEASSOCIATESWITHDISEASE]->(dis:Disease)
+WHERE dis.commonName IN ['Alzheimer\'s Disease, Focal Onset', 'Alzheimer Disease, Familial, 3, with Spastic Paraparesis and Apraxia', 'Alzheimer\'s Disease', 'Alzheimer Disease, Late Onset', 'Alzheimer disease, familial, type 3']
+RETURN dis.commonName
+
+  Correction iters:     0
+
+Q [423b3904c549]: Which of the following binds to the gene NPY1R? 1. Duloxetine 2. Botulinum toxin type A 3. Insulin pork 4. Ibritumomab tiuxetan 5. Trastuzumab
+  Expected: 1
+  Got:      0
+  Thinking: None of the listed options bind to the gene NPY1R.
+  Cypher (1st attempt): MATCH (d:Drug)-[:CHEMICALBINDSGENE]->(g:Gene {geneSymbol: 'NPY1R'})
+RETURN d.commonName
+
+  Correction iters:     0
+
+Q [05831ba943bc]: Which of the following increases the gene expression of MCM3AP? 1. Digoxin Immune Fab (Ovine) 2. Streptokinase 3. Botulinum toxin type A 4. Insulin pork 5. Varenicline
+  Expected: 5
+  Got:      0
+  Thinking: There is no information available regarding which of the listed substances increases the gene expression of MCM3AP.
+  Cypher (1st attempt): MATCH (d:Drug)-[:CHEMICALINCREASESEXPRESSION]->(g:Gene {commonName: 'MCM3AP'})
+RETURN d.commonName
+
+  Correction iters:     0
+
+Q [59956a4e2caa]: Which of the following increases the gene expression of APAF1? 1. Treprostinil 2. Botulinum toxin type A 3. Insulin pork 4. Ibritumomab tiuxetan 5. Trastuzumab
+  Expected: 1
+  Got:      0
+  Thinking: The provided information does not indicate which of the options increases the gene expression of APAF1.
+  Cypher (1st attempt): MATCH (d:Drug)-[:CHEMICALINCREASESEXPRESSION]->(g:Gene {geneSymbol: 'APAF1'})
+RETURN d.commonName
+
+  Correction iters:     0
+
+Q [816e2597b0c8]: Which of the following increases the gene expression of ECM1? 1. Digoxin Immune Fab (Ovine) 2. Insulin pork 3. Hyaluronidase (ovine) 4. Botulinum toxin type A 5. Mycophenolic acid
+  Expected: 5
+  Got:      0
+  Thinking: There is no information available regarding which of the listed substances increases the gene expression of ECM1.
+  Cypher (1st attempt): MATCH (d:Drug)-[:CHEMICALINCREASESEXPRESSION]->(g:Gene {commonName: 'ECM1'})
+RETURN d.commonName
+
+  Correction iters:     0
+
+Q [ac0c1ac5e2c9]: Which of the following increases the gene expression of ACD? 1. Crizotinib 2. Insulin pork 3. Streptokinase 4. Hyaluronidase (ovine) 5. Muromonab
+  Expected: 1
+  Got:      0
+  Thinking: There is no information available regarding which of the listed substances increases the gene expression of ACD.
+  Cypher (1st attempt): MATCH (d:Drug)-[:CHEMICALINCREASESEXPRESSION]->(g:Gene {commonName: 'ACD'})
+RETURN d.commonName
+
+  Correction iters:     0
+
+Q [866480803013]: Which of the following increases the gene expression of CTNND1? 1. Botulinum toxin type A 2. Muromonab 3. Trastuzumab 4. Methoxsalen 5. Digoxin Immune Fab (Ovine)
+  Expected: 4
+  Got:      0
+  Thinking: The provided information does not indicate which of the listed substances increases the gene expression of CTNND1.
+  Cypher (1st attempt): MATCH (d:Drug)-[:CHEMICALINCREASESEXPRESSION]->(g:Gene {geneSymbol: 'CTNND1'})
+RETURN d.commonName
+
+  Correction iters:     0
+
+
+=== Dataset: MCQ_2hop.json__graphcypher | Type: mcq | Mode: graphcypher | Model: gpt-4o-mini ===
+Count: 419  |  Correct: 274  |  Accuracy: 0.654 [95% CI 0.607-0.698]
+Telemetry:
+  - first attempt success rate: 0.711 (n=419)
+  - avg correction iterations: 0.000 (n=419)
+  - latency ms: mean=4367 p50=3853 p95=8134 (n=419)
+  - records with error: 0.146 (n=419)
+
+-- Incorrect Questions (145 total, showing 15) --
+Q [42da2ce929c6]: Which of the following binds to the drugs Arsenic trioxide and ATP ? 1. LOC126806746 2. AKT1 3. LOC127269832 4. LOC129389284 5. HOXB-AS4
+  Expected: 2
+  Got:      NO_RESPONSE
+  Error:    chain_error: {neo4j_code: Neo.ClientError.Statement.SyntaxError} {message: Expected exactly one statement per query but got: 2 (line 0, column 0 (offset: 0))
+"MATCH (d:Drug {commonName: 'Arsenic trioxide'})-[:CHEMICALBINDSGENE]->(g:Gene)"
+ ^} {gql_status: 50N42} {gql_status_description: error: general processing exception - unexpected error. Unexpected error has occurred. See debug log for details.}
+  Thinking: 
+  Correction iters:     0
+
+Q [d70497e61caf]: Which of the following increases the gene expression of CASP10 and KLHL9 ? 1. Oprozomib 2. ANZ-100 3. Olopatadine 4. IPL-344 5. Sarizotan
+  Expected: 3
+  Got:      0
+  Thinking: The provided information does not indicate any of the listed compounds (Oprozomib, ANZ-100, Olopatadine, IPL-344, Sarizotan) as increasing the gene expression of CASP10 and KLHL9.
+  Cypher (1st attempt): MATCH (d:Drug)-[:CHEMICALINCREASESEXPRESSION]->(g:Gene)
+WHERE g.geneSymbol IN ['CASP10', 'KLHL9']
+RETURN d.commonName
+
+  Correction iters:     0
+
+Q [06d640d28087]: Which of the following increases the gene expression of CNOT4 and BCL7B ? 1. 3-(4-{2-[2-(2-bromo-acetylamino)-ethyldisulfanyl]-ethylcarbamoyl}-cyclohexylcarbamoyl)-pyrazine-2-carboxylic acid 2. Cyclohexyl-Hexyl-Beta-D-Maltoside 3. Indigotindisulfonic acid 4. Reboxetine 5. Triheptanoin
+  Expected: 4
+  Got:      0
+  Thinking: There is no information available regarding which of the listed compounds increases the gene expression of CNOT4 and BCL7B.
+  Cypher (1st attempt): MATCH (d:Drug)-[:CHEMICALINCREASESEXPRESSION]->(g:Gene)
+WHERE g.commonName IN ['CNOT4', 'BCL7B']
+RETURN d.commonName
+
+  Correction iters:     0
+
+Q [d5fc683cfc52]: Which of the following increases the gene expression of TCTA and YME1L1 ? 1. Niraparib 2. Mucor circinelloides f. lusitanicus 3. N-[2-(5-methyl-4H-1,2,4-triazol-3-yl)phenyl]-7H-pyrrolo[2,3-d]pyrimidin-4-amine 4. Chlorcyclizine 5. SB-743921
+  Expected: 4
+  Got:      0
+  Thinking: The information does not indicate which of the listed options increases the gene expression of TCTA and YME1L1.
+  Cypher (1st attempt): MATCH (d:Drug)-[:CHEMICALINCREASESEXPRESSION]->(g:Gene)
+WHERE g.geneSymbol IN ['TCTA', 'YME1L1']
+RETURN d.commonName
+
+  Correction iters:     0
+
+Q [c80a4f588cc5]: Which of the following is subject to increased expression by the drugs Dexamethasone and Betamethasone ? 1. LOC127829787 2. MRPS7 3. LOC127271027 4. LOC127897099 5. LOC110120762
+  Expected: 2
+  Got:      0
+  Thinking: There is no information available regarding which of the listed options is subject to increased expression by Dexamethasone and Betamethasone.
+  Cypher (1st attempt): MATCH (d:Drug)-[:CHEMICALINCREASESEXPRESSION]->(g:Gene)
+WHERE d.commonName IN ['Dexamethasone', 'Betamethasone'] AND g.nodeID IN ['LOC127829787', 'MRPS7', 'LOC127271027', 'LOC127897099', 'LOC110120762']
+RETURN g.commonName
+
+  Correction iters:     0
+
+Q [d527ef55d73e]: Which of the following is subject to increased expression by the drugs Niclosamide and Ivermectin ? 1. LOC127272675 2. HSPA13 3. LOC127270750 4. LOC127827223 5. LOC127816343
+  Expected: 2
+  Got:      0
+  Thinking: There is no information available regarding which of the listed options is subject to increased expression by the drugs Niclosamide and Ivermectin.
+  Cypher (1st attempt): MATCH (d:Drug)-[:CHEMICALINCREASESEXPRESSION]->(g:Gene)
+WHERE d.commonName IN ['Niclosamide', 'Ivermectin'] AND g.nodeID IN ['LOC127272675', 'HSPA13', 'LOC127270750', 'LOC127827223', 'LOC127816343']
+RETURN g
+
+  Correction iters:     0
+
+Q [1eceff224679]: Which of the following is subject to increased expression by the drugs Vincristine and Cyproheptadine ? 1. LOC127409533 2. CARF 3. DNTTIP2 4. LOC105371239 5. LOC127459955
+  Expected: 3
+  Got:      0
+  Thinking: There is no information available regarding which of the listed options is subject to increased expression by Vincristine and Cyproheptadine.
+  Cypher (1st attempt): MATCH (d:Drug)-[:CHEMICALINCREASESEXPRESSION]->(g:Gene)
+WHERE d.commonName IN ['Vincristine', 'Cyproheptadine'] AND g.nodeID IN ['LOC127409533', 'CARF', 'DNTTIP2', 'LOC105371239', 'LOC127459955']
+RETURN g.commonName
+
+  Correction iters:     0
+
+Q [3ab259b4f576]: Which of the following is subject to increased expression by the drugs Digoxin and Digitoxin ? 1. LOC121175364 2. LOC124908268 3. LOC124900771 4. CRKL 5. LOC127891320
+  Expected: 4
+  Got:      0
+  Thinking: There is no information available regarding which of the listed options is subject to increased expression by the drugs Digoxin and Digitoxin.
+  Cypher (1st attempt): MATCH (d:Drug)-[:CHEMICALINCREASESEXPRESSION]->(g:Gene)
+WHERE d.commonName IN ['Digoxin', 'Digitoxin'] AND g.nodeID IN ['LOC121175364', 'LOC124908268', 'LOC124900771', 'CRKL', 'LOC127891320']
+RETURN g
+
+  Correction iters:     0
+
+Q [4b45fbbe6b4a]: Which of the following is subject to increased expression by the drugs Temsirolimus and Vemurafenib ? 1. LOC127273895 2. LOC127828584 3. ZFAND1 4. CNN3-DT 5. LOC128316602
+  Expected: 3
+  Got:      0
+  Thinking: There is no information available regarding which of the listed options is subject to increased expression by the drugs Temsirolimus and Vemurafenib.
+  Cypher (1st attempt): MATCH (d:Drug)-[:CHEMICALINCREASESEXPRESSION]->(g:Gene)
+WHERE d.commonName IN ['Temsirolimus', 'Vemurafenib'] AND g.nodeID IN ['LOC127273895', 'LOC127828584', 'ZFAND1', 'CNN3-DT', 'LOC128316602']
+RETURN g.nodeID, g.commonName
+
+  Correction iters:     0
+
+Q [22afa5a5f7a4]: Which of the following decreases the gene expression of ZNF589 and RPS4Y1 ? 1. MultiStem 2. Gemcitabine 3. Bromopride 4. Sodium ascorbate 5. Zolmitriptan
+  Expected: 5
+  Got:      2
+  Thinking: Gemcitabine and Zolmitriptan decrease the gene expression of ZNF589 and RPS4Y1.
+  Cypher (1st attempt): MATCH (d:Drug)-[:CHEMICALDECREASESEXPRESSION]->(g:Gene)
+WHERE g.geneSymbol IN ['ZNF589', 'RPS4Y1'] AND d.commonName IN ['MultiStem', 'Gemcitabine', 'Bromopride', 'Sodium ascorbate', 'Zolmitriptan']
+RETURN d.commonName
+
+  Correction iters:     0
+
+Q [b7de8d705c54]: Which of the following decreases the gene expression of NPDC1 and TNIP1 ? 1. Aspartic Acid-4-Carboxymethyl Ester 2. 2-[(2',3',4'-TRIFLUOROBIPHENYL-2-YL)OXY]ETHANOL 3. Baloxavir 4. Diclofenac 5. 1,4-dithio-alpha-D-glucopyranose
+  Expected: 4
+  Got:      0
+  Thinking: The information does not specify which of the listed compounds decreases the gene expression of NPDC1 and TNIP1.
+  Cypher (1st attempt): MATCH (d:Drug)-[:CHEMICALDECREASESEXPRESSION]->(g:Gene)
+WHERE g.geneSymbol IN ['NPDC1', 'TNIP1'] 
+RETURN d.commonName
+
+  Correction iters:     0
+
+Q [d18202b3e91f]: Which of the following decreases the gene expression of VPS28 and LAP3 ? 1. Influenza A virus A/Christchurch/16/2010 NIB-74XP (H1N1) hemagglutinin antigen (formaldehyde inactivated) 2. 1,2-Benzodiazepine 3. PF-06305591 4. N-(5-chloro-1,3-benzodioxol-4-yl)-6-methoxy-7-(3-piperidin-1-ylpropoxy)quinazolin-4-amine 5. Fenbufen
+  Expected: 5
+  Got:      0
+  Thinking: None of the listed options specifically decrease the gene expression of VPS28 and LAP3. Fenbufen is mentioned, but there is no indication that it affects the expression of these genes.
+  Cypher (1st attempt): MATCH (d:Drug)-[:CHEMICALDECREASESEXPRESSION]->(g:Gene)
+WHERE g.geneSymbol IN ['VPS28', 'LAP3']
+RETURN d.commonName
+
+  Correction iters:     0
+
+Q [9e2da03ab959]: Which of the following is subject to decreased expression by the drugs Topotecan and Mitomycin ? 1. LOC127272206 2. LOC127898076 3. LOC127272235 4. RAF1 5. LOC127399327
+  Expected: 4
+  Got:      0
+  Thinking: There is no information available regarding which of the listed options is subject to decreased expression by the drugs Topotecan and Mitomycin.
+  Cypher (1st attempt): MATCH (d:Drug)-[:CHEMICALDECREASESEXPRESSION]->(g:Gene)
+WHERE d.commonName IN ['Topotecan', 'Mitomycin'] AND g.nodeID IN ['LOC127272206', 'LOC127898076', 'LOC127272235', 'RAF1', 'LOC127399327']
+RETURN g.nodeID, g.commonName
+
+  Correction iters:     0
+
+Q [8741b3ad8259]: Which of the following is subject to decreased expression by the drugs Aminolevulinic acid and Bisacodyl ? 1. NANOGNBP1 2. C5-OT1 3. LOC124908849 4. LOC127826015 5. LIG1
+  Expected: 5
+  Got:      0
+  Thinking: The following genes are subject to decreased expression by the drugs Aminolevulinic acid and Bisacodyl:
+
+1. NANOGNBP1
+2. C5-OT1
+3. LOC124908849
+4. LOC127826015
+5. LIG1
+  Cypher (1st attempt): 
+MATCH (d:Drug)-[:CHEMICALDECREASESEXPRESSION]->(g:Gene)
+WHERE d.commonName IN ['Aminolevulinic acid', 'Bisacodyl'] 
+RETURN g.commonName
+
+  Correction iters:     0
+
+Q [063bc320ebc0]: Which of the following is subject to decreased expression by the drugs Bortezomib and Thioridazine ? 1. LOC127890319 2. OR4K11P 3. SNORD113-8 4. LOC126859916 5. POLR2L
+  Expected: 5
+  Got:      0
+  Thinking: There is no information available regarding which of the listed options is subject to decreased expression by the drugs Bortezomib and Thioridazine.
+  Cypher (1st attempt): 
+MATCH (d:Drug)-[:CHEMICALDECREASESEXPRESSION]->(g:Gene)
+WHERE d.commonName IN ['Bortezomib', 'Thioridazine'] AND g.nodeID IN ['LOC127890319', 'OR4K11P', 'SNORD113-8', 'LOC126859916', 'POLR2L']
+RETURN g.nodeID
+
+  Correction iters:     0
+
+
+=== Dataset: OpenEnded_1hop.json__graphcypher | Type: open_ended | Mode: graphcypher | Model: gpt-4o-mini ===
+Count: 508  |  Correct: 398  |  Accuracy: 0.783 [95% CI 0.746-0.817]
+Average set metrics: exact_match=0.783  precision=0.836  recall=0.834  f1=0.827  jaccard=0.819  overlap=0.849
+By |expected| size:
+  -    1: n=124   acc=0.855 f1=0.873
+  -  2-5: n=145   acc=0.890 f1=0.914
+  - 6-20: n=127   acc=0.890 f1=0.918
+  -  >20: n=112   acc=0.446 f1=0.560
+Telemetry:
+  - first attempt success rate: 0.892 (n=508)
+  - avg correction iterations: 0.000 (n=508)
+  - latency ms: mean=11285 p50=5218 p95=33565 (n=508)
+  - records with error: 0.071 (n=508)
+
+-- Incorrect Questions (110 total, showing 15) --
+Q [50aa638d04b9]: List the genes which bind to the drug Stanozolol
+  Expected: AR
+  Got:      ['androgen receptor (AR)']
+  Thinking: The gene that binds to the drug Stanozolol is the androgen receptor (AR).
+  Cypher (1st attempt): MATCH (d:Drug {commonName: 'Stanozolol'})-[:CHEMICALBINDSGENE]->(g:Gene)
+RETURN g
+
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.000  recall=0.000  f1=0.000  jaccard=0.000  overlap=0.000
+  Missing (in expected, not in got): AR
+  Extra (in got, not in expected):   androgen receptor (AR)
+
+Q [c20791c27e33]: List the genes subject to increased expression by the drug Dextropropoxyphene
+  Expected: PAK1, GHR, SLC1A4, XBP1, SGCB, HP, UBQLN2, HERC6, RBKS
+  Got:      ['Haptoglobin (HP)', 'X-box binding protein 1 (XBP1)', 'Solute carrier family 1 member 4 (SLC1A4)', 'p21 (RAC1) activated kinase 1 (PAK1)', 'Growth hormone receptor (GHR)', 'Sarcoglycan beta (SGCB)', 'Ribokinase (RBKS)', 'HECT and RLD domain containing E3 ubiquitin protein ligase family member 6 (HERC6)', 'Ubiquilin 2 (UBQLN2)']
+  Thinking: The genes subject to increased expression by the drug Dextropropoxyphene are:
+
+1. **Haptoglobin (HP)**
+   - [More Info](http://jdr.bio/ontologies/alzkb.owl#gene_hp)
+
+2. **Sarcoglycan beta (SGCB)**
+   - [More Info](http://jdr.bio/ontologies/alzkb.owl#gene_sgcb)
+
+3. **p21 (RAC1) activated kinase 1 (PAK1)**
+   - [More Info](http://jdr.bio/ontologies/alzkb.owl#gene_pak1)
+
+4. **Growth hormone receptor (GHR)**
+   - [More Info](http://jdr.bio/ontologies/alzkb.owl#gene_ghr)
+
+5. **Ribokinase (RBKS)**
+   - [More Info](http://jdr.bio/ontologies/alzkb.owl#gene_rbks)
+
+6. **Ubiquilin 2 (UBQLN2)**
+   - [More Info](http://jdr.bio/ontologies/alzkb.owl#gene_ubqln2)
+
+7. **X-box binding protein 1 (XBP1)**
+   - [More Info](http://jdr.bio/ontologies/alzkb.owl#gene_xbp1)
+
+8. **HECT and RLD domain containing E3 ubiquitin protein ligase family member 6 (HERC6)**
+   - [More Info](http://jdr.bio/ontologies/alzkb.owl#gene_herc6)
+
+9. **Solute carrier family 1 member 4 (SLC1A4)**
+   - [More Info](http://jdr.bio/ontologies/alzkb.owl#gene_slc1a4)
+  Cypher (1st attempt): MATCH (d:Drug {commonName: 'Dextropropoxyphene'})-[:CHEMICALINCREASESEXPRESSION]->(g:Gene)
+RETURN g
+
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.000  recall=0.000  f1=0.000  jaccard=0.000  overlap=0.000
+  Missing (in expected, not in got): GHR, HERC6, HP, PAK1, RBKS, SGCB, SLC1A4, UBQLN2, XBP1
+  Extra (in got, not in expected):   Growth hormone receptor (GHR), HECT and RLD domain containing E3 ubiquitin protein ligase family member 6 (HERC6), Haptoglobin (HP), Ribokinase (RBKS), Sarcoglycan beta (SGCB), Solute carrier family 1 member 4 (SLC1A4), Ubiquilin 2 (UBQLN2), X-box binding protein 1 (XBP1), p21 (RAC1) activated kinase 1 (PAK1)
+
+Q [cb6667f5037c]: List the genes subject to decreased expression by the drug Yohimbine
+  Expected: PFN1
+  Got:      ['Profilin 1 (PFN1)']
+  Thinking: The gene subject to decreased expression by the drug Yohimbine is:
+
+- **Profilin 1 (PFN1)**  
+  - Type: Protein-coding  
+  - NCBI Gene: 5216  
+  - Ensembl: ENSG00000108518  
+  - OMIM: 176610  
+  - HGNC: 8881  
+  - [More Info](http://jdr.bio/ontologies/alzkb.owl#gene_pfn1)
+  Cypher (1st attempt): MATCH (d:Drug {commonName: 'Yohimbine'})-[:CHEMICALDECREASESEXPRESSION]->(g:Gene)
+RETURN g
+
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.000  recall=0.000  f1=0.000  jaccard=0.000  overlap=0.000
+  Missing (in expected, not in got): PFN1
+  Extra (in got, not in expected):   Profilin 1 (PFN1)
+
+Q [8c9672fac36d]: List the classes which include the drug Enoxaparin
+  Expected: Heparin, Low-Molecular-Weight
+  Got:      ['Low-Molecular-Weight Heparins']
+  Thinking: Enoxaparin belongs to the class of Low-Molecular-Weight Heparins.
+  Cypher (1st attempt): MATCH (d:Drug {commonName: 'Enoxaparin'})-[:DRUGINCLASS]->(dc:DrugClass)
+RETURN dc
+
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.000  recall=0.000  f1=0.000  jaccard=0.000  overlap=0.000
+  Missing (in expected, not in got): Heparin, Low-Molecular-Weight
+  Extra (in got, not in expected):   Low-Molecular-Weight Heparins
+
+Q [820298521bd1]: List the diseases which can be treated by the drug Quetiapine
+  Expected: Alzheimer's Disease
+  Got:      ['Focal Onset', 'Familial Alzheimer Disease (FAD)', "Alzheimer's Disease", 'Late Onset', 'Alzheimer Disease', 'Early Onset']
+  Thinking: Quetiapine can be used to treat the following diseases:
+
+1. Alzheimer's Disease
+2. Familial Alzheimer Disease (FAD)
+3. Alzheimer Disease, Late Onset
+4. Alzheimer's Disease, Focal Onset
+5. Alzheimer Disease, Early Onset
+  Cypher (1st attempt): MATCH (d:Drug {commonName: 'Quetiapine'})-[:CHEMICALBINDSGENE]->(:Gene)-[:GENEASSOCIATESWITHDISEASE]->(dis:Disease)
+RETURN dis.commonName
+
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.167  recall=1.000  f1=0.286  jaccard=0.167  overlap=1.000
+  Missing (in expected, not in got): -
+  Extra (in got, not in expected):   Alzheimer Disease, Early Onset, Familial Alzheimer Disease (FAD), Focal Onset, Late Onset
+
+Q [49d1f025cad0]: List the diseases which can be treated by the drug Benzatropine
+  Expected: Alzheimer's Disease
+  Got:      ['Focal Onset', 'Familial Alzheimer Disease (FAD)', "Alzheimer's Disease", 'Late Onset', 'Alzheimer Disease', 'Early Onset']
+  Thinking: Benzatropine can be used to treat the following diseases:
+
+1. Alzheimer's Disease
+2. Familial Alzheimer Disease (FAD)
+3. Alzheimer Disease, Late Onset
+4. Alzheimer's Disease, Focal Onset
+5. Alzheimer Disease, Early Onset
+  Cypher (1st attempt): MATCH (d:Drug {commonName: 'Benzatropine'})-[:CHEMICALBINDSGENE]->(g:Gene)-[:GENEASSOCIATESWITHDISEASE]->(dis:Disease)
+RETURN dis.commonName
+
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.167  recall=1.000  f1=0.286  jaccard=0.167  overlap=1.000
+  Missing (in expected, not in got): -
+  Extra (in got, not in expected):   Alzheimer Disease, Early Onset, Familial Alzheimer Disease (FAD), Focal Onset, Late Onset
+
+Q [ddd3c8e33534]: List the diseases which can be treated by the drug Selegiline
+  Expected: Alzheimer's Disease
+  Got:      ['Focal Onset', 'Familial Alzheimer Disease (FAD)', "Alzheimer's Disease", 'Late Onset', 'Alzheimer Disease', 'Early Onset']
+  Thinking: Selegiline can be used to treat the following diseases:
+
+1. Alzheimer's Disease
+2. Familial Alzheimer Disease (FAD)
+3. Alzheimer Disease, Late Onset
+4. Alzheimer Disease, Focal Onset
+5. Alzheimer Disease, Early Onset
+  Cypher (1st attempt): MATCH (d:Drug {commonName: 'Selegiline'})-[:CHEMICALBINDSGENE|CHEMICALINCREASESEXPRESSION|CHEMICALDECREASESEXPRESSION]->(g:Gene)-[:GENEASSOCIATESWITHDISEASE]->(dis:Disease)
+RETURN dis.commonName
+
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.167  recall=1.000  f1=0.286  jaccard=0.167  overlap=1.000
+  Missing (in expected, not in got): -
+  Extra (in got, not in expected):   Alzheimer Disease, Early Onset, Familial Alzheimer Disease (FAD), Focal Onset, Late Onset
+
+Q [09292fbe3a9e]: List the diseases which can be treated by the drug Rivastigmine
+  Expected: Alzheimer's Disease
+  Got:      ['Focal Onset', 'Familial Alzheimer Disease (FAD)', "Alzheimer's Disease", 'Late Onset', 'Alzheimer Disease', 'Early Onset']
+  Thinking: Rivastigmine can be used to treat the following diseases:
+
+1. Alzheimer's Disease
+2. Familial Alzheimer Disease (FAD)
+3. Alzheimer Disease, Late Onset
+4. Alzheimer Disease, Focal Onset
+5. Alzheimer Disease, Early Onset
+  Cypher (1st attempt): MATCH (d:Drug {commonName: 'Rivastigmine'})-[:CHEMICALBINDSGENE]->(g:Gene)-[:GENEASSOCIATESWITHDISEASE]->(dis:Disease)
+RETURN dis.commonName
+
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.167  recall=1.000  f1=0.286  jaccard=0.167  overlap=1.000
+  Missing (in expected, not in got): -
+  Extra (in got, not in expected):   Alzheimer Disease, Early Onset, Familial Alzheimer Disease (FAD), Focal Onset, Late Onset
+
+Q [1fb3020f0f0e]: List the diseases which can be treated by the drug Haloperidol
+  Expected: Alzheimer's Disease
+  Got:      ['Focal Onset', 'Familial Alzheimer Disease (FAD)', "Alzheimer's Disease", 'Late Onset', 'Alzheimer Disease', 'Early Onset']
+  Thinking: Haloperidol can be used to treat the following diseases:
+
+1. Alzheimer's Disease
+2. Familial Alzheimer Disease (FAD)
+3. Alzheimer Disease, Late Onset
+4. Alzheimer's Disease, Focal Onset
+5. Alzheimer Disease, Early Onset
+  Cypher (1st attempt): MATCH (d:Drug {commonName: 'Haloperidol'})-[:CHEMICALBINDSGENE]->(g:Gene)-[:GENEASSOCIATESWITHDISEASE]->(dis:Disease)
+RETURN dis.commonName
+
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.167  recall=1.000  f1=0.286  jaccard=0.167  overlap=1.000
+  Missing (in expected, not in got): -
+  Extra (in got, not in expected):   Alzheimer Disease, Early Onset, Familial Alzheimer Disease (FAD), Focal Onset, Late Onset
+
+Q [a1f023f8b2bc]: List the diseases which can be treated by the drug Ropinirole
+  Expected: Alzheimer's Disease
+  Got:      ['Focal Onset', 'Familial Alzheimer Disease (FAD)', "Alzheimer's Disease", 'Late Onset', 'Alzheimer Disease', 'Early Onset']
+  Thinking: Ropinirole can be used to treat the following diseases:
+
+1. Alzheimer's Disease
+2. Familial Alzheimer Disease (FAD)
+3. Alzheimer Disease, Late Onset
+4. Alzheimer's Disease, Focal Onset
+5. Alzheimer Disease, Early Onset
+  Cypher (1st attempt): MATCH (d:Drug {commonName: 'Ropinirole'})-[:CHEMICALBINDSGENE|CHEMICALINCREASESEXPRESSION|CHEMICALDECREASESEXPRESSION]->(g:Gene)-[:GENEASSOCIATESWITHDISEASE]->(dis:Disease)
+RETURN dis.commonName
+
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.167  recall=1.000  f1=0.286  jaccard=0.167  overlap=1.000
+  Missing (in expected, not in got): -
+  Extra (in got, not in expected):   Alzheimer Disease, Early Onset, Familial Alzheimer Disease (FAD), Focal Onset, Late Onset
+
+Q [eab8b8294931]: List the diseases which can be treated by the drug Galantamine
+  Expected: Alzheimer's Disease
+  Got:      ['Focal Onset', 'Familial Alzheimer Disease (FAD)', "Alzheimer's Disease", 'Late Onset', 'Alzheimer Disease', 'Early Onset']
+  Thinking: Galantamine can be used to treat the following diseases:
+
+1. Alzheimer's Disease
+2. Familial Alzheimer Disease (FAD)
+3. Alzheimer Disease, Late Onset
+4. Alzheimer's Disease, Focal Onset
+5. Alzheimer Disease, Early Onset
+  Cypher (1st attempt): MATCH (d:Drug {commonName: 'Galantamine'})-[:CHEMICALBINDSGENE]->(g:Gene)-[:GENEASSOCIATESWITHDISEASE]->(dis:Disease)
+RETURN dis.commonName
+
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.167  recall=1.000  f1=0.286  jaccard=0.167  overlap=1.000
+  Missing (in expected, not in got): -
+  Extra (in got, not in expected):   Alzheimer Disease, Early Onset, Familial Alzheimer Disease (FAD), Focal Onset, Late Onset
+
+Q [69d4640ce2de]: List the diseases which can be affected by the drug Ziprasidone
+  Expected: Alzheimer's Disease
+  Got:      ['Focal Onset', 'Familial Alzheimer Disease (FAD)', "Alzheimer's Disease", 'Late Onset', 'Alzheimer Disease', 'Early Onset']
+  Thinking: Ziprasidone can affect the following diseases:
+
+1. Alzheimer's Disease
+2. Familial Alzheimer Disease (FAD)
+3. Alzheimer Disease, Late Onset
+4. Alzheimer's Disease, Focal Onset
+5. Alzheimer Disease, Early Onset
+  Cypher (1st attempt): MATCH (d:Drug {commonName: 'Ziprasidone'})-[:CHEMICALBINDSGENE|CHEMICALINCREASESEXPRESSION|CHEMICALDECREASESEXPRESSION]->(g:Gene)-[:GENEASSOCIATESWITHDISEASE]->(dis:Disease)
+RETURN dis.commonName
+
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.167  recall=1.000  f1=0.286  jaccard=0.167  overlap=1.000
+  Missing (in expected, not in got): -
+  Extra (in got, not in expected):   Alzheimer Disease, Early Onset, Familial Alzheimer Disease (FAD), Focal Onset, Late Onset
+
+Q [f9f0177a580f]: List the diseases which can be affected by the drug Naltrexone
+  Expected: Alzheimer's Disease
+  Got:      ['alcohol use disorder', 'opioid use disorder']
+  Thinking: Naltrexone can be affected by diseases such as opioid use disorder and alcohol use disorder.
+  Cypher (1st attempt): MATCH (d:Drug {commonName: 'Naltrexone'})-[:CHEMICALBINDSGENE]->(g:Gene)-[:GENEASSOCIATESWITHDISEASE]->(dis:Disease)
+RETURN dis.commonName
+
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.000  recall=0.000  f1=0.000  jaccard=0.000  overlap=0.000
+  Missing (in expected, not in got): Alzheimer's Disease
+  Extra (in got, not in expected):   alcohol use disorder, opioid use disorder
+
+Q [443611b4d655]: List the biological processes involving the gene GLYR1
+  Expected: oxidation-reduction process
+  Got:      ['oxidation-reduction']
+  Thinking: The gene GLYR1 is involved in the biological process of oxidation-reduction.
+  Cypher (1st attempt): MATCH (g:Gene {geneSymbol: 'GLYR1'})-[:GENEPARTICIPATESINBIOLOGICALPROCESS]->(bp:BiologicalProcess)
+RETURN bp
+
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.000  recall=0.000  f1=0.000  jaccard=0.000  overlap=0.000
+  Missing (in expected, not in got): oxidation-reduction process
+  Extra (in got, not in expected):   oxidation-reduction
+
+Q [11975514d8e2]: List the biological processes involving the gene FMOD
+  Expected: extracellular structure organization, cell morphogenesis involved in neuron differentiation, aminoglycan metabolic process, aminoglycan catabolic process, glycosaminoglycan metabolic process, aminoglycan biosynthetic process, neuron projection morphogenesis, cellular response to transforming growth factor beta stimulus, keratan sulfate catabolic process, organonitrogen compound catabolic process, axon development, single-organism catabolic process, keratan sulfate biosynthetic process, keratan sulfate metabolic process, cellular protein complex assembly, carbohydrate derivative catabolic process, neuron projection development, glycosaminoglycan biosynthetic process, mucopolysaccharide metabolic process, extracellular matrix organization, transmembrane receptor protein serine/threonine kinase signaling pathway, sulfur compound catabolic process, macromolecule catabolic process, cell morphogenesis involved in differentiation, response to transforming growth factor beta, transforming growth factor beta receptor signaling pathway, cellular macromolecular complex assembly, cell projection morphogenesis, glycosaminoglycan catabolic process, response to growth factor, collagen fibril organization, carbohydrate derivative biosynthetic process, transforming growth factor beta receptor complex assembly, cell part morphogenesis, cellular response to growth factor stimulus, sulfur compound metabolic process, axonogenesis, carbohydrate metabolic process, sulfur compound biosynthetic process
+  Got:      ['Cellular response to growth factor stimulus', 'Neuron projection development', 'Neuron projection morphogenesis', 'Extracellular matrix organization', 'Transmembrane receptor protein serine/threonine kinase signaling pathway', 'Extracellular structure organization', 'Sulfur compound biosynthetic process', 'Glycosaminoglycan biosynthetic process', 'Collagen fibril organization', 'Aminoglycan biosynthetic process', 'Axonogenesis', 'Kertan sulfate catabolic process', 'Sulfur compound catabolic process', 'Aminoglycan catabolic process', 'Cell part morphogenesis', 'Aminoglycan metabolic process', 'Organonitrogen compound catabolic process', 'Kertan sulfate biosynthetic process', 'Response to transforming growth factor beta', 'Macromolecule catabolic process', 'Single-organism catabolic process', 'Transforming growth factor beta receptor complex assembly', 'Glycosaminoglycan metabolic process', 'Sulfur compound metabolic process', 'Cell morphogenesis involved in differentiation', 'Cellular macromolecular complex assembly', 'Glycosaminoglycan catabolic process', 'Cellular protein complex assembly', 'Cell projection morphogenesis', 'Carbohydrate derivative biosynthetic process', 'Cellular response to transforming growth factor beta stimulus', 'Keratan sulfate metabolic process', 'Cell morphogenesis involved in neuron differentiation', 'Transforming growth factor beta receptor signaling pathway', 'Carbohydrate metabolic process', 'Response to growth factor', 'Carbohydrate derivative catabolic process', 'Axon development', 'Mucopolysaccharide metabolic process']
+  Thinking: The gene FMOD is involved in the following biological processes:
+
+1. Macromolecule catabolic process (GO:0009057)
+2. Keratan sulfate metabolic process (GO:0042339)
+3. Cell part morphogenesis (GO:0032990)
+4. Collagen fibril organization (GO:0030199)
+5. Cellular protein complex assembly (GO:0043623)
+6. Extracellular structure organization (GO:0043062)
+7. Cell morphogenesis involved in neuron differentiation (GO:0048667)
+8. Response to growth factor (GO:0070848)
+9. Sulfur compound catabolic process (GO:0044273)
+10. Cellular macromolecular complex assembly (GO:0034622)
+11. Mucopolysaccharide metabolic process (GO:1903510)
+12. Cell projection morphogenesis (GO:0048858)
+13. Glycosaminoglycan catabolic process (GO:0006027)
+14. Carbohydrate derivative catabolic process (GO:1901136)
+15. Aminoglycan biosynthetic process (GO:0006023)
+16. Sulfur compound metabolic process (GO:0006790)
+17. Axonogenesis (GO:0007409)
+18. Aminoglycan metabolic process (GO:0006022)
+19. Response to transforming growth factor beta (GO:0071559)
+20. Organonitrogen compound catabolic process (GO:1901565)
+21. Neuron projection development (GO:0031175)
+22. Neuron projection morphogenesis (GO:0048812)
+23. Sulfur compound biosynthetic process (GO:0044272)
+24. Extracellular matrix organization (GO:0030198)
+25. Carbohydrate derivative biosynthetic process (GO:1901137)
+26. Glycosaminoglycan metabolic process (GO:0030203)
+27. Carbohydrate metabolic process (GO:0005975)
+28. Keratan sulfate biosynthetic process (GO:0018146)
+29. Single-organism catabolic process (GO:0044712)
+30. Transmembrane receptor protein serine/threonine kinase signaling pathway (GO:0007178)
+31. Transforming growth factor beta receptor signaling pathway (GO:0007179)
+32. Cell morphogenesis involved in differentiation (GO:0000904)
+33. Cellular response to growth factor stimulus (GO:0071363)
+34. Aminoglycan catabolic process (GO:0006026)
+35. Keratan sulfate catabolic process (GO:0042340)
+36. Transforming growth factor beta receptor complex assembly (GO:0007181)
+37. Cellular response to transforming growth factor beta stimulus (GO:0071560)
+38. Glycosaminoglycan biosynthetic process (GO:0006024)
+39. Axon development (GO:0061564)
+  Cypher (1st attempt): MATCH (g:Gene {geneSymbol: 'FMOD'})-[:GENEPARTICIPATESINBIOLOGICALPROCESS]->(bp:BiologicalProcess)
+RETURN bp
+
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.949  recall=0.949  f1=0.949  jaccard=0.902  overlap=0.949
+  Missing (in expected, not in got): aminoglycan biosynthetic process, aminoglycan catabolic process, aminoglycan metabolic process, axon development, axonogenesis, carbohydrate derivative biosynthetic process, carbohydrate derivative catabolic process, carbohydrate metabolic process, cell morphogenesis involved in differentiation, cell morphogenesis involved in neuron differentiation, cell part morphogenesis, cell projection morphogenesis, cellular macromolecular complex assembly, cellular protein complex assembly, cellular response to growth factor stimulus, cellular response to transforming growth factor beta stimulus, collagen fibril organization, extracellular matrix organization, extracellular structure organization, glycosaminoglycan biosynthetic process, glycosaminoglycan catabolic process, glycosaminoglycan metabolic process, keratan sulfate biosynthetic process, keratan sulfate catabolic process, keratan sulfate metabolic process, macromolecule catabolic process, mucopolysaccharide metabolic process, neuron projection development, neuron projection morphogenesis, organonitrogen compound catabolic process, response to growth factor, response to transforming growth factor beta, single-organism catabolic process, sulfur compound biosynthetic process, sulfur compound catabolic process, sulfur compound metabolic process, transforming growth factor beta receptor complex assembly, transforming growth factor beta receptor signaling pathway, transmembrane receptor protein serine/threonine kinase signaling pathway
+  Extra (in got, not in expected):   Aminoglycan biosynthetic process, Aminoglycan catabolic process, Aminoglycan metabolic process, Axon development, Axonogenesis, Carbohydrate derivative biosynthetic process, Carbohydrate derivative catabolic process, Carbohydrate metabolic process, Cell morphogenesis involved in differentiation, Cell morphogenesis involved in neuron differentiation, Cell part morphogenesis, Cell projection morphogenesis, Cellular macromolecular complex assembly, Cellular protein complex assembly, Cellular response to growth factor stimulus, Cellular response to transforming growth factor beta stimulus, Collagen fibril organization, Extracellular matrix organization, Extracellular structure organization, Glycosaminoglycan biosynthetic process, Glycosaminoglycan catabolic process, Glycosaminoglycan metabolic process, Keratan sulfate metabolic process, Kertan sulfate biosynthetic process, Kertan sulfate catabolic process, Macromolecule catabolic process, Mucopolysaccharide metabolic process, Neuron projection development, Neuron projection morphogenesis, Organonitrogen compound catabolic process, Response to growth factor, Response to transforming growth factor beta, Single-organism catabolic process, Sulfur compound biosynthetic process, Sulfur compound catabolic process, Sulfur compound metabolic process, Transforming growth factor beta receptor complex assembly, Transforming growth factor beta receptor signaling pathway, Transmembrane receptor protein serine/threonine kinase signaling pathway
+
+
+=== Dataset: OpenEnded_2hop.json__graphcypher | Type: open_ended | Mode: graphcypher | Model: gpt-4o-mini ===
+Count: 450  |  Correct: 50  |  Accuracy: 0.111 [95% CI 0.085-0.144]
+Average set metrics: exact_match=0.111  precision=0.266  recall=0.509  f1=0.270  jaccard=0.221  overlap=0.552
+By |expected| size:
+  -    1: n=69    acc=0.159 f1=0.289
+  -  2-5: n=104   acc=0.135 f1=0.286
+  - 6-20: n=121   acc=0.157 f1=0.336
+  -  >20: n=156   acc=0.038 f1=0.199
+Telemetry:
+  - first attempt success rate: 0.827 (n=450)
+  - avg correction iterations: 0.000 (n=450)
+  - latency ms: mean=55396 p50=8764 p95=340331 (n=450)
+  - records with error: 0.107 (n=450)
+
+-- Incorrect Questions (400 total, showing 15) --
+Q [c933cb1a0e2b]: List the drugs which commonly bind to the genes BTK and CYP1B1
+  Expected: Mitoxantrone, Dasatinib
+  Got:      ['Caffeine', 'Daunorubicin', 'Phenobarbital', 'Doxorubicin', 'Omeprazole', 'Dasatinib', 'Flutamide', 'Amodiaquine', 'Estrone', 'Arsenic trioxide', 'Mitoxantrone', 'Paclitaxel', 'Erlotinib', 'Progesterone', 'Testosterone', 'Dexamethasone', 'Oxaliplatin', 'Procarbazine', 'Hesperetin', 'Primaquine', 'Propofol', 'Lansoprazole', 'Clozapine', 'Melatonin', 'Ketoconazole', 'Estradiol', 'Docetaxel', 'Tamoxifen', 'Bosutinib', 'Biotin', 'Theophylline']
+  Thinking: The drugs that commonly bind to the genes BTK and CYP1B1 include:
+
+1. Biotin
+2. Amodiaquine
+3. Testosterone
+4. Tamoxifen
+5. Daunorubicin
+6. Estrone
+7. Oxaliplatin
+8. Erlotinib
+9. Flutamide
+10. Lansoprazole
+11. Progesterone
+12. Clozapine
+13. Omeprazole
+14. Theophylline
+15. Caffeine
+16. Doxorubicin
+17. Propofol
+18. Arsenic trioxide
+19. Procarbazine
+20. Phenobarbital
+21. Docetaxel
+22. Dasatinib
+23. Mitoxantrone
+24. Paclitaxel
+25. Dexamethasone
+26. Estradiol
+27. Primaquine
+28. Hesperetin
+29. Melatonin
+30. Ketoconazole
+31. Bosutinib
+  Cypher (1st attempt): MATCH (d:Drug)-[:CHEMICALBINDSGENE]->(g:Gene)
+WHERE g.geneSymbol IN ['BTK', 'CYP1B1']
+RETURN d.commonName
+
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.065  recall=1.000  f1=0.121  jaccard=0.065  overlap=1.000
+  Missing (in expected, not in got): -
+  Extra (in got, not in expected):   Amodiaquine, Arsenic trioxide, Biotin, Bosutinib, Caffeine, Clozapine, Daunorubicin, Dexamethasone, Docetaxel, Doxorubicin, Erlotinib, Estradiol, Estrone, Flutamide, Hesperetin, Ketoconazole, Lansoprazole, Melatonin, Omeprazole, Oxaliplatin, Paclitaxel, Phenobarbital, Primaquine, Procarbazine, Progesterone, Propofol, Tamoxifen, Testosterone, Theophylline
+
+Q [83d8307d51a1]: List the drugs which commonly bind to the genes HRH1 and CYP2C8
+  Expected: Loratadine, Perphenazine, Brompheniramine, Amitriptyline, Mirtazapine, Azelastine, Carbinoxamine, Clozapine, Thioridazine
+  Got:      ['Doxylamine', 'Orphenadrine', 'Trametinib', 'Cyclizine', 'Apixaban', 'Methdilazine', 'Olopatadine', 'Lovastatin', 'Haloperidol', 'Tripelennamine', 'Aceprometazine', 'Bortezomib', 'Dapsone', 'Cyproheptadine', 'Propiomazine', 'Promethazine', 'Oxybutynin', 'Triazolam', 'Abiraterone', 'Quetiapine', 'Desipramine', 'Betahistine', 'Testosterone', 'Zidovudine', 'Lidocaine', 'Nifedipine', 'Amlodipine', 'Cimetidine', 'Promazine', 'Repaglinide', 'Pravastatin', 'Candesartan cilexetil', 'Tazarotene', 'Naproxen', 'Triprolidine', 'Naloxone', 'Phenindamine', 'Carbinoxamine', 'Epinastine', 'Zafirlukast', 'Clozapine', 'Ifenprodil', 'Rifapentine', 'Liotrix', 'Saquinavir', 'Spironolactone', 'Escitalopram', 'Theophylline', 'Tioconazole', 'Sertindole', 'Methotrimeprazine', 'Ketamine', 'Warfarin', 'Trimipramine', 'Ifosfamide', 'Doxepin', 'Caffeine', 'Flunarizine', 'Vismodegib', 'Eszopiclone', 'Zopiclone', 'Phenobarbital', 'Piroxicam', 'Azatadine', 'Ethinylestradiol', 'Sulfadiazine', 'Thiothixene', 'Amprenavir', 'Valproic acid', 'Sitagliptin', 'Dextropropoxyphene', 'Cetirizine', 'Secobarbital', 'Raloxifene', 'Alimemazine', 'Etoposide', 'Atorvastatin', 'Pioglitazone', 'Irbesartan', 'Asenapine', 'Dabrafenib', 'Tolazoline', 'Diethylstilbestrol', 'Medroxyprogesterone acetate', 'Nilutamide', 'Hydrocortisone', 'Dexamethasone', 'Tretinoin', 'Chlorpheniramine', 'Pheniramine', 'Antipyrine', 'Pentamidine', 'Terbinafine', 'Fexofenadine', 'Cocaine', 'Levocabastine', 'Phenelzine', 'Pazopanib', 'Amiodarone', 'Isothipendyl', 'Brompheniramine', 'Nilvadipine', 'Aminophenazone', 'Mirtazapine', 'Fenofibrate', 'Chlorpromazine', 'Phenytoin', 'Losartan', 'Dexbrompheniramine', 'Domperidone', 'Diphenhydramine', 'Methadone', 'Primidone', 'Selegiline', 'Tamoxifen', 'Fosphenytoin', 'Loxapine', 'Olanzapine', 'Cholecalciferol', 'Verapamil', 'Emedastine', 'Thioridazine', 'Regorafenib', 'Citalopram', 'Perphenazine', 'Dimetindene', 'Trifluoperazine', 'Gemfibrozil', 'Levothyroxine', 'Colchicine', 'Fluspirilene', 'Clopidogrel', 'Mequitazine', 'Nicotine', 'Temazepam', 'Paramethadione', 'Chloroquine', 'Omeprazole', 'Phenprocoumon', 'Ketotifen', 'Loperamide', 'Sulfaphenazole', 'Mefenamic acid', 'Cyclosporine', 'Probenecid', 'Rifampicin', 'Nortriptyline', 'Amodiaquine', 'Diclofenac', 'Clofedadol', 'Lapatinib', 'Dimenhydrinate', 'Paroxetine', 'Paclitaxel', 'Bupropion', 'Mepyramine', 'Ponatinib', 'Paliperidone', 'Ketobemidone', 'Iloperidone', 'Simvastatin', 'Ritonavir', 'Ziprasidone', 'Risperidone', 'Chlorcyclizine', 'Sulfinpyrazone', 'Clemastine', 'Astemizole', 'Imipramine', 'Meclizine', 'Diphenylpyraline', 'Trimethoprim', 'Buprenorphine', 'Quinidine', 'Pimozide', 'Loratadine', 'Propofol', 'Lansoprazole', 'Isoniazid', 'Alcaftadine', 'Salmeterol', 'Mometasone', 'Fluorouracil', 'Chlorprothixene', 'Fluphenazine', 'Acetylsalicylic acid', 'Almotriptan', 'Maprotiline', 'Halofantrine', 'Ketoconazole', 'Dextromethorphan', 'Delavirdine', 'Clotrimazole', 'Torasemide', 'Amitriptyline', 'Cyclophosphamide', 'Felodipine', 'Bezafibrate', 'Eltrombopag', 'Bromodiphenhydramine', 'Buclizine', 'Prochlorperazine', 'Azelastine', 'Meloxicam', 'Cabazitaxel', 'Diazepam', 'Benzyl alcohol', 'Pitavastatin', 'Chloropyramine', 'Trimethadione', 'Erlotinib', 'Mesoridazine', 'Propafenone', 'Ibuprofen', 'Antazoline', 'Cinnarizine', 'Progesterone', 'Carbamazepine', 'Cisapride', 'Trazodone', 'Diltiazem', 'Pyrimethamine', 'Zuclopenthixol', 'Nicardipine', 'Quinine', 'Hydroxyzine', 'Aripiprazole', 'Fluvastatin', 'Sorafenib', 'Desloratadine', 'Levomilnacipran', 'Montelukast', 'Benzatropine', 'Bepotastine', 'Metronidazole', 'Sulfamethoxazole', 'Enzalutamide', 'Amoxapine', 'Morphine', 'Estradiol', 'Mycophenolate mofetil', 'Tolbutamide', 'Chloramphenicol', 'Ketoprofen', 'Mianserin', 'Ticlopidine', 'Rosiglitazone', 'Acetaminophen', 'Nilotinib']
+  Thinking: The drugs that commonly bind to the genes HRH1 and CYP2C8 include:
+
+1. Cyclosporine
+2. Cholecalciferol
+3. Pravastatin
+4. Nicotine
+5. Bortezomib
+6. Delavirdine
+7. Amprenavir
+8. Chloroquine
+9. Medroxyprogesterone acetate
+10. Cisapride
+11. Paramethadione
+12. Amodiaquine
+13. Nicardipine
+14. Fluphenazine
+15. Testosterone
+16. Tamoxifen
+17. Losartan
+18. Thioridazine
+19. Mycophenolate mofetil
+20. Warfarin
+21. Astemizole
+22. Simvastatin
+23. Dextropropoxyphene
+24. Trazodone
+25. Nilutamide
+26. Verapamil
+27. Cimetidine
+28. Haloperidol
+29. Ritonavir
+30. Piroxicam
+31. Hydroxyzine
+32. Carbamazepine
+33. Cinnarizine
+34. Diclofenac
+35. Dextromethorphan
+36. Cyclophosphamide
+37. Erlotinib
+38. Fluorouracil
+39. Amoxapine
+40. Zafirlukast
+41. Nortriptyline
+42. Chlorpromazine
+43. Montelukast
+44. Raloxifene
+45. Zidovudine
+46. Cyproheptadine
+47. Prochlorperazine
+48. Chloramphenicol
+49. Lansoprazole
+50. Trimethoprim
+51. Loratadine
+52. Imipramine
+53. Levothyroxine
+54. Quinine
+55. Loxapine
+56. Eszopiclone
+57. Dexbrompheniramine
+58. Secobarbital
+59. Rosiglitazone
+60. Spironolactone
+61. Triprolidine
+62. Promazine
+63. Sorafenib
+64. Progesterone
+65. Sulfadiazine
+66. Buclizine
+67. Doxylamine
+68. Clozapine
+69. Mirtazapine
+70. Amlodipine
+71. Valproic acid
+72. Acetaminophen
+73. Amitriptyline
+74. Methadone
+75. Olanzapine
+76. Omeprazole
+77. Trimethadione
+78. Diltiazem
+79. Cetirizine
+80. Theophylline
+81. Clemastine
+82. Lidocaine
+83. Morphine
+84. Temazepam
+85. Benzatropine
+86. Ziprasidone
+87. Clotrimazole
+88. Dapsone
+89. Diethylstilbestrol
+90. Phenytoin
+91. Caffeine
+92. Ticlopidine
+93. Pyrimethamine
+94. Torasemide
+95. Citalopram
+96. Lovastatin
+97. Isoniazid
+98. Fexofenadine
+99. Desloratadine
+100. Azelastine
+101. Ethinylestradiol
+102. Dimenhydrinate
+103. Metronidazole
+104. Almotriptan
+105. Repaglinide
+106. Ketotifen
+107. Buprenorphine
+108. Salmeterol
+109. Mesoridazine
+110. Maprotiline
+111. Phenprocoumon
+112. Acetylsalicylic acid
+113. Methdilazine
+114. Quinidine
+115. Cocaine
+116. Methotrimeprazine
+117. Loperamide
+118. Trifluoperazine
+119. Brompheniramine
+120. Perphenazine
+121. Terbinafine
+122. Meloxicam
+123. Propofol
+124. Diazepam
+125. Colchicine
+126. Bezafibrate
+127. Fosphenytoin
+128. Triazolam
+129. Paroxetine
+130. Azatadine
+131. Trimipramine
+132. Meclizine
+133. Pentamidine
+134. Risperidone
+135. Carbinoxamine
+136. Hydrocortisone
+137. Phenobarbital
+138. Escitalopram
+139. Orphenadrine
+140. Cyclizine
+141. Naloxone
+142. Domperidone
+143. Ifosfamide
+144. Propafenone
+145. Zopiclone
+146. Alimemazine
+147. Gemfibrozil
+148. Lapatinib
+149. Sitagliptin
+150. Paliperidone
+151. Rifapentine
+152. Halofantrine
+153. Quetiapine
+154. Paclitaxel
+155. Ketamine
+156. Bromodiphenhydramine
+157. Aripiprazole
+158. Chlorprothixene
+159. Dexamethasone
+160. Saquinavir
+161. Tolazoline
+162. Candesartan cilexetil
+163. Tazarotene
+164. Primidone
+165. Tripelennamine
+166. Epinastine
+167. Clopidogrel
+168. Tretinoin
+169. Mometasone
+170. Olopatadine
+171. Etoposide
+172. Propiomazine
+173. Mefenamic acid
+174. Naproxen
+175. Estradiol
+176. Phenelzine
+177. Emedastine
+178. Fluvastatin
+179. Rifampicin
+180. Ibuprofen
+181. Oxybutynin
+182. Promethazine
+183. Diphenhydramine
+184. Atorvastatin
+185. Mequitazine
+186. Tolbutamide
+187. Sulfinpyrazone
+188. Pioglitazone
+189. Doxepin
+190. Diphenylpyraline
+191. Desipramine
+192. Bupropion
+193. Levocabastine
+194. Pimozide
+195. Chlorpheniramine
+196. Nifedipine
+197. Amiodarone
+198. Tioconazole
+199. Ketoprofen
+200. Sulfamethoxazole
+201. Irbesartan
+202. Ketoconazole
+203. Felodipine
+204. Fenofibrate
+205. Selegiline
+206. Probenecid
+207. Abiraterone
+208. Phenindamine
+209. Aceprometazine
+210. Thiothixene
+211. Pheniramine
+212. Zuclopenthixol
+213. Liotrix
+214. Asenapine
+215. Eltrombopag
+216. Aminophenazone
+217. Antipyrine
+218. Mianserin
+219. Sertindole
+220. Iloperidone
+221. Bepotastine
+222. Clofedanol
+223. Flunarizine
+224. Fluspirilene
+225. Nilotinib
+226. Cabazitaxel
+227. Benzyl alcohol
+228. Ketobemidone
+229. Alcaftadine
+230. Betahistine
+231. Mepyramine
+232. Nilvadipine
+233. Sulfaphenazole
+234. Pazopanib
+235. Apixaban
+236. Ifenprodil
+237. Levomilnacipran
+238. Trametinib
+239. Dabrafenib
+240. Chlorcyclizine
+241. Enzalutamide
+242. Regorafenib
+243. Pitavastatin
+244. Dimetindene
+245. Isothipendyl
+246. Chloropyramine
+247. Vismodegib
+248. Ponatinib
+249. Antazoline
+  Cypher (1st attempt): MATCH (d:Drug)-[:CHEMICALBINDSGENE]->(g:Gene)
+WHERE g.geneSymbol IN ['HRH1', 'CYP2C8']
+RETURN d.commonName
+
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.036  recall=1.000  f1=0.070  jaccard=0.036  overlap=1.000
+  Missing (in expected, not in got): -
+  Extra (in got, not in expected):   Abiraterone, Aceprometazine, Acetaminophen, Acetylsalicylic acid, Alcaftadine, Alimemazine, Almotriptan, Aminophenazone, Amiodarone, Amlodipine, Amodiaquine, Amoxapine, Amprenavir, Antazoline, Antipyrine, Apixaban, Aripiprazole, Asenapine, Astemizole, Atorvastatin, Azatadine, Benzatropine, Benzyl alcohol, Bepotastine, Betahistine, Bezafibrate, Bortezomib, Bromodiphenhydramine, Buclizine, Buprenorphine, Bupropion, Cabazitaxel, Caffeine, Candesartan cilexetil, Carbamazepine, Cetirizine, Chloramphenicol, Chlorcyclizine, Chloropyramine, Chloroquine, Chlorpheniramine, Chlorpromazine, Chlorprothixene, Cholecalciferol, Cimetidine, Cinnarizine, Cisapride, Citalopram, Clemastine, Clofedadol, Clopidogrel, Clotrimazole, Cocaine, Colchicine, Cyclizine, Cyclophosphamide, Cyclosporine, Cyproheptadine, Dabrafenib, Dapsone, Delavirdine, Desipramine, Desloratadine, Dexamethasone, Dexbrompheniramine, Dextromethorphan, Dextropropoxyphene, Diazepam, Diclofenac, Diethylstilbestrol, Diltiazem, Dimenhydrinate, Dimetindene, Diphenhydramine, Diphenylpyraline, Domperidone, Doxepin, Doxylamine, Eltrombopag, Emedastine, Enzalutamide, Epinastine, Erlotinib, Escitalopram, Estradiol, Eszopiclone, Ethinylestradiol, Etoposide, Felodipine, Fenofibrate, Fexofenadine, Flunarizine, Fluorouracil, Fluphenazine, Fluspirilene, Fluvastatin, Fosphenytoin, Gemfibrozil, Halofantrine, Haloperidol, Hydrocortisone, Hydroxyzine, Ibuprofen, Ifenprodil, Ifosfamide, Iloperidone, Imipramine, Irbesartan, Isoniazid, Isothipendyl, Ketamine, Ketobemidone, Ketoconazole, Ketoprofen, Ketotifen, Lansoprazole, Lapatinib, Levocabastine, Levomilnacipran, Levothyroxine, Lidocaine, Liotrix, Loperamide, Losartan, Lovastatin, Loxapine, Maprotiline, Meclizine, Medroxyprogesterone acetate, Mefenamic acid, Meloxicam, Mepyramine, Mequitazine, Mesoridazine, Methadone, Methdilazine, Methotrimeprazine, Metronidazole, Mianserin, Mometasone, Montelukast, Morphine, Mycophenolate mofetil, Naloxone, Naproxen, Nicardipine, Nicotine, Nifedipine, Nilotinib, Nilutamide, Nilvadipine, Nortriptyline, Olanzapine, Olopatadine, Omeprazole, Orphenadrine, Oxybutynin, Paclitaxel, Paliperidone, Paramethadione, Paroxetine, Pazopanib, Pentamidine, Phenelzine, Phenindamine, Pheniramine, Phenobarbital, Phenprocoumon, Phenytoin, Pimozide, Pioglitazone, Piroxicam, Pitavastatin, Ponatinib, Pravastatin, Primidone, Probenecid, Prochlorperazine, Progesterone, Promazine, Promethazine, Propafenone, Propiomazine, Propofol, Pyrimethamine, Quetiapine, Quinidine, Quinine, Raloxifene, Regorafenib, Repaglinide, Rifampicin, Rifapentine, Risperidone, Ritonavir, Rosiglitazone, Salmeterol, Saquinavir, Secobarbital, Selegiline, Sertindole, Simvastatin, Sitagliptin, Sorafenib, Spironolactone, Sulfadiazine, Sulfamethoxazole, Sulfaphenazole, Sulfinpyrazone, Tamoxifen, Tazarotene, Temazepam, Terbinafine, Testosterone, Theophylline, Thiothixene, Ticlopidine, Tioconazole, Tolazoline, Tolbutamide, Torasemide, Trametinib, Trazodone, Tretinoin, Triazolam, Trifluoperazine, Trimethadione, Trimethoprim, Trimipramine, Tripelennamine, Triprolidine, Valproic acid, Verapamil, Vismodegib, Warfarin, Zafirlukast, Zidovudine, Ziprasidone, Zopiclone, Zuclopenthixol
+
+Q [1aefb452004a]: List the drugs which commonly bind to the genes CA9 and SLC22A6
+  Expected: Hydrochlorothiazide, Furosemide, Bumetanide, Acetazolamide, Methazolamide
+  Got:      ['Sulindac', 'Diclofenamide', 'Meclofenamic acid', 'Ofloxacin', 'Chlorpropamide', 'Salicylic acid', 'Zonisamide', 'Lacosamide', 'Ganciclovir', 'Zidovudine', 'Etodolac', 'Cefadroxil', 'Aminohippuric acid', 'Cimetidine', 'Topiramate', 'Naproxen', 'Pravastatin', 'Cephalexin', 'Tenofovir disoproxil', 'Adefovir dipivoxil', 'Norfloxacin', 'Acetylcysteine', 'Hydrochlorothiazide', 'Gentamicin', 'Glyburide', 'Didanosine', 'Carbenicillin', 'Cefamandole', 'Lamivudine', 'Doxycycline', 'Piroxicam', 'Levofloxacin', 'Methazolamide', 'Acetazolamide', 'Indomethacin', 'Cefoperazone', 'Riboflavin', 'Valproic acid', 'Zalcitabine', 'Caspofungin', 'Piperacillin', 'Sulfanilamide', 'Dabrafenib', 'Bumetanide', 'Valaciclovir', 'Antipyrine', 'Ceftriaxone', 'Celecoxib', 'Benzthiazide', 'Aspartame', 'Flurbiprofen', 'Cefotaxime', 'Methotrexate', 'Amoxicillin', 'Aminophenazone', 'Dorzolamide', 'Losartan', 'Trichlormethiazide', 'Metolazone', 'Cyclosporine', 'Probenecid', 'Diclofenac', 'Captopril', 'Minocycline', 'Cloxacillin', 'Cilastatin', 'Cidofovir', 'Dinoprostone', 'Vancomycin', 'Carprofen', 'Nilotinib', 'Cyclothiazide', 'Phenylbutazone', 'Indapamide', 'Cefacetrile', 'Cinoxacin', 'Benzylpenicillin', 'Acyclovir', 'Acetylsalicylic acid', 'Cefradine', 'Cefazolin', 'Chlorthalidone', 'Stavudine', 'Bromodiphenhydramine', 'Enalapril', 'Diflunisal', 'Streptomycin', 'Conjugated estrogens', 'Folic acid', 'Tetracycline', 'Mafenide', 'Sulpiride', 'Nalidixic acid', 'Brinzolamide', 'Etacrynic acid', 'Furosemide', 'Ibuprofen', 'Nafcillin', 'Foscarnet', 'Oxytetracycline', 'Fluorescein', 'Cefotiam', 'Hydroflumethiazide', 'Tolmetin', 'Trifluridine', 'Tolbutamide', 'Ketoprofen', 'Chloramphenicol', 'Imatinib', 'Cefaloridine', 'Nateglinide', 'Acetaminophen', 'Cefalotin', 'Novobiocin', 'Ceftazidime']
+  Thinking: The drugs that commonly bind to the genes CA9 and SLC22A6 include:
+
+1. Cyclosporine
+2. Folic acid
+3. Aspartame
+4. Pravastatin
+5. Riboflavin
+6. Flurbiprofen
+7. Lamivudine
+8. Methazolamide
+9. Nafcillin
+10. Sulindac
+11. Cyclothiazide
+12. Imatinib
+13. Losartan
+14. Chlorpropamide
+15. Furosemide
+16. Fluorescein
+17. Stavudine
+18. Tolmetin
+19. Cimetidine
+20. Oxytetracycline
+21. Piroxicam
+22. Cephalexin
+23. Benzthiazide
+24. Methotrexate
+25. Valaciclovir
+26. Carbenicillin
+27. Diclofenac
+28. Enalapril
+29. Vancomycin
+30. Foscarnet
+31. Caspofungin
+32. Metolazone
+33. Celecoxib
+34. Cefotaxime
+35. Zidovudine
+36. Trifluridine
+37. Ceftazidime
+38. Chloramphenicol
+39. Cefalotin
+40. Sulpiride
+41. Cidofovir
+42. Piperacillin
+43. Valproic acid
+44. Acetaminophen
+45. Chlorthalidone
+46. Indomethacin
+47. Aminohippuric acid
+48. Tenofovir disoproxil
+49. Topiramate
+50. Conjugated estrogens
+51. Sulfanilamide
+52. Doxycycline
+53. Cefotiam
+54. Dinoprostone
+55. Salicylic acid
+56. Meclofenamic acid
+57. Acetylsalicylic acid
+58. Zalcitabine
+59. Etacrynic acid
+60. Zonisamide
+61. Didanosine
+62. Hydrochlorothiazide
+63. Dorzolamide
+64. Diflunisal
+65. Indapamide
+66. Acetazolamide
+67. Phenylbutazone
+68. Cinoxacin
+69. Carprofen
+70. Cefamandole
+71. Cefoperazone
+72. Cefazolin
+73. Cefradine
+74. Bumetanide
+75. Adefovir dipivoxil
+76. Nateglinide
+77. Etodolac
+78. Ofloxacin
+79. Captopril
+80. Brinzolamide
+81. Ceftriaxone
+82. Bromodiphenhydramine
+83. Gentamicin
+84. Tetracycline
+85. Hydroflumethiazide
+86. Nalidixic acid
+87. Acyclovir
+88. Naproxen
+89. Streptomycin
+90. Norfloxacin
+91. Benzylpenicillin
+92. Novobiocin
+93. Ibuprofen
+94. Amoxicillin
+95. Tolbutamide
+96. Levofloxacin
+97. Cloxacillin
+98. Cefadroxil
+99. Diclofenamide
+100. Ganciclovir
+101. Ketoprofen
+102. Minocycline
+103. Glyburide
+104. Trichlormethiazide
+105. Probenecid
+106. Cilastatin
+107. Lacosamide
+108. Cefacetrile
+109. Aminophenazone
+110. Antipyrine
+111. Acetylcysteine
+112. Nilotinib
+113. Mafenide
+114. Cefaloridine
+115. Dabrafenib
+  Cypher (1st attempt): MATCH (d:Drug)-[:CHEMICALBINDSGENE]->(g:Gene)
+WHERE g.geneSymbol IN ['CA9', 'SLC22A6']
+RETURN d.commonName
+
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.043  recall=1.000  f1=0.083  jaccard=0.043  overlap=1.000
+  Missing (in expected, not in got): -
+  Extra (in got, not in expected):   Acetaminophen, Acetylcysteine, Acetylsalicylic acid, Acyclovir, Adefovir dipivoxil, Aminohippuric acid, Aminophenazone, Amoxicillin, Antipyrine, Aspartame, Benzthiazide, Benzylpenicillin, Brinzolamide, Bromodiphenhydramine, Captopril, Carbenicillin, Carprofen, Caspofungin, Cefacetrile, Cefadroxil, Cefaloridine, Cefalotin, Cefamandole, Cefazolin, Cefoperazone, Cefotaxime, Cefotiam, Cefradine, Ceftazidime, Ceftriaxone, Celecoxib, Cephalexin, Chloramphenicol, Chlorpropamide, Chlorthalidone, Cidofovir, Cilastatin, Cimetidine, Cinoxacin, Cloxacillin, Conjugated estrogens, Cyclosporine, Cyclothiazide, Dabrafenib, Diclofenac, Diclofenamide, Didanosine, Diflunisal, Dinoprostone, Dorzolamide, Doxycycline, Enalapril, Etacrynic acid, Etodolac, Fluorescein, Flurbiprofen, Folic acid, Foscarnet, Ganciclovir, Gentamicin, Glyburide, Hydroflumethiazide, Ibuprofen, Imatinib, Indapamide, Indomethacin, Ketoprofen, Lacosamide, Lamivudine, Levofloxacin, Losartan, Mafenide, Meclofenamic acid, Methotrexate, Metolazone, Minocycline, Nafcillin, Nalidixic acid, Naproxen, Nateglinide, Nilotinib, Norfloxacin, Novobiocin, Ofloxacin, Oxytetracycline, Phenylbutazone, Piperacillin, Piroxicam, Pravastatin, Probenecid, Riboflavin, Salicylic acid, Stavudine, Streptomycin, Sulfanilamide, Sulindac, Sulpiride, Tenofovir disoproxil, Tetracycline, Tolbutamide, Tolmetin, Topiramate, Trichlormethiazide, Trifluridine, Valaciclovir, Valproic acid, Vancomycin, Zalcitabine, Zidovudine, Zonisamide
+
+Q [469d8d0bd5fd]: List the drugs which commonly bind to the genes ADRA2B and SLC22A2
+  Expected: Phenoxybenzamine, Prazosin, Pramipexole, Norepinephrine, Epinephrine
+  Got:      ['Flurazepam', 'Quinacrine', 'Tizanidine', 'Etomidate', 'Pergolide', 'Quetiapine', 'Desipramine', 'Procainamide', 'Zidovudine', 'Prazosin', 'Aminohippuric acid', 'Cimetidine', 'Levonordefrin', 'Disopyramide', 'Clozapine', 'Oxprenolol', 'Dronedarone', 'Methotrimeprazine', 'Trimipramine', 'Lamivudine', 'Lisuride', 'Doxepin', 'Metformin', 'Dipivefrin', 'Levofloxacin', 'Phenformin', 'Rotigotine', 'Ropinirole', 'Chlorhexidine', 'Asenapine', 'Naphazoline', 'Propranolol', 'Cytarabine', 'Cladribine', 'Tolazoline', 'Metamfetamine', 'Chlorpheniramine', 'Xylometazoline', 'Phentolamine', 'Cocaine', 'Phenoxybenzamine', 'Oxaliplatin', 'Metoprolol', 'Pramipexole', 'Diphenhydramine', 'Guanabenz', 'Loxapine', 'Olanzapine', 'Amiloride', 'Daunorubicin', 'Vinblastine', 'Nicotine', 'Droxidopa', 'Probenecid', 'Thiamine', 'Reserpine', 'Apraclonidine', 'Ergotamine', 'Paliperidone', 'Ziprasidone', 'Risperidone', 'Dinoprostone', 'Yohimbine', 'Bromocriptine', 'Imipramine', 'Dinoprost tromethamine', 'Quinidine', 'Cisplatin', 'Pancuronium', 'Epinephrine', 'Carvedilol', 'Clonidine', 'Guanidine', 'Dopamine', 'Tubocurarine', 'Famotidine', 'Norepinephrine', 'Dexmedetomidine', 'Amantadine', 'Oxymetazoline', 'Cabergoline', 'Mematine', 'Progesterone', 'Apomorphine', 'Guanfacine', 'Fenoldopam', 'Quinine', 'Aripiprazole', 'Brimonidine', 'Estradiol', 'Mianserin', 'Imatinib', 'Choline']
+  Thinking: The drugs that commonly bind to the genes ADRA2B and SLC22A2 include:
+
+1. Thiamine
+2. Nicotine
+3. Choline
+4. Apomorphine
+5. Lamivudine
+6. Imatinib
+7. Guanabenz
+8. Ergotamine
+9. Tizanidine
+10. Flurazepam
+11. Daunorubicin
+12. Phentolamine
+13. Dexmedetomidine
+14. Epinephrine
+15. Cimetidine
+16. Amiloride
+17. Clonidine
+18. Vinblastine
+19. Propranolol
+20. Lisuride
+21. Cisplatin
+22. Oxaliplatin
+23. Guanidine
+24. Brimonidine
+25. Zidovudine
+26. Dipivefrin
+27. Prazosin
+28. Imipramine
+29. Quinine
+30. Loxapine
+31. Pramipexole
+32. Progesterone
+33. Norepinephrine
+34. Clozapine
+35. Olanzapine
+36. Metformin
+37. Aminohippuric acid
+38. Disopyramide
+39. Etomidate
+40. Cabergoline
+41. Ziprasidone
+42. Cladribine
+43. Ropinirole
+44. Metoprolol
+45. Reserpine
+46. Apraclonidine
+47. Dopamine
+48. Cytarabine
+49. Amantadine
+50. Phenformin
+51. Dinoprostone
+52. Famotidine
+53. Phenoxybenzamine
+54. Oxymetazoline
+55. Quinidine
+56. Cocaine
+57. Methotrimeprazine
+58. Fenoldopam
+59. Yohimbine
+60. Pancuronium
+61. Chlorhexidine
+62. Trimipramine
+63. Risperidone
+64. Dinoprost tromethamine
+65. Pergolide
+66. Tubocurarine
+67. Paliperidone
+68. Bromocriptine
+69. Quetiapine
+70. Aripiprazole
+71. Tolazoline
+72. Estradiol
+73. Memantine
+74. Diphenhydramine
+75. Carvedilol
+76. Levofloxacin
+77. Doxepin
+78. Desipramine
+79. Quinacrine
+80. Chlorpheniramine
+81. Guanfacine
+82. Probenecid
+83. Procainamide
+84. Rotigotine
+85. Metamfetamine
+86. Oxprenolol
+87. Droxidopa
+88. Asenapine
+89. Mianserin
+90. Dronedarone
+91. Xylometazoline
+92. Levonordefrin
+93. Naphazoline
+  Cypher (1st attempt): MATCH (d:Drug)-[:CHEMICALBINDSGENE]->(g:Gene)
+WHERE g.geneSymbol IN ['ADRA2B', 'SLC22A2']
+RETURN d.commonName
+
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.054  recall=1.000  f1=0.102  jaccard=0.054  overlap=1.000
+  Missing (in expected, not in got): -
+  Extra (in got, not in expected):   Amantadine, Amiloride, Aminohippuric acid, Apomorphine, Apraclonidine, Aripiprazole, Asenapine, Brimonidine, Bromocriptine, Cabergoline, Carvedilol, Chlorhexidine, Chlorpheniramine, Choline, Cimetidine, Cisplatin, Cladribine, Clonidine, Clozapine, Cocaine, Cytarabine, Daunorubicin, Desipramine, Dexmedetomidine, Dinoprost tromethamine, Dinoprostone, Diphenhydramine, Dipivefrin, Disopyramide, Dopamine, Doxepin, Dronedarone, Droxidopa, Ergotamine, Estradiol, Etomidate, Famotidine, Fenoldopam, Flurazepam, Guanabenz, Guanfacine, Guanidine, Imatinib, Imipramine, Lamivudine, Levofloxacin, Levonordefrin, Lisuride, Loxapine, Mematine, Metamfetamine, Metformin, Methotrimeprazine, Metoprolol, Mianserin, Naphazoline, Nicotine, Olanzapine, Oxaliplatin, Oxprenolol, Oxymetazoline, Paliperidone, Pancuronium, Pergolide, Phenformin, Phentolamine, Probenecid, Procainamide, Progesterone, Propranolol, Quetiapine, Quinacrine, Quinidine, Quinine, Reserpine, Risperidone, Ropinirole, Rotigotine, Thiamine, Tizanidine, Tolazoline, Trimipramine, Tubocurarine, Vinblastine, Xylometazoline, Yohimbine, Zidovudine, Ziprasidone
+
+Q [31a324f974c4]: List the drugs which commonly bind to the genes MGAM and GANAB
+  Expected: Miglitol
+  Got:      ['Miglitol', 'Voglibose', 'Acarbose']
+  Thinking: The drugs that commonly bind to the genes MGAM and GANAB are:
+
+1. Miglitol
+2. Acarbose
+3. Voglibose
+  Cypher (1st attempt): MATCH (d:Drug)-[:CHEMICALBINDSGENE]->(g:Gene)
+WHERE g.geneSymbol IN ['MGAM', 'GANAB']
+RETURN d.commonName
+
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.333  recall=1.000  f1=0.500  jaccard=0.333  overlap=1.000
+  Missing (in expected, not in got): -
+  Extra (in got, not in expected):   Acarbose, Voglibose
+
+Q [765e264651d7]: List the drugs which commonly bind to the genes PTGS2 and ALB
+  Expected: Piroxicam, Diclofenac, Fenoprofen, Ketoprofen, Sulindac, Magnesium salicylate, Celecoxib, Acetylsalicylic acid, Indomethacin, Bismuth subsalicylate, Salicylic acid, Naproxen, Diflunisal, Ibuprofen, Etodolac, Flurbiprofen
+  Got:      ['Methyltestosterone', 'Vemurafenib', 'Sulindac', 'Vandetanib', 'Azapropazone', 'Meclofenamic acid', 'Lumiracoxib', 'Nabumetone', 'Thioproperazine', 'Dapsone', 'Floctafenine', 'Salicylic acid', 'Iodipamide', 'Triamcinolone', 'Clodronic acid', 'Tenoxicam', 'Fenoprofen', 'Alfentanil', 'Abiraterone', 'Testosterone', 'Zidovudine', 'Isoflurane', 'Etodolac', 'Auranofin', 'Repaglinide', 'Naproxen', 'Choline magnesium trisalicylate', 'Cephalexin', 'Naloxone', 'Enflurane', 'Gliclazide', 'Liotrix', 'Saquinavir', 'Balsalazide', 'Dronedarone', 'Lornoxicam', 'Glyburide', 'Mirabegron', 'Warfarin', 'Fospropofol', 'Vismodegib', 'Cefonicid', 'Piroxicam', 'Sulfamethazine', 'Macitentan', 'Indomethacin', 'Fluoxetine', 'Cefoperazone', 'Tafluprost', 'Gatifloxacin', 'Thiothixene', 'Sulfamerazine', 'Rufinamide', 'Cefotetan', 'Norethisterone', 'Etoposide', 'Thalidomide', 'Halothane', 'Bumetanide', 'Antipyrine', 'Ceftriaxone', 'Dexamethasone', 'Etoricoxib', 'Pipotiazine', 'Acenocoumarol', 'Celecoxib', 'Acitretin', 'Flurbiprofen', 'Antrafenine', 'Oxaprozin', 'Methotrexate', 'Desflurane', 'Chlorpromazine', 'Meperidine', 'Losartan', 'Phenytoin', 'Olsalazine', 'Irinotecan', 'Niflumic acid', 'Mesalazine', 'Sapropterin', 'Fosphenytoin', 'Gadofosveset trisodium', 'Gadobenic acid', 'Clomipramine', 'Olanzapine', 'Estrone sulfate', 'Cefmetazole', 'Acepromazine', 'Levothyroxine', 'Phenprocoumon', 'Telaprevir', 'Clonazepam', 'Ketorolac', 'Fenbufen', 'Lenalidomide', 'Mefenamic acid', 'Ampicillin', 'Icosapent', 'Sulfamethizole', 'Metacycline', 'Probenecid', 'Nortriptyline', 'Sodium lauryl sulfate', 'Cefpiramide', 'Diclofenac', 'Captopril', 'Bromfenac', 'Pomalidomide', 'Cloxacillin', 'Sevoflurane', 'Drospirenone', 'Isoflurophate', 'Prednisone', 'Carprofen', 'Nepafenac', 'Digitoxin', 'Desmopressin', 'Phenylbutazone', 'Magnesium salicylate', 'Propofol', 'Fluorouracil', 'Ketazolam', 'Cisplatin', 'Acetylsalicylic acid', 'Simeprevir', 'Rosuvastatin', 'Tacrolimus', 'Amitriptyline', 'Cefazolin', 'Liothyronine', 'Betamethasone', 'Oxcarbazepine', 'Nonoxynol-9', 'Diflunisal', 'Risedronic acid', 'Canagliflozin', 'Meloxicam', 'Tetracycline', 'Gefitinib', 'Valsartan', 'Aminosalicylic acid', 'Diazepam', 'Salsalate', 'Sucralfate', 'Pitavastatin', 'Suprofen', 'Estrone', 'Etacrynic acid', 'Furosemide', 'Erlotinib', 'Lutein', 'Chlorphenesin', 'Ibuprofen', 'Prasugrel', 'Dihomo-gamma-linolenic acid', 'Tolmetin', 'Sulfamethoxazole', 'Enzalutamide', 'Ivacaftor', 'Estradiol', 'Sulfasalazine', 'Mycophenolate mofetil', 'Ketoprofen', 'Tiaprofenic acid', 'Imatinib', 'Tocainide', 'Rosiglitazone', 'Acetaminophen', 'Nateglinide', 'Cefalotin', 'Bismuth subsalicylate']
+  Thinking: The drugs that commonly bind to the genes PTGS2 and ALB include:
+
+1. Icosapent
+2. Dihomo-gamma-linolenic acid
+3. Valsartan
+4. Lutein
+5. Desmopressin
+6. Flurbiprofen
+7. Sulindac
+8. Imatinib
+9. Triamcinolone
+10. Testosterone
+11. Isoflurophate
+12. Losartan
+13. Mycophenolate mofetil
+14. Warfarin
+15. Furosemide
+16. Prednisone
+17. Estrone
+18. Tolmetin
+19. Piroxicam
+20. Cephalexin
+21. Methotrexate
+22. Sulfamethizole
+23. Fenoprofen
+24. Diclofenac
+25. Cisplatin
+26. Erlotinib
+27. Fluorouracil
+28. Nortriptyline
+29. Chlorpromazine
+30. Fluoxetine
+31. Celecoxib
+32. Lenalidomide
+33. Zidovudine
+34. Cefpiramide
+35. Betamethasone
+36. Cefalotin
+37. Meperidine
+38. Acitretin
+39. Levothyroxine
+40. Ketorolac
+41. Tenoxicam
+42. Nabumetone
+43. Rosiglitazone
+44. Ampicillin
+45. Sapropterin
+46. Sucralfate
+47. Gefitinib
+48. Acetaminophen
+49. Indomethacin
+50. Amitriptyline
+51. Olanzapine
+52. Liothyronine
+53. Cefmetazole
+54. Aminosalicylic acid
+55. Mesalazine
+56. Dapsone
+57. Phenytoin
+58. Enflurane
+59. Bromfenac
+60. Repaglinide
+61. Salicylic acid
+62. Meclofenamic acid
+63. Metacycline
+64. Phenprocoumon
+65. Acetylsalicylic acid
+66. Etacrynic acid
+67. Choline magnesium trisalicylate
+68. Auranofin
+69. Oxaprozin
+70. Chlorphenesin
+71. Tacrolimus
+72. Diflunisal
+73. Alfentanil
+74. Meloxicam
+75. Sodium lauryl sulfate
+76. Propofol
+77. Phenylbutazone
+78. Diazepam
+79. Carprofen
+80. Lumiracoxib
+81. Bismuth subsalicylate
+82. Drospirenone
+83. Salsalate
+84. Digitoxin
+85. Magnesium salicylate
+86. Cefoperazone
+87. Cefazolin
+88. Cefonicid
+89. Fosphenytoin
+90. Cefotetan
+91. Suprofen
+92. Risedronic acid
+93. Bumetanide
+94. Norethisterone
+95. Clodronic acid
+96. Nateglinide
+97. Etodolac
+98. Gadobenic acid
+99. Naloxone
+100. Desflurane
+101. Captopril
+102. Clomipramine
+103. Olsalazine
+104. Ceftriaxone
+105. Sevoflurane
+106. Dexamethasone
+107. Saquinavir
+108. Sulfasalazine
+109. Tetracycline
+110. Isoflurane
+111. Irinotecan
+112. Oxcarbazepine
+113. Etoposide
+114. Mefenamic acid
+115. Naproxen
+116. Estradiol
+117. Rosuvastatin
+118. Thalidomide
+119. Gatifloxacin
+120. Tocainide
+121. Ibuprofen
+122. Clonazepam
+123. Gliclazide
+124. Cloxacillin
+125. Halothane
+126. Ketoprofen
+127. Sulfamethoxazole
+128. Glyburide
+129. Balsalazide
+130. Probenecid
+131. Abiraterone
+132. Telaprevir
+133. Vandetanib
+134. Tiaprofenic acid
+135. Acepromazine
+136. Etoricoxib
+137. Thiothixene
+138. Thioproperazine
+139. Pipotiazine
+140. Ketazolam
+141. Sulfamethazine
+142. Sulfamerazine
+143. Liotrix
+144. Prasugrel
+145. Rufinamide
+146. Antrafenine
+147. Acenocoumarol
+148. Antipyrine
+149. Dronedarone
+150. Iodipamide
+151. Niflumic acid
+152. Estrone sulfate
+153. Nepafenac
+154. Nonoxynol-9
+155. Gadofosveset trisodium
+156. Fospropofol
+157. Methyltestosterone
+158. Lornoxicam
+159. Floctafenine
+160. Fenbufen
+161. Pomalidomide
+162. Macitentan
+163. Vemurafenib
+164. Enzalutamide
+165. Mirabegron
+166. Pitavastatin
+167. Tafluprost
+168. Vismodegib
+169. Ivacaftor
+170. Canagliflozin
+171. Simeprevir
+172. Azapropazone
+  Cypher (1st attempt): MATCH (d:Drug)-[:CHEMICALBINDSGENE]->(g:Gene)
+WHERE g.geneSymbol IN ['PTGS2', 'ALB']
+RETURN d.commonName
+
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.093  recall=1.000  f1=0.170  jaccard=0.093  overlap=1.000
+  Missing (in expected, not in got): -
+  Extra (in got, not in expected):   Abiraterone, Acenocoumarol, Acepromazine, Acetaminophen, Acitretin, Alfentanil, Aminosalicylic acid, Amitriptyline, Ampicillin, Antipyrine, Antrafenine, Auranofin, Azapropazone, Balsalazide, Betamethasone, Bromfenac, Bumetanide, Canagliflozin, Captopril, Carprofen, Cefalotin, Cefazolin, Cefmetazole, Cefonicid, Cefoperazone, Cefotetan, Cefpiramide, Ceftriaxone, Cephalexin, Chlorphenesin, Chlorpromazine, Choline magnesium trisalicylate, Cisplatin, Clodronic acid, Clomipramine, Clonazepam, Cloxacillin, Dapsone, Desflurane, Desmopressin, Dexamethasone, Diazepam, Digitoxin, Dihomo-gamma-linolenic acid, Dronedarone, Drospirenone, Enflurane, Enzalutamide, Erlotinib, Estradiol, Estrone, Estrone sulfate, Etacrynic acid, Etoposide, Etoricoxib, Fenbufen, Floctafenine, Fluorouracil, Fluoxetine, Fosphenytoin, Fospropofol, Furosemide, Gadobenic acid, Gadofosveset trisodium, Gatifloxacin, Gefitinib, Gliclazide, Glyburide, Halothane, Icosapent, Imatinib, Iodipamide, Irinotecan, Isoflurane, Isoflurophate, Ivacaftor, Ketazolam, Ketorolac, Lenalidomide, Levothyroxine, Liothyronine, Liotrix, Lornoxicam, Losartan, Lumiracoxib, Lutein, Macitentan, Meclofenamic acid, Mefenamic acid, Meloxicam, Meperidine, Mesalazine, Metacycline, Methotrexate, Methyltestosterone, Mirabegron, Mycophenolate mofetil, Nabumetone, Naloxone, Nateglinide, Nepafenac, Niflumic acid, Nonoxynol-9, Norethisterone, Nortriptyline, Olanzapine, Olsalazine, Oxaprozin, Oxcarbazepine, Phenprocoumon, Phenylbutazone, Phenytoin, Pipotiazine, Pitavastatin, Pomalidomide, Prasugrel, Prednisone, Probenecid, Propofol, Repaglinide, Risedronic acid, Rosiglitazone, Rosuvastatin, Rufinamide, Salsalate, Sapropterin, Saquinavir, Sevoflurane, Simeprevir, Sodium lauryl sulfate, Sucralfate, Sulfamerazine, Sulfamethazine, Sulfamethizole, Sulfamethoxazole, Sulfasalazine, Suprofen, Tacrolimus, Tafluprost, Telaprevir, Tenoxicam, Testosterone, Tetracycline, Thalidomide, Thioproperazine, Thiothixene, Tiaprofenic acid, Tocainide, Tolmetin, Triamcinolone, Valsartan, Vandetanib, Vemurafenib, Vismodegib, Warfarin, Zidovudine
+
+Q [84a2db9b1ea3]: List the drugs which commonly bind to the genes CYP3A4 and CA7
+  Expected: Topiramate, Zonisamide, Imatinib, Dorzolamide, Nilotinib, Acetazolamide, Methazolamide, Sulfanilamide, Brinzolamide, Indapamide
+  Got:      ['Reboxetine', 'Benzphetamine', 'Zonisamide', 'Triamcinolone', 'Thiopental', 'Argatroban', 'Vardenafil', 'Mitoxantrone', 'Indacaterol', 'Alfentanil', 'Nisoldipine', 'Nefazodone', 'Darunavir', 'Testosterone', 'Calcitriol', 'Ethosuximide', 'Nifedipine', 'Cimetidine', 'Paricalcitol', 'Carbinoxamine', 'Ropivacaine', 'Cilostazol', 'Zafirlukast', 'Telithromycin', 'Sitaxentan', 'Escitalopram', 'Ketamine', 'Warfarin', 'Nitrendipine', 'Doxycycline', 'Eszopiclone', 'Methoxsalen', 'Proguanil', 'Efavirenz', 'Ipratropium', 'Fluoxetine', 'Chlorzoxazone', 'Sulfadiazine', 'Amprenavir', 'Sitagliptin', 'Alimemazine', 'Pioglitazone', 'Atorvastatin', 'Sulfanilamide', 'Cytarabine', 'Venlafaxine', 'Conivaptan', 'Methimazole', 'Celecoxib', 'Phenoxybenzamine', 'Spermine', 'Amiodarone', 'Temozolomide', 'Fenofibrate', 'Chlordiazepoxide', 'Irinotecan', 'Primidone', 'Alfuzosin', 'Imiquimod', 'Trichlormethiazide', 'Sufentanil', 'Perphenazine', 'Bosentan', 'Vinblastine', 'Levothyroxine', 'Colchicine', 'Pantoprazole', 'Nicotine', 'Omeprazole', 'Rifampicin', 'Dapagliflozin', 'Paclitaxel', 'Ponatinib', 'Ritonavir', 'Ziprasidone', 'Risperidone', 'Ondansetron', 'Prednisone', 'Indinavir', 'Digitoxin', 'Buprenorphine', 'Rifabutin', 'Eplerenone', 'Lansoprazole', 'Halofantrine', 'Tinidazole', 'Docetaxel', 'Dextromethorphan', 'Felbamate', 'Econazole', 'Clonidine', 'Amitriptyline', 'Cyclophosphamide', 'Tacrolimus', 'Fluorometholone', 'Sunitinib', 'Betamethasone', 'Chlorthalidone', 'Enalapril', 'Conjugated estrogens', 'Diazepam', 'Estrone', 'Lomustine', 'Quazepam', 'Erlotinib', 'Propafenone', 'Nafcillin', 'Progesterone', 'Toremifene', 'Trazodone', 'Josamycin', 'Levacetylmethadol', 'Bicalutamide', 'Quinine', 'Aripiprazole', 'Tranylcypromine', 'Albendazole', 'Dolasetron', 'Galantamine', 'Aminophylline', 'Rolitetracycline', 'Atazanavir', 'Estradiol', 'Morphine', 'Chloramphenicol', 'Acetaminophen', 'Glipizide', 'Orphenadrine', 'Salbutamol', 'Vandetanib', 'Flunitrazepam', 'Lovastatin', 'Dapsone', 'Bromazepam', 'Oxybutynin', 'Ethanol', 'Voriconazole', 'Pergolide', 'Quetiapine', 'Zidovudine', 'Lidocaine', 'Fluconazole', 'Amlodipine', 'Ramelteon', 'Repaglinide', 'Tadalafil', 'Hydrocortamate', 'Norfloxacin', 'Deferasirox', 'Disopyramide', 'Clozapine', 'Saquinavir', 'Letrozole', 'Hydromorphone', 'Orlistat', 'Glyburide', 'Tioconazole', 'Zolpidem', 'Palonosetron', 'Trimipramine', 'Tofisopam', 'Isosorbide mononitrate', 'Ifosfamide', 'Codeine', 'Dalfopristin', 'Phenobarbital', 'Azatadine', 'Flucloxacillin', 'Zalcitabine', 'Dextropropoxyphene', 'Caspofungin', 'Halothane', 'Etonogestrel', 'Bumetanide', 'Diethylstilbestrol', 'Medroxyprogesterone acetate', 'Etoricoxib', 'Chlorpheniramine', 'Pipotiazine', 'Pentamidine', 'Terbinafine', 'Cocaine', 'Nitrazepam', 'Fluticasone furoate', 'Alprazolam', 'Roxithromycin', 'Fentanyl', 'Chlorpromazine', 'Tamoxifen', 'Cyclobenzaprine', 'Quinupristin', 'Methoxyflurane', 'Daunorubicin', 'Tiagabine', 'Clonazepam', 'Cyclosporine', 'Nortriptyline', 'Pyrazinamide', 'Budesonide', 'Paliperidone', 'Aprepitant', 'Bexarotene', 'Oxazepam', 'Sulfinpyrazone', 'Astemizole', 'Imipramine', 'Trimethoprim', 'Lopinavir', 'Quinidine', 'Griseofulvin', 'Phenylbutazone', 'Levobupivacaine', 'Pimozide', 'Tramadol', 'Propofol', 'Ketoconazole', 'Almotriptan', 'Simeprevir', 'Flunisolide', 'Pimecrolimus', 'Epinephrine', 'Carvedilol', 'Bezafibrate', 'Modafinil', 'Zileuton', 'Dantrolene', 'Mifepristone', 'Prochlorperazine', 'Azelastine', 'Tetracycline', 'Atomoxetine', 'Flutamide', 'Mebendazole', 'Mefloquine', 'Dihydroergotamine', 'Trimethadione', 'Chlorphenesin', 'Ciprofloxacin', 'Guanfacine', 'Dihydrocodeine', 'Fluvastatin', 'Clofazimine', 'Sorafenib', 'Lercanidipine', 'Erythromycin', 'Ivacaftor', 'Imatinib', 'Buspirone', 'Hexobarbital', 'Flurazepam', 'Quinacrine', 'Olopatadine', 'Ezetimibe', 'Dimethyl sulfoxide', 'Pentobarbital', 'Desipramine', 'Hydralazine', 'Rivastigmine', 'Promazine', 'Tolterodine', 'Pravastatin', 'Cephalexin', 'Clindamycin', 'Busulfan', 'Lisuride', 'Trabectedin', 'Zopiclone', 'Rabeprazole', 'Levofloxacin', 'Norethisterone', 'Estramustine', 'Nimodipine', 'Brompheniramine', 'Tasosartan', 'Mirtazapine', 'Dorzolamide', 'Losartan', 'Domperidone', 'Bedaquiline', 'Methadone', 'Selegiline', 'Clomipramine', 'Olanzapine', 'Cholecalciferol', 'Citalopram', 'Pyridostigmine', 'Clopidogrel', 'Telaprevir', 'Chloroquine', 'Fulvestrant', 'Loperamide', 'Guanethidine', 'Darifenacin', 'Ergotamine', 'Bupropion', 'Ivermectin', 'Sibutramine', 'Sevoflurane', 'Bromocriptine', 'Yohimbine', 'Clorazepic acid', 'Clemastine', 'Adinazolam', 'Indapamide', 'Everolimus', 'Primaquine', 'Itraconazole', 'Dronabinol', 'Oxycodone', 'Ketazolam', 'Famciclovir', 'Ergocalciferol', 'Cefradine', 'Felodipine', 'Temsirolimus', 'Lomitapide', 'Dofetilide', 'Fosamprenavir', 'Udenafil', 'Canagliflozin', 'Ergoloid mesylate', 'Hydrocodone', 'Cabergoline', 'Cisapride', 'Tamsulosin', 'Ranolazine', 'Exemestane', 'Sirolimus', 'Dutasteride', 'Prazepam', 'Digoxin', 'Alosetron', 'Prednisolone', 'Metronidazole', 'Ranitidine', 'Sulfamethoxazole', 'Alclometasone', 'Pilocarpine', 'Ticlopidine', 'Nateglinide', 'Danazol', 'Diclofenamide', 'Tipranavir', 'Isradipine', 'Disulfiram', 'Isosorbide dinitrate', 'Haloperidol', 'Bortezomib', 'Paramethasone', 'Abiraterone', 'Triazolam', 'Azithromycin', 'Vindesine', 'Topiramate', 'Naloxone', 'Finasteride', 'Oxiconazole', 'Nevirapine', 'Epinastine', 'Solifenacin', 'Cortisone acetate', 'Rifapentine', 'Oxymorphone', 'Fluvoxamine', 'Ergometrine', 'Theophylline', 'Doxepin', 'Caffeine', 'Vismodegib', 'Sertraline', 'Rotigotine', 'Methazolamide', 'Acetazolamide', 'Midazolam', 'Ropinirole', 'Ethinylestradiol', 'Clomifene', 'Anastrozole', 'Valproic acid', 'Arsenic trioxide', 'Etoposide', 'Raloxifene', 'Dicloxacillin', 'Asenapine', 'Irbesartan', 'Posaconazole', 'Propranolol', 'Hydrocortisone', 'Tretinoin', 'Perhexiline', 'Dexamethasone', 'Sildenafil', 'Zaleplon', 'Phenelzine', 'Esomeprazole', 'Meperidine', 'Phenytoin', 'Estazolam', 'Fosphenytoin', 'Nitric Oxide', 'Verapamil', 'Metolazone', 'Granisetron', 'Cevimeline', 'Gemfibrozil', 'Mequitazine', 'Temazepam', 'Phenprocoumon', 'Clobazam', 'Probenecid', 'Diclofenac', 'Lapatinib', 'Praziquantel', 'Rifaximin', 'Donepezil', 'Simvastatin', 'Methylprednisolone', 'Eletriptan', 'Loratadine', 'Vinorelbine', 'Levonorgestrel', 'Isoniazid', 'Mexiletine', 'Salmeterol', 'Retapamulin', 'Delavirdine', 'Rosuvastatin', 'Clotrimazole', 'Bupivacaine', 'Topotecan', 'Oxcarbazepine', 'Doxorubicin', 'Metyrapone', 'Meloxicam', 'Dasatinib', 'Teniposide', 'Gefitinib', 'Clotiazepam', 'Nelfinavir', 'Brinzolamide', 'Furosemide', 'Clofibrate', 'Aminoglutethimide', 'Methylergometrine', 'Carbamazepine', 'Vincristine', 'Diltiazem', 'Nicardipine', 'Podofilox', 'Montelukast', 'Hydroflumethiazide', 'Bisoprolol', 'Cinacalcet', 'Fluticasone propionate', 'Mycophenolate mofetil', 'Miconazole', 'Clarithromycin']
+  Thinking: Common drugs that bind to the gene CYP3A4 include:
+
+1. Cyclosporine
+2. Ergocalciferol
+3. Cholecalciferol
+4. Pravastatin
+5. Fluvoxamine
+6. Nicotine
+7. Cevimeline
+8. Bortezomib
+9. Flunisolide
+10. Spermine
+11. Calcitriol
+12. Tamsulosin
+13. Delavirdine
+14. Sufentanil
+15. Methazolamide
+16. Eplerenone
+17. Amprenavir
+18. Nafcillin
+19. Chloroquine
+20. Medroxyprogesterone acetate
+21. Cisapride
+22. Ivermectin
+23. Imatinib
+24. Rifabutin
+25. Bisoprolol
+26. Clorazepic acid
+27. Nicardipine
+28. Triamcinolone
+29. Efavirenz
+30. Testosterone
+31. Galantamine
+32. Tamoxifen
+33. Losartan
+34. Aprepitant
+35. Mycophenolate mofetil
+36. Midazolam
+37. Warfarin
+38. Ergotamine
+39. Flurazepam
+40. Daunorubicin
+41. Furosemide
+42. Clofibrate
+43. Astemizole
+44. Prednisone
+45. Mebendazole
+46. Simvastatin
+47. Dextropropoxyphene
+48. Estrone
+49. Trazodone
+50. Epinephrine
+51. Verapamil
+52. Cimetidine
+53. Haloperidol
+54. Ritonavir
+55. Thiopental
+56. Ethosuximide
+57. Methoxsalen
+58. Bosentan
+59. Cephalexin
+60. Carbamazepine
+61. Clonidine
+62. Vinblastine
+63. Propranolol
+64. Fluticasone propionate
+65. Lisuride
+66. Diclofenac
+67. Enalapril
+68. Voriconazole
+69. Albendazole
+70. Dextromethorphan
+71. Lercanidipine
+72. Caspofungin
+73. Metolazone
+74. Toremifene
+75. Cyclophosphamide
+76. Ciprofloxacin
+77. Erlotinib
+78. Pyridostigmine
+79. Zafirlukast
+80. Adinazolam
+81. Nortriptyline
+82. Vincristine
+83. Chlorpromazine
+84. Dronabinol
+85. Montelukast
+86. Chlordiazepoxide
+87. Fluoxetine
+88. Raloxifene
+89. Celecoxib
+90. Dicloxacillin
+91. Flutamide
+92. Buspirone
+93. Darifenacin
+94. Oxycodone
+95. Zidovudine
+96. Nitric Oxide
+97. Prochlorperazine
+98. Chloramphenicol
+99. Betamethasone
+100. Teniposide
+101. Lansoprazole
+102. Trimethoprim
+103. Meperidine
+104. Loratadine
+105. Imipramine
+106. Levothyroxine
+107. Quinine
+108. Nisoldipine
+109. Eszopiclone
+110. Griseofulvin
+111. Alprazolam
+112. Zolpidem
+113. Famciclovir
+114. Promazine
+115. Nimodipine
+116. Sorafenib
+117. Progesterone
+118. Digoxin
+119. Aminoglutethimide
+120. Mefloquine
+121. Chlorzoxazone
+122. Sulfadiazine
+123. Methylergometrine
+124. Levonorgestrel
+125. Vinorelbine
+126. Clozapine
+127. Mexiletine
+128. Palonosetron
+129. Mirtazapine
+130. Amlodipine
+131. Valproic acid
+132. Pentobarbital
+133. Gefitinib
+134. Codeine
+135. Acetaminophen
+136. Chlorthalidone
+137. Fluorometholone
+138. Hydromorphone
+139. Dihydroergotamine
+140. Amitriptyline
+141. Methadone
+142. Olanzapine
+143. Pyrazinamide
+144. Pimecrolimus
+145. Omeprazole
+146. Ipratropium
+147. Alfuzosin
+148. Trimethadione
+149. Clobazam
+150. Diltiazem
+151. Vindesine
+152. Flucloxacillin
+153. Bexarotene
+154. Fluconazole
+155. Tramadol
+156. Erythromycin
+157. Argatroban
+158. Topiramate
+159. Isradipine
+160. Theophylline
+161. Atomoxetine
+162. Clemastine
+163. Lidocaine
+164. Venlafaxine
+165. Conjugated estrogens
+166. Disopyramide
+167. Etonogestrel
+168. Morphine
+169. Ropivacaine
+170. Bupivacaine
+171. Reboxetine
+172. Nevirapine
+173. Oxiconazole
+174. Temazepam
+175. Cabergoline
+176. Ziprasidone
+177. Alclometasone
+178. Ranolazine
+179. Sulfanilamide
+180. Clotrimazole
+181. Dapsone
+182. Doxycycline
+183. Diethylstilbestrol
+184. Phenytoin
+185. Ropinirole
+186. Sildenafil
+187. Dofetilide
+188. Caffeine
+189. Azithromycin
+190. Ticlopidine
+191. Citalopram
+192. Pantoprazole
+193. Eletriptan
+194. Indinavir
+195. Lovastatin
+196. Nelfinavir
+197. Methylprednisolone
+198. Isoniazid
+199. Hydrocodone
+200. Alosetron
+201. Zaleplon
+202. Ezetimibe
+203. Azelastine
+204. Ethinylestradiol
+205. Telithromycin
+206. Rivastigmine
+207. Cytarabine
+208. Ramelteon
+209. Metronidazole
+210. Almotriptan
+211. Tinidazole
+212. Repaglinide
+213. Paricalcitol
+214. Cyclobenzaprine
+215. Phenoxybenzamine
+216. Buprenorphine
+217. Salmeterol
+218. Tipranavir
+219. Felbamate
+220. Phenprocoumon
+221. Fulvestrant
+222. Zalcitabine
+223. Ondansetron
+224. Quinidine
+225. Zonisamide
+226. Tiagabine
+227. Cocaine
+228. Danazol
+229. Doxorubicin
+230. Exemestane
+231. Loperamide
+232. Mifepristone
+233. Brompheniramine
+234. Oxazepam
+235. Clofazimine
+236. Donepezil
+237. Temozolomide
+238. Perphenazine
+239. Chlorphenesin
+240. Terbinafine
+241. Dorzolamide
+242. Ranitidine
+243. Tacrolimus
+244. Vardenafil
+245. Benzphetamine
+246. Prednisolone
+247. Indapamide
+248. Alfentanil
+249. Meloxicam
+250. Propofol
+251. Acetazolamide
+252. Phenylbutazone
+253. Fentanyl
+254. Diazepam
+255. Tadalafil
+256. Disulfiram
+257. Quinupristin
+258. Paramethasone
+259. Cortisone acetate
+260. Colchicine
+261. Yohimbine
+262. Bezafibrate
+263. Digitoxin
+264. Josamycin
+265. Fosphenytoin
+266. Cefradine
+267. Tasosartan
+268. Hexobarbital
+269. Rolitetracycline
+270. Fosamprenavir
+271. Conivaptan
+272. Sirolimus
+273. Isosorbide dinitrate
+274. Granisetron
+275. Bumetanide
+276. Clomifene
+277. Triazolam
+278. Ethanol
+279. Norethisterone
+280. Azatadine
+281. Trimipramine
+282. Imiquimod
+283. Pentamidine
+284. Nateglinide
+285. Esomeprazole
+286. Risperidone
+287. Carbinoxamine
+288. Hydrocortisone
+289. Zileuton
+290. Modafinil
+291. Arsenic trioxide
+292. Itraconazole
+293. Cilostazol
+294. Phenobarbital
+295. Escitalopram
+296. Orphenadrine
+297. Podofilox
+298. Guanethidine
+299. Pergolide
+300. Naloxone
+301. Domperidone
+302. Ifosfamide
+303. Propafenone
+304. Estramustine
+305. Brinzolamide
+306. Zopiclone
+307. Oxymorphone
+308. Clindamycin
+309. Docetaxel
+310. Alimemazine
+311. Gemfibrozil
+312. Clomipramine
+313. Lapatinib
+314. Retapamulin
+315. Ergometrine
+316. Dasatinib
+317. Sunitinib
+318. Posaconazole
+319. Sitagliptin
+320. Paliperidone
+321. Darunavir
+322. Hydralazine
+323. Mitoxantrone
+324. Lomustine
+325. Bromocriptine
+326. Rifapentine
+327. Estazolam
+328. Finasteride
+329. Dantrolene
+330. Anastrozole
+331. Halofantrine
+332. Clarithromycin
+333. Levacetylmethadol
+334. Quetiapine
+335. Paclitaxel
+336. Budesonide
+337. Aminophylline
+338. Rifaximin
+339. Ketamine
+340. Aripiprazole
+341. Sevoflurane
+342. Dexamethasone
+343. Saquinavir
+344. Primidone
+345. Tetracycline
+346. Epinastine
+347. Tranylcypromine
+348. Dolasetron
+349. Clopidogrel
+350. Tretinoin
+351. Irinotecan
+352. Methimazole
+353. Olopatadine
+354. Hydrocortamate
+355. Oxcarbazepine
+356. Etoposide
+357. Hydroflumethiazide
+358. Roxithromycin
+359. Estradiol
+360. Phenelzine
+361. Primaquine
+362. Pilocarpine
+363. Orlistat
+364. Rosuvastatin
+365. Fluvastatin
+366. Dimethyl sulfoxide
+367. Ergoloid mesylate
+368. Rifampicin
+369. Norfloxacin
+370. Nitrendipine
+371. Praziquantel
+372. Oxybutynin
+373. Clonazepam
+374. Glipizide
+375. Atorvastatin
+376. Perhexiline
+377. Mequitazine
+378. Atazanavir
+379. Econazole
+380. Bicalutamide
+381. Dutasteride
+382. Rabeprazole
+383. Sulfinpyrazone
+384. Carvedilol
+385. Levofloxacin
+386. Proguanil
+387. Pioglitazone
+388. Nefazodone
+389. Doxepin
+390. Diclofenamide
+391. Halothane
+392. Desipramine
+393. Bupropion
+394. Sibutramine
+395. Quinacrine
+396. Sertraline
+397. Pimozide
+398. Chlorpheniramine
+399. Nifedipine
+400. Amiodarone
+401. Miconazole
+402. Letrozole
+403. Tioconazole
+404. Busulfan
+405. Levobupivacaine
+406. Salbutamol
+407. Guanfacine
+408. Sulfamethoxazole
+409. Glyburide
+410. Metyrapone
+411. Cinacalcet
+412. Methoxyflurane
+413. Irbesartan
+414. Ketoconazole
+415. Isosorbide mononitrate
+416. Trichlormethiazide
+417. Felodipine
+418. Fenofibrate
+419. Selegiline
+420. Probenecid
+421. Topotecan
+422. Tolterodine
+423. Abiraterone
+424. Telaprevir
+425. Vandetanib
+426. Rotigotine
+427. Dalfopristin
+428. Trabectedin
+429. Deferasirox
+430. Lopinavir
+431. Etoricoxib
+432. Pipotiazine
+433. Indacaterol
+434. Quazepam
+435. Prazepam
+436. Ketazolam
+437. Solifenacin
+438. Everolimus
+439. Nitrazepam
+440. Flunitrazepam
+441. Clotiazepam
+442. Bromazepam
+443. Dihydrocodeine
+444. Sitaxentan
+445. Udenafil
+446. Temsirolimus
+447. Asenapine
+448. Tofisopam
+449. Lomitapide
+450. Vismodegib
+451. Ivacaftor
+452. Fluticasone furoate
+453. Canagliflozin
+454. Bedaquiline
+455. Ponatinib
+456. Simeprevir
+457. Dapagliflozin
+
+(Note: The list is extensive and may contain duplicates or variations of the same drug.)
+  Cypher (1st attempt): MATCH (d:Drug)-[:CHEMICALBINDSGENE]->(g:Gene)
+WHERE g.geneSymbol IN ['CYP3A4', 'CA7']
+RETURN d.commonName
+
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.020  recall=0.900  f1=0.039  jaccard=0.020  overlap=0.900
+  Missing (in expected, not in got): Nilotinib
+  Extra (in got, not in expected):   Abiraterone, Acetaminophen, Adinazolam, Albendazole, Alclometasone, Alfentanil, Alfuzosin, Alimemazine, Almotriptan, Alosetron, Alprazolam, Aminoglutethimide, Aminophylline, Amiodarone, Amitriptyline, Amlodipine, Amprenavir, Anastrozole, Aprepitant, Argatroban, Aripiprazole, Arsenic trioxide, Asenapine, Astemizole, Atazanavir, Atomoxetine, Atorvastatin, Azatadine, Azelastine, Azithromycin, Bedaquiline, Benzphetamine, Betamethasone, Bexarotene, Bezafibrate, Bicalutamide, Bisoprolol, Bortezomib, Bosentan, Bromazepam, Bromocriptine, Brompheniramine, Budesonide, Bumetanide, Bupivacaine, Buprenorphine, Bupropion, Buspirone, Busulfan, Cabergoline, Caffeine, Calcitriol, Canagliflozin, Carbamazepine, Carbinoxamine, Carvedilol, Caspofungin, Cefradine, Celecoxib, Cephalexin, Cevimeline, Chloramphenicol, Chlordiazepoxide, Chloroquine, Chlorphenesin, Chlorpheniramine, Chlorpromazine, Chlorthalidone, Chlorzoxazone, Cholecalciferol, Cilostazol, Cimetidine, Cinacalcet, Ciprofloxacin, Cisapride, Citalopram, Clarithromycin, Clemastine, Clindamycin, Clobazam, Clofazimine, Clofibrate, Clomifene, Clomipramine, Clonazepam, Clonidine, Clopidogrel, Clorazepic acid, Clotiazepam, Clotrimazole, Clozapine, Cocaine, Codeine, Colchicine, Conivaptan, Conjugated estrogens, Cortisone acetate, Cyclobenzaprine, Cyclophosphamide, Cyclosporine, Cytarabine, Dalfopristin, Danazol, Dantrolene, Dapagliflozin, Dapsone, Darifenacin, Darunavir, Dasatinib, Daunorubicin, Deferasirox, Delavirdine, Desipramine, Dexamethasone, Dextromethorphan, Dextropropoxyphene, Diazepam, Diclofenac, Diclofenamide, Dicloxacillin, Diethylstilbestrol, Digitoxin, Digoxin, Dihydrocodeine, Dihydroergotamine, Diltiazem, Dimethyl sulfoxide, Disopyramide, Disulfiram, Docetaxel, Dofetilide, Dolasetron, Domperidone, Donepezil, Doxepin, Doxorubicin, Doxycycline, Dronabinol, Dutasteride, Econazole, Efavirenz, Eletriptan, Enalapril, Epinastine, Epinephrine, Eplerenone, Ergocalciferol, Ergoloid mesylate, Ergometrine, Ergotamine, Erlotinib, Erythromycin, Escitalopram, Esomeprazole, Estazolam, Estradiol, Estramustine, Estrone, Eszopiclone, Ethanol, Ethinylestradiol, Ethosuximide, Etonogestrel, Etoposide, Etoricoxib, Everolimus, Exemestane, Ezetimibe, Famciclovir, Felbamate, Felodipine, Fenofibrate, Fentanyl, Finasteride, Flucloxacillin, Fluconazole, Flunisolide, Flunitrazepam, Fluorometholone, Fluoxetine, Flurazepam, Flutamide, Fluticasone furoate, Fluticasone propionate, Fluvastatin, Fluvoxamine, Fosamprenavir, Fosphenytoin, Fulvestrant, Furosemide, Galantamine, Gefitinib, Gemfibrozil, Glipizide, Glyburide, Granisetron, Griseofulvin, Guanethidine, Guanfacine, Halofantrine, Haloperidol, Halothane, Hexobarbital, Hydralazine, Hydrocodone, Hydrocortamate, Hydrocortisone, Hydroflumethiazide, Hydromorphone, Ifosfamide, Imipramine, Imiquimod, Indacaterol, Indinavir, Ipratropium, Irbesartan, Irinotecan, Isoniazid, Isosorbide dinitrate, Isosorbide mononitrate, Isradipine, Itraconazole, Ivacaftor, Ivermectin, Josamycin, Ketamine, Ketazolam, Ketoconazole, Lansoprazole, Lapatinib, Lercanidipine, Letrozole, Levacetylmethadol, Levobupivacaine, Levofloxacin, Levonorgestrel, Levothyroxine, Lidocaine, Lisuride, Lomitapide, Lomustine, Loperamide, Lopinavir, Loratadine, Losartan, Lovastatin, Mebendazole, Medroxyprogesterone acetate, Mefloquine, Meloxicam, Meperidine, Mequitazine, Methadone, Methimazole, Methoxsalen, Methoxyflurane, Methylergometrine, Methylprednisolone, Metolazone, Metronidazole, Metyrapone, Mexiletine, Miconazole, Midazolam, Mifepristone, Mirtazapine, Mitoxantrone, Modafinil, Montelukast, Morphine, Mycophenolate mofetil, Nafcillin, Naloxone, Nateglinide, Nefazodone, Nelfinavir, Nevirapine, Nicardipine, Nicotine, Nifedipine, Nimodipine, Nisoldipine, Nitrazepam, Nitrendipine, Nitric Oxide, Norethisterone, Norfloxacin, Nortriptyline, Olanzapine, Olopatadine, Omeprazole, Ondansetron, Orlistat, Orphenadrine, Oxazepam, Oxcarbazepine, Oxiconazole, Oxybutynin, Oxycodone, Oxymorphone, Paclitaxel, Paliperidone, Palonosetron, Pantoprazole, Paramethasone, Paricalcitol, Pentamidine, Pentobarbital, Pergolide, Perhexiline, Perphenazine, Phenelzine, Phenobarbital, Phenoxybenzamine, Phenprocoumon, Phenylbutazone, Phenytoin, Pilocarpine, Pimecrolimus, Pimozide, Pioglitazone, Pipotiazine, Podofilox, Ponatinib, Posaconazole, Pravastatin, Prazepam, Praziquantel, Prednisolone, Prednisone, Primaquine, Primidone, Probenecid, Prochlorperazine, Progesterone, Proguanil, Promazine, Propafenone, Propofol, Propranolol, Pyrazinamide, Pyridostigmine, Quazepam, Quetiapine, Quinacrine, Quinidine, Quinine, Quinupristin, Rabeprazole, Raloxifene, Ramelteon, Ranitidine, Ranolazine, Reboxetine, Repaglinide, Retapamulin, Rifabutin, Rifampicin, Rifapentine, Rifaximin, Risperidone, Ritonavir, Rivastigmine, Rolitetracycline, Ropinirole, Ropivacaine, Rosuvastatin, Rotigotine, Roxithromycin, Salbutamol, Salmeterol, Saquinavir, Selegiline, Sertraline, Sevoflurane, Sibutramine, Sildenafil, Simeprevir, Simvastatin, Sirolimus, Sitagliptin, Sitaxentan, Solifenacin, Sorafenib, Spermine, Sufentanil, Sulfadiazine, Sulfamethoxazole, Sulfinpyrazone, Sunitinib, Tacrolimus, Tadalafil, Tamoxifen, Tamsulosin, Tasosartan, Telaprevir, Telithromycin, Temazepam, Temozolomide, Temsirolimus, Teniposide, Terbinafine, Testosterone, Tetracycline, Theophylline, Thiopental, Tiagabine, Ticlopidine, Tinidazole, Tioconazole, Tipranavir, Tofisopam, Tolterodine, Topotecan, Toremifene, Trabectedin, Tramadol, Tranylcypromine, Trazodone, Tretinoin, Triamcinolone, Triazolam, Trichlormethiazide, Trimethadione, Trimethoprim, Trimipramine, Udenafil, Valproic acid, Vandetanib, Vardenafil, Venlafaxine, Verapamil, Vinblastine, Vincristine, Vindesine, Vinorelbine, Vismodegib, Voriconazole, Warfarin, Yohimbine, Zafirlukast, Zalcitabine, Zaleplon, Zidovudine, Zileuton, Ziprasidone, Zolpidem, Zopiclone
+
+Q [e94f18567917]: List the drugs which commonly bind to the genes P2RY12 and PPARD
+  Expected: Treprostinil
+  Got:      ['Bezafibrate', 'Epoprostenol', 'Clopidogrel', 'Sulindac', 'Ticagrelor', 'Treprostinil', 'Ticlopidine', 'Prasugrel', 'Icosapent']
+  Thinking: The drugs that commonly bind to the genes P2RY12 and PPARD are:
+
+1. Icosapent
+2. Sulindac
+3. Treprostinil
+4. Ticlopidine
+5. Bezafibrate
+6. Epoprostenol
+7. Clopidogrel
+8. Prasugrel
+9. Ticagrelor
+  Cypher (1st attempt): MATCH (d:Drug)-[:CHEMICALBINDSGENE]->(g:Gene)
+WHERE g.geneSymbol IN ['P2RY12', 'PPARD']
+RETURN d.commonName
+
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.111  recall=1.000  f1=0.200  jaccard=0.111  overlap=1.000
+  Missing (in expected, not in got): -
+  Extra (in got, not in expected):   Bezafibrate, Clopidogrel, Epoprostenol, Icosapent, Prasugrel, Sulindac, Ticagrelor, Ticlopidine
+
+Q [564dd56fd232]: List the drugs which commonly bind to the genes CYP3A4 and CYP2C19
+  Expected: Enzalutamide, Ketobemidone, Podofilox, Olanzapine, Nicardipine, Ethanol, Bromazepam, Quazepam, Nortriptyline, Oxiconazole, Oxcarbazepine, Aprepitant, Amitriptyline, Atomoxetine, Fluvoxamine, Tolterodine, Macitentan, Miconazole, Felbamate, Imatinib, Aminoglutethimide, Ospemifene, Amprenavir, Esomeprazole, Trabectedin, Loratadine, Acenocoumarol, Imipramine, Omeprazole, Sildenafil, Efavirenz, Valproic acid, Pimozide, Lapatinib, Sorafenib, Bicalutamide, Haloperidol, Clotiazepam, Apixaban, Tioconazole, Levomilnacipran, Zafirlukast, Trimipramine, Sitaxentan, Methimazole, Testosterone, Primidone, Artemether, Tamoxifen, Nilvadipine, Prednisone, Rabeprazole, Propofol, Simvastatin, Prasugrel, Perphenazine, Nicotine, Topiramate, Pentamidine, Bortezomib, Adinazolam, Amiodarone, Rilpivirine, Antipyrine, Modafinil, Pipotiazine, Zidovudine, Glyburide, Quetiapine, Pioglitazone, Venlafaxine, Clevidipine, Progesterone, Regorafenib, Ketoconazole, Clozapine, Atorvastatin, Tipranavir, Dronabinol, Ifosfamide, Brompheniramine, Luliconazole, Hexobarbital, Phenobarbital, Quinine, Eletriptan, Ritonavir, Fosphenytoin, Lopinavir, Meperidine, Tranylcypromine, Etravirine, Phenelzine, Azelastine, Voriconazole, Rifampicin, Praziquantel, Teniposide, Gemfibrozil, Methadone, Ranitidine, Norethisterone, Zolpidem, Warfarin, Carbinoxamine, Indinavir, Guanfacine, Aminophenazone, Diazepam, Temazepam, Nelfinavir, Fluvastatin, Dimethyl sulfoxide, Lovastatin, Almotriptan, Clarithromycin, Methazolamide, Promazine, Propranolol, Ticlopidine, Cisapride, Losartan, Flutamide, Clobazam, Fluconazole, Cholecalciferol, Desipramine, Sertraline, Dapsone, Clomipramine, Dextromethorphan, Probenecid, Rosuvastatin, Saquinavir, Pentobarbital, Cimetidine, Delavirdine, Diclofenac, Gefitinib, Phenytoin, Pantoprazole, Selegiline, Isoniazid, Vismodegib, Flunitrazepam, Proguanil, Bifonazole, Trimethadione, Carbamazepine, Doxepin, Bupivacaine, Chloramphenicol, Zonisamide, Escitalopram, Citalopram, Terbinafine, Verapamil, Ramelteon, Estradiol, Fluoxetine, Cyclosporine, Clopidogrel, Lansoprazole, Dexamethasone, Etoricoxib, Buprenorphine, Diltiazem, Cilostazol, Clotrimazole, Cyclophosphamide, Sulfanilamide
+  Got:      ['Methyltestosterone', 'Reboxetine', 'Benzphetamine', 'Zonisamide', 'Triamcinolone', 'Thiopental', 'Argatroban', 'Vardenafil', 'Rimonabant', 'Mitoxantrone', 'Indacaterol', 'Alfentanil', 'Nisoldipine', 'Nefazodone', 'Darunavir', 'Testosterone', 'Ethosuximide', 'Calcitriol', 'Doxazosin', 'Nifedipine', 'Tiotropium', 'Cimetidine', 'Paricalcitol', 'Carbinoxamine', 'Ropivacaine', 'Cilostazol', 'Zafirlukast', 'Telithromycin', 'Sitaxentan', 'Escitalopram', 'Sertindole', 'Ketamine', 'Warfarin', 'Artemether', 'Alogliptin', 'Nitrendipine', 'Doxycycline', 'Eszopiclone', 'Methoxsalen', 'Proguanil', 'Efavirenz', 'Ipratropium', 'Fluoxetine', 'Chlorzoxazone', 'Sulfadiazine', 'Amprenavir', 'Sitagliptin', 'Alimemazine', 'Pioglitazone', 'Atorvastatin', 'Sulfanilamide', 'Cytarabine', 'Vilazodone', 'Antipyrine', 'Nilutamide', 'Venlafaxine', 'Conivaptan', 'Methimazole', 'Celecoxib', 'Phenoxybenzamine', 'Allylestrenol', 'Amiodarone', 'Temozolomide', 'Fenofibrate', 'Chlordiazepoxide', 'Ethylmorphine', 'Irinotecan', 'Primidone', 'Alfuzosin', 'Imiquimod', 'Sufentanil', 'Perphenazine', 'Bosentan', 'Vinblastine', 'Levothyroxine', 'Colchicine', 'Pantoprazole', 'Nicotine', 'Permethrin', 'Omeprazole', 'Fesoterodine', 'Rivaroxaban', 'Rifampicin', 'Dapagliflozin', 'Paclitaxel', 'Ketobemidone', 'Ritonavir', 'Ziprasidone', 'Risperidone', 'Ondansetron', 'Prednisone', 'Indinavir', 'Digitoxin', 'Buprenorphine', 'Rifabutin', 'Eplerenone', 'Lansoprazole', 'Meprobamate', 'Halofantrine', 'Tinidazole', 'Docetaxel', 'Dextromethorphan', 'Felbamate', 'Econazole', 'Clevidipine', 'Ethotoin', 'Clonidine', 'Amitriptyline', 'Cyclophosphamide', 'Tacrolimus', 'Fluorometholone', 'Sunitinib', 'Betamethasone', 'Enalapril', 'Famotidine', 'Conjugated estrogens', 'Diazepam', 'Benzyl alcohol', 'Estrone', 'Lomustine', 'Quazepam', 'Erlotinib', 'Propafenone', 'Nafcillin', 'Progesterone', 'Toremifene', 'Trazodone', 'Josamycin', 'Levacetylmethadol', 'Bicalutamide', 'Quinine', 'Aripiprazole', 'Tranylcypromine', 'Albendazole', 'Dolasetron', 'Galantamine', 'Benzatropine', 'Aminophylline', 'Rolitetracycline', 'Atazanavir', 'Estradiol', 'Morphine', 'Chloramphenicol', 'Rosiglitazone', 'Acetaminophen', 'Glipizide', 'Orphenadrine', 'Salbutamol', 'Vandetanib', 'Flunitrazepam', 'Lovastatin', 'Dapsone', 'Bromazepam', 'Chlorpropamide', 'Lumefantrine', 'Oxybutynin', 'Ethanol', 'Voriconazole', 'Pergolide', 'Quetiapine', 'Zidovudine', 'Lidocaine', 'Fluconazole', 'Amlodipine', 'Ramelteon', 'Repaglinide', 'Tadalafil', 'Hydrocortamate', 'Norfloxacin', 'Deferasirox', 'Disopyramide', 'Clozapine', 'Desvenlafaxine', 'Saquinavir', 'Letrozole', 'Hydromorphone', 'Orlistat', 'Glyburide', 'Tioconazole', 'Zolpidem', 'Palonosetron', 'Trimipramine', 'Isosorbide mononitrate', 'Ifosfamide', 'Codeine', 'Dalfopristin', 'Maraviroc', 'Phenobarbital', 'Azatadine', 'Memandine', 'Flucloxacillin', 'Zalcitabine', 'Dextropropoxyphene', 'Caspofungin', 'Phensuximide', 'Halothane', 'Etonogestrel', 'Diethylstilbestrol', 'Medroxyprogesterone acetate', 'Methsuximide', 'Etoricoxib', 'Chlorpheniramine', 'Pipotiazine', 'Acenocoumarol', 'Pentamidine', 'Terbinafine', 'Cocaine', 'Nitrazepam', 'Alprazolam', 'Roxithromycin', 'Fentanyl', 'Chlorpromazine', 'Tamoxifen', 'Cyclobenzaprine', 'Quinupristin', 'Methoxyflurane', 'Thioridazine', 'Daunorubicin', 'Tiagabine', 'Clonazepam', 'Cyclosporine', 'Nortriptyline', 'Pyrazinamide', 'Budesonide', 'Paliperidone', 'Aprepitant', 'Bexarotene', 'Oxazepam', 'Sulfinpyrazone', 'Astemizole', 'Imipramine', 'Trimethoprim', 'Lopinavir', 'Quinidine', 'Griseofulvin', 'Phenylbutazone', 'Levobupivacaine', 'Pimozide', 'Tramadol', 'Propofol', 'Ketoconazole', 'Acetylsalicylic acid', 'Almotriptan', 'Flunisolide', 'Pimecrolimus', 'Epinephrine', 'Carvedilol', 'Torasemide', 'Bezafibrate', 'Modafinil', 'Timolol', 'Zileuton', 'Dantrolene', 'Mifepristone', 'Prochlorperazine', 'Azelastine', 'Tetracycline', 'Atomoxetine', 'Flutamide', 'Mebendazole', 'Dexfenfluramine', 'Mefloquine', 'Dihydroergotamine', 'Trimethadione', 'Chlorphenesin', 'Ciprofloxacin', 'Guanfacine', 'Dihydrocodeine', 'Fluvastatin', 'Clofazimine', 'Sorafenib', 'Lercanidipine', 'Erythromycin', 'Imatinib', 'Buspirone', 'Nilotinib', 'Hexobarbital', 'Flurazepam', 'Quinacrine', 'Lumiracoxib', 'Olopatadine', 'Ezetimibe', 'Dimethyl sulfoxide', 'Pentobarbital', 'Desipramine', 'Hydralazine', 'Rivastigmine', 'Promazine', 'Tolterodine', 'Pravastatin', 'Cephalexin', 'Clindamycin', 'Busulfan', 'Lisuride', 'Trabectedin', 'Zopiclone', 'Rabeprazole', 'Levofloxacin', 'Indomethacin', 'Rufinamide', 'Norethisterone', 'Estramustine', 'Nimodipine', 'Brompheniramine', 'Tasosartan', 'Aminophenazone', 'Mirtazapine', 'Dorzolamide', 'Diphenhydramine', 'Losartan', 'Domperidone', 'Methadone', 'Selegiline', 'Clomipramine', 'Olanzapine', 'Cholecalciferol', 'Estrone sulfate', 'Citalopram', 'Pyridostigmine', 'Clopidogrel', 'Telaprevir', 'Paramethadione', 'Chloroquine', 'Fulvestrant', 'Loperamide', 'Guanethidine', 'Darifenacin', 'Tolvaptan', 'Ergotamine', 'Bupropion', 'Ivermectin', 'Sibutramine', 'Sevoflurane', 'Bromocriptine', 'Yohimbine', 'Methylphenobarbital', 'Clorazepic acid', 'Clemastine', 'Adinazolam', 'Indapamide', 'Everolimus', 'Telmisartan', 'Primaquine', 'Itraconazole', 'Pranlukast', 'Dronabinol', 'Oxycodone', 'Ketazolam', 'Famciclovir', 'Ergocalciferol', 'Cefradine', 'Avanafil', 'Felodipine', 'Temsirolimus', 'Dopamine', 'Dofetilide', 'Fosamprenavir', 'Udenafil', 'Cabazitaxel', 'Ergoloid mesylate', 'Hydrocodone', 'Cabergoline', 'Ibuprofen', 'Prasugrel', 'Cisapride', 'Tamsulosin', 'Ranolazine', 'Exemestane', 'Sirolimus', 'Dutasteride', 'Prazepam', 'Digoxin', 'Alosetron', 'Prednisolone', 'Desloratadine', 'Metronidazole', 'Ranitidine', 'Sulfamethoxazole', 'Alclometasone', 'Pilocarpine', 'Tolbutamide', 'Mianserin', 'Bosutinib', 'Ticlopidine', 'Nateglinide', 'Danazol', 'Tipranavir', 'Isradipine', 'Disulfiram', 'Isosorbide dinitrate', 'Haloperidol', 'Bortezomib', 'Paramethasone', 'Ixabepilone', 'Abiraterone', 'Triazolam', 'Azithromycin', 'Vindesine', 'Topiramate', 'Naloxone', 'Carisoprodol', 'Finasteride', 'Oxiconazole', 'Nevirapine', 'Epinastine', 'Gliclazide', 'Solifenacin', 'Cortisone acetate', 'Rifapentine', 'Oxymorphone', 'Fluvoxamine', 'Ergometrine', 'Tapentadol', 'Dronedarone', 'Theophylline', 'Silodosin', 'Doxepin', 'Caffeine', 'Sertraline', 'Rotigotine', 'Methazolamide', 'Acetazolamide', 'Midazolam', 'Ropinirole', 'Ethinylestradiol', 'Clomifene', 'Anastrozole', 'Ciclesonide', 'Valproic acid', 'Arsenic trioxide', 'Etoposide', 'Raloxifene', 'Dicloxacillin', 'Thalidomide', 'Irbesartan', 'Asenapine', 'Posaconazole', 'Propranolol', 'Hydrocortisone', 'Tretinoin', 'Perhexiline', 'Dexamethasone', 'Sildenafil', 'Zaleplon', 'Phenelzine', 'Esomeprazole', 'Pazopanib', 'Amoxicillin', 'Metoprolol', 'Nilvadipine', 'Formoterol', 'Meperidine', 'Phenytoin', 'Estazolam', 'Bifonazole', 'Fosphenytoin', 'Nitric Oxide', 'Verapamil', 'Granisetron', 'Cevimeline', 'Gemfibrozil', 'Mequitazine', 'Temazepam', 'Phenprocoumon', 'Clobazam', 'Probenecid', 'Diclofenac', 'Lapatinib', 'Praziquantel', 'Rifaximin', 'Iloperidone', 'Donepezil', 'Simvastatin', 'Methylprednisolone', 'Eletriptan', 'Loratadine', 'Vinorelbine', 'Levonorgestrel', 'Isoniazid', 'Mexiletine', 'Salmeterol', 'Retapamulin', 'Melatonin', 'Delavirdine', 'Rosuvastatin', 'Clotrimazole', 'Bupivacaine', 'Thiotepa', 'Topotecan', 'Oxcarbazepine', 'Doxorubicin', 'Metyrapone', 'Meloxicam', 'Dasatinib', 'Teniposide', 'Gefitinib', 'Clotiazepam', 'Nelfinavir', 'Brinzolamide', 'Clofibrate', 'Aminoglutethimide', 'Methylergometrine', 'Arformoterol', 'Carbamazepine', 'Vincristine', 'Diltiazem', 'Chenodeoxycholic acid', 'Moclobemide', 'Nicardipine', 'Podofilox', 'Montelukast', 'Glucosamine', 'Bisoprolol', 'Cinacalcet', 'Ospemifene', 'Fluticasone propionate', 'Mycophenolate mofetil', 'Miconazole', 'Clarithromycin']
+  Thinking: Common drugs that bind to the genes CYP3A4 and CYP2C19 include:
+
+1. Cyclosporine
+2. Ergocalciferol
+3. Cholecalciferol
+4. Pravastatin
+5. Fluvoxamine
+6. Nicotine
+7. Cevimeline
+8. Bortezomib
+9. Flunisolide
+10. Calcitriol
+11. Tamsulosin
+12. Delavirdine
+13. Sufentanil
+14. Methazolamide
+15. Eplerenone
+16. Amprenavir
+17. Nafcillin
+18. Chloroquine
+19. Medroxyprogesterone acetate
+20. Cisapride
+21. Ivermectin
+22. Imatinib
+23. Paramethadione
+24. Rifabutin
+25. Bisoprolol
+26. Clorazepic acid
+27. Nicardipine
+28. Triamcinolone
+29. Efavirenz
+30. Testosterone
+31. Galantamine
+32. Tamoxifen
+33. Losartan
+34. Thioridazine
+35. Chlorpropamide
+36. Aprepitant
+37. Mycophenolate mofetil
+38. Midazolam
+39. Warfarin
+40. Ergotamine
+41. Flurazepam
+42. Daunorubicin
+43. Clofibrate
+44. Astemizole
+45. Prednisone
+46. Mebendazole
+47. Simvastatin
+48. Dextropropoxyphene
+49. Estrone
+50. Trazodone
+51. Nilutamide
+52. Epinephrine
+53. Verapamil
+54. Cimetidine
+55. Haloperidol
+56. Ritonavir
+57. Thiopental
+58. Doxazosin
+59. Ethosuximide
+60. Methoxsalen
+61. Bosentan
+62. Cephalexin
+63. Carbamazepine
+64. Clonidine
+65. Vinblastine
+66. Propranolol
+67. Fluticasone propionate
+68. Lisuride
+69. Diclofenac
+70. Enalapril
+71. Voriconazole
+72. Albendazole
+73. Dextromethorphan
+74. Lercanidipine
+75. Caspofungin
+76. Toremifene
+77. Cyclophosphamide
+78. Ciprofloxacin
+79. Erlotinib
+80. Pyridostigmine
+81. Zafirlukast
+82. Adinazolam
+83. Nortriptyline
+84. Vincristine
+85. Chlorpromazine
+86. Dronabinol
+87. Montelukast
+88. Chlordiazepoxide
+89. Fluoxetine
+90. Raloxifene
+91. Celecoxib
+92. Dicloxacillin
+93. Flutamide
+94. Buspirone
+95. Darifenacin
+96. Oxycodone
+97. Zidovudine
+98. Nitric Oxide
+99. Prochlorperazine
+100. Chloramphenicol
+101. Betamethasone
+102. Teniposide
+103. Lansoprazole
+104. Trimethoprim
+105. Meperidine
+106. Loratadine
+107. Imipramine
+108. Levothyroxine
+109. Quinine
+110. Nisoldipine
+111. Eszopiclone
+112. Griseofulvin
+113. Alprazolam
+114. Rosiglitazone
+115. Zolpidem
+116. Famciclovir
+117. Promazine
+118. Nimodipine
+119. Sorafenib
+120. Carisoprodol
+121. Progesterone
+122. Digoxin
+123. Aminoglutethimide
+124. Mefloquine
+125. Chlorzoxazone
+126. Sulfadiazine
+127. Methylergometrine
+128. Levonorgestrel
+129. Vinorelbine
+130. Clozapine
+131. Mexiletine
+132. Palonosetron
+133. Meprobamate
+134. Mirtazapine
+135. Timolol
+136. Amlodipine
+137. Valproic acid
+138. Pentobarbital
+139. Gefitinib
+140. Codeine
+141. Acetaminophen
+142. Fluorometholone
+143. Indomethacin
+144. Hydromorphone
+145. Dihydroergotamine
+146. Amitriptyline
+147. Methadone
+148. Olanzapine
+149. Pyrazinamide
+150. Pimecrolimus
+151. Omeprazole
+152. Ipratropium
+153. Alfuzosin
+154. Trimethadione
+155. Clobazam
+156. Diltiazem
+157. Vindesine
+158. Flucloxacillin
+159. Bexarotene
+160. Fluconazole
+161. Tramadol
+162. Erythromycin
+163. Argatroban
+164. Topiramate
+165. Isradipine
+166. Theophylline
+167. Atomoxetine
+168. Clemastine
+169. Lidocaine
+170. Venlafaxine
+171. Conjugated estrogens
+172. Disopyramide
+173. Etonogestrel
+174. Morphine
+175. Ropivacaine
+176. Bupivacaine
+177. Reboxetine
+178. Nevirapine
+179. Oxiconazole
+180. Temazepam
+181. Cabergoline
+182. Benzatropine
+183. Ziprasidone
+184. Alclometasone
+185. Ranolazine
+186. Sulfanilamide
+187. Clotrimazole
+188. Dapsone
+189. Doxycycline
+190. Diethylstilbestrol
+191. Phenytoin
+192. Ropinirole
+193. Metoprolol
+194. Sildenafil
+195. Dofetilide
+196. Caffeine
+197. Azithromycin
+198. Ticlopidine
+199. Torasemide
+200. Citalopram
+201. Pantoprazole
+202. Eletriptan
+203. Indinavir
+204. Lovastatin
+205. Nelfinavir
+206. Methylprednisolone
+207. Isoniazid
+208. Hydrocodone
+209. Alosetron
+210. Zaleplon
+211. Telmisartan
+212. Desloratadine
+213. Ezetimibe
+214. Azelastine
+215. Ethinylestradiol
+216. Telithromycin
+217. Formoterol
+218. Dopamine
+219. Rivastigmine
+220. Cytarabine
+221. Ramelteon
+222. Metronidazole
+223. Almotriptan
+224. Tinidazole
+225. Repaglinide
+226. Paricalcitol
+227. Famotidine
+228. Cyclobenzaprine
+229. Phenoxybenzamine
+230. Buprenorphine
+231. Salmeterol
+232. Tipranavir
+233. Felbamate
+234. Phenprocoumon
+235. Fulvestrant
+236. Acetylsalicylic acid
+237. Zalcitabine
+238. Ondansetron
+239. Quinidine
+240. Zonisamide
+241. Tiagabine
+242. Cocaine
+243. Danazol
+244. Doxorubicin
+245. Exemestane
+246. Loperamide
+247. Mifepristone
+248. Brompheniramine
+249. Phensuximide
+250. Methylphenobarbital
+251. Oxazepam
+252. Clofazimine
+253. Donepezil
+254. Temozolomide
+255. Perphenazine
+256. Chlorphenesin
+257. Terbinafine
+258. Dorzolamide
+259. Ranitidine
+260. Tacrolimus
+261. Vardenafil
+262. Benzphetamine
+263. Prednisolone
+264. Indapamide
+265. Alfentanil
+266. Meloxicam
+267. Propofol
+268. Acetazolamide
+269. Phenylbutazone
+270. Fentanyl
+271. Diazepam
+272. Tadalafil
+273. Disulfiram
+274. Lumiracoxib
+275. Glucosamine
+276. Quinupristin
+277. Paramethasone
+278. Cortisone acetate
+279. Colchicine
+280. Yohimbine
+281. Bezafibrate
+282. Digitoxin
+283. Josamycin
+284. Fosphenytoin
+285. Cefradine
+286. Tasosartan
+287. Hexobarbital
+288. Rolitetracycline
+289. Fosamprenavir
+290. Conivaptan
+291. Sirolimus
+292. Isosorbide dinitrate
+293. Granisetron
+294. Clomifene
+295. Triazolam
+296. Ethanol
+297. Norethisterone
+298. Azatadine
+299. Trimipramine
+300. Imiquimod
+301. Pentamidine
+302. Nateglinide
+303. Esomeprazole
+304. Risperidone
+305. Carbinoxamine
+306. Hydrocortisone
+307. Zileuton
+308. Modafinil
+309. Arsenic trioxide
+310. Itraconazole
+311. Cilostazol
+312. Phenobarbital
+313. Escitalopram
+314. Orphenadrine
+315. Podofilox
+316. Guanethidine
+317. Moclobemide
+318. Pergolide
+319. Naloxone
+320. Domperidone
+321. Ifosfamide
+322. Propafenone
+323. Estramustine
+324. Brinzolamide
+325. Zopiclone
+326. Oxymorphone
+327. Clindamycin
+328. Dexfenfluramine
+329. Docetaxel
+330. Alimemazine
+331. Gemfibrozil
+332. Clomipramine
+333. Lapatinib
+334. Retapamulin
+335. Ergometrine
+336. Dasatinib
+337. Sunitinib
+338. Posaconazole
+339. Sitagliptin
+340. Paliperidone
+341. Darunavir
+342. Arformoterol
+343. Hydralazine
+344. Mitoxantrone
+345. Lomustine
+346. Bromocriptine
+347. Rifapentine
+348. Estazolam
+349. Finasteride
+350. Dantrolene
+351. Anastrozole
+352. Halofantrine
+353. Clarithromycin
+354. Levacetylmethadol
+355. Quetiapine
+356. Paclitaxel
+357. Budesonide
+358. Aminophylline
+359. Rifaximin
+360. Ketamine
+361. Aripiprazole
+362. Sevoflurane
+363. Dexamethasone
+364. Saquinavir
+365. Primidone
+366. Tetracycline
+367. Ethotoin
+368. Epinastine
+369. Tranylcypromine
+370. Dolasetron
+371. Clopidogrel
+372. Tretinoin
+373. Irinotecan
+374. Methimazole
+375. Olopatadine
+376. Hydrocortamate
+377. Oxcarbazepine
+378. Etoposide
+379. Roxithromycin
+380. Estradiol
+381. Phenelzine
+382. Primaquine
+383. Pilocarpine
+384. Orlistat
+385. Rosuvastatin
+386. Fluvastatin
+387. Dimethyl sulfoxide
+388. Ergoloid mesylate
+389. Memantine
+390. Thalidomide
+391. Rifampicin
+392. Norfloxacin
+393. Nitrendipine
+394. Praziquantel
+395. Ibuprofen
+396. Melatonin
+397. Oxybutynin
+398. Clonazepam
+399. Glipizide
+400. Amoxicillin
+401. Diphenhydramine
+402. Atorvastatin
+403. Perhexiline
+404. Mequitazine
+405. Atazanavir
+406. Econazole
+407. Bicalutamide
+408. Dutasteride
+409. Rabeprazole
+410. Gliclazide
+411. Tolbutamide
+412. Sulfinpyrazone
+413. Carvedilol
+414. Levofloxacin
+415. Proguanil
+416. Pioglitazone
+417. Nefazodone
+418. Doxepin
+419. Halothane
+420. Desipramine
+421. Bupropion
+422. Sibutramine
+423. Quinacrine
+424. Sertraline
+425. Pimozide
+426. Chlorpheniramine
+427. Nifedipine
+428. Amiodarone
+429. Miconazole
+430. Letrozole
+431. Tioconazole
+432. Busulfan
+433. Levobupivacaine
+434. Salbutamol
+435. Guanfacine
+436. Sulfamethoxazole
+437. Glyburide
+438. Metyrapone
+439. Cinacalcet
+440. Methoxyflurane
+441. Irbesartan
+442. Ketoconazole
+443. Isosorbide mononitrate
+444. Felodipine
+445. Fenofibrate
+446. Selegiline
+447. Probenecid
+448. Topotecan
+449. Tolterodine
+450. Abiraterone
+451. Telaprevir
+452. Vandetanib
+453. Methsuximide
+454. Rotigotine
+455. Dalfopristin
+456. Trabectedin
+457. Deferasirox
+458. Lopinavir
+459. Etoricoxib
+460. Pipotiazine
+461. Indacaterol
+462. Quazepam
+463. Prazepam
+464. Ketazolam
+465. Solifenacin
+466. Everolimus
+467. Nitrazepam
+468. Flunitrazepam
+469. Clotiazepam
+470. Bromazepam
+471. Dihydrocodeine
+472. Sitaxentan
+473. Udenafil
+474. Temsirolimus
+475. Asenapine
+476. Tolvaptan
+477. Rivaroxaban
+478. Avanafil
+479. Silodosin
+480. Prasugrel
+481. Tapentadol
+482. Alogliptin
+483. Rufinamide
+484. Ethylmorphine
+485. Tiotropium
+486. Pranlukast
+487. Acenocoumarol
+488. Ciclesonide
+489. Aminophenazone
+490. Antipyrine
+491. Allylestrenol
+492. Mianserin
+493. Sertindole
+494. Rimonabant
+495. Clevidipine
+496. Ospemifene
+497. Permethrin
+498. Iloperidone
+499. Bifonazole
+500. Maraviroc
+501. Ixabepilone
+502. Dronedarone
+503. Nilotinib
+504. Thiotepa
+505. Estrone sulfate
+506. Chenodeoxycholic acid
+507. Cabazitaxel
+508. Benzyl alcohol
+509. Ketobemidone
+510. Artemether
+511. Vilazodone
+512. Bosutinib
+513. Lumefantrine
+514. Fesoterodine
+515. Desvenlafaxine
+516. Methyltestosterone
+517. Nilvadipine
+518. Pazopanib
+519. Apixaban
+520. Etravirine
+521. Saxagliptin
+522. Levomilnacipran
+523. Trametinib
+524. Dabrafenib
+525. Pomalidomide
+526. Luliconazole
+527. Macitentan
+528. Ruxolitinib
+529. Boceprevir
+530. Vemurafenib
+531. Linagliptin
+532. Enzalutamide
+533. Regorafenib
+534. Mirabegron
+535. Fingolimod
+536. Crizotinib
+537. Rilpivirine
+538. Ticagrelor
+539. Lurasidone
+540. Tofisopam
+541. Lomitapide
+542. Vismodegib
+543. Ivacaftor
+544. Fluticasone furoate
+545. Canagliflozin
+546. Bedaquiline
+547. Ponatinib
+548. Simeprevir
+549. Dapagliflozin
+  Cypher (1st attempt): MATCH (d:Drug)-[:CHEMICALBINDSGENE]->(g:Gene)
+WHERE g.geneSymbol IN ['CYP3A4', 'CYP2C19']
+RETURN DISTINCT d.commonName
+
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.312  recall=0.947  f1=0.470  jaccard=0.307  overlap=0.947
+  Missing (in expected, not in got): Apixaban, Enzalutamide, Etravirine, Levomilnacipran, Luliconazole, Macitentan, Regorafenib, Rilpivirine, Vismodegib
+  Extra (in got, not in expected):   Abiraterone, Acetaminophen, Acetazolamide, Acetylsalicylic acid, Albendazole, Alclometasone, Alfentanil, Alfuzosin, Alimemazine, Allylestrenol, Alogliptin, Alosetron, Alprazolam, Aminophylline, Amlodipine, Amoxicillin, Anastrozole, Arformoterol, Argatroban, Aripiprazole, Arsenic trioxide, Asenapine, Astemizole, Atazanavir, Avanafil, Azatadine, Azithromycin, Benzatropine, Benzphetamine, Benzyl alcohol, Betamethasone, Bexarotene, Bezafibrate, Bisoprolol, Bosentan, Bosutinib, Brinzolamide, Bromocriptine, Budesonide, Bupropion, Buspirone, Busulfan, Cabazitaxel, Cabergoline, Caffeine, Calcitriol, Carisoprodol, Carvedilol, Caspofungin, Cefradine, Celecoxib, Cephalexin, Cevimeline, Chenodeoxycholic acid, Chlordiazepoxide, Chloroquine, Chlorphenesin, Chlorpheniramine, Chlorpromazine, Chlorpropamide, Chlorzoxazone, Ciclesonide, Cinacalcet, Ciprofloxacin, Clemastine, Clindamycin, Clofazimine, Clofibrate, Clomifene, Clonazepam, Clonidine, Clorazepic acid, Cocaine, Codeine, Colchicine, Conivaptan, Conjugated estrogens, Cortisone acetate, Cyclobenzaprine, Cytarabine, Dalfopristin, Danazol, Dantrolene, Dapagliflozin, Darifenacin, Darunavir, Dasatinib, Daunorubicin, Deferasirox, Desloratadine, Desvenlafaxine, Dexfenfluramine, Dextropropoxyphene, Dicloxacillin, Diethylstilbestrol, Digitoxin, Digoxin, Dihydrocodeine, Dihydroergotamine, Diphenhydramine, Disopyramide, Disulfiram, Docetaxel, Dofetilide, Dolasetron, Domperidone, Donepezil, Dopamine, Dorzolamide, Doxazosin, Doxorubicin, Doxycycline, Dronedarone, Dutasteride, Econazole, Enalapril, Epinastine, Epinephrine, Eplerenone, Ergocalciferol, Ergoloid mesylate, Ergometrine, Ergotamine, Erlotinib, Erythromycin, Estazolam, Estramustine, Estrone, Estrone sulfate, Eszopiclone, Ethinylestradiol, Ethosuximide, Ethotoin, Ethylmorphine, Etonogestrel, Etoposide, Everolimus, Exemestane, Ezetimibe, Famciclovir, Famotidine, Felodipine, Fenofibrate, Fentanyl, Fesoterodine, Finasteride, Flucloxacillin, Flunisolide, Fluorometholone, Flurazepam, Fluticasone propionate, Formoterol, Fosamprenavir, Fulvestrant, Galantamine, Gliclazide, Glipizide, Glucosamine, Granisetron, Griseofulvin, Guanethidine, Halofantrine, Halothane, Hydralazine, Hydrocodone, Hydrocortamate, Hydrocortisone, Hydromorphone, Ibuprofen, Iloperidone, Imiquimod, Indacaterol, Indapamide, Indomethacin, Ipratropium, Irbesartan, Irinotecan, Isosorbide dinitrate, Isosorbide mononitrate, Isradipine, Itraconazole, Ivermectin, Ixabepilone, Josamycin, Ketamine, Ketazolam, Lercanidipine, Letrozole, Levacetylmethadol, Levobupivacaine, Levofloxacin, Levonorgestrel, Levothyroxine, Lidocaine, Lisuride, Lomustine, Loperamide, Lumefantrine, Lumiracoxib, Maraviroc, Mebendazole, Medroxyprogesterone acetate, Mefloquine, Melatonin, Meloxicam, Memandine, Meprobamate, Mequitazine, Methoxsalen, Methoxyflurane, Methsuximide, Methylergometrine, Methylphenobarbital, Methylprednisolone, Methyltestosterone, Metoprolol, Metronidazole, Metyrapone, Mexiletine, Mianserin, Midazolam, Mifepristone, Mirtazapine, Mitoxantrone, Moclobemide, Montelukast, Morphine, Mycophenolate mofetil, Nafcillin, Naloxone, Nateglinide, Nefazodone, Nevirapine, Nifedipine, Nilotinib, Nilutamide, Nimodipine, Nisoldipine, Nitrazepam, Nitrendipine, Nitric Oxide, Norfloxacin, Olopatadine, Ondansetron, Orlistat, Orphenadrine, Oxazepam, Oxybutynin, Oxycodone, Oxymorphone, Paclitaxel, Paliperidone, Palonosetron, Paramethadione, Paramethasone, Paricalcitol, Pazopanib, Pergolide, Perhexiline, Permethrin, Phenoxybenzamine, Phenprocoumon, Phensuximide, Phenylbutazone, Pilocarpine, Pimecrolimus, Posaconazole, Pranlukast, Pravastatin, Prazepam, Prednisolone, Primaquine, Prochlorperazine, Propafenone, Pyrazinamide, Pyridostigmine, Quinacrine, Quinidine, Quinupristin, Raloxifene, Ranolazine, Reboxetine, Repaglinide, Retapamulin, Rifabutin, Rifapentine, Rifaximin, Rimonabant, Risperidone, Rivaroxaban, Rivastigmine, Rolitetracycline, Ropinirole, Ropivacaine, Rosiglitazone, Rotigotine, Roxithromycin, Rufinamide, Salbutamol, Salmeterol, Sertindole, Sevoflurane, Sibutramine, Silodosin, Sirolimus, Sitagliptin, Solifenacin, Sufentanil, Sulfadiazine, Sulfamethoxazole, Sulfinpyrazone, Sunitinib, Tacrolimus, Tadalafil, Tamsulosin, Tapentadol, Tasosartan, Telaprevir, Telithromycin, Telmisartan, Temozolomide, Temsirolimus, Tetracycline, Thalidomide, Theophylline, Thiopental, Thioridazine, Thiotepa, Tiagabine, Timolol, Tinidazole, Tiotropium, Tolbutamide, Tolvaptan, Topotecan, Torasemide, Toremifene, Tramadol, Trazodone, Tretinoin, Triamcinolone, Triazolam, Trimethoprim, Udenafil, Vandetanib, Vardenafil, Vilazodone, Vinblastine, Vincristine, Vindesine, Vinorelbine, Yohimbine, Zalcitabine, Zaleplon, Zileuton, Ziprasidone, Zopiclone
+
+Q [88f5e4eb5a82]: List the drugs which commonly bind to the genes NAT2 and TSPO
+  Expected: Clonazepam
+  Got:      ['Clorazepic acid', 'Eszopiclone', 'Zopiclone', 'Ketazolam', 'Lorazepam', 'Temazepam', 'Zaleplon', 'Ezogabine', 'Clonazepam', 'Flunitrazepam', 'Triazolam', 'Acetaminophen', 'Chlormezanone', 'Diazepam', 'Sulfamethoxazole', 'Dapsone', 'Isoniazid']
+  Thinking: The drugs that commonly bind to the genes NAT2 and TSPO include:
+
+1. Lorazepam
+2. Clorazepic acid
+3. Eszopiclone
+4. Acetaminophen
+5. Temazepam
+6. Dapsone
+7. Isoniazid
+8. Zaleplon
+9. Diazepam
+10. Triazolam
+11. Chlormezanone
+12. Zopiclone
+13. Clonazepam
+14. Sulfamethoxazole
+15. Ketazolam
+16. Flunitrazepam
+17. Ezogabine
+  Cypher (1st attempt): MATCH (d:Drug)-[:CHEMICALBINDSGENE]->(g:Gene)
+WHERE g.geneSymbol IN ['NAT2', 'TSPO']
+RETURN DISTINCT d.commonName
+
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.059  recall=1.000  f1=0.111  jaccard=0.059  overlap=1.000
+  Missing (in expected, not in got): -
+  Extra (in got, not in expected):   Acetaminophen, Chlormezanone, Clorazepic acid, Dapsone, Diazepam, Eszopiclone, Ezogabine, Flunitrazepam, Isoniazid, Ketazolam, Lorazepam, Sulfamethoxazole, Temazepam, Triazolam, Zaleplon, Zopiclone
+
+Q [10066afcc8bd]: List the drugs which commonly bind to the genes TBXA2R and TBXAS1
+  Expected: Ridogrel
+  Got:      ['Sulfasalazine', 'Ridogrel', 'Dinoprost tromethamine']
+  Thinking: The drugs that commonly bind to the genes TBXA2R and TBXAS1 are:
+
+1. Dinoprost tromethamine
+2. Ridogrel
+3. Sulfasalazine
+  Cypher (1st attempt): MATCH (d:Drug)-[:CHEMICALBINDSGENE]->(g:Gene)
+WHERE g.geneSymbol IN ['TBXA2R', 'TBXAS1']
+RETURN d.commonName
+
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.333  recall=1.000  f1=0.500  jaccard=0.333  overlap=1.000
+  Missing (in expected, not in got): -
+  Extra (in got, not in expected):   Dinoprost tromethamine, Sulfasalazine
+
+Q [6b1a08183464]: List the drugs which commonly bind to the genes GABRB3 and NR1H4
+  Expected: Ivermectin
+  Got:      ['Ethchlorvynol', 'Zopiclone', 'Glutethimide', 'Flurazepam', 'Temazepam', 'Ursodeoxycholic acid', 'Fulvestrant', 'Methyprylon', 'Midazolam', 'Acamprosate', 'Diazepam', 'Bromazepam', 'Clotiazepam', 'Lorazepam', 'Thiamylal', 'Ivermectin', 'Fludiazepam', 'Quazepam', 'Halothane', 'Pentobarbital', 'Sevoflurane', 'Triazolam', 'Isoflurane', 'Cinolazepam', 'Chenodeoxycholic acid', 'Clorazepic acid', 'Oxazepam', 'Adinazolam', 'Piperazine', 'Prazepam', 'Zaleplon', 'Nitrazepam', 'Flumazenil', 'Talbutal', 'Desflurane', 'Alprazolam', 'Butalbital', 'Propofol', 'Chlordiazepoxide', 'Halazepam', 'Meprobamate', 'Estazolam', 'Zolpidem', 'Methoxyflurane', 'Fospropofol', 'Methohexital']
+  Thinking: The drugs that commonly bind to the genes GABRB3 and NR1H4 include:
+
+1. Ethchlorvynol
+2. Lorazepam
+3. Ivermectin
+4. Clorazepic acid
+5. Midazolam
+6. Flurazepam
+7. Acamprosate
+8. Piperazine
+9. Adinazolam
+10. Methohexital
+11. Chlordiazepoxide
+12. Alprazolam
+13. Zolpidem
+14. Meprobamate
+15. Pentobarbital
+16. Talbutal
+17. Temazepam
+18. Butalbital
+19. Zaleplon
+20. Fulvestrant
+21. Oxazepam
+22. Halazepam
+23. Propofol
+24. Diazepam
+25. Triazolam
+26. Desflurane
+27. Zopiclone
+28. Flumazenil
+29. Estazolam
+30. Sevoflurane
+31. Isoflurane
+32. Halothane
+33. Thiamylal
+34. Methyprylon
+35. Methoxyflurane
+36. Fludiazepam
+37. Quazepam
+38. Prazepam
+39. Ursodeoxycholic acid
+40. Nitrazepam
+41. Cinolazepam
+42. Clotiazepam
+43. Bromazepam
+44. Glutethimide
+45. Chenodeoxycholic acid
+46. Fospropofol
+  Cypher (1st attempt): MATCH (d:Drug)-[:CHEMICALBINDSGENE]->(g:Gene)
+WHERE g.geneSymbol IN ['GABRB3', 'NR1H4']
+RETURN d.commonName
+
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.022  recall=1.000  f1=0.043  jaccard=0.022  overlap=1.000
+  Missing (in expected, not in got): -
+  Extra (in got, not in expected):   Acamprosate, Adinazolam, Alprazolam, Bromazepam, Butalbital, Chenodeoxycholic acid, Chlordiazepoxide, Cinolazepam, Clorazepic acid, Clotiazepam, Desflurane, Diazepam, Estazolam, Ethchlorvynol, Fludiazepam, Flumazenil, Flurazepam, Fospropofol, Fulvestrant, Glutethimide, Halazepam, Halothane, Isoflurane, Lorazepam, Meprobamate, Methohexital, Methoxyflurane, Methyprylon, Midazolam, Nitrazepam, Oxazepam, Pentobarbital, Piperazine, Prazepam, Propofol, Quazepam, Sevoflurane, Talbutal, Temazepam, Thiamylal, Triazolam, Ursodeoxycholic acid, Zaleplon, Zolpidem, Zopiclone
+
+Q [ab204899265c]: List the drugs which commonly bind to the genes HRH1 and PTK2
+  Expected: Chloropyramine
+  Got:      ['Doxylamine', 'Orphenadrine', 'Clofedanol', 'Cyclizine', 'Methdilazine', 'Olopatadine', 'Haloperidol', 'Tripelennamine', 'Aceprometazine', 'Cyproheptadine', 'Propiomazine', 'Promethazine', 'Quetiapine', 'Desipramine', 'Betahistine', 'Promazine', 'Triprolidine', 'Phenindamine', 'Carbinoxamine', 'Epinastine', 'Clozapine', 'Ifenprodil', 'Escitalopram', 'Sertindole', 'Methotrimeprazine', 'Trimipramine', 'Doxepin', 'Flunarizine', 'Azatadine', 'Thiothixene', 'Alimemazine', 'Cetirizine', 'Asenapine', 'Tolazoline', 'Pheniramine', 'Chlorpheniramine', 'Fexofenadine', 'Levocabastine', 'Isothipendyl', 'Brompheniramine', 'Mirtazapine', 'Chlorpromazine', 'Diphenhydramine', 'Dexbrompheniramine', 'Loxapine', 'Olanzapine', 'Emedastine', 'Thioridazine', 'Perphenazine', 'Citalopram', 'Dimetindene', 'Trifluoperazine', 'Fluspirilene', 'Mequitazine', 'Ketotifen', 'Nortriptyline', 'Dimenhydrinate', 'Mepyramine', 'Paliperidone', 'Iloperidone', 'Ziprasidone', 'Risperidone', 'Chlorcyclizine', 'Clemastine', 'Astemizole', 'Imipramine', 'Meclizine', 'Diphenylpyraline', 'Pimozide', 'Loratadine', 'Alcaftadine', 'Crizotinib', 'Chlorprothixene', 'Fluphenazine', 'Maprotiline', 'Amitriptyline', 'Bromodiphenhydramine', 'Buclizine', 'Prochlorperazine', 'Azelastine', 'Chloropyramine', 'Mesoridazine', 'Antazoline', 'Cinnarizine', 'Trazodone', 'Zuclopenthixol', 'Hydroxyzine', 'Aripiprazole', 'Desloratadine', 'Benzatropine', 'Bepotastine', 'Amoxapine', 'Mianserin', 'Bosutinib']
+  Thinking: The drugs that commonly bind to the genes HRH1 and PTK2 include:
+
+1. Fluphenazine
+2. Thioridazine
+3. Astemizole
+4. Trazodone
+5. Haloperidol
+6. Hydroxyzine
+7. Cinnarizine
+8. Amoxapine
+9. Nortriptyline
+10. Chlorpromazine
+11. Cyproheptadine
+12. Prochlorperazine
+13. Loratadine
+14. Imipramine
+15. Loxapine
+16. Dexbrompheniramine
+17. Triprolidine
+18. Promazine
+19. Buclizine
+20. Doxylamine
+21. Clozapine
+22. Mirtazapine
+23. Amitriptyline
+24. Olanzapine
+25. Cetirizine
+26. Clemastine
+27. Benzatropine
+28. Ziprasidone
+29. Citalopram
+30. Fexofenadine
+31. Desloratadine
+32. Azelastine
+33. Dimenhydrinate
+34. Ketotifen
+35. Mesoridazine
+36. Maprotiline
+37. Methdilazine
+38. Methotrimeprazine
+39. Trifluoperazine
+40. Brompheniramine
+41. Perphenazine
+42. Azatadine
+43. Trimipramine
+44. Meclizine
+45. Risperidone
+46. Carbinoxamine
+47. Escitalopram
+48. Orphenadrine
+49. Cyclizine
+50. Alimemazine
+51. Paliperidone
+52. Quetiapine
+53. Bromodiphenhydramine
+54. Aripiprazole
+55. Chlorprothixene
+56. Tolazoline
+57. Tripelennamine
+58. Epinastine
+59. Olopatadine
+60. Propiomazine
+61. Emedastine
+62. Promethazine
+63. Diphenhydramine
+64. Mequitazine
+65. Doxepin
+66. Diphenylpyraline
+67. Desipramine
+68. Levocabastine
+69. Pimozide
+70. Chlorpheniramine
+71. Phenindamine
+72. Aceprometazine
+73. Thiothixene
+74. Pheniramine
+75. Zuclopenthixol
+76. Asenapine
+77. Mianserin
+78. Sertindole
+79. Iloperidone
+80. Bepotastine
+81. Clofedanol
+82. Flunarizine
+83. Fluspirilene
+84. Alcaftadine
+85. Betahistine
+86. Mepyramine
+87. Bosutinib
+88. Ifenprodil
+89. Chlorcyclizine
+90. Crizotinib
+91. Dimetindene
+92. Isothipendyl
+93. Chloropyramine
+94. Antazoline
+  Cypher (1st attempt): MATCH (d:Drug)-[:CHEMICALBINDSGENE]->(g:Gene)
+WHERE g.geneSymbol IN ['HRH1', 'PTK2']
+RETURN d.commonName
+
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.011  recall=1.000  f1=0.021  jaccard=0.011  overlap=1.000
+  Missing (in expected, not in got): -
+  Extra (in got, not in expected):   Aceprometazine, Alcaftadine, Alimemazine, Amitriptyline, Amoxapine, Antazoline, Aripiprazole, Asenapine, Astemizole, Azatadine, Azelastine, Benzatropine, Bepotastine, Betahistine, Bosutinib, Bromodiphenhydramine, Brompheniramine, Buclizine, Carbinoxamine, Cetirizine, Chlorcyclizine, Chlorpheniramine, Chlorpromazine, Chlorprothixene, Cinnarizine, Citalopram, Clemastine, Clofedanol, Clozapine, Crizotinib, Cyclizine, Cyproheptadine, Desipramine, Desloratadine, Dexbrompheniramine, Dimenhydrinate, Dimetindene, Diphenhydramine, Diphenylpyraline, Doxepin, Doxylamine, Emedastine, Epinastine, Escitalopram, Fexofenadine, Flunarizine, Fluphenazine, Fluspirilene, Haloperidol, Hydroxyzine, Ifenprodil, Iloperidone, Imipramine, Isothipendyl, Ketotifen, Levocabastine, Loratadine, Loxapine, Maprotiline, Meclizine, Mepyramine, Mequitazine, Mesoridazine, Methdilazine, Methotrimeprazine, Mianserin, Mirtazapine, Nortriptyline, Olanzapine, Olopatadine, Orphenadrine, Paliperidone, Perphenazine, Phenindamine, Pheniramine, Pimozide, Prochlorperazine, Promazine, Promethazine, Propiomazine, Quetiapine, Risperidone, Sertindole, Thioridazine, Thiothixene, Tolazoline, Trazodone, Trifluoperazine, Trimipramine, Tripelennamine, Triprolidine, Ziprasidone, Zuclopenthixol
+
+Q [bbf389fcaa14]: List the drugs which commonly bind to the genes CYP2D6 and CYP2C18
+  Expected: Perphenazine, Aminophenazone, Imipramine, Lansoprazole, Cyclophosphamide, Propofol, Buprenorphine, Omeprazole, Lidocaine, Desipramine, Verapamil, Vilazodone, Diphenhydramine, Antipyrine, Methadone
+  Got:      ['Reboxetine', 'Vemurafenib', 'Duloxetine', 'Tipranavir', 'Lovastatin', 'Haloperidol', 'Tripelennamine', 'Bortezomib', 'Dapsone', 'Idarubicin', 'Labetalol', 'Nebivolol', 'Promethazine', 'Rimonabant', 'Lumefantrine', 'Dimethyl sulfoxide', 'Oxybutynin', 'Nefazodone', 'Abiraterone', 'Pergolide', 'Quetiapine', 'Desipramine', 'Procainamide', 'Doxazosin', 'Lidocaine', 'Nifedipine', 'Tiotropium', 'Rivastigmine', 'Amlodipine', 'Cimetidine', 'Tolterodine', 'Pravastatin', 'Cephalexin', 'Triprolidine', 'Carbinoxamine', 'Ropivacaine', 'Cilostazol', 'Nevirapine', 'Epinastine', 'Zafirlukast', 'Nicergoline', 'Clozapine', 'Oxprenolol', 'Telithromycin', 'Rifapentine', 'Oxymorphone', 'Saquinavir', 'Fluvoxamine', 'Hydromorphone', 'Tapentadol', 'Dronedarone', 'Escitalopram', 'Theophylline', 'Sertindole', 'Mirabegron', 'Zolpidem', 'Methotrimeprazine', 'Warfarin', 'Palonosetron', 'Trimipramine', 'Artemether', 'Alogliptin', 'Ifosfamide', 'Lisuride', 'Doxepin', 'Codeine', 'Caffeine', 'Trabectedin', 'Flunarizine', 'Metoclopramide', 'Phenobarbital', 'Rabeprazole', 'Sertraline', 'Dextroamphetamine', 'Glutethimide', 'Proguanil', 'Phenformin', 'Quinidine barbiturate', 'Methazolamide', 'Rotigotine', 'Efavirenz', 'Methyprylon', 'Ropinirole', 'Ipratropium', 'Fluoxetine', 'Amsacrine', 'Bepridil', 'Chlorzoxazone', 'Thiothixene', 'Ciclesonide', 'Amprenavir', 'Aprindine', 'Valproic acid', 'Zalcitabine', 'Dextropropoxyphene', 'Pioglitazone', 'Asenapine', 'Atorvastatin', 'Pseudoephedrine', 'Sulfanilamide', 'Biperiden', 'Acebutolol', 'Halothane', 'Irbesartan', 'Propranolol', 'Metamfetamine', 'Vilazodone', 'Tretinoin', 'Venlafaxine', 'Perhexiline', 'Dexamethasone', 'Etoricoxib', 'Methimazole', 'Chlorpheniramine', 'Pipotiazine', 'Antipyrine', 'Celecoxib', 'Terbinafine', 'Pentamidine', 'Fexofenadine', 'Cocaine', 'Piperazine', 'Carteolol', 'Sildenafil', 'Oxamniquine', 'Pazopanib', 'Amiodarone', 'Brompheniramine', 'Protriptyline', 'Metoprolol', 'Aminophenazone', 'Mirtazapine', 'Formoterol', 'Chlorpromazine', 'Meperidine', 'Phenytoin', 'Domperidone', 'Diphenhydramine', 'Ethylmorphine', 'Methadone', 'Pindolol', 'Selegiline', 'Hydroxyurea', 'Tamoxifen', 'Cyclobenzaprine', 'Clomipramine', 'Olanzapine', 'Cholecalciferol', 'Verapamil', 'Methoxyflurane', 'Thioridazine', 'Granisetron', 'Citalopram', 'Perphenazine', 'Cevimeline', 'Nitrofural', 'Vinblastine', 'Mequitazine', 'Nicotine', 'Omeprazole', 'Chloroquine', 'Fesoterodine', 'Loperamide', 'Sulfaphenazole', 'Phentermine', 'Cyclosporine', 'Darifenacin', 'Clobazam', 'Remoxipride', 'Betaxolol', 'Nortriptyline', 'Dapagliflozin', 'Amodiaquine', 'Diclofenac', 'Captopril', 'Bupropion', 'Paroxetine', 'Mepyramine', 'Praziquantel', 'Ponatinib', 'Paliperidone', 'Iloperidone', 'Donepezil', 'Simvastatin', 'Ritonavir', 'Ziprasidone', 'Risperidone', 'Ondansetron', 'Yohimbine', 'Clemastine', 'Astemizole', 'Imipramine', 'Indinavir', 'Nilotinib', 'Buprenorphine', 'Lopinavir', 'Eletriptan', 'Quinidine', 'Dexmethylphenidate', 'Pimozide', 'Methylphenidate', 'Tramadol', 'Loratadine', 'Vinorelbine', 'Primaquine', 'Propofol', 'Lansoprazole', 'Isoniazid', 'Hydroxychloroquine', 'Mexiletine', 'Itraconazole', 'Oxycodone', 'Ketoconazole', 'Fluphenazine', 'Halofantrine', 'Almotriptan', 'Maprotiline', 'Dextromethorphan', 'Debrisoquine', 'Carvedilol', 'Delavirdine', 'Niacin', 'Clevidipine', 'Clotrimazole', 'Bupivacaine', 'Trospium', 'Clonidine', 'Amitriptyline', 'Cyclophosphamide', 'Felodipine', 'Temsirolimus', 'Dopamine', 'Doxorubicin', 'Flecainide', 'Timolol', 'Mifepristone', 'Ajmaline', 'Prochlorperazine', 'Azelastine', 'Gefitinib', 'Atomoxetine', 'Dexmedetomidine', 'Minaprine', 'Diazepam', 'Levodopa', 'Hydrocodone', 'Benzyl alcohol', 'Clotiazepam', 'Dexfenfluramine', 'Mefloquine', 'Nelfinavir', 'Lomustine', 'Erlotinib', 'Mesoridazine', 'Propafenone', 'Cinnarizine', 'Progesterone', 'Arformoterol', 'Cisapride', 'Trazodone', 'Diltiazem', 'Tamsulosin', 'Bicalutamide', 'Ranolazine', 'Pyrimethamine', 'Moclobemide', 'Nicardipine', 'Quinine', 'Hydroxyzine', 'Encainide', 'Aripiprazole', 'Tranylcypromine', 'Fluvastatin', 'Zuclopenthixol', 'Dolasetron', 'Sorafenib', 'Dihydrocodeine', 'Methylnaltrexone', 'Desloratadine', 'Levomilnacipran', 'Galantamine', 'Benzatropine', 'Ranitidine', 'Lercanidipine', 'Amphetamine', 'Fingolimod', 'Bisoprolol', 'Enzalutamide', 'Cinacalcet', 'Amoxapine', 'Morphine', 'Midodrine', 'Tolbutamide', 'Mianserin', 'Alprenolol', 'Imatinib', 'Ticlopidine', 'Rosiglitazone', 'Acetaminophen', 'Nateglinide', 'Buspirone', 'Tetrabenazine', 'Miconazole']
+  Thinking: Common drugs that bind to the genes CYP2D6 and CYP2C18 include:
+
+1. Cyclosporine
+2. Cholecalciferol
+3. Pravastatin
+4. Fluvoxamine
+5. Nicotine
+6. Cevimeline
+7. Amphetamine
+8. Bortezomib
+9. Tamsulosin
+10. Delavirdine
+11. Methazolamide
+12. Amprenavir
+13. Chloroquine
+14. Cisapride
+15. Imatinib
+16. Bisoprolol
+17. Amodiaquine
+18. Niacin
+19. Nicardipine
+20. Efavirenz
+21. Fluphenazine
+22. Galantamine
+23. Tamoxifen
+24. Thioridazine
+25. Warfarin
+26. Nicergoline
+27. Dexmedetomidine
+28. Astemizole
+29. Simvastatin
+30. Dextropropoxyphene
+31. Trazodone
+32. Verapamil
+33. Cimetidine
+34. Haloperidol
+35. Ritonavir
+36. Labetalol
+37. Piperazine
+38. Doxazosin
+39. Hydroxyzine
+40. Cephalexin
+41. Cinnarizine
+42. Clonidine
+43. Vinblastine
+44. Propranolol
+45. Lisuride
+46. Diclofenac
+47. Dextromethorphan
+48. Lercanidipine
+49. Carteolol
+50. Cyclophosphamide
+51. Erlotinib
+52. Amoxapine
+53. Zafirlukast
+54. Nortriptyline
+55. Duloxetine
+56. Chlorpromazine
+57. Chlorzoxazone
+58. Fluoxetine
+59. Celecoxib
+60. Buspirone
+61. Darifenacin
+62. Oxycodone
+63. Prochlorperazine
+64. Lansoprazole
+65. Meperidine
+66. Loratadine
+67. Imipramine
+68. Quinine
+69. Remoxipride
+70. Rosiglitazone
+71. Methylphenidate
+72. Triprolidine
+73. Zolpidem
+74. Sorafenib
+75. Progesterone
+76. Mefloquine
+77. Vinorelbine
+78. Clozapine
+79. Mexiletine
+80. Palonosetron
+81. Mirtazapine
+82. Timolol
+83. Amlodipine
+84. Valproic acid
+85. Gefitinib
+86. Codeine
+87. Acetaminophen
+88. Hydromorphone
+89. Amitriptyline
+90. Nitrofural
+91. Methadone
+92. Olanzapine
+93. Omeprazole
+94. Ipratropium
+95. Protriptyline
+96. Clobazam
+97. Diltiazem
+98. Betaxolol
+99. Tramadol
+100. Phentermine
+101. Amsacrine
+102. Theophylline
+103. Atomoxetine
+104. Clemastine
+105. Lidocaine
+106. Venlafaxine
+107. Morphine
+108. Ropivacaine
+109. Bupivacaine
+110. Reboxetine
+111. Nevirapine
+112. Benzatropine
+113. Ziprasidone
+114. Ranolazine
+115. Sulfanilamide
+116. Clotrimazole
+117. Dapsone
+118. Phenytoin
+119. Ropinirole
+120. Metoprolol
+121. Trospium
+122. Sildenafil
+123. Caffeine
+124. Ticlopidine
+125. Pyrimethamine
+126. Citalopram
+127. Eletriptan
+128. Midodrine
+129. Indinavir
+130. Lovastatin
+131. Nelfinavir
+132. Isoniazid
+133. Fexofenadine
+134. Hydrocodone
+135. Pindolol
+136. Desloratadine
+137. Azelastine
+138. Telithromycin
+139. Formoterol
+140. Dopamine
+141. Rivastigmine
+142. Phenformin
+143. Almotriptan
+144. Cyclobenzaprine
+145. Buprenorphine
+146. Mesoridazine
+147. Maprotiline
+148. Tipranavir
+149. Zalcitabine
+150. Ondansetron
+151. Quinidine
+152. Cocaine
+153. Methotrimeprazine
+154. Doxorubicin
+155. Loperamide
+156. Mifepristone
+157. Brompheniramine
+158. Donepezil
+159. Pseudoephedrine
+160. Perphenazine
+161. Terbinafine
+162. Ranitidine
+163. Alprenolol
+164. Minaprine
+165. Propofol
+166. Biperiden
+167. Diazepam
+168. Yohimbine
+169. Quinidine barbiturate
+170. Granisetron
+171. Paroxetine
+172. Trimipramine
+173. Pentamidine
+174. Nateglinide
+175. Risperidone
+176. Carbinoxamine
+177. Itraconazole
+178. Cilostazol
+179. Phenobarbital
+180. Escitalopram
+181. Idarubicin
+182. Moclobemide
+183. Pergolide
+184. Domperidone
+185. Ifosfamide
+186. Propafenone
+187. Captopril
+188. Flecainide
+189. Oxymorphone
+190. Acebutolol
+191. Dexfenfluramine
+192. Bepridil
+193. Clomipramine
+194. Paliperidone
+195. Arformoterol
+196. Lomustine
+197. Rifapentine
+198. Halofantrine
+199. Quetiapine
+200. Encainide
+201. Aripiprazole
+202. Levodopa
+203. Metoclopramide
+204. Dexamethasone
+205. Saquinavir
+206. Tripelennamine
+207. Epinastine
+208. Tranylcypromine
+209. Dolasetron
+210. Tretinoin
+211. Methimazole
+212. Primaquine
+213. Fluvastatin
+214. Oxamniquine
+215. Dimethyl sulfoxide
+216. Praziquantel
+217. Oxybutynin
+218. Promethazine
+219. Diphenhydramine
+220. Atorvastatin
+221. Perhexiline
+222. Mequitazine
+223. Bicalutamide
+224. Rabeprazole
+225. Tolbutamide
+226. Carvedilol
+227. Proguanil
+228. Pioglitazone
+229. Nefazodone
+230. Doxepin
+231. Halothane
+232. Desipramine
+233. Bupropion
+234. Sertraline
+235. Methyprylon
+236. Pimozide
+237. Chlorpheniramine
+238. Nifedipine
+239. Amiodarone
+240. Miconazole
+241. Hydroxyurea
+242. Cinacalcet
+243. Methoxyflurane
+244. Irbesartan
+245. Ketoconazole
+246. Felodipine
+247. Selegiline
+248. Procainamide
+249. Tolterodine
+250. Abiraterone
+251. Rotigotine
+252. Trabectedin
+253. Lopinavir
+254. Hydroxychloroquine
+255. Etoricoxib
+256. Thiothixene
+257. Pipotiazine
+258. Zuclopenthixol
+259. Metamfetamine
+260. Dextroamphetamine
+261. Oxprenolol
+262. Clotiazepam
+263. Dihydrocodeine
+264. Temsirolimus
+265. Asenapine
+266. Tapentadol
+267. Alogliptin
+268. Ethylmorphine
+269. Tiotropium
+270. Ciclesonide
+271. Aminophenazone
+272. Aprindine
+273. Ajmaline
+274. Antipyrine
+275. Glutethimide
+276. Mianserin
+277. Sertindole
+278. Rimonabant
+279. Clevidipine
+280. Iloperidone
+281. Tetrabenazine
+282. Debrisoquine
+283. Flunarizine
+284. Dronedarone
+285. Nilotinib
+286. Nebivolol
+287. Benzyl alcohol
+288. Methylnaltrexone
+289. Artemether
+290. Mepyramine
+291. Vilazodone
+292. Lumefantrine
+293. Fesoterodine
+294. Dexmethylphenidate
+295. Sulfaphenazole
+296. Pazopanib
+297. Levomilnacipran
+298. Vemurafenib
+299. Enzalutamide
+300. Mirabegron
+301. Fingolimod
+302. Ponatinib
+303. Dapagliflozin
+  Cypher (1st attempt): MATCH (d:Drug)-[:CHEMICALBINDSGENE]->(g:Gene)
+WHERE g.geneSymbol IN ['CYP2D6', 'CYP2C18']
+RETURN d.commonName
+
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.050  recall=1.000  f1=0.094  jaccard=0.050  overlap=1.000
+  Missing (in expected, not in got): -
+  Extra (in got, not in expected):   Abiraterone, Acebutolol, Acetaminophen, Ajmaline, Almotriptan, Alogliptin, Alprenolol, Amiodarone, Amitriptyline, Amlodipine, Amodiaquine, Amoxapine, Amphetamine, Amprenavir, Amsacrine, Aprindine, Arformoterol, Aripiprazole, Artemether, Asenapine, Astemizole, Atomoxetine, Atorvastatin, Azelastine, Benzatropine, Benzyl alcohol, Bepridil, Betaxolol, Bicalutamide, Biperiden, Bisoprolol, Bortezomib, Brompheniramine, Bupivacaine, Bupropion, Buspirone, Caffeine, Captopril, Carbinoxamine, Carteolol, Carvedilol, Celecoxib, Cephalexin, Cevimeline, Chloroquine, Chlorpheniramine, Chlorpromazine, Chlorzoxazone, Cholecalciferol, Ciclesonide, Cilostazol, Cimetidine, Cinacalcet, Cinnarizine, Cisapride, Citalopram, Clemastine, Clevidipine, Clobazam, Clomipramine, Clonidine, Clotiazepam, Clotrimazole, Clozapine, Cocaine, Codeine, Cyclobenzaprine, Cyclosporine, Dapagliflozin, Dapsone, Darifenacin, Debrisoquine, Delavirdine, Desloratadine, Dexamethasone, Dexfenfluramine, Dexmedetomidine, Dexmethylphenidate, Dextroamphetamine, Dextromethorphan, Dextropropoxyphene, Diazepam, Diclofenac, Dihydrocodeine, Diltiazem, Dimethyl sulfoxide, Dolasetron, Domperidone, Donepezil, Dopamine, Doxazosin, Doxepin, Doxorubicin, Dronedarone, Duloxetine, Efavirenz, Eletriptan, Encainide, Enzalutamide, Epinastine, Erlotinib, Escitalopram, Ethylmorphine, Etoricoxib, Felodipine, Fesoterodine, Fexofenadine, Fingolimod, Flecainide, Flunarizine, Fluoxetine, Fluphenazine, Fluvastatin, Fluvoxamine, Formoterol, Galantamine, Gefitinib, Glutethimide, Granisetron, Halofantrine, Haloperidol, Halothane, Hydrocodone, Hydromorphone, Hydroxychloroquine, Hydroxyurea, Hydroxyzine, Idarubicin, Ifosfamide, Iloperidone, Imatinib, Indinavir, Ipratropium, Irbesartan, Isoniazid, Itraconazole, Ketoconazole, Labetalol, Lercanidipine, Levodopa, Levomilnacipran, Lisuride, Lomustine, Loperamide, Lopinavir, Loratadine, Lovastatin, Lumefantrine, Maprotiline, Mefloquine, Meperidine, Mepyramine, Mequitazine, Mesoridazine, Metamfetamine, Methazolamide, Methimazole, Methotrimeprazine, Methoxyflurane, Methylnaltrexone, Methylphenidate, Methyprylon, Metoclopramide, Metoprolol, Mexiletine, Mianserin, Miconazole, Midodrine, Mifepristone, Minaprine, Mirabegron, Mirtazapine, Moclobemide, Morphine, Nateglinide, Nebivolol, Nefazodone, Nelfinavir, Nevirapine, Niacin, Nicardipine, Nicergoline, Nicotine, Nifedipine, Nilotinib, Nitrofural, Nortriptyline, Olanzapine, Ondansetron, Oxamniquine, Oxprenolol, Oxybutynin, Oxycodone, Oxymorphone, Paliperidone, Palonosetron, Paroxetine, Pazopanib, Pentamidine, Pergolide, Perhexiline, Phenformin, Phenobarbital, Phentermine, Phenytoin, Pimozide, Pindolol, Pioglitazone, Piperazine, Pipotiazine, Ponatinib, Pravastatin, Praziquantel, Primaquine, Procainamide, Prochlorperazine, Progesterone, Proguanil, Promethazine, Propafenone, Propranolol, Protriptyline, Pseudoephedrine, Pyrimethamine, Quetiapine, Quinidine, Quinidine barbiturate, Quinine, Rabeprazole, Ranitidine, Ranolazine, Reboxetine, Remoxipride, Rifapentine, Rimonabant, Risperidone, Ritonavir, Rivastigmine, Ropinirole, Ropivacaine, Rosiglitazone, Rotigotine, Saquinavir, Selegiline, Sertindole, Sertraline, Sildenafil, Simvastatin, Sorafenib, Sulfanilamide, Sulfaphenazole, Tamoxifen, Tamsulosin, Tapentadol, Telithromycin, Temsirolimus, Terbinafine, Tetrabenazine, Theophylline, Thioridazine, Thiothixene, Ticlopidine, Timolol, Tiotropium, Tipranavir, Tolbutamide, Tolterodine, Trabectedin, Tramadol, Tranylcypromine, Trazodone, Tretinoin, Trimipramine, Tripelennamine, Triprolidine, Trospium, Valproic acid, Vemurafenib, Venlafaxine, Vinblastine, Vinorelbine, Warfarin, Yohimbine, Zafirlukast, Zalcitabine, Ziprasidone, Zolpidem, Zuclopenthixol
+
+Q [888b42a6855d]: List the drugs which commonly bind to the genes ADRB2 and GALR3
+  Expected: Ritodrine
+  Got:      ['Dipivefrin', 'Timolol', 'Salbutamol', 'Metipranolol', 'Droxidopa', 'Bevantolol', 'Norepinephrine', 'Labetalol', 'Sotalol', 'Betaxolol', 'Bopindolol', 'Nadolol', 'Isoetharine', 'Ephedrine', 'Orciprenaline', 'Pseudoephedrine', 'Indacaterol', 'Cabergoline', 'Procaterol', 'Acebutolol', 'Terbutaline', 'Asenapine', 'Propranolol', 'Pirbuterol', 'Desipramine', 'Arformoterol', 'Bambuterol', 'Dobutamine', 'Phenoxybenzamine', 'Dinoprost tromethamine', 'Fenoterol', 'Nebivolol', 'Carteolol', 'Bupranolol', 'Esmolol', 'Phenylpropanolamine', 'Metoprolol', 'Isoprenaline', 'Mirtazapine', 'Formoterol', 'Salmeterol', 'Oxprenolol', 'Bisoprolol', 'Atenolol', 'Pindolol', 'Alprenolol', 'Arbutamine', 'Epinephrine', 'Carvedilol', 'Penbutolol', 'Clenbuterol', 'Ritodrine', 'Levobunolol']
+  Thinking: The drugs that commonly bind to the genes ADRB2 and GALR3 include:
+
+1. Esmolol
+2. Bisoprolol
+3. Epinephrine
+4. Labetalol
+5. Propranolol
+6. Carteolol
+7. Sotalol
+8. Dipivefrin
+9. Phenylpropanolamine
+10. Norepinephrine
+11. Mirtazapine
+12. Timolol
+13. Atenolol
+14. Betaxolol
+15. Cabergoline
+16. Metoprolol
+17. Isoetharine
+18. Pindolol
+19. Formoterol
+20. Phenoxybenzamine
+21. Salmeterol
+22. Dobutamine
+23. Pseudoephedrine
+24. Ritodrine
+25. Alprenolol
+26. Orciprenaline
+27. Fenoterol
+28. Bevantolol
+29. Pirbuterol
+30. Procaterol
+31. Ephedrine
+32. Penbutolol
+33. Terbutaline
+34. Dinoprost tromethamine
+35. Acebutolol
+36. Arformoterol
+37. Nadolol
+38. Metipranolol
+39. Levobunolol
+40. Isoprenaline
+41. Carvedilol
+42. Desipramine
+43. Arbutamine
+44. Salbutamol
+45. Indacaterol
+46. Oxprenolol
+47. Droxidopa
+48. Asenapine
+49. Bambuterol
+50. Clenbuterol
+51. Nebivolol
+52. Bopindolol
+53. Bupranolol
+  Cypher (1st attempt): MATCH (d:Drug)-[:CHEMICALBINDSGENE]->(g:Gene)
+WHERE g.geneSymbol IN ['ADRB2', 'GALR3']
+RETURN d.commonName
+
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.019  recall=1.000  f1=0.037  jaccard=0.019  overlap=1.000
+  Missing (in expected, not in got): -
+  Extra (in got, not in expected):   Acebutolol, Alprenolol, Arbutamine, Arformoterol, Asenapine, Atenolol, Bambuterol, Betaxolol, Bevantolol, Bisoprolol, Bopindolol, Bupranolol, Cabergoline, Carteolol, Carvedilol, Clenbuterol, Desipramine, Dinoprost tromethamine, Dipivefrin, Dobutamine, Droxidopa, Ephedrine, Epinephrine, Esmolol, Fenoterol, Formoterol, Indacaterol, Isoetharine, Isoprenaline, Labetalol, Levobunolol, Metipranolol, Metoprolol, Mirtazapine, Nadolol, Nebivolol, Norepinephrine, Orciprenaline, Oxprenolol, Penbutolol, Phenoxybenzamine, Phenylpropanolamine, Pindolol, Pirbuterol, Procaterol, Propranolol, Pseudoephedrine, Salbutamol, Salmeterol, Sotalol, Terbutaline, Timolol
+
+
+=== Dataset: True_or_False_1hop.json__graphcypher | Type: tf | Mode: graphcypher | Model: gpt-4o-mini ===
+Count: 560  |  Correct: 451  |  Accuracy: 0.805 [95% CI 0.771-0.836]
+Telemetry:
+  - first attempt success rate: 0.902 (n=560)
+  - avg correction iterations: 0.000 (n=560)
+  - latency ms: mean=4265 p50=3762 p95=7366 (n=560)
+  - records with error: 0.002 (n=560)
+
+-- Incorrect Questions (109 total, showing 15) --
+Q [d7ec0cc67510]: True or False Question: Methyltestosterone decreases the gene expression of HADH
+  Expected: True
+  Got:      False
+  Thinking: False.
+  Cypher (1st attempt): MATCH (d:Drug {commonName: 'Methyltestosterone'})-[:CHEMICALDECREASESEXPRESSION]->(g:Gene {commonName: 'HADH'})
+RETURN COUNT(g) > 0 AS result
+
+  Correction iters:     0
+
+Q [8c2c529534d4]: True or False Question: Haloperidol treats Alzheimer's Disease
+  Expected: True
+  Got:      False
+  Thinking: False. Haloperidol is not used to treat Alzheimer's Disease.
+  Correction iters:     0
+
+Q [68f64b6ec6ab]: True or False Question: Selegiline treats Alzheimer's Disease
+  Expected: True
+  Got:      False
+  Thinking: False.
+  Correction iters:     0
+
+Q [e5a9a1439228]: True or False Question: Ziprasidone affects Alzheimer's Disease
+  Expected: True
+  Got:      False
+  Thinking: False.
+  Correction iters:     0
+
+Q [47e21e0c90b7]: True or False Question: Naltrexone affects Alzheimer's Disease
+  Expected: True
+  Got:      False
+  Thinking: False. Naltrexone does not affect Alzheimer's Disease.
+  Cypher (1st attempt): MATCH (d:Drug {commonName: 'Naltrexone'})-[:CHEMICALINCREASESEXPRESSION|CHEMICALDECREASESEXPRESSION]->(g:Gene)-[:GENEASSOCIATESWITHDISEASE]->(dis:Disease {commonName: 'Alzheimer\'s Disease'})
+RETURN COUNT(dis) > 0 AS affects
+
+  Correction iters:     0
+
+Q [b9b4dd198ec5]: True or False Question: SRSF2 is a gene which participates in the biological process nuclear export
+  Expected: True
+  Got:      False
+  Thinking: False.
+  Cypher (1st attempt): MATCH (g:Gene {commonName: 'SRSF2'})-[:GENEPARTICIPATESINBIOLOGICALPROCESS]->(bp:BiologicalProcess {commonName: 'nuclear export'})
+RETURN COUNT(g) > 0 AS result
+
+  Correction iters:     0
+
+Q [75ae294cbb18]: True or False Question: DRAXIN is a gene which participates in the biological process negative regulation of cell morphogenesis involved in differentiation
+  Expected: True
+  Got:      False
+  Thinking: False.
+  Cypher (1st attempt): MATCH (g:Gene {commonName: 'DRAXIN'})-[:GENEPARTICIPATESINBIOLOGICALPROCESS]->(bp:BiologicalProcess {commonName: 'negative regulation of cell morphogenesis involved in differentiation'})
+RETURN COUNT(g) > 0 AS result
+
+  Correction iters:     0
+
+Q [842ab98cb7bb]: True or False Question: YARS1 is a gene which participates in the biological process ncRNA metabolic process
+  Expected: True
+  Got:      NO_RESPONSE
+  Error:    chain_error: {neo4j_code: Neo.ClientError.Statement.SyntaxError} {message: Argument to EXISTS(...) is not a pattern (line 2, column 15 (offset: 154))
+"RETURN EXISTS(bp) AS result"
+               ^} {gql_status: 22G03} {gql_status_description: error: data exception - invalid value type}
+  Thinking: 
+  Correction iters:     0
+
+Q [fe779a3360fb]: True or False Question: CEP97 is a gene in the pathway Organelle biogenesis and maintenance
+  Expected: True
+  Got:      False
+  Thinking: False.
+  Cypher (1st attempt): MATCH (g:Gene {commonName: 'CEP97'})-[:GENEINPATHWAY]->(p:Pathway {commonName: 'Organelle biogenesis and maintenance'})
+RETURN COUNT(g) > 0 AS result
+
+  Correction iters:     0
+
+Q [bd635e7ccb19]: True or False Question: SIRT5 is a gene in the pathway Transcriptional activation of mitochondrial biogenesis
+  Expected: True
+  Got:      False
+  Thinking: False.
+  Cypher (1st attempt): MATCH (g:Gene {commonName: 'SIRT5'})-[:GENEINPATHWAY]->(p:Pathway {commonName: 'Transcriptional activation of mitochondrial biogenesis'})
+RETURN COUNT(g) > 0 AS result
+
+  Correction iters:     0
+
+Q [3dc7d939193b]: True or False Question: ZFAND6 is a gene which interacts with the gene TRAF5
+  Expected: True
+  Got:      False
+  Thinking: False. ZFAND6 does not interact with the gene TRAF5.
+  Cypher (1st attempt): MATCH (g1:Gene {geneSymbol: 'ZFAND6'})-[:GENEINTERACTSWITHGENE]->(g2:Gene {geneSymbol: 'TRAF5'})
+RETURN COUNT(g1) > 0 AND COUNT(g2) > 0 AS result
+
+  Correction iters:     0
+
+Q [335c5bd604ac]: True or False Question: DMTN is a gene which interacts with the gene EPB42
+  Expected: True
+  Got:      False
+  Thinking: False.
+  Cypher (1st attempt): MATCH (g1:Gene {geneSymbol: 'DMTN'})-[:GENEINTERACTSWITHGENE]->(g2:Gene {geneSymbol: 'EPB42'})
+RETURN COUNT(g1) > 0 AND COUNT(g2) > 0 AS result
+
+  Correction iters:     0
+
+Q [027db73d5bd9]: True or False Question: PADI2 is a gene which interacts with the gene UBC
+  Expected: True
+  Got:      False
+  Thinking: False.
+  Cypher (1st attempt): MATCH (g1:Gene {geneSymbol: 'PADI2'})-[:GENEINTERACTSWITHGENE]->(g2:Gene {geneSymbol: 'UBC'})
+RETURN COUNT(g1) > 0 AND COUNT(g2) > 0 AS result
+
+  Correction iters:     0
+
+Q [30719ec67068]: True or False Question: UBE2O is a gene which interacts with the gene GRK5
+  Expected: True
+  Got:      False
+  Thinking: False. UBE2O does not interact with the gene GRK5.
+  Cypher (1st attempt): MATCH (g1:Gene {geneSymbol: 'UBE2O'})-[:GENEINTERACTSWITHGENE]->(g2:Gene {geneSymbol: 'GRK5'}) RETURN COUNT(g2) > 0 AS result
+  Correction iters:     0
+
+Q [1b62e18a119a]: True or False Question: CCL8 is a gene which interacts with the gene CCL2
+  Expected: True
+  Got:      False
+  Thinking: False.
+  Cypher (1st attempt): MATCH (g1:Gene {geneSymbol: 'CCL8'})-[:GENEINTERACTSWITHGENE]->(g2:Gene {geneSymbol: 'CCL2'})
+RETURN COUNT(g1) > 0 AS result
+
+  Correction iters:     0
+
+
+=== Dataset: True_or_False_2hop.json__graphcypher | Type: tf | Mode: graphcypher | Model: gpt-4o-mini ===
+Count: 540  |  Correct: 351  |  Accuracy: 0.650 [95% CI 0.609-0.689]
+Telemetry:
+  - first attempt success rate: 0.867 (n=540)
+  - avg correction iterations: 0.000 (n=540)
+  - latency ms: mean=4654 p50=3844 p95=7813 (n=540)
+  - records with error: 0.026 (n=540)
+
+-- Incorrect Questions (189 total, showing 15) --
+Q [1243247fd5c9]: True or False Question: CCDC92 and GNAI1 are genes commonly subject to increased expression by the drug Decitabine
+  Expected: True
+  Got:      False
+  Thinking: False.
+  Cypher (1st attempt): MATCH (d:Drug {commonName: 'Decitabine'})-[:CHEMICALINCREASESEXPRESSION]->(g:Gene)
+WHERE g.commonName IN ['CCDC92', 'GNAI1']
+RETURN COUNT(g) = 2 AS result
+
+  Correction iters:     0
+
+Q [e9932ecdc914]: True or False Question: SLC35A1 and DENND2D are genes commonly subject to increased expression by the drug Azithromycin
+  Expected: True
+  Got:      False
+  Thinking: False.
+  Cypher (1st attempt): MATCH (d:Drug {commonName: 'Azithromycin'})-[:CHEMICALINCREASESEXPRESSION]->(g:Gene)
+WHERE g.geneSymbol IN ['SLC35A1', 'DENND2D']
+RETURN g.geneSymbol
+
+  Correction iters:     0
+
+Q [6267052fd598]: True or False Question: RHOA and DDIT4 are genes commonly subject to increased expression by the drug Atorvastatin
+  Expected: True
+  Got:      False
+  Thinking: False.
+  Cypher (1st attempt): MATCH (d:Drug {commonName: 'Atorvastatin'})-[:CHEMICALINCREASESEXPRESSION]->(g:Gene)
+WHERE g.commonName IN ['RHOA', 'DDIT4']
+RETURN g.commonName
+
+  Correction iters:     0
+
+Q [6d634082b7ba]: True or False Question: GDF15 and UBQLN2 are genes commonly subject to decreased expression by the drug Sulfasalazine
+  Expected: True
+  Got:      False
+  Thinking: False.
+  Cypher (1st attempt): MATCH (d:Drug {commonName: 'Sulfasalazine'})-[:CHEMICALDECREASESEXPRESSION]->(g:Gene)
+WHERE g.commonName IN ['GDF15', 'UBQLN2']
+RETURN COUNT(g) = 2 AS result
+
+  Correction iters:     0
+
+Q [6f31f6b438dd]: True or False Question: BAD and CNDP2 are genes commonly subject to decreased expression by the drug Darifenacin
+  Expected: True
+  Got:      False
+  Thinking: False.
+  Cypher (1st attempt): MATCH (d:Drug {commonName: 'Darifenacin'})-[:CHEMICALDECREASESEXPRESSION]->(g:Gene)
+WHERE g.geneSymbol IN ['BAD', 'CNDP2']
+RETURN g.geneSymbol
+
+  Correction iters:     0
+
+Q [ea848cc70b56]: True or False Question: Topotecan and Cephalexin are drugs which commonly increase expression of the gene PSMB8
+  Expected: True
+  Got:      False
+  Thinking: False.
+  Cypher (1st attempt): MATCH (d:Drug)-[:CHEMICALINCREASESEXPRESSION]->(g:Gene {commonName: 'PSMB8'})
+WHERE d.commonName IN ['Topotecan', 'Cephalexin']
+RETURN COUNT(d) = 2 AS result
+
+  Correction iters:     0
+
+Q [1254740dc663]: True or False Question: Bortezomib and Digitoxin are drugs which commonly decrease expression of the gene OXLD1
+  Expected: True
+  Got:      False
+  Thinking: False.
+  Cypher (1st attempt): MATCH (d:Drug)-[:CHEMICALDECREASESEXPRESSION]->(g:Gene {commonName: 'OXLD1'})
+WHERE d.commonName IN ['Bortezomib', 'Digitoxin']
+RETURN COUNT(d) > 0 AS result
+
+  Correction iters:     0
+
+Q [61f999a8f0a4]: True or False Question: cell morphogenesis involved in differentiation and circulatory system development are biological processes commonly involving the gene VLDLR
+  Expected: True
+  Got:      False
+  Thinking: False.
+  Cypher (1st attempt): MATCH (g:Gene {commonName: 'VLDLR'})-[:GENEPARTICIPATESINBIOLOGICALPROCESS]->(bp:BiologicalProcess)
+WHERE bp.commonName IN ['cell morphogenesis involved in differentiation', 'circulatory system development']
+RETURN COUNT(bp) = 2 AS result
+
+  Correction iters:     0
+
+Q [2a0bbeffe4ea]: True or False Question: regulation of gene expression, epigenetic and carbohydrate transmembrane transport are biological processes commonly involving the gene SLC50A1
+  Expected: True
+  Got:      False
+  Thinking: False.
+  Cypher (1st attempt): MATCH (g:Gene {geneSymbol: 'SLC50A1'})-[:GENEPARTICIPATESINBIOLOGICALPROCESS]->(bp:BiologicalProcess)
+WHERE bp.commonName IN ['regulation of gene expression', 'epigenetic', 'carbohydrate transmembrane transport']
+RETURN COUNT(bp) = 3 AS result
+
+  Correction iters:     0
+
+Q [428718bac4f5]: True or False Question: Recruitment of mitotic centrosome proteins and complexes and AURKA Activation by TPX2 are pathways which commonly contain the gene CEP43
+  Expected: True
+  Got:      False
+  Thinking: False.
+  Cypher (1st attempt): MATCH (g:Gene {commonName: 'CEP43'})-[:GENEINPATHWAY]->(p:Pathway)
+WHERE p.commonName IN ['Recruitment of mitotic centrosome proteins and complexes', 'AURKA Activation by TPX2']
+RETURN COUNT(p) = 2 AS result
+
+  Correction iters:     0
+
+Q [24cbc8570e50]: True or False Question: RUNX1 regulates genes involved in megakaryocyte differentiation and platelet function and Chromatin organization are pathways which commonly contain the gene SETD1A
+  Expected: True
+  Got:      False
+  Thinking: False. The information provided does not support the statement about RUNX1 and SETD1A.
+  Cypher (1st attempt): MATCH (g:Gene {geneSymbol: 'RUNX1'})-[:GENEREGULATESGENE]->(g2:Gene)-[:GENEINPATHWAY]->(p:Pathway)
+WHERE p.commonName IN ['megakaryocyte differentiation', 'platelet function', 'Chromatin organization']
+RETURN DISTINCT g2
+
+  Correction iters:     0
+
+Q [7f6182c3b6f1]: True or False Question: PRKDC and APP are genes which commonly interact with the gene TOP1
+  Expected: True
+  Got:      False
+  Thinking: False. There is no indication that PRKDC and APP commonly interact with the gene TOP1.
+  Cypher (1st attempt): MATCH (g1:Gene {geneSymbol: 'PRKDC'})-[:GENEINTERACTSWITHGENE]->(g2:Gene {geneSymbol: 'TOP1'}),
+      (g3:Gene {geneSymbol: 'APP'})-[:GENEINTERACTSWITHGENE]->(g2)
+RETURN g1, g2, g3
+
+  Correction iters:     0
+
+Q [cc9001b7294f]: True or False Question: SETDB1 and TUBB4B are genes which commonly interact with the gene PSME1
+  Expected: True
+  Got:      False
+  Thinking: False.
+  Cypher (1st attempt): MATCH (g1:Gene {geneSymbol: 'SETDB1'})-[:GENEINTERACTSWITHGENE]->(g2:Gene {geneSymbol: 'PSME1'}),
+      (g3:Gene {geneSymbol: 'TUBB4B'})-[:GENEINTERACTSWITHGENE]->(g2)
+RETURN g1, g2, g3
+
+  Correction iters:     0
+
+Q [92db1454a6aa]: True or False Question: KASH5 and MED4 are genes which commonly interact with the gene FTCD
+  Expected: True
+  Got:      False
+  Thinking: False.
+  Cypher (1st attempt): MATCH (g1:Gene {geneSymbol: 'KASH5'})-[:GENEINTERACTSWITHGENE]->(g2:Gene {geneSymbol: 'FTCD'}),
+      (g3:Gene {geneSymbol: 'MED4'})-[:GENEINTERACTSWITHGENE]->(g2)
+RETURN g1, g2, g3
+
+  Correction iters:     0
+
+Q [89dcc3c94602]: True or False Question: aldehyde-lyase activity and lyase activity are molecular functions commonly attributed to the gene HOGA1
+  Expected: True
+  Got:      False
+  Thinking: False.
+  Cypher (1st attempt): MATCH (g:Gene {commonName: 'HOGA1'})-[:GENEHASMOLECULARFUNCTION]->(mf:MolecularFunction)
+WHERE mf.commonName IN ['aldehyde-lyase activity', 'lyase activity']
+RETURN COUNT(mf) = 2 AS result
+
+  Correction iters:     0
+
+
+=== Dataset: True_or_False_2hop_atleastone.json__graphcypher | Type: tf | Mode: graphcypher | Model: gpt-4o-mini ===
+Count: 540  |  Correct: 436  |  Accuracy: 0.807 [95% CI 0.772-0.838]
+Telemetry:
+  - first attempt success rate: 0.900 (n=540)
+  - avg correction iterations: 0.000 (n=540)
+  - latency ms: mean=2807 p50=2686 p95=3654 (n=540)
+  - tokens: avg in=1087 out=116 | total in=586760 out=62731
+  - records with error: 0.015 (n=540)
+
+-- Incorrect Questions (104 total, showing 15) --
+Q [f28df4ea2542]: True or False Question: HMGCR and MAL are genes commonly subject to increased expression by the drug Fluoxetine
+  Expected: True
+  Got:      False
+  Thinking: False.
+  Cypher (1st attempt): MATCH (d:Drug {commonName: 'Fluoxetine'})-[:CHEMICALINCREASESEXPRESSION]->(g:Gene)
+WHERE g.geneSymbol IN ['HMGCR', 'MAL']
+RETURN g.geneSymbol
+
+  Correction iters:     0
+
+Q [6d634082b7ba]: True or False Question: GDF15 and UBQLN2 are genes commonly subject to decreased expression by the drug Sulfasalazine
+  Expected: True
+  Got:      False
+  Thinking: False.
+  Cypher (1st attempt): MATCH (d:Drug {commonName: 'Sulfasalazine'})-[:CHEMICALDECREASESEXPRESSION]->(g:Gene)
+WHERE g.commonName IN ['GDF15', 'UBQLN2']
+RETURN COUNT(g) = 2 AS result
+
+  Correction iters:     0
+
+Q [6f31f6b438dd]: True or False Question: BAD and CNDP2 are genes commonly subject to decreased expression by the drug Darifenacin
+  Expected: True
+  Got:      False
+  Thinking: False.
+  Cypher (1st attempt): MATCH (d:Drug {commonName: 'Darifenacin'})-[:CHEMICALDECREASESEXPRESSION]->(g:Gene)
+WHERE g.geneSymbol IN ['BAD', 'CNDP2']
+RETURN g.geneSymbol
+
+  Correction iters:     0
+
+Q [2a0bbeffe4ea]: True or False Question: regulation of gene expression, epigenetic and carbohydrate transmembrane transport are biological processes commonly involving the gene SLC50A1
+  Expected: True
+  Got:      False
+  Thinking: False.
+  Cypher (1st attempt): MATCH (g:Gene {geneSymbol: 'SLC50A1'})-[:GENEPARTICIPATESINBIOLOGICALPROCESS]->(bp:BiologicalProcess)
+WHERE bp.commonName IN ['regulation of gene expression', 'epigenetic', 'carbohydrate transmembrane transport']
+RETURN COUNT(bp) = 3 AS result
+
+  Correction iters:     0
+
+Q [24cbc8570e50]: True or False Question: RUNX1 regulates genes involved in megakaryocyte differentiation and platelet function and Chromatin organization are pathways which commonly contain the gene SETD1A
+  Expected: True
+  Got:      False
+  Thinking: False.
+  Cypher (1st attempt): MATCH (g:Gene {geneSymbol: 'RUNX1'})-[:GENEREGULATESGENE]->(g2:Gene),
+      (g2)-[:GENEINPATHWAY]->(p:Pathway {commonName: 'megakaryocyte differentiation'}),
+      (g2)-[:GENEINPATHWAY]->(p2:Pathway {commonName: 'platelet function'}),
+      (g2)-[:GENEINPATHWAY]->(p3:Pathway {commonName: 'Chromatin organization'}),
+      (g2) WHERE g2.geneSymbol = 'SETD1A'
+RETURN COUNT(g2) > 0 AS result
+
+  Correction iters:     0
+
+Q [7f6182c3b6f1]: True or False Question: PRKDC and APP are genes which commonly interact with the gene TOP1
+  Expected: True
+  Got:      False
+  Thinking: False. There is no indication that PRKDC and APP commonly interact with the gene TOP1.
+  Cypher (1st attempt): MATCH (g1:Gene {geneSymbol: 'PRKDC'})-[:GENEINTERACTSWITHGENE]->(g2:Gene {geneSymbol: 'TOP1'}),
+      (g3:Gene {geneSymbol: 'APP'})-[:GENEINTERACTSWITHGENE]->(g2)
+RETURN g1, g2, g3
+
+  Correction iters:     0
+
+Q [cc9001b7294f]: True or False Question: SETDB1 and TUBB4B are genes which commonly interact with the gene PSME1
+  Expected: True
+  Got:      False
+  Thinking: False.
+  Cypher (1st attempt): MATCH (g1:Gene {geneSymbol: 'SETDB1'})-[:GENEINTERACTSWITHGENE]->(g2:Gene {geneSymbol: 'PSME1'}),
+      (g3:Gene {geneSymbol: 'TUBB4B'})-[:GENEINTERACTSWITHGENE]->(g2)
+RETURN g1, g2, g3
+
+  Correction iters:     0
+
+Q [92db1454a6aa]: True or False Question: KASH5 and MED4 are genes which commonly interact with the gene FTCD
+  Expected: True
+  Got:      False
+  Thinking: False.
+  Cypher (1st attempt): MATCH (g1:Gene {geneSymbol: 'KASH5'})-[:GENEINTERACTSWITHGENE]->(g2:Gene {geneSymbol: 'FTCD'}),
+      (g3:Gene {geneSymbol: 'MED4'})-[:GENEINTERACTSWITHGENE]->(g2)
+RETURN g1, g2, g3
+
+  Correction iters:     0
+
+Q [ef68976d53f4]: True or False Question: extracellular matrix and vacuolar lumen are cellular components commonly linked to the gene GPC6
+  Expected: True
+  Got:      False
+  Thinking: False.
+  Correction iters:     0
+
+Q [42e1da184721]: True or False Question: Familial Alzheimer Disease (FAD) and Alzheimer Disease, Early Onset are diseases commonly associated with the gene PLAU
+  Expected: True
+  Got:      False
+  Thinking: False.
+  Cypher (1st attempt): MATCH (g:Gene {geneSymbol: 'PLAU'})-[:GENEASSOCIATESWITHDISEASE]->(d:Disease)
+WHERE d.commonName IN ['Familial Alzheimer Disease', 'Alzheimer Disease, Early Onset']
+RETURN COUNT(d) = 2 AS result
+
+  Correction iters:     0
+
+Q [c05946a477e8]: True or False Question: mammalian vulva and lung are body parts/anatomy which commonly over-express the gene MPZL2
+  Expected: True
+  Got:      False
+  Thinking: False. The mammalian lung is associated with the gene MPZL2, but the vulva is not mentioned.
+  Cypher (1st attempt): MATCH (b:BodyPart)-[:BODYPARTOVEREXPRESSESGENE]->(g:Gene {geneSymbol: 'MPZL2'})
+WHERE b.commonName IN ['vulva', 'lung']
+RETURN b.commonName
+
+  Correction iters:     0
+
+Q [4b5fd801f809]: True or False Question: Quetiapine and Memantine are drugs which commonly treat Alzheimer's Disease
+  Expected: True
+  Got:      False
+  Thinking: False.
+  Correction iters:     0
+
+Q [9eaf49d2282f]: True or False Question: Ziprasidone and Naltrexone are drugs which commonly affect Alzheimer's Disease
+  Expected: True
+  Got:      False
+  Thinking: False.
+  Correction iters:     0
+
+Q [53bc95bbadb6]: True or False Question: lymphoid tissue and central nervous system are common sites of localization of Familial Alzheimer Disease (FAD)
+  Expected: True
+  Got:      False
+  Thinking: False.
+  Cypher (1st attempt): MATCH (d:Disease {commonName: 'Familial Alzheimer Disease'})-[:DISEASELOCALIZESTOANATOMY]->(b:BodyPart)
+WHERE b.commonName IN ['lymphoid tissue', 'central nervous system']
+RETURN COUNT(b) = 2 AS result
+
+  Correction iters:     0
+
+Q [d4671b74659a]: True or False Question: MAP2K6 and P2RX7 are genes which commonly participate in the biological process positive regulation of fatty acid transport
+  Expected: True
+  Got:      False
+  Thinking: False. MAP2K6 and P2RX7 do not commonly participate in the biological process of positive regulation of fatty acid transport.
+  Cypher (1st attempt): MATCH (g1:Gene {geneSymbol: 'MAP2K6'})-[:GENEPARTICIPATESINBIOLOGICALPROCESS]->(bp:BiologicalProcess {commonName: 'positive regulation of fatty acid transport'}),
+      (g2:Gene {geneSymbol: 'P2RX7'})-[:GENEPARTICIPATESINBIOLOGICALPROCESS]->(bp)
+RETURN g1, g2, bp
+
+  Correction iters:     0
+
+
+==== Overall Summary (record-weighted) ====
+
+Type: mcq | Mode: graphcypher | Model: gpt-4o-mini
+  Total: 917  |  Correct: 596  |  Accuracy: 0.650 [95% CI 0.619-0.680]
+  - first attempt success rate: 0.744 (n=917)
+  - avg correction iterations: 0.000 (n=917)
+  - latency ms: mean=4181 p50=3691 p95=8282 (n=917)
+  - tokens: avg in=1288 out=125 | total in=1288 out=125
+  - records with error: 0.135 (n=917)
+
+Type: open_ended | Mode: graphcypher | Model: gpt-4o-mini
+  Total: 958  |  Correct: 448  |  Accuracy: 0.468 [95% CI 0.436-0.499]
+  Avg set metrics: exact_match=0.468  precision=0.568  recall=0.681  f1=0.565  jaccard=0.538  overlap=0.710
+  - first attempt success rate: 0.861 (n=958)
+  - avg correction iterations: 0.000 (n=958)
+  - latency ms: mean=32005 p50=6470 p95=146765 (n=958)
+  - records with error: 0.088 (n=958)
+
+Type: tf | Mode: graphcypher | Model: gpt-4o-mini
+  Total: 1640  |  Correct: 1238  |  Accuracy: 0.755 [95% CI 0.733-0.775]
+  - first attempt success rate: 0.890 (n=1640)
+  - avg correction iterations: 0.000 (n=1640)
+  - latency ms: mean=3913 p50=3362 p95=6838 (n=1640)
+  - tokens: avg in=1087 out=116 | total in=586760 out=62731
+  - records with error: 0.014 (n=1640)

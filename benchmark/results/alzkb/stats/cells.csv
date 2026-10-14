@@ -1,0 +1,79 @@
+question_set,system,backbone,metric,n,value_pct,ci95_lo_pct,ci95_hi_pct,ci_method,provenance
+True_or_False_1hop.json,LLM Only,GPT-4o-mini,accuracy,560,68.9286,64.9775,72.6217,wilson,measured
+True_or_False_1hop.json,LLM Only,GPT-5-mini,accuracy,560,69.8214,65.895,73.4778,wilson,measured
+True_or_False_1hop.json,LLM Only,Qwen3.8-27B,accuracy,560,67.1429,63.1473,70.9048,wilson,measured
+True_or_False_1hop.json,GraphCypherQAChain,GPT-4o-mini,accuracy,560,80.5357,77.053,83.6023,wilson,measured
+True_or_False_1hop.json,GraphCypherQAChain,GPT-5-mini,accuracy,560,86.7857,83.7286,89.3416,wilson,measured
+True_or_False_1hop.json,GraphCypherQAChain,Qwen3.8-27B,accuracy,560,78.75,75.1718,81.9364,wilson,measured
+True_or_False_1hop.json,ESCARGOT (Cypher-only ablation),GPT-4o-mini,accuracy,,60.5357,,,,external
+True_or_False_1hop.json,ESCARGOT (published),GPT-4o-mini,accuracy,,90.9,,,,external
+True_or_False_1hop.json,NEXA Direct,GPT-4o-mini,accuracy,560,95.5357,93.4928,96.9581,wilson,measured
+True_or_False_1hop.json,NEXA Direct,GPT-5-mini,accuracy,560,92.5,90.0171,94.4037,wilson,measured
+True_or_False_1hop.json,NEXA Direct,Qwen3.8-27B,accuracy,560,96.25,94.3354,97.5344,wilson,measured
+True_or_False_1hop.json,NEXA Flex,GPT-5-mini,accuracy,560,98.3929,96.9741,99.1522,wilson,measured
+True_or_False_1hop.json,NEXA Flex,Qwen3.8-27B,accuracy,560,98.5714,97.2066,99.2744,wilson,measured
+True_or_False_2hop.json,LLM Only,GPT-4o-mini,accuracy,540,61.2963,57.122,65.311,wilson,measured
+True_or_False_2hop.json,LLM Only,GPT-5-mini,accuracy,540,60.0,55.8113,64.0474,wilson,measured
+True_or_False_2hop.json,LLM Only,Qwen3.8-27B,accuracy,540,60.1852,55.9984,64.2281,wilson,measured
+True_or_False_2hop.json,GraphCypherQAChain,GPT-4o-mini,accuracy,540,65.0,60.8839,68.9042,wilson,measured
+True_or_False_2hop.json,GraphCypherQAChain,GPT-5-mini,accuracy,540,70.5556,66.5768,74.2439,wilson,measured
+True_or_False_2hop.json,GraphCypherQAChain,Qwen3.8-27B,accuracy,540,77.037,73.3059,80.3862,wilson,measured
+True_or_False_2hop.json,ESCARGOT (Cypher-only ablation),GPT-4o-mini,accuracy,,52.963,,,,external
+True_or_False_2hop.json,ESCARGOT (published),GPT-4o-mini,accuracy,,74.1,,,,external
+True_or_False_2hop.json,NEXA Direct,GPT-4o-mini,accuracy,540,92.4074,89.8616,94.3541,wilson,measured
+True_or_False_2hop.json,NEXA Direct,GPT-5-mini,accuracy,540,73.5185,69.6402,77.0645,wilson,measured
+True_or_False_2hop.json,NEXA Direct,Qwen3.8-27B,accuracy,540,83.7037,80.3524,86.5789,wilson,measured
+True_or_False_2hop.json,NEXA Flex,GPT-5-mini,accuracy,540,72.4074,68.4891,76.0092,wilson,measured
+True_or_False_2hop.json,NEXA Flex,Qwen3.8-27B,accuracy,540,74.2593,70.4093,77.7665,wilson,measured
+MCQ_1hop.json,LLM Only,GPT-4o-mini,accuracy,498,55.2209,50.83,59.5318,wilson,measured
+MCQ_1hop.json,LLM Only,GPT-5-mini,accuracy,498,69.6787,65.5037,73.5525,wilson,measured
+MCQ_1hop.json,LLM Only,Qwen3.8-27B,accuracy,498,60.241,55.88,64.4452,wilson,measured
+MCQ_1hop.json,GraphCypherQAChain,GPT-4o-mini,accuracy,498,64.6586,60.3625,68.7303,wilson,measured
+MCQ_1hop.json,GraphCypherQAChain,GPT-5-mini,accuracy,498,70.2811,66.1243,74.1275,wilson,measured
+MCQ_1hop.json,GraphCypherQAChain,Qwen3.8-27B,accuracy,498,86.747,83.4858,89.4456,wilson,measured
+MCQ_1hop.json,ESCARGOT (Cypher-only ablation),GPT-4o-mini,accuracy,,51.1066,,,,external
+MCQ_1hop.json,ESCARGOT (published),GPT-4o-mini,accuracy,,93.4,,,,external
+MCQ_1hop.json,NEXA Direct,GPT-4o-mini,accuracy,498,90.9639,88.1223,93.1782,wilson,measured
+MCQ_1hop.json,NEXA Direct,GPT-5-mini,accuracy,498,92.9719,90.3824,94.9035,wilson,measured
+MCQ_1hop.json,NEXA Direct,Qwen3.8-27B,accuracy,498,99.5984,98.5476,99.8898,wilson,measured
+MCQ_1hop.json,NEXA Flex,GPT-5-mini,accuracy,498,99.5984,98.5476,99.8898,wilson,measured
+MCQ_1hop.json,NEXA Flex,Qwen3.8-27B,accuracy,498,99.3976,98.244,99.7949,wilson,measured
+MCQ_2hop.json,LLM Only,GPT-4o-mini,accuracy,419,61.3365,56.5907,65.8764,wilson,measured
+MCQ_2hop.json,LLM Only,GPT-5-mini,accuracy,419,73.5084,69.0832,77.5064,wilson,measured
+MCQ_2hop.json,LLM Only,Qwen3.8-27B,accuracy,419,64.4391,59.7433,68.8726,wilson,measured
+MCQ_2hop.json,GraphCypherQAChain,GPT-4o-mini,accuracy,419,65.3938,60.7175,69.7904,wilson,measured
+MCQ_2hop.json,GraphCypherQAChain,GPT-5-mini,accuracy,419,76.8496,72.5779,80.6335,wilson,measured
+MCQ_2hop.json,GraphCypherQAChain,Qwen3.8-27B,accuracy,419,89.4988,86.1959,92.084,wilson,measured
+MCQ_2hop.json,ESCARGOT (Cypher-only ablation),GPT-4o-mini,accuracy,,5.0119,,,,external
+MCQ_2hop.json,ESCARGOT (published),GPT-4o-mini,accuracy,,89.5,,,,external
+MCQ_2hop.json,NEXA Direct,GPT-4o-mini,accuracy,419,94.2721,91.6187,96.121,wilson,measured
+MCQ_2hop.json,NEXA Direct,GPT-5-mini,accuracy,419,99.284,97.9163,99.7562,wilson,measured
+MCQ_2hop.json,NEXA Direct,Qwen3.8-27B,accuracy,419,99.0453,97.5714,99.6282,wilson,measured
+MCQ_2hop.json,NEXA Flex,GPT-5-mini,accuracy,419,98.0907,96.2781,99.0294,wilson,measured
+MCQ_2hop.json,NEXA Flex,Qwen3.8-27B,accuracy,419,100.0,99.0915,100.0,wilson,measured
+OpenEnded_1hop.json,LLM Only,GPT-4o-mini,overlap,508,24.7817,21.858,27.9586,bca_bootstrap_mean,measured
+OpenEnded_1hop.json,LLM Only,GPT-5-mini,overlap,508,24.5367,21.5859,27.6724,bca_bootstrap_mean,measured
+OpenEnded_1hop.json,LLM Only,Qwen3.8-27B,overlap,508,19.0373,16.4443,21.9548,bca_bootstrap_mean,measured
+OpenEnded_1hop.json,GraphCypherQAChain,GPT-4o-mini,overlap,508,84.9467,81.6375,87.7993,bca_bootstrap_mean,measured
+OpenEnded_1hop.json,GraphCypherQAChain,GPT-5-mini,overlap,508,76.6268,72.8224,80.1344,bca_bootstrap_mean,measured
+OpenEnded_1hop.json,GraphCypherQAChain,Qwen3.8-27B,overlap,508,84.1255,80.7959,87.0325,bca_bootstrap_mean,measured
+OpenEnded_1hop.json,ESCARGOT (Cypher-only ablation),GPT-4o-mini,overlap,,86.5555,,,,external
+OpenEnded_1hop.json,ESCARGOT (published),GPT-4o-mini,overlap,,88.4,,,,external
+OpenEnded_1hop.json,NEXA Direct,GPT-4o-mini,overlap,508,97.1183,95.3616,98.308,bca_bootstrap_mean,measured
+OpenEnded_1hop.json,NEXA Direct,GPT-5-mini,overlap,508,97.1611,95.4343,98.3281,bca_bootstrap_mean,measured
+OpenEnded_1hop.json,NEXA Direct,Qwen3.8-27B,overlap,508,92.2797,89.6899,94.3053,bca_bootstrap_mean,measured
+OpenEnded_1hop.json,NEXA Flex,GPT-5-mini,overlap,508,99.0013,97.8122,99.5956,bca_bootstrap_mean,measured
+OpenEnded_1hop.json,NEXA Flex,Qwen3.8-27B,overlap,508,99.6688,98.7577,99.9201,bca_bootstrap_mean,measured
+OpenEnded_2hop.json,LLM Only,GPT-4o-mini,overlap,450,19.0679,16.3798,22.0594,bca_bootstrap_mean,measured
+OpenEnded_2hop.json,LLM Only,GPT-5-mini,overlap,450,23.0945,20.1246,26.3546,bca_bootstrap_mean,measured
+OpenEnded_2hop.json,LLM Only,Qwen3.8-27B,overlap,450,18.9585,16.3723,21.8537,bca_bootstrap_mean,measured
+OpenEnded_2hop.json,GraphCypherQAChain,GPT-4o-mini,overlap,450,55.156,50.65,59.5891,bca_bootstrap_mean,measured
+OpenEnded_2hop.json,GraphCypherQAChain,GPT-5-mini,overlap,450,75.646,71.5867,79.3541,bca_bootstrap_mean,measured
+OpenEnded_2hop.json,GraphCypherQAChain,Qwen3.8-27B,overlap,450,83.2152,79.7283,86.307,bca_bootstrap_mean,measured
+OpenEnded_2hop.json,ESCARGOT (Cypher-only ablation),GPT-4o-mini,overlap,,82.9432,,,,external
+OpenEnded_2hop.json,ESCARGOT (published),GPT-4o-mini,overlap,,85.8,,,,external
+OpenEnded_2hop.json,NEXA Direct,GPT-4o-mini,overlap,450,89.0843,85.9923,91.6855,bca_bootstrap_mean,measured
+OpenEnded_2hop.json,NEXA Direct,GPT-5-mini,overlap,450,97.4109,95.6253,98.6236,bca_bootstrap_mean,measured
+OpenEnded_2hop.json,NEXA Direct,Qwen3.8-27B,overlap,450,95.592,93.4115,97.2,bca_bootstrap_mean,measured
+OpenEnded_2hop.json,NEXA Flex,GPT-5-mini,overlap,450,99.5434,98.548,99.8793,bca_bootstrap_mean,measured
+OpenEnded_2hop.json,NEXA Flex,Qwen3.8-27B,overlap,450,99.6422,98.6407,99.9702,bca_bootstrap_mean,measured

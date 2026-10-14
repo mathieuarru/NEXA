@@ -1,0 +1,13 @@
+# Send only the inputs of Dockerfile.primekg.
+**
+!Dockerfile.primekg
+!docker/
+!docker/neo4j_read_only.sh
+!docker/neo4j_healthcheck.sh
+!docker/fetch_verified.py
+!primekg/
+!primekg/data/
+!primekg/data/kg.csv
+!primekg/data/.gitkeep
+!primekg/prepare_primekg.py
+!primekg/load_primekg.sh

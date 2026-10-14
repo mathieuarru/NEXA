@@ -1,0 +1,819 @@
+{
+  "generated_at": "2026-10-13T23:23:45.872684",
+  "files": [
+    "benchmark/results/alzkb/nexa-flex_qwen3.8-27b/MCQ_1hop__mcq__qwen3.8-27b-q8_0__Force__flex__Alzkb_121__run1.jsonl",
+    "benchmark/results/alzkb/nexa-flex_qwen3.8-27b/MCQ_2hop__mcq__qwen3.8-27b-q8_0__Force__flex__Alzkb_121__run1.jsonl",
+    "benchmark/results/alzkb/nexa-flex_qwen3.8-27b/OpenEnded_1hop__open_ended__qwen3.8-27b-q8_0__Force__flex__Alzkb_121__run1.jsonl",
+    "benchmark/results/alzkb/nexa-flex_qwen3.8-27b/OpenEnded_2hop__open_ended__qwen3.8-27b-q8_0__Force__flex__Alzkb_121__run1.jsonl",
+    "benchmark/results/alzkb/nexa-flex_qwen3.8-27b/True_or_False_1hop__tf__qwen3.8-27b-q8_0__Force__flex__Alzkb_121__run1.jsonl",
+    "benchmark/results/alzkb/nexa-flex_qwen3.8-27b/True_or_False_2hop__tf__qwen3.8-27b-q8_0__Force__flex__Alzkb_121__run1.jsonl",
+    "benchmark/results/alzkb/nexa-flex_qwen3.8-27b/True_or_False_2hop_atleastone__tf__qwen3.8-27b-q8_0__Force__flex__Alzkb_121__run1.jsonl"
+  ],
+  "groups": [
+    {
+      "type": "mcq",
+      "agent_mode": "flex",
+      "model": "qwen3.8:27b-q8_0",
+      "file": "MCQ_1hop.json",
+      "count": 498,
+      "correct": 495,
+      "accuracy": 0.9939759036144579,
+      "accuracy_ci95": [
+        0.9824398017707013,
+        0.9979492293498754
+      ],
+      "telemetry": {
+        "first_attempt_success_rate": {
+          "value": 0.7108433734939759,
+          "n": 498
+        },
+        "avg_correction_iterations": {
+          "value": 0.3152610441767068,
+          "n": 498
+        },
+        "latency_ms": {
+          "mean": 68291.4437751004,
+          "p50": 50053.0,
+          "p95": 71549.7,
+          "n": 498
+        },
+        "tokens": {
+          "avg_input": 23777.40562248996,
+          "avg_output": 736.781124497992,
+          "total_input": 11841148.0,
+          "total_output": 366917.0,
+          "n": 498
+        },
+        "avg_tool_calls": {
+          "value": 4.51004016064257,
+          "n": 498
+        },
+        "avg_execute_cypher": {
+          "value": 1.3092369477911647,
+          "n": 498
+        },
+        "no_cypher_rate": {
+          "value": 0.006024096385542169,
+          "n": 498
+        },
+        "recursion_hit_rate": {
+          "value": 0.0,
+          "n": 498
+        },
+        "truncated_cypher_rate": {
+          "value": 0.0,
+          "n": 498
+        },
+        "cited_incomplete_rate": {
+          "value": 0.0,
+          "n": 498
+        },
+        "answer_rescued_rate": {
+          "value": 0.37349397590361444,
+          "n": 498
+        },
+        "answer_rescued_accuracy": {
+          "value": 1.0,
+          "n": 186
+        },
+        "error_rate": {
+          "value": 0.006024096385542169,
+          "n": 498
+        }
+      }
+    },
+    {
+      "type": "mcq",
+      "agent_mode": "flex",
+      "model": "qwen3.8:27b-q8_0",
+      "file": "MCQ_2hop.json",
+      "count": 419,
+      "correct": 419,
+      "accuracy": 1.0,
+      "accuracy_ci95": [
+        0.9909148011926924,
+        0.9999999999999999
+      ],
+      "telemetry": {
+        "first_attempt_success_rate": {
+          "value": 0.6825775656324582,
+          "n": 419
+        },
+        "avg_correction_iterations": {
+          "value": 0.3747016706443914,
+          "n": 419
+        },
+        "latency_ms": {
+          "mean": 76845.85202863962,
+          "p50": 65652.0,
+          "p95": 100767.49999999999,
+          "n": 419
+        },
+        "tokens": {
+          "avg_input": 28309.887828162293,
+          "avg_output": 838.2768496420048,
+          "total_input": 11861843.0,
+          "total_output": 351238.0,
+          "n": 419
+        },
+        "avg_tool_calls": {
+          "value": 5.75417661097852,
+          "n": 419
+        },
+        "avg_execute_cypher": {
+          "value": 1.3747016706443913,
+          "n": 419
+        },
+        "no_cypher_rate": {
+          "value": 0.0,
+          "n": 419
+        },
+        "recursion_hit_rate": {
+          "value": 0.0,
+          "n": 419
+        },
+        "truncated_cypher_rate": {
+          "value": 0.0,
+          "n": 419
+        },
+        "cited_incomplete_rate": {
+          "value": 0.0,
+          "n": 419
+        },
+        "answer_rescued_rate": {
+          "value": 0.3317422434367542,
+          "n": 419
+        },
+        "answer_rescued_accuracy": {
+          "value": 1.0,
+          "n": 139
+        },
+        "error_rate": {
+          "value": 0.0,
+          "n": 419
+        }
+      }
+    },
+    {
+      "type": "open_ended",
+      "agent_mode": "flex",
+      "model": "qwen3.8:27b-q8_0",
+      "file": "OpenEnded_1hop.json",
+      "count": 508,
+      "correct": 467,
+      "accuracy": 0.9192913385826772,
+      "accuracy_ci95": [
+        0.8923374725008995,
+        0.9399512668278305
+      ],
+      "avg_metrics": {
+        "exact_match": 0.9192913385826772,
+        "precision": 0.9950773220741234,
+        "recall": 0.9951058402521402,
+        "f1": 0.993876408229132,
+        "jaccard": 0.9930268256847339,
+        "overlap": 0.9966879162044026
+      },
+      "by_expected_size": {
+        "1": {
+          "count": 124,
+          "accuracy": 1.0,
+          "f1": 1.0
+        },
+        "2-5": {
+          "count": 145,
+          "accuracy": 0.993103448275862,
+          "f1": 0.9952254641909816
+        },
+        "6-20": {
+          "count": 127,
+          "accuracy": 0.9921259842519685,
+          "f1": 0.9979278905926233
+        },
+        ">20": {
+          "count": 112,
+          "accuracy": 0.6517857142857143,
+          "f1": 0.9807560800664608
+        }
+      },
+      "telemetry": {
+        "first_attempt_success_rate": {
+          "value": 0.984251968503937,
+          "n": 508
+        },
+        "avg_correction_iterations": {
+          "value": 0.015748031496062992,
+          "n": 508
+        },
+        "latency_ms": {
+          "mean": 206957.47244094487,
+          "p50": 49112.5,
+          "p95": 1441970.799999998,
+          "n": 508
+        },
+        "tokens": {
+          "avg_input": 40917.13188976378,
+          "avg_output": 2287.3759842519685,
+          "total_input": 20785903.0,
+          "total_output": 1161987.0,
+          "n": 508
+        },
+        "avg_tool_calls": {
+          "value": 5.718503937007874,
+          "n": 508
+        },
+        "avg_execute_cypher": {
+          "value": 1.015748031496063,
+          "n": 508
+        },
+        "no_cypher_rate": {
+          "value": 0.0,
+          "n": 508
+        },
+        "recursion_hit_rate": {
+          "value": 0.0,
+          "n": 508
+        },
+        "truncated_cypher_rate": {
+          "value": 0.0,
+          "n": 508
+        },
+        "cited_incomplete_rate": {
+          "value": 0.0,
+          "n": 508
+        },
+        "answer_rescued_rate": {
+          "value": 0.16338582677165353,
+          "n": 508
+        },
+        "answer_rescued_accuracy": {
+          "value": 0.963855421686747,
+          "n": 83
+        },
+        "error_rate": {
+          "value": 0.001968503937007874,
+          "n": 508
+        }
+      }
+    },
+    {
+      "type": "open_ended",
+      "agent_mode": "flex",
+      "model": "qwen3.8:27b-q8_0",
+      "file": "OpenEnded_2hop.json",
+      "count": 450,
+      "correct": 395,
+      "accuracy": 0.8777777777777778,
+      "accuracy_ci95": [
+        0.8442758344175499,
+        0.9048842249511814
+      ],
+      "avg_metrics": {
+        "exact_match": 0.8777777777777778,
+        "precision": 0.9710573640785433,
+        "recall": 0.9962693317332257,
+        "f1": 0.975872891291579,
+        "jaccard": 0.9702997085614598,
+        "overlap": 0.9964221233342802
+      },
+      "by_expected_size": {
+        "1": {
+          "count": 69,
+          "accuracy": 0.9855072463768116,
+          "f1": 0.9856162144491665
+        },
+        "2-5": {
+          "count": 104,
+          "accuracy": 0.9134615384615384,
+          "f1": 0.9476745902259107
+        },
+        "6-20": {
+          "count": 121,
+          "accuracy": 0.9421487603305785,
+          "f1": 0.9787019418948465
+        },
+        ">20": {
+          "count": 156,
+          "accuracy": 0.7564102564102564,
+          "f1": 0.9881678841759416
+        }
+      },
+      "telemetry": {
+        "first_attempt_success_rate": {
+          "value": 0.8711111111111111,
+          "n": 450
+        },
+        "avg_correction_iterations": {
+          "value": 0.16444444444444445,
+          "n": 450
+        },
+        "latency_ms": {
+          "mean": 129068.60888888889,
+          "p50": 75194.5,
+          "p95": 406137.2499999999,
+          "n": 450
+        },
+        "tokens": {
+          "avg_input": 31143.086666666666,
+          "avg_output": 1423.3333333333333,
+          "total_input": 14014389.0,
+          "total_output": 640500.0,
+          "n": 450
+        },
+        "avg_tool_calls": {
+          "value": 6.713333333333333,
+          "n": 450
+        },
+        "avg_execute_cypher": {
+          "value": 1.1644444444444444,
+          "n": 450
+        },
+        "no_cypher_rate": {
+          "value": 0.0,
+          "n": 450
+        },
+        "recursion_hit_rate": {
+          "value": 0.0,
+          "n": 450
+        },
+        "truncated_cypher_rate": {
+          "value": 0.0,
+          "n": 450
+        },
+        "cited_incomplete_rate": {
+          "value": 0.0,
+          "n": 450
+        },
+        "answer_rescued_rate": {
+          "value": 0.10444444444444445,
+          "n": 450
+        },
+        "answer_rescued_accuracy": {
+          "value": 0.9361702127659575,
+          "n": 47
+        },
+        "error_rate": {
+          "value": 0.0,
+          "n": 450
+        }
+      }
+    },
+    {
+      "type": "tf",
+      "agent_mode": "flex",
+      "model": "qwen3.8:27b-q8_0",
+      "file": "True_or_False_1hop.json",
+      "count": 560,
+      "correct": 552,
+      "accuracy": 0.9857142857142858,
+      "accuracy_ci95": [
+        0.9720660661996576,
+        0.9927439088004133
+      ],
+      "telemetry": {
+        "first_attempt_success_rate": {
+          "value": 0.6178571428571429,
+          "n": 560
+        },
+        "avg_correction_iterations": {
+          "value": 0.6214285714285714,
+          "n": 560
+        },
+        "latency_ms": {
+          "mean": 62268.233928571426,
+          "p50": 57449.0,
+          "p95": 91522.19999999998,
+          "n": 560
+        },
+        "tokens": {
+          "avg_input": 24533.432142857142,
+          "avg_output": 649.3607142857143,
+          "total_input": 13738722.0,
+          "total_output": 363642.0,
+          "n": 560
+        },
+        "avg_tool_calls": {
+          "value": 5.864285714285714,
+          "n": 560
+        },
+        "avg_execute_cypher": {
+          "value": 1.6214285714285714,
+          "n": 560
+        },
+        "no_cypher_rate": {
+          "value": 0.0,
+          "n": 560
+        },
+        "recursion_hit_rate": {
+          "value": 0.0,
+          "n": 560
+        },
+        "truncated_cypher_rate": {
+          "value": 0.0,
+          "n": 560
+        },
+        "cited_incomplete_rate": {
+          "value": 0.0,
+          "n": 560
+        },
+        "answer_rescued_rate": {
+          "value": 0.0,
+          "n": 560
+        },
+        "error_rate": {
+          "value": 0.0,
+          "n": 560
+        }
+      }
+    },
+    {
+      "type": "tf",
+      "agent_mode": "flex",
+      "model": "qwen3.8:27b-q8_0",
+      "file": "True_or_False_2hop.json",
+      "count": 540,
+      "correct": 401,
+      "accuracy": 0.7425925925925926,
+      "accuracy_ci95": [
+        0.7040933970029265,
+        0.7776645266277776
+      ],
+      "telemetry": {
+        "first_attempt_success_rate": {
+          "value": 0.8574074074074074,
+          "n": 540
+        },
+        "avg_correction_iterations": {
+          "value": 0.17777777777777778,
+          "n": 540
+        },
+        "latency_ms": {
+          "mean": 63835.53888888889,
+          "p50": 61280.0,
+          "p95": 85554.09999999998,
+          "n": 540
+        },
+        "tokens": {
+          "avg_input": 23406.37962962963,
+          "avg_output": 673.3870370370371,
+          "total_input": 12639445.0,
+          "total_output": 363629.0,
+          "n": 540
+        },
+        "avg_tool_calls": {
+          "value": 5.972222222222222,
+          "n": 540
+        },
+        "avg_execute_cypher": {
+          "value": 1.1777777777777778,
+          "n": 540
+        },
+        "no_cypher_rate": {
+          "value": 0.0,
+          "n": 540
+        },
+        "recursion_hit_rate": {
+          "value": 0.0,
+          "n": 540
+        },
+        "truncated_cypher_rate": {
+          "value": 0.0,
+          "n": 540
+        },
+        "cited_incomplete_rate": {
+          "value": 0.0,
+          "n": 540
+        },
+        "answer_rescued_rate": {
+          "value": 0.001851851851851852,
+          "n": 540
+        },
+        "answer_rescued_accuracy": {
+          "value": 1.0,
+          "n": 1
+        },
+        "error_rate": {
+          "value": 0.0,
+          "n": 540
+        }
+      }
+    },
+    {
+      "type": "tf",
+      "agent_mode": "flex",
+      "model": "qwen3.8:27b-q8_0",
+      "file": "True_or_False_2hop_atleastone.json",
+      "count": 540,
+      "correct": 538,
+      "accuracy": 0.9962962962962963,
+      "accuracy_ci95": [
+        0.9865973518278706,
+        0.9989837438441047
+      ],
+      "telemetry": {
+        "first_attempt_success_rate": {
+          "value": 0.8629629629629629,
+          "n": 540
+        },
+        "avg_correction_iterations": {
+          "value": 0.17037037037037037,
+          "n": 540
+        },
+        "latency_ms": {
+          "mean": 67712.23333333334,
+          "p50": 66772.0,
+          "p95": 91304.7,
+          "n": 540
+        },
+        "tokens": {
+          "avg_input": 23768.248148148148,
+          "avg_output": 726.2833333333333,
+          "total_input": 12834854.0,
+          "total_output": 392193.0,
+          "n": 540
+        },
+        "avg_tool_calls": {
+          "value": 6.031481481481482,
+          "n": 540
+        },
+        "avg_execute_cypher": {
+          "value": 1.1703703703703703,
+          "n": 540
+        },
+        "no_cypher_rate": {
+          "value": 0.0,
+          "n": 540
+        },
+        "recursion_hit_rate": {
+          "value": 0.0,
+          "n": 540
+        },
+        "truncated_cypher_rate": {
+          "value": 0.0,
+          "n": 540
+        },
+        "cited_incomplete_rate": {
+          "value": 0.0,
+          "n": 540
+        },
+        "answer_rescued_rate": {
+          "value": 0.001851851851851852,
+          "n": 540
+        },
+        "answer_rescued_accuracy": {
+          "value": 1.0,
+          "n": 1
+        },
+        "error_rate": {
+          "value": 0.0,
+          "n": 540
+        }
+      }
+    }
+  ],
+  "overall": [
+    {
+      "type": "mcq",
+      "agent_mode": "flex",
+      "model": "qwen3.8:27b-q8_0",
+      "count": 917,
+      "correct": 914,
+      "accuracy": 0.9967284623773174,
+      "accuracy_ci95": [
+        0.9904255937243212,
+        0.9988867918151678
+      ],
+      "telemetry": {
+        "first_attempt_success_rate": {
+          "value": 0.697928026172301,
+          "n": 917
+        },
+        "avg_correction_iterations": {
+          "value": 0.34242093784078514,
+          "n": 917
+        },
+        "latency_ms": {
+          "mean": 72200.16466739368,
+          "p50": 56584.0,
+          "p95": 95754.99999999994,
+          "n": 917
+        },
+        "tokens": {
+          "avg_input": 25848.408942202834,
+          "avg_output": 783.1570338058888,
+          "total_input": 23702991.0,
+          "total_output": 718155.0,
+          "n": 917
+        },
+        "avg_tool_calls": {
+          "value": 5.078516902944384,
+          "n": 917
+        },
+        "avg_execute_cypher": {
+          "value": 1.3391494002181026,
+          "n": 917
+        },
+        "no_cypher_rate": {
+          "value": 0.003271537622682661,
+          "n": 917
+        },
+        "recursion_hit_rate": {
+          "value": 0.0,
+          "n": 917
+        },
+        "truncated_cypher_rate": {
+          "value": 0.0,
+          "n": 917
+        },
+        "cited_incomplete_rate": {
+          "value": 0.0,
+          "n": 917
+        },
+        "answer_rescued_rate": {
+          "value": 0.3544165757906216,
+          "n": 917
+        },
+        "answer_rescued_accuracy": {
+          "value": 1.0,
+          "n": 325
+        },
+        "error_rate": {
+          "value": 0.003271537622682661,
+          "n": 917
+        }
+      }
+    },
+    {
+      "type": "open_ended",
+      "agent_mode": "flex",
+      "model": "qwen3.8:27b-q8_0",
+      "count": 958,
+      "correct": 862,
+      "accuracy": 0.8997912317327766,
+      "accuracy_ci95": [
+        0.879150383528143,
+        0.9172385437130993
+      ],
+      "avg_metrics": {
+        "exact_match": 0.8997912317327766,
+        "precision": 0.983794460802713,
+        "recall": 0.9956523654781199,
+        "f1": 0.9854196414004276,
+        "jaccard": 0.9823512487479141,
+        "overlap": 0.9965630656912969
+      },
+      "by_expected_size": {
+        "1": {
+          "count": 193,
+          "accuracy": 0.9948186528497409,
+          "f1": 0.9948576103471113
+        },
+        "2-5": {
+          "count": 249,
+          "accuracy": 0.9598393574297188,
+          "f1": 0.9753648581975382
+        },
+        "6-20": {
+          "count": 248,
+          "accuracy": 0.967741935483871,
+          "f1": 0.9885474882037887
+        },
+        ">20": {
+          "count": 268,
+          "accuracy": 0.7126865671641791,
+          "f1": 0.9850704138018302
+        }
+      },
+      "telemetry": {
+        "first_attempt_success_rate": {
+          "value": 0.9311064718162839,
+          "n": 958
+        },
+        "avg_correction_iterations": {
+          "value": 0.08559498956158663,
+          "n": 958
+        },
+        "latency_ms": {
+          "mean": 170370.84551148224,
+          "p50": 63282.0,
+          "p95": 564918.3999999999,
+          "n": 958
+        },
+        "tokens": {
+          "avg_input": 36325.983298538624,
+          "avg_output": 1881.5104384133613,
+          "total_input": 34800292.0,
+          "total_output": 1802487.0,
+          "n": 958
+        },
+        "avg_tool_calls": {
+          "value": 6.18580375782881,
+          "n": 958
+        },
+        "avg_execute_cypher": {
+          "value": 1.0855949895615866,
+          "n": 958
+        },
+        "no_cypher_rate": {
+          "value": 0.0,
+          "n": 958
+        },
+        "recursion_hit_rate": {
+          "value": 0.0,
+          "n": 958
+        },
+        "truncated_cypher_rate": {
+          "value": 0.0,
+          "n": 958
+        },
+        "cited_incomplete_rate": {
+          "value": 0.0,
+          "n": 958
+        },
+        "answer_rescued_rate": {
+          "value": 0.13569937369519833,
+          "n": 958
+        },
+        "answer_rescued_accuracy": {
+          "value": 0.9538461538461539,
+          "n": 130
+        },
+        "error_rate": {
+          "value": 0.0010438413361169101,
+          "n": 958
+        }
+      }
+    },
+    {
+      "type": "tf",
+      "agent_mode": "flex",
+      "model": "qwen3.8:27b-q8_0",
+      "count": 1640,
+      "correct": 1491,
+      "accuracy": 0.9091463414634147,
+      "accuracy_ci95": [
+        0.8942637371310738,
+        0.922116624577743
+      ],
+      "telemetry": {
+        "first_attempt_success_rate": {
+          "value": 0.7774390243902439,
+          "n": 1640
+        },
+        "avg_correction_iterations": {
+          "value": 0.32682926829268294,
+          "n": 1640
+        },
+        "latency_ms": {
+          "mean": 64576.83414634146,
+          "p50": 62060.0,
+          "p95": 89630.09999999999,
+          "n": 1640
+        },
+        "tokens": {
+          "avg_input": 23910.378658536585,
+          "avg_output": 682.6,
+          "total_input": 39213021.0,
+          "total_output": 1119464.0,
+          "n": 1640
+        },
+        "avg_tool_calls": {
+          "value": 5.954878048780488,
+          "n": 1640
+        },
+        "avg_execute_cypher": {
+          "value": 1.326829268292683,
+          "n": 1640
+        },
+        "no_cypher_rate": {
+          "value": 0.0,
+          "n": 1640
+        },
+        "recursion_hit_rate": {
+          "value": 0.0,
+          "n": 1640
+        },
+        "truncated_cypher_rate": {
+          "value": 0.0,
+          "n": 1640
+        },
+        "cited_incomplete_rate": {
+          "value": 0.0,
+          "n": 1640
+        },
+        "answer_rescued_rate": {
+          "value": 0.0012195121951219512,
+          "n": 1640
+        },
+        "answer_rescued_accuracy": {
+          "value": 1.0,
+          "n": 2
+        },
+        "error_rate": {
+          "value": 0.0,
+          "n": 1640
+        }
+      }
+    }
+  ]
+}

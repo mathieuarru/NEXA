@@ -1,0 +1,461 @@
+{
+  "generated_at": "2026-10-13T23:23:44.502208",
+  "files": [
+    "benchmark/results/alzkb/nexa-direct_gpt-4o-mini/MCQ_1hop__mcq__gpt-4o-mini__Force__Alzkb_121__llm.jsonl",
+    "benchmark/results/alzkb/nexa-direct_gpt-4o-mini/MCQ_2hop__mcq__gpt-4o-mini__Force__Alzkb_121__llm.jsonl",
+    "benchmark/results/alzkb/nexa-direct_gpt-4o-mini/OpenEnded_1hop__open_ended__gpt-4o-mini__Force__Alzkb_121__llm.jsonl",
+    "benchmark/results/alzkb/nexa-direct_gpt-4o-mini/OpenEnded_2hop__open_ended__gpt-4o-mini__Force__Alzkb_121__llm.jsonl",
+    "benchmark/results/alzkb/nexa-direct_gpt-4o-mini/True_or_False_1hop__tf__gpt-4o-mini__Force__Alzkb_121__llm.jsonl",
+    "benchmark/results/alzkb/nexa-direct_gpt-4o-mini/True_or_False_2hop__tf__gpt-4o-mini__Force__Alzkb_121__llm.jsonl",
+    "benchmark/results/alzkb/nexa-direct_gpt-4o-mini/True_or_False_2hop_atleastone__tf__gpt-4o-mini__Force__Alzkb_121__llm__one_shot_fallback.jsonl"
+  ],
+  "groups": [
+    {
+      "type": "mcq",
+      "agent_mode": "direct",
+      "model": "gpt-4o-mini",
+      "file": "MCQ_1hop.json",
+      "count": 498,
+      "correct": 453,
+      "accuracy": 0.9096385542168675,
+      "accuracy_ci95": [
+        0.8812234118463824,
+        0.931782126156047
+      ],
+      "telemetry": {
+        "first_attempt_success_rate": {
+          "value": 0.9738430583501007,
+          "n": 497
+        },
+        "avg_correction_iterations": {
+          "value": 0.0482897384305835,
+          "n": 497
+        },
+        "latency_ms": {
+          "mean": 9740.769076305221,
+          "p50": 7917.5,
+          "p95": 21670.95,
+          "n": 498
+        },
+        "tokens": {
+          "avg_input": 3179.0,
+          "avg_output": 292.0,
+          "total_input": 3179.0,
+          "total_output": 292.0,
+          "n": 1
+        },
+        "error_rate": {
+          "value": 0.012048192771084338,
+          "n": 498
+        }
+      }
+    },
+    {
+      "type": "mcq",
+      "agent_mode": "direct",
+      "model": "gpt-4o-mini",
+      "file": "MCQ_2hop.json",
+      "count": 419,
+      "correct": 395,
+      "accuracy": 0.9427207637231504,
+      "accuracy_ci95": [
+        0.9161871457163178,
+        0.9612099694208873
+      ],
+      "telemetry": {
+        "first_attempt_success_rate": {
+          "value": 0.9618138424821002,
+          "n": 419
+        },
+        "avg_correction_iterations": {
+          "value": 0.06205250596658711,
+          "n": 419
+        },
+        "latency_ms": {
+          "mean": 14291.205250596659,
+          "p50": 8238.0,
+          "p95": 27165.89999999999,
+          "n": 419
+        },
+        "error_rate": {
+          "value": 0.03341288782816229,
+          "n": 419
+        }
+      }
+    },
+    {
+      "type": "open_ended",
+      "agent_mode": "direct",
+      "model": "gpt-4o-mini",
+      "file": "OpenEnded_1hop.json",
+      "count": 508,
+      "correct": 427,
+      "accuracy": 0.8405511811023622,
+      "accuracy_ci95": [
+        0.8061761757771484,
+        0.869814208748064
+      ],
+      "avg_metrics": {
+        "exact_match": 0.8405511811023622,
+        "precision": 0.9705635862030998,
+        "recall": 0.9569393066403296,
+        "f1": 0.9611291129854909,
+        "jaccard": 0.9559031213685445,
+        "overlap": 0.9711825353287281
+      },
+      "by_expected_size": {
+        "1": {
+          "count": 124,
+          "accuracy": 0.9838709677419355,
+          "f1": 0.9838709677419355
+        },
+        "2-5": {
+          "count": 145,
+          "accuracy": 0.9586206896551724,
+          "f1": 0.9814778325123152
+        },
+        "6-20": {
+          "count": 127,
+          "accuracy": 0.9606299212598425,
+          "f1": 0.9751781027371579
+        },
+        ">20": {
+          "count": 112,
+          "accuracy": 0.39285714285714285,
+          "f1": 0.8936757556671838
+        }
+      },
+      "telemetry": {
+        "first_attempt_success_rate": {
+          "value": 0.9783464566929134,
+          "n": 508
+        },
+        "avg_correction_iterations": {
+          "value": 0.04133858267716536,
+          "n": 508
+        },
+        "latency_ms": {
+          "mean": 31271.75,
+          "p50": 6254.5,
+          "p95": 268013.79999999993,
+          "n": 508
+        },
+        "error_rate": {
+          "value": 0.0,
+          "n": 508
+        }
+      }
+    },
+    {
+      "type": "open_ended",
+      "agent_mode": "direct",
+      "model": "gpt-4o-mini",
+      "file": "OpenEnded_2hop.json",
+      "count": 450,
+      "correct": 314,
+      "accuracy": 0.6977777777777778,
+      "accuracy_ci95": [
+        0.6538206079742146,
+        0.7383867172247096
+      ],
+      "avg_metrics": {
+        "exact_match": 0.6977777777777778,
+        "precision": 0.8668190007357662,
+        "recall": 0.8641413882423169,
+        "f1": 0.8506657725415653,
+        "jaccard": 0.8386020906654641,
+        "overlap": 0.890842739479119
+      },
+      "by_expected_size": {
+        "1": {
+          "count": 69,
+          "accuracy": 0.8695652173913043,
+          "f1": 0.8763618190904547
+        },
+        "2-5": {
+          "count": 104,
+          "accuracy": 0.9038461538461539,
+          "f1": 0.9455492207162677
+        },
+        "6-20": {
+          "count": 121,
+          "accuracy": 0.8760330578512396,
+          "f1": 0.9161139725642243
+        },
+        ">20": {
+          "count": 156,
+          "accuracy": 0.34615384615384615,
+          "f1": 0.7252802723826922
+        }
+      },
+      "telemetry": {
+        "first_attempt_success_rate": {
+          "value": 0.9488888888888889,
+          "n": 450
+        },
+        "avg_correction_iterations": {
+          "value": 0.08222222222222222,
+          "n": 450
+        },
+        "latency_ms": {
+          "mean": 39980.80888888889,
+          "p50": 10025.5,
+          "p95": 304995.4499999997,
+          "n": 450
+        },
+        "error_rate": {
+          "value": 0.0,
+          "n": 450
+        }
+      }
+    },
+    {
+      "type": "tf",
+      "agent_mode": "direct",
+      "model": "gpt-4o-mini",
+      "file": "True_or_False_1hop.json",
+      "count": 560,
+      "correct": 535,
+      "accuracy": 0.9553571428571429,
+      "accuracy_ci95": [
+        0.9349281061317626,
+        0.969581245430804
+      ],
+      "telemetry": {
+        "first_attempt_success_rate": {
+          "value": 0.4660714285714286,
+          "n": 560
+        },
+        "avg_correction_iterations": {
+          "value": 1.5375,
+          "n": 560
+        },
+        "latency_ms": {
+          "mean": 24387.0,
+          "p50": 19994.0,
+          "p95": 34097.549999999996,
+          "n": 560
+        },
+        "error_rate": {
+          "value": 0.0,
+          "n": 560
+        }
+      }
+    },
+    {
+      "type": "tf",
+      "agent_mode": "direct",
+      "model": "gpt-4o-mini",
+      "file": "True_or_False_2hop.json",
+      "count": 540,
+      "correct": 499,
+      "accuracy": 0.924074074074074,
+      "accuracy_ci95": [
+        0.8986156417892461,
+        0.9435413392140459
+      ],
+      "telemetry": {
+        "first_attempt_success_rate": {
+          "value": 0.5462962962962963,
+          "n": 540
+        },
+        "avg_correction_iterations": {
+          "value": 1.2481481481481482,
+          "n": 540
+        },
+        "latency_ms": {
+          "mean": 15467.077777777778,
+          "p50": 11116.0,
+          "p95": 32186.6,
+          "n": 540
+        },
+        "error_rate": {
+          "value": 0.0,
+          "n": 540
+        }
+      }
+    },
+    {
+      "type": "tf",
+      "agent_mode": "direct",
+      "model": "gpt-4o-mini",
+      "file": "True_or_False_2hop_atleastone.json",
+      "count": 540,
+      "correct": 517,
+      "accuracy": 0.9574074074074074,
+      "accuracy_ci95": [
+        0.9368994584044938,
+        0.9714532678304981
+      ],
+      "telemetry": {
+        "first_attempt_success_rate": {
+          "value": 0.6666666666666666,
+          "n": 540
+        },
+        "avg_correction_iterations": {
+          "value": 0.9351851851851852,
+          "n": 540
+        },
+        "latency_ms": {
+          "mean": 8964.440740740742,
+          "p50": 4078.5,
+          "p95": 20750.699999999997,
+          "n": 540
+        },
+        "tokens": {
+          "avg_input": 7286.081481481481,
+          "avg_output": 725.5555555555555,
+          "total_input": 3934484.0,
+          "total_output": 391800.0,
+          "n": 540
+        },
+        "error_rate": {
+          "value": 0.001851851851851852,
+          "n": 540
+        }
+      }
+    }
+  ],
+  "overall": [
+    {
+      "type": "mcq",
+      "agent_mode": "direct",
+      "model": "gpt-4o-mini",
+      "count": 917,
+      "correct": 848,
+      "accuracy": 0.9247546346782988,
+      "accuracy_ci95": [
+        0.9058528017759637,
+        0.9401124543549495
+      ],
+      "telemetry": {
+        "first_attempt_success_rate": {
+          "value": 0.9683406113537117,
+          "n": 916
+        },
+        "avg_correction_iterations": {
+          "value": 0.05458515283842795,
+          "n": 916
+        },
+        "latency_ms": {
+          "mean": 11819.976008724101,
+          "p50": 8035.0,
+          "p95": 24052.79999999999,
+          "n": 917
+        },
+        "tokens": {
+          "avg_input": 3179.0,
+          "avg_output": 292.0,
+          "total_input": 3179.0,
+          "total_output": 292.0,
+          "n": 1
+        },
+        "error_rate": {
+          "value": 0.021810250817884406,
+          "n": 917
+        }
+      }
+    },
+    {
+      "type": "open_ended",
+      "agent_mode": "direct",
+      "model": "gpt-4o-mini",
+      "count": 958,
+      "correct": 741,
+      "accuracy": 0.7734864300626305,
+      "accuracy_ci95": [
+        0.7459184098055543,
+        0.7988698380722666
+      ],
+      "avg_metrics": {
+        "exact_match": 0.7734864300626305,
+        "precision": 0.9218317871839975,
+        "recall": 0.9133494702320771,
+        "f1": 0.9092413225890749,
+        "jaccard": 0.9008034722908971,
+        "overlap": 0.9334446353993711
+      },
+      "by_expected_size": {
+        "1": {
+          "count": 193,
+          "accuracy": 0.9430051813471503,
+          "f1": 0.9454350544934786
+        },
+        "2-5": {
+          "count": 249,
+          "accuracy": 0.9357429718875502,
+          "f1": 0.9664715046938858
+        },
+        "6-20": {
+          "count": 248,
+          "accuracy": 0.9193548387096774,
+          "f1": 0.9463605230963315
+        },
+        ">20": {
+          "count": 268,
+          "accuracy": 0.3656716417910448,
+          "f1": 0.7956545042030768
+        }
+      },
+      "telemetry": {
+        "first_attempt_success_rate": {
+          "value": 0.964509394572025,
+          "n": 958
+        },
+        "avg_correction_iterations": {
+          "value": 0.060542797494780795,
+          "n": 958
+        },
+        "latency_ms": {
+          "mean": 35362.64405010438,
+          "p50": 7838.0,
+          "p95": 284344.75,
+          "n": 958
+        },
+        "error_rate": {
+          "value": 0.0,
+          "n": 958
+        }
+      }
+    },
+    {
+      "type": "tf",
+      "agent_mode": "direct",
+      "model": "gpt-4o-mini",
+      "count": 1640,
+      "correct": 1551,
+      "accuracy": 0.9457317073170731,
+      "accuracy_ci95": [
+        0.9336888811149534,
+        0.9556912148748303
+      ],
+      "telemetry": {
+        "first_attempt_success_rate": {
+          "value": 0.5585365853658537,
+          "n": 1640
+        },
+        "avg_correction_iterations": {
+          "value": 1.2439024390243902,
+          "n": 1640
+        },
+        "latency_ms": {
+          "mean": 16371.792682926829,
+          "p50": 8420.5,
+          "p95": 31392.399999999998,
+          "n": 1640
+        },
+        "tokens": {
+          "avg_input": 7286.081481481481,
+          "avg_output": 725.5555555555555,
+          "total_input": 3934484.0,
+          "total_output": 391800.0,
+          "n": 540
+        },
+        "error_rate": {
+          "value": 0.0006097560975609756,
+          "n": 1640
+        }
+      }
+    }
+  ]
+}

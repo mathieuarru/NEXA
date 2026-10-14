@@ -1,0 +1,2033 @@
+--- NEXA Benchmark Evaluation ---
+Files processed: 2
+  - benchmark/results/alzkb/vanilla_qwen3.8-27b/baseline_vanilla_qwen3.8_27b-q8_0_20260921_115147.jsonl
+  - benchmark/results/alzkb/vanilla_qwen3.8-27b/baseline_vanilla_qwen3.8_27b-q8_0__atleastone_20260929_105838.jsonl
+
+=== Dataset: MCQ_1hop.json__vanilla | Type: mcq | Mode: vanilla | Model: qwen3.8:27b-q8_0 ===
+Count: 498  |  Correct: 300  |  Accuracy: 0.602 [95% CI 0.559-0.644]
+Telemetry:
+  - latency ms: mean=61550 p50=59623 p95=100636 (n=498)
+  - tokens: avg in=112 out=758 | total in=55687 out=376944
+  - records with error: 0.002 (n=498)
+
+-- Incorrect Questions (198 total, showing 15) --
+Q [e0f5da6a3b97]: Which of the following is subject to increased expression by the drug Sparfloxacin? 1. PDS5A 2. RMI1 3. CAD 4. PDS5B 5. PAX8
+  Expected: 5
+  Got:      2
+  Thinking: Sparfloxacin is a fluoroquinolone antibiotic that inhibits DNA gyrase and topoisomerase IV, leading to DNA damage. When DNA damage occurs, the DNA damage response pathway is activated, leading to upregulation of DNA repair genes. RMI1 (RMI1 helicase regulator) is part of the BLM-RMI1-RMI2 complex involved in DNA repair and maintaining genomic stability. It would be upregulated in response to the DNA damage caused by Sparfloxacin. CAD is involved in pyrimidine biosynthesis, PAX8 is a transcription factor for thyroid/kidney development, and PDS5A/PDS5B are not standard well-known genes in this context. The most logical answer for a gene upregulated by a DNA-damaging fluoroquinolone would be RMI1.
+
+Q [0367d0ca46dd]: Which of the following is subject to increased expression by the drug Adenosine phosphate? 1. SEL1L 2. CAD 3. PDS5B 4. PDS5A 5. CNPY3
+  Expected: 5
+  Got:      2
+  Thinking: The question asks which gene is subject to increased expression by the drug 'Adenosine phosphate.' Adenosine phosphate (AMP) is a key energy signaling molecule. When AMP levels rise, it activates AMPK (AMP-activated protein kinase), which triggers transcriptional responses related to energy metabolism. Among the options: CAD (Citrate Synthase) is a TCA cycle enzyme directly involved in energy metabolism and mitochondrial function. AMPK activation can upregulate mitochondrial biogenesis and TCA cycle genes. The other options (SEL1L, PDS5A, PDS5B, CNPY3) are involved in ER quality control and DNA replication/repair, which are less directly connected to adenosine phosphate signaling. CAD is the most logical answer as it is directly tied to the energy metabolism pathway that adenosine phosphate regulates.
+
+Q [841b14585c56]: Which of the following is subject to increased expression by the drug Niacin? 1. RMI1 2. HERC6 3. SEL1L 4. PDS5B 5. CAD
+  Expected: 2
+  Got:      5
+  Thinking: The question asks which gene is subject to increased expression by the drug Niacin (nicotinic acid/vitamin B3).
+
+Q [4b454f0f4063]: Which of the following is subject to increased expression by the drug Terbinafine? 1. RMI1 2. SEL1L 3. CAD 4. PDS5A 5. ETS1
+  Expected: 5
+  Got:      2
+  Thinking: The question asks which gene is subject to increased expression by Terbinafine. Terbinafine is an antifungal that inhibits squalene epoxidase, disrupting sterol synthesis and membrane integrity. This disruption would trigger cellular stress responses, particularly ER stress and membrane stress pathways. SEL1L (SEL-1 like) is a key component of the ER-associated degradation (ERAD) pathway and is involved in ER stress responses. When membrane sterol composition is disrupted by Terbinafine, ER stress pathways are activated, leading to upregulation of ERAD components like SEL1L. Based on transcriptomic drug perturbation data, SEL1L is the gene most associated with increased expression following Terbinafine treatment.
+
+Q [fc85bfe7c2d5]: Which of the following is subject to increased expression by the drug Etofenamate? 1. PDS5B 2. RMI1 3. CES1 4. PDS5A 5. CAD
+  Expected: 3
+  Got:      5
+  Thinking: The question asks which gene/protein is subject to increased expression by the drug Etofenamate. Etofenamate is a non-steroidal anti-inflammatory drug (NSAID) that acts as a cyclooxygenase (COX) inhibitor. Looking at drug-gene interaction data, Etofenamate has been associated with upregulation of CAD (ATP-citrate lyase/citrate synthase), which is involved in lipid metabolism. COX inhibitors can affect lipid metabolic pathways, and CAD is a key enzyme in fatty acid synthesis. Among the options, CAD (option 5) is the most likely answer based on drug perturbation gene expression data.
+
+Q [b427e0143eae]: Which of the following is subject to increased expression by the drug Testosterone? 1. PDS5B 2. SEL1L 3. CAD 4. PDS5A 5. P4HA2
+  Expected: 5
+  Got:      3
+  Thinking: The question asks which gene is subject to increased expression by the drug Testosterone. Testosterone acts through the androgen receptor and affects various metabolic and cellular pathways. Let me consider each option: 1. PDS5B - DNA replication factor (Sld5 complex), 2. SEL1L - ER-associated degradation, 3. CAD - Citrate synthase (TCA cycle enzyme), 4. PDS5A - DNA replication factor (Sld5 complex), 5. P4HA2 - Prolyl 4-hydroxylase alpha-2 (collagen hydroxylation). Androgens/testosterone are known to influence mitochondrial metabolism and TCA cycle enzymes. CAD (citrate synthase) is a key TCA cycle enzyme that can be upregulated by androgen signaling. Based on drug-gene perturbation data, testosterone has been associated with upregulation of CAD.
+
+Q [8f857bd0a047]: Which of the following is subject to increased expression by the drug Clopidogrel? 1. SEL1L 2. CAD 3. PDS5A 4. FGFR2 5. RMI1
+  Expected: 4
+  Got:      2
+  Thinking: The question asks which gene is subject to increased expression by the drug Clopidogrel. Clopidogrel is an antiplatelet drug that inhibits the P2Y12 receptor. Looking at the options: SEL1L (ERAD pathway), CAD (cardiac alpha-actin), PDS5A (DNA damage response), FGFR2 (fibroblast growth factor receptor 2), and RMI1 (DNA damage response). Based on drug-gene expression databases and transcriptomic studies of Clopidogrel perturbation, CAD (cardiac alpha-actin) is the gene that shows increased expression in response to Clopidogrel treatment.
+
+Q [06ffdf898917]: Which of the following is subject to increased expression by the drug Naloxone? 1. ST6GALNAC2 2. SEL1L 3. RMI1 4. PDS5B 5. CAD
+  Expected: 1
+  Got:      5
+  Thinking: The question asks which gene is subject to increased expression by the drug Naloxone. Naloxone is an opioid receptor antagonist. Let me consider each option: 1. ST6GALNAC2 - sialyltransferase, cancer-related. 2. SEL1L - ER-associated degradation component. 3. RMI1 - DNA damage response (MRN complex). 4. PDS5B - cohesin complex, DNA replication. 5. CAD - Citrate (2-oxo) lyase, involved in de novo pyrimidine biosynthesis. Naloxone blocks opioid receptors, reversing opioid-mediated suppression of various pathways. Opioids can suppress metabolic pathways, and naloxone's antagonism could upregulate metabolic genes. CAD is involved in the first committed step of de novo pyrimidine synthesis and has been associated with changes in expression upon opioid receptor modulation. Based on drug-gene interaction data, CAD appears to be the gene whose expression is increased by naloxone.
+
+Q [f72a8d8b8cd7]: Which of the following is subject to increased expression by the drug Alizapride? 1. PDS5A 2. PDS5B 3. SEL1L 4. FOXO4 5. CAD
+  Expected: 4
+  Got:      3
+  Thinking: The question asks which gene/protein is subject to increased expression by the drug Alizapride. Alizapride is a prokinetic agent (5-HT4 agonist and 5-HT3 antagonist) used for gastrointestinal motility disorders. Considering the pharmacological profile of Alizapride and its interaction with serotonin receptors (GPCRs that undergo endocytosis and trafficking), SEL1L (SEL-1 suppressor of lin-28 homolog) is part of the ESCRT-1 complex involved in endosomal sorting and vesicular trafficking, which would be relevant to serotonin receptor pharmacology. Among the options, SEL1L is the most likely candidate for increased expression by Alizapride based on drug-gene interaction data.
+
+Q [2e193e1d7c14]: Which of the following is subject to decreased expression by the drug Nalbuphine? 1. SEL1L 2. CAD 3. PDS5B 4. PDS5A 5. ATP6V1D
+  Expected: 5
+  Got:      2
+  Thinking: The question asks which gene is subject to decreased expression by the drug Nalbuphine. Nalbuphine is an opioid analgesic (mu-opioid antagonist, kappa-opioid agonist). Looking at the options: SEL1L (ER-associated degradation), CAD (cardiac-type alpha actin), PDS5B (DNA replication/repair), PDS5A (DNA replication/repair), and ATP6V1D (proton pumping). Based on drug-gene interaction data, nalbuphine has been associated with decreased expression of CAD (cardiac alpha-actin), as opioid drugs can modulate cardiac gene expression profiles.
+
+Q [78ef057e93fa]: Which of the following is subject to decreased expression by the drug Testosterone propionate? 1. RMI1 2. BDH1 3. SEL1L 4. PDS5B 5. CAD
+  Expected: 2
+  Got:      5
+  Thinking: The question asks which gene is subject to decreased expression by Testosterone propionate. Let me consider each option: 1. RMI1 - DNA repair helicase regulator, 2. BDH1 - Beta-dihydroxybutyrate dehydrogenase 1 (amino acid metabolism), 3. SEL1L - ER-associated degradation, 4. PDS5B - DNA replication/repair, 5. CAD - Carbamoyl-phosphate synthetase 2, Aspartate transcarbamylase, and Dihydroorotase (pyrimidine synthesis). Testosterone propionate is an androgen that affects metabolic pathways. CAD is a key rate-limiting enzyme in de novo pyrimidine biosynthesis. Androgens are known to influence nucleotide metabolism and cell proliferation pathways. Based on drug-gene interaction data, CAD is likely the gene whose expression is decreased by testosterone propionate.
+
+Q [722750659c69]: Which of the following is subject to decreased expression by the drug Oxiconazole? 1. PDS5B 2. RMI1 3. ATP6V1D 4. PDS5A 5. CAD
+  Expected: 3
+  Got:      5
+  Thinking: The question asks which gene/protein is subject to decreased expression by the drug Oxiconazole. Oxiconazole is an antifungal azole drug that inhibits lanosterol 14-alpha-demethylase (CYP51). Looking at the options: PDS5B, RMI1, ATP6V1D, PDS5A, and CAD. CAD (carbamoyl-phosphate synthetase 2, aspartate transcarbamylase, and dihydroorotase) is a trifunctional enzyme in pyrimidine biosynthesis. Based on drug-gene expression perturbation data, oxiconazole has been associated with decreased expression of CAD.
+
+Q [771be145efd1]: Which of the following is subject to decreased expression by the drug Dipyridamole? 1. SEL1L 2. CAD 3. PDS5A 4. PPP2R5E 5. RMI1
+  Expected: 4
+  Got:      5
+  Thinking: The question asks which gene is subject to decreased expression by Dipyridamole. Dipyridamole is a phosphodiesterase inhibitor and adenosine reuptake inhibitor used as an antiplatelet agent. Looking at drug-gene expression perturbation data, Dipyridamole has been associated with decreased expression of RMI1, which is a component of the MRN (MRE11-RAD50-NBS1) complex involved in DNA damage response and telomere maintenance. The other options (SEL1L, CAD, PDS5A, PPP2R5E) are less directly associated with Dipyridamole's known mechanism of action and downstream effects.
+
+Q [f197aaff12b4]: Which of the following is subject to decreased expression by the drug Chlorthalidone? 1. PDS5A 2. PDS5B 3. SEL1L 4. TUBB6 5. CAD
+  Expected: 4
+  Got:      3
+  Thinking: The question asks which gene is subject to decreased expression by the drug Chlorthalidone. Chlorthalidone is a thiazide-like diuretic. Looking at the options: PDS5A, PDS5B, SEL1L, TUBB6, and CAD. Based on drug-gene interaction data (such as from Connectivity Map or similar perturbation studies), SEL1L (SEL-1 like, involved in ERAD pathway) has been associated with decreased expression upon treatment with chlorthalidone. I'll go with option 3.
+
+Q [9159f8ca2869]: Which of the following binds to the gene CXCR4? 1. Insulin pork 2. Framycetin 3. Streptokinase 4. Ibritumomab tiuxetan 5. Pancrelipase
+  Expected: 2
+  Got:      4
+  Thinking: The question asks which of the following binds to the gene CXCR4. CXCR4 is a chemokine receptor (C-X-C chemokine receptor type 4), a G protein-coupled receptor. Let me evaluate each option: 1. Insulin pork - binds insulin receptor, not CXCR4. 2. Framycetin - aminoglycoside antibiotic, binds bacterial ribosomes. 3. Streptokinase - thrombolytic, activates plasminogen. 4. Ibritumomab tiuxetan - anti-CD20 monoclonal antibody conjugated with In-111, used in B-cell lymphoma. 5. Pancrelipase - pancreatic enzymes. None of these are classic CXCR4 ligands (which would be SDF-1/CXCL12 or plerixafor). However, in drug-gene interaction databases, Ibritumomab tiuxetan may have a listed association with CXCR4 due to its use in hematologic malignancies where CXCR4 plays a role in cell trafficking. Given the options, I'll select 4 as the best answer.
+
+
+=== Dataset: MCQ_2hop.json__vanilla | Type: mcq | Mode: vanilla | Model: qwen3.8:27b-q8_0 ===
+Count: 419  |  Correct: 270  |  Accuracy: 0.644 [95% CI 0.597-0.689]
+Telemetry:
+  - latency ms: mean=62984 p50=59445 p95=98176 (n=419)
+  - tokens: avg in=127 out=775 | total in=53292 out=324921
+  - records with error: 0.000 (n=419)
+
+-- Incorrect Questions (149 total, showing 15) --
+Q [6c99170439b6]: Which of the following binds to the genes ABCB1 and CYP2C8 ? 1. Letosteine 2. 4-(4-FLUOROPHENYL)-1-CYCLOROPROPYLMETHYL-5-(4-PYRIDYL)-IMIDAZOLE 3. Eptacog alfa pegol (activated) 4. Corynebacterium diphtheriae 5. Ketamine
+  Expected: 5
+  Got:      2
+  Thinking: The question asks which compound binds to both ABCB1 (P-glycoprotein/MDR1) and CYP2C8 (a cytochrome P450 enzyme). These are drug transport and metabolism genes, so the answer should be a small molecule drug/compound that is a substrate or inhibitor of both. Let me evaluate: 1) Letosteine - osteoporosis drug, not strongly associated with both. 2) 4-(4-FLUOROPHENYL)-1-CYCLOROPROPYLMETHYL-5-(4-PYRIDYL)-IMIDAZOLE - a specific small molecule compound that could be a substrate of both P-gp and CYP2C8. 3) Eptacog alfa pegol - a protein therapeutic (clotting factor), unlikely to interact with CYP enzymes. 4) Corynebacterium diphtheriae - a bacterium, not a drug. 5) Ketamine - primarily metabolized by CYP3A4, CYP2B6, CYP2C19, not typically CYP2C8 or ABCB1. The complex chemical name in option 2 is most consistent with a compound identified in pharmacogenomics databases as interacting with both ABCB1 and CYP2C8.
+
+Q [90a4dce8e5da]: Which of the following binds to the genes CYP2C9 and CYP2C19 ? 1. D-phenylalanyl-N-benzyl-L-prolinamide 2. Selegiline 3. Quinestrol 4. Rolofylline 5. Sour cherry
+  Expected: 2
+  Got:      4
+  Thinking: The question asks which of the following binds to the genes CYP2C9 and CYP2C19. This likely refers to which compound is a substrate or ligand for both CYP2C9 and CYP2C19 enzymes. Let me consider each option: 1. D-phenylalanyl-N-benzyl-L-prolinamide - not a well-known CYP substrate. 2. Selegiline - a MAO-B inhibitor metabolized primarily by CYP2C19 and CYP2D6. 3. Quinestrol - an estrogen metabolized by various CYPs. 4. Rolofylline - an adenosine A2B receptor antagonist that is well-documented as a substrate of both CYP2C9 and CYP2C19. 5. Sour cherry - a food, not a specific CYP ligand. Rolofylline is the most well-known compound that is a substrate of both CYP2C9 and CYP2C19.
+
+Q [b602cd7c923a]: Which of the following binds to the genes SLC22A6 and SLC22A11 ? 1. Amylose 2. Selurampanel 3. 2-(Beta-D-Glucopyranosyl)-5-Methyl-1,2,3-Benzimidazole 4. Diclofenac 5. Reparixin
+  Expected: 4
+  Got:      3
+  Thinking: The question asks which compound binds to the genes SLC22A6 and SLC22A11. SLC22A6 encodes OCT2 (Organic Cation Transporter 2) and SLC22A11 encodes OCTN2 (Organic Cation Transporter N2). Both are organic cation transporters. Looking at the options: Amylose is a polysaccharide, Selurampanel is an AMPA receptor antagonist, Diclofenac is an NSAID (anion, OAT substrate), Reparixin is a PAF antagonist. The compound 2-(Beta-D-Glucopyranosyl)-5-Methyl-1,2,3-Benzimidazole is a specific organic cation compound that would be a substrate for both OCT2 and OCTN2 transporters based on its chemical structure.
+
+Q [80f72139562c]: Which of the following binds to the genes SLC22A5 and SLC15A1 ? 1. Ceftazidime 2. 4-{[5-chloro-4-(1H-indol-3-yl)pyrimidin-2-yl]amino}-N-ethylpiperidine-1-carboxamide 3. N-(4-Aminobutanoyl)-S-(4-methoxybenzyl)-L-cysteinylglycine 4. Adenosine-5'-ditungstate 5. Trazodone
+  Expected: 1
+  Got:      3
+  Thinking: The question asks which compound binds to the genes SLC22A5 and SLC15A1.
+
+SLC22A5 encodes Organic Cation Transporter 2 (OCT2), a renal transporter for organic cations.
+SLC15A1 encodes Peptide Transporter 1 (PEPT1), a proton-coupled di/tri-peptide transporter.
+
+Let me evaluate each option:
+
+1. Ceftazidime - a cephalosporin antibiotic, primarily handled by OATs, not typically OCT2/PEPT1.
+
+2. 4-{[5-chloro-4-(1H-indol-3-yl)pyrimidin-2-yl]amino}-N-ethylpiperidine-1-carboxamide - a complex synthetic compound, not obviously a substrate for both OCT2 and PEPT1.
+
+3. N-(4-Aminobutanoyl)-S-(4-methoxybenzyl)-L-cysteinylglycine - This contains a dipeptide moiety (cysteinylglycine), making it a substrate for PEPT1 (SLC15A1). The 4-aminobutanoyl group provides a positive charge (amine), making it a potential cationic substrate for OCT2 (SLC22A5). This compound appears designed to interact with both transporters.
+
+4. Adenosine-5'-ditungstate - an adenosine analog, associated with adenosine receptors, not OCT2/PEPT1.
+
+5. Trazodone - an antidepressant, primarily CYP3A4 substrate, not associated with OCT2 or PEPT1.
+
+Option 3 is the best answer as it has structural features (dipeptide + amine) that would allow binding to both PEPT1 and OCT2.
+
+Q [fb42d7b03302]: Which of the following binds to the genes CYP2C8 and ABCG2 ? 1. 2-[1-(4-chlorobenzoyl)-5-methoxy-2-methyl-1H-indol-3-yl]-n-[(1S)-1-(hydroxymethyl)propyl]acetamide 2. Lansoprazole 3. Gemcitabine 4. Brilliant blue G 5. Aminoethyl nitrate
+  Expected: 2
+  Got:      1
+  Thinking: Let me analyze which compound binds to both CYP2C8 and ABCG2. CYP2C8 is a cytochrome P450 enzyme, and ABCG2 (BCRP) is an efflux transporter. Gemcitabine is a well-known ABCG2 substrate but is metabolized by cytidine deaminase, not CYP enzymes. Lansoprazole is metabolized by CYP2C19 and CYP3A4. The very specific IUPAC name in option 1 suggests a compound from a drug-target interaction database that has been characterized for binding to both CYP2C8 and ABCG2. Given the specificity of the chemical name and the pharmacogenomics context, option 1 is most likely the compound identified in databases as binding to both these targets.
+
+Q [4196cd4d1344]: Which of the following binds to the genes HDAC2 and CYP2C19 ? 1. Lovastatin 2. Human Umbilical Cord Mesenchymal Stem Cells 3. Alclometasone 4. AMG 424 5. Azemiglitazone
+  Expected: 1
+  Got:      4
+  Thinking: The question asks which compound binds to both HDAC2 and CYP2C19 genes. Let me consider each option: Lovastatin is a statin targeting HMG-CoA reductase, metabolized by CYP3A4. Alclometasone is a corticosteroid. Azemiglitazone is a TZD antidiabetic targeting PPARγ. AMG 424 is a compound that has been documented in drug-gene interaction databases as binding to both HDAC2 and CYP2C19. Human Umbilical Cord Mesenchymal Stem Cells are cells, not small-molecule binders. Based on drug-target interaction data, AMG 424 is the compound associated with both HDAC2 and CYP2C19.
+
+Q [d70497e61caf]: Which of the following increases the gene expression of CASP10 and KLHL9 ? 1. Oprozomib 2. ANZ-100 3. Olopatadine 4. IPL-344 5. Sarizotan
+  Expected: 3
+  Got:      2
+  Thinking: The question asks which compound increases the gene expression of CASP10 and KLHL9. Let me consider each option: CASP10 is an apoptotic caspase, and KLHL9 is a Kelch-like protein. ANZ-100 is a compound that has been studied in the context of gene expression modulation, particularly affecting apoptotic pathways and various gene expression profiles. Based on drug-gene interaction data, ANZ-100 has been associated with upregulation of genes including CASP10 and KLHL9.
+
+Q [ece5611b39bb]: Which of the following increases the gene expression of SESN1 and CNOT4 ? 1. Liraglutide 2. Verapamil 3. Zenocutuzumab 4. Methionine Phosphinate 5. (2S)-2-(4-ethylphenoxy)-3-phenylpropanoic acid
+  Expected: 2
+  Got:      5
+  Thinking: The question asks which compound increases gene expression of both SESN1 and CNOT4. Let me consider each option: SESN1 (Sestrin 1) is involved in mTOR signaling and stress response, while CNOT4 is part of the CCR4-NOT deadenylase complex. This question likely comes from a drug-gene expression database. The very specific compound (2S)-2-(4-ethylphenoxy)-3-phenylpropanoic acid (option 5) is a research compound that would be catalogued with specific gene expression annotations. Given the specificity of the question targeting both SESN1 and CNOT4 simultaneously, this points to a specific database entry. I'll go with option 5.
+
+Q [89d3988402a1]: Which of the following increases the gene expression of ZNF586 and RPP38 ? 1. DP-b99 2. Trabectedin 3. Olaflur 4. Neostigmine 5. Black olive
+  Expected: 4
+  Got:      2
+  Thinking: The question asks which compound increases gene expression of ZNF586 and RPP38. Let me consider each option: 1. DP-b99 is a prodrug of trabectedin. 2. Trabectedin is a marine-derived anticancer agent that binds the minor groove of DNA and modulates transcription of various genes. 3. Olaflur is a topical dental anesthetic. 4. Neostigmine is an acetylcholinesterase inhibitor. 5. Black olive is a food item. Trabectedin is well-known for its effects on gene expression, as it directly interacts with DNA and can upregulate specific genes including zinc finger proteins. ZNF586 is a zinc finger protein, and RPP38 is another gene that has been shown to be upregulated by trabectedin treatment in pharmacogenomic studies. Trabectedin (option 2) is the most likely answer as it is the parent compound directly studied for its gene expression modulation effects.
+
+Q [3a38bbda4a46]: Which of the following increases the gene expression of TATDN2 and TRAPPC6A ? 1. Formic acid 2. Efavaleukin alfa 3. Imipenem 4. Olea europaea pollen 5. LY-3023414
+  Expected: 3
+  Got:      5
+  Thinking: The question asks which compound increases gene expression of TATDN2 and TRAPPC6A. Let me consider each option: TATDN2 is involved in RNA processing, and TRAPPC6A is a component of the TRAPP II vesicle trafficking complex. This question likely comes from a pharmacogenomics database studying drug-gene expression interactions. LY-3023414 is an NMDA receptor antagonist that can modulate intracellular calcium signaling and downstream gene expression pathways. Given the specificity of the gene pair and the type of pharmacogenomics data this question draws from, I'll select LY-3023414 as the best answer.
+
+Q [fd27bd980094]: Which of the following increases the gene expression of GHR and PTGS2 ? 1. Anacetrapib 2. Propylthiouracil 3. Maropitant 4. GUANOSINE-2',3'-O-ETHYLIDENEPHOSPHONATE 5. Calcitonin eel
+  Expected: 2
+  Got:      5
+  Thinking: The question asks which compound increases gene expression of both GHR (Growth Hormone Receptor) and PTGS2 (COX-2). Let me evaluate each option: 1. Anacetrapib is a CETP inhibitor for cardiovascular use. 2. Propylthiouracil is an antithyroid agent. 3. Maropitant is an NK-1 antagonist antiemetic. 4. Guanosine-2',3'-O-ethylidenephosphonate is an IMPDH inhibitor. 5. Calcitonin eel is a hormone used in bone metabolism. Calcitonin has been shown in pharmacogenomic studies to upregulate both GHR and PTGS2 gene expression, particularly in bone-related contexts where it modulates osteoblast/osteoclast signaling pathways.
+
+Q [06d640d28087]: Which of the following increases the gene expression of CNOT4 and BCL7B ? 1. 3-(4-{2-[2-(2-bromo-acetylamino)-ethyldisulfanyl]-ethylcarbamoyl}-cyclohexylcarbamoyl)-pyrazine-2-carboxylic acid 2. Cyclohexyl-Hexyl-Beta-D-Maltoside 3. Indigotindisulfonic acid 4. Reboxetine 5. Triheptanoin
+  Expected: 4
+  Got:      1
+  Thinking: The question asks which compound increases the gene expression of CNOT4 and BCL7B. Let me analyze each option: CNOT4 is a component of the CCR4-NOT deadenylase complex, and BCL7B is involved in Wnt signaling. This type of question typically comes from drug-gene interaction databases like LINCS/CMap or similar pharmacogenomics resources. Option 1 is a very specific, complex chemical compound that appears to be from a targeted screening study. Options 2-5 are more common compounds (a detergent, a dye, an antidepressant, and a triglyceride). The highly specific chemical name in option 1 suggests it was identified in a gene expression screening study. Based on the specificity of the compound and the gene targets, I'll go with option 1.
+
+Q [fe183b21dc78]: Which of the following increases the gene expression of RNF167 and AMDHD2 ? 1. Oxybutynin 2. Iopamidol 3. Betula pendula pollen 4. AMG 424 5. 4-(Acetylamino)-3-[(Aminoacetyl)Amino]Benzoic Acid
+  Expected: 1
+  Got:      5
+  Thinking: The question asks which compound increases gene expression of both RNF167 and AMDHD2. This appears to be from a drug-gene interaction or transcriptomics perturbation database. Let me consider each option: RNF167 is a ring finger E3 ubiquitin ligase, and AMDHD2 is an amide hydrolase involved in lipid metabolism. These are relatively specific genes whose co-regulation would point to a particular compound in a perturbation study. Given the specificity of this question and the nature of the compounds listed, this likely comes from a compound library transcriptomics study (such as LINCS/Connectivity Map or similar). Among the options, 4-(Acetylamino)-3-[(Aminoacetyl)Amino]Benzoic Acid is a specific chemical compound that would be found in compound libraries used for gene expression profiling studies. I'll go with option 5 as my best guess.
+
+Q [37bf6225c619]: Which of the following increases the gene expression of E2F2 and CSTA ? 1. Aconitate Ion 2. Patidistrogene bexoparvovec 3. Mephentermine 4. Beta-(2-Naphthyl)-Alanine 5. Dichlorobenzyl alcohol
+  Expected: 3
+  Got:      5
+  Thinking: The question asks which compound increases gene expression of E2F2 and CSTA. Let me consider each option: E2F2 is a transcription factor involved in cell cycle regulation, and CSTA (Cystatin A) is a cysteine protease inhibitor. This appears to be a pharmacogenomics/drug-gene interaction question. Dichlorobenzyl alcohol (DCBA) is a chemical compound that has been studied for its effects on gene expression in various cellular contexts. Based on available pharmacogenomic data, dichlorobenzyl alcohol has been associated with upregulation of genes including E2F2 and CSTA. The other options (aconitate ion, patidistrogene bexoparvovec, mephentermine, beta-(2-naphthyl)-alanine) are less likely to be associated with simultaneous upregulation of both these specific genes.
+
+Q [d5fc683cfc52]: Which of the following increases the gene expression of TCTA and YME1L1 ? 1. Niraparib 2. Mucor circinelloides f. lusitanicus 3. N-[2-(5-methyl-4H-1,2,4-triazol-3-yl)phenyl]-7H-pyrrolo[2,3-d]pyrimidin-4-amine 4. Chlorcyclizine 5. SB-743921
+  Expected: 4
+  Got:      5
+  Thinking: The question asks which compound increases gene expression of TCTA and YME1L1. Let me consider each option: SB-743921 is a well-known ALK (anaplastic lymphoma kinase) inhibitor that has been studied in transcriptomics contexts. ALK inhibition can lead to compensatory upregulation of various genes. TCTA (T-complex protein 10, involved in proteasome function) and YME1L1 (YME1-like 1, involved in mitochondrial function) could be upregulated as part of a compensatory response to ALK inhibition. Based on transcriptomic drug-gene interaction data, SB-743921 is the most likely answer to increase expression of both TCTA and YME1L1.
+
+
+=== Dataset: OpenEnded_1hop.json__vanilla | Type: open_ended | Mode: vanilla | Model: qwen3.8:27b-q8_0 ===
+Count: 508  |  Correct: 9  |  Accuracy: 0.018 [95% CI 0.009-0.033]
+Average set metrics: exact_match=0.018  precision=0.126  recall=0.140  f1=0.094  jaccard=0.066  overlap=0.190
+By |expected| size:
+  -    1: n=124   acc=0.048 f1=0.101
+  -  2-5: n=145   acc=0.021 f1=0.120
+  - 6-20: n=127   acc=0.000 f1=0.079
+  -  >20: n=112   acc=0.000 f1=0.070
+Telemetry:
+  - latency ms: mean=130229 p50=71085 p95=290013 (n=508)
+  - tokens: avg in=68 out=1208 | total in=31525 out=560478
+  - records with error: 0.087 (n=508)
+
+-- Incorrect Questions (499 total, showing 15) --
+Q [075d79daa69c]: List the genes which bind to the drug Loxapine
+  Expected: HTR2C, CHRM1, HTR1B, DRD4, HTR3A, SLC6A4, CHRM4, HTR5A, HRH4, HRH1, ADRA2B, ADRA2A, HTR2A, DRD1, SLC6A2, HTR1D, CHRM2, CHRM5, DRD3, HTR1A, DRD2, ADRA1B, DRD5, ADRA2C, HRH2, ADRA1A, HTR1E, ADRB1, HTR7, CHRM3, SLC6A3, HTR6
+  Got:      ['CHRM2', 'DRD3', 'CHRM5', 'DRD2', 'HTR2A', 'HRH1', 'ADRA2A', 'DRD4', 'CHRM1', 'CHRM3', 'HTR2C', 'ADRA1A', 'CHRM4']
+  Thinking: The question asks about genes that bind to the drug Loxapine. Loxapine is an antipsychotic medication (a thioxanthene derivative) used to treat schizophrenia and other psychiatric conditions.
+
+Let me think about what genes/proteins Loxapine binds to:
+
+Loxapine is a typical antipsychotic that primarily works by blocking dopamine receptors. Its main targets include:
+
+1. DRD2 (Dopamine receptor D2) - primary target
+2. DRD3 (Dopamine receptor D3)
+3. DRD4 (Dopamine receptor D4)
+5. DRD1 (Dopamine receptor D1)
+6. HTR1A (Serotonin receptor 1A)
+7. HTR2A (Serotonin receptor 2A)
+8. HTR2C (Serotonin receptor 2C)
+9. ADRA1A (Alpha-1 adrenergic receptor)
+10. ADRA2A (Alpha-2 adrenergic receptor)
+11. CHRM1 (Muscarinic acetylcholine receptor M1)
+12. CHRM2 (Muscarinic acetylcholine receptor M2)
+13. CHRM3 (Muscarinic acetylcholine receptor M3)
+14. CHRM4 (Muscarinic acetylcholine receptor M4)
+15. CHRM5 (Muscarinic acetylcholine receptor M5)
+
+From drug-database resources like DrugBank, Loxapine's targets include:
+- Dopamine receptor D2 (DRD2)
+- Dopamine receptor D3 (DRD3)
+- Dopamine receptor D4 (DRD4)
+- Serotonin receptor 2A (HTR2A)
+- Serotonin receptor 2C (HTR2C)
+- Alpha-1 adrenergic receptor (ADRA1A)
+- Alpha-2 adrenergic receptor (ADRA2A)
+- Muscarinic acetylcholine receptors (CHRM1-5)
+- Histamine receptor H1 (HRH1)
+
+Let me focus on the most well-established targets. Based on DrugBank and other pharmacological databases, Loxapine binds to:
+
+- DRD2
+- DRD3
+- DRD4
+- HTR2A
+- HTR2C
+- ADRA1A
+- ADRA2A
+- CHRM1
+- CHRM2
+- CHRM3
+- CHRM4
+- CHRM5
+- HRH1
+
+I'll list the most commonly cited targets for Loxapine.
+  Metrics: exact_match=0.000  precision=1.000  recall=0.406  f1=0.578  jaccard=0.406  overlap=1.000
+  Missing (in expected, not in got): ADRA1B, ADRA2B, ADRA2C, ADRB1, DRD1, DRD5, HRH2, HRH4, HTR1A, HTR1B, HTR1D, HTR1E, HTR3A, HTR5A, HTR6, HTR7, SLC6A2, SLC6A3, SLC6A4
+  Extra (in got, not in expected):   -
+
+Q [f8081c1882f2]: List the genes which bind to the drug Cyclothiazide
+  Expected: CA4, FXYD2, CA2, SLC12A3, CA1, SLC22A6
+  Got:      ['GRIA3', 'GRIA4', 'GRIA2', 'GRIA1']
+  Thinking: The question asks about genes that bind to the drug Cyclothiazide. Cyclothiazide is a positive allosteric modulator of AMPA-type glutamate receptors. It binds to AMPA receptor subunits to prevent desensitization. The AMPA receptor subunits are encoded by the genes GRIA1, GRIA2, GRIA3, and GRIA4. These are the genes that encode the protein targets of cyclothiazide.
+  Metrics: exact_match=0.000  precision=0.000  recall=0.000  f1=0.000  jaccard=0.000  overlap=0.000
+  Missing (in expected, not in got): CA1, CA2, CA4, FXYD2, SLC12A3, SLC22A6
+  Extra (in got, not in expected):   GRIA1, GRIA2, GRIA3, GRIA4
+
+Q [4a1190ce6ac3]: List the genes which bind to the drug Pentosan polysulfate
+  Expected: FGF2, FGF1, FGF4
+  Got:      ['SERPINC1']
+  Thinking: The question asks about genes that bind to the drug Pentosan polysulfate. Pentosan polysulfate (PPS) is a sulfated polysaccharide with heparin-like properties. Its known protein/gene binding targets include antithrombin (SERPINC1) and other heparin-binding proteins. Based on drug-gene interaction databases, the primary gene target is SERPINC1 (antithrombin III), as PPS acts similarly to heparin in its anticoagulant mechanism. Other potential targets may include various heparin-binding proteins, but SERPINC1 is the most well-established binding partner.
+  Metrics: exact_match=0.000  precision=0.000  recall=0.000  f1=0.000  jaccard=0.000  overlap=0.000
+  Missing (in expected, not in got): FGF1, FGF2, FGF4
+  Extra (in got, not in expected):   SERPINC1
+
+Q [2ee7061b5a92]: List the genes which bind to the drug Bambuterol
+  Expected: ADRB2, BCHE
+  Got:      NO_RESPONSE
+  Error:    llm_error: Failed to parse OpenEndedAnswer from completion {"thinking": "The question asks about genes that bind to the drug Bambuterol.\n\nBambuterol is a prodrug of salbutamol (albuterol). It is a beta-2 adrenergic agonist used as a bronchodilator for asthma and COPD.\n\nSince Bambuterol is a prodrug that is metabolized to salbutamol (albuterol), its primary target is the beta-2 adrenergic receptor. The gene encoding the beta-2 adrenergic receptor is ADRB2.\n\nLet me think about whether there are other genes that Bambuterol might bind to:\n- ADRB2 (beta-2 adrenergic receptor) - this is the primary target\n- ADRB1 (beta-1 adrenergic receptor) - salbutamol has some activity here but it's primarily beta-2 selective\n- ADRB3 (beta-3 adrenergic receptor) - less likely to be a primary target\n\nThe most well-established binding target for Bambuterol (and its active metabolite salbutamol) is the beta-2 adrenergic receptor, encoded by the gene ADRB2.\n\nGiven that Bambuterol is specifically a beta-2 selective agonist, the primary gene would be ADRB2. Some sources might also list ADRB1 as a secondary target, but the primary and most specific answer is ADRB2.\n\nI'll go with ADRB2 as the primary answer, as Bambuterol is specifically a beta-2 adrenergic receptor agonist.\n\nADRB2, ADRB1, ADRB3, ADRA1A, ADRA1B, ADRA1D, ADRA2A, ADRA2B, ADRA2C, CHRM1, CHRM2, CHRM3, CHRM4, CHRM5, HTR1A, HTR1B, HTR1D, HTR1E, HTR1F, HTR2A, HTR2B, HTR2C, HTR3A, HTR3B, HTR3C, HTR3D, HTR3E, HTR4, HTR5A, HTR5T1, HTR6, HTR7, SLC6A2, SLC6A3, SLC6A4, SLC6A5, SLC6A6, SLC6A7, SLC6A11, SLC6A12, SLC6A13, SLC6A15, SLC6A16, SLC6A17, SLC6A18, SLC6A19, SLC6A20, SLC6A21, SLC6A22, SLC6A23, SLC6A24, SLC6A25, SLC6A26, SLC6A27, SLC6A28, SLC6A29, SLC6A30, SLC6A31, SLC6A32, SLC6A33, SLC6A34, SLC6A35, SLC6A36, SLC6A37, SLC6A38, SLC6A39, SLC6A40, SLC6A41, SLC6A42, SLC6A43, SLC6A44, SLC6A45, SLC6A46, SLC6A47, SLC6A48, SLC6A49, SLC6A50, SLC6A51, SLC6A52, SLC6A53, SLC6A54, SLC6A55, SLC6A56, SLC6A57, SLC6A58, SLC6A59, SLC6A60, SLC6A61, SLC6A62, SLC6A63, SLC6A64, SLC6A65, SLC6A66, SLC6A67, SLC6A68, SLC6A69, SLC6A70, SLC6A71, SLC6A72, SLC6A73, SLC6A74, SLC6A75, SLC6A76, SLC6A77, SLC6A78, SLC6A79, SLC6A80, SLC6A81, SLC6A82, SLC6A83, SLC6A84, SLC6A85, SLC6A86, SLC6A87, SLC6A88, SLC6A89, SLC6A90, SLC6A91, SLC6A92, SLC6A93, SLC6A94, SLC6A95, SLC6A96, SLC6A97, SLC6A98, SLC6A99, SLC6A100, SLC6A101, SLC6A102, SLC6A103, SLC6A104, SLC6A105, SLC6A106, SLC6A107, SLC6A108, SLC6A109, SLC6A110, SLC6A111, SLC6A112, SLC6A113, SLC6A114, SLC6A115, SLC6A116, SLC6A117, SLC6A118, SLC6A119, SLC6A120, SLC6A121, SLC6A122, SLC6A123, SLC6A124, SLC6A125, SLC6A126, SLC6A127, SLC6A128, SLC6A129, SLC6A130, SLC6A131, SLC6A132, SLC6A133, SLC6A134, SLC6A135, SLC6A136, SLC6A137, SLC6A138, SLC6A139, SLC6A140, SLC6A141, SLC6A142, SLC6A143, SLC6A144, SLC6A145, SLC6A146, SLC6A147, SLC6A148, SLC6A149, SLC6A150, SLC6A151, SLC6A152, SLC6A153, SLC6A154, SLC6A155, SLC6A156, SLC6A157, SLC6A158, SLC6A159, SLC6A160, SLC6A161, SLC6A162, SLC6A163, SLC6A164, SLC6A165, SLC6A166, SLC6A167, SLC6A168, SLC6A169, SLC6A170, SLC6A171, SLC6A172, SLC6A173, SLC6A174, SLC6A175, SLC6A176, SLC6A177, SLC6A178, SLC6A179, SLC6A180, SLC6A181, SLC6A182, SLC6A183, SLC6A184, SLC6A185, SLC6A186, SLC6A187, SLC6A188, SLC6A189, SLC6A190, SLC6A191, SLC6A192, SLC6A193, SLC6A194, SLC6A195, SLC6A196, SLC6A197, SLC6A198, SLC6A199, SLC6A200, SLC6A201, SLC6A202, SLC6A203, SLC6A204, SLC6A205, SLC6A206, SLC6A207, SLC6A208, SLC6A209, SLC6A210, SLC6A211, SLC6A212, SLC6A213, SLC6A214, SLC6A215, SLC6A216, SLC6A217, SLC6A218, SLC6A219, SLC6A220, SLC6A221, SLC6A222, SLC6A223, SLC6A224, SLC6A225, SLC6A226, SLC6A227, SLC6A228, SLC6A229, SLC6A230, SLC6A231, SLC6A232, SLC6A233, SLC6A234, SLC6A235, SLC6A236, SLC6A237, SLC6A238, SLC6A239, SLC6A240, SLC6A241, SLC6A242, SLC6A243, SLC6A244, SLC6A245, SLC6A246, SLC6A247, SLC6A248, SLC6A249, SLC6A250, SLC6A251, SLC6A252, SLC6A253, SLC6A254, SLC6A255, SLC6A256, SLC6A257, SLC6A258, SLC6A259, SLC6A260, SLC6A261, SLC6A262, SLC6A263, SLC6A264, SLC6A265, SLC6A266, SLC6A267, SLC6A268, SLC6A269, SLC6A270, SLC6A271, SLC6A272, SLC6A273, SLC6A274, SLC6A275, SLC6A276, SLC6A277, SLC6A278, SLC6A279, SLC6A280, SLC6A281, SLC6A282, SLC6A283, SLC6A284, SLC6A285, SLC6A286, SLC6A287, SLC6A288, SLC6A289, SLC6A290, SLC6A291, SLC6A292, SLC6A293, SLC6A294, SLC6A295, SLC6A296, SLC6A297, SLC6A298, SLC6A299, SLC6A300, SLC6A301, SLC6A302, SLC6A303, SLC6A304, SLC6A305, SLC6A306, SLC6A307, SLC6A308, SLC6A309, SLC6A310, SLC6A311, SLC6A312, SLC6A313, SLC6A314, SLC6A315, SLC6A316, SLC6A317, SLC6A318, SLC6A319, SLC6A320, SLC6A321, SLC6A322, SLC6A323, SLC6A324, SLC6A325, SLC6A326, SLC6A327, SLC6A328, SLC6A329, SLC6A330, SLC6A331, SLC6A332, SLC6A333, SLC6A334, SLC6A335, SLC6A336, SLC6A337, SLC6A338, SLC6A339, SLC6A340, SLC6A341, SLC6A342, SLC6A343, SLC6A344, SLC6A345, SLC6A346, SLC6A347, SLC6A348, SLC6A349, SLC6A350, SLC6A351, SLC6A352, SLC6A353, SLC6A354, SLC6A355, SLC6A356, SLC6A357, SLC6A358, SLC6A359, SLC6A360, SLC6A361, SLC6A362, SLC6A363, SLC6A364, SLC6A365, SLC6A366, SLC6A367, SLC6A368, SLC6A369, SLC6A370, SLC6A371, SLC6A372, SLC6A373, SLC6A374, SLC6A375, SLC6A376, SLC6A377, SLC6A378, SLC6A379, SLC6A380, SLC6A381, SLC6A382, SLC6A383, SLC6A384, SLC6A385, SLC6A386, SLC6A387, SLC6A388, SLC6A389, SLC6A390, SLC6A391, SLC6A392, SLC6A393, SLC6A394, SLC6A395, SLC6A396, SLC6A397, SLC6A398, SLC6A399, SLC6A400, SLC6A401, SLC6A402, SLC6A403, SLC6A404, SLC6A405, SLC6A406, SLC6A407, SLC6A408, SLC6A409, SLC6A410, SLC6A411, SLC6A412, SLC6A413, SLC6A414, SLC6A415, SLC6A416, SLC6A417, SLC6A418, SLC6A419, SLC6A420, SLC6A421, SLC6A422, SLC6A423, SLC6A424, SLC6A425, SLC6A426, SLC6A427, SLC6A428, SLC6A429, SLC6A430, SLC6A431, SLC6A432, SLC6A433, SLC6A434, SLC6A435, SLC6A436, SLC6A437, SLC6A438, SLC6A439, SLC6A440, SLC6A441, SLC6A442, SLC6A443, SLC6A444, SLC6A445, SLC6A446, SLC6A447, SLC6A448, SLC6A449, SLC6A450, SLC6A451, SLC6A452, SLC6A453, SLC6A454, SLC6A455, SLC6A456, SLC6A457, SLC6A458, SLC6A459, SLC6A460, SLC6A461, SLC6A462, SLC6A463, SLC6A464, SLC6A465, SLC6A466, SLC6A467, SLC6A468, SLC6A469, SLC6A470, SLC6A471, SLC6A472, SLC6A473, SLC6A474, SLC6A475, SLC6A476, SLC6A477, SLC6A478, SLC6A479, SLC6A480, SLC6A481, SLC6A482, SLC6A483, SLC6A484, SLC6A485, SLC6A486, SLC6A487, SLC6A488, SLC6A489, SLC6A490, SLC6A491, SLC6A492, SLC6A493, SLC6A494, SLC6A495, SLC6A496, SLC6A497, SLC6A498, SLC6A499, SLC6A500, SLC6A501, SLC6A502, SLC6A503, SLC6A504, SLC6A505, SLC6A506, SLC6A507, SLC6A508, SLC6A509, SLC6A510, SLC6A511, SLC6A512, SLC6A513, SLC6A514, SLC6A515, SLC6A516, SLC6A517, SLC6A518, SLC6A519, SLC6A520, SLC6A521, SLC6A522, SLC6A523, SLC6A524, SLC6A525, SLC6A526, SLC6A527, SLC6A528, SLC6A529, SLC6A530, SLC6A531, SLC6A532, SLC6A533, SLC6A534, SLC6A535, SLC6A536, SLC6A537, SLC6A538, SLC6A539, SLC6A540, SLC6A541, SLC6A542, SLC6A543, SLC6A544, SLC6A545, SLC6A546, SLC6A547, SLC6A548, SLC6A549, SLC6A550, SLC6A551, SLC6A552, SLC6A553, SLC6A554, SLC6A555, SLC6A556, SLC6A557, SLC6A558, SLC6A559, SLC6A560, SLC6A561, SLC6A562, SLC6A563, SLC6A564, SLC6A565, SLC6A566, SLC6A567, SLC6A568, SLC6A569, SLC6A570, SLC6A571, SLC6A572, SLC6A573, SLC6A574, SLC6A575, SLC6A576, SLC6A577, SLC6A578, SLC6A579, SLC6A580, SLC6A581, SLC6A582, SLC6A583, SLC6A584, SLC6A585, SLC6A586, SLC6A587, SLC6A588, SLC6A589, SLC6A590, SLC6A591, SLC6A592, SLC6A593, SLC6A594, SLC6A595, SLC6A596, SLC6A597, SLC6A598, SLC6A599, SLC6A600, SLC6A601, SLC6A602, SLC6A603, SLC6A604, SLC6A605, SLC6A606, SLC6A607, SLC6A608, SLC6A609, SLC6A610, SLC6A611, SLC6A612, SLC6A613, SLC6A614, SLC6A615, SLC6A616, SLC6A617, SLC6A618, SLC6A619, SLC6A620, SLC6A621, SLC6A622, SLC6A623, SLC6A624, SLC6A625, SLC6A626, SLC6A627, SLC6A628, SLC6A629, SLC6A630, SLC6A631, SLC6A632, SLC6A633, SLC6A634, SLC6A635, SLC6A636, SLC6A637, SLC6A638, SLC6A639, SLC6A640, SLC6A641, SLC6A642, SLC6A643, SLC6A644, SLC6A645, SLC6A646, SLC6A647, SLC6A648, SLC6A649, SLC6A650, SLC6A651, SLC6A652, SLC6A653, SLC6A654, SLC6A655, SLC6A656, SLC6A657, SLC6A658, SLC6A659, SLC6A660, SLC6A661, SLC6A662, SLC6A663, SLC6A664, SLC6A665, SLC6A666, SLC6A667, SLC6A668, SLC6A669, SLC6A670, SLC6A671, SLC6A672, SLC6A673, SLC6A674, SLC6A675, SLC6A676, SLC6A677, SLC6A678, SLC6A679, SLC6A680, SLC6A681, SLC6A682, SLC6A683, SLC6A684, SLC6A685, SLC6A686, SLC6A687, SLC6A688, SLC6A689, SLC6A690, SLC6A691, SLC6A692, SLC6A693, SLC6A694, SLC6A695, SLC6A696, SLC6A697, SLC6A698, SLC6A699, SLC6A700, SLC6A701, SLC6A702, SLC6A703, SLC6A704, SLC6A705, SLC6A706, SLC6A707, SLC6A708, SLC6A709, SLC6A710, SLC6A711, SLC6A712, SLC6A713, SLC6A714, SLC6A715, SLC6A716, SLC6A717, SLC6A718, SLC6A719, SLC6A720, SLC6A721, SLC6A722, SLC6A723, SLC6A724, SLC6A725, SLC6A726, SLC6A727, SLC6A728, SLC6A729, SLC6A730, SLC6A731, SLC6A732, SLC6A733, SLC6A734, SLC6A735, SLC6A736, SLC6A737, SLC6A738, SLC6A739, SLC6A740, SLC6A741, SLC6A742, SLC6A743, SLC6A744, SLC6A745, SLC6A746, SLC6A747, SLC6A748, SLC6A749, SLC6A750, SLC6A751, SLC6A752, SLC6A753, SLC6A754, SLC6A755, SLC6A756, SLC6A757, SLC6A758, SLC6A759, SLC6A760, SLC6A761, SLC6A762, SLC6A763, SLC6A764, SLC6A765, SLC6A766, SLC6A767, SLC6A768, SLC6A769, SLC6A770, SLC6A771, SLC6A772, SLC6A773, SLC6A774, SLC6A775, SLC6A776, SLC6A777, SLC6A778, SLC6A779, SLC6A780, SLC6A781, SLC6A782, SLC6A783, SLC6A784, SLC6A785, SLC6A786, SLC6A787, SLC6A788, SLC6A789, SLC6A790, SLC6A791, SLC6A792, SLC6A793, SLC6A794, SLC6A795, SLC6A796, SLC6A797, SLC6A798, SLC6A799, SLC6A800, SLC6A801, SLC6A802, SLC6A803, SLC6A804, SLC6A805, SLC6A806, SLC6A807, SLC6A808, SLC6A809, SLC6A810, SLC6A811, SLC6A812, SLC6A813, SLC6A814, SLC6A815, SLC6A816, SLC6A817, SLC6A818, SLC6A819, SLC6A820, SLC6A821, SLC6A822, SLC6A823, SLC6A824, SLC6A825, SLC6A826, SLC6A827, SLC6A828, SLC6A829, SLC6A830, SLC6A831, SLC6A832, SLC6A833, SLC6A834, SLC6A835, SLC6A836, SLC6A837, SLC6A838, SLC6A839, SLC6A840, SLC6A841, SLC6A842, SLC6A843, SLC6A844, SLC6A845, SLC6A846, SLC6A847, SLC6A848, SLC6A849, SLC6A850, SLC6A851, SLC6A852, SLC6A853, SLC6A854, SLC6A855, SLC6A856, SLC6A857, SLC6A858, SLC6A859, SLC6A860, SLC6A861, SLC6A862, SLC6A863, SLC6A864, SLC6A865, SLC6A866, SLC6A867, SLC6A868, SLC6A869, SLC6A870, SLC6A871, SLC6A872, SLC6A873, SLC6A874, SLC6A875, SLC6A876, SLC6A877, SLC6A878, SLC6A879, SLC6A880, SLC6A881, SLC6A882, SLC6A883, SLC6A884, SLC6A885, SLC6A886, SLC6A887, SLC6A888, SLC6A889, SLC6A890, SLC6A891, SLC6A892, SLC6A893, SLC6A894, SLC6A895, SLC6A896, SLC6A897, SLC6A898, SLC6A899, SLC6A900, SLC6A901, SLC6A902, SLC6A903, SLC6A904, SLC6A905, SLC6A906, SLC6A907, SLC6A908, SLC6A909, SLC6A910, SLC6A911, SLC6A912, SLC6A913, SLC6A914, SLC6A915, SLC6A916, SLC6A917, SLC6A918, SLC6A919, SLC6A920, SLC6A921, SLC6A922, SLC6A923, SLC6A924, SLC6A925, SLC6A926, SLC6A927, SLC6A928, SLC6A929, SLC6A930, SLC6A931, SLC6A932, SLC6A933, SLC6A934, SLC6A935, SLC6A936, SLC6A937, SLC6A938, SLC6A939, SLC6A940, SLC6A941, SLC6A942, SLC6A943, SLC6A944, SLC6A945, SLC6A946, SLC6A947, SLC6A948, SLC6A949, SLC6A950, SLC6A951, SLC6A952, SLC6A953, SLC6A954, SLC6A955, SLC6A956, SLC6A957, SLC6A958, SLC6A959, SLC6A960, SLC6A961, SLC6A962, SLC6A963, SLC6A964, SLC6A965, SLC6A966, SLC6A967, SLC6A968, SLC6A969, SLC6A970, SLC6A971, SLC6A972, SLC6A973, SLC6A974, SLC6A975, SLC6A976, SLC6A977, SLC6A978, SLC6A979, SLC6A980, SLC6A981, SLC6A982, SLC6A983, SLC6A984, SLC6A985, SLC6A986, SLC6A987, SLC6A988, SLC6A989, SLC6A990, SLC6A991, SLC6A992, SLC6A993, SLC6A994, SLC6A995, SLC6A996, SLC6A997, SLC6A998, SLC6A999, SLC6A1000, SLC6A1001, SLC6A1002, SLC6A1003, SLC6A1004, SLC6A1005, SLC6A1006, SLC6A1007, SLC6A1008, SLC6A1009, SLC6A1010, SLC6A1011, SLC6A1012, SLC6A1013, SLC6A1014, SLC6A1015, SLC6A1016, SLC6A1017, SLC6A1018, SLC6A1019, SLC6A1020, SLC6A1021, SLC6A1022, SLC6A1023, SLC6A1024, SLC6A1025, SLC6A1026, SLC6A1027, SLC6A1028, SLC6A1029, SLC6A1030, SLC6A1031, SLC6A1032, SLC6A1033, SLC6A1034, SLC6A1035, SLC6A1036, SLC6A1037, SLC6A1038, SLC6A1039, SLC6A1040, SLC6A1041, SLC6A1042, SLC6A1043, SLC6A1044, SLC6A1045, SLC6A1046, SLC6A1047, SLC6A1048, SLC6A1049, SLC6A1050, SLC6A1051, SLC6A1052, SLC6A1053, SLC6A1054, SLC6A1055, SLC6A1056, SLC6A1057, SLC6A1058, SLC6A1059, SLC6A1060, SLC6A1061, SLC6A1062, SLC6A1063, SLC6A1064, SLC6A1065, SLC6A1066, SLC6A1067, SLC6A1068, SLC6A1069, SLC6A1070, SLC6A1071, SLC6A1072, SLC6A1073, SLC6A1074, SLC6A1075, SLC6A1076, SLC6A1077, SLC6A1078, SLC6A1079, SLC6A1080, SLC6A1081, SLC6A1082, SLC6A1083, SLC6A1084, SLC6A1085, SLC6A1086, SLC6A1087, SLC6A1088, SLC6A1089, SLC6A1090, SLC6A1091, SLC6A1092, SLC6A1093, SLC6A1094, SLC6A1095, SLC6A1096, SLC6A1097, SLC6A1098, SLC6A1099, SLC6A1100, SLC6A1101, SLC6A1102, SLC6A1103, SLC6A1104, SLC6A1105, SLC6A1106, SLC6A1107, SLC6A1108, SLC6A1109, SLC6A1110, SLC6A1111, SLC6A1112, SLC6A1113, SLC6A1114, SLC6A1115, SLC6A1116, SLC6A1117, SLC6A1118, SLC6A1119, SLC6A1120, SLC6A1121, SLC6A1122, SLC6A1123, SLC6A1124, SLC6A1125, SLC6A1126, SLC6A1127, SLC6A1128, SLC6A1129, SLC6A1130, SLC6A1131, SLC6A1132, SLC6A1133, SLC6A1134, SLC6A1135, SLC6A1136, SLC6A1137, SLC6A1138, SLC6A1139, SLC6A1140, SLC6A1141, SLC6A1142, SLC6A1143, SLC6A1144, SLC6A1145, SLC6A1146, SLC6A1147, SLC6A1148, SLC6A1149, SLC6A1150, SLC6A1151, SLC6A1152, SLC6A1153, SLC6A1154, SLC6A1155, SLC6A1156, SLC6A1157, SLC6A1158, SLC6A1159, SLC6A1160, SLC6A1161, SLC6A1162, SLC6A1163, SLC6A1164, SLC6A1165, SLC6A1166, SLC6A1167, SLC6A1168, SLC6A1169, SLC6A1170, SLC6A1171, SLC6A1172, SLC6A1173, SLC6A1174, SLC6A1175, SLC6A1176, SLC6A1177, SLC6A1178, SLC6A1179, SLC6A1180, SLC6A1181, SLC6A1182, SLC6A1183, SLC6A1184, SLC6A1185, SLC6A1186, SLC6A1187, SLC6A1188, SLC6A1189, SLC6A1190, SLC6A1191, SLC6A1192, SLC6A1193, SLC6A1194, SLC6A1195, SLC6A1196, SLC6A1197, SLC6A1198, SLC6A1199, SLC6A1200, SLC6A1201, SLC6A1202, SLC6A1203, SLC6A1204, SLC6A1205, SLC6A1206, SLC6A1207, SLC6A1208, SLC6A1209, SLC6A1210, SLC6A1211, SLC6A1212, SLC6A1213, SLC6A1214, SLC6A1215, SLC6A1216, SLC6A1217, SLC6A1218, SLC6A1219, SLC6A1220, SLC6A1221, SLC6A1222, SLC6A1223, SLC6A1224, SLC6A1225, SLC6A1226, SLC6A1227, SLC6A1228, SLC6A1229, SLC6A1230, SLC6A1231, SLC6A1232, SLC6A1233, SLC6A1234, SLC6A1235, SLC6A1236, SLC6A1237, SLC6A1238, SLC6A1239, SLC6A1240, SLC6A1241, SLC6A1242, SLC6A1243, SLC6A1244, SLC6A1245, SLC6A1246, SLC6A1247, SLC6A1248, SLC6A1249, SLC6A1250, SLC6A1251, SLC6A1252, SLC6A1253, SLC6A1254, SLC6A1255, SLC6A1256, SLC6A1257, SLC6A1258, SLC6A1259, SLC6A1260, SLC6A1261, SLC6A1262, SLC6A1263, SLC6A1264, SLC6A1265, SLC6A1266, SLC6A1267, SLC6A1268, SLC6A1269, SLC6A1270, SLC6A1271, SLC6A1272, SLC6A1273, SLC6A1274, SLC6A1275, SLC6A1276, SLC6A1277, SLC6A1278, SLC6A1279, SLC6A1280, SLC6A1281, SLC6A1282, SLC6A1283, SLC6A1284, SLC6A1285, SLC6A1286, SLC6A1287, SLC6A1288, SLC6A1289, SLC6A1290, SLC6A1291, SLC6A1292, SLC6A1293, SLC6A1294, SLC6A1295, SLC6A1296, SLC6A1297, SLC6A1298, SLC6A1299, SLC6A1300, SLC6A1301, SLC6A1302, SLC6A1303, SLC6A1304, SLC6A1305, SLC6A1306, SLC6A1307, SLC6A1308, SLC6A1309, SLC6A1310, SLC6A1311, SLC6A1312, SLC6A1313, SLC6A1314, SLC6A1315, SLC6A1316, SLC6A1317, SLC6A1318, SLC6A1319, SLC6A1320, SLC6A1321, SLC6A1322, SLC6A1323, SLC6A1324, SLC6A1325, SLC6A1326, SLC6A1327, SLC6A1328, SLC6A1329, SLC6A1330, SLC6A1331, SLC6A1332, SLC6A1333, SLC6A1334, SLC6A1335, SLC6A1336, SLC6A1337, SLC6A1338, SLC6A1339, SLC6A1340, SLC6A1341, SLC6A1342, SLC6A1343, SLC6A1344, SLC6A1345, SLC6A1346, SLC6A1347, SLC6A1348, SLC6A1349, SLC6A1350, SLC6A1351, SLC6A1352, SLC6A1353, SLC6A1354, SLC6A1355, SLC6A1356, SLC6A1357, SLC6A1358, SLC6A1359, SLC6A1360, SLC6A1361, SLC6A1362, SLC6A1363, SLC6A1364, SLC6A1365, SLC6A1366, SLC6A1367, SLC6A1368, SLC6A1369, SLC6A1370, SLC6A1371, SLC6A1372, SLC6A1373, SLC6A1374, SLC6A1375, SLC6A1376, SLC6A1377, SLC6A1378, SLC6A1379, SLC6A1380, SLC6A1381, SLC6A1382, SLC6A1383, SLC6A1384, SLC6A1385, SLC6A1386, SLC6A1387, SLC6A1388, SLC6A1389, SLC6A1390, SLC6A1391, SLC6A1392, SLC6A1393, SLC6A1394, SLC6A1395, SLC6A1396, SLC6A1397, SLC6A1398, SLC6A1399, SLC6A1400, SLC6A1401, SLC6A1402, SLC6A1403, SLC6A1404, SLC6A1405, SLC6A1406, SLC6A1407, SLC6A1408, SLC6A1409, SLC6A1410, SLC6A1411, SLC6A1412, SLC6A1413, SLC6A1414, SLC6A1415, SLC6A1416, SLC6A1417, SLC6A1418, SLC6A1419, SLC6A1420, SLC6A1421, SLC6A1422, SLC6A1423, SLC6A1424, SLC6A1425, SLC6A1426, SLC6A1427, SLC6A1428, SLC6A1429, SLC6A1430, SLC6A1431, SLC6A1432, SLC6A1433, SLC6A1434, SLC6A1435, SLC6A1436, SLC6A1437, SLC6A1438, SLC6A1439, SLC6A1440, SLC6A1441, SLC6A1442, SLC6A1443, SLC6A1444, SLC6A1445, SLC6A1446, SLC6A1447, SLC6A1448, SLC6A1449, SLC6A1450, SLC6A1451, SLC6A1452, SLC6A1453, SLC6A1454, SLC6A1455, SLC6A1456, SLC6A1457, SLC6A1458, SLC6A1459, SLC6A1460, SLC6A1461, SLC6A1462, SLC6A1463, SLC6A1464, SLC6A1465, SLC6A1466, SLC6A1467, SLC6A1468, SLC6A1469, SLC6A1470, SLC6A1471, SLC6A1472, SLC6A1473, SLC6A1474, SLC6A1475, SLC6A1476, SLC6A1477, SLC6A1478, SLC6A1479, SLC6A1480, SLC6A1481, SLC6A1482, SLC6A1483, SLC6A1484, SLC6A1485, SLC6A1486, SLC6A1487, SLC6A1488, SLC6A1489, SLC6A1490, SLC6A1491, SLC6A1492, SLC6A1493, SLC6A1494, SLC6A1495, SLC6A1496, SLC6A1497, SLC6A1498, SLC6A1499, SLC6A1500, SLC6A1501, SLC6A1502, SLC6A1503, SLC6A1504, SLC6A1505, SLC6A1506, SLC6A1507, SLC6A1508, SLC6A1509, SLC6A1510, SLC6A1511, SLC6A1512, SLC6A1513, SLC6A1514, SLC6A1515, SLC6A1516, SLC6A1517, SLC6A1518, SLC6A1519, SLC6A1520, SLC6A1521, SLC6A1522, SLC6A1523, SLC6A1524, SLC6A1525, SLC6A1526, SLC6A1527, SLC6A1528, SLC6A1529, SLC6A1530, SLC6A1531, SLC6A1532, SLC6A1533, SLC6A1534, SLC6A1535, SLC6A1536, SLC6A1537, SLC6A1538, SLC6A1539, SLC6A1540, SLC6A1541, SLC6A1542, SLC6A1543, SLC6A1544, SLC6A1545, SLC6A1546, SLC6A1547, SLC6A1548, SLC6A1549, SLC6A1550, SLC6A1551, SLC6A1552, SLC6A1553, SLC6A1554, SLC6A1555, SLC6A1556, SLC6A1557, SLC6A1558, SLC6A1559, SLC6A1560, SLC6A1561, SLC6A1562, SLC6A1563, SLC6A1564, SLC6A1565, SLC6A1566, SLC6A1567, SLC6A1568, SLC6A1569, SLC6A1570, SLC6A1571, SLC6A1572, SLC6A1573, SLC6A1574, SLC6A1575, SLC6A1576, SLC6A1577, SLC6A1578, SLC6A1579, SLC6A1580, SLC6A1581, SLC6A1582, SLC6A1583, SLC6A1584, SLC6A1585, SLC6A1586, SLC6A1587, SLC6A1588, SLC6A1589, SLC6A1590, SLC6A1591, SLC6A1592, SLC6A1593, SLC6A1594, SLC6A1595, SLC6A1596, SLC6A1597, SLC6A1598, SLC6A1599, SLC6A1600, SLC6A1601, SLC6A1602, SLC6A1603, SLC6A1604, SLC6A1605, SLC6A1606, SLC6A1607, SLC6A1608, SLC6A1609, SLC6A1610, SLC6A1611, SLC6A1612, SLC6A1613, SLC6A1614, SLC6A1615, SLC6A1616, SLC6A1617, SLC6A1618, SLC6A1619, SLC6A1620, SLC6A1621, SLC6A1622, SLC6A1623, SLC6A1624, SLC6A1625, SLC6A1626, SLC6A1627, SLC6A1628, SLC6A1629, SLC6A1630, SLC6A1631, SLC6A1632, SLC6A1633, SLC6A1634, SLC6A1635, SLC6A1636, SLC6A1637, SLC6A1638, SLC6A1639, SLC6A1640, SLC6A1641, SLC6A1642, SLC6A1643, SLC6A1644, SLC6A1645, SLC6A1646, SLC6A1647, SLC6A1648, SLC6A1649, SLC6A1650, SLC6A1651, SLC6A1652, SLC6A1653, SLC6A1654, SLC6A1655, SLC6A1656, SLC6A1657, SLC6A1658, SLC6A1659, SLC6A1660, SLC6A1661, SLC6A1662, SLC6A1663, SLC6A1664, SLC6A1665, SLC6A1666, SLC6A1667, SLC6A1668, SLC6A1669, SLC6A1670, SLC6A1671, SLC6A1672, SLC6A1673, SLC6A1674, SLC6A1675, SLC6A1676, SLC6A1677, SLC6A1678, SLC6A1679, SLC6A1680, SLC6A1681, SLC6A1682, SLC6A1683, SLC6A1684, SLC6A1685, SLC6A1686, SLC6A1687, SLC6A1688, SLC6A1689, SLC6A1690, SLC6A1691, SLC6A1692, SLC6A1693, SLC6A1694, SLC6A1695, SLC6A1696, SLC6A1697, SLC6A1698, SLC6A1699, SLC6A1700, SLC6A1701, SLC6A1702, SLC6A1703, SLC6A1704, SLC6A1705, SLC6A1706, SLC6A1707, SLC6A1708, SLC6A1709, SLC6A1710, SLC6A1711, SLC6A1712, SLC6A1713, SLC6A1714, SLC6A1715, SLC6A1716, SLC6A1717, SLC6A1718, SLC6A1719, SLC6A1720, SLC6A1721, SLC6A1722, SLC6A1723, SLC6A1724, SLC6A1725, SLC6A1726, SLC6A1727, SLC6A1728, SLC6A1729, SLC6A1730, SLC6A1731, SLC6A1732, SLC6A1733, SLC6A1734, SLC6A1735, SLC6A1736, SLC6A1737, SLC6A1738, SLC6A1739, SLC6A1740, SLC6A1741, SLC6A1742, SLC6A1743, SLC6A1744, SLC6A1745, SLC6A1746, SLC6A1747, SLC6A1748, SLC6A1749, SLC6A1750, SLC6A1751, SLC6A1752, SLC6A1753, SLC6A1754, SLC6A1755, SLC6A1756, SLC6A1757, SLC6A1758, SLC6A1759, SLC6A1760, SLC6A1761, SLC6A1762, SLC6A1763, SLC6A1764, SLC6A1765, SLC6A1766, SLC6A1767, SLC6A1768, SLC6A1769, SLC6A1770, SLC6A1771, SLC6A1772, SLC6A1773, SLC6A1774, SLC6A1775, SLC6A1776, SLC6A1777, SLC6A1778, SLC6A1779, SLC6A1780, SLC6A1781, SLC6A1782, SLC6A1783, SLC6A1784, SLC6A1785, SLC6A1786, SLC6A1787, SLC6A1788, SLC6A1789, SLC6A1790, SLC6A1791, SLC6A1792, SLC6A1793, SLC6A1794, SLC6A1795, SLC6A1796, SLC6A1797, SLC6A1798, SLC6A1799, SLC6A1800, SLC6A1801, SLC6A1802, SLC6A1803, SLC6A1804, SLC6A1805, SLC6A1806, SLC6A1807, SLC6A1808, SLC6A1809, SLC6A1810, SLC6A1811, SLC6A1812, SLC6A1813, SLC6A1814, SLC6A1815, SLC6A1816, SLC6A1817, SLC6A1818, SLC6A1819, SLC6A1820, SLC6A1821, SLC6A1822, SLC6A1823, SLC6A1824, SLC6A1825, SLC6A1826, SLC6A1827, SLC6A1828, SLC6A1829, SLC6A1830, SLC6A1831, SLC6A1832, SLC6A1833, SLC6A1834, SLC6A1835, SLC6A1836, SLC6A1837, SLC6A1838, SLC6A1839, SLC6A1840, SLC6A1841, SLC6A1842, SLC6A1843, SLC6A1844, SLC6A1845, SLC6A1846, SLC6A1847, SLC6A1848, SLC6A1849, SLC6A1850, SLC6A1851, SLC6A1852, SLC6A1853, SLC6A1854, SLC6A1855, SLC6A1856, SLC6A1857, SLC6A1858, SLC6A1859, SLC6A1860, SLC6A1861, SLC6A1862, SLC6A1863, SLC6A1864, SLC6A1865, SLC6A1866, SLC6A1867, SLC6A1868, SLC6A1869, SLC6A1870, SLC6A1871, SLC6A1872, SLC6A1873, SLC6A1874, SLC6A1875, SLC6A1876, SLC6A1877, SLC6A1878, SLC6A1879, SLC6A1880, SLC6A1881, SLC6A1882, SLC6A1883, SLC6A1884, SLC6A1885, SLC6A1886, SLC6A1887, SLC6A1888, SLC6A1889, SLC6A1890, SLC6A1891, SLC6A1892, SLC6A1893, SLC6A1894, SLC6A1895, SLC6A1896, SLC6A1897, SLC6A1898, SLC6A1899, SLC6A1900, SLC6A1901, SLC6A1902, SLC6A1903, SLC6A1904, SLC6A1905, SLC6A1906, SLC6A1907, SLC6A1908, SLC6A1909, SLC6A1910, SLC6A1911, SLC6A1912, SLC6A1913, SLC6A1914, SLC6A1915, SLC6A1916, SLC6A1917, SLC6A1918, SLC6A1919, SLC6A1920, SLC6A1921, SLC6A1922, SLC6A1923, SLC6A1924, SLC6A1925, SLC6A1926, SLC6A1927, SLC6A1928, SLC6A1929, SLC6A1930, SLC6A1931, SLC6A1932, SLC6A1933, SLC6A1934, SLC6A1935, SLC6A1936, SLC6A1937, SLC6A1938, SLC6A1939, SLC6A1940, SLC6A1941, SLC6A1942, SLC6A1943, SLC6A1944, SLC6A1945, SLC6A1946, SLC6A1947, SLC6A1948, SLC6A1949, SLC6A1950, SLC6A1951, SLC6A1952, SLC6A1953, SLC6A1954, SLC6A1955, SLC6A1956, SLC6A1957, SLC6A1958, SLC6A1959, SLC6A1960, SLC6A1961, SLC6A1962, SLC6A1963, SLC6A1964, SLC6A1965, SLC6A1966, SLC6A1967, SLC6A1968, SLC6A1969, SLC6A1970, SLC6A1971, SLC6A1972, SLC6A1973, SLC6A1974, SLC6A1975, SLC6A1976, SLC6A1977, SLC6A1978, SLC6A1979, SLC6A1980, SLC6A1981, SLC6A1982, SLC6A1983, SLC6A1984, SLC6A1985, SLC6A1986, SLC6A1987, SLC6A1988, SLC6A1989, SLC6A1990, SLC6A1991, SLC6A1992, SLC6A1993, SLC6A1994, SLC6A1995, SLC6A1996, SLC6A1997, SLC6A1998, SLC6A1999, SLC6A2000, SLC6A2001, SLC6A2002, SLC6A2003, SLC6A2004, SLC6A2005, SLC6A2006, SLC6A2007, SLC6A2008, SLC6A2009, SLC6A2010, SLC6A2011, SLC6A2012, SLC6A2013, SLC6A2014, SLC6A2015, SLC6A2016, SLC6A2017, SLC6A2018, SLC6A2019, SLC6A2020, SLC6A2021, SLC6A2022, SLC6A2023, SLC6A2024, SLC6A2025, SLC6A2026, SLC6A2027, SLC6A2028, SLC6A2029, SLC6A2030, SLC6A2031, SLC6A2032, SLC6A2033, SLC6A2034, SLC6A2035, SLC6A2036, SLC6A2037, SLC6A2038, SLC6A2039, SLC6A2040, SLC6A2041, SLC6A2042, SLC6A2043, SLC6A2044, SLC6A2045, SLC6A2046, SLC6A2047, SLC6A2048, SLC6A2049, SLC6A2050, SLC6A2051, SLC6A2052, SLC6A2053, SLC6A2054, SLC6A2055, SLC6A2056, SLC6A2057, SLC6A2058, SLC6A2059, SLC6A2060, SLC6A2061, SLC6A2062, SLC6A2063, SLC6A2064, SLC6A2065, SLC6A2066, SLC6A2067, SLC6A2068, SLC6A2069, SLC6A2070, SLC6A2071, SLC6A2072, SLC6A2073, SLC6A2074, SLC6A2075, SLC6A2076, SLC6A2077, SLC6A2078, SLC6A2079, SLC6A2080, SLC6A2081, SLC6A2082, SLC6A2083, SLC6A2084, SLC6A2085, SLC6A2086, SLC6A2087, SLC6A2088, SLC6A2089, SLC6A2090, SLC6A2091, SLC6A2092, SLC6A2093, SLC6A2094, SLC6A2095, SLC6A2096, SLC6A2097, SLC6A2098, SLC6A2099, SLC6A2100, SLC6A2101, SLC6A2102, SLC6A2103, SLC6A2104, SLC6A2105, SLC6A2106, SLC6A2107, SLC6A2108, SLC6A2109, SLC6A2110, SLC6A2111, SLC6A2112, SLC6A2113, SLC6A2114, SLC6A2115, SLC6A2116, SLC6A2117, SLC6A2118, SLC6A2119, SLC6A2120, SLC6A2121, SLC6A2122, SLC6A2123, SLC6A2124, SLC6A2125, SLC6A2126, SLC6A2127, SLC6A2128, SLC6A2129, SLC6A2130, SLC6A2131, SLC6A2132, SLC6A2133, SLC6A2134, SLC6A2135, SLC6A2136, SLC6A2137, SLC6A2138, SLC6A2139, SLC6A2140, SLC6A2141, SLC6A2142, SLC6A2143, SLC6A2144, SLC6A2145, SLC6A2146, SLC6A2147, SLC6A2148, SLC6A2149, SLC6A2150, SLC6A2151, SLC6A2152, SLC6A2153, SLC6A2154, SLC6A2155, SLC6A2156, SLC6A2157, SLC6A2158, SLC6A2159, SLC6A2160, SLC6A2161, SLC6A2162, SLC6A2163, SLC6A2164, SLC6A2165, SLC6A2166, SLC6A2167, SLC6A2168, SLC6A2169, SLC6A2170, SLC6A2171, SLC6A2172, SLC6A2173, SLC6A2174, SLC6A2175, SLC6A2176, SLC6A2177, SLC6A2178, SLC6A2179, SLC6A2180, SLC6A2181, SLC6A2182, SLC6A2183, SLC6A2184, SLC6A2185, SLC6A2186, SLC6A2187, SLC6A2188, SLC6A2189, SLC6A2190, SLC6A2191, SLC6A2192, SLC6A2193, SLC6A2194, SLC6A2195, SLC6A2196, SLC6A2197, SLC6A2198, SLC6A2199, SLC6A2200, SLC6A2201, SLC6A2202, SLC6A2203, SLC6A2204, SLC6A2205, SLC6A2206, SLC6A2207, SLC6A2208, SLC6A2209, SLC6A2210, SLC6A2211, SLC6A2212, SLC6A2213, SLC6A2214, SLC6A2215, SLC6A2216, SLC6A2217, SLC6A2218, SLC6A2219, SLC6A2220, SLC6A2221, SLC6A2222, SLC6A2223, SLC6A2224, SLC6A2225, SLC6A2226, SLC6A2227, SLC6A2228, SLC6A2229, SLC6A2230, SLC6A2231, SLC6A2232, SLC6A2233, SLC6A2234, SLC6A2235, SLC6A2236, SLC6A2237, SLC6A2238, SLC6A2239, SLC6A2240, SLC6A2241, SLC6A2242, SLC6A2243, SLC6A2244, SLC6A2245, SLC6A2246, SLC6A2247, SLC6A2248, SLC6A2249, SLC6A2250, SLC6A2251, SLC6A2252, SLC6A2253, SLC6A2254, SLC6A2255, SLC6A2256, SLC6A2257, SLC6A2258, SLC6A2259, SLC6A2260, SLC6A2261, SLC6A2262, SLC6A2263, SLC6A2264, SLC6A2265, SLC6A2266, SLC6A2267, SLC6A2268, SLC6A2269, SLC6A2270, SLC6A2271, SLC6A2272, SLC6A2273, SLC6A2274, SLC6A2275, SLC6A2276, SLC6A2277, SLC6A2278, SLC6A2279, SLC6A2280, SLC6A2281, SLC6A2282, SLC6A2283, SLC6A2284, SLC6A2285, SLC6A2286, SLC6A2287, SLC6A2288, SLC6A2289, SLC6A2290, SLC6A2291, SLC6A2292, SLC6A2293, SLC6A2294, SLC6A2295, SLC6A2296, SLC6A2297, SLC6A2298, SLC6A2299, SLC6A2300, SLC6A2301, SLC6A2302, SLC6A2303, SLC6A2304, SLC6A2305, SLC6A2306, SLC6A2307, SLC6A2308, SLC6A2309, SLC6A2310, SLC6A2311, SLC6A2312, SLC6A2313, SLC6A2314, SLC6A2315, SLC6A2316, SLC6A2317, SLC6A2318, SLC6A2319, SLC6A2320, SLC6A2321, SLC6A2322, SLC6A2323, SLC6A2324, SLC6A2325, SLC6A2326, SLC6A2327, SLC6A2328, SLC6A2329, SLC6A2330, SLC6A2331, SLC6A2332, SLC6A2333, SLC6A2334, SLC6A2335, SLC6A2336, SLC6A2337, SLC6A2338, SLC6A2339, SLC6A2340, SLC6A2341, SLC6A2342, SLC6A2343, SLC6A2344, SLC6A2345, SLC6A2346, SLC6A2347, SLC6A2348, SLC6A2349, SLC6A2350, SLC6A2351, SLC6A2352, SLC6A2353, SLC6A2354, SLC6A2355, SLC6A2356, SLC6A2357, SLC6A2358, SLC6A2359, SLC6A2360, SLC6A2361, SLC6A2362, SLC6A2363, SLC6A2364, SLC6A2365, SLC6A2366, SLC6A2367, SLC6A2368, SLC6A2369, SLC6A2370, SLC6A2371, SLC6A2372, SLC6A2373, SLC6A2374, SLC6A2375, SLC6A2376, SLC6A2377, SLC6A2378, SLC6A2379, SLC6A2380, SLC6A2381, SLC6A2382, SLC6A2383, SLC6A2384, SLC6A2385, SLC6A2386, SLC6A2387, SLC6A2388, SLC6A2389, SLC6A2390, SLC6A2391, SLC6A2392, SLC6A2393, SLC6A2394, SLC6A2395, SLC6A2396, SLC6A2397, SLC6A2398, SLC6A2399, SLC6A2400, SLC6A2401, SLC6A2402, SLC6A2403, SLC6A2404, SLC6A2405, SLC6A2406, SLC6A2407, SLC6A2408, SLC6A2409, SLC6A2410, SLC6A2411, SLC6A2412, SLC6A2413, SLC6A2414, SLC6A2415, SLC6A2416, SLC6A2417, SLC6A2418, SLC6A2419, SLC6A2420, SLC6A2421, SLC6A2422, SLC6A2423, SLC6A2424, SLC6A2425, SLC6A2426, SLC6A2427, SLC6A2428, SLC6A2429, SLC6A2430, SLC6A2431, SLC6A2432, SLC6A2433, SLC6A2434, SLC6A2435, SLC6A2436, SLC6A2437, SLC6A2438, SLC6A2439, SLC6A2440, SLC6A2441, SLC6A2442, SLC6A2443, SLC6A2444, SLC6A2445, SLC6A2446, SLC6A2447, SLC6A2448, SLC6A2449, SLC6A2450, SLC6A2451, SLC6A2452, SLC6A2453, SLC6A2454, SLC6A2455, SLC6A2456, SLC6A2457, SLC6A2458, SLC6A2459, SLC6A2460, SLC6A2461, SLC6A2462, SLC6A2463, SLC6A2464, SLC6A2465, SLC6A2466, SLC6A2467, SLC6A2468, SLC6A2469, SLC6A2470, SLC6A2471, SLC6A2472, SLC6A2473, SLC6A2474, SLC6A2475, SLC6A2476, SLC6A2477, SLC6A2478, SLC6A2479, SLC6A2480, SLC6A2481, SLC6A2482, SLC6A2483, SLC6A2484, SLC6A2485, SLC6A2486, SLC6A2487, SLC6A2488, SLC6A2489, SLC6A2490, SLC6A2491, SLC6A2492, SLC6A2493, SLC6A2494, SLC6A2495, SLC6A2496, SLC6A2497, SLC6A2498, SLC6A2499, SLC6A2500, SLC6A2501, SLC6A2502, SLC6A2503, SLC6A2504, SLC6A2505, SLC6A2506, SLC6A2507, SLC6A2508, SLC6A2509, SLC6A2510, SLC6A2511, SLC6A2512, SLC6A2513, SLC6A2514, SLC6A2515, SLC6A2516, SLC6A2517, SLC6A2518, SLC6A2519, SLC6A2520, SLC6A2521, SLC6A2522, SLC6A2523, SLC6A2524, SLC6A2525, SLC6A2526, SLC6A2527, SLC6A2528, SLC6A2529, SLC6A2530, SLC6A2531, SLC6A2532, SLC6A2533, SLC6A2534, SLC6A2535, SLC6A2536, SLC6A2537, SLC6A2538, SLC6A2539, SLC6A2540, SLC6A2541, SLC6A2542, SLC6A2543, SLC6A2544, SLC6A2545, SLC6A2546, SLC6A2547, SLC6A2548, SLC6A2549, SLC6A2550, SLC6A2551, SLC6A2552, SLC6A2553, SLC6A2554, SLC6A2555, SLC6A2556, SLC6A2557, SLC6A2558, SLC6A2559, SLC6A2560, SLC6A2561, SLC6A2562, SLC6A2563, SLC6A2564, SLC6A2565, SLC6A2566, SLC6A2567, SLC6A2568, SLC6A2569, SLC6A2570, SLC6A2571, SLC6A2572, SLC6A2573, SLC6A2574, SLC6A2575, SLC6A2576, SLC6A2577, SLC6A2578, SLC6A2579, SLC6A2580, SLC6A2581, SLC6A2582, SLC6A2583, SLC6A2584, SLC6A2585, SLC6A2586, SLC6A2587, SLC6A2588, SLC6A2589, SLC6A2590, SLC6A2591, SLC6A2592, SLC6A2593, SLC6A2594, SLC6A2595, SLC6A2596, SLC6A2597, SLC6A2598, SLC6A2599, SLC6A2600, SLC6A2601, SLC6A2602, SLC6A2603, SLC6A2604, SLC6A2605, SLC6A2606, SLC6A2607, SLC6A2608, SLC6A2609, SLC6A2610, SLC6A2611, SLC6A2612, SLC6A2613, SLC6A2614, SLC6A2615, SLC6A2616, SLC6A2617, SLC6A2618, SLC6A2619, SLC6A2620, SLC6A2621, SLC6A2622, SLC6A2623, SLC6A2624, SLC6A2625, SLC6A2626, SLC6A2627, SLC6A2628, SLC6A2629, SLC6A2630, SLC6A2631, SLC6A2632, SLC6A2633, SLC6A2634, SLC6A2635, SLC6A2636, SLC6A2637, SLC6A2638, SLC6A2639, SLC6A2640, SLC6A2641, SLC6A2642, SLC6A2643, SLC6A2644, SLC6A2645, SLC6A2646, SLC6A2647, SLC6A2648, SLC6A2649, SLC6A2650, SLC6A2651, SLC6A2652, SLC6A2653, SLC6A2654, SLC6A2655, SLC6A2656, SLC6A2657, SLC6A2658, SLC6A2659, SLC6A2660, SLC6A2661, SLC6A2662, SLC6A2663, SLC6A2664, SLC6A2665, SLC6A2666, SLC6A2667, SLC6A2668, SLC6A2669, SLC6A2670, SLC6A2671, SLC6A2672, SLC6A2673, SLC6A2674, SLC6A2675, SLC6A2676, SLC6A2677, SLC6A2678, SLC6A2679, SLC6A2680, SLC6A2681, SLC6A2682, SLC6A2683, SLC6A2684, SLC6A2685, SLC6A2686, SLC6A2687, SLC6A2688, SLC6A2689, SLC6A2690, SLC6A2691, SLC6A2692, SLC6A2693, SLC6A2694, SLC6A2695, SLC6A2696, SLC6A2697, SLC6A2698, SLC6A2699, SLC6A2700, SLC6A2701, SLC6A2702, SLC6A2703, SLC6A2704, SLC6A2705, SLC6A2706, SLC6A2707, SLC6A2708, SLC6A2709, SLC6A2710, SLC6A2711, SLC6A2712, SLC6A2713, SLC6A2714, SLC6A2715, SLC6A2716, SLC6A2717, SLC6A2718, SLC6A2719, SLC6A2720, SLC6A2721, SLC6A2722, SLC6A2723, SLC6A2724, SLC6A2725, SLC6A2726, SLC6A2727, SLC6A2728, SLC6A2729, SLC6A2730, SLC6A2731, SLC6A2732, SLC6A2733, SLC6A2734, SLC6A2735, SLC6A2736, SLC6A2737, SLC6A2738, SLC6A2739, SLC6A2740, SLC6A2741, SLC6A2742, SLC6A2743, SLC6A2744, SLC6A2745, SLC6A2746, SLC6A2747, SLC6A2748, SLC6A2749, SLC6A2750, SLC6A2751, SLC6A2752, SLC6A2753, SLC6A2754, SLC6A2755, SLC6A2756, SLC6A2757, SLC6A2758, SLC6A2759, SLC6A2760, SLC6A2761, SLC6A2762, SLC6A2763, SLC6A2764, SLC6A2765, SLC6A2766, SLC6A2767, SLC6A2768, SLC6A2769, SLC6A2770, SLC6A2771, SLC6A2772, SLC6A2773, SLC6A2774, SLC6A2775, SLC6A2776, SLC6A2777, SLC6A2778, SLC6A2779, SLC6A2780, SLC6A2781, SLC6A2782, SLC6A2783, SLC6A2784, SLC6A2785, SLC6A2786, SLC6A2787, SLC6A2788, SLC6A2789, SLC6A2790, SLC6A2791, SLC6A2792, SLC6A2793, SLC6A2794, SLC6A2795, SLC6A2796, SLC6A2797, SLC6A2798, SLC6A2799, SLC6A2800, SLC6A2801, SLC6A2802, SLC6A2803, SLC6A2804, SLC6A2805, SLC6A2806, SLC6A2807, SLC6A2808, SLC6A2809, SLC6A2810, SLC6A2811, SLC6A2812, SLC6A2813, SLC6A2814, SLC6A2815, SLC6A2816, SLC6A2817, SLC6A2818, SLC6A2819, SLC6A2820, SLC6A2821, SLC6A2822, SLC6A2823, SLC6A2824, SLC6A2825, SLC6A2826, SLC6A2827, SLC6A2828, SLC6A2829, SLC6A2830, SLC6A2831, SLC6A2832, SLC6A2833, SLC6A2834, SLC6A2835, SLC6A2836, SLC6A2837, SLC6A2838, SLC6A2839, SLC6A2840, SLC6A2841, SLC6A2842, SLC6A2843, SLC6A2844, SLC6A2845, SLC6A2846, SLC6A2847, SLC6A2848, SLC6A2849, SLC6A2850, SLC6A2851, SLC6A2852, SLC6A2853, SLC6A2854, SLC6A2855, SLC6A2856, SLC6A2857, SLC6A2858, SLC6A2859, SLC6A2860, SLC6A2861, SLC6A2862, SLC6A2863, SLC6A2864, SLC6A2865, SLC6A2866, SLC6A2867, SLC6A2868, SLC6A2869, SLC6A2870, SLC6A2871, SLC6A2872, SLC6A2873, SLC6A2874, SLC6A2875, SLC6A2876, SLC6A2877, SLC6A2878, SLC6A2879, SLC6A2880, SLC6A2881, SLC6A2882, SLC6A2883, SLC6A2884, SLC6A2885, SLC6A2886, SLC6A2887, SLC6A2888, SLC6A2889, SLC6A2890, SLC6A2891, SLC6A2892, SLC6A2893, SLC6A2894, SLC6A2895, SLC6A2896, SLC6A2897, SLC6A2898, SLC6A2899, SLC6A2900, SLC6A2901, SLC6A2902, SLC6A2903, SLC6A2904, SLC6A2905, SLC6A2906, SLC6A2907, SLC6A2908, SLC6A2909, SLC6A2910, SLC6A2911, SLC6A2912, SLC6A2913, SLC6A2914, SLC6A2915, SLC6A2916, SLC6A2917, SLC6A2918, SLC6A2919, SLC6A2920, SLC6A2921, SLC6A2922, SLC6A2923, SLC6A2924, SLC6A2925, SLC6A2926, SLC6A2927, SLC6A2928, SLC6A2929, SLC6A2930, SLC6A2931, SLC6A2932, SLC6A2933, SLC6A2934, SLC6A2935, SLC6A2936, SLC6A2937, SLC6A2938, SLC6A2939, SLC6A2940, SLC6A2941, SLC6A2942, SLC6A2943, SLC6A2944, SLC6A2945, SLC6A2946, SLC6A2947, SLC6A2948, SLC6A2949, SLC6A2950, SLC6A2951, SLC6A2952, SLC6A2953, SLC6A2954, SLC6A2955, SLC6A2956, SLC6A2957, SLC6A2958, SLC6A2959, SLC6A2960, SLC6A2961, SLC6A2962, SLC6A2963, SLC6A2964, SLC6A2965, SLC6A2966, SLC6A2967, SLC6A2968, SLC6A2969, SLC6A2970, SLC6A2971, SLC6A2972, SLC6A2973, SLC6A2974, SLC6A2975, SLC6A2976, SLC6A2977, SLC6A2978, SLC6A2979, SLC6A2980, SLC6A2981, SLC6A2982, SLC6A2983, SLC6A2984, SLC6A2985, SLC6A2986, SLC6A2987, SLC6A2988, SLC6A2989, SLC6A2990, SLC6A2991, SLC6A2992, SLC6A2993, SLC6A2994, SLC6A2995, SLC6A2996, SLC6A2997, SLC6A2998, SLC6A2999, SLC6A3000, SLC6A3001, SLC6A3002, SLC6A3003, SLC6A3004, SLC6A3005, SLC6A3006, SLC6A3007, SLC6A3008, SLC6A3009, SLC6A3010, SLC6A3011, SLC6A3012, SLC6A3013, SLC6A3014, SLC6A3015, SLC6A3016, SLC6A3017, SLC6A3018, SLC6A3019, SLC6A3020, SLC6A3021, SLC6A3022, SLC6A3023, SLC6A3024, SLC6A3025, SLC6A3026, SLC6A3027, SLC6A3028, SLC6A3029, SLC6A3030, SLC6A3031, SLC6A3032, SLC6A3033, SLC6A3034, SLC6A3035, SLC6A3036, SLC6A3037, SLC6A3038, SLC6A3039, SLC6A3040, SLC6A3041, SLC6A3042, SLC6A3043, SLC6A3044, SLC6A3045, SLC6A3046, SLC6A3047, SLC6A3048, SLC6A3049, SLC6A3050, SLC6A3051, SLC6A3052, SLC6A3053, SLC6A3054, SLC6A3055, SLC6A3056, SLC6A3057, SLC6A3058, SLC6A3059, SLC6A3060, SLC6A3061, SLC6A3062, SLC6A3063, SLC6A3064, SLC6A3065, SLC6A3066, SLC6A3067, SLC6A3068, SLC6A3069, SLC6A3070, SLC6A3071, SLC6A3072, SLC6A3073, SLC6A3074, SLC6A3075, SLC6A3076, SLC6A3077, SLC6A3078, SLC6A3079, SLC6A3080, SLC6A3081, SLC6A3082, SLC6A3083, SLC6A3084, SLC6A3085, SLC6A3086, SLC6A3087, SLC6A3088, SLC6A3089, SLC6A3090, SLC6A3091, SLC6A3092, SLC6A3093, SLC6A3094, SLC6A3095, SLC6A3096, SLC6A3097, SLC6A3098, SLC6A3099, SLC6A3100, SLC6A3101, SLC6A3102, SLC6A3103, SLC6A3104, SLC6A3105, SLC6A3106, SLC6A3107, SLC6A3108, SLC6A3109, SLC6A3110, SLC6A3111, SLC6A3112, SLC6A3113, SLC6A3114, SLC6A3115, SLC6A3116, SLC6A3117, SLC6A3118, SLC6A3119, SLC6A3120, SLC6A3121, SLC6A3122, SLC6A3123, SLC6A3124, SLC6A3125, SLC6A3126, SLC6A3127, SLC6A3128, SLC6A3129, SLC6A3130, SLC6A3131, SLC6A3132, SLC6A3133, SLC6A3134, SLC6A3135, SLC6A3136, SLC6A3137, SLC6A3138, SLC6A3139, SLC6A3140, SLC6A3141, SLC6A3142, SLC6A3143, SLC6A3144, SLC6A3145, SLC6A3146, SLC6A3147, SLC6A3148, SLC6A3149, SLC6A3150, SLC6A3151, SLC6A3152, SLC6A3153, SLC6A3154, SLC6A3155, SLC6A3156, SLC6A3157, SLC6A3158, SLC6A3159, SLC6A3160, SLC6A3161, SLC6A3162, SLC6A3163, SLC6A3164, SLC6A3165, SLC6A3166, SLC6A3167, SLC6A3168, SLC6A3169, SLC6A3170, SLC6A3171, SLC6A3172, SLC6A3173, SLC6A3174, SLC6A3175, SLC6A3176, SLC6A3177, SLC6A3178, SLC6A3179, SLC6A3180, SLC6A3181, SLC6A3182, SLC6A3183, SLC6A3184, SLC6A3185, SLC6A3186, SLC6A3187, SLC6A3188, SLC6A3189, SLC6A3190, SLC6A3191, SLC6A3192, SLC6A3193, SLC6A3194, SLC6A3195, SLC6A3196, SLC6A3197, SLC6A3198, SLC6A3199, SLC6A3200, SLC6A3201, SLC6A3202, SLC6A3203, SLC6A3204, SLC6A3205, SLC6A3206, SLC6A3207, SLC6A3208, SLC6A3209, SLC6A3210, SLC6A3211, SLC6A3212, SLC6A3213, SLC6A3214, SLC6A3215, SLC6A3216, SLC6A3217, SLC6A3218, SLC6A3219, SLC6A3220, SLC6A3221, SLC6A3222, SLC6A3223, SLC6A3224, SLC6A3225, SLC6A3226, SLC6A3227, SLC6A3228, SLC6A3229, SLC6A3230, SLC6A3231, SLC6A3232, SLC6A3233, SLC6A3234, SLC6A3235, SLC6A3236, SLC6A3237, SLC6A3238, SLC6A3239, SLC6A3240, SLC6A3241, SLC6A3242, SLC6A3243, SLC6A3244, SLC6A3245, SLC6A3246, SLC6A3247, SLC6A3248, SLC6A3249, SLC6A3250, SLC6A3251, SLC6A3252, SLC6A3253, SLC6A3254, SLC6A3255, SLC6A3256, SLC6A3257, SLC6A3258, SLC6A3259, SLC6A3260, SLC6A3261, SLC6A3262, SLC6A3263, SLC6A3264, SLC6A3265, SLC6A3266, SLC6A3267, SLC6A3268, SLC6A3269, SLC6A3270, SLC6A3271, SLC6A3272, SLC6A3273, SLC6A3274, SLC6A3275, SLC6A3276, SLC6A3277, SLC6A3278, SLC6A3279, SLC6A3280, SLC6A3281, SLC6A3282, SLC6A3283, SLC6A3284, SLC6A3285, SLC6A3286, SLC6A3287, SLC6A3288, SLC6A3289, SLC6A3290, SLC6A3291, SLC6A3292, SLC6A3293, SLC6A3294, SLC6A3295, SLC6A3296, SLC6A3297, SLC6A3298, SLC6A3299, SLC6A3300, SLC6A3301, SLC6A3302, SLC6A3303, SLC6A3304, SLC6A3305, SLC6A3306, SLC6A3307, SLC6A3308, SLC6A3309, SLC6A3310, SLC6A3311, SLC6A3312, SLC6A3313, SLC6A3314, SLC6A3315, SLC6A3316, SLC6A3317, SLC6A3318, SLC6A3319, SLC6A3320, SLC6A3321, SLC6A3322, SLC6A3323, SLC6A3324, SLC6A3325, SLC6A3326, SLC6A3327, SLC6A3328, SLC6A3329, SLC6A3330, SLC6A3331, SLC6A3332, SLC6A3333, SLC6A3334, SLC6A3335, SLC6A3336, SLC6A3337, SLC6A3338, SLC6A3339, SLC6A3340, SLC6A3341, SLC6A3342, SLC6A3343, SLC6A3344, SLC6A3345, SLC6A3346, SLC6A3347, SLC6A3348, SLC6A3349, SLC6A3350, SLC6A3351, SLC6A3352, SLC6A3353, SLC6A3354, SLC6A3355, SLC6A3356, SLC6A3357, SLC6A3358, SLC6A3359, SLC6A3360, SLC6A3361, SLC6A3362, SLC6A3363, SLC6A3364, SLC6A3365, SLC6A3366, SLC6A3367, SLC6A3368, SLC6A3369, SLC6A3370, SLC6A3371, SLC6A3372, SLC6A3373, SLC6A3374, SLC6A3375, SLC6A3376, SLC6A3377, SLC6A3378, SLC6A3379, SLC6A3380, SLC6A3381, SLC6A3382, SLC6A3383, SLC6A3384, SLC6A3385, SLC6A3386, SLC6A3387, SLC6A3388, SLC6A3389, SLC6A3390, SLC6A3391, SLC6A3392, SLC6A3393, SLC6A3394, SLC6A3395, SLC6A3396, SLC6A3397, SLC6A3398, SLC6A3399, SLC6A3400, SLC6A3401, SLC6A3402, SLC6A3403, SLC6A3404, SLC6A3405, SLC6A3406, SLC6A3407, SLC6A3408, SLC6A3409, SLC6A3410, SLC6A3411, SLC6A3412, SLC6A3413, SLC6A3414, SLC6A3415, SLC6A3416, SLC6A3417, SLC6A3418, SLC6A3419, SLC6A3420, SLC6A3421, SLC6A3422, SLC6A3423, SLC6A3424, SLC6A3425, SLC6A3426, SLC6A3427, SLC6A3428, SLC6A3429, SLC6A3430, SLC6A3431, SLC6A3432, SLC6A3433, SLC6A3434, SLC6A3435, SLC6A3436, SLC6A3437, SLC6A3438, SLC6A3439, SLC6A3440, SLC6A3441, SLC6A3442, SLC6A3443, SLC6A3444, SLC6A3445, SLC6A3446, SLC6A3447, SLC6A3448, SLC6A3449, SLC6A3450, SLC6A3451, SLC6A3452, SLC6A3453, SLC6A3454, SLC6A3455, SLC6A3456, SLC6A3457, SLC6A3458, SLC6A3459, SLC6A3460, SLC6A3461, SLC6A3462, SLC6A3463, SLC6A3464, SLC6A3465, SLC6A3466, SLC6A3467, SLC6A3468, SLC6A3469, SLC6A3470, SLC6A3471, SLC6A3472, SLC6A3473, SLC6A3474, SLC6A3475, SLC6A3476, SLC6A3477, SLC6A3478, SLC6A3479, SLC6A3480, SLC6A3481, SLC6A3482, SLC6A3483, SLC6A3484, SLC6A3485, SLC6A3486, SLC6A3487, SLC6A3488, SLC6A3489, SLC6A3490, SLC6A3491, SLC6A3492, SLC6A3493, SLC6A3494, SLC6A3495, SLC6A3496, SLC6A3497, SLC6A3498, SLC6A3499, SLC6A3500, SLC6A3501, SLC6A3502, SLC6A3503, SLC6A3504, SLC6A3505, SLC6A3506, SLC6A3507, SLC6A3508, SLC6A3509, SLC6A3510, SLC6A3511, SLC6A3512, SLC6A3513, SLC6A3514, SLC6A3515, SLC6A3516, SLC6A3517, SLC6A3518, SLC6A3519, SLC6A3520, SLC6A3521, SLC6A3522, SLC6A3523, SLC6A3524, SLC6A3525, SLC6A3526, SLC6A3527, SLC6A3528, SLC6A3529, SLC6A3530, SLC6A3531, SLC6A3532, SLC6A3533, SLC6A3534, SLC6A3535, SLC6A3536, SLC6A3537, SLC6A3538, SLC6A3539, SLC6A3540, SLC6A3541, SLC6A3542, SLC6A3543, SLC6A3544, SLC6A3545, SLC6A3546, SLC6A3547, SLC6A3548, SLC6A3549, SLC6A3550, SLC6A3551, SLC6A3552, SLC6A3553, SLC6A3554, SLC6A3555, SLC6A3556, SLC6A3557, SLC6A3558, SLC6A3559, SLC6A3560, SLC6A3561, SLC6A3562, SLC6A3563, SLC6A3564, SLC6A3565, SLC6A3566, SLC6A3567, SLC6A3568, SLC6A3569, SLC6A3570, SLC6A3571, SLC6A3572, SLC6A3573, SLC6A3574, SLC6A3575, SLC6A3576, SLC6A3577, SLC6A3578, SLC6A3579, SLC6A3580, SLC6A3581, SLC6A3582, SLC6A3583, SLC6A3584, SLC6A3585, SLC6A3586, SLC6A3587, SLC6A3588, SLC6A3589, SLC6A3590, SLC6A3591, SLC6A3592, SLC6A3593, SLC6A3594, SLC6A3595, SLC6A3596, SLC6A3597, SLC6A3598, SLC6A3599, SLC6A3600, SLC6A3601, SLC6A3602, SLC6A3603, SLC6A3604, SLC6A3605, SLC6A3606, SLC6A3607, SLC6A3608, SLC6A3609, SLC6A3610, SLC6A3611, SLC6A3612, SLC6A3613, SLC6A3614, SLC6A3615, SLC6A3616, SLC6A3617, SLC6A3618, SLC6A3619, SLC6A3620, SLC6A3621, SLC6A3622, SLC6A3623, SLC6A3624, SLC6A3625, SLC6A3626, SLC6A3627, SLC6A3628, SLC6A3629, SLC6A3630, SLC6A3631, SLC6A3632, SLC6A3633, SLC6A3634, SLC6A3635, SLC6A3636, SLC6A3637, SLC6A3638, SLC6A3639, SLC6A3640, SLC6A3641, SLC6A3642, SLC6A3643, SLC6A3644, SLC6A3645, SLC6A3646, SLC6A3647, SLC6A3648, SLC6A3649, SLC6A3650, SLC6A3651, SLC6A3652, SLC6A3653, SLC6A3654, SLC6A3655, SLC6A3656, SLC6A3657, SLC6A3658, SLC6A3659, SLC6A3660, SLC6A3661, SLC6A3662, SLC6A3663, SLC6A3664, SLC6A3665, SLC6A3666, SLC6A3667, SLC6A3668, SLC6A3669, SLC6A3670, SLC6A3671, SLC6A3672, SLC6A3673, SLC6A3674, SLC6A3675, SLC6A3676, SLC6A3677, SLC6A3678, SLC6A3679, SLC6A3680, SLC6A3681, SLC6A3682, SLC6A3683, SLC6A3684, SLC6A3685, SLC6A3686, SLC6A3687, SLC6A3688, SLC6A3689, SLC6A3690, SLC6A3691, SLC6A3692, SLC6A3693, SLC6A3694, SLC6A3695, SLC6A3696, SLC6A3697, SLC6A3698, SLC6A3699, SLC6A3700, SLC6A3701, SLC6A3702, SLC6A3703, SLC6A3704, SLC6A3705, SLC6A3706, SLC6A3707, SLC6A3708, SLC6A3709, SLC6A3710, SLC6A3711, SLC6A3712"}. Got: 1 validation error for OpenEndedAnswer
+answer
+  Field required [type=missing, input_value={'thinking': "The questio..., SLC6A3711, SLC6A3712"}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+For troubleshooting, visit: https://docs.langchain.com/oss/python/langchain/errors/OUTPUT_PARSING_FAILURE 
+  Thinking: 
+  Metrics: exact_match=0.000  precision=0.000  recall=0.000  f1=0.000  jaccard=0.000  overlap=0.000
+  Missing (in expected, not in got): ADRB2, BCHE
+  Extra (in got, not in expected):   NO_RESPONSE
+
+Q [557f531db4bd]: List the genes which bind to the drug Tubocurarine
+  Expected: SLC22A2, ACHE, CHRND, CHRNA2, CHRNB1, CHRM2, CHRNA1, SLC22A1, HTR3A
+  Got:      ['CHRNE', 'CHRNB1', 'CHRNB2', 'CHRNA1', 'CHRND']
+  Thinking: The question asks about genes that bind to the drug Tubocurarine. Tubocurarine (tubocurarine chloride) is a non-depolarizing neuromuscular blocking agent. It works by competing with acetylcholine at the nicotinic acetylcholine receptors at the neuromuscular junction.
+
+The primary target of tubocurarine is the nicotinic acetylcholine receptor (nAChR) at the neuromuscular junction. The genes encoding the subunits of the nicotinic acetylcholine receptor include:
+
+- CHRNA1 (alpha-1 subunit) - the main subunit at the neuromuscular junction
+- CHRNB1 (beta-1 subunit)
+- CHRNB2 (beta-2 subunit)
+- CHRND (delta subunit)
+- CHRNE (epsilon subunit)
+
+These five subunits make up the muscle-type nicotinic acetylcholine receptor at the neuromuscular junction, which is the primary target of tubocurarine.
+
+Based on DrugBank and other pharmacological databases, the primary gene targets of tubocurarine are the nicotinic acetylcholine receptor subunits:
+
+CHRNA1, CHRNB1, CHRNB2, CHRND, CHRNE
+  Metrics: exact_match=0.000  precision=0.600  recall=0.333  f1=0.429  jaccard=0.273  overlap=0.600
+  Missing (in expected, not in got): ACHE, CHRM2, CHRNA2, HTR3A, SLC22A1, SLC22A2
+  Extra (in got, not in expected):   CHRNB2, CHRNE
+
+Q [484263f46fb4]: List the genes which bind to the drug Apixaban
+  Expected: CYP2C19, ABCB1, CYP3A4, CYP2J2, CYP2C8, ABCG2, CYP1A2, F10, CYP3A5, CYP2C9
+  Got:      ['F10']
+  Thinking: The user is asking about genes that bind to the drug Apixaban. Apixaban is a direct oral anticoagulant (DOAC) that works as a Factor Xa inhibitor. Let me think about what genes/proteins Apixaban binds to.
+
+Apixaban is a selective, direct Factor Xa inhibitor. Its primary target is:
+- F10 (Factor X) - the gene encoding Factor X (coagulation factor X)
+
+Apixaban binds to the active site of Factor Xa (the activated form of Factor X). It also has some binding to other serine proteases in the coagulation cascade, but its primary and most specific target is Factor Xa.
+
+Let me think about whether there are other genes that Apixaban binds to:
+- F10 (Factor X) - primary target
+- Some studies suggest it may have some interaction with other coagulation factors, but it's primarily a Factor Xa inhibitor
+
+Looking at drug-gene interaction databases like DrugBank, the primary gene target for Apixaban is F10 (Factor X).
+
+Some sources also mention:
+- F10 (Factor X) - the main target
+
+I should be careful here. The question asks for genes that "bind to" the drug. In pharmacology, we typically say the drug binds to the protein (encoded by the gene). The primary gene target for Apixaban is F10.
+
+Let me consider if there are other targets. Apixaban is highly selective for Factor Xa, but it does have some activity against other serine proteases. However, the primary and well-established gene target is F10.
+
+I'll go with F10 as the primary answer.
+  Metrics: exact_match=0.000  precision=1.000  recall=0.100  f1=0.182  jaccard=0.100  overlap=1.000
+  Missing (in expected, not in got): ABCB1, ABCG2, CYP1A2, CYP2C19, CYP2C8, CYP2C9, CYP2J2, CYP3A4, CYP3A5
+  Extra (in got, not in expected):   -
+
+Q [6e81cb61ea3f]: List the genes which bind to the drug Fluorescein
+  Expected: ABCB11, SLC22A6, ABCC1, CYP1A1
+  Got:      ['SLC22A19', 'SLC22A30', 'SLC22A29', 'SLC22A28', 'SLC22A27', 'SLC22A20', 'SLC22A16', 'SLC22A26', 'SLC22A18', 'SLC22A4', 'SLC22A25', 'ALB', 'SLC46A2', 'SLC22A5', 'SLC22A15', 'SLC22A21', 'SLC22A24', 'SLC22A8', 'SLC22A23', 'SLC22A6', 'SLC22A12', 'SLC46A1', 'SLC22A2', 'SLC22A17', 'SLC22A22', 'SLC22A13']
+  Thinking: The question asks about genes that bind to the drug Fluorescein. Fluorescein is a fluorescent dye commonly used in ophthalmology and as a tracer in various biological applications. Let me think about what genes/proteins are known to bind to fluorescein.
+
+Fluorescein is a small molecule dye. In terms of gene-drug interactions, I need to think about what proteins/genes are known to interact with or bind fluorescein.
+
+Fluorescein is known to bind to:
+- Albumin (ALB gene) - fluorescein binds to serum albumin
+- Various transporters
+
+Actually, let me think more carefully. In drug-gene interaction databases like DrugBank, the genes that "bind" to a drug typically refer to protein targets or transporters.
+
+Fluorescein is primarily used as a diagnostic/tracer dye rather than a therapeutic drug. However, in databases like DrugBank, it may have listed gene interactions.
+
+Known interactions with fluorescein:
+- ALB (Albumin) - fluorescein binds to albumin in blood
+- SLC22A6 (OAT1) - organic anion transporter
+- SLC22A8 (OAT3) - organic anion transporter
+- SLC46A1 (PAT1) - proton-coupled amino acid transporter
+- SLC46A2 (PAT2) - proton-coupled amino acid transporter
+- SLC22A2 (OCT2) - organic cation transporter
+- SLC22A4 (OCT1) - organic cation transporter
+- SLC22A5 (OCT3) - organic cation transporter
+- SLC22A12 (URAT1) - urate transporter
+- SLC22A13 (URAT2) - urate transporter
+- SLC22A15 (OATP4) - organic anion transporting polypeptide
+- SLC22A16 (OATP2B1) - organic anion transporting polypeptide
+- SLC22A17 (OATP2B2) - organic anion transporting polypeptide
+- SLC22A18 (OATP1B3) - organic anion transporting polypeptide
+- SLC22A19 (OATP1B1) - organic anion transporting polypeptide
+- SLC22A20 (OATP1B3) - organic anion transporting polypeptide
+- SLC22A21 (OATP1A2) - organic anion transporting polypeptide
+- SLC22A22 (OATP1A1) - organic anion transporting polypeptide
+- SLC22A23 (OATP1B1) - organic anion transporting polypeptide
+- SLC22A24 (OATP1B3) - organic anion transporting polypeptide
+- SLC22A25 (OATP1B1) - organic anion transporting polypeptide
+- SLC22A26 (OATP1B3) - organic anion transporting polypeptide
+- SLC22A27 (OATP1B1) - organic anion transporting polypeptide
+- SLC22A28 (OATP1B3) - organic anion transporting polypeptide
+- SLC22A29 (OATP1B1) - organic anion transporting polypeptide
+- SLC22A30 (OATP1B3) - organic anion transporting polypeptide
+
+Wait, I'm overcomplicating this. Let me think about what's actually in DrugBank for fluorescein.
+
+In DrugBank, Fluorescein (DB00634) has listed gene targets. Let me recall:
+- ALB (Albumin)
+- SLC22A6 (OAT1)
+- SLC22A8 (OAT3)
+- SLC46A1 (PAT1)
+- SLC46A2 (PAT2)
+- SLC22A2 (OCT2)
+- SLC22A4 (OCT1)
+- SLC22A5 (OCT3)
+- SLC22A12 (URAT1)
+- SLC22A13 (URAT2)
+- SLC22A15 (OATP4)
+- SLC22A16 (OATP2B1)
+- SLC22A17 (OATP2B2)
+- SLC22A18 (OATP1B3)
+- SLC22A19 (OATP1B1)
+- SLC22A20 (OATP1B3)
+- SLC22A21 (OATP1A2)
+- SLC22A22 (OATP1A1)
+- SLC22A23 (OATP1B1)
+- SLC22A24 (OATP1B3)
+- SLC22A25 (OATP1B1)
+- SLC22A26 (OATP1B3)
+- SLC22A27 (OATP1B1)
+- SLC22A28 (OATP1B3)
+- SLC22A29 (OATP1B1)
+- SLC22A30 (OATP1B3)
+
+I'm not confident about all of these. Let me think about what's most commonly listed.
+
+Actually, for DrugBank entries, the "Gene Targets" section for Fluorescein typically lists:
+- ALB
+- SLC22A6
+- SLC22A8
+- SLC46A1
+- SLC46A2
+- SLC22A2
+- SLC22A4
+- SLC22A5
+- SLC22A12
+- SLC22A13
+- SLC22A15
+- SLC22A16
+- SLC22A17
+- SLC22A18
+- SLC22A19
+- SLC22A20
+- SLC22A21
+- SLC22A22
+- SLC22A23
+- SLC22A24
+- SLC22A25
+- SLC22A26
+- SLC22A27
+- SLC22A28
+- SLC22A29
+- SLC22A30
+
+I'm not 100% sure about all of these. Let me focus on the most well-known ones that are commonly cited in DrugBank for fluorescein:
+
+The most commonly referenced gene targets for fluorescein in DrugBank include:
+- ALB (Albumin)
+- SLC22A6 (OAT1)
+- SLC22A8 (OAT3)
+- SLC46A1 (PAT1)
+- SLC46A2 (PAT2)
+- SLC22A2 (OCT2)
+- SLC22A4 (OCT1)
+- SLC22A5 (OCT3)
+- SLC22A12 (URAT1)
+- SLC22A13 (URAT2)
+- SLC22A15 (OATP4)
+- SLC22A16 (OATP2B1)
+- SLC22A17 (OATP2B2)
+- SLC22A18 (OATP1B3)
+- SLC22A19 (OATP1B1)
+- SLC22A20 (OATP1B3)
+- SLC22A21 (OATP1A2)
+- SLC22A22 (OATP1A1)
+- SLC22A23 (OATP1B1)
+- SLC22A24 (OATP1B3)
+- SLC22A25 (OATP1B1)
+- SLC22A26 (OATP1B3)
+- SLC22A27 (OATP1B1)
+- SLC22A28 (OATP1B3)
+- SLC22A29 (OATP1B1)
+- SLC22A30 (OATP1B3)
+
+I think the answer should include the major ones. Let me go with the most commonly cited ones from DrugBank.
+  Metrics: exact_match=0.000  precision=0.038  recall=0.250  f1=0.067  jaccard=0.034  overlap=0.250
+  Missing (in expected, not in got): ABCB11, ABCC1, CYP1A1
+  Extra (in got, not in expected):   ALB, SLC22A12, SLC22A13, SLC22A15, SLC22A16, SLC22A17, SLC22A18, SLC22A19, SLC22A2, SLC22A20, SLC22A21, SLC22A22, SLC22A23, SLC22A24, SLC22A25, SLC22A26, SLC22A27, SLC22A28, SLC22A29, SLC22A30, SLC22A4, SLC22A5, SLC22A8, SLC46A1, SLC46A2
+
+Q [dc2bada8e149]: List the genes which bind to the drug Propranolol
+  Expected: CYP3A5, HTR1B, ORM1, CYP3A7, CYP2D6, CYP3A7-CYP3A51P, CYP2C19, HTR1A, CYP1A2, ABCB1, ADRB3, SLC22A2, ADRB1, ADRB2, CYP1A1, CYP3A4
+  Got:      ['ADRB3', 'ADRB2', 'ADRA2A', 'ADRA1B', 'ADRA1D', 'ADRA2C', 'ADRA1A', 'ADRB1', 'ADRA2B']
+  Thinking: The question asks about genes that bind to the drug Propranolol. Propranolol is a non-selective beta-adrenergic blocker. It primarily binds to beta-adrenergic receptors.
+
+The main targets of Propranolol are:
+- ADRA1A (alpha-1A adrenergic receptor) - actually, propranolol is primarily a beta blocker
+- ADRA1B (alpha-1B adrenergic receptor)
+- ADRA1D (alpha-1D adrenergic receptor)
+- ADRA2A (alpha-2A adrenergic receptor)
+- ADRA2B (alpha-2B adrenergic receptor)
+- ADRA2C (alpha-2C adrenergic receptor)
+- ADRB1 (beta-1 adrenergic receptor)
+- ADRB2 (beta-2 adrenergic receptor)
+- ADRB3 (beta-3 adrenergic receptor)
+
+Propranolol is a non-selective beta blocker, so its primary targets are ADRB1, ADRB2, and ADRB3. It also has some affinity for alpha-adrenergic receptors.
+
+Looking at drug-gene interaction databases like DrugBank, the genes that Propranolol binds to include:
+- ADRB1 (beta-1 adrenergic receptor)
+- ADRB2 (beta-2 adrenergic receptor)
+- ADRB3 (beta-3 adrenergic receptor)
+- ADRA1A
+- ADRA1B
+- ADRA1D
+- ADRA2A
+- ADRA2B
+- ADRA2C
+
+The primary and most well-known targets are ADRB1, ADRB2, and ADRB3. Let me focus on the most established binding targets.
+
+From DrugBank and other databases, Propranolol's targets include:
+- ADRB1
+- ADRB2
+- ADRB3
+- ADRA1A
+- ADRA1B
+- ADRA1D
+- ADRA2A
+- ADRA2B
+- ADRA2C
+
+I'll list the main ones that are well-established as binding targets.
+  Metrics: exact_match=0.000  precision=0.333  recall=0.188  f1=0.240  jaccard=0.136  overlap=0.333
+  Missing (in expected, not in got): ABCB1, CYP1A1, CYP1A2, CYP2C19, CYP2D6, CYP3A4, CYP3A5, CYP3A7, CYP3A7-CYP3A51P, HTR1A, HTR1B, ORM1, SLC22A2
+  Extra (in got, not in expected):   ADRA1A, ADRA1B, ADRA1D, ADRA2A, ADRA2B, ADRA2C
+
+Q [2987cc7b6712]: List the genes which bind to the drug Fenoprofen
+  Expected: PTGS1, PTGS2, ALB
+  Got:      ['PTGS2', 'PTGS1']
+  Thinking: The user is asking about genes that bind to the drug Fenoprofen. Fenoprofen is a nonsteroidal anti-inflammatory drug (NSAID). Let me think about what genes/proteins are known to bind to fenoprofen.
+
+Fenoprofen is an NSAID that works primarily by inhibiting cyclooxygenase enzymes (COX-1 and COX-2). It also has other binding targets.
+
+Known binding targets of Fenoprofen:
+- COX-1 (PTGS1 gene) - cyclooxygenase-1
+- COX-2 (PTGS2 gene) - cyclooxygenase-2
+- It may also bind to other proteins
+
+From drug-gene interaction databases like DrugBank, the known targets of fenoprofen include:
+- PTGS1 (COX-1)
+- PTGS2 (COX-2)
+
+These are the primary gene targets that fenoprofen binds to. Let me think if there are others.
+
+Fenoprofen is primarily known to inhibit COX-1 and COX-2. These are the main gene targets.
+
+I'll list PTGS1 and PTGS2 as the genes that bind to fenoprofen.
+  Metrics: exact_match=0.000  precision=1.000  recall=0.667  f1=0.800  jaccard=0.667  overlap=1.000
+  Missing (in expected, not in got): ALB
+  Extra (in got, not in expected):   -
+
+Q [0920806bf585]: List the genes which bind to the drug Moxifloxacin
+  Expected: TOP2A
+  Got:      ['gyrA', 'gyrB', 'parC', 'parE']
+  Thinking: The user is asking about genes that bind to Moxifloxacin. Moxifloxacin is a fluoroquinolone antibiotic. Fluoroquinolones target bacterial DNA gyrase (encoded by gyrA and gyrB) and topoisomerase IV (encoded by parC and parE). These are the primary molecular targets of Moxifloxacin.
+  Metrics: exact_match=0.000  precision=0.000  recall=0.000  f1=0.000  jaccard=0.000  overlap=0.000
+  Missing (in expected, not in got): TOP2A
+  Extra (in got, not in expected):   gyrA, gyrB, parC, parE
+
+Q [1abb9dba5e45]: List the genes which bind to the drug Cefamandole
+  Expected: PTPN7, SLC22A11, SLC22A7, SLC22A8, SLC22A6
+  Got:      ['ftsM', 'pbpB', 'pbpG', 'pbpA', 'ftsI', 'pbpC', 'pbpE', 'pbpF', 'ftsL']
+  Thinking: The question asks about genes that bind to the drug Cefamandole. Cefamandole is a second-generation cephalosporin antibiotic. It works by binding to penicillin-binding proteins (PBPs) in bacterial cell walls.
+
+The genes that encode penicillin-binding proteins (PBPs) that cefamandole binds to would be the relevant genes. In bacteria like E. coli, the PBP genes include:
+
+- PBP1A (encoded by ftsM)
+- PBP1B (encoded by ftsI)
+- PBP2 (encoded by pbpA)
+- PBP3 (encoded by ftsL)
+- PBP4 (encoded by pbpE)
+- PBP5 (encoded by pbpC)
+- PBP6 (encoded by pbpF)
+- PBP7 (encoded by pbpG)
+- PBP8 (encoded by pbpB)
+
+However, the question is likely referring to a specific database like DrugBank or ChEMBL that lists gene-drug interactions. In DrugBank, cefamandole is listed as binding to penicillin-binding proteins.
+
+Looking at this from a DrugBank perspective, cefamandole's targets include:
+- Penicillin-binding protein 1A (PBP1A)
+- Penicillin-binding protein 1B (PBP1B)
+- Penicillin-binding protein 2 (PBP2)
+- Penicillin-binding protein 3 (PBP3)
+- Penicillin-binding protein 4 (PBP4)
+- Penicillin-binding protein 5 (PBP5)
+- Penicillin-binding protein 6 (PBP6)
+- Penicillin-binding protein 7 (PBP7)
+- Penicillin-binding protein 8 (PBP8)
+
+The genes encoding these in E. coli would be:
+- ftsM (PBP1A)
+- ftsI (PBP1B)
+- pbpA (PBP2)
+- ftsL (PBP3)
+- pbpE (PBP4)
+- pbpC (PBP5)
+- pbpF (PBP6)
+- pbpG (PBP7)
+- pbpB (PBP8)
+
+Actually, let me reconsider. In DrugBank, the targets for cefamandole are typically listed as the PBP proteins themselves. The gene names in DrugBank for these would be the bacterial gene names.
+
+Looking at DrugBank for Cefamandole (DB04924), the targets listed are:
+- Penicillin-binding protein 1A
+- Penicillin-binding protein 1B
+- Penicillin-binding protein 2
+- Penicillin-binding protein 3
+- Penicillin-binding protein 4
+- Penicillin-binding protein 5
+- Penicillin-binding protein 6
+- Penicillin-binding protein 7
+- Penicillin-binding protein 8
+
+The corresponding genes (in E. coli) would be:
+- ftsM
+- ftsI
+- pbpA
+- ftsL
+- pbpE
+- pbpC
+- pbpF
+- pbpG
+- pbpB
+
+But actually, in DrugBank, the gene names might be listed differently. Let me think about what DrugBank typically lists. DrugBank often lists the protein names rather than gene names for bacterial targets.
+
+Given the open-ended nature of this question and the typical format expected, I'll list the PBP genes that cefamandole binds to. The most commonly referenced ones in DrugBank for cefamandole would be the PBP genes.
+
+Let me go with the standard PBP gene names as they appear in databases.
+  Metrics: exact_match=0.000  precision=0.000  recall=0.000  f1=0.000  jaccard=0.000  overlap=0.000
+  Missing (in expected, not in got): PTPN7, SLC22A11, SLC22A6, SLC22A7, SLC22A8
+  Extra (in got, not in expected):   ftsI, ftsL, ftsM, pbpA, pbpB, pbpC, pbpE, pbpF, pbpG
+
+Q [988c93a1ac5a]: List the genes which bind to the drug Methylnaltrexone
+  Expected: OPRK1, OPRM1, CYP2D6
+  Got:      NO_RESPONSE
+  Error:    llm_error: Failed to parse OpenEndedAnswer from completion {"thinking": "The question asks about genes that bind to the drug Methylnaltrexone.\n\nMethylnaltrexone (Relistor) is a peripherally-acting mu-opioid receptor antagonist. It is used to treat opioid-induced constipation.\n\nMethylnaltrexone binds to opioid receptors. The primary target is the mu-opioid receptor (OPRM1 gene). It may also have some affinity for other opioid receptors.\n\nLet me think about what genes encode the targets of methylnaltrexone:\n\n1. OPRM1 - mu-opioid receptor (primary target)\n2. OPRL1 - delta-opioid receptor (may have some binding)\n3. OPRK1 - kappa-opioid receptor (may have some binding)\n\nMethylnaltrexone is primarily a mu-opioid receptor antagonist. Its main binding target is the mu-opioid receptor encoded by OPRM1.\n\nLooking at drug-gene interaction databases, methylnaltrexone's primary target is OPRM1 (mu-opioid receptor). It may also interact with OPRL1 and OPRK1 to some degree, but its primary and most well-known target is OPRM1.\n\nLet me be careful here. The question asks for genes that \"bind to\" the drug. The most well-established target is OPRM1. Some sources may also list OPRL1 and OPRK1 as secondary targets.\n\nI'll go with OPRM1 as the primary answer, and possibly include OPRL1 and OPRK1 as well since methylnaltrexone is an opioid receptor antagonist that can bind to multiple opioid receptor subtypes.\n\nOPRM1, OPRL1, OPRK1\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"}. Got: 1 validation error for OpenEndedAnswer
+answer
+  Field required [type=missing, input_value={'thinking': 'The questio...\n\n\n\n\n\n\n\n\n\n\n'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+For troubleshooting, visit: https://docs.langchain.com/oss/python/langchain/errors/OUTPUT_PARSING_FAILURE 
+  Thinking: 
+  Metrics: exact_match=0.000  precision=0.000  recall=0.000  f1=0.000  jaccard=0.000  overlap=0.000
+  Missing (in expected, not in got): CYP2D6, OPRK1, OPRM1
+  Extra (in got, not in expected):   NO_RESPONSE
+
+Q [fd82be55b215]: List the genes which bind to the drug Probenecid
+  Expected: SLC22A12, ABCC5, CYP2C19, ALB, ABCC3, ABCC11, CYP2C8, SLCO1C1, SLC22A11, SLC22A8, SLC2A9, SLC22A7, SLC16A7, PANX1, CYP3A4, SLC22A1, SLC22A5, ABCC2, ABCC1, ABCB1, SLC22A6, ABCC6, SLC22A2, SLC22A10, SLC16A1, SLCO1A2, CYP2C9, ABCC4, SLC10A1
+  Got:      ['SLC22A6', 'SLC22A12', 'SLC22A1', 'SLC2A10', 'SLC22A2', 'SLC22A4', 'SLC2A9', 'SLC22A8', 'SLC22A13']
+  Thinking: The user is asking about genes that bind to the drug Probenecid. Let me think about what genes/proteins are known to interact with Probenecid.
+
+Probenecid is a drug used to treat gout and to increase the levels of other drugs in the body. It works by inhibiting organic anion transporters and organic cation transporters in the kidney.
+
+Key genes/proteins that Probenecid binds to or interacts with:
+
+1. SLC22A6 (OAT1) - Organic Anion Transporter 1 - Probenecid is a known inhibitor of OAT1
+2. SLC22A8 (OAT3) - Organic Anion Transporter 3 - Probenecid inhibits OAT3
+3. SLC22A2 (OCT2) - Organic Cation Transporter 2 - Probenecid inhibits OCT2
+4. SLC22A1 (OCT1) - Organic Cation Transporter 1 - Probenecid may interact with OCT1
+5. SLC22A4 (OAT2) - Organic Anion Transporter 2 - Probenecid inhibits OAT2
+6. SLC22A5 (OCT3) - Organic Cation Transporter 3
+7. SLC22A12 (URAT1) - Urate Transporter 1 - Probenecid inhibits URAT1
+8. SLC22A13 (URAT2) - Urate Transporter 2
+9. SLC2A9 (GLUT9) - Glucose Transporter 9 - involved in urate transport
+10. SLC2A10 (GLUT10) - Glucose Transporter 10
+
+Let me focus on the most well-established binding targets:
+
+- SLC22A6 (OAT1)
+- SLC22A8 (OAT3)
+- SLC22A2 (OCT2)
+- SLC22A1 (OCT1)
+- SLC22A4 (OAT2)
+- SLC22A12 (URAT1)
+- SLC22A13 (URAT2)
+- SLC2A9 (GLUT9)
+- SLC2A10 (GLUT10)
+
+These are the main transporters that Probenecid is known to bind to/inhibit. Let me provide the most well-known ones.
+  Metrics: exact_match=0.000  precision=0.667  recall=0.207  f1=0.316  jaccard=0.188  overlap=0.667
+  Missing (in expected, not in got): ABCB1, ABCC1, ABCC11, ABCC2, ABCC3, ABCC4, ABCC5, ABCC6, ALB, CYP2C19, CYP2C8, CYP2C9, CYP3A4, PANX1, SLC10A1, SLC16A1, SLC16A7, SLC22A10, SLC22A11, SLC22A5, SLC22A7, SLCO1A2, SLCO1C1
+  Extra (in got, not in expected):   SLC22A13, SLC22A4, SLC2A10
+
+Q [76066a197bef]: List the genes which bind to the drug Vismodegib
+  Expected: ORM1, ABCB1, CYP2C9, CYP3A4, SHH, CYP2C19, ALB, SMO, ABCG2, CYP2C8
+  Got:      ['SMO']
+  Thinking: The question asks about genes that bind to the drug Vismodegib.
+
+Vismodegib (Erivedge) is a Hedgehog pathway inhibitor. It works by binding to Smoothened (SMO), a transmembrane protein that is part of the Hedgehog signaling pathway.
+
+The primary target of Vismodegib is the SMO gene (Smoothened). Vismodegib binds directly to the SMO protein, which is encoded by the SMO gene.
+
+Let me think about whether there are other genes that Vismodegib binds to. Vismodegib is specifically designed to target SMO. It's a small molecule that binds to the transmembrane domain of Smoothened.
+
+The main gene that Vismodegib binds to is SMO (Smoothened). This is the primary and well-known target.
+
+I should list SMO as the answer.
+  Metrics: exact_match=0.000  precision=1.000  recall=0.100  f1=0.182  jaccard=0.100  overlap=1.000
+  Missing (in expected, not in got): ABCB1, ABCG2, ALB, CYP2C19, CYP2C8, CYP2C9, CYP3A4, ORM1, SHH
+  Extra (in got, not in expected):   -
+
+Q [4da5bfb91721]: List the genes which bind to the drug Tetrabenazine
+  Expected: DRD2, CYP2D6, SLC18A2, CBR1
+  Got:      ['SLC18A1', 'SLC18A2']
+  Thinking: The question asks about genes that bind to the drug Tetrabenazine.
+
+Tetrabenazine is a medication used to treat chorea associated with Huntington's disease and tardive dyskinesia. It works as a vesicular monoamine transporter 2 (VMAT2) inhibitor.
+
+The primary target of Tetrabenazine is VMAT2 (Vesicular Monoamine Transporter 2), which is encoded by the SLC18A2 gene.
+
+Let me think about what genes are known to bind Tetrabenazine:
+
+1. SLC18A2 - This encodes VMAT2, which is the primary target of Tetrabenazine. Tetrabenazine is a reversible inhibitor of VMAT2.
+
+2. SLC18A1 - This encodes VMAT1. Tetrabenazine may also have some activity against VMAT1, though it is more selective for VMAT2.
+
+Looking at drug-gene interaction databases like DrugBank, the primary gene target for Tetrabenazine is SLC18A2 (VMAT2). Some sources may also list SLC18A1 (VMAT1) as a target.
+
+Let me consider if there are other genes. Tetrabenazine is metabolized by CYP2D6, but that's a metabolic interaction, not a binding target.
+
+The main binding target gene for Tetrabenazine is SLC18A2. Some databases may also include SLC18A1.
+
+I'll go with SLC18A2 as the primary answer, and possibly SLC18A1.
+  Metrics: exact_match=0.000  precision=0.500  recall=0.250  f1=0.333  jaccard=0.200  overlap=0.500
+  Missing (in expected, not in got): CBR1, CYP2D6, DRD2
+  Extra (in got, not in expected):   SLC18A1
+
+
+=== Dataset: OpenEnded_2hop.json__vanilla | Type: open_ended | Mode: vanilla | Model: qwen3.8:27b-q8_0 ===
+Count: 450  |  Correct: 3  |  Accuracy: 0.007 [95% CI 0.002-0.019]
+Average set metrics: exact_match=0.007  precision=0.155  recall=0.103  f1=0.088  jaccard=0.058  overlap=0.190
+By |expected| size:
+  -    1: n=69    acc=0.029 f1=0.105
+  -  2-5: n=104   acc=0.010 f1=0.089
+  - 6-20: n=121   acc=0.000 f1=0.111
+  -  >20: n=156   acc=0.000 f1=0.063
+Telemetry:
+  - latency ms: mean=161548 p50=91380 p95=391902 (n=450)
+  - tokens: avg in=74 out=1571 | total in=30698 out=651852
+  - records with error: 0.078 (n=450)
+
+-- Incorrect Questions (447 total, showing 15) --
+Q [c933cb1a0e2b]: List the drugs which commonly bind to the genes BTK and CYP1B1
+  Expected: Mitoxantrone, Dasatinib
+  Got:      ['acalabrutinib', 'zanubrutinib', 'tamoxifen', 'raloxifene', 'diethylstilbestrol', 'pirtobrutinib', 'ibrutinib']
+  Thinking: The question asks for drugs that commonly bind to the genes BTK and CYP1B1.
+
+BTK (Bruton's tyrosine kinase) - drugs that bind to BTK:
+- Ibrutinib (Imbruvica)
+- Acalabrutinib (Calquence)
+- Zanubrutinib (Brukinsa)
+- Pirtobrutinib (Jaypirca)
+- Orelabrutinib
+
+CYP1B1 (Cytochrome P450 1B1) - drugs that bind to CYP1B1:
+- Tamoxifen
+- Raloxifene
+- Diethylstilbestrol
+- 4-hydroxytamoxifen
+
+The question likely asks for the combined list of drugs that bind to either BTK or CYP1B1.
+  Metrics: exact_match=0.000  precision=0.000  recall=0.000  f1=0.000  jaccard=0.000  overlap=0.000
+  Missing (in expected, not in got): Dasatinib, Mitoxantrone
+  Extra (in got, not in expected):   acalabrutinib, diethylstilbestrol, ibrutinib, pirtobrutinib, raloxifene, tamoxifen, zanubrutinib
+
+Q [83d8307d51a1]: List the drugs which commonly bind to the genes HRH1 and CYP2C8
+  Expected: Loratadine, Perphenazine, Brompheniramine, Amitriptyline, Mirtazapine, Azelastine, Carbinoxamine, Clozapine, Thioridazine
+  Got:      ['rosiglitazone', 'pioglitazone']
+  Thinking: The question asks for drugs that commonly bind to both HRH1 (histamine H1 receptor) and CYP2C8 (cytochrome P450 2C8 enzyme). Let me consider the intersection of drugs that are H1 receptor ligands (antihistamines) and CYP2C8 substrates/inhibitors.
+
+Common CYP2C8 substrates include: rosiglitazone, pioglitazone, paclitaxel, glimepiride, repaglinide, sitagliptin, bupropion.
+
+Common HRH1 ligands (antihistamines) include: cetirizine, loratadine, fexofenadine, diphenhydramine, hydroxyzine, chlorpheniramine, promethazine, cyproheptadine, meclizine, dimenhydrinate, doxylamine, alimemazine, acrivastine, astemizole, terfenadine, levocetirizine, desloratadine, rupatadine, bilastine, ebastine, mizolastine, azelastine, olopatadine, ketotifen.
+
+The intersection of these two sets is very small. Rosiglitazone and pioglitazone are the most well-known CYP2C8 substrates, and some pharmacological databases note weak H1 receptor binding for these thiazolidinediones. These are the most likely candidates for the intersection.
+  Metrics: exact_match=0.000  precision=0.000  recall=0.000  f1=0.000  jaccard=0.000  overlap=0.000
+  Missing (in expected, not in got): Amitriptyline, Azelastine, Brompheniramine, Carbinoxamine, Clozapine, Loratadine, Mirtazapine, Perphenazine, Thioridazine
+  Extra (in got, not in expected):   pioglitazone, rosiglitazone
+
+Q [1aefb452004a]: List the drugs which commonly bind to the genes CA9 and SLC22A6
+  Expected: Hydrochlorothiazide, Furosemide, Bumetanide, Acetazolamide, Methazolamide
+  Got:      ['cefadroxil', 'cimetidine', 'cefotaxime', 'brinzolamide', 'methotrexate', 'cefamandole', 'cefoxitin', 'dorzolamide', 'ceftriaxone', 'cefuroxime', 'probenecid', 'sulfacetamide', 'cefoperazone', 'cefotetan', 'acetazolamide', 'cefazolin', 'cefepime', 'furosemide', 'cefaclor', 'sulfamethoxazole']
+  Thinking: The question asks about drugs that commonly bind to the genes CA9 and SLC22A6. Let me think about each: CA9 (Carbonic Anhydrase 9) is a carbonic anhydrase enzyme. Drugs that bind to CA9 include carbonic anhydrase inhibitors like acetazolamide, dorzolamide, brinzolamide, and various sulfonamides. SLC22A6 (OAT1 - Organic Anion Transporting Polypeptide 2A1) is a drug transporter. Drugs that bind to/are substrates of SLC22A6 include cimetidine, probenecid, methotrexate, furosemide, and various cephalosporins. The question asks for drugs that commonly bind to both genes, or the combined list. I'll provide the commonly associated drugs for both targets.
+  Metrics: exact_match=0.000  precision=0.100  recall=0.400  f1=0.160  jaccard=0.087  overlap=0.400
+  Missing (in expected, not in got): Acetazolamide, Bumetanide, Furosemide, Hydrochlorothiazide, Methazolamide
+  Extra (in got, not in expected):   acetazolamide, brinzolamide, cefaclor, cefadroxil, cefamandole, cefazolin, cefepime, cefoperazone, cefotaxime, cefotetan, cefoxitin, ceftriaxone, cefuroxime, cimetidine, dorzolamide, furosemide, methotrexate, probenecid, sulfacetamide, sulfamethoxazole
+
+Q [469d8d0bd5fd]: List the drugs which commonly bind to the genes ADRA2B and SLC22A2
+  Expected: Phenoxybenzamine, Prazosin, Pramipexole, Norepinephrine, Epinephrine
+  Got:      ['Escitalopram', 'Imipramine', 'Ceftriaxone', 'Tenofovir', 'Alfuzosin', 'Sertraline', 'Morphine', 'Risperidone', 'Naloxone', 'Fluoxetine', 'Fluvoxamine', 'Amoxapine', 'Cefuroxime', 'Dextromethorphan', 'Fluphenazine', 'Perphenazine', 'Milnacipran', 'Protriptyline', 'Quetiapine', 'Clonidine', 'Haloperidol', 'Citalopram', 'Maraviroc', 'Venlafaxine', 'Cimetidine', 'Clomipramine', 'Cefotaxime', 'Dolutegravir', 'Thioridazine', 'Methadone', 'Silodosin', 'Levomilnacipran', 'Doxepin', 'Cefepime', 'Pimozide', 'Amitriptyline', 'Ranolazine', 'Duloxetine', 'Metformin', 'Fentanyl', 'Atomoxetine', 'Aripiprazole', 'Loperamide', 'Naltrexone', 'Trazodone', 'Prazosin', 'Tramadol', 'Bupropion', 'Trifluoperazine', 'Doxazosin', 'Valrubicin', 'Ziprasidone', 'Vortioxetine', 'Tizanidine', 'Desipramine', 'Ciprofloxacin', 'Cefazolin', 'Yohimbine', 'Chlorpromazine', 'Tamsulosin', 'Desvenlafaxine', 'Mirtazapine', 'Dexmedetomidine', 'Nortriptyline', 'Guanfacine', 'Terazosin', 'Olanzapine', 'Paroxetine', 'Buprenorphine', 'Maprotiline', 'Nintedanib']
+  Thinking: The question asks for drugs that commonly bind to the genes ADRA2B and SLC22A2.
+
+ADRA2B encodes the alpha-2B adrenergic receptor. Drugs that bind to this receptor include:
+- Clonidine
+- Guanfacine
+- Dexmedetomidine
+- Tizanidine
+- Yohimbine
+- Buprenorphine
+- Morphine
+- Fentanyl
+- Tramadol
+- Naloxone
+- Naltrexone
+- Aripiprazole
+- Risperidone
+- Haloperidol
+- Quetiapine
+- Olanzapine
+- Ziprasidone
+- Pimozide
+- Thioridazine
+- Chlorpromazine
+- Fluphenazine
+- Perphenazine
+- Trifluoperazine
+- Loperamide
+- Dextromethorphan
+- Methadone
+- Prazosin
+- Doxazosin
+- Terazosin
+- Alfuzosin
+- Silodosin
+- Tamsulosin
+- Mirtazapine
+- Trazodone
+- Venlafaxine
+- Desvenlafaxine
+- Atomoxetine
+- Bupropion
+- Citalopram
+- Escitalopram
+- Fluoxetine
+- Sertraline
+- Paroxetine
+- Fluvoxamine
+- Amitriptyline
+- Nortriptyline
+- Desipramine
+- Imipramine
+- Clomipramine
+- Doxepin
+- Protriptyline
+- Amoxapine
+- Maprotiline
+- Vortioxetine
+- Levomilnacipran
+- Milnacipran
+- Duloxetine
+
+SLC22A2 encodes the organic cation transporter 2 (OCT2). Drugs that bind to OCT2 include:
+- Cimetidine
+- Ciprofloxacin
+- Dolutegravir
+- Maraviroc
+- Metformin
+- Nintedanib
+- Ranolazine
+- Tenofovir
+- Valrubicin
+- Cefepime
+- Ceftriaxone
+- Cefotaxime
+- Cefazolin
+- Cefuroxime
+
+I'll provide a combined list of the most commonly cited drugs for both genes.
+  Metrics: exact_match=0.000  precision=0.014  recall=0.200  f1=0.026  jaccard=0.013  overlap=0.200
+  Missing (in expected, not in got): Epinephrine, Norepinephrine, Phenoxybenzamine, Pramipexole
+  Extra (in got, not in expected):   Alfuzosin, Amitriptyline, Amoxapine, Aripiprazole, Atomoxetine, Buprenorphine, Bupropion, Cefazolin, Cefepime, Cefotaxime, Ceftriaxone, Cefuroxime, Chlorpromazine, Cimetidine, Ciprofloxacin, Citalopram, Clomipramine, Clonidine, Desipramine, Desvenlafaxine, Dexmedetomidine, Dextromethorphan, Dolutegravir, Doxazosin, Doxepin, Duloxetine, Escitalopram, Fentanyl, Fluoxetine, Fluphenazine, Fluvoxamine, Guanfacine, Haloperidol, Imipramine, Levomilnacipran, Loperamide, Maprotiline, Maraviroc, Metformin, Methadone, Milnacipran, Mirtazapine, Morphine, Naloxone, Naltrexone, Nintedanib, Nortriptyline, Olanzapine, Paroxetine, Perphenazine, Pimozide, Protriptyline, Quetiapine, Ranolazine, Risperidone, Sertraline, Silodosin, Tamsulosin, Tenofovir, Terazosin, Thioridazine, Tizanidine, Tramadol, Trazodone, Trifluoperazine, Valrubicin, Venlafaxine, Vortioxetine, Yohimbine, Ziprasidone
+
+Q [31a324f974c4]: List the drugs which commonly bind to the genes MGAM and GANAB
+  Expected: Miglitol
+  Got:      ['Gemtuzumab ozogamicin']
+  Thinking: The question asks about drugs that commonly bind to the genes MGAM and GANAB.
+
+MGAM (Mucin Family AC2 Member 1) - also known as CD33, is a cell surface sialic acid-binding Ig-like lectin. It's a target for several drugs:
+- Gemtuzumab ozogamicin (Mylotarg) - an antibody-drug conjugate targeting CD33
+- Anti-CD33 antibodies
+
+GANAB (Glucosidase, Alpha, N-Acetyl) - also known as GANAB, is a lysosomal enzyme involved in N-glycan processing. It's a target for:
+- Migalastat (Galafold) - a pharmacological chaperone for GANAB
+- Actually, let me reconsider. GANAB is involved in glycosylation processing.
+
+Wait, let me reconsider. The question asks about drugs that "commonly bind to" these genes. This likely refers to drug-gene interactions or drug targets.
+
+MGAM (CD33):
+- Gemtuzumab ozogamicin (Mylotarg)
+- Anti-CD33 antibodies
+
+GANAB:
+- Migalastat (Galafold) - this is actually a chaperone for alpha-galactosidase A, not GANAB
+- Let me think again... GANAB is a glucosidase involved in N-glycan processing in the ER.
+
+Actually, looking at drug-gene interaction databases, drugs that bind to or target MGAM and GANAB:
+
+For MGAM (CD33):
+- Gemtuzumab ozogamicin
+- Anti-CD33 antibodies
+
+For GANAB:
+- This is less clear. GANAB is involved in glycoprotein processing.
+
+Let me think about this differently. In drug-gene interaction databases like DrugBank or similar resources, what drugs are listed as binding to both MGAM and GANAB?
+
+Actually, I think the question might be asking about drugs that bind to either MGAM or GANAB (not necessarily both).
+
+Common drugs targeting MGAM:
+- Gemtuzumab ozogamicin (Mylotarg)
+
+Common drugs targeting GANAB:
+- Migalastat? No, that targets GAA (alpha-galactosidase A)
+
+Let me reconsider. In some databases, the drugs that interact with these genes might include:
+- For MGAM: Gemtuzumab ozogamicin
+- For GANAB: Possibly some glycosylation inhibitors
+
+Actually, I recall that in some drug-gene interaction contexts, the answer might be simpler. Let me think about what drugs are commonly associated with both.
+
+Looking at this from a different angle - in pharmacogenomics databases, drugs that have interactions with MGAM and GANAB genes:
+
+MGAM is associated with:
+- Gemtuzumab ozogamicin
+
+GANAB is associated with:
+- Possibly some drugs related to glycosylation
+
+I think the most likely answer for drugs commonly binding to MGAM is Gemtuzumab ozogamicin, and for GANAB it might be Migalastat or other chaperones.
+
+Wait - actually, I should reconsider. The question says "drugs which commonly bind to the genes MGAM and GANAB" - this could mean drugs that bind to both, or drugs that bind to either.
+
+Let me go with the most well-known drug targets:
+- MGAM: Gemtuzumab ozogamicin
+- GANAB: Migalastat (though this is more for GAA)
+
+Actually, I'm not confident about GANAB drug targets. Let me think...
+
+GANAB (Glucosidase, Alpha, N-Acetyl) is an ER-resident enzyme. I'm not sure there are well-known drugs that directly target it.
+
+Perhaps the answer is simply: Gemtuzumab ozogamicin (for MGAM)
+
+Or perhaps in some databases, both are listed with certain drugs. Let me go with what I know most confidently:
+
+For MGAM: Gemtuzumab ozogamicin
+For GANAB: I'm less certain, but possibly no well-known direct drug targets
+
+I'll provide the most likely answer: Gemtuzumab ozogamicin for MGAM. For GANAB, I'm not confident of a specific drug.
+
+Let me just go with Gemtuzumab ozogamicin as the primary answer for MGAM, and acknowledge uncertainty for GANAB.
+
+Actually, I think the answer they're looking for is likely just: Gemtuzumab ozogamicin
+  Metrics: exact_match=0.000  precision=0.000  recall=0.000  f1=0.000  jaccard=0.000  overlap=0.000
+  Missing (in expected, not in got): Miglitol
+  Extra (in got, not in expected):   Gemtuzumab ozogamicin
+
+Q [74ea24cf9136]: List the drugs which commonly bind to the genes OAZ2 and SLC25A2
+  Expected: Ornithine
+  Got:      ['No commonly known drugs are well-established as binding to both OAZ2 and SLC25A2 simultaneously; these are relatively niche targets with limited documented direct drug interactions in major pharmacology databases.']
+  Thinking: The question asks about drugs that commonly bind to both OAZ2 and SLC25A2 genes/proteins.
+
+OAZ2 (Ornithine Decarboxylase Antizyme 2) is involved in polyamine metabolism regulation.
+SLC25A2 (Solute Carrier Family 25 Member 2) is the mitochondrial aspartate-glutamate carrier (AGC1).
+
+These are relatively niche drug targets. Let me think about what drugs are documented to interact with both:
+
+For SLC25A2, documented drug interactions in databases may include certain mitochondrial toxins or amino acid transport modulators.
+
+For OAZ2, the antizyme system is part of polyamine regulation.
+
+In drug-gene interaction databases (such as those derived from DrugBank, CTD, or similar), the overlap of drugs binding to both of these specific genes is very limited. 
+
+I'm not confident in identifying specific well-known drugs that are commonly listed as binding to both OAZ2 and SLC25A2 simultaneously. These are not major drug targets in the way that, say, EGFR or BRCA1 are.
+
+Given my uncertainty, I should provide the most reasonable answer I can. It's possible the answer is that there are no commonly known drugs that bind to both, or the list is very short.
+
+I'll provide a cautious answer.
+  Metrics: exact_match=0.000  precision=0.000  recall=0.000  f1=0.000  jaccard=0.000  overlap=0.000
+  Missing (in expected, not in got): Ornithine
+  Extra (in got, not in expected):   No commonly known drugs are well-established as binding to both OAZ2 and SLC25A2 simultaneously; these are relatively niche targets with limited documented direct drug interactions in major pharmacology databases.
+
+Q [765e264651d7]: List the drugs which commonly bind to the genes PTGS2 and ALB
+  Expected: Piroxicam, Diclofenac, Fenoprofen, Ketoprofen, Sulindac, Magnesium salicylate, Celecoxib, Acetylsalicylic acid, Indomethacin, Bismuth subsalicylate, Salicylic acid, Naproxen, Diflunisal, Ibuprofen, Etodolac, Flurbiprofen
+  Got:      ['indomethacin', 'meloxicam', 'diclofenac', 'aspirin', 'ibuprofen', 'naproxen', 'celecoxib']
+  Thinking: The question asks for drugs that commonly bind to both PTGS2 (cyclooxygenase-2/COX-2) and ALB (albumin) genes/proteins.
+
+PTGS2 encodes cyclooxygenase-2 (COX-2). Drugs that bind to COX-2 include NSAIDs like ibuprofen, naproxen, diclofenac, celecoxib, meloxicam, indomethacin, aspirin.
+
+ALB encodes serum albumin, a major plasma binding protein. Many drugs bind to albumin including warfarin, phenytoin, ibuprofen, naproxen, diclofenac, aspirin, valproic acid, furosemide, and many NSAIDs.
+
+Drugs that commonly bind to BOTH PTGS2 (COX-2) and ALB (albumin) are primarily NSAIDs:
+- Ibuprofen
+- Naproxen
+- Diclofenac
+- Aspirin (acetylsalicylic acid)
+- Celecoxib
+- Indomethacin
+- Meloxicam
+  Metrics: exact_match=0.000  precision=0.714  recall=0.312  f1=0.435  jaccard=0.278  overlap=0.714
+  Missing (in expected, not in got): Acetylsalicylic acid, Bismuth subsalicylate, Celecoxib, Diclofenac, Diflunisal, Etodolac, Fenoprofen, Flurbiprofen, Ibuprofen, Indomethacin, Ketoprofen, Magnesium salicylate, Naproxen, Piroxicam, Salicylic acid, Sulindac
+  Extra (in got, not in expected):   aspirin, celecoxib, diclofenac, ibuprofen, indomethacin, meloxicam, naproxen
+
+Q [84a2db9b1ea3]: List the drugs which commonly bind to the genes CYP3A4 and CA7
+  Expected: Topiramate, Zonisamide, Imatinib, Dorzolamide, Nilotinib, Acetazolamide, Methazolamide, Sulfanilamide, Brinzolamide, Indapamide
+  Got:      ['Buspirone', 'Midazolam', 'Brinzolamide', 'Fluconazole', 'Phenytoin', 'Quinidine', 'Nimodipine', 'Azithromycin', 'Sildenafil', 'Risperidone', 'Rivaroxaban', 'Diazepam', 'Miconazole', 'Tadalafil', 'Sulfadiazine', 'Voriconazole', 'Lovastatin', 'Verapamil', 'Sotalol', 'Quetiapine', 'Lercanidipine', 'Haloperidol', 'Tacrolimus', 'Apixaban', 'Telithromycin', 'Fexofenadine', 'Posaconazole', 'Alprazolam', 'Atorvastatin', 'Nifedipine', 'Clozapine', 'Ketoconazole', 'Amlodipine', 'Vardenafil', 'Nisoldipine', 'Terfenadine', 'Dorzolamide', 'Digoxin', 'Erythromycin', 'Fentanyl', 'Amiodarone', 'Felodipine', 'Aripiprazole', 'Sulfamethoxazole', 'Nicardipine', 'Simvastatin', 'Clotrimazole', 'Carbamazepine', 'Topiramate', 'Clarithromycin', 'Astemizole', 'Oxycodone', 'Isradipine', 'Acetazolamide', 'Cyclosporine', 'Diltiazem', 'Rifampin', 'Flecainide', 'Olanzapine', 'Buprenorphine', 'Propafenone', 'Itraconazole']
+  Thinking: The question asks for drugs that commonly bind to the genes CYP3A4 and CA7.
+
+CYP3A4 is a cytochrome P450 enzyme that metabolizes many drugs. Drugs that are substrates/inhibitors/inducers of CYP3A4 include:
+- Simvastatin
+- Atorvastatin
+- Lovastatin
+- Midazolam
+- Triazolam
+- Tacrolimus
+- Cyclosporine
+- Verapamil
+- Diltiazem
+- Ketoconazole
+- Itraconazole
+- Clarithromycin
+- Erythromycin
+- Rifampin
+- Phenytoin
+- Carbamazepine
+- Nifedipine
+- Amlodipine
+- Fexofenadine
+- Apixaban
+- Rivaroxaban
+- Dabigatran
+- Sildenafil
+- Tadalafil
+- Vardenafil
+- Buprenorphine
+- Fentanyl
+- Oxycodone
+- Morphine
+- Codeine
+- Alprazolam
+- Diazepam
+- Clonazepam
+- Buspirone
+- Quetiapine
+- Aripiprazole
+- Risperidone
+- Olanzapine
+- Haloperidol
+- Clozapine
+- Quinidine
+- Digoxin
+- Amiodarone
+- Sotalol
+- Flecainide
+- Propafenone
+- Verapamil
+- Diltiazem
+- Nifedipine
+- Amlodipine
+- Felodipine
+- Nimodipine
+- Lercanidipine
+- Isradipine
+- Nisoldipine
+- Nicardipine
+- Cinnarizine
+- Flunarizine
+- Cinnarizine
+- Terfenadine
+- Astemizole
+- Erythromycin
+- Clarithromycin
+- Telithromycin
+- Azithromycin
+- Ketoconazole
+- Itraconazole
+- Voriconazole
+- Posaconazole
+- Fluconazole
+- Miconazole
+- Clotrimazole
+- Miconazole
+- Erythromycin
+- Clarithromycin
+- Telithromycin
+- Azithromycin
+- Ketoconazole
+- Itraconazole
+- Voriconazole
+- Posaconazole
+- Fluconazole
+- Miconazole
+- Clotrimazole
+- Miconazole
+
+CA7 (Carbonic Anhydrase 7) - this is a carbonic anhydrase isoform. Drugs that bind to carbonic anhydrases include:
+- Acetazolamide
+- Dorzolamide
+- Brinzolamide
+- Topiramate
+- Sulfamethoxazole
+- Sulfadiazine
+- Sulfa drugs in general
+
+Wait, let me reconsider. The question asks for drugs that "commonly bind to" both CYP3A4 AND CA7. This could mean:
+1. Drugs that bind to both CYP3A4 and CA7 (intersection)
+2. Drugs that bind to CYP3A4, and drugs that bind to CA7 (union)
+
+Given the phrasing "drugs which commonly bind to the genes CYP3A4 and CA7," it likely means drugs that are known to interact with/bind to both of these targets.
+
+Actually, re-reading the question: "List the drugs which commonly bind to the genes CYP3A4 and CA7" - this could be asking for the union of drugs that bind to either CYP3A4 or CA7.
+
+Let me think about this more carefully. In drug-target interaction databases, CYP3A4 is a major drug metabolizing enzyme, and CA7 is carbonic anhydrase 7.
+
+Drugs that bind to CYP3A4 (as substrates, inhibitors, or inducers):
+- Simvastatin, Atorvastatin, Lovastatin, Midazolam, Tacrolimus, Cyclosporine, Verapamil, Diltiazem, Ketoconazole, Itraconazole, Clarithromycin, Erythromycin, Rifampin, Phenytoin, Carbamazepine, Nifedipine, Amlodipine, Fexofenadine, Apixaban, Rivaroxaban, Sildenafil, Tadalafil, Vardenafil, Buprenorphine, Fentanyl, Oxycodone, Alprazolam, Diazepam, Buspirone, Quetiapine, Aripiprazole, Risperidone, Olanzapine, Haloperidol, Clozapine, Quinidine, Digoxin, Amiodarone, Sotalol, Flecainide, Propafenone, Verapamil, Diltiazem, Nifedipine, Amlodipine, Felodipine, Nimodipine, Lercanidipine, Isradipine, Nisoldipine, Nicardipine, Terfenadine, Astemizole, Erythromycin, Clarithromycin, Telithromycin, Azithromycin, Ketoconazole, Itraconazole, Voriconazole, Posaconazole, Fluconazole, Miconazole, Clotrimazole, Miconazole, Erythromycin, Clarithromycin, Telithromycin, Azithromycin, Ketoconazole, Itraconazole, Voriconazole, Posaconazole, Fluconazole, Miconazole, Clotrimazole, Miconazole
+
+Drugs that bind to CA7 (Carbonic Anhydrase 7):
+- Acetazolamide
+- Dorzolamide
+- Brinzolamide
+- Topiramate
+- Sulfamethoxazole
+- Sulfadiazine
+- Sulfa drugs
+
+Hmm, but the question might be asking for the union. Let me provide a reasonable list of well-known drugs for each.
+
+Actually, I think the question is asking for the union of drugs that bind to either CYP3A4 or CA7.
+
+Let me focus on the most well-known and commonly cited drugs:
+
+For CYP3A4: Simvastatin, Atorvastatin, Lovastatin, Midazolam, Tacrolimus, Cyclosporine, Verapamil, Diltiazem, Ketoconazole, Itraconazole, Clarithromycin, Erythromycin, Rifampin, Phenytoin, Carbamazepine, Nifedipine, Amlodipine, Fexofenadine, Apixaban, Rivaroxaban, Sildenafil, Tadalafil, Vardenafil, Buprenorphine, Fentanyl, Oxycodone, Alprazolam, Diazepam, Buspirone, Quetiapine, Aripiprazole, Risperidone, Olanzapine, Haloperidol, Clozapine, Quinidine, Digoxin, Amiodarone, Sotalol, Flecainide, Propafenone, Felodipine, Nimodipine, Lercanidipine, Isradipine, Nisoldipine, Nicardipine, Terfenadine, Astemizole, Telithromycin, Azithromycin, Voriconazole, Posaconazole, Fluconazole, Miconazole, Clotrimazole
+
+For CA7: Acetazolamide, Dorzolamide, Brinzolamide, Topiramate, Sulfamethoxazole, Sulfadiazine
+
+I'll provide a combined list of the most commonly referenced drugs for both targets.
+
+Actually, I think the question is asking for drugs that bind to both targets, or it could be asking for the combined list. Given the open-ended nature, I'll provide a list of commonly known drugs for both targets.
+
+Let me focus on the most well-known and commonly cited drugs:
+
+For CYP3A4: Simvastatin, Atorvastatin, Lovastatin, Midazolam, Tacrolimus, Cyclosporine, Verapamil, Diltiazem, Ketoconazole, Itraconazole, Clarithromycin, Erythromycin, Rifampin, Phenytoin, Carbamazepine, Nifedipine, Amlodipine, Fexofenadine, Apixaban, Rivaroxaban, Sildenafil, Tadalafil, Vardenafil, Buprenorphine, Fentanyl, Oxycodone, Alprazolam, Diazepam, Buspirone, Quetiapine, Aripiprazole, Risperidone, Olanzapine, Haloperidol, Clozapine, Quinidine, Digoxin, Amiodarone, Sotalol, Flecainide, Propafenone, Felodipine, Nimodipine, Lercanidipine, Isradipine, Nisoldipine, Nicardipine, Terfenadine, Astemizole, Telithromycin, Azithromycin, Voriconazole, Posaconazole, Fluconazole, Miconazole, Clotrimazole
+
+For CA7: Acetazolamide, Dorzolamide, Brinzolamide, Topiramate, Sulfamethoxazole, Sulfadiazine
+
+I'll provide a combined list of the most commonly referenced drugs for both targets.
+  Metrics: exact_match=0.000  precision=0.065  recall=0.400  f1=0.111  jaccard=0.059  overlap=0.400
+  Missing (in expected, not in got): Imatinib, Indapamide, Methazolamide, Nilotinib, Sulfanilamide, Zonisamide
+  Extra (in got, not in expected):   Alprazolam, Amiodarone, Amlodipine, Apixaban, Aripiprazole, Astemizole, Atorvastatin, Azithromycin, Buprenorphine, Buspirone, Carbamazepine, Clarithromycin, Clotrimazole, Clozapine, Cyclosporine, Diazepam, Digoxin, Diltiazem, Erythromycin, Felodipine, Fentanyl, Fexofenadine, Flecainide, Fluconazole, Haloperidol, Isradipine, Itraconazole, Ketoconazole, Lercanidipine, Lovastatin, Miconazole, Midazolam, Nicardipine, Nifedipine, Nimodipine, Nisoldipine, Olanzapine, Oxycodone, Phenytoin, Posaconazole, Propafenone, Quetiapine, Quinidine, Rifampin, Risperidone, Rivaroxaban, Sildenafil, Simvastatin, Sotalol, Sulfadiazine, Sulfamethoxazole, Tacrolimus, Tadalafil, Telithromycin, Terfenadine, Vardenafil, Verapamil, Voriconazole
+
+Q [e94f18567917]: List the drugs which commonly bind to the genes P2RY12 and PPARD
+  Expected: Treprostinil
+  Got:      ['Fenofibrate', 'Prasugrel', 'Pioglitazone', 'Rosiglitazone', 'Ticlopidine', 'Ticagrelor', 'Clopidogrel', 'Bezafibrate']
+  Thinking: The question asks for drugs that commonly bind to the genes P2RY12 and PPARD.
+
+P2RY12 (P2Y12 receptor) - This is a purinergic receptor. The most well-known drugs that bind to P2RY12 are:
+- Clopidogrel (Plavix) - an antiplatelet drug
+- Prasugrel (Effient) - an antiplatelet drug
+- Ticagrelor (Brilinta) - an antiplatelet drug
+- Ticlopidine (Ticlid) - an antiplatelet drug
+
+PPARD (PPAR delta/gamma) - This is a nuclear receptor. Drugs that bind to PPARD include:
+- Pioglitazone (Actos) - a thiazolidinedione
+- Rosiglitazone (Avandia) - a thiazolidinedione
+- Bezafibrate - a fibrate
+- Fenofibrate - a fibrate
+- WY-14643 - a PPAR delta agonist (research compound)
+
+The question asks for drugs that commonly bind to both P2RY12 and PPARD. This could mean drugs that target both, or it could be asking for the combined list. Given the phrasing, I'll provide the most commonly associated drugs for both targets.
+
+For P2RY12: Clopidogrel, Prasugrel, Ticagrelor, Ticlopidine
+For PPARD: Pioglitazone, Rosiglitazone, Bezafibrate, Fenofibrate
+
+I'll list the most commonly referenced drugs for both targets.
+  Metrics: exact_match=0.000  precision=0.000  recall=0.000  f1=0.000  jaccard=0.000  overlap=0.000
+  Missing (in expected, not in got): Treprostinil
+  Extra (in got, not in expected):   Bezafibrate, Clopidogrel, Fenofibrate, Pioglitazone, Prasugrel, Rosiglitazone, Ticagrelor, Ticlopidine
+
+Q [564dd56fd232]: List the drugs which commonly bind to the genes CYP3A4 and CYP2C19
+  Expected: Enzalutamide, Ketobemidone, Podofilox, Olanzapine, Nicardipine, Ethanol, Bromazepam, Quazepam, Nortriptyline, Oxiconazole, Oxcarbazepine, Aprepitant, Amitriptyline, Atomoxetine, Fluvoxamine, Tolterodine, Macitentan, Miconazole, Felbamate, Imatinib, Aminoglutethimide, Ospemifene, Amprenavir, Esomeprazole, Trabectedin, Loratadine, Acenocoumarol, Imipramine, Omeprazole, Sildenafil, Efavirenz, Valproic acid, Pimozide, Lapatinib, Sorafenib, Bicalutamide, Haloperidol, Clotiazepam, Apixaban, Tioconazole, Levomilnacipran, Zafirlukast, Trimipramine, Sitaxentan, Methimazole, Testosterone, Primidone, Artemether, Tamoxifen, Nilvadipine, Prednisone, Rabeprazole, Propofol, Simvastatin, Prasugrel, Perphenazine, Nicotine, Topiramate, Pentamidine, Bortezomib, Adinazolam, Amiodarone, Rilpivirine, Antipyrine, Modafinil, Pipotiazine, Zidovudine, Glyburide, Quetiapine, Pioglitazone, Venlafaxine, Clevidipine, Progesterone, Regorafenib, Ketoconazole, Clozapine, Atorvastatin, Tipranavir, Dronabinol, Ifosfamide, Brompheniramine, Luliconazole, Hexobarbital, Phenobarbital, Quinine, Eletriptan, Ritonavir, Fosphenytoin, Lopinavir, Meperidine, Tranylcypromine, Etravirine, Phenelzine, Azelastine, Voriconazole, Rifampicin, Praziquantel, Teniposide, Gemfibrozil, Methadone, Ranitidine, Norethisterone, Zolpidem, Warfarin, Carbinoxamine, Indinavir, Guanfacine, Aminophenazone, Diazepam, Temazepam, Nelfinavir, Fluvastatin, Dimethyl sulfoxide, Lovastatin, Almotriptan, Clarithromycin, Methazolamide, Promazine, Propranolol, Ticlopidine, Cisapride, Losartan, Flutamide, Clobazam, Fluconazole, Cholecalciferol, Desipramine, Sertraline, Dapsone, Clomipramine, Dextromethorphan, Probenecid, Rosuvastatin, Saquinavir, Pentobarbital, Cimetidine, Delavirdine, Diclofenac, Gefitinib, Phenytoin, Pantoprazole, Selegiline, Isoniazid, Vismodegib, Flunitrazepam, Proguanil, Bifonazole, Trimethadione, Carbamazepine, Doxepin, Bupivacaine, Chloramphenicol, Zonisamide, Escitalopram, Citalopram, Terbinafine, Verapamil, Ramelteon, Estradiol, Fluoxetine, Cyclosporine, Clopidogrel, Lansoprazole, Dexamethasone, Etoricoxib, Buprenorphine, Diltiazem, Cilostazol, Clotrimazole, Cyclophosphamide, Sulfanilamide
+  Got:      NO_RESPONSE
+  Error:    llm_error: Invalid json output: 
+For troubleshooting, visit: https://docs.langchain.com/oss/python/langchain/errors/OUTPUT_PARSING_FAILURE 
+  Thinking: 
+  Metrics: exact_match=0.000  precision=0.000  recall=0.000  f1=0.000  jaccard=0.000  overlap=0.000
+  Missing (in expected, not in got): Acenocoumarol, Adinazolam, Almotriptan, Aminoglutethimide, Aminophenazone, Amiodarone, Amitriptyline, Amprenavir, Antipyrine, Apixaban, Aprepitant, Artemether, Atomoxetine, Atorvastatin, Azelastine, Bicalutamide, Bifonazole, Bortezomib, Bromazepam, Brompheniramine, Bupivacaine, Buprenorphine, Carbamazepine, Carbinoxamine, Chloramphenicol, Cholecalciferol, Cilostazol, Cimetidine, Cisapride, Citalopram, Clarithromycin, Clevidipine, Clobazam, Clomipramine, Clopidogrel, Clotiazepam, Clotrimazole, Clozapine, Cyclophosphamide, Cyclosporine, Dapsone, Delavirdine, Desipramine, Dexamethasone, Dextromethorphan, Diazepam, Diclofenac, Diltiazem, Dimethyl sulfoxide, Doxepin, Dronabinol, Efavirenz, Eletriptan, Enzalutamide, Escitalopram, Esomeprazole, Estradiol, Ethanol, Etoricoxib, Etravirine, Felbamate, Fluconazole, Flunitrazepam, Fluoxetine, Flutamide, Fluvastatin, Fluvoxamine, Fosphenytoin, Gefitinib, Gemfibrozil, Glyburide, Guanfacine, Haloperidol, Hexobarbital, Ifosfamide, Imatinib, Imipramine, Indinavir, Isoniazid, Ketobemidone, Ketoconazole, Lansoprazole, Lapatinib, Levomilnacipran, Lopinavir, Loratadine, Losartan, Lovastatin, Luliconazole, Macitentan, Meperidine, Methadone, Methazolamide, Methimazole, Miconazole, Modafinil, Nelfinavir, Nicardipine, Nicotine, Nilvadipine, Norethisterone, Nortriptyline, Olanzapine, Omeprazole, Ospemifene, Oxcarbazepine, Oxiconazole, Pantoprazole, Pentamidine, Pentobarbital, Perphenazine, Phenelzine, Phenobarbital, Phenytoin, Pimozide, Pioglitazone, Pipotiazine, Podofilox, Prasugrel, Praziquantel, Prednisone, Primidone, Probenecid, Progesterone, Proguanil, Promazine, Propofol, Propranolol, Quazepam, Quetiapine, Quinine, Rabeprazole, Ramelteon, Ranitidine, Regorafenib, Rifampicin, Rilpivirine, Ritonavir, Rosuvastatin, Saquinavir, Selegiline, Sertraline, Sildenafil, Simvastatin, Sitaxentan, Sorafenib, Sulfanilamide, Tamoxifen, Temazepam, Teniposide, Terbinafine, Testosterone, Ticlopidine, Tioconazole, Tipranavir, Tolterodine, Topiramate, Trabectedin, Tranylcypromine, Trimethadione, Trimipramine, Valproic acid, Venlafaxine, Verapamil, Vismodegib, Voriconazole, Warfarin, Zafirlukast, Zidovudine, Zolpidem, Zonisamide
+  Extra (in got, not in expected):   NO_RESPONSE
+
+Q [88f5e4eb5a82]: List the drugs which commonly bind to the genes NAT2 and TSPO
+  Expected: Clonazepam
+  Got:      ['Hydralazine', 'Isoniazid', 'Dapsone', 'Tomolizole', 'Ro5-4864', 'Sulfamethoxazole', 'Procainamide', 'Diazepam', 'PK11195', 'Flumazenil']
+  Thinking: The question asks for drugs that commonly bind to the genes NAT2 and TSPO.
+
+NAT2 (N-acetyltransferase 2) - drugs commonly associated:
+- Isoniazid (classic NAT2 substrate)
+- Sulfamethoxazole
+- Procainamide
+- Hydralazine
+- Dapsone
+- Sulfasalazine
+
+TSPO (Translocator Protein 18 kDa / Peripheral Benzodiazepine Receptor) - drugs commonly associated:
+- PK11195
+- Flumazenil
+- Diazepam
+- Ro5-4864
+- Tomolizole
+- BMS-986142
+
+The question likely asks for the union of drugs binding to either gene. Let me list the most commonly cited ones.
+  Metrics: exact_match=0.000  precision=0.000  recall=0.000  f1=0.000  jaccard=0.000  overlap=0.000
+  Missing (in expected, not in got): Clonazepam
+  Extra (in got, not in expected):   Dapsone, Diazepam, Flumazenil, Hydralazine, Isoniazid, PK11195, Procainamide, Ro5-4864, Sulfamethoxazole, Tomolizole
+
+Q [235627cb9a24]: List the drugs which commonly bind to the genes LRAT and DHRS4
+  Expected: Vitamin A
+  Got:      ['retinol', 'retinal', 'retinyl palmitate', 'isotretinoin', 'tretinoin']
+  Thinking: The question asks about drugs that commonly bind to the genes LRAT and DHRS4. Let me consider what these genes encode and what drugs interact with them.
+
+LRAT (Lecithin Retinol Acyltransferase) - involved in retinyl ester synthesis in vitamin A metabolism.
+DHRS4 (Dehydrogenase/Reductase Family 4 Member 4) - a short-chain dehydrogenase/reductase involved in retinol/retinal interconversion.
+
+Both are involved in retinoid/vitamin A metabolism. Drugs that commonly bind to or target the protein products of these genes include retinoids and vitamin A derivatives.
+
+Common drugs associated with both LRAT and DHRS4:
+- Retinol
+- Tretinoin
+- Isotretinoin
+- Retinyl palmitate
+- Retinal
+  Metrics: exact_match=0.000  precision=0.000  recall=0.000  f1=0.000  jaccard=0.000  overlap=0.000
+  Missing (in expected, not in got): Vitamin A
+  Extra (in got, not in expected):   isotretinoin, retinal, retinol, retinyl palmitate, tretinoin
+
+Q [10066afcc8bd]: List the drugs which commonly bind to the genes TBXA2R and TBXAS1
+  Expected: Ridogrel
+  Got:      ['Carboprost', 'Zilmitran', 'Graloprost', 'Dinoprostone', 'Dazoxiben', 'Iloprost', 'SQ 29', 'Misoprostol', '548', 'Luvoprost', 'Sulotropan', 'Ramatroban', 'U-63', '540', 'Ozagrel', 'Alprostadil']
+  Thinking: The question asks about drugs that commonly bind to the genes TBXA2R and TBXAS1.
+
+TBXA2R - This is the Thromboxane A2 Receptor (also known as TP receptor). It's a G-protein coupled receptor that binds thromboxane A2 and related compounds.
+
+TBXAS1 - This is Thromboxane A2 Synthase 1. It's an enzyme that converts prostaglandin H2 to thromboxane A2.
+
+Drugs that bind to TBXA2R (Thromboxane A2 Receptor/TP receptor):
+- Zilmitran (a TP receptor antagonist)
+- Sulotropan (a TP receptor antagonist)
+- Ramatroban (a TP receptor antagonist)
+- Luvoprost (a TP receptor agonist)
+- Thromboxane A2 (endogenous ligand)
+- U-63,540 (TP receptor agonist)
+- SQ 29,548 (TP receptor antagonist)
+- Graloprost (TP receptor agonist)
+- Iloprost (TP receptor agonist)
+- Misoprostol (TP receptor agonist)
+- Dinoprostone (TP receptor agonist)
+- Carboprost (TP receptor agonist)
+- Alprostadil (TP receptor agonist)
+- Zilutrometol
+- Sulotropan
+- Ramatroban
+- Zilmitran
+
+Drugs that bind to TBXAS1 (Thromboxane A2 Synthase):
+- Ozagrel (thromboxane synthase inhibitor)
+- Dazoxiben (thromboxane synthase inhibitor)
+- BM 573 (thromboxane synthase inhibitor)
+- Sulotropan (also inhibits TXA2 synthase)
+- Zilmitran (also inhibits TXA2 synthase)
+- Ramatroban (also inhibits TXA2 synthase)
+- Luvoprost
+- U-63,540
+- SQ 29,548
+- Graloprost
+- Iloprost
+- Misoprostol
+- Dinoprostone
+- Carboprost
+- Alprostadil
+
+Wait, let me reconsider. The question asks for drugs that "commonly bind to" both TBXA2R AND TBXAS1. This could mean:
+1. Drugs that bind to both targets simultaneously
+2. Drugs that bind to either one of them
+
+Let me think about this more carefully. The question says "bind to the genes TBXA2R and TBXAS1" - this likely means drugs that are known to interact with both of these targets.
+
+Drugs that target both TBXA2R and TBXAS1:
+- Zilmitran - TP receptor antagonist and TXA2 synthase inhibitor
+- Sulotropan - TP receptor antagonist and TXA2 synthase inhibitor
+- Ramatroban - TP receptor antagonist and TXA2 synthase inhibitor
+- Luvoprost - TP receptor agonist and TXA2 synthase inhibitor
+- U-63,540 - TP receptor agonist and TXA2 synthase inhibitor
+- SQ 29,548 - TP receptor antagonist and TXA2 synthase inhibitor
+- Graloprost - TP receptor agonist and TXA2 synthase inhibitor
+- Iloprost - TP receptor agonist and TXA2 synthase inhibitor
+- Misoprostol - TP receptor agonist and TXA2 synthase inhibitor
+- Dinoprostone - TP receptor agonist and TXA2 synthase inhibitor
+- Carboprost - TP receptor agonist and TXA2 synthase inhibitor
+- Alprostadil - TP receptor agonist and TXA2 synthase inhibitor
+
+Actually, let me reconsider. Many prostaglandin analogs bind to TP receptors. And some of them also inhibit TXA2 synthase.
+
+The most commonly cited drugs for both targets:
+- Zilmitran
+- Sulotropan
+- Ramatroban
+- Luvoprost
+- U-63,540
+- SQ 29,548
+- Graloprost
+- Iloprost
+- Misoprostol
+- Dinoprostone
+- Carboprost
+- Alprostadil
+- Ozagrel (mainly TXA2 synthase inhibitor)
+- Dazoxiben (mainly TXA2 synthase inhibitor)
+
+Let me focus on the most well-known ones that are documented to bind both targets. I'll list the most commonly referenced ones.
+  Metrics: exact_match=0.000  precision=0.000  recall=0.000  f1=0.000  jaccard=0.000  overlap=0.000
+  Missing (in expected, not in got): Ridogrel
+  Extra (in got, not in expected):   540, 548, Alprostadil, Carboprost, Dazoxiben, Dinoprostone, Graloprost, Iloprost, Luvoprost, Misoprostol, Ozagrel, Ramatroban, SQ 29, Sulotropan, U-63, Zilmitran
+
+Q [86941da9ab0d]: List the drugs which commonly bind to the genes RARB and RARA
+  Expected: Tretinoin, Acitretin, Isotretinoin, Alitretinoin, Tamibarotene, Tazarotene, Adapalene
+  Got:      ['Acitretin', 'Isotretinoin', 'Adapalene', 'Tazarotene', 'Alitretinoin', 'Tretinoin', 'Bexarotene', 'Etretinate']
+  Thinking: The question asks about drugs that commonly bind to the genes RARB and RARA. These are retinoic acid receptor genes.
+
+RARA (Retinoic Acid Receptor Alpha) and RARB (Retinoic Acid Receptor Beta) are nuclear receptors that bind retinoic acid and its analogs.
+
+Drugs that bind to RARA and RARB:
+
+1. All-trans retinoic acid (ATRA) / Tretinoin - binds to both RARA and RARB
+2. Tazarotene - a retinoid that binds to RARA and RARB
+3. Acitretin - a retinoid
+4. Etretinate - a retinoin
+5. Bexarotene (LG100268) - primarily binds RXR but also has some activity
+6. Adapalene - a retinoid
+7. Isotretinoin (13-cis retinoic acid)
+8. Alitretinoin (9-cis retinoic acid)
+9. BMS-651989
+10. Am80 (a RAR agonist)
+
+Let me think more carefully. The question asks about drugs that "commonly bind to" RARB and RARA. The most well-known drugs that bind to these receptors are:
+
+- Tretinoin (all-trans retinoic acid)
+- Tazarotene
+- Acitretin
+- Isotretinoin
+- Alitretinoin
+- Adapalene
+- Bexarotene (though this is more RXR-selective)
+
+Actually, let me reconsider. In drug-gene interaction databases like DrugBank, the drugs that bind to RARA and RARB include:
+
+- Tretinoin
+- Tazarotene
+- Acitretin
+- Isotretinoin
+- Alitretinoin
+- Adapalene
+- Bexarotene
+- Etretinate
+
+The most commonly cited ones for both RARA and RARB would be the retinoids. Let me focus on the most well-known ones:
+
+- Tretinoin (all-trans retinoic acid)
+- Tazarotene
+- Acitretin
+- Isotretinoin
+- Alitretinoin
+- Adapalene
+- Bexarotene
+
+I'll list the most commonly referenced drugs that bind to both RARA and RARB.
+  Metrics: exact_match=0.000  precision=0.750  recall=0.857  f1=0.800  jaccard=0.667  overlap=0.857
+  Missing (in expected, not in got): Tamibarotene
+  Extra (in got, not in expected):   Bexarotene, Etretinate
+
+Q [6b1a08183464]: List the drugs which commonly bind to the genes GABRB3 and NR1H4
+  Expected: Ivermectin
+  Got:      ['phenobarbital', '22(R)-hydroxycholesterol', 'GW3965', 'alprazolam', 'diazepam', 'zolpidem', 'T0901317', 'clonazepam', 'lorazepam']
+  Thinking: The question asks about drugs that commonly bind to the genes GABRB3 and NR1H4.
+
+GABRB3 - This encodes the gamma-3 subunit of the GABA-A receptor. Drugs that bind to GABA-A receptors include:
+- Benzodiazepines (diazepam, alprazolam, lorazepam, clonazepam)
+- Barbiturates (phenobarbital)
+- Z-drugs (zolpidem, zopiclone)
+- Neurosteroids (pregnenolone, allopregnanolone)
+- Ethanol
+- Bicuculline (antagonist)
+- GABA itself
+
+NR1H4 - This encodes the liver X receptor beta (LXRβ). Drugs that bind to LXR include:
+- Tolvaptan (no, that's V2 receptor)
+- T0901317 (LXR agonist)
+- GW3965 (LXR agonist)
+- 22(R)-hydroxycholesterol
+- Oxysterols
+- Tolvaptan - no
+- Actually, LXR agonists include: T0901317, GW3965, 22(R)-hydroxycholesterol, oxysterols
+- In clinical use: Tolvaptan is not an LXR ligand
+- Actually, let me think about this more carefully. NR1H4 is LXRβ.
+
+Drugs that bind to LXR (both alpha and beta):
+- T0901317
+- GW3965
+- 22(R)-hydroxycholesterol
+- Oxysterols (24S-hydroxycholesterol, 25-hydroxycholesterol)
+- Tolvaptan - no
+- Actually, some statins and fibrates may have some LXR activity
+
+Let me reconsider. The question asks for drugs that "commonly bind" to BOTH GABRB3 AND NR1H4. This could mean:
+1. Drugs that bind to both targets simultaneously
+2. Or it could be asking for the union of drugs that bind to either gene
+
+Actually, re-reading the question: "List the drugs which commonly bind to the genes GABRB3 and NR1H4" - this likely means drugs that bind to both of these genes/proteins.
+
+Hmm, but it's unusual for a drug to bind both a GABA-A receptor subunit and an LXR. Let me think about whether there are any drugs that target both.
+
+Actually, in drug-disease-gene databases like DrugBank or similar resources, the question might be interpreted as listing drugs associated with both genes. Let me think about what drugs are commonly listed as binding to both.
+
+Actually, I think the question might be asking for the combined list - drugs that bind to GABRB3 OR NR1H4. Or it could be asking for drugs that bind to both.
+
+Let me reconsider. In many biomedical QA datasets, when they ask "drugs which commonly bind to genes X and Y," they typically mean the intersection - drugs that bind to both.
+
+For GABRB3 (GABA-A receptor gamma-3 subunit):
+- Diazepam
+- Alprazolam
+- Lorazepam
+- Clonazepam
+- Phenobarbital
+- Zolpidem
+- Ethanol
+- Pregnenolone
+- Allopregnanolone
+
+For NR1H4 (LXRβ):
+- T0901317
+- GW3965
+- 22(R)-hydroxycholesterol
+- Oxysterols
+
+Hmm, it's hard to think of a drug that binds both. Let me think if there's any overlap...
+
+Actually, maybe I'm overthinking this. In some databases, the answer might simply be a list of drugs associated with each gene. Let me provide the most commonly cited drugs for each.
+
+Wait - could this be from a specific database like DrugBank where certain drugs are listed as binding to both? Let me think...
+
+Actually, I recall that in some contexts, the answer to such questions in biomedical benchmarks tends to list the well-known ligands for each target. Let me provide the most common ones:
+
+For GABRB3: diazepam, alprazolam, lorazepam, clonazepam, phenobarbital, zolpidem
+For NR1H4: T0901317, GW3965, 22(R)-hydroxycholesterol
+
+But if the question is asking for drugs that bind to BOTH, the intersection might be empty or very small.
+
+Let me reconsider the question format. "List the drugs which commonly bind to the genes GABRB3 and NR1H4" - I think this is asking for the union of drugs that bind to either gene, presented as a combined list. Or it could be the intersection.
+
+Given the ambiguity, I'll provide the most commonly associated drugs for both targets. In many biomedical QA contexts, this would be the union.
+
+Common drugs for GABRB3: diazepam, alprazolam, lorazepam, clonazepam, phenobarbital, zolpidem, ethanol
+Common drugs for NR1H4: T0901317, GW3965, 22(R)-hydroxycholesterol
+
+I'll list the most well-known ones for both.
+  Metrics: exact_match=0.000  precision=0.000  recall=0.000  f1=0.000  jaccard=0.000  overlap=0.000
+  Missing (in expected, not in got): Ivermectin
+  Extra (in got, not in expected):   22(R)-hydroxycholesterol, GW3965, T0901317, alprazolam, clonazepam, diazepam, lorazepam, phenobarbital, zolpidem
+
+
+=== Dataset: True_or_False_1hop.json__vanilla | Type: tf | Mode: vanilla | Model: qwen3.8:27b-q8_0 ===
+Count: 560  |  Correct: 376  |  Accuracy: 0.671 [95% CI 0.631-0.709]
+Telemetry:
+  - latency ms: mean=44225 p50=43706 p95=66396 (n=560)
+  - tokens: avg in=64 out=541 | total in=35677 out=302157
+  - records with error: 0.002 (n=560)
+
+-- Incorrect Questions (184 total, showing 15) --
+Q [5b361e25c649]: True or False Question: Posaconazole binds to the gene CYP3A4
+  Expected: True
+  Got:      False
+  Thinking: The statement says 'Posaconazole binds to the gene CYP3A4.' Posaconazole is a triazole antifungal that is a well-known strong inhibitor of the CYP3A4 enzyme (a cytochrome P450 protein). However, the statement specifically says it binds to the *gene* CYP3A4. CYP3A4 is indeed a gene, but drugs do not bind to genes (DNA); they bind to the protein products encoded by those genes. Posaconazole inhibits/binds to the CYP3A4 enzyme (protein), not the gene itself. The use of the word 'gene' makes this statement false.
+
+Q [e45bf8850ee9]: True or False Question: Penbutolol binds to the gene HTR1B
+  Expected: True
+  Got:      False
+  Thinking: The question asks whether Penbutolol binds to the gene HTR1B. First, drugs bind to proteins (receptors), not genes. HTR1B encodes the 5-HT1B serotonin receptor. Penbutolol is a non-selective beta-adrenergic blocker that binds to beta-1 and beta-2 adrenergic receptors (ADRB1, ADRB2). It is not a known ligand for the 5-HT1B receptor. Therefore, this statement is false.
+
+Q [834f7576f4e1]: True or False Question: Loratadine increases the gene expression of HMOX1
+  Expected: True
+  Got:      False
+  Thinking: The question asks whether loratadine increases the gene expression of HMOX1 (Heme Oxygenase 1). Loratadine is a second-generation antihistamine whose primary mechanism of action is competitive antagonism at H1 histamine receptors. HMOX1 is an enzyme involved in heme catabolism and is typically induced via the Nrf2/ARE pathway in response to oxidative stress or inflammatory stimuli. I am not aware of a well-established pharmacological effect of loratadine on HMOX1 gene expression. Loratadine's known effects are centered on H1 receptor blockade, and there is no prominent literature establishing that it upregulates HMOX1 transcription. This statement appears to be false.
+
+Q [425123966658]: True or False Question: Olopatadine increases the gene expression of KLHL9
+  Expected: True
+  Got:      False
+  Thinking: Olopatadine is a dual-acting antihistamine (H1 receptor antagonist) and mast cell stabilizer, primarily used as an ophthalmic agent for allergic conjunctivitis. Its known mechanisms involve blocking histamine H1 receptors and inhibiting mast cell degranulation. KLHL9 (Kelch-like protein 9) is a protein involved in various cellular processes including ubiquitin-mediated protein degradation and has been studied in cancer biology. I am not aware of any established research or pharmacological evidence linking olopatadine to increased gene expression of KLHL9. This appears to be a fabricated or incorrect association.
+
+Q [27e2208a9721]: True or False Question: Entecavir increases the gene expression of RRS1
+  Expected: True
+  Got:      False
+  Thinking: The question asks whether Entecavir increases the gene expression of RRS1. Entecavir is a guanosine nucleoside analog used to treat chronic hepatitis B by inhibiting HBV DNA polymerase/reverse transcriptase. RRS1 (Ribosomal RNA Large Subunit Pseudouridine Synthase 1) is involved in ribosomal RNA modification. There is no well-established direct mechanism or widely recognized finding that Entecavir upregulates RRS1 gene expression. Entecavir's primary pharmacological action is antiviral, targeting viral polymerase, not host ribosomal RNA modification pathways. I am not aware of a specific, validated study demonstrating that Entecavir increases RRS1 expression.
+
+Q [97ccdfe155ac]: True or False Question: Oxymetazoline increases the gene expression of CPVL
+  Expected: True
+  Got:      False
+  Thinking: The question asks whether oxymetazoline increases the gene expression of CPVL. Oxymetazoline is an alpha-adrenergic agonist (alpha-1 and alpha-2) primarily used as a topical nasal decongestant. Its main mechanism is vasoconstriction. CPVL (caspase-3-like protease or a related protease gene) - I need to consider whether alpha-adrenergic stimulation by oxymetazoline would upregulate this gene. Based on my knowledge of oxymetazoline's pharmacology, its primary effects are on vascular smooth muscle and nasal mucosa through alpha-adrenergic receptor activation leading to vasoconstriction. I do not have evidence that oxymetazoline specifically increases CPVL gene expression. In fact, alpha-adrenergic stimulation in many contexts tends to be associated with anti-inflammatory or protective effects rather than upregulation of protease genes. I will go with False as my best guess.
+
+Q [3c229f4d15f9]: True or False Question: Cyclizine decreases the gene expression of UBQLN2
+  Expected: True
+  Got:      False
+  Thinking: Let me think about this question carefully.
+
+Cyclizine is an antihistamine/antiemetic drug that acts as an H1 receptor antagonist. It's primarily used for motion sickness and nausea.
+
+UBQLN2 (Ubiquilin 2) is a protein involved in ubiquitin-mediated protein degradation pathways. It's been studied in the context of neurodegenerative diseases.
+
+The question asks whether cyclizine decreases the gene expression of UBQLN2.
+
+I need to think about whether there's any known interaction between cyclizine and UBQLN2 gene expression. 
+
+Cyclizine is primarily an H1 antihistamine. I'm not aware of any well-established research showing that cyclizine specifically decreases UBQLN2 gene expression. This seems like a very specific molecular claim that I don't have strong evidence for.
+
+However, in drug-gene interaction databases and network pharmacology studies, various drugs are linked to various gene expression changes. Let me think about whether this could be a true statement from some specific study or database.
+
+Actually, I'm not confident about this specific claim. Cyclizine's primary mechanism is H1 receptor antagonism, and I don't recall any specific research linking it to UBQLN2 gene expression changes. This seems like it could be a false statement designed to test whether someone would confuse drug-gene interactions.
+
+Given my uncertainty, I'll go with False, as I don't have evidence supporting this specific claim, and it seems like an unlikely direct effect of an antihistamine on a ubiquitin pathway gene.
+
+Q [25ba8a79548f]: True or False Question: Pheniramine decreases the gene expression of NUP85
+  Expected: True
+  Got:      False
+  Thinking: Let me think about this question carefully.
+
+Pheniramine is an antihistamine (H1 receptor antagonist) commonly used as an over-the-counter allergy medication. It works primarily by blocking histamine H1 receptors.
+
+NUP85 is a nucleoporin - a component of the nuclear pore complex. It's involved in nuclear transport of proteins and RNA.
+
+The question asks whether pheniramine decreases the gene expression of NUP85.
+
+Let me think about what I know about pheniramine's effects on gene expression. Pheniramine is primarily known as an antihistamine. While it may have some off-target effects, I'm not aware of any well-established connection between pheniramine and NUP85 gene expression regulation.
+
+NUP85 is a structural component of the nuclear pore complex. Its expression is generally regulated by basic cellular processes and is not typically a target of antihistamines.
+
+I don't have specific evidence that pheniramine decreases NUP85 gene expression. This seems like a false statement - there's no well-known pharmacological mechanism by which an H1 antihistamine would specifically downregulate a nucleoporin gene.
+
+However, I should consider whether there might be some obscure study showing this. But given the lack of a clear mechanistic connection and the fact that this seems like a randomly paired drug-gene interaction, I'll go with False.
+
+Q [8c2c529534d4]: True or False Question: Haloperidol treats Alzheimer's Disease
+  Expected: True
+  Got:      False
+  Thinking: The question asks whether Haloperidol treats Alzheimer's Disease.
+
+Haloperidol is a typical (first-generation) antipsychotic medication, a butyrophenone that acts primarily as a dopamine D2 receptor antagonist.
+
+Alzheimer's Disease is a neurodegenerative disorder. Its actual treatments include cholinesterase inhibitors (donepezil, rivastigmine, galantamine) and memantine (NMDA receptor antagonist).
+
+Haloperidol does NOT treat the underlying pathology of Alzheimer's Disease. While it may sometimes be used off-label to manage behavioral and psychological symptoms of dementia (agitation, psychosis), this is symptomatic management, not treatment of the disease. Moreover, antipsychotics carry an FDA black box warning for increased mortality in elderly patients with dementia-related psychosis.
+
+Therefore, the statement is FALSE.
+
+Q [68f64b6ec6ab]: True or False Question: Selegiline treats Alzheimer's Disease
+  Expected: True
+  Got:      False
+  Thinking: The question asks whether selegiline treats Alzheimer's Disease.
+
+Selegiline (also known as L-deprenyl) is a monoamine oxidase B (MAO-B) inhibitor. It is primarily used in the treatment of Parkinson's disease. It works by inhibiting the breakdown of dopamine in the brain, which helps with the motor symptoms of Parkinson's disease.
+
+Selegiline is NOT a standard treatment for Alzheimer's Disease. Alzheimer's disease treatments typically include:
+- Cholinesterase inhibitors (donepezil, rivastigmine, galantamine)
+- NMDA receptor antagonists (memantine)
+- Newer anti-amyloid monoclonal antibodies (aducanumab, lecanemab)
+
+While there has been some research into MAO-B inhibitors for neurodegenerative diseases, selegiline is not an approved or standard treatment for Alzheimer's disease. It is specifically indicated for Parkinson's disease.
+
+So the answer is False.
+
+Q [b8e1a0390e60]: True or False Question: RNASE3 binds to the drug Pranlukast
+  Expected: True
+  Got:      False
+  Thinking: RNASE3 (Ribonuclease 3) is a member of the pancreatic ribonuclease family involved in RNA degradation. Pranlukast is a leukotriene receptor antagonist (CysLT1 blocker) developed as an anti-asthma medication. These two molecules have entirely different biological roles and targets. RNASE3 interacts with RNA substrates, while Pranlukast binds to the cysteinyl leukotriene receptor. There is no known or established binding interaction between RNASE3 and Pranlukast in the literature.
+
+Q [82d15365174a]: True or False Question: PFAS binds to the drug L-Glutamine
+  Expected: True
+  Got:      False
+  Thinking: PFAS (Per- and Polyfluoroalkyl Substances) are a class of synthetic fluorinated chemicals. L-Glutamine is an amino acid used as a nutritional supplement. I am not aware of any well-established or recognized specific binding interaction between PFAS and L-Glutamine in the biomedical literature. PFAS are known to interact with various proteins (e.g., serum albumin, thyroid hormone transporters), but a specific binding to L-Glutamine as a drug is not a recognized interaction. This statement appears to be false.
+
+Q [bb65bc867e56]: True or False Question: ABCC5 binds to the drug Fluorouracil
+  Expected: True
+  Got:      False
+  Thinking: ABCC5 (MRP5) is an ABC transporter primarily known for transporting organic anions, glucuronides, sulfates, and bile acids. Fluorouracil (5-FU) is a small pyrimidine analog (MW ~130 Da) used in chemotherapy, primarily metabolized by dihydropyrimidine dehydrogenase (DPD). ABCC5 is not recognized as a transporter or binder of fluorouracil. 5-FU is not listed among the known substrates of ABCC5 in the major pharmacology and transporter databases.
+
+Q [2fb332f03020]: True or False Question: TLE5 is subject to increased expression by the drug Fulvestrant
+  Expected: True
+  Got:      False
+  Thinking: TLE5 (Transducin-Like Enhancer of Split 5) is a transcriptional corepressor. Fulvestrant is a selective estrogen receptor degrader (SERD) used in hormone receptor-positive breast cancer. I need to determine if Fulvestrant increases TLE5 expression. Fulvestrant works by binding and degrading the estrogen receptor, thereby blocking estrogen signaling. TLE5 is not a well-known estrogen-responsive gene that would be upregulated upon estrogen receptor blockade. I am not aware of established evidence that Fulvestrant specifically increases TLE5 expression. The most likely answer is False.
+
+Q [d13491c624d3]: True or False Question: CTNNAL1 is subject to increased expression by the drug Phenoxymethylpenicillin
+  Expected: True
+  Got:      False
+  Thinking: CTNNAL1 (Catenalin 1) is a protein involved in Wnt signaling and catenin interactions. Phenoxymethylpenicillin (Penicillin V) is a beta-lactam antibiotic that targets bacterial cell wall synthesis by inhibiting transpeptidases. There is no well-established or commonly recognized mechanism by which Phenoxymethylpenicillin would increase the expression of CTNNAL1 in human cells. This drug-gene interaction does not appear to be a recognized or documented effect in standard pharmacology or genomics databases. The antibiotic's primary mechanism is bactericidal action on bacterial targets, not modulation of human gene expression pathways involving catenins.
+
+
+=== Dataset: True_or_False_2hop.json__vanilla | Type: tf | Mode: vanilla | Model: qwen3.8:27b-q8_0 ===
+Count: 540  |  Correct: 325  |  Accuracy: 0.602 [95% CI 0.560-0.642]
+Telemetry:
+  - latency ms: mean=50766 p50=46974 p95=81404 (n=540)
+  - tokens: avg in=72 out=623 | total in=38846 out=336155
+  - records with error: 0.000 (n=540)
+
+-- Incorrect Questions (215 total, showing 15) --
+Q [c93990186284]: True or False Question: ESR1 and CYP19A1 are genes which commonly bind to the drug Levonorgestrel
+  Expected: True
+  Got:      False
+  Thinking: Let me consider what Levonorgestrel is and what its known drug targets are. Levonorgestrel is a synthetic progestogen (progestin) used in oral contraceptives and emergency contraception. Its primary molecular target is the progesterone receptor (NR3C1), and it also has some affinity for the androgen receptor (AR) and glucocorticoid receptor. ESR1 encodes the estrogen receptor alpha, which binds estrogens (like estradiol), not progestins. CYP19A1 encodes aromatase, a cytochrome P450 enzyme that converts androgens to estrogens — it is not a nuclear receptor and is not a typical 
+
+Q [8046caab2e47]: True or False Question: BCHE and ACHE are genes which commonly bind to the drug Hexafluronium
+  Expected: True
+  Got:      False
+  Thinking: BCHE (butyrylcholinesterase) and ACHE (acetylcholinesterase) are enzymes involved in the breakdown of acetylcholine. Hexafluronium is a non-depolarizing neuromuscular blocking agent whose primary target is the nicotinic acetylcholine receptor (specifically the muscle-type nicotinic receptor subunits such as CHRNA1, CHRND, etc.) at the neuromuscular junction. It does not commonly bind to ACHE or BCHE as a target. The statement that BCHE and ACHE are genes which commonly bind to Hexafluronium is therefore false.
+
+Q [7b3ee5a8b06a]: True or False Question: CYP2C18 and GABRB2 are genes which commonly bind to the drug Diazepam
+  Expected: True
+  Got:      False
+  Thinking: Let me consider each gene:
+
+1. **GABRB2**: This encodes the GABA-A receptor subunit beta-2. Diazepam is a benzodiazepine that acts on GABA-A receptors, so GABRB2 is a legitimate molecular target for diazepam.
+
+2. **CYP2C18**: This is a pseudogene in humans. It is NOT a functional cytochrome P450 enzyme. The CYP enzyme actually involved in diazepam metabolism is CYP2C19 (along with CYP3A4). CYP2C18 does not functionally bind or metabolize diazepam.
+
+Since CYP2C18 is a pseudogene and not a functional drug-binding target, the statement that BOTH genes commonly bind to diazepam is false.
+
+Q [8bf5069b3fbf]: True or False Question: PDE1B and PDE5A are genes which commonly bind to the drug Vardenafil
+  Expected: True
+  Got:      False
+  Thinking: Let me think about this question carefully.
+
+Vardenafil (Levitra) is a PDE5 inhibitor used to treat erectile dysfunction. It works by inhibiting phosphodiesterase type 5 (PDE5), which is encoded by the PDE5A gene.
+
+Now, the question asks whether PDE1B and PDE5A are genes which "commonly bind to" Vardenafil.
+
+PDE5A - This is the primary target of Vardenafil. Vardenafil is a selective PDE5 inhibitor, so it definitely binds to PDE5A. This is well-established.
+
+PDE1B - This encodes phosphodiesterase 1B, which is a different type of phosphodiesterase. PDE1 enzymes are calcium/calmodulin-activated phosphodiesterases. Vardenafil is a selective PDE5 inhibitor and does not commonly bind to PDE1B. PDE1B is not a known target of Vardenafil.
+
+So the statement says BOTH PDE1B and PDE5A commonly bind to Vardenafil. Since PDE1B is not a common target of Vardenafil (it's a PDE5 inhibitor, not a PDE1 inhibitor), this statement would be FALSE.
+
+Wait, let me reconsider. Could there be some off-target binding? Vardenafil is quite selective for PDE5. PDE1B is not a commonly recognized target. The statement claims both are common binding targets, which is incorrect because PDE1B is not a common target of Vardenafil.
+
+The answer is False.
+
+Q [1243247fd5c9]: True or False Question: CCDC92 and GNAI1 are genes commonly subject to increased expression by the drug Decitabine
+  Expected: True
+  Got:      False
+  Thinking: The question asks whether CCDC92 and GNAI1 are genes commonly subject to increased expression by Decitabine. Decitabine is a hypomethylating agent (DNA methyltransferase inhibitor) used in MDS and AML. It reactivates genes silenced by promoter hypermethylation. While Decitabine does upregulate many genes, the classic examples of commonly upregulated genes include tumor suppressors like CDKN2A (p15), DAPK, RASSF1A, and other well-characterized methylated/silenced genes. CCDC92 and GNAI1 are not typically highlighted in the literature as genes 
+
+Q [e9932ecdc914]: True or False Question: SLC35A1 and DENND2D are genes commonly subject to increased expression by the drug Azithromycin
+  Expected: True
+  Got:      False
+  Thinking: Let me consider this question carefully. Azithromycin is a macrolide antibiotic that primarily works by inhibiting bacterial protein synthesis (binding to the 50S ribosomal subunit). While it does have some anti-inflammatory and immunomodulatory effects on host cells, it is not commonly associated with upregulating specific host genes like SLC35A1 (a GDP-mannose transporter involved in Golgi glycosylation) and DENND2D (a RAB GTPase-activating protein involved in vesicle trafficking). These two genes are not well-known targets of Azithromycin's mechanism of action or its recognized effects on host gene expression. There is no established pharmacological literature that commonly links Azithromycin to increased expression of both SLC35A1 and DENND2D. This statement appears to be false.
+
+Q [6267052fd598]: True or False Question: RHOA and DDIT4 are genes commonly subject to increased expression by the drug Atorvastatin
+  Expected: True
+  Got:      False
+  Thinking: Let me consider what is known about Atorvastatin's effects on gene expression.
+
+Atorvastatin is a statin (HMG-CoA reductase inhibitor). Its primary mechanism involves blocking the mevalonate pathway, which affects isoprenylation of small GTPases like RhoA.
+
+RHOA: Statins are well-known to DECREASE RhoA activity and protein levels because RhoA requires isoprenylation (via the mevalonate pathway) for proper membrane localization and function. Atorvastatin would be expected to reduce, not increase, RHOA expression/activity.
+
+DDIT4 (GADD153): This is a stress-response gene. I am not aware of DDIT4 being a commonly upregulated target of atorvastatin.
+
+Since RHOA is typically decreased (not increased) by statins like atorvastatin, the claim that both RHOA and DDIT4 are commonly subject to increased expression by atorvastatin is incorrect.
+
+Q [afcf94ebac85]: True or False Question: HBB and FOXO4 are genes commonly subject to increased expression by the drug Phenylpropanolamine
+  Expected: True
+  Got:      False
+  Thinking: Let me think about this question carefully.
+
+The question asks whether HBB and FOXO4 are genes commonly subject to increased expression by the drug Phenylpropanolamine.
+
+Phenylpropanolamine (PPA) is a sympathomimetic amine that was used as a decongestant and was also used in weight loss products. It works as an indirect-acting sympathomimetic by releasing norepinephrine from nerve terminals. It's primarily a peripheral adrenergic agonist.
+
+HBB is the gene encoding the beta-globin subunit of hemoglobin. It's a housekeeping gene involved in oxygen transport.
+
+FOXO4 is a forkhead box O transcription factor involved in cell cycle regulation, apoptosis, and stress responses.
+
+Now, would phenylpropanolamine commonly increase expression of HBB and FOXO4? 
+
+Phenylpropanolamine is a sympathomimetic drug. Its primary mechanism is through norepinephrine release and adrenergic receptor activation. It's not typically associated with upregulating hemoglobin beta (HBB) or FOXO4 transcription factors.
+
+HBB expression is primarily regulated by erythroid-specific transcription factors (like GATA1, KLF1) and is influenced by oxygen levels (via HIF pathways). It's not a typical target of sympathomimetic drugs.
+
+FOXO4 is regulated by the PI3K/Akt/mTOR pathway and is involved in stress responses. While some stress responses could theoretically involve FOXO4, phenylpropanolamine is not commonly associated with upregulating FOXO4.
+
+This statement seems false. Phenylpropanolamine is a sympathomimetic decongestant, and HBB and FOXO4 are not genes commonly known to be upregulated by this drug. These genes are not typical targets of adrenergic/sympathomimetic signaling.
+
+I'm fairly confident this is FALSE.
+
+Q [f28df4ea2542]: True or False Question: HMGCR and MAL are genes commonly subject to increased expression by the drug Fluoxetine
+  Expected: True
+  Got:      False
+  Thinking: Let me think about this question carefully.
+
+The question asks whether HMGCR and MAL are genes commonly subject to increased expression by the drug Fluoxetine.
+
+Fluoxetine (Prozac) is a selective serotonin reuptake inhibitor (SSRI) used primarily for depression. Let me think about what genes are commonly affected by fluoxetine.
+
+HMGCR (3-hydroxy-3-methylglutaryl-coenzyme A reductase) - This is the rate-limiting enzyme in cholesterol biosynthesis. It's the target of statin drugs. I'm not aware of fluoxetine commonly increasing HMGCR expression.
+
+MAL (Malate dehydrogenase) - This is involved in the TCA cycle and malate metabolism. I'm not aware of fluoxetine commonly increasing MAL expression.
+
+Fluoxetine's primary mechanism is inhibition of the serotonin transporter (SERT/SLC6A4). Its gene expression effects would more commonly involve serotonin-related genes, neurotrophic factors (like BDNF), and other neurotransmitter-related pathways.
+
+Looking at drug-gene interaction databases and transcriptomic studies of fluoxetine, the genes commonly affected include things related to serotonin signaling, neuroplasticity, and possibly some metabolic genes, but HMGCR and MAL don't stand out as commonly upregulated genes by fluoxetine.
+
+Actually, let me reconsider. In some transcriptomic studies, fluoxetine has been shown to affect various metabolic pathways. But HMGCR and MAL specifically being "commonly subject to increased expression" by fluoxetine seems unlikely. These are not typically listed among the primary gene targets of fluoxetine.
+
+I'm going to go with False. HMGCR and MAL are not commonly recognized as genes whose expression is increased by fluoxetine.
+
+Q [6d634082b7ba]: True or False Question: GDF15 and UBQLN2 are genes commonly subject to decreased expression by the drug Sulfasalazine
+  Expected: True
+  Got:      False
+  Thinking: Let me think about this question carefully.
+
+The question asks whether GDF15 and UBQLN2 are genes commonly subject to decreased expression by the drug Sulfasalazine.
+
+Sulfasalazine is a drug used primarily for inflammatory bowel disease (Crohn's disease, ulcerative colitis) and rheumatoid arthritis. It works by inhibiting 5-aminosalicylic acid (5-ASA) and sulfapyridine components.
+
+Let me think about what I know about Sulfasalazine's effects on gene expression:
+
+Sulfasalazine has been studied in various contexts. It's known to affect inflammatory pathways, NF-κB signaling, and various cytokine expressions.
+
+GDF15 (Growth Differentiation Factor 15) - This is a cytokine-like protein involved in stress responses, inflammation, and is upregulated in various inflammatory conditions.
+
+UBQLN2 (Ubiquilin 2) - This is a protein involved in ubiquitin-proteasome pathway and has been associated with neurodegenerative diseases.
+
+Now, are these two genes "commonly subject to decreased expression" by Sulfasalazine? 
+
+Looking at drug-gene interaction databases like Connectivity Map (CMap) or similar resources, Sulfasalazine's effects on gene expression would be documented. 
+
+Actually, I need to think about this more carefully. In the context of drug perturbation studies (like those in the LINCS/L1000 database), Sulfasalazine has been tested and its effects on gene expression profiles have been catalogued.
+
+From what I recall about Sulfasalazine's gene expression effects, it tends to downregulate inflammatory genes and upregulate certain others. GDF15 is often upregulated in inflammatory states, so a drug that reduces inflammation might decrease GDF15 expression.
+
+However, I'm not confident that both GDF15 and UBQLN2 are "commonly" decreased by Sulfasalazine. UBQLN2 is more associated with neurodegenerative pathways and ubiquitin processing, which doesn't seem directly related to Sulfasalazine's primary mechanism.
+
+Actually, let me reconsider. In drug perturbation databases, the effects can be quite broad. Sulfasalazine, being a multi-target drug, could affect many genes. But the question is whether these specific two genes are "commonly" decreased.
+
+I think this statement is likely False. While Sulfasalazine may affect GDF15 (as an anti-inflammatory effect), UBQLN2 doesn't seem to be a commonly affected gene by Sulfasalazine. The pairing of these two specific genes as being "commonly" decreased by Sulfasalazine seems unlikely to be a well-established finding.
+
+I'll go with False.
+
+Q [32aefbff7f7c]: True or False Question: RNH1 and ACAT2 are genes commonly subject to decreased expression by the drug Mepenzolate
+  Expected: True
+  Got:      False
+  Thinking: Let me think about this question carefully.
+
+The question asks whether RNH1 and ACAT2 are genes commonly subject to decreased expression by the drug Mepenzolate.
+
+Mepenzolate (also known as mepenzolate bromide) is an anticholinergic/antimuscarinic drug used to treat peptic ulcers and gastrointestinal spasms. It works by blocking muscarinic acetylcholine receptors.
+
+Now, let me think about whether Mepenzolate is known to decrease expression of RNH1 and ACAT2 genes.
+
+RNH1 - This is a gene encoding a protein involved in RNA processing (it's related to the RNH1 protein, which is involved in RNA helicase activity or similar functions).
+
+ACAT2 - Acetyl-CoA acyltransferase 2, also known as acetoacetyl-CoA thiolase. This is involved in fatty acid metabolism.
+
+Mepenzolate is a relatively simple antimuscarinic agent. It's not typically associated with significant gene expression changes. It's a peripheral anticholinergic drug that works primarily at muscarinic receptors.
+
+I'm not aware of any well-established connection between Mepenzolate and decreased expression of RNH1 and ACAT2 genes. These genes don't seem to be commonly associated with Mepenzolate's mechanism of action or known side effects.
+
+This statement appears to be false. Mepenzolate is a simple antimuscarinic drug, and there's no well-known association with decreased expression of these specific genes. This seems like a fabricated or incorrect association.
+
+My best guess is that this statement is FALSE.
+
+Q [4ac45929706d]: True or False Question: SLC35F2 and S100A13 are genes commonly subject to decreased expression by the drug Cefuroxime
+  Expected: True
+  Got:      False
+  Thinking: Cefuroxime is a second-generation cephalosporin antibiotic that works by inhibiting bacterial cell wall synthesis (targeting penicillin-binding proteins). SLC35F2 is a solute carrier family member involved in intracellular transport, and S100A13 is a calcium-binding protein. There is no well-established pharmacological or transcriptomic evidence that Cefuroxime commonly causes decreased expression of these two specific genes. Cefuroxime's primary mechanism is antibacterial, and these genes are not recognized as common targets of its host gene expression effects. This statement appears to be fabricated or incorrect.
+
+Q [1f5d37da859a]: True or False Question: BACE2 and LGALS1 are genes commonly subject to decreased expression by the drug Tubocurarine
+  Expected: True
+  Got:      False
+  Thinking: Tubocurarine (tubocurarine chloride) is a non-depolarizing neuromuscular blocking agent that works by competitively antagonizing acetylcholine at nicotinic receptors at the neuromuscular junction. It is used as a muscle relaxant in surgical settings. Its mechanism of action is primarily at the receptor level and is not associated with widespread transcriptional regulation of genes like BACE2 (beta-secretase 2, involved in APP processing in Alzheimer's disease) or LGALS1 (Galectin-1, involved in immune regulation and cell adhesion). These genes are not commonly listed as targets of tubocurarine in drug-gene interaction databases. The statement appears to be false.
+
+Q [6f31f6b438dd]: True or False Question: BAD and CNDP2 are genes commonly subject to decreased expression by the drug Darifenacin
+  Expected: True
+  Got:      False
+  Thinking: Let me think about this question carefully.
+
+The question asks whether BAD and CNDP2 are genes commonly subject to decreased expression by the drug Darifenacin.
+
+Darifenacin (brand name Enablex) is a selective muscarinic (anticholinergic) antagonist, primarily used for the treatment of overactive bladder. It works by blocking muscarinic acetylcholine receptors, particularly M3 receptors in the bladder detrusor muscle.
+
+Now, let me consider BAD and CNDP2:
+
+- BAD (BCL2 Associated Death Promoter) is a pro-apoptotic protein in the BCL-2 family involved in the intrinsic apoptotic pathway.
+- CNDP2 (CNDP2 Neurodevelopmental Delay Protein 2) is a gene associated with neurodevelopmental disorders.
+
+Darifenacin is a relatively selective antimuscarinic agent. Its mechanism of action is primarily at the receptor level (blocking M3 muscarinic receptors). It is not commonly associated in pharmacogenomics or drug-gene interaction databases with decreased expression of BAD or CNDP2. These genes are not typically listed as targets or genes whose expression is modulated by Darifenacin.
+
+This statement appears to be false. There is no well-established association between Darifenacin and decreased expression of BAD or CNDP2 in standard pharmacology or pharmacogenomics literature.
+
+Q [22196432957c]: True or False Question: Nucleoside Analog and Purines are classes which commonly include the drug Azathioprine
+  Expected: True
+  Got:      False
+  Thinking: Let me analyze Azathioprine's drug classes: Azathioprine is a prodrug of 6-mercaptopurine (6-MP), which is a purine analog (specifically a hypoxanthine analog). It is correctly classified under 
+
+
+=== Dataset: True_or_False_2hop_atleastone.json__vanilla | Type: tf | Mode: vanilla | Model: qwen3.8:27b-q8_0 ===
+Count: 540  |  Correct: 327  |  Accuracy: 0.606 [95% CI 0.564-0.646]
+Telemetry:
+  - latency ms: mean=55448 p50=52446 p95=89619 (n=540)
+  - tokens: avg in=74 out=681 | total in=39926 out=367726
+  - records with error: 0.000 (n=540)
+
+-- Incorrect Questions (213 total, showing 15) --
+Q [c93990186284]: True or False Question: ESR1 and CYP19A1 are genes which commonly bind to the drug Levonorgestrel
+  Expected: True
+  Got:      False
+  Thinking: Let me consider what Levonorgestrel is and what its known drug targets are. Levonorgestrel is a synthetic progestogen (progestin) used in oral contraceptives and emergency contraception. Its primary molecular target is the progesterone receptor (NR3C1), and it also has some affinity for the androgen receptor (AR) and glucocorticoid receptor. ESR1 encodes the estrogen receptor alpha, which binds estrogens (like estradiol), not progestins. CYP19A1 encodes aromatase, a cytochrome P450 enzyme that converts androgens to estrogens — it is not a nuclear receptor and is not a typical 
+
+Q [8046caab2e47]: True or False Question: BCHE and ACHE are genes which commonly bind to the drug Hexafluronium
+  Expected: True
+  Got:      False
+  Thinking: BCHE (butyrylcholinesterase) and ACHE (acetylcholinesterase) are enzymes involved in the breakdown of acetylcholine. Hexafluronium is a non-depolarizing neuromuscular blocking agent whose primary target is the nicotinic acetylcholine receptor (specifically the muscle-type nicotinic receptor subunits such as CHRNA1, CHRND, etc.) at the neuromuscular junction. It does not commonly bind to ACHE or BCHE as a target. The statement that BCHE and ACHE are genes which commonly bind to Hexafluronium is therefore false.
+
+Q [7b3ee5a8b06a]: True or False Question: CYP2C18 and GABRB2 are genes which commonly bind to the drug Diazepam
+  Expected: True
+  Got:      False
+  Thinking: Let me consider each gene:
+
+1. **GABRB2**: This encodes the GABA-A receptor subunit beta-2. Diazepam is a benzodiazepine that acts on GABA-A receptors, so GABRB2 is a legitimate molecular target for diazepam.
+
+2. **CYP2C18**: This is a pseudogene in humans. It is NOT a functional cytochrome P450 enzyme. The CYP enzyme actually involved in diazepam metabolism is CYP2C19 (along with CYP3A4). CYP2C18 does not functionally bind or metabolize diazepam.
+
+Since CYP2C18 is a pseudogene and not a functional drug-binding target, the statement that BOTH genes commonly bind to diazepam is false.
+
+Q [8bf5069b3fbf]: True or False Question: PDE1B and PDE5A are genes which commonly bind to the drug Vardenafil
+  Expected: True
+  Got:      False
+  Thinking: Let me think about this question carefully.
+
+Vardenafil (Levitra) is a PDE5 inhibitor used to treat erectile dysfunction. It works by inhibiting phosphodiesterase type 5 (PDE5), which is encoded by the PDE5A gene.
+
+Now, the question asks whether PDE1B and PDE5A are genes which "commonly bind to" Vardenafil.
+
+PDE5A - This is the primary target of Vardenafil. Vardenafil is a selective PDE5 inhibitor, so it definitely binds to PDE5A. This is well-established.
+
+PDE1B - This encodes phosphodiesterase 1B, which is a different type of phosphodiesterase. PDE1 enzymes are calcium/calmodulin-activated phosphodiesterases. Vardenafil is a selective PDE5 inhibitor and does not commonly bind to PDE1B. PDE1B is not a known target of Vardenafil.
+
+So the statement says BOTH PDE1B and PDE5A commonly bind to Vardenafil. Since PDE1B is not a common target of Vardenafil (it's a PDE5 inhibitor, not a PDE1 inhibitor), this statement would be FALSE.
+
+Wait, let me reconsider. Could there be some off-target binding? Vardenafil is quite selective for PDE5. PDE1B is not a commonly recognized target. The statement claims both are common binding targets, which is incorrect because PDE1B is not a common target of Vardenafil.
+
+The answer is False.
+
+Q [1243247fd5c9]: True or False Question: CCDC92 and GNAI1 are genes commonly subject to increased expression by the drug Decitabine
+  Expected: True
+  Got:      False
+  Thinking: The question asks whether CCDC92 and GNAI1 are genes commonly subject to increased expression by Decitabine. Decitabine is a hypomethylating agent (DNA methyltransferase inhibitor) used in MDS and AML. It reactivates genes silenced by promoter hypermethylation. While Decitabine does upregulate many genes, the classic examples of commonly upregulated genes include tumor suppressors like CDKN2A (p15), DAPK, RASSF1A, and other well-characterized methylated/silenced genes. CCDC92 and GNAI1 are not typically highlighted in the literature as genes 
+
+Q [e9932ecdc914]: True or False Question: SLC35A1 and DENND2D are genes commonly subject to increased expression by the drug Azithromycin
+  Expected: True
+  Got:      False
+  Thinking: Let me consider this question carefully. Azithromycin is a macrolide antibiotic that primarily works by inhibiting bacterial protein synthesis (binding to the 50S ribosomal subunit). While it does have some anti-inflammatory and immunomodulatory effects on host cells, it is not commonly associated with upregulating specific host genes like SLC35A1 (a GDP-mannose transporter involved in Golgi glycosylation) and DENND2D (a RAB GTPase-activating protein involved in vesicle trafficking). These two genes are not well-known targets of Azithromycin's mechanism of action or its recognized effects on host gene expression. There is no established pharmacological literature that commonly links Azithromycin to increased expression of both SLC35A1 and DENND2D. This statement appears to be false.
+
+Q [6267052fd598]: True or False Question: RHOA and DDIT4 are genes commonly subject to increased expression by the drug Atorvastatin
+  Expected: True
+  Got:      False
+  Thinking: Let me consider what is known about Atorvastatin's effects on gene expression.
+
+Atorvastatin is a statin (HMG-CoA reductase inhibitor). Its primary mechanism involves blocking the mevalonate pathway, which affects isoprenylation of small GTPases like RhoA.
+
+RHOA: Statins are well-known to DECREASE RhoA activity and protein levels because RhoA requires isoprenylation (via the mevalonate pathway) for proper membrane localization and function. Atorvastatin would be expected to reduce, not increase, RHOA expression/activity.
+
+DDIT4 (GADD153): This is a stress-response gene. I am not aware of DDIT4 being a commonly upregulated target of atorvastatin.
+
+Since RHOA is typically decreased (not increased) by statins like atorvastatin, the claim that both RHOA and DDIT4 are commonly subject to increased expression by atorvastatin is incorrect.
+
+Q [afcf94ebac85]: True or False Question: HBB and FOXO4 are genes commonly subject to increased expression by the drug Phenylpropanolamine
+  Expected: True
+  Got:      False
+  Thinking: Let me think about this question carefully.
+
+The question asks whether HBB and FOXO4 are genes commonly subject to increased expression by the drug Phenylpropanolamine.
+
+Phenylpropanolamine (PPA) is a sympathomimetic amine that was used as a decongestant and was also used in weight loss products. It works as an indirect-acting sympathomimetic by releasing norepinephrine from nerve terminals. It's primarily a peripheral adrenergic agonist.
+
+HBB is the gene encoding the beta-globin subunit of hemoglobin. It's a housekeeping gene involved in oxygen transport.
+
+FOXO4 is a forkhead box O transcription factor involved in cell cycle regulation, apoptosis, and stress responses.
+
+Now, would phenylpropanolamine commonly increase expression of HBB and FOXO4? 
+
+Phenylpropanolamine is a sympathomimetic drug. Its primary mechanism is through norepinephrine release and adrenergic receptor activation. It's not typically associated with upregulating hemoglobin beta (HBB) or FOXO4 transcription factors.
+
+HBB expression is primarily regulated by erythroid-specific transcription factors (like GATA1, KLF1) and is influenced by oxygen levels (via HIF pathways). It's not a typical target of sympathomimetic drugs.
+
+FOXO4 is regulated by the PI3K/Akt/mTOR pathway and is involved in stress responses. While some stress responses could theoretically involve FOXO4, phenylpropanolamine is not commonly associated with upregulating FOXO4.
+
+This statement seems false. Phenylpropanolamine is a sympathomimetic decongestant, and HBB and FOXO4 are not genes commonly known to be upregulated by this drug. These genes are not typical targets of adrenergic/sympathomimetic signaling.
+
+I'm fairly confident this is FALSE.
+
+Q [f28df4ea2542]: True or False Question: HMGCR and MAL are genes commonly subject to increased expression by the drug Fluoxetine
+  Expected: True
+  Got:      False
+  Thinking: Let me think about this question carefully.
+
+The question asks whether HMGCR and MAL are genes commonly subject to increased expression by the drug Fluoxetine.
+
+Fluoxetine (Prozac) is a selective serotonin reuptake inhibitor (SSRI) used primarily for depression. Let me think about what genes are commonly affected by fluoxetine.
+
+HMGCR (3-hydroxy-3-methylglutaryl-coenzyme A reductase) - This is the rate-limiting enzyme in cholesterol biosynthesis. It's the target of statin drugs. I'm not aware of fluoxetine commonly increasing HMGCR expression.
+
+MAL (Malate dehydrogenase) - This is involved in the TCA cycle and malate metabolism. I'm not aware of fluoxetine commonly increasing MAL expression.
+
+Fluoxetine's primary mechanism is inhibition of the serotonin transporter (SERT/SLC6A4). Its gene expression effects would more commonly involve serotonin-related genes, neurotrophic factors (like BDNF), and other neurotransmitter-related pathways.
+
+Looking at drug-gene interaction databases and transcriptomic studies of fluoxetine, the genes commonly affected include things related to serotonin signaling, neuroplasticity, and possibly some metabolic genes, but HMGCR and MAL don't stand out as commonly upregulated genes by fluoxetine.
+
+Actually, let me reconsider. In some transcriptomic studies, fluoxetine has been shown to affect various metabolic pathways. But HMGCR and MAL specifically being "commonly subject to increased expression" by fluoxetine seems unlikely. These are not typically listed among the primary gene targets of fluoxetine.
+
+I'm going to go with False. HMGCR and MAL are not commonly recognized as genes whose expression is increased by fluoxetine.
+
+Q [6d634082b7ba]: True or False Question: GDF15 and UBQLN2 are genes commonly subject to decreased expression by the drug Sulfasalazine
+  Expected: True
+  Got:      False
+  Thinking: Let me think about this question carefully.
+
+The question asks whether GDF15 and UBQLN2 are genes commonly subject to decreased expression by the drug Sulfasalazine.
+
+Sulfasalazine is a drug used primarily for inflammatory bowel disease (Crohn's disease, ulcerative colitis) and rheumatoid arthritis. It works by inhibiting 5-aminosalicylic acid (5-ASA) and sulfapyridine components.
+
+Let me think about what I know about Sulfasalazine's effects on gene expression:
+
+Sulfasalazine has been studied in various contexts. It's known to affect inflammatory pathways, NF-κB signaling, and various cytokine expressions.
+
+GDF15 (Growth Differentiation Factor 15) - This is a cytokine-like protein involved in stress responses, inflammation, and is upregulated in various inflammatory conditions.
+
+UBQLN2 (Ubiquilin 2) - This is a protein involved in ubiquitin-proteasome pathway and has been associated with neurodegenerative diseases.
+
+Now, are these two genes "commonly subject to decreased expression" by Sulfasalazine? 
+
+Looking at drug-gene interaction databases like Connectivity Map (CMap) or similar resources, Sulfasalazine's effects on gene expression would be documented. 
+
+Actually, I need to think about this more carefully. In the context of drug perturbation studies (like those in the LINCS/L1000 database), Sulfasalazine has been tested and its effects on gene expression profiles have been catalogued.
+
+From what I recall about Sulfasalazine's gene expression effects, it tends to downregulate inflammatory genes and upregulate certain others. GDF15 is often upregulated in inflammatory states, so a drug that reduces inflammation might decrease GDF15 expression.
+
+However, I'm not confident that both GDF15 and UBQLN2 are "commonly" decreased by Sulfasalazine. UBQLN2 is more associated with neurodegenerative pathways and ubiquitin processing, which doesn't seem directly related to Sulfasalazine's primary mechanism.
+
+Actually, let me reconsider. In drug perturbation databases, the effects can be quite broad. Sulfasalazine, being a multi-target drug, could affect many genes. But the question is whether these specific two genes are "commonly" decreased.
+
+I think this statement is likely False. While Sulfasalazine may affect GDF15 (as an anti-inflammatory effect), UBQLN2 doesn't seem to be a commonly affected gene by Sulfasalazine. The pairing of these two specific genes as being "commonly" decreased by Sulfasalazine seems unlikely to be a well-established finding.
+
+I'll go with False.
+
+Q [32aefbff7f7c]: True or False Question: RNH1 and ACAT2 are genes commonly subject to decreased expression by the drug Mepenzolate
+  Expected: True
+  Got:      False
+  Thinking: Let me think about this question carefully.
+
+The question asks whether RNH1 and ACAT2 are genes commonly subject to decreased expression by the drug Mepenzolate.
+
+Mepenzolate (also known as mepenzolate bromide) is an anticholinergic/antimuscarinic drug used to treat peptic ulcers and gastrointestinal spasms. It works by blocking muscarinic acetylcholine receptors.
+
+Now, let me think about whether Mepenzolate is known to decrease expression of RNH1 and ACAT2 genes.
+
+RNH1 - This is a gene encoding a protein involved in RNA processing (it's related to the RNH1 protein, which is involved in RNA helicase activity or similar functions).
+
+ACAT2 - Acetyl-CoA acyltransferase 2, also known as acetoacetyl-CoA thiolase. This is involved in fatty acid metabolism.
+
+Mepenzolate is a relatively simple antimuscarinic agent. It's not typically associated with significant gene expression changes. It's a peripheral anticholinergic drug that works primarily at muscarinic receptors.
+
+I'm not aware of any well-established connection between Mepenzolate and decreased expression of RNH1 and ACAT2 genes. These genes don't seem to be commonly associated with Mepenzolate's mechanism of action or known side effects.
+
+This statement appears to be false. Mepenzolate is a simple antimuscarinic drug, and there's no well-known association with decreased expression of these specific genes. This seems like a fabricated or incorrect association.
+
+My best guess is that this statement is FALSE.
+
+Q [4ac45929706d]: True or False Question: SLC35F2 and S100A13 are genes commonly subject to decreased expression by the drug Cefuroxime
+  Expected: True
+  Got:      False
+  Thinking: Cefuroxime is a second-generation cephalosporin antibiotic that works by inhibiting bacterial cell wall synthesis (targeting penicillin-binding proteins). SLC35F2 is a solute carrier family member involved in intracellular transport, and S100A13 is a calcium-binding protein. There is no well-established pharmacological or transcriptomic evidence that Cefuroxime commonly causes decreased expression of these two specific genes. Cefuroxime's primary mechanism is antibacterial, and these genes are not recognized as common targets of its host gene expression effects. This statement appears to be fabricated or incorrect.
+
+Q [1f5d37da859a]: True or False Question: BACE2 and LGALS1 are genes commonly subject to decreased expression by the drug Tubocurarine
+  Expected: True
+  Got:      False
+  Thinking: Tubocurarine (tubocurarine chloride) is a non-depolarizing neuromuscular blocking agent that works by competitively antagonizing acetylcholine at nicotinic receptors at the neuromuscular junction. It is used as a muscle relaxant in surgical settings. Its mechanism of action is primarily at the receptor level and is not associated with widespread transcriptional regulation of genes like BACE2 (beta-secretase 2, involved in APP processing in Alzheimer's disease) or LGALS1 (Galectin-1, involved in immune regulation and cell adhesion). These genes are not commonly listed as targets of tubocurarine in drug-gene interaction databases. The statement appears to be false.
+
+Q [6f31f6b438dd]: True or False Question: BAD and CNDP2 are genes commonly subject to decreased expression by the drug Darifenacin
+  Expected: True
+  Got:      False
+  Thinking: Let me think about this question carefully.
+
+The question asks whether BAD and CNDP2 are genes commonly subject to decreased expression by the drug Darifenacin.
+
+Darifenacin (brand name Enablex) is a selective muscarinic (anticholinergic) antagonist, primarily used for the treatment of overactive bladder. It works by blocking muscarinic acetylcholine receptors, particularly M3 receptors in the bladder detrusor muscle.
+
+Now, let me consider BAD and CNDP2:
+
+- BAD (BCL2 Associated Death Promoter) is a pro-apoptotic protein in the BCL-2 family involved in the intrinsic apoptotic pathway.
+- CNDP2 (CNDP2 Neurodevelopmental Delay Protein 2) is a gene associated with neurodevelopmental disorders.
+
+Darifenacin is a relatively selective antimuscarinic agent. Its mechanism of action is primarily at the receptor level (blocking M3 muscarinic receptors). It is not commonly associated in pharmacogenomics or drug-gene interaction databases with decreased expression of BAD or CNDP2. These genes are not typically listed as targets or genes whose expression is modulated by Darifenacin.
+
+This statement appears to be false. There is no well-established association between Darifenacin and decreased expression of BAD or CNDP2 in standard pharmacology or pharmacogenomics literature.
+
+Q [22196432957c]: True or False Question: Nucleoside Analog and Purines are classes which commonly include the drug Azathioprine
+  Expected: True
+  Got:      False
+  Thinking: Let me analyze Azathioprine's drug classes: Azathioprine is a prodrug of 6-mercaptopurine (6-MP), which is a purine analog (specifically a hypoxanthine analog). It is correctly classified under 
+
+
+==== Overall Summary (record-weighted) ====
+
+Type: mcq | Mode: vanilla | Model: qwen3.8:27b-q8_0
+  Total: 917  |  Correct: 570  |  Accuracy: 0.622 [95% CI 0.590-0.652]
+  - latency ms: mean=62205 p50=59544 p95=100567 (n=917)
+  - tokens: avg in=119 out=766 | total in=108979 out=701865
+  - records with error: 0.001 (n=917)
+
+Type: open_ended | Mode: vanilla | Model: qwen3.8:27b-q8_0
+  Total: 958  |  Correct: 12  |  Accuracy: 0.013 [95% CI 0.007-0.022]
+  Avg set metrics: exact_match=0.013  precision=0.140  recall=0.122  f1=0.092  jaccard=0.062  overlap=0.190
+  - latency ms: mean=144940 p50=81220 p95=342331 (n=958)
+  - tokens: avg in=71 out=1379 | total in=62223 out=1212330
+  - records with error: 0.082 (n=958)
+
+Type: tf | Mode: vanilla | Model: qwen3.8:27b-q8_0
+  Total: 1640  |  Correct: 1028  |  Accuracy: 0.627 [95% CI 0.603-0.650]
+  - latency ms: mean=50074 p50=47304 p95=81086 (n=1640)
+  - tokens: avg in=70 out=614 | total in=114449 out=1006038
+  - records with error: 0.001 (n=1640)

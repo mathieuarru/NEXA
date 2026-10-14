@@ -1,0 +1,27 @@
+{
+  "dataset_file": "MCQ_1hop_sub.json",
+  "model": "gpt-5-mini",
+  "provider": "openai",
+  "git_commit": "0070f30",
+  "config": {
+    "agent_mode": "flex",
+    "kg_mode": "Force",
+    "profile_name": "Alzkb 121",
+    "examples_mode": null,
+    "generation_mode": "one_shot_fallback",
+    "recursion_limit": 150,
+    "checkpointer": "memory",
+    "limit": null,
+    "overwrite": false,
+    "retry_errors": false,
+    "retry_all_errors": false,
+    "max_retries": 2,
+    "run_tag": "run2",
+    "out_subdir": "variability_gpt-5-mini"
+  },
+  "started_at": "2026-07-23T23:29:30.336325+00:00",
+  "finished_at": "2026-07-24T00:10:03.878325+00:00",
+  "n_questions_in_dataset": 100,
+  "n_run_this_session": 100,
+  "n_correct_this_session": 98
+}

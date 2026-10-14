@@ -1,0 +1,149 @@
+{
+  "generated_at": "2026-10-13T23:23:48.233000",
+  "files": [
+    "benchmark/results/biohopr/nexa-direct_gpt-5-mini/BioHopR_2hop__open_ended_list__gpt-5-mini__Force__PrimeKG_21__llm__one_shot_fallback__run1.jsonl"
+  ],
+  "groups": [
+    {
+      "type": "open_ended_list",
+      "agent_mode": "direct",
+      "model": "gpt-5-mini",
+      "file": "BioHopR_2hop.json",
+      "count": 7633,
+      "correct": 7071,
+      "accuracy": 0.9263723306694616,
+      "accuracy_ci95": [
+        0.9202964223075871,
+        0.9320192784658845
+      ],
+      "avg_metrics": {
+        "exact_match": 0.9263723306694616,
+        "precision": 0.9709660517372406,
+        "recall": 0.9928451921002809,
+        "f1": 0.9760372914089341,
+        "jaccard": 0.9701408827752718,
+        "overlap": 0.9935043456234481
+      },
+      "by_expected_size": {
+        "1": {
+          "count": 1088,
+          "accuracy": 0.9411764705882353,
+          "f1": 0.9608729428454598
+        },
+        "2-5": {
+          "count": 1567,
+          "accuracy": 0.9323548181238035,
+          "f1": 0.9602238343916776
+        },
+        "6-20": {
+          "count": 2281,
+          "accuracy": 0.9491451117930733,
+          "f1": 0.9830085680692666
+        },
+        ">20": {
+          "count": 2697,
+          "accuracy": 0.8976640711902113,
+          "f1": 0.9854466411756685
+        }
+      },
+      "telemetry": {
+        "first_attempt_success_rate": {
+          "value": 0.9768112144635137,
+          "n": 7633
+        },
+        "avg_correction_iterations": {
+          "value": 0.02960827983754749,
+          "n": 7633
+        },
+        "latency_ms": {
+          "mean": 30287.37481986113,
+          "p50": 23560.0,
+          "p95": 71075.59999999989,
+          "n": 7633
+        },
+        "tokens": {
+          "avg_input": 6053.207126948775,
+          "avg_output": 1965.6356609458928,
+          "total_input": 46204130.0,
+          "total_output": 15003697.0,
+          "n": 7633
+        },
+        "error_rate": {
+          "value": 0.0031442421066422113,
+          "n": 7633
+        }
+      }
+    }
+  ],
+  "overall": [
+    {
+      "type": "open_ended_list",
+      "agent_mode": "direct",
+      "model": "gpt-5-mini",
+      "count": 7633,
+      "correct": 7071,
+      "accuracy": 0.9263723306694616,
+      "accuracy_ci95": [
+        0.9202964223075871,
+        0.9320192784658845
+      ],
+      "avg_metrics": {
+        "exact_match": 0.9263723306694616,
+        "precision": 0.9709660517372406,
+        "recall": 0.9928451921002809,
+        "f1": 0.9760372914089341,
+        "jaccard": 0.9701408827752718,
+        "overlap": 0.9935043456234481
+      },
+      "by_expected_size": {
+        "1": {
+          "count": 1088,
+          "accuracy": 0.9411764705882353,
+          "f1": 0.9608729428454598
+        },
+        "2-5": {
+          "count": 1567,
+          "accuracy": 0.9323548181238035,
+          "f1": 0.9602238343916776
+        },
+        "6-20": {
+          "count": 2281,
+          "accuracy": 0.9491451117930733,
+          "f1": 0.9830085680692666
+        },
+        ">20": {
+          "count": 2697,
+          "accuracy": 0.8976640711902113,
+          "f1": 0.9854466411756685
+        }
+      },
+      "telemetry": {
+        "first_attempt_success_rate": {
+          "value": 0.9768112144635137,
+          "n": 7633
+        },
+        "avg_correction_iterations": {
+          "value": 0.02960827983754749,
+          "n": 7633
+        },
+        "latency_ms": {
+          "mean": 30287.37481986113,
+          "p50": 23560.0,
+          "p95": 71075.59999999989,
+          "n": 7633
+        },
+        "tokens": {
+          "avg_input": 6053.207126948775,
+          "avg_output": 1965.6356609458928,
+          "total_input": 46204130.0,
+          "total_output": 15003697.0,
+          "n": 7633
+        },
+        "error_rate": {
+          "value": 0.0031442421066422113,
+          "n": 7633
+        }
+      }
+    }
+  ]
+}

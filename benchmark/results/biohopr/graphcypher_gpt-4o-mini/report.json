@@ -1,0 +1,149 @@
+{
+  "generated_at": "2026-10-13T23:23:45.529043",
+  "files": [
+    "benchmark/results/biohopr/graphcypher_gpt-4o-mini/baseline_graphcypher_gpt-4o-mini_PrimeKG_21_20260914_142817.jsonl"
+  ],
+  "groups": [
+    {
+      "type": "open_ended_list",
+      "agent_mode": "graphcypher",
+      "model": "gpt-4o-mini",
+      "file": "BioHopR_2hop.json__graphcypher",
+      "count": 7633,
+      "correct": 3346,
+      "accuracy": 0.43835975370103497,
+      "accuracy_ci95": [
+        0.4272620384083695,
+        0.4495194834186643
+      ],
+      "avg_metrics": {
+        "exact_match": 0.43835975370103497,
+        "precision": 0.5187439821426036,
+        "recall": 0.5192688885556438,
+        "f1": 0.5127938758810097,
+        "jaccard": 0.5035521807343776,
+        "overlap": 0.5308419870998465
+      },
+      "by_expected_size": {
+        "1": {
+          "count": 1088,
+          "accuracy": 0.7463235294117647,
+          "f1": 0.7584414312574516
+        },
+        "2-5": {
+          "count": 1567,
+          "accuracy": 0.5890236119974473,
+          "f1": 0.6239669214779447
+        },
+        "6-20": {
+          "count": 2281,
+          "accuracy": 0.3906181499342394,
+          "f1": 0.4444869562779607
+        },
+        ">20": {
+          "count": 2697,
+          "accuracy": 0.26696329254727474,
+          "f1": 0.40687447688753126
+        }
+      },
+      "telemetry": {
+        "first_attempt_success_rate": {
+          "value": 0.8455391065112013,
+          "n": 7633
+        },
+        "avg_correction_iterations": {
+          "value": 0.0,
+          "n": 7633
+        },
+        "latency_ms": {
+          "mean": 4929.754356085418,
+          "p50": 3132.0,
+          "p95": 10995.4,
+          "n": 7633
+        },
+        "tokens": {
+          "avg_input": 2856.199528363684,
+          "avg_output": 385.7932660814883,
+          "total_input": 21801371.0,
+          "total_output": 2944760.0,
+          "n": 7633
+        },
+        "error_rate": {
+          "value": 0.005895453949954147,
+          "n": 7633
+        }
+      }
+    }
+  ],
+  "overall": [
+    {
+      "type": "open_ended_list",
+      "agent_mode": "graphcypher",
+      "model": "gpt-4o-mini",
+      "count": 7633,
+      "correct": 3346,
+      "accuracy": 0.43835975370103497,
+      "accuracy_ci95": [
+        0.4272620384083695,
+        0.4495194834186643
+      ],
+      "avg_metrics": {
+        "exact_match": 0.43835975370103497,
+        "precision": 0.5187439821426036,
+        "recall": 0.5192688885556438,
+        "f1": 0.5127938758810097,
+        "jaccard": 0.5035521807343776,
+        "overlap": 0.5308419870998465
+      },
+      "by_expected_size": {
+        "1": {
+          "count": 1088,
+          "accuracy": 0.7463235294117647,
+          "f1": 0.7584414312574516
+        },
+        "2-5": {
+          "count": 1567,
+          "accuracy": 0.5890236119974473,
+          "f1": 0.6239669214779447
+        },
+        "6-20": {
+          "count": 2281,
+          "accuracy": 0.3906181499342394,
+          "f1": 0.4444869562779607
+        },
+        ">20": {
+          "count": 2697,
+          "accuracy": 0.26696329254727474,
+          "f1": 0.40687447688753126
+        }
+      },
+      "telemetry": {
+        "first_attempt_success_rate": {
+          "value": 0.8455391065112013,
+          "n": 7633
+        },
+        "avg_correction_iterations": {
+          "value": 0.0,
+          "n": 7633
+        },
+        "latency_ms": {
+          "mean": 4929.754356085418,
+          "p50": 3132.0,
+          "p95": 10995.4,
+          "n": 7633
+        },
+        "tokens": {
+          "avg_input": 2856.199528363684,
+          "avg_output": 385.7932660814883,
+          "total_input": 21801371.0,
+          "total_output": 2944760.0,
+          "n": 7633
+        },
+        "error_rate": {
+          "value": 0.005895453949954147,
+          "n": 7633
+        }
+      }
+    }
+  ]
+}

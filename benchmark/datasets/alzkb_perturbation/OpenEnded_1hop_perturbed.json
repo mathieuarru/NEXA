@@ -1,0 +1,1022 @@
+[
+  {
+    "question": "List the genes which bind to the drug Loxapine",
+    "answer": "HTR2C, CHRM1, HTR1B, DRD4, HTR3A, SLC6A4, CHRM4, HTR5A, HRH4, HRH1, ADRA2B, ADRA2A, HTR2A, DRD1, SLC6A2, HTR1D, CHRM2, CHRM5, DRD3, HTR1A, DRD2, ADRA1B, DRD5, ADRA2C, HRH2, ADRA1A, HTR1E, ADRB1, HTR7, CHRM3, SLC6A3, HTR6"
+  },
+  {
+    "question": "List the genes which bind to the drug loxapine",
+    "answer": "HTR2C, CHRM1, HTR1B, DRD4, HTR3A, SLC6A4, CHRM4, HTR5A, HRH4, HRH1, ADRA2B, ADRA2A, HTR2A, DRD1, SLC6A2, HTR1D, CHRM2, CHRM5, DRD3, HTR1A, DRD2, ADRA1B, DRD5, ADRA2C, HRH2, ADRA1A, HTR1E, ADRB1, HTR7, CHRM3, SLC6A3, HTR6"
+  },
+  {
+    "question": "List the genes which bind to the drug Loxaine",
+    "answer": "HTR2C, CHRM1, HTR1B, DRD4, HTR3A, SLC6A4, CHRM4, HTR5A, HRH4, HRH1, ADRA2B, ADRA2A, HTR2A, DRD1, SLC6A2, HTR1D, CHRM2, CHRM5, DRD3, HTR1A, DRD2, ADRA1B, DRD5, ADRA2C, HRH2, ADRA1A, HTR1E, ADRB1, HTR7, CHRM3, SLC6A3, HTR6"
+  },
+  {
+    "question": "List the genes which bind to the drug Pentosan polysulfate",
+    "answer": "FGF2, FGF1, FGF4"
+  },
+  {
+    "question": "List the genes which bind to the drug pentosan polysulfate",
+    "answer": "FGF2, FGF1, FGF4"
+  },
+  {
+    "question": "List the genes which bind to the drug Pentosa polysulfate",
+    "answer": "FGF2, FGF1, FGF4"
+  },
+  {
+    "question": "List the genes which bind to the drug Apixaban",
+    "answer": "CYP2C19, ABCB1, CYP3A4, CYP2J2, CYP2C8, ABCG2, CYP1A2, F10, CYP3A5, CYP2C9"
+  },
+  {
+    "question": "List the genes which bind to the drug apixaban",
+    "answer": "CYP2C19, ABCB1, CYP3A4, CYP2J2, CYP2C8, ABCG2, CYP1A2, F10, CYP3A5, CYP2C9"
+  },
+  {
+    "question": "List the genes which bind to the drug Apiaban",
+    "answer": "CYP2C19, ABCB1, CYP3A4, CYP2J2, CYP2C8, ABCG2, CYP1A2, F10, CYP3A5, CYP2C9"
+  },
+  {
+    "question": "List the genes which bind to the drug Fluorescein",
+    "answer": "ABCB11, SLC22A6, ABCC1, CYP1A1"
+  },
+  {
+    "question": "List the genes which bind to the drug fluorescein",
+    "answer": "ABCB11, SLC22A6, ABCC1, CYP1A1"
+  },
+  {
+    "question": "List the genes which bind to the drug Fluorecein",
+    "answer": "ABCB11, SLC22A6, ABCC1, CYP1A1"
+  },
+  {
+    "question": "List the genes which bind to the drug Propranolol",
+    "answer": "CYP3A5, HTR1B, ORM1, CYP3A7, CYP2D6, CYP3A7-CYP3A51P, CYP2C19, HTR1A, CYP1A2, ABCB1, ADRB3, SLC22A2, ADRB1, ADRB2, CYP1A1, CYP3A4"
+  },
+  {
+    "question": "List the genes which bind to the drug propranolol",
+    "answer": "CYP3A5, HTR1B, ORM1, CYP3A7, CYP2D6, CYP3A7-CYP3A51P, CYP2C19, HTR1A, CYP1A2, ABCB1, ADRB3, SLC22A2, ADRB1, ADRB2, CYP1A1, CYP3A4"
+  },
+  {
+    "question": "List the genes which bind to the drug Proranolol",
+    "answer": "CYP3A5, HTR1B, ORM1, CYP3A7, CYP2D6, CYP3A7-CYP3A51P, CYP2C19, HTR1A, CYP1A2, ABCB1, ADRB3, SLC22A2, ADRB1, ADRB2, CYP1A1, CYP3A4"
+  },
+  {
+    "question": "List the genes subject to increased expression by the drug Sulfadimethoxine",
+    "answer": "CES1, GPATCH8, ARL4C, TRAPPC6A, AGR2, NNT"
+  },
+  {
+    "question": "List the genes subject to increased expression by the drug sulfadimethoxine",
+    "answer": "CES1, GPATCH8, ARL4C, TRAPPC6A, AGR2, NNT"
+  },
+  {
+    "question": "List the genes subject to increased expression by the drug Sulfadimethxine",
+    "answer": "CES1, GPATCH8, ARL4C, TRAPPC6A, AGR2, NNT"
+  },
+  {
+    "question": "List the genes subject to increased expression by the drug Clofazimine",
+    "answer": "HP, HERPUD1"
+  },
+  {
+    "question": "List the genes subject to increased expression by the drug clofazimine",
+    "answer": "HP, HERPUD1"
+  },
+  {
+    "question": "List the genes subject to increased expression by the drug Clofaziine",
+    "answer": "HP, HERPUD1"
+  },
+  {
+    "question": "List the genes subject to decreased expression by the drug Clofarabine",
+    "answer": "MKI67, KIF15, CENPA, LBR, GET1, KIFC1, KIF4A, TACC3, BUB1, NCAPH, ELOVL6, CDC25C, CDC20, PTTG1, HMG20B, GTSE1, TTK, UBE2C, GPSM2, CEP55, DLGAP5, DEPDC1, PIMREG, PBK, CCNF, HSPA1A, RPIA, DARS2, NUP93, KIF22, VPS28, CCNB2, NCAPD2, CENPF, TMEM109, NDC80, KIF23, ASPM, NUSAP1, TROAP, H2BC12, TPX2, JRK, TLE1, TSEN2, CDKN3, CIT, PSRC1, AURKA, PARPBP, KIF18B, DAG1, KIF20B, KIF2C, ESPL1, KPNA2, SPAG5, HMMR, ARL6IP1, KIF11, CENPE, TMCO6, TOP2A, RACGAP1, CDCA3, HJURP, PHKB, PLK1, CCNB1, CDC25B, KIF14, PRC1, CDCA8, KIF20A, C2CD5, CDK1, PAFAH1B3, CCNA2, AURKB, NEK2, HDAC6, FOXM1, KIF18A, SPC25, PIK3C2B, BIRC5"
+  },
+  {
+    "question": "List the genes subject to decreased expression by the drug clofarabine",
+    "answer": "MKI67, KIF15, CENPA, LBR, GET1, KIFC1, KIF4A, TACC3, BUB1, NCAPH, ELOVL6, CDC25C, CDC20, PTTG1, HMG20B, GTSE1, TTK, UBE2C, GPSM2, CEP55, DLGAP5, DEPDC1, PIMREG, PBK, CCNF, HSPA1A, RPIA, DARS2, NUP93, KIF22, VPS28, CCNB2, NCAPD2, CENPF, TMEM109, NDC80, KIF23, ASPM, NUSAP1, TROAP, H2BC12, TPX2, JRK, TLE1, TSEN2, CDKN3, CIT, PSRC1, AURKA, PARPBP, KIF18B, DAG1, KIF20B, KIF2C, ESPL1, KPNA2, SPAG5, HMMR, ARL6IP1, KIF11, CENPE, TMCO6, TOP2A, RACGAP1, CDCA3, HJURP, PHKB, PLK1, CCNB1, CDC25B, KIF14, PRC1, CDCA8, KIF20A, C2CD5, CDK1, PAFAH1B3, CCNA2, AURKB, NEK2, HDAC6, FOXM1, KIF18A, SPC25, PIK3C2B, BIRC5"
+  },
+  {
+    "question": "List the genes subject to decreased expression by the drug Clofaraine",
+    "answer": "MKI67, KIF15, CENPA, LBR, GET1, KIFC1, KIF4A, TACC3, BUB1, NCAPH, ELOVL6, CDC25C, CDC20, PTTG1, HMG20B, GTSE1, TTK, UBE2C, GPSM2, CEP55, DLGAP5, DEPDC1, PIMREG, PBK, CCNF, HSPA1A, RPIA, DARS2, NUP93, KIF22, VPS28, CCNB2, NCAPD2, CENPF, TMEM109, NDC80, KIF23, ASPM, NUSAP1, TROAP, H2BC12, TPX2, JRK, TLE1, TSEN2, CDKN3, CIT, PSRC1, AURKA, PARPBP, KIF18B, DAG1, KIF20B, KIF2C, ESPL1, KPNA2, SPAG5, HMMR, ARL6IP1, KIF11, CENPE, TMCO6, TOP2A, RACGAP1, CDCA3, HJURP, PHKB, PLK1, CCNB1, CDC25B, KIF14, PRC1, CDCA8, KIF20A, C2CD5, CDK1, PAFAH1B3, CCNA2, AURKB, NEK2, HDAC6, FOXM1, KIF18A, SPC25, PIK3C2B, BIRC5"
+  },
+  {
+    "question": "List the genes subject to decreased expression by the drug Toremifene",
+    "answer": "TRAP1, JMJD6, PPRC1, DPH2, HAT1, GOLT1B, ITGAE, CDCA8, CCDC86, PSRC1, CDC20, ZDHHC6, CD320, TIMM9, RFC5, EXOSC5, MRTO4, THAP11, CCNB1, BYSL, KIF20A, ELAC2, PCNA, TWNK, PRSS23, RUVBL1, UBE2C, SHB, PWP2, TUBB6, NUP85, GRWD1, ADRM1, RPS4Y1, GMNN, MRPS2, RRP12, CCNB2, PMM2, TEX10, AURKB, PIH1D1"
+  },
+  {
+    "question": "List the genes subject to decreased expression by the drug toremifene",
+    "answer": "TRAP1, JMJD6, PPRC1, DPH2, HAT1, GOLT1B, ITGAE, CDCA8, CCDC86, PSRC1, CDC20, ZDHHC6, CD320, TIMM9, RFC5, EXOSC5, MRTO4, THAP11, CCNB1, BYSL, KIF20A, ELAC2, PCNA, TWNK, PRSS23, RUVBL1, UBE2C, SHB, PWP2, TUBB6, NUP85, GRWD1, ADRM1, RPS4Y1, GMNN, MRPS2, RRP12, CCNB2, PMM2, TEX10, AURKB, PIH1D1"
+  },
+  {
+    "question": "List the genes subject to decreased expression by the drug Toremifne",
+    "answer": "TRAP1, JMJD6, PPRC1, DPH2, HAT1, GOLT1B, ITGAE, CDCA8, CCDC86, PSRC1, CDC20, ZDHHC6, CD320, TIMM9, RFC5, EXOSC5, MRTO4, THAP11, CCNB1, BYSL, KIF20A, ELAC2, PCNA, TWNK, PRSS23, RUVBL1, UBE2C, SHB, PWP2, TUBB6, NUP85, GRWD1, ADRM1, RPS4Y1, GMNN, MRPS2, RRP12, CCNB2, PMM2, TEX10, AURKB, PIH1D1"
+  },
+  {
+    "question": "List the genes subject to decreased expression by the drug Methotrexate",
+    "answer": "CDK1, NCAPH, RAE1, SCARB1, CCDC86, ANKRD10, HSPA1A, DPH2, HDAC2, LMNB2, CDCA3, CENPE, NEK2, KIF14, KIF2C, KIF4A, ARL6IP1, NOL11, SPDL1, GTF2E2, PSRC1, HSD17B10, ZW10, NUP88, RPN1, PUF60, CCNA2, KIF23, HJURP, TMEM50A, UBE2C, SLC35F2, GRWD1, MKI67, NOP16, RPIA, TCERG1, BAG3, KIF20A, HMMR, RAN, ITGAE, SFPQ, GTF2A2, CDC20, RXYLT1, CDKN3, CCNB2, SMC4, AURKA, TPX2, UTP20, TACC3, GTSE1, KPNA2, CCNF, SACM1L, CCT5, CDCA8, JMJD6, CENPA, AGO2, TOP2A, PRC1, RRP12, HMGCS1, DEPDC1, LBR, RUVBL1, EBNA1BP2, DLGAP5, NOSIP, ASPM, NOP56, BIRC5, CKAP5, CCNB1, BUB1, H2BC12, COTL1, UBE2S, SRSF2, EIF5, PIMREG, PLK1, RPP38, PTTG1, CENPF, ELAVL1, KIF18A, NAA15, LRRC59, CDC25C, SPAG5, TROAP, CDC25B, KIF18B"
+  },
+  {
+    "question": "List the genes subject to decreased expression by the drug methotrexate",
+    "answer": "CDK1, NCAPH, RAE1, SCARB1, CCDC86, ANKRD10, HSPA1A, DPH2, HDAC2, LMNB2, CDCA3, CENPE, NEK2, KIF14, KIF2C, KIF4A, ARL6IP1, NOL11, SPDL1, GTF2E2, PSRC1, HSD17B10, ZW10, NUP88, RPN1, PUF60, CCNA2, KIF23, HJURP, TMEM50A, UBE2C, SLC35F2, GRWD1, MKI67, NOP16, RPIA, TCERG1, BAG3, KIF20A, HMMR, RAN, ITGAE, SFPQ, GTF2A2, CDC20, RXYLT1, CDKN3, CCNB2, SMC4, AURKA, TPX2, UTP20, TACC3, GTSE1, KPNA2, CCNF, SACM1L, CCT5, CDCA8, JMJD6, CENPA, AGO2, TOP2A, PRC1, RRP12, HMGCS1, DEPDC1, LBR, RUVBL1, EBNA1BP2, DLGAP5, NOSIP, ASPM, NOP56, BIRC5, CKAP5, CCNB1, BUB1, H2BC12, COTL1, UBE2S, SRSF2, EIF5, PIMREG, PLK1, RPP38, PTTG1, CENPF, ELAVL1, KIF18A, NAA15, LRRC59, CDC25C, SPAG5, TROAP, CDC25B, KIF18B"
+  },
+  {
+    "question": "List the genes subject to decreased expression by the drug Methotrexte",
+    "answer": "CDK1, NCAPH, RAE1, SCARB1, CCDC86, ANKRD10, HSPA1A, DPH2, HDAC2, LMNB2, CDCA3, CENPE, NEK2, KIF14, KIF2C, KIF4A, ARL6IP1, NOL11, SPDL1, GTF2E2, PSRC1, HSD17B10, ZW10, NUP88, RPN1, PUF60, CCNA2, KIF23, HJURP, TMEM50A, UBE2C, SLC35F2, GRWD1, MKI67, NOP16, RPIA, TCERG1, BAG3, KIF20A, HMMR, RAN, ITGAE, SFPQ, GTF2A2, CDC20, RXYLT1, CDKN3, CCNB2, SMC4, AURKA, TPX2, UTP20, TACC3, GTSE1, KPNA2, CCNF, SACM1L, CCT5, CDCA8, JMJD6, CENPA, AGO2, TOP2A, PRC1, RRP12, HMGCS1, DEPDC1, LBR, RUVBL1, EBNA1BP2, DLGAP5, NOSIP, ASPM, NOP56, BIRC5, CKAP5, CCNB1, BUB1, H2BC12, COTL1, UBE2S, SRSF2, EIF5, PIMREG, PLK1, RPP38, PTTG1, CENPF, ELAVL1, KIF18A, NAA15, LRRC59, CDC25C, SPAG5, TROAP, CDC25B, KIF18B"
+  },
+  {
+    "question": "List the classes which include the drug Trimethadione",
+    "answer": "Decreased Central Nervous System Disorganized Electrical Activity"
+  },
+  {
+    "question": "List the classes which include the drug trimethadione",
+    "answer": "Decreased Central Nervous System Disorganized Electrical Activity"
+  },
+  {
+    "question": "List the classes which include the drug Trimetadione",
+    "answer": "Decreased Central Nervous System Disorganized Electrical Activity"
+  },
+  {
+    "question": "List the classes which include the drug Bedaquiline",
+    "answer": "Diarylquinolines"
+  },
+  {
+    "question": "List the classes which include the drug bedaquiline",
+    "answer": "Diarylquinolines"
+  },
+  {
+    "question": "List the classes which include the drug Bedaquiine",
+    "answer": "Diarylquinolines"
+  },
+  {
+    "question": "List the classes which include the drug Levocarnitine",
+    "answer": "Carnitine"
+  },
+  {
+    "question": "List the classes which include the drug levocarnitine",
+    "answer": "Carnitine"
+  },
+  {
+    "question": "List the classes which include the drug Levcarnitine",
+    "answer": "Carnitine"
+  },
+  {
+    "question": "List the classes which include the drug Cyclobenzaprine",
+    "answer": "Centrally-mediated Muscle Relaxation"
+  },
+  {
+    "question": "List the classes which include the drug cyclobenzaprine",
+    "answer": "Centrally-mediated Muscle Relaxation"
+  },
+  {
+    "question": "List the classes which include the drug Cyclobenzaprne",
+    "answer": "Centrally-mediated Muscle Relaxation"
+  },
+  {
+    "question": "List the diseases which can be treated by the drug Quetiapine",
+    "answer": "Alzheimer's Disease"
+  },
+  {
+    "question": "List the diseases which can be treated by the drug quetiapine",
+    "answer": "Alzheimer's Disease"
+  },
+  {
+    "question": "List the diseases which can be treated by the drug Qutiapine",
+    "answer": "Alzheimer's Disease"
+  },
+  {
+    "question": "List the diseases which can be treated by the drug Rivastigmine",
+    "answer": "Alzheimer's Disease"
+  },
+  {
+    "question": "List the diseases which can be treated by the drug rivastigmine",
+    "answer": "Alzheimer's Disease"
+  },
+  {
+    "question": "List the diseases which can be treated by the drug Rivastigine",
+    "answer": "Alzheimer's Disease"
+  },
+  {
+    "question": "List the drugs which bind to the gene CTH",
+    "answer": "Cysteine"
+  },
+  {
+    "question": "List the drugs which bind to the gene cth",
+    "answer": "Cysteine"
+  },
+  {
+    "question": "List the drugs which bind to the gene cystathionine gamma-lyase",
+    "answer": "Cysteine"
+  },
+  {
+    "question": "List the drugs which bind to the gene WARS2",
+    "answer": "Tryptophan"
+  },
+  {
+    "question": "List the drugs which bind to the gene wars2",
+    "answer": "Tryptophan"
+  },
+  {
+    "question": "List the drugs which bind to the gene WAR2",
+    "answer": "Tryptophan"
+  },
+  {
+    "question": "List the drugs which bind to the gene tryptophanyl tRNA synthetase 2, mitochondrial",
+    "answer": "Tryptophan"
+  },
+  {
+    "question": "List the drugs which bind to the gene HCN4",
+    "answer": "Dronedarone"
+  },
+  {
+    "question": "List the drugs which bind to the gene hcn4",
+    "answer": "Dronedarone"
+  },
+  {
+    "question": "List the drugs which bind to the gene hyperpolarization activated cyclic nucleotide gated potassium channel 4",
+    "answer": "Dronedarone"
+  },
+  {
+    "question": "List the drugs which bind to the gene SLC51A",
+    "answer": "Dinoprostone, Digoxin, Conjugated estrogens"
+  },
+  {
+    "question": "List the drugs which bind to the gene slc51a",
+    "answer": "Dinoprostone, Digoxin, Conjugated estrogens"
+  },
+  {
+    "question": "List the drugs which bind to the gene SL51A",
+    "answer": "Dinoprostone, Digoxin, Conjugated estrogens"
+  },
+  {
+    "question": "List the drugs which bind to the gene solute carrier family 51 member A",
+    "answer": "Dinoprostone, Digoxin, Conjugated estrogens"
+  },
+  {
+    "question": "List the drugs which increase expression of the gene KAT5",
+    "answer": "Reserpine, Omacetaxine mepesuccinate"
+  },
+  {
+    "question": "List the drugs which increase expression of the gene kat5",
+    "answer": "Reserpine, Omacetaxine mepesuccinate"
+  },
+  {
+    "question": "List the drugs which increase expression of the gene lysine acetyltransferase 5",
+    "answer": "Reserpine, Omacetaxine mepesuccinate"
+  },
+  {
+    "question": "List the drugs which increase expression of the gene TGFBR2",
+    "answer": "Cycloserine, Betamethasone, Guanabenz, Hexylcaine, Lamotrigine, Lenalidomide, Naltrexone, Clomipramine, Budesonide, Ritodrine, Thalidomide, Donepezil, Dexamethasone, Nalbuphine, Brinzolamide, Betahistine, Crizotinib"
+  },
+  {
+    "question": "List the drugs which increase expression of the gene tgfbr2",
+    "answer": "Cycloserine, Betamethasone, Guanabenz, Hexylcaine, Lamotrigine, Lenalidomide, Naltrexone, Clomipramine, Budesonide, Ritodrine, Thalidomide, Donepezil, Dexamethasone, Nalbuphine, Brinzolamide, Betahistine, Crizotinib"
+  },
+  {
+    "question": "List the drugs which increase expression of the gene transforming growth factor beta receptor 2",
+    "answer": "Cycloserine, Betamethasone, Guanabenz, Hexylcaine, Lamotrigine, Lenalidomide, Naltrexone, Clomipramine, Budesonide, Ritodrine, Thalidomide, Donepezil, Dexamethasone, Nalbuphine, Brinzolamide, Betahistine, Crizotinib"
+  },
+  {
+    "question": "List the drugs which increase expression of the gene BMAL2",
+    "answer": "Podofilox, Vinblastine, Vinorelbine"
+  },
+  {
+    "question": "List the drugs which increase expression of the gene bmal2",
+    "answer": "Podofilox, Vinblastine, Vinorelbine"
+  },
+  {
+    "question": "List the drugs which increase expression of the gene BAL2",
+    "answer": "Podofilox, Vinblastine, Vinorelbine"
+  },
+  {
+    "question": "List the drugs which increase expression of the gene basic helix-loop-helix ARNT like 2",
+    "answer": "Podofilox, Vinblastine, Vinorelbine"
+  },
+  {
+    "question": "List the drugs which increase expression of the gene PYGB",
+    "answer": "Vinblastine, Mebendazole, Podofilox"
+  },
+  {
+    "question": "List the drugs which increase expression of the gene pygb",
+    "answer": "Vinblastine, Mebendazole, Podofilox"
+  },
+  {
+    "question": "List the drugs which increase expression of the gene glycogen phosphorylase B",
+    "answer": "Vinblastine, Mebendazole, Podofilox"
+  },
+  {
+    "question": "List the drugs which increase expression of the gene PLOD2",
+    "answer": "Ciclopirox"
+  },
+  {
+    "question": "List the drugs which increase expression of the gene plod2",
+    "answer": "Ciclopirox"
+  },
+  {
+    "question": "List the drugs which increase expression of the gene procollagen-lysine,2-oxoglutarate 5-dioxygenase 2",
+    "answer": "Ciclopirox"
+  },
+  {
+    "question": "List the drugs which decrease expression of the gene NUSAP1",
+    "answer": "Albendazole, Teniposide, Sorafenib, Ivermectin, Mebendazole, Vincristine, Thioridazine, Clofarabine, Vinorelbine, Menadione, Cyclosporine, Gemcitabine, Vinblastine, Etoposide, Perhexiline, Irinotecan, Podofilox, Fulvestrant, Cerulenin, Cytarabine, Ciclopirox, Etacrynic acid, Calcipotriol, Niclosamide"
+  },
+  {
+    "question": "List the drugs which decrease expression of the gene nusap1",
+    "answer": "Albendazole, Teniposide, Sorafenib, Ivermectin, Mebendazole, Vincristine, Thioridazine, Clofarabine, Vinorelbine, Menadione, Cyclosporine, Gemcitabine, Vinblastine, Etoposide, Perhexiline, Irinotecan, Podofilox, Fulvestrant, Cerulenin, Cytarabine, Ciclopirox, Etacrynic acid, Calcipotriol, Niclosamide"
+  },
+  {
+    "question": "List the drugs which decrease expression of the gene NUAP1",
+    "answer": "Albendazole, Teniposide, Sorafenib, Ivermectin, Mebendazole, Vincristine, Thioridazine, Clofarabine, Vinorelbine, Menadione, Cyclosporine, Gemcitabine, Vinblastine, Etoposide, Perhexiline, Irinotecan, Podofilox, Fulvestrant, Cerulenin, Cytarabine, Ciclopirox, Etacrynic acid, Calcipotriol, Niclosamide"
+  },
+  {
+    "question": "List the drugs which decrease expression of the gene nucleolar and spindle associated protein 1",
+    "answer": "Albendazole, Teniposide, Sorafenib, Ivermectin, Mebendazole, Vincristine, Thioridazine, Clofarabine, Vinorelbine, Menadione, Cyclosporine, Gemcitabine, Vinblastine, Etoposide, Perhexiline, Irinotecan, Podofilox, Fulvestrant, Cerulenin, Cytarabine, Ciclopirox, Etacrynic acid, Calcipotriol, Niclosamide"
+  },
+  {
+    "question": "List the drugs which decrease expression of the gene TBPL1",
+    "answer": "Daunorubicin, Topotecan, Dactinomycin, Temsirolimus"
+  },
+  {
+    "question": "List the drugs which decrease expression of the gene tbpl1",
+    "answer": "Daunorubicin, Topotecan, Dactinomycin, Temsirolimus"
+  },
+  {
+    "question": "List the drugs which decrease expression of the gene TBL1",
+    "answer": "Daunorubicin, Topotecan, Dactinomycin, Temsirolimus"
+  },
+  {
+    "question": "List the drugs which decrease expression of the gene TATA-box binding protein like 1",
+    "answer": "Daunorubicin, Topotecan, Dactinomycin, Temsirolimus"
+  },
+  {
+    "question": "List the biological processes involving the gene PON2",
+    "answer": "response to toxic substance, response to oxidative stress, aromatic compound catabolic process"
+  },
+  {
+    "question": "List the biological processes involving the gene pon2",
+    "answer": "response to toxic substance, response to oxidative stress, aromatic compound catabolic process"
+  },
+  {
+    "question": "List the biological processes involving the gene paraoxonase 2",
+    "answer": "response to toxic substance, response to oxidative stress, aromatic compound catabolic process"
+  },
+  {
+    "question": "List the pathways which contain the gene PLAAT3",
+    "answer": "Glycerophospholipid biosynthesis, Acyl chain remodelling of PI, Regulation of lipolysis in adipocytes - Homo sapiens (human), alpha-Linolenic acid metabolism - Homo sapiens (human), Metabolic pathways, Metabolism of lipids and lipoproteins, Metabolism, phospholipases, Acyl chain remodelling of PE, Arachidonic acid metabolism - Homo sapiens (human), Linoleic acid metabolism - Homo sapiens (human), Acyl chain remodelling of PC, Acyl chain remodelling of PS, Ether lipid metabolism - Homo sapiens (human), Ras signaling pathway - Homo sapiens (human), Glycerophospholipid metabolism - Homo sapiens (human), Phospholipid metabolism"
+  },
+  {
+    "question": "List the pathways which contain the gene plaat3",
+    "answer": "Glycerophospholipid biosynthesis, Acyl chain remodelling of PI, Regulation of lipolysis in adipocytes - Homo sapiens (human), alpha-Linolenic acid metabolism - Homo sapiens (human), Metabolic pathways, Metabolism of lipids and lipoproteins, Metabolism, phospholipases, Acyl chain remodelling of PE, Arachidonic acid metabolism - Homo sapiens (human), Linoleic acid metabolism - Homo sapiens (human), Acyl chain remodelling of PC, Acyl chain remodelling of PS, Ether lipid metabolism - Homo sapiens (human), Ras signaling pathway - Homo sapiens (human), Glycerophospholipid metabolism - Homo sapiens (human), Phospholipid metabolism"
+  },
+  {
+    "question": "List the pathways which contain the gene PLAT3",
+    "answer": "Glycerophospholipid biosynthesis, Acyl chain remodelling of PI, Regulation of lipolysis in adipocytes - Homo sapiens (human), alpha-Linolenic acid metabolism - Homo sapiens (human), Metabolic pathways, Metabolism of lipids and lipoproteins, Metabolism, phospholipases, Acyl chain remodelling of PE, Arachidonic acid metabolism - Homo sapiens (human), Linoleic acid metabolism - Homo sapiens (human), Acyl chain remodelling of PC, Acyl chain remodelling of PS, Ether lipid metabolism - Homo sapiens (human), Ras signaling pathway - Homo sapiens (human), Glycerophospholipid metabolism - Homo sapiens (human), Phospholipid metabolism"
+  },
+  {
+    "question": "List the pathways which contain the gene phospholipase A and acyltransferase 3",
+    "answer": "Glycerophospholipid biosynthesis, Acyl chain remodelling of PI, Regulation of lipolysis in adipocytes - Homo sapiens (human), alpha-Linolenic acid metabolism - Homo sapiens (human), Metabolic pathways, Metabolism of lipids and lipoproteins, Metabolism, phospholipases, Acyl chain remodelling of PE, Arachidonic acid metabolism - Homo sapiens (human), Linoleic acid metabolism - Homo sapiens (human), Acyl chain remodelling of PC, Acyl chain remodelling of PS, Ether lipid metabolism - Homo sapiens (human), Ras signaling pathway - Homo sapiens (human), Glycerophospholipid metabolism - Homo sapiens (human), Phospholipid metabolism"
+  },
+  {
+    "question": "List the pathways which contain the gene RELB",
+    "answer": "RANKL-RANK Signaling Pathway, TNFR2 non-canonical NF-kB pathway, IL12-mediated signaling events, Immune System, CD209 (DC-SIGN) signaling, Cytokine Signaling in Immune system, CLEC7A (Dectin-1) signaling, TWEAK Signaling Pathway, Epstein-Barr virus infection - Homo sapiens (human), TSLP, Tacrolimus/Cyclosporine Pathway, Pharmacodynamics, TNFalpha, TSLP Signaling Pathway, Dectin-1 mediated noncanonical NF-kB signaling, Alternative NF-kappaB pathway, NIK-->noncanonical NF-kB signaling, Innate Immune System, HTLV-I infection - Homo sapiens (human), NF-kappa B signaling pathway - Homo sapiens (human), Osteoclast differentiation - Homo sapiens (human), C-type lectin receptors (CLRs), C-type lectin receptor signaling pathway, MAPK signaling pathway - Homo sapiens (human)"
+  },
+  {
+    "question": "List the pathways which contain the gene relb",
+    "answer": "RANKL-RANK Signaling Pathway, TNFR2 non-canonical NF-kB pathway, IL12-mediated signaling events, Immune System, CD209 (DC-SIGN) signaling, Cytokine Signaling in Immune system, CLEC7A (Dectin-1) signaling, TWEAK Signaling Pathway, Epstein-Barr virus infection - Homo sapiens (human), TSLP, Tacrolimus/Cyclosporine Pathway, Pharmacodynamics, TNFalpha, TSLP Signaling Pathway, Dectin-1 mediated noncanonical NF-kB signaling, Alternative NF-kappaB pathway, NIK-->noncanonical NF-kB signaling, Innate Immune System, HTLV-I infection - Homo sapiens (human), NF-kappa B signaling pathway - Homo sapiens (human), Osteoclast differentiation - Homo sapiens (human), C-type lectin receptors (CLRs), C-type lectin receptor signaling pathway, MAPK signaling pathway - Homo sapiens (human)"
+  },
+  {
+    "question": "List the pathways which contain the gene RELB proto-oncogene, NF-kB subunit",
+    "answer": "RANKL-RANK Signaling Pathway, TNFR2 non-canonical NF-kB pathway, IL12-mediated signaling events, Immune System, CD209 (DC-SIGN) signaling, Cytokine Signaling in Immune system, CLEC7A (Dectin-1) signaling, TWEAK Signaling Pathway, Epstein-Barr virus infection - Homo sapiens (human), TSLP, Tacrolimus/Cyclosporine Pathway, Pharmacodynamics, TNFalpha, TSLP Signaling Pathway, Dectin-1 mediated noncanonical NF-kB signaling, Alternative NF-kappaB pathway, NIK-->noncanonical NF-kB signaling, Innate Immune System, HTLV-I infection - Homo sapiens (human), NF-kappa B signaling pathway - Homo sapiens (human), Osteoclast differentiation - Homo sapiens (human), C-type lectin receptors (CLRs), C-type lectin receptor signaling pathway, MAPK signaling pathway - Homo sapiens (human)"
+  },
+  {
+    "question": "List the genes which interact with the gene MAN2C1",
+    "answer": "UBC, PRRC2A, BRCA1"
+  },
+  {
+    "question": "List the genes which interact with the gene man2c1",
+    "answer": "UBC, PRRC2A, BRCA1"
+  },
+  {
+    "question": "List the genes which interact with the gene MAN21",
+    "answer": "UBC, PRRC2A, BRCA1"
+  },
+  {
+    "question": "List the genes which interact with the gene mannosidase alpha class 2C member 1",
+    "answer": "UBC, PRRC2A, BRCA1"
+  },
+  {
+    "question": "List the genes which interact with the gene PGM3",
+    "answer": "APP, CUL3, UBC"
+  },
+  {
+    "question": "List the genes which interact with the gene pgm3",
+    "answer": "APP, CUL3, UBC"
+  },
+  {
+    "question": "List the genes which interact with the gene phosphoglucomutase 3",
+    "answer": "APP, CUL3, UBC"
+  },
+  {
+    "question": "List the genes which interact with the gene SLC30A7",
+    "answer": "CD40, UBC"
+  },
+  {
+    "question": "List the genes which interact with the gene slc30a7",
+    "answer": "CD40, UBC"
+  },
+  {
+    "question": "List the genes which interact with the gene SC30A7",
+    "answer": "CD40, UBC"
+  },
+  {
+    "question": "List the genes which interact with the gene solute carrier family 30 member 7",
+    "answer": "CD40, UBC"
+  },
+  {
+    "question": "List the molecular functions attributed to the gene RASGEF1B",
+    "answer": "guanyl-nucleotide exchange factor activity, Ras guanyl-nucleotide exchange factor activity"
+  },
+  {
+    "question": "List the molecular functions attributed to the gene rasgef1b",
+    "answer": "guanyl-nucleotide exchange factor activity, Ras guanyl-nucleotide exchange factor activity"
+  },
+  {
+    "question": "List the molecular functions attributed to the gene RASGE1B",
+    "answer": "guanyl-nucleotide exchange factor activity, Ras guanyl-nucleotide exchange factor activity"
+  },
+  {
+    "question": "List the molecular functions attributed to the gene RasGEF domain family member 1B",
+    "answer": "guanyl-nucleotide exchange factor activity, Ras guanyl-nucleotide exchange factor activity"
+  },
+  {
+    "question": "List the molecular functions attributed to the gene AP3S2",
+    "answer": "protein transporter activity"
+  },
+  {
+    "question": "List the molecular functions attributed to the gene ap3s2",
+    "answer": "protein transporter activity"
+  },
+  {
+    "question": "List the molecular functions attributed to the gene AP32",
+    "answer": "protein transporter activity"
+  },
+  {
+    "question": "List the molecular functions attributed to the gene adaptor related protein complex 3 subunit sigma 2",
+    "answer": "protein transporter activity"
+  },
+  {
+    "question": "List the molecular functions attributed to the gene BCOR",
+    "answer": "transcription factor activity, transcription factor binding, transcription factor activity, protein binding, transcription cofactor activity, ubiquitin-like protein transferase activity, heat shock protein binding, regulatory region DNA binding, transcription regulatory region DNA binding, histone deacetylase binding, transcription corepressor activity, ubiquitin-protein transferase activity, transcription factor binding, regulatory region nucleic acid binding"
+  },
+  {
+    "question": "List the molecular functions attributed to the gene bcor",
+    "answer": "transcription factor activity, transcription factor binding, transcription factor activity, protein binding, transcription cofactor activity, ubiquitin-like protein transferase activity, heat shock protein binding, regulatory region DNA binding, transcription regulatory region DNA binding, histone deacetylase binding, transcription corepressor activity, ubiquitin-protein transferase activity, transcription factor binding, regulatory region nucleic acid binding"
+  },
+  {
+    "question": "List the molecular functions attributed to the gene BCL6 corepressor",
+    "answer": "transcription factor activity, transcription factor binding, transcription factor activity, protein binding, transcription cofactor activity, ubiquitin-like protein transferase activity, heat shock protein binding, regulatory region DNA binding, transcription regulatory region DNA binding, histone deacetylase binding, transcription corepressor activity, ubiquitin-protein transferase activity, transcription factor binding, regulatory region nucleic acid binding"
+  },
+  {
+    "question": "List the molecular functions attributed to the gene STOML2",
+    "answer": "GTPase binding, phosphatidylglycerol binding, phospholipid binding, lipid binding, cardiolipin binding"
+  },
+  {
+    "question": "List the molecular functions attributed to the gene stoml2",
+    "answer": "GTPase binding, phosphatidylglycerol binding, phospholipid binding, lipid binding, cardiolipin binding"
+  },
+  {
+    "question": "List the molecular functions attributed to the gene STOM2",
+    "answer": "GTPase binding, phosphatidylglycerol binding, phospholipid binding, lipid binding, cardiolipin binding"
+  },
+  {
+    "question": "List the molecular functions attributed to the gene stomatin like 2",
+    "answer": "GTPase binding, phosphatidylglycerol binding, phospholipid binding, lipid binding, cardiolipin binding"
+  },
+  {
+    "question": "List the molecular functions attributed to the gene SLC2A8",
+    "answer": "solute:proton symporter activity, carbohydrate transporter activity, cation:sugar symporter activity, monosaccharide transmembrane transporter activity, cation transmembrane transporter activity, sugar:proton symporter activity, monosaccharide binding, substrate-specific transmembrane transporter activity, ion transmembrane transporter activity, sugar transmembrane transporter activity, carbohydrate transmembrane transporter activity, transmembrane transporter activity, glucose transmembrane transporter activity, carbohydrate binding, solute:cation symporter activity, active transmembrane transporter activity, glucose binding, symporter activity, hexose transmembrane transporter activity, secondary active transmembrane transporter activity"
+  },
+  {
+    "question": "List the molecular functions attributed to the gene slc2a8",
+    "answer": "solute:proton symporter activity, carbohydrate transporter activity, cation:sugar symporter activity, monosaccharide transmembrane transporter activity, cation transmembrane transporter activity, sugar:proton symporter activity, monosaccharide binding, substrate-specific transmembrane transporter activity, ion transmembrane transporter activity, sugar transmembrane transporter activity, carbohydrate transmembrane transporter activity, transmembrane transporter activity, glucose transmembrane transporter activity, carbohydrate binding, solute:cation symporter activity, active transmembrane transporter activity, glucose binding, symporter activity, hexose transmembrane transporter activity, secondary active transmembrane transporter activity"
+  },
+  {
+    "question": "List the molecular functions attributed to the gene SL2A8",
+    "answer": "solute:proton symporter activity, carbohydrate transporter activity, cation:sugar symporter activity, monosaccharide transmembrane transporter activity, cation transmembrane transporter activity, sugar:proton symporter activity, monosaccharide binding, substrate-specific transmembrane transporter activity, ion transmembrane transporter activity, sugar transmembrane transporter activity, carbohydrate transmembrane transporter activity, transmembrane transporter activity, glucose transmembrane transporter activity, carbohydrate binding, solute:cation symporter activity, active transmembrane transporter activity, glucose binding, symporter activity, hexose transmembrane transporter activity, secondary active transmembrane transporter activity"
+  },
+  {
+    "question": "List the molecular functions attributed to the gene solute carrier family 2 member 8",
+    "answer": "solute:proton symporter activity, carbohydrate transporter activity, cation:sugar symporter activity, monosaccharide transmembrane transporter activity, cation transmembrane transporter activity, sugar:proton symporter activity, monosaccharide binding, substrate-specific transmembrane transporter activity, ion transmembrane transporter activity, sugar transmembrane transporter activity, carbohydrate transmembrane transporter activity, transmembrane transporter activity, glucose transmembrane transporter activity, carbohydrate binding, solute:cation symporter activity, active transmembrane transporter activity, glucose binding, symporter activity, hexose transmembrane transporter activity, secondary active transmembrane transporter activity"
+  },
+  {
+    "question": "List the cellular components linked to the gene KIF4A",
+    "answer": "kinesin complex, chromosome, spindle, axon, spindle microtubule, supramolecular fiber, midbody, nuclear matrix, polymeric cytoskeletal fiber, neuron projection, microtubule associated complex, nuclear periphery, microtubule"
+  },
+  {
+    "question": "List the cellular components linked to the gene kif4a",
+    "answer": "kinesin complex, chromosome, spindle, axon, spindle microtubule, supramolecular fiber, midbody, nuclear matrix, polymeric cytoskeletal fiber, neuron projection, microtubule associated complex, nuclear periphery, microtubule"
+  },
+  {
+    "question": "List the cellular components linked to the gene KI4A",
+    "answer": "kinesin complex, chromosome, spindle, axon, spindle microtubule, supramolecular fiber, midbody, nuclear matrix, polymeric cytoskeletal fiber, neuron projection, microtubule associated complex, nuclear periphery, microtubule"
+  },
+  {
+    "question": "List the cellular components linked to the gene kinesin family member 4A",
+    "answer": "kinesin complex, chromosome, spindle, axon, spindle microtubule, supramolecular fiber, midbody, nuclear matrix, polymeric cytoskeletal fiber, neuron projection, microtubule associated complex, nuclear periphery, microtubule"
+  },
+  {
+    "question": "List the cellular components linked to the gene DSTN",
+    "answer": "cortical cytoskeleton, cell cortex, cytoplasmic region, cortical actin cytoskeleton, actin cytoskeleton"
+  },
+  {
+    "question": "List the cellular components linked to the gene dstn",
+    "answer": "cortical cytoskeleton, cell cortex, cytoplasmic region, cortical actin cytoskeleton, actin cytoskeleton"
+  },
+  {
+    "question": "List the cellular components linked to the gene destrin, actin depolymerizing factor",
+    "answer": "cortical cytoskeleton, cell cortex, cytoplasmic region, cortical actin cytoskeleton, actin cytoskeleton"
+  },
+  {
+    "question": "List the cellular components linked to the gene RBL1",
+    "answer": "transcription factor complex"
+  },
+  {
+    "question": "List the cellular components linked to the gene rbl1",
+    "answer": "transcription factor complex"
+  },
+  {
+    "question": "List the cellular components linked to the gene RB transcriptional corepressor like 1",
+    "answer": "transcription factor complex"
+  },
+  {
+    "question": "List the cellular components linked to the gene NSUN2",
+    "answer": "ribonucleoprotein complex, spindle, intracellular ribonucleoprotein complex, ribonucleoprotein granule, nucleolus, chromatoid body, cytoplasmic ribonucleoprotein granule"
+  },
+  {
+    "question": "List the cellular components linked to the gene nsun2",
+    "answer": "ribonucleoprotein complex, spindle, intracellular ribonucleoprotein complex, ribonucleoprotein granule, nucleolus, chromatoid body, cytoplasmic ribonucleoprotein granule"
+  },
+  {
+    "question": "List the cellular components linked to the gene NSU2",
+    "answer": "ribonucleoprotein complex, spindle, intracellular ribonucleoprotein complex, ribonucleoprotein granule, nucleolus, chromatoid body, cytoplasmic ribonucleoprotein granule"
+  },
+  {
+    "question": "List the cellular components linked to the gene NOP2/Sun RNA methyltransferase 2",
+    "answer": "ribonucleoprotein complex, spindle, intracellular ribonucleoprotein complex, ribonucleoprotein granule, nucleolus, chromatoid body, cytoplasmic ribonucleoprotein granule"
+  },
+  {
+    "question": "List the diseases associated with the gene PPARG",
+    "answer": "Alzheimer's Disease, Alzheimer's Disease, Focal Onset, Familial Alzheimer Disease (FAD), Alzheimer Disease, Late Onset, Alzheimer Disease, Early Onset"
+  },
+  {
+    "question": "List the diseases associated with the gene pparg",
+    "answer": "Alzheimer's Disease, Alzheimer's Disease, Focal Onset, Familial Alzheimer Disease (FAD), Alzheimer Disease, Late Onset, Alzheimer Disease, Early Onset"
+  },
+  {
+    "question": "List the diseases associated with the gene peroxisome proliferator activated receptor gamma",
+    "answer": "Alzheimer's Disease, Alzheimer's Disease, Focal Onset, Familial Alzheimer Disease (FAD), Alzheimer Disease, Late Onset, Alzheimer Disease, Early Onset"
+  },
+  {
+    "question": "List the diseases associated with the gene CASS4",
+    "answer": "Alzheimer Disease, Early Onset, Alzheimer's Disease, Alzheimer Disease, Late Onset, Alzheimer's Disease, Focal Onset, Familial Alzheimer Disease (FAD)"
+  },
+  {
+    "question": "List the diseases associated with the gene cass4",
+    "answer": "Alzheimer Disease, Early Onset, Alzheimer's Disease, Alzheimer Disease, Late Onset, Alzheimer's Disease, Focal Onset, Familial Alzheimer Disease (FAD)"
+  },
+  {
+    "question": "List the diseases associated with the gene CAS4",
+    "answer": "Alzheimer Disease, Early Onset, Alzheimer's Disease, Alzheimer Disease, Late Onset, Alzheimer's Disease, Focal Onset, Familial Alzheimer Disease (FAD)"
+  },
+  {
+    "question": "List the diseases associated with the gene Cas scaffold protein family member 4",
+    "answer": "Alzheimer Disease, Early Onset, Alzheimer's Disease, Alzheimer Disease, Late Onset, Alzheimer's Disease, Focal Onset, Familial Alzheimer Disease (FAD)"
+  },
+  {
+    "question": "List the diseases associated with the gene SLC2A4",
+    "answer": "Alzheimer's Disease, Focal Onset, Alzheimer's Disease, Alzheimer Disease, Late Onset, Familial Alzheimer Disease (FAD), Alzheimer Disease, Early Onset"
+  },
+  {
+    "question": "List the diseases associated with the gene slc2a4",
+    "answer": "Alzheimer's Disease, Focal Onset, Alzheimer's Disease, Alzheimer Disease, Late Onset, Familial Alzheimer Disease (FAD), Alzheimer Disease, Early Onset"
+  },
+  {
+    "question": "List the diseases associated with the gene SC2A4",
+    "answer": "Alzheimer's Disease, Focal Onset, Alzheimer's Disease, Alzheimer Disease, Late Onset, Familial Alzheimer Disease (FAD), Alzheimer Disease, Early Onset"
+  },
+  {
+    "question": "List the diseases associated with the gene solute carrier family 2 member 4",
+    "answer": "Alzheimer's Disease, Focal Onset, Alzheimer's Disease, Alzheimer Disease, Late Onset, Familial Alzheimer Disease (FAD), Alzheimer Disease, Early Onset"
+  },
+  {
+    "question": "List the diseases associated with the gene UNC5C",
+    "answer": "Alzheimer's Disease"
+  },
+  {
+    "question": "List the diseases associated with the gene unc5c",
+    "answer": "Alzheimer's Disease"
+  },
+  {
+    "question": "List the diseases associated with the gene UN5C",
+    "answer": "Alzheimer's Disease"
+  },
+  {
+    "question": "List the diseases associated with the gene unc-5 netrin receptor C",
+    "answer": "Alzheimer's Disease"
+  },
+  {
+    "question": "List the diseases associated with the gene ENO1",
+    "answer": "Alzheimer Disease, Early Onset, Alzheimer Disease, Late Onset, Alzheimer's Disease, Focal Onset, Familial Alzheimer Disease (FAD), Alzheimer's Disease"
+  },
+  {
+    "question": "List the diseases associated with the gene eno1",
+    "answer": "Alzheimer Disease, Early Onset, Alzheimer Disease, Late Onset, Alzheimer's Disease, Focal Onset, Familial Alzheimer Disease (FAD), Alzheimer's Disease"
+  },
+  {
+    "question": "List the diseases associated with the gene enolase 1",
+    "answer": "Alzheimer Disease, Early Onset, Alzheimer Disease, Late Onset, Alzheimer's Disease, Focal Onset, Familial Alzheimer Disease (FAD), Alzheimer's Disease"
+  },
+  {
+    "question": "List the diseases associated with the gene HLA-DRB5",
+    "answer": "Alzheimer's Disease, Alzheimer Disease, Late Onset, Familial Alzheimer Disease (FAD), Alzheimer's Disease, Focal Onset, Alzheimer Disease, Early Onset"
+  },
+  {
+    "question": "List the diseases associated with the gene hla-drb5",
+    "answer": "Alzheimer's Disease, Alzheimer Disease, Late Onset, Familial Alzheimer Disease (FAD), Alzheimer's Disease, Focal Onset, Alzheimer Disease, Early Onset"
+  },
+  {
+    "question": "List the diseases associated with the gene HA-DRB5",
+    "answer": "Alzheimer's Disease, Alzheimer Disease, Late Onset, Familial Alzheimer Disease (FAD), Alzheimer's Disease, Focal Onset, Alzheimer Disease, Early Onset"
+  },
+  {
+    "question": "List the diseases associated with the gene major histocompatibility complex, class II, DR beta 5",
+    "answer": "Alzheimer's Disease, Alzheimer Disease, Late Onset, Familial Alzheimer Disease (FAD), Alzheimer's Disease, Focal Onset, Alzheimer Disease, Early Onset"
+  },
+  {
+    "question": "List the body parts/anatomy which over-express the gene PPP1R9B",
+    "answer": "blood, adrenal gland, cerebellum, brain"
+  },
+  {
+    "question": "List the body parts/anatomy which over-express the gene ppp1r9b",
+    "answer": "blood, adrenal gland, cerebellum, brain"
+  },
+  {
+    "question": "List the body parts/anatomy which over-express the gene PPP19B",
+    "answer": "blood, adrenal gland, cerebellum, brain"
+  },
+  {
+    "question": "List the body parts/anatomy which over-express the gene protein phosphatase 1 regulatory subunit 9B",
+    "answer": "blood, adrenal gland, cerebellum, brain"
+  },
+  {
+    "question": "List the body parts/anatomy which over-express the gene SMIM7",
+    "answer": "liver, adrenal gland, thyroid gland, nipple, trigeminal ganglion, myometrium, saliva-secreting gland, urethra, pituitary gland"
+  },
+  {
+    "question": "List the body parts/anatomy which over-express the gene smim7",
+    "answer": "liver, adrenal gland, thyroid gland, nipple, trigeminal ganglion, myometrium, saliva-secreting gland, urethra, pituitary gland"
+  },
+  {
+    "question": "List the body parts/anatomy which over-express the gene SMM7",
+    "answer": "liver, adrenal gland, thyroid gland, nipple, trigeminal ganglion, myometrium, saliva-secreting gland, urethra, pituitary gland"
+  },
+  {
+    "question": "List the body parts/anatomy which over-express the gene small integral membrane protein 7",
+    "answer": "liver, adrenal gland, thyroid gland, nipple, trigeminal ganglion, myometrium, saliva-secreting gland, urethra, pituitary gland"
+  },
+  {
+    "question": "List the body parts/anatomy which under-express the gene PTGFR",
+    "answer": "blood, adrenal gland, brain"
+  },
+  {
+    "question": "List the body parts/anatomy which under-express the gene ptgfr",
+    "answer": "blood, adrenal gland, brain"
+  },
+  {
+    "question": "List the body parts/anatomy which under-express the gene PGFR",
+    "answer": "blood, adrenal gland, brain"
+  },
+  {
+    "question": "List the body parts/anatomy which under-express the gene prostaglandin F receptor",
+    "answer": "blood, adrenal gland, brain"
+  },
+  {
+    "question": "List the body parts/anatomy which under-express the gene OSTM1",
+    "answer": "adrenal gland, liver, endometrium, saliva-secreting gland, blood"
+  },
+  {
+    "question": "List the body parts/anatomy which under-express the gene ostm1",
+    "answer": "adrenal gland, liver, endometrium, saliva-secreting gland, blood"
+  },
+  {
+    "question": "List the body parts/anatomy which under-express the gene OSM1",
+    "answer": "adrenal gland, liver, endometrium, saliva-secreting gland, blood"
+  },
+  {
+    "question": "List the body parts/anatomy which under-express the gene osteoclastogenesis associated transmembrane protein 1",
+    "answer": "adrenal gland, liver, endometrium, saliva-secreting gland, blood"
+  },
+  {
+    "question": "List the body parts/anatomy which under-express the gene SDF2L1",
+    "answer": "brain, spinal cord, cerebellum, medulla oblongata, midbrain"
+  },
+  {
+    "question": "List the body parts/anatomy which under-express the gene sdf2l1",
+    "answer": "brain, spinal cord, cerebellum, medulla oblongata, midbrain"
+  },
+  {
+    "question": "List the body parts/anatomy which under-express the gene SDF21",
+    "answer": "brain, spinal cord, cerebellum, medulla oblongata, midbrain"
+  },
+  {
+    "question": "List the body parts/anatomy which under-express the gene stromal cell derived factor 2 like 1",
+    "answer": "brain, spinal cord, cerebellum, medulla oblongata, midbrain"
+  },
+  {
+    "question": "List the body parts/anatomy which under-express the gene UBE4A",
+    "answer": "adrenal gland, lung, cardiac ventricle, nipple, adrenal cortex, blood"
+  },
+  {
+    "question": "List the body parts/anatomy which under-express the gene ube4a",
+    "answer": "adrenal gland, lung, cardiac ventricle, nipple, adrenal cortex, blood"
+  },
+  {
+    "question": "List the body parts/anatomy which under-express the gene UE4A",
+    "answer": "adrenal gland, lung, cardiac ventricle, nipple, adrenal cortex, blood"
+  },
+  {
+    "question": "List the body parts/anatomy which under-express the gene ubiquitination factor E4A",
+    "answer": "adrenal gland, lung, cardiac ventricle, nipple, adrenal cortex, blood"
+  },
+  {
+    "question": "List the body parts/anatomy which under-express the gene SDC4",
+    "answer": "pituitary gland, adrenal gland, bone marrow, cerebellum, trigeminal ganglion, myometrium, female gonad, lymph node, blood"
+  },
+  {
+    "question": "List the body parts/anatomy which under-express the gene sdc4",
+    "answer": "pituitary gland, adrenal gland, bone marrow, cerebellum, trigeminal ganglion, myometrium, female gonad, lymph node, blood"
+  },
+  {
+    "question": "List the body parts/anatomy which under-express the gene syndecan 4",
+    "answer": "pituitary gland, adrenal gland, bone marrow, cerebellum, trigeminal ganglion, myometrium, female gonad, lymph node, blood"
+  },
+  {
+    "question": "List the drugs which belong to the drug class Stimulation Large Intestine Fluid/Electrolyte Secretion",
+    "answer": "Bisacodyl, Lactulose"
+  },
+  {
+    "question": "List the drugs which belong to the drug class stimulation large intestine fluid/electrolyte secretion",
+    "answer": "Bisacodyl, Lactulose"
+  },
+  {
+    "question": "List the drugs which belong to the drug class Stimulation Large Intestine Fluid/Electrolyte Secreion",
+    "answer": "Bisacodyl, Lactulose"
+  },
+  {
+    "question": "List the drugs which belong to the drug class Microsomal Triglyceride Transfer Protein Inhibitors",
+    "answer": "Lomitapide"
+  },
+  {
+    "question": "List the drugs which belong to the drug class microsomal triglyceride transfer protein inhibitors",
+    "answer": "Lomitapide"
+  },
+  {
+    "question": "List the drugs which belong to the drug class Micosomal Triglyceride Transfer Protein Inhibitors",
+    "answer": "Lomitapide"
+  },
+  {
+    "question": "List the drugs which belong to the drug class Decreased Platelet Production",
+    "answer": "Anagrelide"
+  },
+  {
+    "question": "List the drugs which belong to the drug class decreased platelet production",
+    "answer": "Anagrelide"
+  },
+  {
+    "question": "List the drugs which belong to the drug class Decreased Platelt Production",
+    "answer": "Anagrelide"
+  },
+  {
+    "question": "List the genes associated with the disease Familial Alzheimer-like prion disease",
+    "answer": "PRNP"
+  },
+  {
+    "question": "List the genes associated with the disease familial alzheimer-like prion disease",
+    "answer": "PRNP"
+  },
+  {
+    "question": "List the genes associated with the disease Familial Alzhemer-like prion disease",
+    "answer": "PRNP"
+  },
+  {
+    "question": "List the genes associated with the disease Familial Alzheimer Disease (FAD)",
+    "answer": "NPY, MIR3622B, MIR4467, SNAR-I, MIR766, MIR708, MIR296, MIR146A, MIR100, MIR375, MIR505, IQCK, SLC30A6, CASS4, MS4A4A, TREM2, ABI3, WWOX, PCDH11X, GAPDHS, BACE1, CD2AP, NCSTN, ARC, PGRMC1, CYP46A1, ABCA7, TOMM40, ADAMTS1, PICALM, VEGFA, VSNL1, SLC30A4, TPI1, TNF, TFAM, TF, SORL1, SOD2, SLC2A4, NECTIN2, PYY, RELN, PSEN2, PRNP, PSEN1, PPARG, PLCG2, PLAU, NOS3, A2M, ADAM10, ACHE, BIN1, APOE, APOC1, AMFR, APP, BCL2, BDNF, BCHE, BAX, ATP5F1A, CALM1, CASP3, CHRNA7, CHRNB2, CD33, CLU, TPP1, CST3, CRH, CR1, ACE, DHCR24, DPYSL2, CYP2D6, ENO1, EPHA1, EIF2S1, F2, ESR1, GSK3B, HFE, HLA-DRB5, HMOX1, IGF1, INS, IL1B, INSR, IGF2R, IGF1R, IDE, INPP5D, IGF2, MAPT, MAOB, LEP, MPO, MTHFR"
+  },
+  {
+    "question": "List the genes associated with the disease familial alzheimer disease (fad)",
+    "answer": "NPY, MIR3622B, MIR4467, SNAR-I, MIR766, MIR708, MIR296, MIR146A, MIR100, MIR375, MIR505, IQCK, SLC30A6, CASS4, MS4A4A, TREM2, ABI3, WWOX, PCDH11X, GAPDHS, BACE1, CD2AP, NCSTN, ARC, PGRMC1, CYP46A1, ABCA7, TOMM40, ADAMTS1, PICALM, VEGFA, VSNL1, SLC30A4, TPI1, TNF, TFAM, TF, SORL1, SOD2, SLC2A4, NECTIN2, PYY, RELN, PSEN2, PRNP, PSEN1, PPARG, PLCG2, PLAU, NOS3, A2M, ADAM10, ACHE, BIN1, APOE, APOC1, AMFR, APP, BCL2, BDNF, BCHE, BAX, ATP5F1A, CALM1, CASP3, CHRNA7, CHRNB2, CD33, CLU, TPP1, CST3, CRH, CR1, ACE, DHCR24, DPYSL2, CYP2D6, ENO1, EPHA1, EIF2S1, F2, ESR1, GSK3B, HFE, HLA-DRB5, HMOX1, IGF1, INS, IL1B, INSR, IGF2R, IGF1R, IDE, INPP5D, IGF2, MAPT, MAOB, LEP, MPO, MTHFR"
+  },
+  {
+    "question": "List the genes associated with the disease Familial Alzheimer Diease (FAD)",
+    "answer": "NPY, MIR3622B, MIR4467, SNAR-I, MIR766, MIR708, MIR296, MIR146A, MIR100, MIR375, MIR505, IQCK, SLC30A6, CASS4, MS4A4A, TREM2, ABI3, WWOX, PCDH11X, GAPDHS, BACE1, CD2AP, NCSTN, ARC, PGRMC1, CYP46A1, ABCA7, TOMM40, ADAMTS1, PICALM, VEGFA, VSNL1, SLC30A4, TPI1, TNF, TFAM, TF, SORL1, SOD2, SLC2A4, NECTIN2, PYY, RELN, PSEN2, PRNP, PSEN1, PPARG, PLCG2, PLAU, NOS3, A2M, ADAM10, ACHE, BIN1, APOE, APOC1, AMFR, APP, BCL2, BDNF, BCHE, BAX, ATP5F1A, CALM1, CASP3, CHRNA7, CHRNB2, CD33, CLU, TPP1, CST3, CRH, CR1, ACE, DHCR24, DPYSL2, CYP2D6, ENO1, EPHA1, EIF2S1, F2, ESR1, GSK3B, HFE, HLA-DRB5, HMOX1, IGF1, INS, IL1B, INSR, IGF2R, IGF1R, IDE, INPP5D, IGF2, MAPT, MAOB, LEP, MPO, MTHFR"
+  },
+  {
+    "question": "List the genes which participate in the biological process regulation of complement activation, lectin pathway",
+    "answer": "SERPING1, A2M"
+  },
+  {
+    "question": "List the genes which participate in the biological process Regulation Of Complement Activation, Lectin Pathway",
+    "answer": "SERPING1, A2M"
+  },
+  {
+    "question": "List the genes which participate in the biological process regulation of complement activation, lecti pathway",
+    "answer": "SERPING1, A2M"
+  },
+  {
+    "question": "List the genes which participate in the biological process zymogen inhibition",
+    "answer": "BIRC8, BCL2L12, BIRC7, NLRC4, NOL3, BIRC2, BIRC5, XIAP, BIRC3"
+  },
+  {
+    "question": "List the genes which participate in the biological process Zymogen Inhibition",
+    "answer": "BIRC8, BCL2L12, BIRC7, NLRC4, NOL3, BIRC2, BIRC5, XIAP, BIRC3"
+  },
+  {
+    "question": "List the genes which participate in the biological process zymogen inhiition",
+    "answer": "BIRC8, BCL2L12, BIRC7, NLRC4, NOL3, BIRC2, BIRC5, XIAP, BIRC3"
+  },
+  {
+    "question": "List the genes which participate in the biological process diacylglycerol catabolic process",
+    "answer": "LIPE, DAGLA, APOA2"
+  },
+  {
+    "question": "List the genes which participate in the biological process Diacylglycerol Catabolic Process",
+    "answer": "LIPE, DAGLA, APOA2"
+  },
+  {
+    "question": "List the genes which participate in the biological process diacylglycrol catabolic process",
+    "answer": "LIPE, DAGLA, APOA2"
+  },
+  {
+    "question": "List the genes which participate in the biological process positive regulation by symbiont of host apoptotic process",
+    "answer": "CCR2, BCL2L11, BAD"
+  },
+  {
+    "question": "List the genes which participate in the biological process Positive Regulation By Symbiont Of Host Apoptotic Process",
+    "answer": "CCR2, BCL2L11, BAD"
+  },
+  {
+    "question": "List the genes which participate in the biological process positive regulation by symbiont f host apoptotic process",
+    "answer": "CCR2, BCL2L11, BAD"
+  },
+  {
+    "question": "List the genes in the pathway Plus-strand DNA synthesis",
+    "answer": "PPIAP22, PPIA"
+  },
+  {
+    "question": "List the genes in the pathway plus-strand dna synthesis",
+    "answer": "PPIAP22, PPIA"
+  },
+  {
+    "question": "List the genes in the pathway Plus-strand DNA syntesis",
+    "answer": "PPIAP22, PPIA"
+  },
+  {
+    "question": "List the genes in the pathway Gamma-carboxylation, transport, and amino-terminal cleavage of proteins",
+    "answer": "PROZ, PROS1, PROC, FURIN, GAS6, GGCX, F10, F2, F7, F9"
+  },
+  {
+    "question": "List the genes in the pathway gamma-carboxylation, transport, and amino-terminal cleavage of proteins",
+    "answer": "PROZ, PROS1, PROC, FURIN, GAS6, GGCX, F10, F2, F7, F9"
+  },
+  {
+    "question": "List the genes in the pathway Gamma-carboxylation, transprt, and amino-terminal cleavage of proteins",
+    "answer": "PROZ, PROS1, PROC, FURIN, GAS6, GGCX, F10, F2, F7, F9"
+  },
+  {
+    "question": "List the genes in the pathway estrogen responsive protein efp controls cell cycle and breast tumors growth",
+    "answer": "SMURF1, CCNB2, TRIM25, TP53, SFN, ESR1, CDK1, CDK8, CDK7, CDK3, CDK5, CCNB1, CDK6, CDK2, CDK4"
+  },
+  {
+    "question": "List the genes in the pathway Estrogen Responsive Protein Efp Controls Cell Cycle And Breast Tumors Growth",
+    "answer": "SMURF1, CCNB2, TRIM25, TP53, SFN, ESR1, CDK1, CDK8, CDK7, CDK3, CDK5, CCNB1, CDK6, CDK2, CDK4"
+  },
+  {
+    "question": "List the genes in the pathway estrogen responsive protein efp controls cell cyle and breast tumors growth",
+    "answer": "SMURF1, CCNB2, TRIM25, TP53, SFN, ESR1, CDK1, CDK8, CDK7, CDK3, CDK5, CCNB1, CDK6, CDK2, CDK4"
+  },
+  {
+    "question": "List the genes which perform the molecular function SH3 domain binding",
+    "answer": "CNTNAP1, NCF1, WIPF3, FMN1, MAPK15, ZNF384, DAB2IP, ENKUR, KHDRBS2, ARHGAP27, SIRPA, MVB12A, MYPN, SHANK3, AFAP1L2, REPS1, CRB3, SH3BP5L, CTTNBP2, SH3BGRL2, ESPN, SGIP1, MICAL1, ZNF106, ELMO3, ARHGAP31, ELMO2, DENND1A, PLSCR4, ENAH, PLSCR3, ARHGAP17, EVL, ERRFI1, NCKIPSD, SH3KBP1, SHANK1, SOCS7, CABYR, OSTF1, INPP5J, PTPN22, ITGB1BP2, CBLC, CD2AP, SH3BP1, RIMS1, SHANK2, PTTG2, CIT, NOXA1, KHDRBS3, LANCL1, KHDRBS1, EFS, ELMO1, ABI2, DNAJC6, TOM1L1, QKI, BCAR1, SH3BP5, DOCK4, SH2D2A, PTTG1, USP8, ADAM10, ABL1, ARHGAP1, ARHGAP6, CBL, CASP9, CD3E, DNM2, DPYSL3, CYBA, DOCK3, DOCK1, DTX1, DRD4, EPS15, GJA1, FUT8, GRIK5, HCLS1, GPX1, RAPGEF1, GRB2, INPPL1, INPP5D, ILK, LYN, MAPT, LRP2, PAK3, PRKN, PLSCR1, RAD9A, PTPN6, PTPN12, SH3BGRL, SH3BP2, SH3BGR, SOS1, ADAM17, TP53BP2, UVRAG, VASP, WAS, CCDC6, ADAM12, SKAP1, ADAM15, SYNGAP1, ADAM9, ADAM19"
+  },
+  {
+    "question": "List the genes which perform the molecular function sh3 domain binding",
+    "answer": "CNTNAP1, NCF1, WIPF3, FMN1, MAPK15, ZNF384, DAB2IP, ENKUR, KHDRBS2, ARHGAP27, SIRPA, MVB12A, MYPN, SHANK3, AFAP1L2, REPS1, CRB3, SH3BP5L, CTTNBP2, SH3BGRL2, ESPN, SGIP1, MICAL1, ZNF106, ELMO3, ARHGAP31, ELMO2, DENND1A, PLSCR4, ENAH, PLSCR3, ARHGAP17, EVL, ERRFI1, NCKIPSD, SH3KBP1, SHANK1, SOCS7, CABYR, OSTF1, INPP5J, PTPN22, ITGB1BP2, CBLC, CD2AP, SH3BP1, RIMS1, SHANK2, PTTG2, CIT, NOXA1, KHDRBS3, LANCL1, KHDRBS1, EFS, ELMO1, ABI2, DNAJC6, TOM1L1, QKI, BCAR1, SH3BP5, DOCK4, SH2D2A, PTTG1, USP8, ADAM10, ABL1, ARHGAP1, ARHGAP6, CBL, CASP9, CD3E, DNM2, DPYSL3, CYBA, DOCK3, DOCK1, DTX1, DRD4, EPS15, GJA1, FUT8, GRIK5, HCLS1, GPX1, RAPGEF1, GRB2, INPPL1, INPP5D, ILK, LYN, MAPT, LRP2, PAK3, PRKN, PLSCR1, RAD9A, PTPN6, PTPN12, SH3BGRL, SH3BP2, SH3BGR, SOS1, ADAM17, TP53BP2, UVRAG, VASP, WAS, CCDC6, ADAM12, SKAP1, ADAM15, SYNGAP1, ADAM9, ADAM19"
+  },
+  {
+    "question": "List the genes which perform the molecular function S3 domain binding",
+    "answer": "CNTNAP1, NCF1, WIPF3, FMN1, MAPK15, ZNF384, DAB2IP, ENKUR, KHDRBS2, ARHGAP27, SIRPA, MVB12A, MYPN, SHANK3, AFAP1L2, REPS1, CRB3, SH3BP5L, CTTNBP2, SH3BGRL2, ESPN, SGIP1, MICAL1, ZNF106, ELMO3, ARHGAP31, ELMO2, DENND1A, PLSCR4, ENAH, PLSCR3, ARHGAP17, EVL, ERRFI1, NCKIPSD, SH3KBP1, SHANK1, SOCS7, CABYR, OSTF1, INPP5J, PTPN22, ITGB1BP2, CBLC, CD2AP, SH3BP1, RIMS1, SHANK2, PTTG2, CIT, NOXA1, KHDRBS3, LANCL1, KHDRBS1, EFS, ELMO1, ABI2, DNAJC6, TOM1L1, QKI, BCAR1, SH3BP5, DOCK4, SH2D2A, PTTG1, USP8, ADAM10, ABL1, ARHGAP1, ARHGAP6, CBL, CASP9, CD3E, DNM2, DPYSL3, CYBA, DOCK3, DOCK1, DTX1, DRD4, EPS15, GJA1, FUT8, GRIK5, HCLS1, GPX1, RAPGEF1, GRB2, INPPL1, INPP5D, ILK, LYN, MAPT, LRP2, PAK3, PRKN, PLSCR1, RAD9A, PTPN6, PTPN12, SH3BGRL, SH3BP2, SH3BGR, SOS1, ADAM17, TP53BP2, UVRAG, VASP, WAS, CCDC6, ADAM12, SKAP1, ADAM15, SYNGAP1, ADAM9, ADAM19"
+  },
+  {
+    "question": "List the genes which perform the molecular function transmembrane receptor protein serine/threonine kinase binding",
+    "answer": "BMP8A, SYNJ2BP, PYCARD, MAGI2, NODAL, SMAD6, INHBA, BMP4, BMP8B, BMP5, BMP6, BMP7, BMP3, BMP2"
+  },
+  {
+    "question": "List the genes which perform the molecular function Transmembrane Receptor Protein Serine/Threonine Kinase Binding",
+    "answer": "BMP8A, SYNJ2BP, PYCARD, MAGI2, NODAL, SMAD6, INHBA, BMP4, BMP8B, BMP5, BMP6, BMP7, BMP3, BMP2"
+  },
+  {
+    "question": "List the genes which perform the molecular function transmembrane receptor protein serine/hreonine kinase binding",
+    "answer": "BMP8A, SYNJ2BP, PYCARD, MAGI2, NODAL, SMAD6, INHBA, BMP4, BMP8B, BMP5, BMP6, BMP7, BMP3, BMP2"
+  },
+  {
+    "question": "List the genes which perform the molecular function alanine-glyoxylate transaminase activity",
+    "answer": "AGXT2, AGXT"
+  },
+  {
+    "question": "List the genes which perform the molecular function Alanine-Glyoxylate Transaminase Activity",
+    "answer": "AGXT2, AGXT"
+  },
+  {
+    "question": "List the genes which perform the molecular function alanine-gyoxylate transaminase activity",
+    "answer": "AGXT2, AGXT"
+  },
+  {
+    "question": "List the genes associated with the cellular component Lewy body core",
+    "answer": "HERPUD1, ATF4"
+  },
+  {
+    "question": "List the genes associated with the cellular component lewy body core",
+    "answer": "HERPUD1, ATF4"
+  },
+  {
+    "question": "List the genes associated with the cellular component Lewy boy core",
+    "answer": "HERPUD1, ATF4"
+  },
+  {
+    "question": "List the genes associated with the cellular component blood microparticle",
+    "answer": "HBA2, ZNF559-ZNF177, IGLL5, POTEF, POTEE, ZBTB38, APOA5, ACSM1, TMPRSS13, EIF2A, KDM4D, GRIPAP1, INTS11, OAZ3, ANGPTL4, DNPEP, CFHR3, CIB2, APOL1, FCN3, VTN, YWHAZ, ZNF177, TFRC, TF, TGFB1, SLC2A1, SDCBP, SLC4A1, PZP, PSMC5, PROS1, PRSS1, PON1, SERPINF2, PLG, PFN1, ORM2, ORM1, MSN, LGALS3BP, KRT1, ITGA2B, KNG1, ITIH2, ITIH4, ITIH1, JCHAIN, IGLL1, HPR, CFHR1, HSPA2, HSPA1A, HSPA6, CFH, HSPA8, HP, HSPA1B, HPX, HRG, HSPA1L, HBG2, HBA1, HBE1, HBB, A1BG, ACTB, ACTA1, A2M, ACTC1, AGT, AFM, ACTG2, ACTG1, SERPINA3, ANXA5, ALB, APOA1, APOA4, APCS, AHSG, AMBP, APOA2, APOE, SERPINC1, BCHE, CFB, C9, C8G, C3, C4BPA, C8A, C1R, C4A, C1QB, SERPING1, C1S, C1QC, C4B, CD5L, CP, CPN2, CLU, CLIC1, ENG, STOM, FCN2, F13A1, FN1, FGB, FGG, FGA, F2, GC, GSN"
+  },
+  {
+    "question": "List the genes associated with the cellular component Blood Microparticle",
+    "answer": "HBA2, ZNF559-ZNF177, IGLL5, POTEF, POTEE, ZBTB38, APOA5, ACSM1, TMPRSS13, EIF2A, KDM4D, GRIPAP1, INTS11, OAZ3, ANGPTL4, DNPEP, CFHR3, CIB2, APOL1, FCN3, VTN, YWHAZ, ZNF177, TFRC, TF, TGFB1, SLC2A1, SDCBP, SLC4A1, PZP, PSMC5, PROS1, PRSS1, PON1, SERPINF2, PLG, PFN1, ORM2, ORM1, MSN, LGALS3BP, KRT1, ITGA2B, KNG1, ITIH2, ITIH4, ITIH1, JCHAIN, IGLL1, HPR, CFHR1, HSPA2, HSPA1A, HSPA6, CFH, HSPA8, HP, HSPA1B, HPX, HRG, HSPA1L, HBG2, HBA1, HBE1, HBB, A1BG, ACTB, ACTA1, A2M, ACTC1, AGT, AFM, ACTG2, ACTG1, SERPINA3, ANXA5, ALB, APOA1, APOA4, APCS, AHSG, AMBP, APOA2, APOE, SERPINC1, BCHE, CFB, C9, C8G, C3, C4BPA, C8A, C1R, C4A, C1QB, SERPING1, C1S, C1QC, C4B, CD5L, CP, CPN2, CLU, CLIC1, ENG, STOM, FCN2, F13A1, FN1, FGB, FGG, FGA, F2, GC, GSN"
+  },
+  {
+    "question": "List the genes associated with the cellular component blood micropartice",
+    "answer": "HBA2, ZNF559-ZNF177, IGLL5, POTEF, POTEE, ZBTB38, APOA5, ACSM1, TMPRSS13, EIF2A, KDM4D, GRIPAP1, INTS11, OAZ3, ANGPTL4, DNPEP, CFHR3, CIB2, APOL1, FCN3, VTN, YWHAZ, ZNF177, TFRC, TF, TGFB1, SLC2A1, SDCBP, SLC4A1, PZP, PSMC5, PROS1, PRSS1, PON1, SERPINF2, PLG, PFN1, ORM2, ORM1, MSN, LGALS3BP, KRT1, ITGA2B, KNG1, ITIH2, ITIH4, ITIH1, JCHAIN, IGLL1, HPR, CFHR1, HSPA2, HSPA1A, HSPA6, CFH, HSPA8, HP, HSPA1B, HPX, HRG, HSPA1L, HBG2, HBA1, HBE1, HBB, A1BG, ACTB, ACTA1, A2M, ACTC1, AGT, AFM, ACTG2, ACTG1, SERPINA3, ANXA5, ALB, APOA1, APOA4, APCS, AHSG, AMBP, APOA2, APOE, SERPINC1, BCHE, CFB, C9, C8G, C3, C4BPA, C8A, C1R, C4A, C1QB, SERPING1, C1S, C1QC, C4B, CD5L, CP, CPN2, CLU, CLIC1, ENG, STOM, FCN2, F13A1, FN1, FGB, FGG, FGA, F2, GC, GSN"
+  },
+  {
+    "question": "List the genes associated with the cellular component NatC complex",
+    "answer": "NAT16, NAA30, NAA38, NAA35"
+  },
+  {
+    "question": "List the genes associated with the cellular component natc complex",
+    "answer": "NAT16, NAA30, NAA38, NAA35"
+  },
+  {
+    "question": "List the genes associated with the cellular component NatC complx",
+    "answer": "NAT16, NAA30, NAA38, NAA35"
+  },
+  {
+    "question": "List the genes associated with the cellular component dendrite",
+    "answer": "CNR2, CCR2, ELFN1, GRID2IP, ATXN1L, SKOR1, HCN1, BRINP3, CNIH2, KLHL17, SLC17A8, AQP11, ADCY4, DAB2IP, CNIH3, SLC32A1, UHMK1, TRIM9, AZIN2, ZFYVE27, CPT1C, SEZ6, LRRK2, SNAP47, DNER, LMTK3, IFT20, KNDC1, JPH4, PPP1R9B, CNTNAP4, PTPN5, KIRREL3, TPGS1, ATCAY, TMEM185A, TANC1, SHANK3, RGS8, SHARPIN, DTNBP1, SYNDIG1, SPG11, WLS, CTTNBP2, CPEB4, SRCIN1, PSD2, MAF1, TTLL7, RAB17, MLPH, LYNX1, CPEB1, LRFN3, DLGAP3, ELOVL5, PREX1, IGSF9, LRRC7, SLC12A5, SNX14, LRRC4, DENND1A, BCAN, SLC5A7, MYL7, RPTOR, SLC4A10, AMIGO1, ALS2, KLHL1, MAGEE1, HCN3, TENM2, NLGN4X, ANKS1B, PPP1R9A, ADCY10, SLC7A10, DPYSL5, GOPC, SEPTIN11, PLXDC1, IFT57, KIRREL1, ABITRAM, MAP1S, PALMD, PI4K2A, CAMK2N1, TRAPPC4, NLGN3, PEX5L, GLRX5, GNG13, SLC38A2, DBNL, GLRX2, ERO1A, IFT52, TRPM5, KCNIP3, KCNIP1, ASAP1, SHANK1, UBXN1, STRN3, MINK1, ACAD9, STRN4, FBXO2, AGO2, SACS, NPTN, INPP5J, LSM1, KLHL20, ZNF385A, OSBP2, NSMF, NCS1, ADNP, LAMP5, TXN2, SRGAP2, ZMYND8, GABARAPL1, ZDHHC5, SIPA1L1, DNM3, CRTC1, CNTNAP2, BRD1, MOB4, ATXN10, CADM1, NGDN, DICER1, GRIP1, CPEB3, ARC, ARHGEF15, SYNPO, SHANK2, MAPK8IP3, NCDN, RUFY3, SAMD4A, IGSF9B, COBL, NLGN1, SARM1, PPARGC1A, GIPC1, LZTS1, PLK2, IL1RAPL1, CPLX1, CPLX2, CHL1, ZWINT, SYNCRIP, SLC9A6, YKT6, CIB1, BAIAP2, SEMA3A, RGS14, IGF2BP1, ARFGEF2, PIAS3, GLRX3, TUBB3, RACK1, NCOA2, FARP1, KCNE3, TNK2, HDAC6, MAGI2, HNRNPR, RBM8A, ARHGAP44, NR1D1, CRIPT, AKAP5, CPNE6, FXR2, ARHGAP32, MAPK8IP1, FEZ1, RIN1, HOMER2, FRMPD4, EIF4A3, NEURL1, MTMR2, P2RX6, BSN, TAOK2, DGKI, KCNB2, SGCE, ARHGEF2, BECN1, CDK5R1, NPFF, PRSS12, URI1, TP63, SYNGAP1, MPDZ, KHSRP, RGS11, FXR1, KCNAB1, FZD3, WFS1, LRP8, UCN, SUMO1, TRPV1, CLIP2, TIAM1, SYN1, THY1, TH, TACR1, STAU1, SOD1, STX4, CDKL5, SRI, STAT1, STRN, STX3, SCN8A, SLC8A2, CCL2, SLC8A3, SLC1A4, SLC1A3, SLC8A1, SORT1, RGS12, RGS7, RPL28, RPS6, RPS3, PTPRO, RET, RARA, PTPRK, RAP1GAP, PURA, RBM3, PTPRZ1, RAB27A, RANGAP1, RAB5A, PTCH1, PTEN, PRKCG, MAPK1, RELN, PSEN1, PPP5C, PRKAR2B, PPP1CA, PRKCA, PPT1, PLCB4, PPP1CC, PDE4B, PCSK2, PCDH8, PALM, PENK, P2RX3, NTSR1, NUMA1, YBX1, OPRK1, OPHN1, NTRK2, CCN3, NOS1, NTRK1, NF1, NRGN, OPRM1, OPA1, P2RY1, NSF, PAK1, P2RX4, MME, MYH10, NELL2, MT3, MYO1D, LRP1, MARCKS, MAP1B, CAPRIN1, MAP2, MAX, MAPT, LRP4, RAB8A, ITGB1, KCNA2, KCNJ14, LAMA2, KCNK1, KCNH1, KCND3, KCNN2, LAMP1, KCNJ4, ITPKA, KCNJ2, KCNB1, KCND1, ITPR3, KCNC2, KCNC1, KPNA1, KCND2, KCNA1, HTR5A, ILK, ICA1, HTR2B, IL6ST, HTR2A, HPCA, HNRNPK, NRG1, GNRH1, GRIA3, GPER1, GRIN1, GRIA1, GRIK2, GRID2, GPM6A, GRIK1, GRM3, GRM1, GRM6, GRIK3, GRIK5, GRM2, GRM7, HCFC1, HTT, GRIA4, GNB3, GRK4, GSK3B, FUS, GCHFR, GABRA5, GABRB1, MTOR, GNAS, GNB1, GNAO1, GABBR1, FGF13, FLNA, PTK2B, BPTF, FMR1, DRP2, DVL1, DRD2, EPHB1, LPAR1, EPHB2, EPHA4, EPHA5, EPHB3, EPHA7, ELK1, CTTN, DRD4, DRD1, DLG4, DLG3, CTNND1, CYBA, CTNND2, DCX, DBN1, CTNNB1, DPYSL2, CNN3, CRHR2, CRMP1, CNGA3, ACTN2, ABL2, ADRB2, ADCY2, ADA, ASIC2, ADORA1, ACVRL1, ADCY9, APC, ARF4, APBB1, APOD, APOE, AMFR, ANXA3, ANXA5, FAS, APP, ALOX5, ALCAM, ARRB2, BGLAP, ATP1A2, AVP, ARRB1, ATP1A3, CALB1, CANX, CACNA1C, CAPN2, BMPR1B, CACNA1A, CAMK2B, BMPR1A, CACNA1B, BMPR2, BNIP3, CHRM2, CHRM1, CHRNA5, CHRNA3, CHRM3, CCK, CHRNA4, CDK5, PLK3, CRHBP, COMT, CLU"
+  },
+  {
+    "question": "List the genes associated with the cellular component Dendrite",
+    "answer": "CNR2, CCR2, ELFN1, GRID2IP, ATXN1L, SKOR1, HCN1, BRINP3, CNIH2, KLHL17, SLC17A8, AQP11, ADCY4, DAB2IP, CNIH3, SLC32A1, UHMK1, TRIM9, AZIN2, ZFYVE27, CPT1C, SEZ6, LRRK2, SNAP47, DNER, LMTK3, IFT20, KNDC1, JPH4, PPP1R9B, CNTNAP4, PTPN5, KIRREL3, TPGS1, ATCAY, TMEM185A, TANC1, SHANK3, RGS8, SHARPIN, DTNBP1, SYNDIG1, SPG11, WLS, CTTNBP2, CPEB4, SRCIN1, PSD2, MAF1, TTLL7, RAB17, MLPH, LYNX1, CPEB1, LRFN3, DLGAP3, ELOVL5, PREX1, IGSF9, LRRC7, SLC12A5, SNX14, LRRC4, DENND1A, BCAN, SLC5A7, MYL7, RPTOR, SLC4A10, AMIGO1, ALS2, KLHL1, MAGEE1, HCN3, TENM2, NLGN4X, ANKS1B, PPP1R9A, ADCY10, SLC7A10, DPYSL5, GOPC, SEPTIN11, PLXDC1, IFT57, KIRREL1, ABITRAM, MAP1S, PALMD, PI4K2A, CAMK2N1, TRAPPC4, NLGN3, PEX5L, GLRX5, GNG13, SLC38A2, DBNL, GLRX2, ERO1A, IFT52, TRPM5, KCNIP3, KCNIP1, ASAP1, SHANK1, UBXN1, STRN3, MINK1, ACAD9, STRN4, FBXO2, AGO2, SACS, NPTN, INPP5J, LSM1, KLHL20, ZNF385A, OSBP2, NSMF, NCS1, ADNP, LAMP5, TXN2, SRGAP2, ZMYND8, GABARAPL1, ZDHHC5, SIPA1L1, DNM3, CRTC1, CNTNAP2, BRD1, MOB4, ATXN10, CADM1, NGDN, DICER1, GRIP1, CPEB3, ARC, ARHGEF15, SYNPO, SHANK2, MAPK8IP3, NCDN, RUFY3, SAMD4A, IGSF9B, COBL, NLGN1, SARM1, PPARGC1A, GIPC1, LZTS1, PLK2, IL1RAPL1, CPLX1, CPLX2, CHL1, ZWINT, SYNCRIP, SLC9A6, YKT6, CIB1, BAIAP2, SEMA3A, RGS14, IGF2BP1, ARFGEF2, PIAS3, GLRX3, TUBB3, RACK1, NCOA2, FARP1, KCNE3, TNK2, HDAC6, MAGI2, HNRNPR, RBM8A, ARHGAP44, NR1D1, CRIPT, AKAP5, CPNE6, FXR2, ARHGAP32, MAPK8IP1, FEZ1, RIN1, HOMER2, FRMPD4, EIF4A3, NEURL1, MTMR2, P2RX6, BSN, TAOK2, DGKI, KCNB2, SGCE, ARHGEF2, BECN1, CDK5R1, NPFF, PRSS12, URI1, TP63, SYNGAP1, MPDZ, KHSRP, RGS11, FXR1, KCNAB1, FZD3, WFS1, LRP8, UCN, SUMO1, TRPV1, CLIP2, TIAM1, SYN1, THY1, TH, TACR1, STAU1, SOD1, STX4, CDKL5, SRI, STAT1, STRN, STX3, SCN8A, SLC8A2, CCL2, SLC8A3, SLC1A4, SLC1A3, SLC8A1, SORT1, RGS12, RGS7, RPL28, RPS6, RPS3, PTPRO, RET, RARA, PTPRK, RAP1GAP, PURA, RBM3, PTPRZ1, RAB27A, RANGAP1, RAB5A, PTCH1, PTEN, PRKCG, MAPK1, RELN, PSEN1, PPP5C, PRKAR2B, PPP1CA, PRKCA, PPT1, PLCB4, PPP1CC, PDE4B, PCSK2, PCDH8, PALM, PENK, P2RX3, NTSR1, NUMA1, YBX1, OPRK1, OPHN1, NTRK2, CCN3, NOS1, NTRK1, NF1, NRGN, OPRM1, OPA1, P2RY1, NSF, PAK1, P2RX4, MME, MYH10, NELL2, MT3, MYO1D, LRP1, MARCKS, MAP1B, CAPRIN1, MAP2, MAX, MAPT, LRP4, RAB8A, ITGB1, KCNA2, KCNJ14, LAMA2, KCNK1, KCNH1, KCND3, KCNN2, LAMP1, KCNJ4, ITPKA, KCNJ2, KCNB1, KCND1, ITPR3, KCNC2, KCNC1, KPNA1, KCND2, KCNA1, HTR5A, ILK, ICA1, HTR2B, IL6ST, HTR2A, HPCA, HNRNPK, NRG1, GNRH1, GRIA3, GPER1, GRIN1, GRIA1, GRIK2, GRID2, GPM6A, GRIK1, GRM3, GRM1, GRM6, GRIK3, GRIK5, GRM2, GRM7, HCFC1, HTT, GRIA4, GNB3, GRK4, GSK3B, FUS, GCHFR, GABRA5, GABRB1, MTOR, GNAS, GNB1, GNAO1, GABBR1, FGF13, FLNA, PTK2B, BPTF, FMR1, DRP2, DVL1, DRD2, EPHB1, LPAR1, EPHB2, EPHA4, EPHA5, EPHB3, EPHA7, ELK1, CTTN, DRD4, DRD1, DLG4, DLG3, CTNND1, CYBA, CTNND2, DCX, DBN1, CTNNB1, DPYSL2, CNN3, CRHR2, CRMP1, CNGA3, ACTN2, ABL2, ADRB2, ADCY2, ADA, ASIC2, ADORA1, ACVRL1, ADCY9, APC, ARF4, APBB1, APOD, APOE, AMFR, ANXA3, ANXA5, FAS, APP, ALOX5, ALCAM, ARRB2, BGLAP, ATP1A2, AVP, ARRB1, ATP1A3, CALB1, CANX, CACNA1C, CAPN2, BMPR1B, CACNA1A, CAMK2B, BMPR1A, CACNA1B, BMPR2, BNIP3, CHRM2, CHRM1, CHRNA5, CHRNA3, CHRM3, CCK, CHRNA4, CDK5, PLK3, CRHBP, COMT, CLU"
+  },
+  {
+    "question": "List the genes associated with the cellular component dendrte",
+    "answer": "CNR2, CCR2, ELFN1, GRID2IP, ATXN1L, SKOR1, HCN1, BRINP3, CNIH2, KLHL17, SLC17A8, AQP11, ADCY4, DAB2IP, CNIH3, SLC32A1, UHMK1, TRIM9, AZIN2, ZFYVE27, CPT1C, SEZ6, LRRK2, SNAP47, DNER, LMTK3, IFT20, KNDC1, JPH4, PPP1R9B, CNTNAP4, PTPN5, KIRREL3, TPGS1, ATCAY, TMEM185A, TANC1, SHANK3, RGS8, SHARPIN, DTNBP1, SYNDIG1, SPG11, WLS, CTTNBP2, CPEB4, SRCIN1, PSD2, MAF1, TTLL7, RAB17, MLPH, LYNX1, CPEB1, LRFN3, DLGAP3, ELOVL5, PREX1, IGSF9, LRRC7, SLC12A5, SNX14, LRRC4, DENND1A, BCAN, SLC5A7, MYL7, RPTOR, SLC4A10, AMIGO1, ALS2, KLHL1, MAGEE1, HCN3, TENM2, NLGN4X, ANKS1B, PPP1R9A, ADCY10, SLC7A10, DPYSL5, GOPC, SEPTIN11, PLXDC1, IFT57, KIRREL1, ABITRAM, MAP1S, PALMD, PI4K2A, CAMK2N1, TRAPPC4, NLGN3, PEX5L, GLRX5, GNG13, SLC38A2, DBNL, GLRX2, ERO1A, IFT52, TRPM5, KCNIP3, KCNIP1, ASAP1, SHANK1, UBXN1, STRN3, MINK1, ACAD9, STRN4, FBXO2, AGO2, SACS, NPTN, INPP5J, LSM1, KLHL20, ZNF385A, OSBP2, NSMF, NCS1, ADNP, LAMP5, TXN2, SRGAP2, ZMYND8, GABARAPL1, ZDHHC5, SIPA1L1, DNM3, CRTC1, CNTNAP2, BRD1, MOB4, ATXN10, CADM1, NGDN, DICER1, GRIP1, CPEB3, ARC, ARHGEF15, SYNPO, SHANK2, MAPK8IP3, NCDN, RUFY3, SAMD4A, IGSF9B, COBL, NLGN1, SARM1, PPARGC1A, GIPC1, LZTS1, PLK2, IL1RAPL1, CPLX1, CPLX2, CHL1, ZWINT, SYNCRIP, SLC9A6, YKT6, CIB1, BAIAP2, SEMA3A, RGS14, IGF2BP1, ARFGEF2, PIAS3, GLRX3, TUBB3, RACK1, NCOA2, FARP1, KCNE3, TNK2, HDAC6, MAGI2, HNRNPR, RBM8A, ARHGAP44, NR1D1, CRIPT, AKAP5, CPNE6, FXR2, ARHGAP32, MAPK8IP1, FEZ1, RIN1, HOMER2, FRMPD4, EIF4A3, NEURL1, MTMR2, P2RX6, BSN, TAOK2, DGKI, KCNB2, SGCE, ARHGEF2, BECN1, CDK5R1, NPFF, PRSS12, URI1, TP63, SYNGAP1, MPDZ, KHSRP, RGS11, FXR1, KCNAB1, FZD3, WFS1, LRP8, UCN, SUMO1, TRPV1, CLIP2, TIAM1, SYN1, THY1, TH, TACR1, STAU1, SOD1, STX4, CDKL5, SRI, STAT1, STRN, STX3, SCN8A, SLC8A2, CCL2, SLC8A3, SLC1A4, SLC1A3, SLC8A1, SORT1, RGS12, RGS7, RPL28, RPS6, RPS3, PTPRO, RET, RARA, PTPRK, RAP1GAP, PURA, RBM3, PTPRZ1, RAB27A, RANGAP1, RAB5A, PTCH1, PTEN, PRKCG, MAPK1, RELN, PSEN1, PPP5C, PRKAR2B, PPP1CA, PRKCA, PPT1, PLCB4, PPP1CC, PDE4B, PCSK2, PCDH8, PALM, PENK, P2RX3, NTSR1, NUMA1, YBX1, OPRK1, OPHN1, NTRK2, CCN3, NOS1, NTRK1, NF1, NRGN, OPRM1, OPA1, P2RY1, NSF, PAK1, P2RX4, MME, MYH10, NELL2, MT3, MYO1D, LRP1, MARCKS, MAP1B, CAPRIN1, MAP2, MAX, MAPT, LRP4, RAB8A, ITGB1, KCNA2, KCNJ14, LAMA2, KCNK1, KCNH1, KCND3, KCNN2, LAMP1, KCNJ4, ITPKA, KCNJ2, KCNB1, KCND1, ITPR3, KCNC2, KCNC1, KPNA1, KCND2, KCNA1, HTR5A, ILK, ICA1, HTR2B, IL6ST, HTR2A, HPCA, HNRNPK, NRG1, GNRH1, GRIA3, GPER1, GRIN1, GRIA1, GRIK2, GRID2, GPM6A, GRIK1, GRM3, GRM1, GRM6, GRIK3, GRIK5, GRM2, GRM7, HCFC1, HTT, GRIA4, GNB3, GRK4, GSK3B, FUS, GCHFR, GABRA5, GABRB1, MTOR, GNAS, GNB1, GNAO1, GABBR1, FGF13, FLNA, PTK2B, BPTF, FMR1, DRP2, DVL1, DRD2, EPHB1, LPAR1, EPHB2, EPHA4, EPHA5, EPHB3, EPHA7, ELK1, CTTN, DRD4, DRD1, DLG4, DLG3, CTNND1, CYBA, CTNND2, DCX, DBN1, CTNNB1, DPYSL2, CNN3, CRHR2, CRMP1, CNGA3, ACTN2, ABL2, ADRB2, ADCY2, ADA, ASIC2, ADORA1, ACVRL1, ADCY9, APC, ARF4, APBB1, APOD, APOE, AMFR, ANXA3, ANXA5, FAS, APP, ALOX5, ALCAM, ARRB2, BGLAP, ATP1A2, AVP, ARRB1, ATP1A3, CALB1, CANX, CACNA1C, CAPN2, BMPR1B, CACNA1A, CAMK2B, BMPR1A, CACNA1B, BMPR2, BNIP3, CHRM2, CHRM1, CHRNA5, CHRNA3, CHRM3, CCK, CHRNA4, CDK5, PLK3, CRHBP, COMT, CLU"
+  },
+  {
+    "question": "List the diseases which present the symptom Hemianopsia",
+    "answer": "Familial Alzheimer Disease (FAD)"
+  },
+  {
+    "question": "List the diseases which present the symptom hemianopsia",
+    "answer": "Familial Alzheimer Disease (FAD)"
+  },
+  {
+    "question": "List the diseases which present the symptom Heianopsia",
+    "answer": "Familial Alzheimer Disease (FAD)"
+  },
+  {
+    "question": "List the diseases which present the symptom Neurobehavioral Manifestations",
+    "answer": "Alzheimer's Disease"
+  },
+  {
+    "question": "List the diseases which present the symptom neurobehavioral manifestations",
+    "answer": "Alzheimer's Disease"
+  },
+  {
+    "question": "List the diseases which present the symptom Nerobehavioral Manifestations",
+    "answer": "Alzheimer's Disease"
+  },
+  {
+    "question": "List the diseases which present the symptom Blindness, Cortical",
+    "answer": "Familial Alzheimer Disease (FAD)"
+  },
+  {
+    "question": "List the diseases which present the symptom blindness, cortical",
+    "answer": "Familial Alzheimer Disease (FAD)"
+  },
+  {
+    "question": "List the diseases which present the symptom Blindness, Corical",
+    "answer": "Familial Alzheimer Disease (FAD)"
+  }
+]

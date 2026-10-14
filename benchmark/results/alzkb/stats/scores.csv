@@ -1,0 +1,188 @@
+benchmark,question_set,dataset,system,backbone,arm,metric,primary,status,n,set_size,n_failed,value_pct,ci95_lo_pct,ci95_hi_pct,ci_method
+alzkb,TF 1-hop,True_or_False_1hop.json,LLM only,GPT-4o-mini,vanilla_gpt-4o-mini,accuracy,True,complete,560,560,0,68.9286,64.9775,72.6217,wilson
+alzkb,TF 2-hop,True_or_False_2hop.json,LLM only,GPT-4o-mini,vanilla_gpt-4o-mini,accuracy,True,complete,540,540,0,61.2963,57.122,65.311,wilson
+alzkb,TF 2-hop disambiguated,True_or_False_2hop_atleastone.json,LLM only,GPT-4o-mini,vanilla_gpt-4o-mini,accuracy,True,complete,540,540,0,60.3704,56.1855,64.4087,wilson
+alzkb,MCQ 1-hop,MCQ_1hop.json,LLM only,GPT-4o-mini,vanilla_gpt-4o-mini,accuracy,True,complete,498,498,0,55.2209,50.83,59.5318,wilson
+alzkb,MCQ 2-hop,MCQ_2hop.json,LLM only,GPT-4o-mini,vanilla_gpt-4o-mini,accuracy,True,complete,419,419,0,61.3365,56.5907,65.8764,wilson
+alzkb,OE 1-hop,OpenEnded_1hop.json,LLM only,GPT-4o-mini,vanilla_gpt-4o-mini,jaccard,True,complete,508,508,0,7.404,6.1988,8.9199,bca_bootstrap_mean
+alzkb,OE 1-hop,OpenEnded_1hop.json,LLM only,GPT-4o-mini,vanilla_gpt-4o-mini,exact_match,False,complete,508,508,0,1.1811,0.5424,2.5526,wilson
+alzkb,OE 1-hop,OpenEnded_1hop.json,LLM only,GPT-4o-mini,vanilla_gpt-4o-mini,f1,False,complete,508,508,0,11.0624,9.4896,12.8898,bca_bootstrap_mean
+alzkb,OE 1-hop,OpenEnded_1hop.json,LLM only,GPT-4o-mini,vanilla_gpt-4o-mini,precision,False,complete,508,508,0,17.8589,15.6419,20.3383,bca_bootstrap_mean
+alzkb,OE 1-hop,OpenEnded_1hop.json,LLM only,GPT-4o-mini,vanilla_gpt-4o-mini,recall,False,complete,508,508,0,15.4059,12.9595,18.2062,bca_bootstrap_mean
+alzkb,OE 1-hop,OpenEnded_1hop.json,LLM only,GPT-4o-mini,vanilla_gpt-4o-mini,overlap,False,complete,508,508,0,24.7817,21.868,27.942,bca_bootstrap_mean
+alzkb,OE 2-hop,OpenEnded_2hop.json,LLM only,GPT-4o-mini,vanilla_gpt-4o-mini,jaccard,True,complete,450,450,0,4.098,3.3184,5.1514,bca_bootstrap_mean
+alzkb,OE 2-hop,OpenEnded_2hop.json,LLM only,GPT-4o-mini,vanilla_gpt-4o-mini,exact_match,False,complete,450,450,0,0.2222,0.0392,1.2479,wilson
+alzkb,OE 2-hop,OpenEnded_2hop.json,LLM only,GPT-4o-mini,vanilla_gpt-4o-mini,f1,False,complete,450,450,0,6.6176,5.4636,8.022,bca_bootstrap_mean
+alzkb,OE 2-hop,OpenEnded_2hop.json,LLM only,GPT-4o-mini,vanilla_gpt-4o-mini,precision,False,complete,450,450,0,15.9211,13.6174,18.5116,bca_bootstrap_mean
+alzkb,OE 2-hop,OpenEnded_2hop.json,LLM only,GPT-4o-mini,vanilla_gpt-4o-mini,recall,False,complete,450,450,0,8.0915,6.353,10.2781,bca_bootstrap_mean
+alzkb,OE 2-hop,OpenEnded_2hop.json,LLM only,GPT-4o-mini,vanilla_gpt-4o-mini,overlap,False,complete,450,450,0,19.0679,16.3619,22.0395,bca_bootstrap_mean
+alzkb,TF 1-hop,True_or_False_1hop.json,LLM only,GPT-5-mini,vanilla_gpt-5-mini,accuracy,True,complete,560,560,0,69.8214,65.895,73.4778,wilson
+alzkb,TF 2-hop,True_or_False_2hop.json,LLM only,GPT-5-mini,vanilla_gpt-5-mini,accuracy,True,complete,540,540,0,60.0,55.8113,64.0474,wilson
+alzkb,TF 2-hop disambiguated,True_or_False_2hop_atleastone.json,LLM only,GPT-5-mini,vanilla_gpt-5-mini,accuracy,True,complete,540,540,0,61.1111,56.9346,65.1306,wilson
+alzkb,MCQ 1-hop,MCQ_1hop.json,LLM only,GPT-5-mini,vanilla_gpt-5-mini,accuracy,True,complete,498,498,0,69.6787,65.5037,73.5525,wilson
+alzkb,MCQ 2-hop,MCQ_2hop.json,LLM only,GPT-5-mini,vanilla_gpt-5-mini,accuracy,True,complete,419,419,0,73.5084,69.0832,77.5064,wilson
+alzkb,OE 1-hop,OpenEnded_1hop.json,LLM only,GPT-5-mini,vanilla_gpt-5-mini,jaccard,True,complete,508,508,0,8.6952,7.2696,10.4668,bca_bootstrap_mean
+alzkb,OE 1-hop,OpenEnded_1hop.json,LLM only,GPT-5-mini,vanilla_gpt-5-mini,exact_match,False,complete,508,508,0,1.378,0.669,2.8167,wilson
+alzkb,OE 1-hop,OpenEnded_1hop.json,LLM only,GPT-5-mini,vanilla_gpt-5-mini,f1,False,complete,508,508,0,12.4267,10.6527,14.4911,bca_bootstrap_mean
+alzkb,OE 1-hop,OpenEnded_1hop.json,LLM only,GPT-5-mini,vanilla_gpt-5-mini,precision,False,complete,508,508,0,17.2484,14.9484,19.7777,bca_bootstrap_mean
+alzkb,OE 1-hop,OpenEnded_1hop.json,LLM only,GPT-5-mini,vanilla_gpt-5-mini,recall,False,complete,508,508,0,17.1928,14.702,19.9853,bca_bootstrap_mean
+alzkb,OE 1-hop,OpenEnded_1hop.json,LLM only,GPT-5-mini,vanilla_gpt-5-mini,overlap,False,complete,508,508,0,24.5367,21.6066,27.6702,bca_bootstrap_mean
+alzkb,OE 2-hop,OpenEnded_2hop.json,LLM only,GPT-5-mini,vanilla_gpt-5-mini,jaccard,True,complete,450,450,0,6.3415,5.1736,7.8508,bca_bootstrap_mean
+alzkb,OE 2-hop,OpenEnded_2hop.json,LLM only,GPT-5-mini,vanilla_gpt-5-mini,exact_match,False,complete,450,450,0,0.4444,0.122,1.6059,wilson
+alzkb,OE 2-hop,OpenEnded_2hop.json,LLM only,GPT-5-mini,vanilla_gpt-5-mini,f1,False,complete,450,450,0,9.5688,8.047,11.3673,bca_bootstrap_mean
+alzkb,OE 2-hop,OpenEnded_2hop.json,LLM only,GPT-5-mini,vanilla_gpt-5-mini,precision,False,complete,450,450,0,18.6554,16.121,21.4877,bca_bootstrap_mean
+alzkb,OE 2-hop,OpenEnded_2hop.json,LLM only,GPT-5-mini,vanilla_gpt-5-mini,recall,False,complete,450,450,0,11.7156,9.591,14.2568,bca_bootstrap_mean
+alzkb,OE 2-hop,OpenEnded_2hop.json,LLM only,GPT-5-mini,vanilla_gpt-5-mini,overlap,False,complete,450,450,0,23.0945,20.1346,26.3596,bca_bootstrap_mean
+alzkb,TF 1-hop,True_or_False_1hop.json,GraphCypherQAChain,GPT-4o-mini,graphcypher_gpt-4o-mini,accuracy,True,complete,560,560,1,80.5357,77.053,83.6023,wilson
+alzkb,TF 2-hop,True_or_False_2hop.json,GraphCypherQAChain,GPT-4o-mini,graphcypher_gpt-4o-mini,accuracy,True,complete,540,540,14,65.0,60.8839,68.9042,wilson
+alzkb,TF 2-hop disambiguated,True_or_False_2hop_atleastone.json,GraphCypherQAChain,GPT-4o-mini,graphcypher_gpt-4o-mini,accuracy,True,complete,540,540,8,80.7407,77.2022,83.845,wilson
+alzkb,MCQ 1-hop,MCQ_1hop.json,GraphCypherQAChain,GPT-4o-mini,graphcypher_gpt-4o-mini,accuracy,True,complete,498,498,63,64.6586,60.3625,68.7303,wilson
+alzkb,MCQ 2-hop,MCQ_2hop.json,GraphCypherQAChain,GPT-4o-mini,graphcypher_gpt-4o-mini,accuracy,True,complete,419,419,61,65.3938,60.7175,69.7904,wilson
+alzkb,OE 1-hop,OpenEnded_1hop.json,GraphCypherQAChain,GPT-4o-mini,graphcypher_gpt-4o-mini,jaccard,True,complete,508,508,36,81.8736,78.4628,84.9137,bca_bootstrap_mean
+alzkb,OE 1-hop,OpenEnded_1hop.json,GraphCypherQAChain,GPT-4o-mini,graphcypher_gpt-4o-mini,exact_match,False,complete,508,508,36,78.3465,74.5591,81.7083,wilson
+alzkb,OE 1-hop,OpenEnded_1hop.json,GraphCypherQAChain,GPT-4o-mini,graphcypher_gpt-4o-mini,f1,False,complete,508,508,36,82.6952,79.3531,85.665,bca_bootstrap_mean
+alzkb,OE 1-hop,OpenEnded_1hop.json,GraphCypherQAChain,GPT-4o-mini,graphcypher_gpt-4o-mini,precision,False,complete,508,508,36,83.6343,80.2831,86.6233,bca_bootstrap_mean
+alzkb,OE 1-hop,OpenEnded_1hop.json,GraphCypherQAChain,GPT-4o-mini,graphcypher_gpt-4o-mini,recall,False,complete,508,508,36,83.3652,80.0448,86.3046,bca_bootstrap_mean
+alzkb,OE 1-hop,OpenEnded_1hop.json,GraphCypherQAChain,GPT-4o-mini,graphcypher_gpt-4o-mini,overlap,False,complete,508,508,36,84.9467,81.6751,87.8495,bca_bootstrap_mean
+alzkb,OE 2-hop,OpenEnded_2hop.json,GraphCypherQAChain,GPT-4o-mini,graphcypher_gpt-4o-mini,jaccard,True,complete,450,450,48,22.1161,19.215,25.3665,bca_bootstrap_mean
+alzkb,OE 2-hop,OpenEnded_2hop.json,GraphCypherQAChain,GPT-4o-mini,graphcypher_gpt-4o-mini,exact_match,False,complete,450,450,48,11.1111,8.5302,14.3504,wilson
+alzkb,OE 2-hop,OpenEnded_2hop.json,GraphCypherQAChain,GPT-4o-mini,graphcypher_gpt-4o-mini,f1,False,complete,450,450,48,27.0007,23.9196,30.3527,bca_bootstrap_mean
+alzkb,OE 2-hop,OpenEnded_2hop.json,GraphCypherQAChain,GPT-4o-mini,graphcypher_gpt-4o-mini,precision,False,complete,450,450,48,26.574,23.2531,30.1661,bca_bootstrap_mean
+alzkb,OE 2-hop,OpenEnded_2hop.json,GraphCypherQAChain,GPT-4o-mini,graphcypher_gpt-4o-mini,recall,False,complete,450,450,48,50.9377,46.5417,55.3846,bca_bootstrap_mean
+alzkb,OE 2-hop,OpenEnded_2hop.json,GraphCypherQAChain,GPT-4o-mini,graphcypher_gpt-4o-mini,overlap,False,complete,450,450,48,55.156,50.7183,59.6421,bca_bootstrap_mean
+alzkb,TF 1-hop,True_or_False_1hop.json,GraphCypherQAChain,GPT-5-mini,graphcypher_gpt-5-mini,accuracy,True,complete,560,560,16,86.7857,83.7286,89.3416,wilson
+alzkb,TF 2-hop,True_or_False_2hop.json,GraphCypherQAChain,GPT-5-mini,graphcypher_gpt-5-mini,accuracy,True,complete,540,540,11,70.5556,66.5768,74.2439,wilson
+alzkb,TF 2-hop disambiguated,True_or_False_2hop_atleastone.json,GraphCypherQAChain,GPT-5-mini,graphcypher_gpt-5-mini,accuracy,True,complete,540,540,12,87.5926,84.5436,90.1105,wilson
+alzkb,MCQ 1-hop,MCQ_1hop.json,GraphCypherQAChain,GPT-5-mini,graphcypher_gpt-5-mini,accuracy,True,complete,498,498,18,70.2811,66.1243,74.1275,wilson
+alzkb,MCQ 2-hop,MCQ_2hop.json,GraphCypherQAChain,GPT-5-mini,graphcypher_gpt-5-mini,accuracy,True,complete,419,419,8,76.8496,72.5779,80.6335,wilson
+alzkb,OE 1-hop,OpenEnded_1hop.json,GraphCypherQAChain,GPT-5-mini,graphcypher_gpt-5-mini,jaccard,True,complete,508,508,3,72.1769,68.331,75.8277,bca_bootstrap_mean
+alzkb,OE 1-hop,OpenEnded_1hop.json,GraphCypherQAChain,GPT-5-mini,graphcypher_gpt-5-mini,exact_match,False,complete,508,508,3,67.5197,63.329,71.4474,wilson
+alzkb,OE 1-hop,OpenEnded_1hop.json,GraphCypherQAChain,GPT-5-mini,graphcypher_gpt-5-mini,f1,False,complete,508,508,3,73.2085,69.4183,76.7945,bca_bootstrap_mean
+alzkb,OE 1-hop,OpenEnded_1hop.json,GraphCypherQAChain,GPT-5-mini,graphcypher_gpt-5-mini,precision,False,complete,508,508,3,76.5097,72.7296,80.0335,bca_bootstrap_mean
+alzkb,OE 1-hop,OpenEnded_1hop.json,GraphCypherQAChain,GPT-5-mini,graphcypher_gpt-5-mini,recall,False,complete,508,508,3,72.4087,68.5691,76.0503,bca_bootstrap_mean
+alzkb,OE 1-hop,OpenEnded_1hop.json,GraphCypherQAChain,GPT-5-mini,graphcypher_gpt-5-mini,overlap,False,complete,508,508,3,76.6268,72.8522,80.1518,bca_bootstrap_mean
+alzkb,OE 2-hop,OpenEnded_2hop.json,GraphCypherQAChain,GPT-5-mini,graphcypher_gpt-5-mini,jaccard,True,complete,450,450,2,73.4819,69.3351,77.3084,bca_bootstrap_mean
+alzkb,OE 2-hop,OpenEnded_2hop.json,GraphCypherQAChain,GPT-5-mini,graphcypher_gpt-5-mini,exact_match,False,complete,450,450,2,68.0,63.5532,72.1421,wilson
+alzkb,OE 2-hop,OpenEnded_2hop.json,GraphCypherQAChain,GPT-5-mini,graphcypher_gpt-5-mini,f1,False,complete,450,450,2,74.1799,70.0838,77.9499,bca_bootstrap_mean
+alzkb,OE 2-hop,OpenEnded_2hop.json,GraphCypherQAChain,GPT-5-mini,graphcypher_gpt-5-mini,precision,False,complete,450,450,2,75.3023,71.2127,79.066,bca_bootstrap_mean
+alzkb,OE 2-hop,OpenEnded_2hop.json,GraphCypherQAChain,GPT-5-mini,graphcypher_gpt-5-mini,recall,False,complete,450,450,2,74.0663,69.9409,77.8594,bca_bootstrap_mean
+alzkb,OE 2-hop,OpenEnded_2hop.json,GraphCypherQAChain,GPT-5-mini,graphcypher_gpt-5-mini,overlap,False,complete,450,450,2,75.646,71.5651,79.3846,bca_bootstrap_mean
+alzkb,TF 1-hop,True_or_False_1hop.json,NEXA Direct,GPT-4o-mini,nexa-direct_gpt-4o-mini,accuracy,True,complete,560,560,0,95.5357,93.4928,96.9581,wilson
+alzkb,TF 2-hop,True_or_False_2hop.json,NEXA Direct,GPT-4o-mini,nexa-direct_gpt-4o-mini,accuracy,True,complete,540,540,0,92.4074,89.8616,94.3541,wilson
+alzkb,TF 2-hop disambiguated,True_or_False_2hop_atleastone.json,NEXA Direct,GPT-4o-mini,nexa-direct_gpt-4o-mini,accuracy,True,complete,540,540,1,95.7407,93.6899,97.1453,wilson
+alzkb,MCQ 1-hop,MCQ_1hop.json,NEXA Direct,GPT-4o-mini,nexa-direct_gpt-4o-mini,accuracy,True,complete,498,498,6,90.9639,88.1223,93.1782,wilson
+alzkb,MCQ 2-hop,MCQ_2hop.json,NEXA Direct,GPT-4o-mini,nexa-direct_gpt-4o-mini,accuracy,True,complete,419,419,14,94.2721,91.6187,96.121,wilson
+alzkb,OE 1-hop,OpenEnded_1hop.json,NEXA Direct,GPT-4o-mini,nexa-direct_gpt-4o-mini,jaccard,True,complete,508,508,0,95.5903,93.7161,96.9742,bca_bootstrap_mean
+alzkb,OE 1-hop,OpenEnded_1hop.json,NEXA Direct,GPT-4o-mini,nexa-direct_gpt-4o-mini,exact_match,False,complete,508,508,0,84.0551,80.6176,86.9814,wilson
+alzkb,OE 1-hop,OpenEnded_1hop.json,NEXA Direct,GPT-4o-mini,nexa-direct_gpt-4o-mini,f1,False,complete,508,508,0,96.1129,94.2908,97.4221,bca_bootstrap_mean
+alzkb,OE 1-hop,OpenEnded_1hop.json,NEXA Direct,GPT-4o-mini,nexa-direct_gpt-4o-mini,precision,False,complete,508,508,0,97.0564,95.3047,98.2546,bca_bootstrap_mean
+alzkb,OE 1-hop,OpenEnded_1hop.json,NEXA Direct,GPT-4o-mini,nexa-direct_gpt-4o-mini,recall,False,complete,508,508,0,95.6939,93.842,97.0612,bca_bootstrap_mean
+alzkb,OE 1-hop,OpenEnded_1hop.json,NEXA Direct,GPT-4o-mini,nexa-direct_gpt-4o-mini,overlap,False,complete,508,508,0,97.1183,95.3589,98.3067,bca_bootstrap_mean
+alzkb,OE 2-hop,OpenEnded_2hop.json,NEXA Direct,GPT-4o-mini,nexa-direct_gpt-4o-mini,jaccard,True,complete,450,450,0,83.8602,80.444,86.8379,bca_bootstrap_mean
+alzkb,OE 2-hop,OpenEnded_2hop.json,NEXA Direct,GPT-4o-mini,nexa-direct_gpt-4o-mini,exact_match,False,complete,450,450,0,69.7778,65.3821,73.8387,wilson
+alzkb,OE 2-hop,OpenEnded_2hop.json,NEXA Direct,GPT-4o-mini,nexa-direct_gpt-4o-mini,f1,False,complete,450,450,0,85.0666,81.7487,87.9326,bca_bootstrap_mean
+alzkb,OE 2-hop,OpenEnded_2hop.json,NEXA Direct,GPT-4o-mini,nexa-direct_gpt-4o-mini,precision,False,complete,450,450,0,86.6819,83.3661,89.5297,bca_bootstrap_mean
+alzkb,OE 2-hop,OpenEnded_2hop.json,NEXA Direct,GPT-4o-mini,nexa-direct_gpt-4o-mini,recall,False,complete,450,450,0,86.4141,83.2328,89.1489,bca_bootstrap_mean
+alzkb,OE 2-hop,OpenEnded_2hop.json,NEXA Direct,GPT-4o-mini,nexa-direct_gpt-4o-mini,overlap,False,complete,450,450,0,89.0843,85.971,91.6672,bca_bootstrap_mean
+alzkb,TF 1-hop,True_or_False_1hop.json,NEXA Direct,GPT-5-mini,nexa-direct_gpt-5-mini,accuracy,True,complete,560,560,0,92.5,90.0171,94.4037,wilson
+alzkb,TF 2-hop,True_or_False_2hop.json,NEXA Direct,GPT-5-mini,nexa-direct_gpt-5-mini,accuracy,True,complete,540,540,0,73.5185,69.6402,77.0645,wilson
+alzkb,TF 2-hop disambiguated,True_or_False_2hop_atleastone.json,NEXA Direct,GPT-5-mini,nexa-direct_gpt-5-mini,accuracy,True,complete,540,540,2,88.5185,85.5533,90.9396,wilson
+alzkb,MCQ 1-hop,MCQ_1hop.json,NEXA Direct,GPT-5-mini,nexa-direct_gpt-5-mini,accuracy,True,complete,498,498,0,92.9719,90.3824,94.9035,wilson
+alzkb,MCQ 2-hop,MCQ_2hop.json,NEXA Direct,GPT-5-mini,nexa-direct_gpt-5-mini,accuracy,True,complete,419,419,0,99.284,97.9163,99.7562,wilson
+alzkb,OE 1-hop,OpenEnded_1hop.json,NEXA Direct,GPT-5-mini,nexa-direct_gpt-5-mini,jaccard,True,complete,508,508,5,92.3802,89.9152,94.3822,bca_bootstrap_mean
+alzkb,OE 1-hop,OpenEnded_1hop.json,NEXA Direct,GPT-5-mini,nexa-direct_gpt-5-mini,exact_match,False,complete,508,508,5,90.9449,88.1325,93.1426,wilson
+alzkb,OE 1-hop,OpenEnded_1hop.json,NEXA Direct,GPT-5-mini,nexa-direct_gpt-5-mini,f1,False,complete,508,508,5,92.8409,90.4802,94.7384,bca_bootstrap_mean
+alzkb,OE 1-hop,OpenEnded_1hop.json,NEXA Direct,GPT-5-mini,nexa-direct_gpt-5-mini,precision,False,complete,508,508,5,96.9996,95.2581,98.214,bca_bootstrap_mean
+alzkb,OE 1-hop,OpenEnded_1hop.json,NEXA Direct,GPT-5-mini,nexa-direct_gpt-5-mini,recall,False,complete,508,508,5,92.5496,90.1053,94.5374,bca_bootstrap_mean
+alzkb,OE 1-hop,OpenEnded_1hop.json,NEXA Direct,GPT-5-mini,nexa-direct_gpt-5-mini,overlap,False,complete,508,508,5,97.1611,95.452,98.3459,bca_bootstrap_mean
+alzkb,OE 2-hop,OpenEnded_2hop.json,NEXA Direct,GPT-5-mini,nexa-direct_gpt-5-mini,jaccard,True,complete,450,450,0,94.5254,92.3553,96.1886,bca_bootstrap_mean
+alzkb,OE 2-hop,OpenEnded_2hop.json,NEXA Direct,GPT-5-mini,nexa-direct_gpt-5-mini,exact_match,False,complete,450,450,0,89.3333,86.1409,91.8599,wilson
+alzkb,OE 2-hop,OpenEnded_2hop.json,NEXA Direct,GPT-5-mini,nexa-direct_gpt-5-mini,f1,False,complete,450,450,0,95.225,93.2005,96.7413,bca_bootstrap_mean
+alzkb,OE 2-hop,OpenEnded_2hop.json,NEXA Direct,GPT-5-mini,nexa-direct_gpt-5-mini,precision,False,complete,450,450,0,97.4109,95.6251,98.6215,bca_bootstrap_mean
+alzkb,OE 2-hop,OpenEnded_2hop.json,NEXA Direct,GPT-5-mini,nexa-direct_gpt-5-mini,recall,False,complete,450,450,0,94.5694,92.4081,96.2235,bca_bootstrap_mean
+alzkb,OE 2-hop,OpenEnded_2hop.json,NEXA Direct,GPT-5-mini,nexa-direct_gpt-5-mini,overlap,False,complete,450,450,0,97.4109,95.6251,98.6215,bca_bootstrap_mean
+alzkb,TF 1-hop,True_or_False_1hop.json,NEXA Flex,GPT-5-mini,nexa-flex_gpt-5-mini,accuracy,True,complete,560,560,0,98.3929,96.9741,99.1522,wilson
+alzkb,TF 2-hop,True_or_False_2hop.json,NEXA Flex,GPT-5-mini,nexa-flex_gpt-5-mini,accuracy,True,complete,540,540,0,72.4074,68.4891,76.0092,wilson
+alzkb,TF 2-hop disambiguated,True_or_False_2hop_atleastone.json,NEXA Flex,GPT-5-mini,nexa-flex_gpt-5-mini,accuracy,True,complete,540,540,6,97.5926,95.925,98.5878,wilson
+alzkb,MCQ 1-hop,MCQ_1hop.json,NEXA Flex,GPT-5-mini,nexa-flex_gpt-5-mini,accuracy,True,complete,498,498,0,99.5984,98.5476,99.8898,wilson
+alzkb,MCQ 2-hop,MCQ_2hop.json,NEXA Flex,GPT-5-mini,nexa-flex_gpt-5-mini,accuracy,True,complete,419,419,0,98.0907,96.2781,99.0294,wilson
+alzkb,OE 1-hop,OpenEnded_1hop.json,NEXA Flex,GPT-5-mini,nexa-flex_gpt-5-mini,jaccard,True,complete,508,508,0,96.1582,94.3637,97.4558,bca_bootstrap_mean
+alzkb,OE 1-hop,OpenEnded_1hop.json,NEXA Flex,GPT-5-mini,nexa-flex_gpt-5-mini,exact_match,False,complete,508,508,0,90.5512,87.6945,92.7991,wilson
+alzkb,OE 1-hop,OpenEnded_1hop.json,NEXA Flex,GPT-5-mini,nexa-flex_gpt-5-mini,f1,False,complete,508,508,0,96.6077,94.917,97.8135,bca_bootstrap_mean
+alzkb,OE 1-hop,OpenEnded_1hop.json,NEXA Flex,GPT-5-mini,nexa-flex_gpt-5-mini,precision,False,complete,508,508,0,98.8402,97.6006,99.589,bca_bootstrap_mean
+alzkb,OE 1-hop,OpenEnded_1hop.json,NEXA Flex,GPT-5-mini,nexa-flex_gpt-5-mini,recall,False,complete,508,508,0,96.3259,94.5746,97.6006,bca_bootstrap_mean
+alzkb,OE 1-hop,OpenEnded_1hop.json,NEXA Flex,GPT-5-mini,nexa-flex_gpt-5-mini,overlap,False,complete,508,508,0,99.0013,97.8145,99.5953,bca_bootstrap_mean
+alzkb,OE 2-hop,OpenEnded_2hop.json,NEXA Flex,GPT-5-mini,nexa-flex_gpt-5-mini,jaccard,True,complete,450,450,0,96.7295,94.9765,97.9713,bca_bootstrap_mean
+alzkb,OE 2-hop,OpenEnded_2hop.json,NEXA Flex,GPT-5-mini,nexa-flex_gpt-5-mini,exact_match,False,complete,450,450,0,88.8889,85.6496,91.4698,wilson
+alzkb,OE 2-hop,OpenEnded_2hop.json,NEXA Flex,GPT-5-mini,nexa-flex_gpt-5-mini,f1,False,complete,450,450,0,97.2055,95.6166,98.3033,bca_bootstrap_mean
+alzkb,OE 2-hop,OpenEnded_2hop.json,NEXA Flex,GPT-5-mini,nexa-flex_gpt-5-mini,precision,False,complete,450,450,0,98.9372,97.7141,99.5778,bca_bootstrap_mean
+alzkb,OE 2-hop,OpenEnded_2hop.json,NEXA Flex,GPT-5-mini,nexa-flex_gpt-5-mini,recall,False,complete,450,450,0,97.3983,95.8444,98.4703,bca_bootstrap_mean
+alzkb,OE 2-hop,OpenEnded_2hop.json,NEXA Flex,GPT-5-mini,nexa-flex_gpt-5-mini,overlap,False,complete,450,450,0,99.5434,98.5458,99.8792,bca_bootstrap_mean
+alzkb,TF 1-hop,True_or_False_1hop.json,NEXA Direct,Qwen3.8-27B,nexa-direct_qwen3.8-27b,accuracy,True,complete,560,560,10,96.25,94.3354,97.5344,wilson
+alzkb,TF 2-hop,True_or_False_2hop.json,NEXA Direct,Qwen3.8-27B,nexa-direct_qwen3.8-27b,accuracy,True,complete,540,540,0,83.7037,80.3524,86.5789,wilson
+alzkb,TF 2-hop disambiguated,True_or_False_2hop_atleastone.json,NEXA Direct,Qwen3.8-27B,nexa-direct_qwen3.8-27b,accuracy,True,complete,540,540,0,99.2593,98.111,99.7116,wilson
+alzkb,MCQ 1-hop,MCQ_1hop.json,NEXA Direct,Qwen3.8-27B,nexa-direct_qwen3.8-27b,accuracy,True,complete,498,498,1,99.5984,98.5476,99.8898,wilson
+alzkb,MCQ 2-hop,MCQ_2hop.json,NEXA Direct,Qwen3.8-27B,nexa-direct_qwen3.8-27b,accuracy,True,complete,419,419,3,99.0453,97.5714,99.6282,wilson
+alzkb,OE 1-hop,OpenEnded_1hop.json,NEXA Direct,Qwen3.8-27B,nexa-direct_qwen3.8-27b,jaccard,True,complete,508,508,3,91.9303,89.3445,94.0469,bca_bootstrap_mean
+alzkb,OE 1-hop,OpenEnded_1hop.json,NEXA Direct,Qwen3.8-27B,nexa-direct_qwen3.8-27b,exact_match,False,complete,508,508,3,89.7638,86.8223,92.1083,wilson
+alzkb,OE 1-hop,OpenEnded_1hop.json,NEXA Direct,Qwen3.8-27B,nexa-direct_qwen3.8-27b,f1,False,complete,508,508,3,92.0808,89.5119,94.1886,bca_bootstrap_mean
+alzkb,OE 1-hop,OpenEnded_1hop.json,NEXA Direct,Qwen3.8-27B,nexa-direct_qwen3.8-27b,precision,False,complete,508,508,3,92.1174,89.5416,94.2344,bca_bootstrap_mean
+alzkb,OE 1-hop,OpenEnded_1hop.json,NEXA Direct,Qwen3.8-27B,nexa-direct_qwen3.8-27b,recall,False,complete,508,508,3,92.1665,89.6117,94.2539,bca_bootstrap_mean
+alzkb,OE 1-hop,OpenEnded_1hop.json,NEXA Direct,Qwen3.8-27B,nexa-direct_qwen3.8-27b,overlap,False,complete,508,508,3,92.2797,89.7194,94.3588,bca_bootstrap_mean
+alzkb,OE 2-hop,OpenEnded_2hop.json,NEXA Direct,Qwen3.8-27B,nexa-direct_qwen3.8-27b,jaccard,True,complete,450,450,12,94.7002,92.4103,96.4266,bca_bootstrap_mean
+alzkb,OE 2-hop,OpenEnded_2hop.json,NEXA Direct,Qwen3.8-27B,nexa-direct_qwen3.8-27b,exact_match,False,complete,450,450,12,89.5556,86.3871,92.0544,wilson
+alzkb,OE 2-hop,OpenEnded_2hop.json,NEXA Direct,Qwen3.8-27B,nexa-direct_qwen3.8-27b,f1,False,complete,450,450,12,94.9917,92.7314,96.6691,bca_bootstrap_mean
+alzkb,OE 2-hop,OpenEnded_2hop.json,NEXA Direct,Qwen3.8-27B,nexa-direct_qwen3.8-27b,precision,False,complete,450,450,12,95.583,93.3721,97.195,bca_bootstrap_mean
+alzkb,OE 2-hop,OpenEnded_2hop.json,NEXA Direct,Qwen3.8-27B,nexa-direct_qwen3.8-27b,recall,False,complete,450,450,12,94.8036,92.5226,96.5152,bca_bootstrap_mean
+alzkb,OE 2-hop,OpenEnded_2hop.json,NEXA Direct,Qwen3.8-27B,nexa-direct_qwen3.8-27b,overlap,False,complete,450,450,12,95.592,93.3796,97.2031,bca_bootstrap_mean
+alzkb,TF 1-hop,True_or_False_1hop.json,NEXA Flex,Qwen3.8-27B,nexa-flex_qwen3.8-27b,accuracy,True,complete,560,560,0,98.5714,97.2066,99.2744,wilson
+alzkb,TF 2-hop,True_or_False_2hop.json,NEXA Flex,Qwen3.8-27B,nexa-flex_qwen3.8-27b,accuracy,True,complete,540,540,0,74.2593,70.4093,77.7665,wilson
+alzkb,TF 2-hop disambiguated,True_or_False_2hop_atleastone.json,NEXA Flex,Qwen3.8-27B,nexa-flex_qwen3.8-27b,accuracy,True,complete,540,540,0,99.6296,98.6597,99.8984,wilson
+alzkb,MCQ 1-hop,MCQ_1hop.json,NEXA Flex,Qwen3.8-27B,nexa-flex_qwen3.8-27b,accuracy,True,complete,498,498,3,99.3976,98.244,99.7949,wilson
+alzkb,MCQ 2-hop,MCQ_2hop.json,NEXA Flex,Qwen3.8-27B,nexa-flex_qwen3.8-27b,accuracy,True,complete,419,419,0,100.0,99.0915,100.0,wilson
+alzkb,OE 1-hop,OpenEnded_1hop.json,NEXA Flex,Qwen3.8-27B,nexa-flex_qwen3.8-27b,jaccard,True,complete,508,508,1,99.3027,98.2741,99.7587,bca_bootstrap_mean
+alzkb,OE 1-hop,OpenEnded_1hop.json,NEXA Flex,Qwen3.8-27B,nexa-flex_qwen3.8-27b,exact_match,False,complete,508,508,1,91.9291,89.2337,93.9951,wilson
+alzkb,OE 1-hop,OpenEnded_1hop.json,NEXA Flex,Qwen3.8-27B,nexa-flex_qwen3.8-27b,f1,False,complete,508,508,1,99.3876,98.4006,99.7955,bca_bootstrap_mean
+alzkb,OE 1-hop,OpenEnded_1hop.json,NEXA Flex,Qwen3.8-27B,nexa-flex_qwen3.8-27b,precision,False,complete,508,508,1,99.5077,98.5839,99.8603,bca_bootstrap_mean
+alzkb,OE 1-hop,OpenEnded_1hop.json,NEXA Flex,Qwen3.8-27B,nexa-flex_qwen3.8-27b,recall,False,complete,508,508,1,99.5106,98.4797,99.896,bca_bootstrap_mean
+alzkb,OE 1-hop,OpenEnded_1hop.json,NEXA Flex,Qwen3.8-27B,nexa-flex_qwen3.8-27b,overlap,False,complete,508,508,1,99.6688,98.7502,99.9196,bca_bootstrap_mean
+alzkb,OE 2-hop,OpenEnded_2hop.json,NEXA Flex,Qwen3.8-27B,nexa-flex_qwen3.8-27b,jaccard,True,complete,450,450,0,97.03,95.4055,98.1445,bca_bootstrap_mean
+alzkb,OE 2-hop,OpenEnded_2hop.json,NEXA Flex,Qwen3.8-27B,nexa-flex_qwen3.8-27b,exact_match,False,complete,450,450,0,87.7778,84.4276,90.4884,wilson
+alzkb,OE 2-hop,OpenEnded_2hop.json,NEXA Flex,Qwen3.8-27B,nexa-flex_qwen3.8-27b,f1,False,complete,450,450,0,97.5873,96.1559,98.5287,bca_bootstrap_mean
+alzkb,OE 2-hop,OpenEnded_2hop.json,NEXA Flex,Qwen3.8-27B,nexa-flex_qwen3.8-27b,precision,False,complete,450,450,0,97.1057,95.4929,98.2094,bca_bootstrap_mean
+alzkb,OE 2-hop,OpenEnded_2hop.json,NEXA Flex,Qwen3.8-27B,nexa-flex_qwen3.8-27b,recall,False,complete,450,450,0,99.6269,98.6267,99.9537,bca_bootstrap_mean
+alzkb,OE 2-hop,OpenEnded_2hop.json,NEXA Flex,Qwen3.8-27B,nexa-flex_qwen3.8-27b,overlap,False,complete,450,450,0,99.6422,98.6391,99.9702,bca_bootstrap_mean
+alzkb,TF 1-hop,True_or_False_1hop.json,LLM only,Qwen3.8-27B,vanilla_qwen3.8-27b,accuracy,True,complete,560,560,1,67.1429,63.1473,70.9048,wilson
+alzkb,TF 2-hop,True_or_False_2hop.json,LLM only,Qwen3.8-27B,vanilla_qwen3.8-27b,accuracy,True,complete,540,540,0,60.1852,55.9984,64.2281,wilson
+alzkb,TF 2-hop disambiguated,True_or_False_2hop_atleastone.json,LLM only,Qwen3.8-27B,vanilla_qwen3.8-27b,accuracy,True,complete,540,540,0,60.5556,56.3727,64.5893,wilson
+alzkb,MCQ 1-hop,MCQ_1hop.json,LLM only,Qwen3.8-27B,vanilla_qwen3.8-27b,accuracy,True,complete,498,498,1,60.241,55.88,64.4452,wilson
+alzkb,MCQ 2-hop,MCQ_2hop.json,LLM only,Qwen3.8-27B,vanilla_qwen3.8-27b,accuracy,True,complete,419,419,0,64.4391,59.7433,68.8726,wilson
+alzkb,OE 1-hop,OpenEnded_1hop.json,LLM only,Qwen3.8-27B,vanilla_qwen3.8-27b,jaccard,True,complete,508,508,44,6.6182,5.3311,8.2754,bca_bootstrap_mean
+alzkb,OE 1-hop,OpenEnded_1hop.json,LLM only,Qwen3.8-27B,vanilla_qwen3.8-27b,exact_match,False,complete,508,508,44,1.7717,0.9348,3.3325,wilson
+alzkb,OE 1-hop,OpenEnded_1hop.json,LLM only,Qwen3.8-27B,vanilla_qwen3.8-27b,f1,False,complete,508,508,44,9.4259,7.8602,11.3065,bca_bootstrap_mean
+alzkb,OE 1-hop,OpenEnded_1hop.json,LLM only,Qwen3.8-27B,vanilla_qwen3.8-27b,precision,False,complete,508,508,44,12.6091,10.6492,14.8705,bca_bootstrap_mean
+alzkb,OE 1-hop,OpenEnded_1hop.json,LLM only,Qwen3.8-27B,vanilla_qwen3.8-27b,recall,False,complete,508,508,44,13.9757,11.6918,16.6118,bca_bootstrap_mean
+alzkb,OE 1-hop,OpenEnded_1hop.json,LLM only,Qwen3.8-27B,vanilla_qwen3.8-27b,overlap,False,complete,508,508,44,19.0373,16.4246,21.9543,bca_bootstrap_mean
+alzkb,OE 2-hop,OpenEnded_2hop.json,LLM only,Qwen3.8-27B,vanilla_qwen3.8-27b,jaccard,True,complete,450,450,35,5.7813,4.7108,7.2185,bca_bootstrap_mean
+alzkb,OE 2-hop,OpenEnded_2hop.json,LLM only,Qwen3.8-27B,vanilla_qwen3.8-27b,exact_match,False,complete,450,450,35,0.6667,0.227,1.9415,wilson
+alzkb,OE 2-hop,OpenEnded_2hop.json,LLM only,Qwen3.8-27B,vanilla_qwen3.8-27b,f1,False,complete,450,450,35,8.8386,7.4302,10.558,bca_bootstrap_mean
+alzkb,OE 2-hop,OpenEnded_2hop.json,LLM only,Qwen3.8-27B,vanilla_qwen3.8-27b,precision,False,complete,450,450,35,15.4928,13.3287,17.9579,bca_bootstrap_mean
+alzkb,OE 2-hop,OpenEnded_2hop.json,LLM only,Qwen3.8-27B,vanilla_qwen3.8-27b,recall,False,complete,450,450,35,10.2809,8.3859,12.5951,bca_bootstrap_mean
+alzkb,OE 2-hop,OpenEnded_2hop.json,LLM only,Qwen3.8-27B,vanilla_qwen3.8-27b,overlap,False,complete,450,450,35,18.9585,16.3679,21.8271,bca_bootstrap_mean
+alzkb,TF 1-hop,True_or_False_1hop.json,GraphCypherQAChain,Qwen3.8-27B,graphcypher_qwen3.8-27b,accuracy,True,complete,560,560,1,78.75,75.1718,81.9364,wilson
+alzkb,TF 2-hop,True_or_False_2hop.json,GraphCypherQAChain,Qwen3.8-27B,graphcypher_qwen3.8-27b,accuracy,True,complete,540,540,0,77.037,73.3059,80.3862,wilson
+alzkb,TF 2-hop disambiguated,True_or_False_2hop_atleastone.json,GraphCypherQAChain,Qwen3.8-27B,graphcypher_qwen3.8-27b,accuracy,True,complete,540,540,3,85.7407,82.5387,88.4378,wilson
+alzkb,MCQ 1-hop,MCQ_1hop.json,GraphCypherQAChain,Qwen3.8-27B,graphcypher_qwen3.8-27b,accuracy,True,complete,498,498,14,86.747,83.4858,89.4456,wilson
+alzkb,MCQ 2-hop,MCQ_2hop.json,GraphCypherQAChain,Qwen3.8-27B,graphcypher_qwen3.8-27b,accuracy,True,complete,419,419,9,89.4988,86.1959,92.084,wilson
+alzkb,OE 1-hop,OpenEnded_1hop.json,GraphCypherQAChain,Qwen3.8-27B,graphcypher_qwen3.8-27b,jaccard,True,complete,508,508,71,83.1968,79.8462,86.1916,bca_bootstrap_mean
+alzkb,OE 1-hop,OpenEnded_1hop.json,GraphCypherQAChain,Qwen3.8-27B,graphcypher_qwen3.8-27b,exact_match,False,complete,508,508,71,80.9055,77.2605,84.0866,wilson
+alzkb,OE 1-hop,OpenEnded_1hop.json,GraphCypherQAChain,Qwen3.8-27B,graphcypher_qwen3.8-27b,f1,False,complete,508,508,71,83.6927,80.3798,86.6476,bca_bootstrap_mean
+alzkb,OE 1-hop,OpenEnded_1hop.json,GraphCypherQAChain,Qwen3.8-27B,graphcypher_qwen3.8-27b,precision,False,complete,508,508,71,84.1255,80.838,87.0667,bca_bootstrap_mean
+alzkb,OE 1-hop,OpenEnded_1hop.json,GraphCypherQAChain,Qwen3.8-27B,graphcypher_qwen3.8-27b,recall,False,complete,508,508,71,83.5056,80.1762,86.4731,bca_bootstrap_mean
+alzkb,OE 1-hop,OpenEnded_1hop.json,GraphCypherQAChain,Qwen3.8-27B,graphcypher_qwen3.8-27b,overlap,False,complete,508,508,71,84.1255,80.838,87.0667,bca_bootstrap_mean
+alzkb,OE 2-hop,OpenEnded_2hop.json,GraphCypherQAChain,Qwen3.8-27B,graphcypher_qwen3.8-27b,jaccard,True,complete,450,450,47,75.4383,71.6132,78.9708,bca_bootstrap_mean
+alzkb,OE 2-hop,OpenEnded_2hop.json,GraphCypherQAChain,Qwen3.8-27B,graphcypher_qwen3.8-27b,exact_match,False,complete,450,450,47,65.3333,60.8231,69.584,wilson
+alzkb,OE 2-hop,OpenEnded_2hop.json,GraphCypherQAChain,Qwen3.8-27B,graphcypher_qwen3.8-27b,f1,False,complete,450,450,47,77.441,73.7426,80.825,bca_bootstrap_mean
+alzkb,OE 2-hop,OpenEnded_2hop.json,GraphCypherQAChain,Qwen3.8-27B,graphcypher_qwen3.8-27b,precision,False,complete,450,450,47,78.4381,74.7585,81.8036,bca_bootstrap_mean
+alzkb,OE 2-hop,OpenEnded_2hop.json,GraphCypherQAChain,Qwen3.8-27B,graphcypher_qwen3.8-27b,recall,False,complete,450,450,47,80.7345,77.0728,83.9887,bca_bootstrap_mean
+alzkb,OE 2-hop,OpenEnded_2hop.json,GraphCypherQAChain,Qwen3.8-27B,graphcypher_qwen3.8-27b,overlap,False,complete,450,450,47,83.2152,79.7014,86.309,bca_bootstrap_mean

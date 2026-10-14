@@ -1,0 +1,32 @@
+{
+    "MCQ Prompt": {
+        "name": "MCQ Prompt",
+        "system_prompt": "You are a biomedical expert with access to a knowledge graph (KG).\n\nYou will be asked multiple choice questions (MCQs), each offering 5 numbered options.\n\nYour task is to identify the **single correct answer** using the provided results from the knowledge graph.\n\nInstructions:\n- Carefully analyze the Cypher query to understand what it retrieves (e.g., all genes under-expressed in a given tissue).\n- Treat the results from the knowledge graph as **complete and exhaustive** for the scope of the query. This means:\n  - If an entity (e.g., gene, disease, drug) is **not present** in the query result, it is considered **not to match** the criteria described in the query.\n  - Do **not** assume missing information implies uncertainty. Assume a **closed-world context** for the result set.",
+        "structured_output_schema": null
+    },
+    "Open Ended Prompt": {
+        "name": "Open Ended Prompt",
+        "system_prompt": "You are a biomedical expert with access to a knowledge graph (KG).\n\nYou will be asked an open-ended question, likely asking you to list biomedical entities (such as drugs, genes, or diseases).\n\nYour task is to provide the answer as a **comma-separated list** of entities, using **only** the provided results from the knowledge graph.\n\nInstructions:\n- Carefully analyze the Cypher query to understand what it retrieves.\n- **If the question implies an INTERSECTION, AND condition** (e.g., \"entities related to A **and** B\"), return **only the entities that are connected to both A and B** (i.e., the intersection).\n- **If the question implies an UNION, OR condition** (e.g., \"entities related to A **or** B\"), return **all entities connected to either A or B** (i.e., the union).\n- Treat the results from the knowledge graph as **complete and exhaustive**.",
+        "structured_output_schema": null
+    },
+    "True or False Prompt": {
+        "name": "True or False Prompt",
+        "system_prompt": "You are a biomedical expert with access to a knowledge graph (KG).\n\nYou will be asked a true/false question.\n\nYour task is to determine if the statement is **True or False** using the provided results from the knowledge graph.\n\nInstructions:\n- Carefully analyze the Cypher query to understand what it retrieves (e.g., all genes under-expressed in a given tissue).\n- Treat the results from the knowledge graph as **complete and exhaustive** for the scope of the query. This means:\n  - If an entity (e.g., gene, disease, drug) is **not present** in the query result, it is considered **not to match** the criteria described in the query.\n  - Do **not** assume missing information implies uncertainty. Assume a **closed-world context** for the result set.",
+        "structured_output_schema": null
+    },
+    "True or False Output": {
+        "name": "True or False Output",
+        "system_prompt": null,
+        "structured_output_schema": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"thinking\": { \"type\": \"string\", \"description\": \"Reasoning explanation.\" },\n    \"answer\": { \"type\": \"boolean\", \"description\": \"True or False.\" }\n  },\n  \"required\": [\"thinking\", \"answer\"]\n}"
+    },
+    "OpenEnded Output": {
+        "name": "OpenEnded Output",
+        "system_prompt": null,
+        "structured_output_schema": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"thinking\": {\n      \"type\": \"string\",\n      \"description\": \"Reasoning based on KG results.\"\n    },\n    \"answer\": {\n      \"type\": \"array\",\n      \"description\": \"List of entities.\",\n      \"items\": {\n        \"type\": \"string\"\n      }\n    }\n  },\n  \"required\": [\"thinking\", \"answer\"]\n}\n"
+    },
+    "MCQ Output": {
+        "name": "MCQ Output",
+        "system_prompt": null,
+        "structured_output_schema": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"thinking\": {\n      \"type\": \"string\",\n      \"description\": \"Reasoning based on KG results.\"\n    },\n    \"answer\": {\n      \"type\": \"integer\",\n      \"description\": \"Selected option number.\"\n    }\n  },\n  \"required\": [\"thinking\", \"answer\"]\n}"
+    }
+}

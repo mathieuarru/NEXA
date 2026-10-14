@@ -1,0 +1,149 @@
+============================================================================================================
+AlzKB: pre-declared comparisons (primary metric: accuracy for TF/MCQ, Jaccard for open-ended)
+============================================================================================================
+
+  bootstrap resamples: 100,000
+
+------------------------------------------------------------------------------------------------------------
+RQ1  With the same backbone, does NEXA outperform GraphCypherQAChain?
+     Delta = NEXA − GraphCypherQAChain   (percentage points)
+     Holm family: 35 comparisons across both benchmarks (30 AlzKB + 5 BioHopR)
+------------------------------------------------------------------------------------------------------------
+  set                        backbone     contrast        n      A      B   Delta            95% CI      b/c         p    p Holm
+  TF 1-hop                   GPT-4o-mini  Direct Acc  560   95.5   80.5   +15.0 [ +11.7, +18.5]    94/10   2.9e-18   7.2e-17  *
+  TF 2-hop                   GPT-4o-mini  Direct Acc  540   92.4   65.0   +27.4 [ +23.2, +31.6]   162/14   4.2e-33   1.4e-31  *
+  MCQ 1-hop                  GPT-4o-mini  Direct Acc  498   91.0   64.7   +26.3 [ +21.8, +30.7]   147/16   1.1e-27   3.3e-26  *
+  MCQ 2-hop                  GPT-4o-mini  Direct Acc  419   94.3   65.4   +28.9 [ +24.3, +33.5]    126/5   2.3e-31   7.5e-30  *
+  OE 1-hop                   GPT-4o-mini  Direct Jac  508   95.6   81.9   +13.7 [ +10.9, +16.9]        —    <1e-05    <2e-04  *
+  OE 2-hop                   GPT-4o-mini  Direct Jac  450   83.9   22.1   +61.7 [ +57.4, +65.8]        —    <1e-05    <2e-04  *
+  TF 1-hop                   GPT-5-mini   Direct Acc  560   92.5   86.8    +5.7 [  +2.2,  +9.2]    66/34   1.8e-03   7.2e-03  *
+  TF 2-hop                   GPT-5-mini   Direct Acc  540   73.5   70.6    +3.0 [  -0.1,  +6.0]    43/27   7.2e-02   2.2e-01
+  MCQ 1-hop                  GPT-5-mini   Direct Acc  498   93.0   70.3   +22.7 [ +18.5, +26.9]   126/13   2.1e-24   6.0e-23  *
+  MCQ 2-hop                  GPT-5-mini   Direct Acc  419   99.3   76.8   +22.4 [ +18.4, +26.7]     96/2   3.1e-26   9.2e-25  *
+  OE 1-hop                   GPT-5-mini   Direct Jac  508   92.4   72.2   +20.2 [ +16.3, +24.2]        —    <1e-05    <2e-04  *
+  OE 2-hop                   GPT-5-mini   Direct Jac  450   94.5   73.5   +21.0 [ +16.8, +25.5]        —    <1e-05    <2e-04  *
+  TF 1-hop                   GPT-5-mini   Flex   Acc  560   98.4   86.8   +11.6 [  +8.8, +14.7]     70/5   9.8e-16   2.3e-14  *
+  TF 2-hop                   GPT-5-mini   Flex   Acc  540   72.4   70.6    +1.9 [  -0.6,  +4.3]    28/18   1.8e-01   2.6e-01
+  MCQ 1-hop                  GPT-5-mini   Flex   Acc  498   99.6   70.3   +29.3 [ +25.3, +33.5]    148/2   1.6e-41   5.6e-40  *
+  MCQ 2-hop                  GPT-5-mini   Flex   Acc  419   98.1   76.8   +21.2 [ +17.1, +25.6]     95/6   1.1e-21   3.0e-20  *
+  OE 1-hop                   GPT-5-mini   Flex   Jac  508   96.2   72.2   +24.0 [ +20.2, +27.9]        —    <1e-05    <2e-04  *
+  OE 2-hop                   GPT-5-mini   Flex   Jac  450   96.7   73.5   +23.2 [ +19.3, +27.5]        —    <1e-05    <2e-04  *
+  TF 1-hop                   Qwen3.8-27B  Direct Acc  560   96.2   78.8   +17.5 [ +13.8, +21.3]   114/16   2.1e-19   5.6e-18  *
+  TF 2-hop                   Qwen3.8-27B  Direct Acc  540   83.7   77.0    +6.7 [  +3.0, +10.3]    70/34   5.3e-04   2.7e-03  *
+  MCQ 1-hop                  Qwen3.8-27B  Direct Acc  498   99.6   86.7   +12.9 [ +10.0, +16.1]     65/1   1.8e-18   4.7e-17  *
+  MCQ 2-hop                  Qwen3.8-27B  Direct Acc  419   99.0   89.5    +9.5 [  +6.5, +12.9]     44/4   1.5e-09   3.2e-08  *
+  OE 1-hop                   Qwen3.8-27B  Direct Jac  508   91.9   83.2    +8.7 [  +6.4, +11.4]        —    <1e-05    <2e-04  *
+  OE 2-hop                   Qwen3.8-27B  Direct Jac  450   94.7   75.4   +19.3 [ +15.8, +23.0]        —    <1e-05    <2e-04  *
+  TF 1-hop                   Qwen3.8-27B  Flex   Acc  560   98.6   78.8   +19.8 [ +16.5, +23.4]    115/4   2.5e-29   7.9e-28  *
+  TF 2-hop                   Qwen3.8-27B  Flex   Acc  540   74.3   77.0    -2.8 [  -6.1,  +0.6]    35/50   1.3e-01   2.6e-01
+  MCQ 1-hop                  Qwen3.8-27B  Flex   Acc  498   99.4   86.7   +12.7 [  +9.7, +15.9]     66/3   1.9e-16   4.5e-15  *
+  MCQ 2-hop                  Qwen3.8-27B  Flex   Acc  419  100.0   89.5   +10.5 [  +7.8, +13.8]     44/0   1.1e-13   2.5e-12  *
+  OE 1-hop                   Qwen3.8-27B  Flex   Jac  508   99.3   83.2   +16.1 [ +13.2, +19.4]        —    <1e-05    <2e-04  *
+  OE 2-hop                   Qwen3.8-27B  Flex   Jac  450   97.0   75.4   +21.6 [ +18.1, +25.4]        —    <1e-05    <2e-04  *
+
+------------------------------------------------------------------------------------------------------------
+RQ2  With the same backbone, does Flex improve on Direct?
+     Delta = Flex − Direct   (percentage points)
+     Holm family: 14 comparisons across both benchmarks (12 AlzKB + 2 BioHopR)
+------------------------------------------------------------------------------------------------------------
+  set                        backbone     contrast             n      A      B   Delta            95% CI      b/c         p    p Holm
+  TF 1-hop                   GPT-5-mini   Flex − Direct Acc  560   98.4   92.5    +5.9 [  +3.7,  +8.4]     39/6   5.4e-07   6.5e-06  *
+  TF 2-hop                   GPT-5-mini   Flex − Direct Acc  540   72.4   73.5    -1.1 [  -3.5,  +1.2]    18/24   4.4e-01   8.8e-01
+  MCQ 1-hop                  GPT-5-mini   Flex − Direct Acc  498   99.6   93.0    +6.6 [  +4.4,  +9.2]     35/2   1.0e-08   1.3e-07  *
+  MCQ 2-hop                  GPT-5-mini   Flex − Direct Acc  419   98.1   99.3    -1.2 [  -3.0,  +0.3]      2/7   1.8e-01   5.4e-01
+  OE 1-hop                   GPT-5-mini   Flex − Direct Jac  508   96.2   92.4    +3.8 [  +2.5,  +5.5]        —    <1e-05    <1e-04  *
+  OE 2-hop                   GPT-5-mini   Flex − Direct Jac  450   96.7   94.5    +2.2 [  +0.4,  +4.2]        —   2.3e-02   1.4e-01
+  TF 1-hop                   Qwen3.8-27B  Flex − Direct Acc  560   98.6   96.2    +2.3 [  +1.0,  +4.0]     14/1   9.8e-04   6.8e-03  *
+  TF 2-hop                   Qwen3.8-27B  Flex − Direct Acc  540   74.3   83.7    -9.4 [ -12.2,  -6.8]     4/55   1.7e-12   2.4e-11  *
+  MCQ 1-hop                  Qwen3.8-27B  Flex − Direct Acc  498   99.4   99.6    -0.2 [  -1.4,  +0.9]      2/3   1.0e+00   1.0e+00
+  MCQ 2-hop                  Qwen3.8-27B  Flex − Direct Acc  419  100.0   99.0    +1.0 [  -0.1,  +2.4]      4/0   1.2e-01   5.0e-01
+  OE 1-hop                   Qwen3.8-27B  Flex − Direct Jac  508   99.3   91.9    +7.4 [  +5.4,  +9.9]        —    <1e-05    <1e-04  *
+  OE 2-hop                   Qwen3.8-27B  Flex − Direct Jac  450   97.0   94.7    +2.3 [  +0.0,  +4.8]        —   5.8e-02   2.9e-01
+
+------------------------------------------------------------------------------------------------------------
+RQ3  With the same mode, does the local model perform differently from GPT-5-mini?
+     Delta = Qwen3.8-27B − GPT-5-mini (same mode)   (percentage points)
+     Holm family: 14 comparisons across both benchmarks (12 AlzKB + 2 BioHopR)
+------------------------------------------------------------------------------------------------------------
+  set                        backbone          contrast        n      A      B   Delta            95% CI      b/c         p    p Holm
+  TF 1-hop                   Qwen − GPT-5-mini Direct Acc  560   96.2   92.5    +3.7 [  +1.3,  +6.4]    36/15   4.6e-03   4.1e-02  *
+  TF 2-hop                   Qwen − GPT-5-mini Direct Acc  540   83.7   73.5   +10.2 [  +7.3, +13.2]     63/8   1.0e-11   1.4e-10  *
+  MCQ 1-hop                  Qwen − GPT-5-mini Direct Acc  498   99.6   93.0    +6.6 [  +4.4,  +9.2]     35/2   1.0e-08   1.3e-07  *
+  MCQ 2-hop                  Qwen − GPT-5-mini Direct Acc  419   99.0   99.3    -0.2 [  -1.8,  +1.3]      3/4   1.0e+00   1.0e+00
+  OE 1-hop                   Qwen − GPT-5-mini Direct Jac  508   91.9   92.4    -0.4 [  -1.4,  +0.5]        —   3.5e-01   1.0e+00
+  OE 2-hop                   Qwen − GPT-5-mini Direct Jac  450   94.7   94.5    +0.2 [  -1.5,  +1.8]        —   8.4e-01   1.0e+00
+  TF 1-hop                   Qwen − GPT-5-mini Flex   Acc  560   98.6   98.4    +0.2 [  -1.1,  +1.5]      6/5   1.0e+00   1.0e+00
+  TF 2-hop                   Qwen − GPT-5-mini Flex   Acc  540   74.3   72.4    +1.9 [  +0.6,  +3.2]     11/1   6.3e-03   5.1e-02
+  MCQ 1-hop                  Qwen − GPT-5-mini Flex   Acc  498   99.4   99.6    -0.2 [  -1.4,  +0.9]      2/3   1.0e+00   1.0e+00
+  MCQ 2-hop                  Qwen − GPT-5-mini Flex   Acc  419  100.0   98.1    +1.9 [  +0.6,  +3.7]      8/0   7.8e-03   5.5e-02
+  OE 1-hop                   Qwen − GPT-5-mini Flex   Jac  508   99.3   96.2    +3.1 [  +1.8,  +4.9]        —   4.0e-05   4.4e-04  *
+  OE 2-hop                   Qwen − GPT-5-mini Flex   Jac  450   97.0   96.7    +0.3 [  -1.6,  +2.2]        —   7.5e-01   1.0e+00
+
+------------------------------------------------------------------------------------------------------------
+RQ1_secondary  Secondary: with the same backbone, does NEXA outperform the LLM alone?
+     Delta = NEXA − LLM only   (percentage points)
+     Holm family: 35 comparisons across both benchmarks (30 AlzKB + 5 BioHopR)
+------------------------------------------------------------------------------------------------------------
+  set                        backbone     contrast        n      A      B   Delta            95% CI      b/c         p    p Holm
+  TF 1-hop                   GPT-4o-mini  Direct Acc  560   95.5   68.9   +26.6 [ +22.6, +30.6]   160/11   4.7e-35   1.2e-33  *
+  TF 2-hop                   GPT-4o-mini  Direct Acc  540   92.4   61.3   +31.1 [ +26.1, +35.9]   202/34   2.9e-30   6.6e-29  *
+  MCQ 1-hop                  GPT-4o-mini  Direct Acc  498   91.0   55.2   +35.7 [ +31.2, +40.2]    186/8   3.6e-45   1.1e-43  *
+  MCQ 2-hop                  GPT-4o-mini  Direct Acc  419   94.3   61.3   +32.9 [ +28.2, +37.6]    142/4   4.2e-37   1.1e-35  *
+  OE 1-hop                   GPT-4o-mini  Direct Jac  508   95.6    7.4   +88.2 [ +86.0, +90.0]        —    <1e-05    <2e-04  *
+  OE 2-hop                   GPT-4o-mini  Direct Jac  450   83.9    4.1   +79.8 [ +76.3, +82.8]        —    <1e-05    <2e-04  *
+  TF 1-hop                   GPT-5-mini   Direct Acc  560   92.5   69.8   +22.7 [ +18.3, +27.0]   154/27   8.5e-23   1.7e-21  *
+  TF 2-hop                   GPT-5-mini   Direct Acc  540   73.5   60.0   +13.5 [  +7.9, +19.0]   158/85   3.3e-06   5.9e-05  *
+  MCQ 1-hop                  GPT-5-mini   Direct Acc  498   93.0   69.7   +23.3 [ +19.1, +27.5]   129/13   3.5e-25   7.3e-24  *
+  MCQ 2-hop                  GPT-5-mini   Direct Acc  419   99.3   73.5   +25.8 [ +21.7, +30.2]    109/1   1.7e-31   4.1e-30  *
+  OE 1-hop                   GPT-5-mini   Direct Jac  508   92.4    8.7   +83.7 [ +81.0, +86.1]        —    <1e-05    <2e-04  *
+  OE 2-hop                   GPT-5-mini   Direct Jac  450   94.5    6.3   +88.2 [ +85.8, +90.2]        —    <1e-05    <2e-04  *
+  TF 1-hop                   GPT-5-mini   Flex   Acc  560   98.4   69.8   +28.6 [ +24.8, +32.5]    163/3   1.6e-44   4.9e-43  *
+  TF 2-hop                   GPT-5-mini   Flex   Acc  540   72.4   60.0   +12.4 [  +7.0, +17.7]   148/81   1.1e-05   1.6e-04  *
+  MCQ 1-hop                  GPT-5-mini   Flex   Acc  498   99.6   69.7   +29.9 [ +25.9, +34.1]    150/1   1.1e-43   3.1e-42  *
+  MCQ 2-hop                  GPT-5-mini   Flex   Acc  419   98.1   73.5   +24.6 [ +20.3, +29.1]    108/5   2.8e-26   6.2e-25  *
+  OE 1-hop                   GPT-5-mini   Flex   Jac  508   96.2    8.7   +87.5 [ +85.2, +89.4]        —    <1e-05    <2e-04  *
+  OE 2-hop                   GPT-5-mini   Flex   Jac  450   96.7    6.3   +90.4 [ +88.3, +92.1]        —    <1e-05    <2e-04  *
+  TF 1-hop                   Qwen3.8-27B  Direct Acc  560   96.2   67.1   +29.1 [ +24.9, +33.3]   177/14   4.2e-37   1.1e-35  *
+  TF 2-hop                   Qwen3.8-27B  Direct Acc  540   83.7   60.2   +23.5 [ +18.1, +28.7]   185/58   1.2e-16   2.3e-15  *
+  MCQ 1-hop                  Qwen3.8-27B  Direct Acc  498   99.6   60.2   +39.4 [ +35.1, +43.7]    196/0   2.0e-59   7.0e-58  *
+  MCQ 2-hop                  Qwen3.8-27B  Direct Acc  419   99.0   64.4   +34.6 [ +29.9, +39.4]    148/3   4.0e-40   1.1e-38  *
+  OE 1-hop                   Qwen3.8-27B  Direct Jac  508   91.9    6.6   +85.3 [ +82.4, +87.8]        —    <1e-05    <2e-04  *
+  OE 2-hop                   Qwen3.8-27B  Direct Jac  450   94.7    5.8   +88.9 [ +86.4, +90.9]        —    <1e-05    <2e-04  *
+  TF 1-hop                   Qwen3.8-27B  Flex   Acc  560   98.6   67.1   +31.4 [ +27.5, +35.5]    180/4   3.9e-48   1.3e-46  *
+  TF 2-hop                   Qwen3.8-27B  Flex   Acc  540   74.3   60.2   +14.1 [  +8.2, +19.8]   170/94   3.4e-06   5.9e-05  *
+  MCQ 1-hop                  Qwen3.8-27B  Flex   Acc  498   99.4   60.2   +39.2 [ +34.8, +43.5]    197/2   5.0e-56   1.7e-54  *
+  MCQ 2-hop                  Qwen3.8-27B  Flex   Acc  419  100.0   64.4   +35.6 [ +31.0, +40.3]    149/0   2.8e-45   9.0e-44  *
+  OE 1-hop                   Qwen3.8-27B  Flex   Jac  508   99.3    6.6   +92.7 [ +90.9, +94.1]        —    <1e-05    <2e-04  *
+  OE 2-hop                   Qwen3.8-27B  Flex   Jac  450   97.0    5.8   +91.2 [ +89.2, +92.8]        —    <1e-05    <2e-04  *
+
+------------------------------------------------------------------------------------------------------------
+Sensitivity analysis: the same contrasts on the disambiguated True/False 2-hop set
+     One Holm family across RQ1-RQ3: 9 comparisons
+------------------------------------------------------------------------------------------------------------
+  RQ1
+  GPT-4o-mini        Direct         n= 540   95.7 vs   80.7  Delta= +15.0 [ +11.3, +18.8]  p=5.1e-15  p Holm=3.3e-14  *
+  GPT-5-mini         Direct         n= 540   88.5 vs   87.6  Delta=  +0.9 [  -3.1,  +4.9]  p=7.1e-01  p Holm=1.0e+00
+  GPT-5-mini         Flex           n= 540   97.6 vs   87.6  Delta= +10.0 [  +6.9, +13.2]  p=3.5e-10  p Holm=1.7e-09  *
+  Qwen3.8-27B        Direct         n= 540   99.3 vs   85.7  Delta= +13.5 [ +10.7, +16.7]  p=4.0e-20  p Holm=3.2e-19  *
+  Qwen3.8-27B        Flex           n= 540   99.6 vs   85.7  Delta= +13.9 [ +11.1, +17.1]  p=1.0e-21  p Holm=9.3e-21  *
+  RQ2
+  GPT-5-mini         Flex − Direct  n= 540   97.6 vs   88.5  Delta=  +9.1 [  +6.2, +12.2]  p=2.6e-09  p Holm=1.1e-08  *
+  Qwen3.8-27B        Flex − Direct  n= 540   99.6 vs   99.3  Delta=  +0.4 [  -0.4,  +1.3]  p=5.0e-01  p Holm=1.0e+00
+  RQ3
+  Qwen − GPT-5-mini  Direct         n= 540   99.3 vs   88.5  Delta= +10.7 [  +8.1, +13.7]  p=4.7e-15  p Holm=3.3e-14  *
+  Qwen − GPT-5-mini  Flex           n= 540   99.6 vs   97.6  Delta=  +2.0 [  +0.6,  +3.7]  p=7.4e-03  p Holm=2.2e-02  *
+
+------------------------------------------------------------------------------------------------------------
+Supplementary: NEXA Direct GPT-4o-mini vs published ESCARGOT (aggregates only)
+     No per-question records: the discordant counts are bounded, not observed.
+     p_worst = largest McNemar p over every pairing compatible with both accuracies.
+------------------------------------------------------------------------------------------------------------
+  set                       n   NEXA   ESC.   Delta    p best   p worst      Holm
+  True_or_False_1hop      560   95.5   90.9    +4.6   3.0e-08   3.8e-03   1.2e-02  *
+  True_or_False_2hop      540   92.4   74.1   +18.3   3.2e-30   7.4e-14   3.0e-13  *
+  MCQ_1hop                498   91.0   93.4    -2.4   4.9e-04   2.1e-01   2.1e-01
+  MCQ_2hop                419   94.3   89.5    +4.8   1.9e-06   2.1e-02   4.1e-02  *
+
+* significant after Holm correction within its family (alpha = 0.05); the RQ families
+  span both benchmarks, the sensitivity and ESCARGOT families are AlzKB only.
+

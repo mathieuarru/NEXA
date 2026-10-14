@@ -1,0 +1,102 @@
+alzkb: every arm on every question set, in %, with marginal 95% intervals
+accuracy and exact match: Wilson; jaccard, f1, precision, recall, overlap: BCa bootstrap of the mean (100,000 resamples). Primary metric: accuracy (TF/MCQ), jaccard (open-ended).
+Open-ended answers rescored with the current scorer (names compared up to typography).
+failed = questions with no usable answer (error or no response), counted wrong / 0.
+
+=== TF 1-hop (n = 560) ===
+system               backbone     status        n failed        accuracy       
+LLM only             GPT-4o-mini  complete    560      0   68.9 [ 65.0- 72.6]  
+LLM only             GPT-5-mini   complete    560      0   69.8 [ 65.9- 73.5]  
+GraphCypherQAChain   GPT-4o-mini  complete    560      1   80.5 [ 77.1- 83.6]  
+GraphCypherQAChain   GPT-5-mini   complete    560     16   86.8 [ 83.7- 89.3]  
+NEXA Direct          GPT-4o-mini  complete    560      0   95.5 [ 93.5- 97.0]  
+NEXA Direct          GPT-5-mini   complete    560      0   92.5 [ 90.0- 94.4]  
+NEXA Flex            GPT-5-mini   complete    560      0   98.4 [ 97.0- 99.2]  
+NEXA Direct          Qwen3.8-27B  complete    560     10   96.2 [ 94.3- 97.5]  
+NEXA Flex            Qwen3.8-27B  complete    560      0   98.6 [ 97.2- 99.3]  
+LLM only             Qwen3.8-27B  complete    560      1   67.1 [ 63.1- 70.9]  
+GraphCypherQAChain   Qwen3.8-27B  complete    560      1   78.8 [ 75.2- 81.9]  
+
+=== TF 2-hop (n = 540) ===
+system               backbone     status        n failed        accuracy       
+LLM only             GPT-4o-mini  complete    540      0   61.3 [ 57.1- 65.3]  
+LLM only             GPT-5-mini   complete    540      0   60.0 [ 55.8- 64.0]  
+GraphCypherQAChain   GPT-4o-mini  complete    540     14   65.0 [ 60.9- 68.9]  
+GraphCypherQAChain   GPT-5-mini   complete    540     11   70.6 [ 66.6- 74.2]  
+NEXA Direct          GPT-4o-mini  complete    540      0   92.4 [ 89.9- 94.4]  
+NEXA Direct          GPT-5-mini   complete    540      0   73.5 [ 69.6- 77.1]  
+NEXA Flex            GPT-5-mini   complete    540      0   72.4 [ 68.5- 76.0]  
+NEXA Direct          Qwen3.8-27B  complete    540      0   83.7 [ 80.4- 86.6]  
+NEXA Flex            Qwen3.8-27B  complete    540      0   74.3 [ 70.4- 77.8]  
+LLM only             Qwen3.8-27B  complete    540      0   60.2 [ 56.0- 64.2]  
+GraphCypherQAChain   Qwen3.8-27B  complete    540      0   77.0 [ 73.3- 80.4]  
+
+=== TF 2-hop disambiguated (n = 540) ===
+system               backbone     status        n failed        accuracy       
+LLM only             GPT-4o-mini  complete    540      0   60.4 [ 56.2- 64.4]  
+LLM only             GPT-5-mini   complete    540      0   61.1 [ 56.9- 65.1]  
+GraphCypherQAChain   GPT-4o-mini  complete    540      8   80.7 [ 77.2- 83.8]  
+GraphCypherQAChain   GPT-5-mini   complete    540     12   87.6 [ 84.5- 90.1]  
+NEXA Direct          GPT-4o-mini  complete    540      1   95.7 [ 93.7- 97.1]  
+NEXA Direct          GPT-5-mini   complete    540      2   88.5 [ 85.6- 90.9]  
+NEXA Flex            GPT-5-mini   complete    540      6   97.6 [ 95.9- 98.6]  
+NEXA Direct          Qwen3.8-27B  complete    540      0   99.3 [ 98.1- 99.7]  
+NEXA Flex            Qwen3.8-27B  complete    540      0   99.6 [ 98.7- 99.9]  
+LLM only             Qwen3.8-27B  complete    540      0   60.6 [ 56.4- 64.6]  
+GraphCypherQAChain   Qwen3.8-27B  complete    540      3   85.7 [ 82.5- 88.4]  
+
+=== MCQ 1-hop (n = 498) ===
+system               backbone     status        n failed        accuracy       
+LLM only             GPT-4o-mini  complete    498      0   55.2 [ 50.8- 59.5]  
+LLM only             GPT-5-mini   complete    498      0   69.7 [ 65.5- 73.6]  
+GraphCypherQAChain   GPT-4o-mini  complete    498     63   64.7 [ 60.4- 68.7]  
+GraphCypherQAChain   GPT-5-mini   complete    498     18   70.3 [ 66.1- 74.1]  
+NEXA Direct          GPT-4o-mini  complete    498      6   91.0 [ 88.1- 93.2]  
+NEXA Direct          GPT-5-mini   complete    498      0   93.0 [ 90.4- 94.9]  
+NEXA Flex            GPT-5-mini   complete    498      0   99.6 [ 98.5- 99.9]  
+NEXA Direct          Qwen3.8-27B  complete    498      1   99.6 [ 98.5- 99.9]  
+NEXA Flex            Qwen3.8-27B  complete    498      3   99.4 [ 98.2- 99.8]  
+LLM only             Qwen3.8-27B  complete    498      1   60.2 [ 55.9- 64.4]  
+GraphCypherQAChain   Qwen3.8-27B  complete    498     14   86.7 [ 83.5- 89.4]  
+
+=== MCQ 2-hop (n = 419) ===
+system               backbone     status        n failed        accuracy       
+LLM only             GPT-4o-mini  complete    419      0   61.3 [ 56.6- 65.9]  
+LLM only             GPT-5-mini   complete    419      0   73.5 [ 69.1- 77.5]  
+GraphCypherQAChain   GPT-4o-mini  complete    419     61   65.4 [ 60.7- 69.8]  
+GraphCypherQAChain   GPT-5-mini   complete    419      8   76.8 [ 72.6- 80.6]  
+NEXA Direct          GPT-4o-mini  complete    419     14   94.3 [ 91.6- 96.1]  
+NEXA Direct          GPT-5-mini   complete    419      0   99.3 [ 97.9- 99.8]  
+NEXA Flex            GPT-5-mini   complete    419      0   98.1 [ 96.3- 99.0]  
+NEXA Direct          Qwen3.8-27B  complete    419      3   99.0 [ 97.6- 99.6]  
+NEXA Flex            Qwen3.8-27B  complete    419      0  100.0 [ 99.1-100.0]  
+LLM only             Qwen3.8-27B  complete    419      0   64.4 [ 59.7- 68.9]  
+GraphCypherQAChain   Qwen3.8-27B  complete    419      9   89.5 [ 86.2- 92.1]  
+
+=== OE 1-hop (n = 508) ===
+system               backbone     status        n failed         jaccard              exact_match                f1                  precision               recall                 overlap       
+LLM only             GPT-4o-mini  complete    508      0    7.4 [  6.2-  8.9]      1.2 [  0.5-  2.6]     11.1 [  9.5- 12.9]     17.9 [ 15.6- 20.3]     15.4 [ 13.0- 18.2]     24.8 [ 21.9- 27.9]  
+LLM only             GPT-5-mini   complete    508      0    8.7 [  7.3- 10.5]      1.4 [  0.7-  2.8]     12.4 [ 10.7- 14.5]     17.2 [ 14.9- 19.8]     17.2 [ 14.7- 20.0]     24.5 [ 21.6- 27.7]  
+GraphCypherQAChain   GPT-4o-mini  complete    508     36   81.9 [ 78.5- 84.9]     78.3 [ 74.6- 81.7]     82.7 [ 79.4- 85.7]     83.6 [ 80.3- 86.6]     83.4 [ 80.0- 86.3]     84.9 [ 81.7- 87.8]  
+GraphCypherQAChain   GPT-5-mini   complete    508      3   72.2 [ 68.3- 75.8]     67.5 [ 63.3- 71.4]     73.2 [ 69.4- 76.8]     76.5 [ 72.7- 80.0]     72.4 [ 68.6- 76.1]     76.6 [ 72.9- 80.2]  
+NEXA Direct          GPT-4o-mini  complete    508      0   95.6 [ 93.7- 97.0]     84.1 [ 80.6- 87.0]     96.1 [ 94.3- 97.4]     97.1 [ 95.3- 98.3]     95.7 [ 93.8- 97.1]     97.1 [ 95.4- 98.3]  
+NEXA Direct          GPT-5-mini   complete    508      5   92.4 [ 89.9- 94.4]     90.9 [ 88.1- 93.1]     92.8 [ 90.5- 94.7]     97.0 [ 95.3- 98.2]     92.5 [ 90.1- 94.5]     97.2 [ 95.5- 98.3]  
+NEXA Flex            GPT-5-mini   complete    508      0   96.2 [ 94.4- 97.5]     90.6 [ 87.7- 92.8]     96.6 [ 94.9- 97.8]     98.8 [ 97.6- 99.6]     96.3 [ 94.6- 97.6]     99.0 [ 97.8- 99.6]  
+NEXA Direct          Qwen3.8-27B  complete    508      3   91.9 [ 89.3- 94.0]     89.8 [ 86.8- 92.1]     92.1 [ 89.5- 94.2]     92.1 [ 89.5- 94.2]     92.2 [ 89.6- 94.3]     92.3 [ 89.7- 94.4]  
+NEXA Flex            Qwen3.8-27B  complete    508      1   99.3 [ 98.3- 99.8]     91.9 [ 89.2- 94.0]     99.4 [ 98.4- 99.8]     99.5 [ 98.6- 99.9]     99.5 [ 98.5- 99.9]     99.7 [ 98.8- 99.9]  
+LLM only             Qwen3.8-27B  complete    508     44    6.6 [  5.3-  8.3]      1.8 [  0.9-  3.3]      9.4 [  7.9- 11.3]     12.6 [ 10.6- 14.9]     14.0 [ 11.7- 16.6]     19.0 [ 16.4- 22.0]  
+GraphCypherQAChain   Qwen3.8-27B  complete    508     71   83.2 [ 79.8- 86.2]     80.9 [ 77.3- 84.1]     83.7 [ 80.4- 86.6]     84.1 [ 80.8- 87.1]     83.5 [ 80.2- 86.5]     84.1 [ 80.8- 87.1]  
+
+=== OE 2-hop (n = 450) ===
+system               backbone     status        n failed         jaccard              exact_match                f1                  precision               recall                 overlap       
+LLM only             GPT-4o-mini  complete    450      0    4.1 [  3.3-  5.2]      0.2 [  0.0-  1.2]      6.6 [  5.5-  8.0]     15.9 [ 13.6- 18.5]      8.1 [  6.4- 10.3]     19.1 [ 16.4- 22.0]  
+LLM only             GPT-5-mini   complete    450      0    6.3 [  5.2-  7.9]      0.4 [  0.1-  1.6]      9.6 [  8.0- 11.4]     18.7 [ 16.1- 21.5]     11.7 [  9.6- 14.3]     23.1 [ 20.1- 26.4]  
+GraphCypherQAChain   GPT-4o-mini  complete    450     48   22.1 [ 19.2- 25.4]     11.1 [  8.5- 14.4]     27.0 [ 23.9- 30.4]     26.6 [ 23.3- 30.2]     50.9 [ 46.5- 55.4]     55.2 [ 50.7- 59.6]  
+GraphCypherQAChain   GPT-5-mini   complete    450      2   73.5 [ 69.3- 77.3]     68.0 [ 63.6- 72.1]     74.2 [ 70.1- 77.9]     75.3 [ 71.2- 79.1]     74.1 [ 69.9- 77.9]     75.6 [ 71.6- 79.4]  
+NEXA Direct          GPT-4o-mini  complete    450      0   83.9 [ 80.4- 86.8]     69.8 [ 65.4- 73.8]     85.1 [ 81.7- 87.9]     86.7 [ 83.4- 89.5]     86.4 [ 83.2- 89.1]     89.1 [ 86.0- 91.7]  
+NEXA Direct          GPT-5-mini   complete    450      0   94.5 [ 92.4- 96.2]     89.3 [ 86.1- 91.9]     95.2 [ 93.2- 96.7]     97.4 [ 95.6- 98.6]     94.6 [ 92.4- 96.2]     97.4 [ 95.6- 98.6]  
+NEXA Flex            GPT-5-mini   complete    450      0   96.7 [ 95.0- 98.0]     88.9 [ 85.6- 91.5]     97.2 [ 95.6- 98.3]     98.9 [ 97.7- 99.6]     97.4 [ 95.8- 98.5]     99.5 [ 98.5- 99.9]  
+NEXA Direct          Qwen3.8-27B  complete    450     12   94.7 [ 92.4- 96.4]     89.6 [ 86.4- 92.1]     95.0 [ 92.7- 96.7]     95.6 [ 93.4- 97.2]     94.8 [ 92.5- 96.5]     95.6 [ 93.4- 97.2]  
+NEXA Flex            Qwen3.8-27B  complete    450      0   97.0 [ 95.4- 98.1]     87.8 [ 84.4- 90.5]     97.6 [ 96.2- 98.5]     97.1 [ 95.5- 98.2]     99.6 [ 98.6-100.0]     99.6 [ 98.6-100.0]  
+LLM only             Qwen3.8-27B  complete    450     35    5.8 [  4.7-  7.2]      0.7 [  0.2-  1.9]      8.8 [  7.4- 10.6]     15.5 [ 13.3- 18.0]     10.3 [  8.4- 12.6]     19.0 [ 16.4- 21.8]  
+GraphCypherQAChain   Qwen3.8-27B  complete    450     47   75.4 [ 71.6- 79.0]     65.3 [ 60.8- 69.6]     77.4 [ 73.7- 80.8]     78.4 [ 74.8- 81.8]     80.7 [ 77.1- 84.0]     83.2 [ 79.7- 86.3]  

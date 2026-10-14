@@ -1,0 +1,41 @@
+{
+  "nodes_descriptions": {
+    "Gene": "Protein-coding human genes. From Entrez Gene.",
+    "Compound": "Approved small molecule compounds with documented chemical structures. From DrugBank.",
+    "Anatomy": "Anatomical structures, excluding structures that are known not to be found in humans. From Uberon.",
+    "Disease": "Complex diseases, selected to be distinct and specific enough to be clinically relevant yet general enough to be well annotated. From Disease Ontology.",
+    "Symptom": "Signs and Symptoms (i.e. clinical abnormalities that can indicate a medical condition). From the MeSH ontology.",
+    "SideEffect": "Adverse drug reactions. From SIDER/UMLS.",
+    "BiologicalProcess": "Larger processes or biological programs accomplished by multiple molecular activities. From Gene Ontology.",
+    "CellularComponent": "The locations relative to cellular structures in which a gene product performs a function. From Gene Ontology.",
+    "MolecularFunction": "Activities that occur at the molecular level, such as 'catalysis' or 'transport'. From Gene Ontology.",
+    "Pathway": "A series of actions among molecules in a cell that leads to a certain product or change in the cell. From WikiPathways, Reactome, and Pathway Interaction Database.",
+    "PharmacologicClass": "'Chemical/Ingredient', 'Mechanism of Action', and 'Physiologic Effect' FDA class types. From DrugCentral."
+  },
+  "relationships_descriptions": {
+    "PALLIATES_CpD": "Indicates that a compound alleviates symptoms or eases the effects of a disease.",
+    "BINDS_CbG": "Indicates that a compound binds to a gene product, such as a protein.",
+    "RESEMBLES_CrC": "Indicates that two compounds resemble each other in structure or function.",
+    "UPREGULATES_CuG": "Indicates that a compound increases the expression or activity of a gene.",
+    "CAUSES_CcSE": "Indicates that a compound causes a specific side effect or adverse reaction.",
+    "DOWNREGULATES_CdG": "Indicates that a compound decreases the expression or activity of a gene.",
+    "TREATS_CtD": "Indicates that a compound is used to treat a specific disease.",
+    "RESEMBLES_DrD": "Indicates that two diseases are similar or share characteristics.",
+    "DOWNREGULATES_DdG": "Indicates that a disease decreases the expression or activity of a gene.",
+    "ASSOCIATES_DaG": "Indicates an association between a disease and a gene, possibly indicating genetic susceptibility.",
+    "LOCALIZES_DlA": "Indicates that a disease primarily affects or localizes to a specific anatomical structure.",
+    "UPREGULATES_DuG": "Indicates that a disease increases the expression or activity of a gene.",
+    "PRESENTS_DpS": "Indicates that a disease presents with specific symptoms.",
+    "INCLUDES_PCiC": "Indicates that a pharmacologic class includes a specific compound.",
+    "EXPRESSES_AeG": "Indicates that an anatomical structure expresses a gene.",
+    "DOWNREGULATES_AdG": "Indicates that an anatomical structure decreases the expression or activity of a gene.",
+    "UPREGULATES_AuG": "Indicates that an anatomical structure increases the expression or activity of a gene.",
+    "PARTICIPATES_GpPW": "Indicates that a gene participates in a specific biological pathway, a sequence of molecular events within the cell.",
+    "INTERACTS_GiG": "Indicates that two genes interact, suggesting a functional or physical connection.",
+    "PARTICIPATES_GpMF": "Indicates that a gene participates in a specific molecular function, such as catalysis or binding.",
+    "COVARIES_GcG": "Indicates that two genes have correlated expression levels or activities.",
+    "PARTICIPATES_GpCC": "Indicates that a gene is active in a specific cellular component, indicating its functional location within the cell.",
+    "PARTICIPATES_GpBP": "Indicates that a gene participates in a specific biological process, a larger coordinated activity within a cell.",
+    "REGULATES_GrG": "Indicates that a gene regulates the expression or activity of another gene."
+    }
+}

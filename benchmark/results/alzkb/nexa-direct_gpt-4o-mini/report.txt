@@ -1,0 +1,1069 @@
+--- NEXA Benchmark Evaluation ---
+Files processed: 7
+  - benchmark/results/alzkb/nexa-direct_gpt-4o-mini/MCQ_1hop__mcq__gpt-4o-mini__Force__Alzkb_121__llm.jsonl
+  - benchmark/results/alzkb/nexa-direct_gpt-4o-mini/MCQ_2hop__mcq__gpt-4o-mini__Force__Alzkb_121__llm.jsonl
+  - benchmark/results/alzkb/nexa-direct_gpt-4o-mini/OpenEnded_1hop__open_ended__gpt-4o-mini__Force__Alzkb_121__llm.jsonl
+  - benchmark/results/alzkb/nexa-direct_gpt-4o-mini/OpenEnded_2hop__open_ended__gpt-4o-mini__Force__Alzkb_121__llm.jsonl
+  - benchmark/results/alzkb/nexa-direct_gpt-4o-mini/True_or_False_1hop__tf__gpt-4o-mini__Force__Alzkb_121__llm.jsonl
+  - benchmark/results/alzkb/nexa-direct_gpt-4o-mini/True_or_False_2hop__tf__gpt-4o-mini__Force__Alzkb_121__llm.jsonl
+  - benchmark/results/alzkb/nexa-direct_gpt-4o-mini/True_or_False_2hop_atleastone__tf__gpt-4o-mini__Force__Alzkb_121__llm__one_shot_fallback.jsonl
+
+=== Dataset: MCQ_1hop.json | Type: mcq | Mode: direct | Model: gpt-4o-mini ===
+Count: 498  |  Correct: 453  |  Accuracy: 0.910 [95% CI 0.881-0.932]
+Telemetry:
+  - first attempt success rate: 0.974 (n=497)
+  - avg correction iterations: 0.048 (n=497)
+  - latency ms: mean=9741 p50=7918 p95=21671 (n=498)
+  - tokens: avg in=3179 out=292 | total in=3179 out=292
+  - records with error: 0.012 (n=498)
+
+-- Incorrect Questions (45 total, showing 15) --
+Q [afcbcc3b602b]: Which of the following can be affected by the drug Naltrexone? 1. Alzheimer Disease, Familial, 3, with Spastic Paraparesis and Apraxia 2. Alzheimer Disease, Early Onset 3. Alzheimer disease, familial, type 3 4. Alzheimer Disease, Late Onset 5. Alzheimer's Disease
+  Expected: 5
+  Got:      0
+  Thinking: The query executed successfully but found no matching data, indicating that Naltrexone does not affect any of the listed types of Alzheimer's disease.
+  Cypher (1st attempt): MATCH (d:Drug {commonName: "Naltrexone"})-[r:DRUGTREATSDISEASE]->(t:Disease) WHERE t.commonName IN ["Alzheimer Disease", "Familial", "Alzheimer Disease, Early Onset", "Alzheimer disease, familial, type 3", "Alzheimer Disease, Late Onset", "Alzheimer's Disease"] RETURN d, r, t
+  Cypher (final):       MATCH (d:Drug {commonName: "Naltrexone"})-[r:DRUGTREATSDISEASE]->(t:Disease) WHERE t.commonName IN ["Alzheimer Disease, Familial", "Alzheimer Disease, Early Onset", "Alzheimer disease, familial, type 3", "Alzheimer Disease, Late Onset", "Alzheimer's Disease"] RETURN d, r, t
+  Correction iters:     3
+
+Q [a8f09824615c]: Which of the following is a gene which interacts with the gene EBI3? 1. NR2F6 2. CANX 3. DNAJC10 4. CAD 5. MAT2B
+  Expected: 2
+  Got:      0
+  Thinking: The knowledge graph indicates that EBI3 interacts with IL27, but none of the options provided (NR2F6, CANX, DNAJC10, CAD, MAT2B) are mentioned as interacting with EBI3. Therefore, there is no correct answer among the options given.
+  Cypher (1st attempt): MATCH (g1:Gene {geneSymbol: "EBI3"})-[r:GENEINTERACTSWITHGENE]->(g2:Gene) RETURN g1, r, g2
+  Cypher (final):       MATCH (g1:Gene {geneSymbol: "EBI3"})-[r:GENEINTERACTSWITHGENE]->(g2:Gene) RETURN g1, g2, r
+  Correction iters:     0
+
+Q [329a815e3556]: Which of the following is a gene which interacts with the gene ACTA2? 1. RMI1 2. NR2F6 3. FASN 4. LRRC41 5. CCT4
+  Expected: 5
+  Got:      3
+  Thinking: The gene ACTA2 interacts with several other genes, and from the retrieved data, we can see that it interacts with genes such as TSC1, FASN, and others. Among the options provided, FASN is one of the genes that interact with ACTA2.
+  Cypher (1st attempt): MATCH (g1:Gene {geneSymbol: "ACTA2"})-[r:GENEINTERACTSWITHGENE]->(g2:Gene) RETURN g1, r, g2
+  Cypher (final):       MATCH (g1:Gene {geneSymbol: "ACTA2"})-[r:GENEINTERACTSWITHGENE]->(g2:Gene) RETURN g1, g2, r
+  Correction iters:     0
+
+Q [c3a081e2077c]: Which of the following is a gene which interacts with the gene MFF? 1. PDS5A 2. DNAJC10 3. UBC 4. FASN 5. RMI1
+  Expected: 3
+  Got:      0
+  Error:    An unexpected error occurred running the KG pipeline: 1 validation error for GeneratedQuery
+  Invalid JSON: EOF while parsing a string at line 1 column 75 [type=json_invalid, input_value='{"query":"MATCH (g1:Gene...ENEINTERACTSWITHGENE]->', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/json_invalid
+  Thinking: The KG retrieval pipeline failed to provide results, so I cannot determine which gene interacts with MFF based on the available options.
+
+Q [4049ec8d923e]: Which of the following is a gene which interacts with the gene BHMT? 1. BBS1 2. PDS5B 3. NR2F6 4. FASN 5. DNAJC10
+  Expected: 1
+  Got:      0
+  Thinking: The query was executed to find genes that interact with BHMT, but it returned no results, indicating that none of the listed genes (BBS1, PDS5B, NR2F6, FASN, DNAJC10) interact with BHMT.
+  Cypher (1st attempt): MATCH (g1:Gene {geneSymbol: "BHMT"})-[r:GENEINTERACTSWITHGENE]->(g2:Gene) WHERE g2.geneSymbol IN ["BBS1", "PDS5B", "NR2F6", "FASN", "DNAJC10"] RETURN g1, r, g2
+  Cypher (final):       MATCH (g1:Gene {geneSymbol: "BHMT"})-[r:GENEINTERACTSWITHGENE]->(g2:Gene) WHERE g2.geneSymbol IN ["BBS1", "PDS5B", "NR2F6", "FASN", "DNAJC10"] RETURN g1, g2, r
+  Correction iters:     3
+
+Q [6693f28cbece]: Which of the following is a gene which interacts with the gene CASC3? 1. SEL1L 2. CDK6 3. DNAJC10 4. LRRC41 5. CAD
+  Expected: 2
+  Got:      5
+  Thinking: The query indicates that the gene CASC3 interacts with two other genes: UPF3B and CAND1. Among the options provided, CAND1 is the only one that matches the interaction results from the knowledge graph.
+  Cypher (1st attempt): MATCH (g1:Gene {geneSymbol: "CASC3"})-[r:GENEINTERACTSWITHGENE]->(g2:Gene) RETURN g1, r, g2
+  Cypher (final):       MATCH (g1:Gene {geneSymbol: "CASC3"})-[r:GENEINTERACTSWITHGENE]->(g2:Gene) RETURN g1, g2, r
+  Correction iters:     0
+
+Q [c21f56ac8791]: Which of the following is a gene associated with the disease Alzheimer Disease, Familial, 3, with Spastic Paraparesis and Apraxia? 1. FASN 2. MAT2B 3. DNAJC10 4. PSEN1 5. PDS5A
+  Expected: 4
+  Got:      0
+  Thinking: The query did not return any results, indicating that none of the listed genes are associated with the disease 'Alzheimer Disease, Familial, 3, with Spastic Paraparesis and Apraxia'. Therefore, I cannot select any of the options as correct based on the KG results.
+  Cypher (1st attempt): MATCH (g:Gene)-[r:GENEASSOCIATESWITHDISEASE]->(d:Disease {commonName: "Alzheimer Disease, Familial"}), (g)-[r2:GENEASSOCIATESWITHDISEASE]->(d2:Disease {commonName: "Spastic Paraparesis"}), (g)-[r3:GENEASSOCIATESWITHDISEASE]->(d3:Disease {commonName: "Apraxia"}) WHERE g.geneSymbol IN ["FASN", "MAT2B", "DNAJC10", "PSEN1", "PDS5A"] RETURN g, r, d, r2, d2, r3, d3
+  Cypher (final):       MATCH (g:Gene)-[r:GENEASSOCIATESWITHDISEASE]->(d:Disease {commonName: "Alzheimer Disease, Familial, 3"}) WHERE g.geneSymbol IN ["FASN", "MAT2B", "DNAJC10", "PSEN1", "PDS5A"] RETURN d, g, r
+  Correction iters:     3
+
+Q [668c6fc55fe5]: Which of the following is a gene associated with the cellular component contractile fiber? 1. KCNJ8 2. FASN 3. RMI1 4. CAD 5. MAT2B
+  Expected: 1
+  Got:      0
+  Thinking: The knowledge graph does not list any of the genes provided in the options (KCNJ8, FASN, RMI1, CAD, MAT2B) as being associated with the cellular component 'contractile fiber'. However, it does include several genes that are associated with this component, such as SPTBN1, LMOD2, and others. Since none of the options match the retrieved data, I cannot select a correct answer from the provided options.
+  Cypher (1st attempt): MATCH (g:Gene)-[r:GENEASSOCIATEDWITHCELLULARCOMPONENT]->(c:CellularComponent {commonName: "contractile fiber"}) RETURN g, r, c
+  Cypher (final):       MATCH (g:Gene)-[r:GENEASSOCIATEDWITHCELLULARCOMPONENT]->(c:CellularComponent {commonName: "contractile fiber"}) RETURN c, g, r
+  Correction iters:     0
+
+Q [68e24bc1a44e]: Which of the following diseases presents the symptom Sleep Initiation and Maintenance Disorders? 1. Alzheimer's Disease, Focal Onset 2. Alzheimer Disease 7 3. Prodromal Alzheimer's disease 4. Dementia due to Alzheimer's disease (disorder) 5. Familial Alzheimer Disease (FAD)
+  Expected: 5
+  Got:      2
+  Thinking: The knowledge graph indicates that the symptom 'Sleep Initiation and Maintenance Disorders' is associated with two diseases: 'Alzheimer's Disease' and 'Familial Alzheimer Disease (FAD)'. Therefore, the correct answer must be one of these two diseases. Among the options provided, 'Alzheimer's Disease' is explicitly listed as an option, while 'Familial Alzheimer Disease (FAD)' is also present. However, the most straightforward match is 'Alzheimer's Disease', which is a common term and likely the intended answer.
+  Cypher (1st attempt): MATCH (s:Symptom {commonName: "Sleep Initiation and Maintenance Disorders"})-[r:SYMPTOMMANIFESTATIONOFDISEASE]->(d:Disease) WHERE d.commonName IN ["Alzheimer's Disease", "Alzheimer Disease 7", "Prodromal Alzheimer's disease", "Dementia due to Alzheimer's disease (disorder)", "Familial Alzheimer Disease (FAD)"] RETURN s, r, d
+  Cypher (final):       MATCH (s:Symptom {commonName: "Sleep Initiation and Maintenance Disorders"})-[r:SYMPTOMMANIFESTATIONOFDISEASE]->(d:Disease) WHERE d.commonName IN ["Alzheimer's Disease", "Alzheimer Disease 7", "Prodromal Alzheimer's disease", "Dementia due to Alzheimer's disease (disorder)", "Familial Alzheimer Disease (FAD)"] RETURN d, r, s
+  Correction iters:     0
+
+Q [fb78783c3f2d]: Which of the following does not bind to the drug Miglitol? 1. PDS5A 2. GAA 3. GANAB 4. GANC 5. MGAM
+  Expected: 1
+  Got:      4
+  Error:    Max Neo4j error correction attempts reached.
+  Thinking: The KG retrieval pipeline failed, and I do not have access to the specific binding information for the entities listed in relation to the drug Miglitol. Therefore, I cannot determine which of the options does not bind to Miglitol based on the KG results.
+  Cypher (1st attempt): MATCH (d:Drug {commonName: "Miglitol"})
+OPTIONAL MATCH (d)-[:CHEMICALBINDSGENE]->(g:Gene)
+WHERE g.geneSymbol IN ["PDS5A", "GAA", "GANAB", "GANC", "MGAM"]
+WITH g, collect(g.geneSymbol) AS boundGenes
+RETURN g, boundGenes
+  Correction iters:     0
+
+Q [6ce104862b22]: Which of the following is not subject to reduced expression by the drug Thiotepa? 1. ATP11B 2. PDS5A 3. RSU1 4. CORO1A 5. ZNF395
+  Expected: 2
+  Got:      5
+  Thinking: The drug Thiotepa is known to reduce the expression of the following genes: ATP11B, PDS5A, RSU1, and CORO1A. Since ZNF395 is not listed among the genes that are affected by Thiotepa, it is the correct answer to the question.
+  Cypher (1st attempt): MATCH (d:Drug {commonName: "Thiotepa"})-[r:CHEMICALDECREASESEXPRESSION]->(g:Gene) WHERE g.geneSymbol IN ["ATP11B", "PDS5A", "RSU1", "CORO1A", "ZNF395"] RETURN g, r, d
+  Cypher (final):       MATCH (d:Drug {commonName: "Thiotepa"})-[r:CHEMICALDECREASESEXPRESSION]->(g:Gene) WHERE g.geneSymbol IN ["ATP11B", "PDS5A", "RSU1", "CORO1A", "ZNF395"] RETURN d, g, r
+  Correction iters:     0
+
+Q [094c455afc55]: Which of the following is not subject to reduced expression by the drug Gefitinib? 1. TEX10 2. PDS5A 3. HNRNPAB 4. DUSP4 5. PFN1
+  Expected: 2
+  Got:      5
+  Thinking: The drug Gefitinib is known to reduce the expression of the genes TEX10, PDS5A, HNRNPAB, and DUSP4, as indicated by the relationships in the knowledge graph. Since PFN1 is not listed among the genes that are affected by Gefitinib, it is the only gene not subject to reduced expression by this drug.
+  Cypher (1st attempt): MATCH (d:Drug {commonName: "Gefitinib"})-[r:CHEMICALDECREASESEXPRESSION]->(g:Gene) WHERE g.geneSymbol IN ["TEX10", "PDS5A", "HNRNPAB", "DUSP4", "PFN1"] RETURN g, r, d
+  Cypher (final):       MATCH (d:Drug {commonName: "Gefitinib"})-[r:CHEMICALDECREASESEXPRESSION]->(g:Gene) WHERE g.geneSymbol IN ["TEX10", "PDS5A", "HNRNPAB", "DUSP4", "PFN1"] RETURN d, g, r
+  Correction iters:     0
+
+Q [069b408bf50e]: Which of the following does not increase the gene expression of P4HTM? 1. Idarubicin 2. Streptokinase 3. Diazoxide 4. Mitoxantrone 5. Mebendazole
+  Expected: 2
+  Got:      5
+  Thinking: The knowledge graph indicates that Idarubicin, Streptokinase, Diazoxide, and Mitoxantrone all have a relationship with the gene P4HTM, suggesting they increase its expression. However, Mebendazole is not listed as increasing the expression of P4HTM, making it the correct answer to the question.
+  Cypher (1st attempt): MATCH (d:Drug)-[r:CHEMICALINCREASESEXPRESSION]->(g:Gene {geneSymbol: "P4HTM"}) WHERE d.commonName IN ["Idarubicin", "Streptokinase", "Diazoxide", "Mitoxantrone", "Mebendazole"] RETURN d, r, g
+  Cypher (final):       MATCH (d:Drug)-[r:CHEMICALINCREASESEXPRESSION]->(g:Gene {geneSymbol: "P4HTM"}) WHERE d.commonName IN ["Idarubicin", "Streptokinase", "Diazoxide", "Mitoxantrone", "Mebendazole"] RETURN d, g, r
+  Correction iters:     0
+
+Q [f5fe52fdfaad]: Which of the following does not decrease the gene expression of RRP7A? 1. Fulvestrant 2. Ibritumomab tiuxetan 3. Everolimus 4. Dabrafenib 5. Lovastatin
+  Expected: 2
+  Got:      5
+  Thinking: The knowledge graph indicates that Fulvestrant, Ibritumomab tiuxetan, Everolimus, and Dabrafenib are all associated with decreasing the gene expression of RRP7A. However, Lovastatin is not mentioned in the results as decreasing RRP7A expression, suggesting it does not have this effect.
+  Cypher (1st attempt): MATCH (d:Drug) WHERE d.commonName IN ['Fulvestrant', 'Ibritumomab tiuxetan', 'Everolimus', 'Dabrafenib', 'Lovastatin']
+MATCH (d)-[r:CHEMICALDECREASESEXPRESSION]->(g:Gene {geneSymbol: 'RRP7A'})
+RETURN d, r, g
+  Cypher (final):       MATCH (d:Drug) WHERE d.commonName IN ['Fulvestrant', 'Ibritumomab tiuxetan', 'Everolimus', 'Dabrafenib', 'Lovastatin']
+MATCH (d)-[r:CHEMICALDECREASESEXPRESSION]->(g:Gene {geneSymbol: 'RRP7A'}) RETURN d, g, r
+  Correction iters:     0
+
+Q [84df7aee1474]: Which of the following does not decrease the gene expression of EXO1? 1. Ivermectin 2. Trastuzumab 3. Thioridazine 4. Raloxifene 5. Trametinib
+  Expected: 2
+  Got:      1
+  Thinking: The query checks which drugs do not have a relationship indicating they decrease the expression of the EXO1 gene. Since the results do not show any relationships for the listed drugs, it implies that none of them decrease the expression of EXO1. Therefore, all options are valid, but we need to select one. I will choose the first option, Ivermectin, as it is the first in the list.
+  Cypher (1st attempt): MATCH (d:Drug) WHERE d.commonName IN ['Ivermectin', 'Trastuzumab', 'Thioridazine', 'Raloxifene', 'Trametinib']
+OPTIONAL MATCH (d)-[r:CHEMICALDECREASESEXPRESSION]->(g:Gene {geneSymbol: 'EXO1'})
+WHERE r IS NULL
+RETURN d
+  Cypher (final):       MATCH (d:Drug) WHERE d.commonName IN ['Ivermectin', 'Trastuzumab', 'Thioridazine', 'Raloxifene', 'Trametinib']
+OPTIONAL MATCH (d)-[r:CHEMICALDECREASESEXPRESSION]->(g:Gene {geneSymbol: 'EXO1'})
+WHERE r IS NULL RETURN d, g, r
+  Correction iters:     0
+
+
+=== Dataset: MCQ_2hop.json | Type: mcq | Mode: direct | Model: gpt-4o-mini ===
+Count: 419  |  Correct: 395  |  Accuracy: 0.943 [95% CI 0.916-0.961]
+Telemetry:
+  - first attempt success rate: 0.962 (n=419)
+  - avg correction iterations: 0.062 (n=419)
+  - latency ms: mean=14291 p50=8238 p95=27166 (n=419)
+  - records with error: 0.033 (n=419)
+
+-- Incorrect Questions (24 total, showing 15) --
+Q [a4dc9dd25250]: Which of the following is a gene which interacts with the genes MIF4GD and MKI67 ? 1. IL10RB-DT 2. RNA5SP317 3. LOC127894251 4. HINFP 5. SNORD113-8
+  Expected: 4
+  Got:      0
+  Thinking: The query was executed to find a gene that interacts with both MIF4GD and MKI67 from the provided options. However, the query returned no matching data, indicating that none of the listed genes interact with MIF4GD and MKI67.
+  Cypher (1st attempt): MATCH (g1:Gene {geneSymbol: "MIF4GD"})-[r1:GENEINTERACTSWITHGENE]->(x:Gene), (g2:Gene {geneSymbol: "MKI67"})-[r2:GENEINTERACTSWITHGENE]->(x) WHERE x.geneSymbol IN ["IL10RB-DT", "RNA5SP317", "LOC127894251", "HINFP", "SNORD113-8"] RETURN x, r1, r2
+  Cypher (final):       MATCH (g:Gene)-[r:GENEINTERACTSWITHGENE]->(i1:Gene {geneSymbol: "MIF4GD"}), (g)-[r2:GENEINTERACTSWITHGENE]->(i2:Gene {geneSymbol: "MKI67"}) WHERE g.geneSymbol IN ["IL10RB-DT", "RNA5SP317", "LOC127894251", "HINFP", "SNORD113-8"] RETURN g, i1, i2, r, r2
+  Correction iters:     3
+
+Q [5a70ae8098a9]: Which of the following is a gene which interacts with the genes KRTAP10-9 and UBC ? 1. LOC127271112 2. NPDC1 3. LOC127459431 4. ACTR10 5. LOC127888297
+  Expected: 2
+  Got:      0
+  Thinking: The query was executed to find interactions between the gene KRTAP10-9 and the genes LOC127271112, NPDC1, LOC127459431, ACTR10, and LOC127888297, as well as with UBC. However, the query returned no matching data, indicating that none of the listed genes interact with KRTAP10-9 and UBC.
+  Cypher (1st attempt): MATCH (g1:Gene {geneSymbol: "KRTAP10-9"})-[r1:GENEINTERACTSWITHGENE]->(x:Gene), (g2:Gene {geneSymbol: "UBC"})-[r2:GENEINTERACTSWITHGENE]->(x) WHERE x.geneSymbol IN ["LOC127271112", "NPDC1", "LOC127459431", "ACTR10", "LOC127888297"] RETURN x, r1, r2
+  Cypher (final):       MATCH (g1:Gene {geneSymbol: "KRTAP10-9"})-[r:GENEINTERACTSWITHGENE]->(g2:Gene), (g1)-[r2:GENEINTERACTSWITHGENE]->(g3:Gene) WHERE g2.geneSymbol IN ["LOC127271112", "NPDC1", "LOC127459431", "ACTR10", "LOC127888297"] AND g3.geneSymbol = "UBC" RETURN g1, g2, g3, r, r2
+  Correction iters:     3
+
+Q [43dc2b0b0379]: Which of the following is associated with the genes MTHFR and SLC2A4 ? 1. Non-amnestic Alzheimer disease 2. Alzheimer's Disease, Focal Onset 3. Alzheimer Disease 12 4. Prodromal Alzheimer's disease 5. Familial Alzheimer-like prion disease
+  Expected: 2
+  Got:      3
+  Error:    Max Neo4j error correction attempts reached.
+  Thinking: The question asks for a condition associated with the genes MTHFR and SLC2A4. Without specific KG results to reference, I cannot definitively identify the correct association. However, I will select the most commonly known association with Alzheimer's disease, which is a prevalent topic in genetic studies.
+  Cypher (1st attempt): MATCH (g:Gene {geneSymbol: "MTHFR"})-[r1:GENEASSOCIATESWITHDISEASE]->(d1:Disease), (g:Gene {geneSymbol: "SLC2A4"})-[r2:GENEASSOCIATESWITHDISEASE]->(d2:Disease) WHERE d1.commonName IN ["Non-amnestic Alzheimer disease", "Alzheimer's Disease, Focal Onset", "Alzheimer Disease 12", "Prodromal Alzheimer's disease", "Familial Alzheimer-like prion disease"] AND d2.commonName IN ["Non-amnestic Alzheimer disease", "Alzheimer's Disease, Focal Onset", "Alzheimer Disease 12", "Prodromal Alzheimer's disease", "Familial Alzheimer-like prion disease"] RETURN g, r1, d1, r2, d2
+  Correction iters:     0
+
+Q [c04dac99df35]: Which of the following is not a drug which commonly increases expression of the genes GHR and PROS1 ? 1. Cefuroxime 2. Bretylium 3. Varenicline 4. Sulfamethizole 5. Lenzumestrocel
+  Expected: 5
+  Got:      2
+  Thinking: The drugs that commonly increase the expression of the genes GHR and PROS1 include Sulfamethizole, which is present in the KG results. The other drugs listed (Cefuroxime, Bretylium, Varenicline, and Lenzumestrocel) do not have any indication of increasing the expression of these genes based on the retrieved data. However, Varenicline is specifically mentioned in the KG results, indicating it is a drug that does increase expression. Therefore, the drug that is not commonly associated with increasing the expression of GHR and PROS1 is Bretylium, as it is the only one that is not listed as increasing expression for either gene.
+  Cypher (1st attempt): MATCH (d:Drug)-[r:CHEMICALINCREASESEXPRESSION]->(g:Gene) WHERE g.geneSymbol IN ['GHR', 'PROS1'] RETURN d, r, g
+  Cypher (final):       MATCH (d:Drug)-[r:CHEMICALINCREASESEXPRESSION]->(g:Gene) WHERE g.geneSymbol IN ['GHR', 'PROS1'] RETURN d, g, r
+  Correction iters:     0
+
+Q [0725007729af]: Which of the following is not a drug which commonly decreases expression of the genes CCDC86 and MBOAT7 ? 1. Alitretinoin 2. Ceforanide 3. Lometrexol 4. Ethotoin 5. Galantamine
+  Expected: 3
+  Got:      5
+  Thinking: The knowledge graph indicates that Alitretinoin, Ceforanide, Lometrexol, and Ethotoin all have relationships that show they decrease the expression of the genes CCDC86 and MBOAT7. However, Galantamine is the only drug listed that does not have a corresponding relationship indicating it decreases the expression of these genes. Therefore, Galantamine is the correct answer as it does not commonly decrease the expression of CCDC86 and MBOAT7.
+  Cypher (1st attempt): MATCH (d:Drug) WHERE d.commonName IN ['Alitretinoin', 'Ceforanide', 'Lometrexol', 'Ethotoin', 'Galantamine']
+MATCH (d)-[:CHEMICALDECREASESEXPRESSION]->(g:Gene) WHERE g.geneSymbol IN ['CCDC86', 'MBOAT7']
+RETURN d
+  Cypher (final):       MATCH (d:Drug) WHERE d.commonName IN ['Alitretinoin', 'Ceforanide', 'Lometrexol', 'Ethotoin', 'Galantamine']
+MATCH (d)-[rel0:CHEMICALDECREASESEXPRESSION]->(g:Gene) WHERE g.geneSymbol IN ['CCDC86', 'MBOAT7'] RETURN d, g, rel0
+  Correction iters:     0
+
+Q [bb2058784a2e]: Which of the following is not a gene subject to decreased expression by both the drugs Menadione and Azacitidine ? 1. TWF2 2. DLGAP5 3. LSM3P2 4. NT5DC2 5. MLEC
+  Expected: 3
+  Got:      5
+  Thinking: The genes TWF2, DLGAP5, LSM3P2, NT5DC2, and MLEC were evaluated for their expression levels in response to the drugs Menadione and Azacitidine. The knowledge graph indicates that DLGAP5 is associated with decreased expression due to both drugs, while TWF2, LSM3P2, NT5DC2, and MLEC are not listed as being affected by both. Therefore, the gene that is not subject to decreased expression by both drugs is MLEC.
+  Cypher (1st attempt): MATCH (d:Drug)-[r:CHEMICALDECREASESEXPRESSION]->(g:Gene) WHERE d.commonName IN ['Menadione', 'Azacitidine'] RETURN g
+  Cypher (final):       MATCH (d:Drug)-[r:CHEMICALDECREASESEXPRESSION]->(g:Gene) WHERE d.commonName IN ['Menadione', 'Azacitidine'] RETURN d, g, r
+  Correction iters:     0
+
+Q [cd3cb26d5b68]: Which of the following is not a pathway which contains both the genes PRKAR1A and PRKACB ? 1. CDK-mediated phosphorylation and removal of Cdc6 2. Signaling by PDGF 3. regulation of bad phosphorylation 4. Downstream signaling of activated FGFR4 5. cystic fibrosis transmembrane conductance regulator (cftr) and beta 2 adrenergic receptor (b2ar) pathway
+  Expected: 1
+  Got:      4
+  Thinking: The pathways that contain both PRKAR1A and PRKACB are identified in the knowledge graph results. The pathways listed in the options are evaluated against these results. The pathways 'Signaling by PDGF', 'regulation of bad phosphorylation', and 'Downstream signaling of activated FGFR4' are confirmed to contain both genes. However, the pathway 'cystic fibrosis transmembrane conductance regulator (cftr) and beta 2 adrenergic receptor (b2ar) pathway' is also confirmed to contain both genes. The only pathway that does not contain both genes is 'Downstream signaling of activated FGFR4'.
+  Cypher (1st attempt): MATCH (p:Pathway)<-[:GENEINPATHWAY]-(g1:Gene {geneSymbol: "PRKAR1A"}), (p)<-[:GENEINPATHWAY]-(g2:Gene {geneSymbol: "PRKACB"}) RETURN p, g1, g2
+  Cypher (final):       MATCH (p:Pathway)<-[rel0:GENEINPATHWAY]-(g1:Gene {geneSymbol: "PRKAR1A"}), (p)<-[rel1:GENEINPATHWAY]-(g2:Gene {geneSymbol: "PRKACB"}) RETURN g1, g2, p, rel0, rel1
+  Correction iters:     0
+
+Q [c37a92fe153f]: Which of the following is not a gene which commonly interacts with the genes EIF4A2 and MYC ? 1. LOC126806242 2. RPL11 3. DDX3X 4. ACTB 5. EIF3I
+  Expected: 1
+  Got:      3
+  Thinking: The genes that commonly interact with EIF4A2 and MYC, based on the KG results, include RPL11 and EIF3I. DDX3X is not mentioned in the results, indicating it does not commonly interact with either gene. LOC126806242 and ACTB are also not listed, but since DDX3X is explicitly absent, it is the best choice for the answer.
+  Cypher (1st attempt): MATCH (g1:Gene {geneSymbol: "EIF4A2"})-[r1:GENEINTERACTSWITHGENE]->(x:Gene), (g2:Gene {geneSymbol: "MYC"})-[r2:GENEINTERACTSWITHGENE]->(x) RETURN x, r1, r2
+  Cypher (final):       MATCH (g1:Gene {geneSymbol: "EIF4A2"})-[r1:GENEINTERACTSWITHGENE]->(x:Gene), (g2:Gene {geneSymbol: "MYC"})-[r2:GENEINTERACTSWITHGENE]->(x) RETURN g1, g2, r1, r2, x
+  Correction iters:     0
+
+Q [761bf7fc0102]: Which of the following is not a gene which commonly performs the molecular functions phospholipase activity and hydrolase activity, acting on ester bonds ? 1. LYPLAL1 2. GPLD1 3. PLA2G4C 4. TRR-TCG3-1 5. EDNRA
+  Expected: 4
+  Got:      5
+  Thinking: The genes LYPLAL1, GPLD1, and PLA2G4C are present in the knowledge graph as performing the molecular functions of phospholipase activity and hydrolase activity, acting on ester bonds. However, TRR-TCG3-1 and EDNRA are not listed among those genes. Specifically, EDNRA is known as the endothelin receptor type A, which does not perform these molecular functions. Therefore, EDNRA is the correct answer as it does not belong to the group of genes performing the specified activities.
+  Cypher (1st attempt): MATCH (g:Gene)-[r1:GENEHASMOLECULARFUNCTION]->(:MolecularFunction {commonName: "phospholipase activity"}), (g)-[r2:GENEHASMOLECULARFUNCTION]->(:MolecularFunction {commonName: "hydrolase activity"}) RETURN g, r1, r2
+  Cypher (final):       MATCH (g:Gene)-[r1:GENEHASMOLECULARFUNCTION]->(node0:MolecularFunction {commonName: "phospholipase activity"}), (g)-[r2:GENEHASMOLECULARFUNCTION]->(node1:MolecularFunction {commonName: "hydrolase activity, acting on ester bonds"}) RETURN g, node0, node1, r1, r2
+  Correction iters:     0
+
+Q [37e009bdefb1]: Which of the following is not a gene which commonly performs the molecular functions hydrolase activity, acting on acid anhydrides and nucleoside-triphosphatase activity ? 1. GNL3 2. LOC127888933 3. ATP11B 4. HSPA6 5. TUBB8
+  Expected: 2
+  Got:      4
+  Thinking: The question asks for a gene that does not perform the molecular functions of hydrolase activity, acting on acid anhydrides, and nucleoside-triphosphatase activity. The retrieved data does not list HSPA6 or TUBB8 as performing these functions, but HSPA6 is mentioned in the context of heat shock proteins, which typically do not have these specific enzymatic activities. TUBB8 is a tubulin gene, which also does not fit the specified functions. However, HSPA6 is more clearly associated with heat shock response rather than enzymatic activity. Therefore, HSPA6 is the best choice for the answer.
+  Cypher (1st attempt): MATCH (g:Gene)-[r:GENEHASMOLECULARFUNCTION]->(mf:MolecularFunction) WHERE mf.commonName IN ['hydrolase activity', 'acting on acid anhydrides', 'nucleoside-triphosphatase activity'] RETURN g, r, mf
+  Cypher (final):       MATCH (g:Gene)-[r:GENEHASMOLECULARFUNCTION]->(mf:MolecularFunction) WHERE mf.commonName IN ['hydrolase activity', 'acting on acid anhydrides', 'nucleoside-triphosphatase activity'] RETURN g, mf, r
+  Correction iters:     0
+
+Q [073a8a5ad37b]: Which of the following is not a gene commonly associated with the cellular components axon and neuron projection ? 1. AQP1 2. KCNIP3 3. LOC127407352 4. IGF2BP1 5. CNTN4
+  Expected: 3
+  Got:      1
+  Thinking: The question asks for a gene that is not commonly associated with the cellular components axon and neuron projection. The knowledge graph results show that the following genes are associated with these components: KCNIP3 and CNTN4. However, AQP1, LOC127407352, and IGF2BP1 are not listed among the genes associated with axon and neuron projection. Among the options provided, AQP1 is specifically mentioned in the results as not being associated with these components, making it the correct answer.
+  Cypher (1st attempt): MATCH (g:Gene)-[:GENEASSOCIATEDWITHCELLULARCOMPONENT]->(c:CellularComponent) WHERE c.commonName IN ['axon', 'neuron projection'] RETURN g
+  Cypher (final):       MATCH (g:Gene)-[rel0:GENEASSOCIATEDWITHCELLULARCOMPONENT]->(c:CellularComponent) WHERE c.commonName IN ['axon', 'neuron projection'] RETURN c, g, rel0
+  Correction iters:     0
+
+Q [b3bd088a8cdb]: Which of the following is not a gene commonly associated with the cellular components centrosome and microtubule organizing center ? 1. XRCC4 2. SLC16A1 3. POLR3G 4. SSNA1 5. WDR35
+  Expected: 3
+  Got:      1
+  Thinking: The genes associated with the cellular components centrosome and microtubule organizing center include many specific genes, but the options provided include some that are not typically associated with these components. The gene XRCC4 is primarily known for its role in DNA repair and is not commonly linked to centrosomes or microtubule organizing centers. In contrast, SLC16A1, POLR3G, SSNA1, and WDR35 are more likely to be associated with these cellular components. Therefore, XRCC4 is the correct answer as it does not belong to the common genes associated with centrosome and microtubule organizing center.
+  Cypher (1st attempt): MATCH (g:Gene)-[:GENEASSOCIATEDWITHCELLULARCOMPONENT]->(c:CellularComponent) WHERE c.commonName IN ['centrosome', 'microtubule organizing center'] RETURN g
+  Cypher (final):       MATCH (g:Gene)-[rel0:GENEASSOCIATEDWITHCELLULARCOMPONENT]->(c:CellularComponent) WHERE c.commonName IN ['centrosome', 'microtubule organizing center'] RETURN c, g, rel0
+  Correction iters:     0
+
+Q [accb2231e66f]: Which of the following is not a gene commonly associated with the cellular components cell surface and cell division site ? 1. RAB11A 2. PPP1CC 3. RALA 4. RBMY1A1 5. PSTPIP1
+  Expected: 4
+  Got:      2
+  Thinking: The genes associated with the cellular components 'cell surface' and 'cell division site' include RAB11A, RALA, and PSTPIP1. However, PPP1CC and RBMY1A1 are not mentioned in the retrieved data, indicating they are not commonly associated with these cellular components. Among the options, PPP1CC is the only one that is not associated with the specified cellular components.
+  Cypher (1st attempt): MATCH (g:Gene)-[:GENEASSOCIATEDWITHCELLULARCOMPONENT]->(c:CellularComponent) WHERE c.commonName IN ['cell surface', 'cell division site'] RETURN g
+  Cypher (final):       MATCH (g:Gene)-[rel0:GENEASSOCIATEDWITHCELLULARCOMPONENT]->(c:CellularComponent) WHERE c.commonName IN ['cell surface', 'cell division site'] RETURN c, g, rel0
+  Correction iters:     0
+
+Q [280f14fc4d01]: Which of the following cellular components is not linked to both the genes TRDN and CASQ1 ? 1. microtubule associated complex 2. sarcoplasm 3. sarcoplasmic reticulum lumen 4. endoplasmic reticulum membrane 5. sarcoplasmic reticulum
+  Expected: 1
+  Got:      4
+  Thinking: The genes TRDN and CASQ1 are both associated with the cellular components: endoplasmic reticulum membrane, sarcoplasmic reticulum, sarcoplasm, and sarcoplasmic reticulum lumen. Therefore, all of the listed components are linked to both genes. However, the question asks for the component that is not linked to both, which implies that we need to identify any component that is not associated with at least one of the genes. Since all components listed are associated with both genes, we need to identify the one that is least likely to be linked. The endoplasmic reticulum membrane is a distinct structure compared to the others, which are more directly related to muscle cells and their function. Thus, it is the most likely candidate that is not linked to both genes.
+  Cypher (1st attempt): MATCH (c:CellularComponent) WHERE c.commonName IN ['microtubule associated complex', 'sarcoplasm', 'sarcoplasmic reticulum lumen', 'endoplasmic reticulum membrane', 'sarcoplasmic reticulum']
+MATCH (g1:Gene {geneSymbol: 'TRDN'})-[:GENEASSOCIATEDWITHCELLULARCOMPONENT]->(c), (g2:Gene {geneSymbol: 'CASQ1'})-[:GENEASSOCIATEDWITHCELLULARCOMPONENT]->(c)
+RETURN c
+  Cypher (final):       MATCH (c:CellularComponent) WHERE c.commonName IN ['microtubule associated complex', 'sarcoplasm', 'sarcoplasmic reticulum lumen', 'endoplasmic reticulum membrane', 'sarcoplasmic reticulum']
+MATCH (g1:Gene {geneSymbol: 'TRDN'})-[rel0:GENEASSOCIATEDWITHCELLULARCOMPONENT]->(c), (g2:Gene {geneSymbol: 'CASQ1'})-[rel1:GENEASSOCIATEDWITHCELLULARCOMPONENT]->(c) RETURN c, g1, g2, rel0, rel1
+  Correction iters:     0
+
+Q [2dbcb9a891a7]: Which of the following genes is not commonly associated with the diseases Alzheimer's Disease, Focal Onset and Alzheimer's Disease ? 1. CASP3 2. CYP2D6 3. MTHFR 4. SNAR-I 5. LOC105378271
+  Expected: 5
+  Got:      4
+  Error:    Max Neo4j error correction attempts reached.
+  Thinking: The question asks for a gene that is not commonly associated with Alzheimer's Disease and Focal Onset. Without specific KG results to reference, I must rely on general knowledge. CASP3, CYP2D6, and MTHFR are known to have associations with various neurological conditions, including Alzheimer's. SNAR-I and LOC105378271 are less commonly referenced in this context. Therefore, I would select one of these less common genes as the answer.
+  Cypher (1st attempt): MATCH (g:Gene) WHERE g.geneSymbol IN ['CASP3', 'CYP2D6', 'MTHFR', 'SNAR-I', 'LOC105378271'] 
+MATCH (g)-[:GENEASSOCIATESWITHDISEASE]->(d:Disease) 
+WHERE d.commonName IN ['Alzheimer's Disease', 'Focal Onset'] 
+RETURN g
+  Correction iters:     0
+
+
+=== Dataset: OpenEnded_1hop.json | Type: open_ended | Mode: direct | Model: gpt-4o-mini ===
+Count: 508  |  Correct: 427  |  Accuracy: 0.841 [95% CI 0.806-0.870]
+Average set metrics: exact_match=0.841  precision=0.971  recall=0.957  f1=0.961  jaccard=0.956  overlap=0.971
+By |expected| size:
+  -    1: n=124   acc=0.984 f1=0.984
+  -  2-5: n=145   acc=0.959 f1=0.981
+  - 6-20: n=127   acc=0.961 f1=0.975
+  -  >20: n=112   acc=0.393 f1=0.894
+Telemetry:
+  - first attempt success rate: 0.978 (n=508)
+  - avg correction iterations: 0.041 (n=508)
+  - latency ms: mean=31272 p50=6254 p95=268014 (n=508)
+  - records with error: 0.000 (n=508)
+
+-- Incorrect Questions (81 total, showing 15) --
+Q [fd82be55b215]: List the genes which bind to the drug Probenecid
+  Expected: SLC22A12, ABCC5, CYP2C19, ALB, ABCC3, ABCC11, CYP2C8, SLCO1C1, SLC22A11, SLC22A8, SLC2A9, SLC22A7, SLC16A7, PANX1, CYP3A4, SLC22A1, SLC22A5, ABCC2, ABCC1, ABCB1, SLC22A6, ABCC6, SLC22A2, SLC22A10, SLC16A1, SLCO1A2, CYP2C9, ABCC4, SLC10A1
+  Got:      SLC22A8,SLC22A5,SLC22A7,SLC22A6,SLC22A1,SLC22A2,CYP2C19,SLC10A1,SLCO1A2,CYP3A4,SLC22A11,SLC22A10,SLC22A12,SLCO1C1,CYP2C8,CYP2C9,ABCC1,ABCC2,ABCC3,ABCC4,ABCC5,ABCC6,SL16A1,ABCB1,SL16A7,ALB,ABCC11,SLC2A9,PANX1
+  Thinking: The query retrieves genes that bind to the drug Probenecid. The results show a total of 29 genes that are connected to Probenecid through the relationship 'CHEMICALBINDSGENE'. Each gene is identified by its common name and gene symbol, which allows for a clear listing of the entities involved. I will compile these gene symbols into a comma-separated list as requested.
+  Cypher (1st attempt): MATCH (d:Drug {commonName: "Probenecid"})-[r:CHEMICALBINDSGENE]->(g:Gene) RETURN d, r, g
+  Cypher (final):       MATCH (d:Drug {commonName: "Probenecid"})-[r:CHEMICALBINDSGENE]->(g:Gene) RETURN d, g, r
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.931  recall=0.931  f1=0.931  jaccard=0.871  overlap=0.931
+  Missing (in expected, not in got): SLC16A1, SLC16A7
+  Extra (in got, not in expected):   SL16A1, SL16A7
+
+Q [c20791c27e33]: List the genes subject to increased expression by the drug Dextropropoxyphene
+  Expected: PAK1, GHR, SLC1A4, XBP1, SGCB, HP, UBQLN2, HERC6, RBKS
+  Got:      haptoglobin, sarcoglycan beta, p21 (RAC1) activated kinase 1, growth hormone receptor, ribokinase, ubiquilin 2, X-box binding protein 1, HECT and RLD domain containing E3 ubiquitin protein ligase family member 6, solute carrier family 1 member 4
+  Thinking: The query retrieves genes that are subject to increased expression due to the drug Dextropropoxyphene. The results show a total of 9 genes that are directly linked to this drug through the relationship 'CHEMICALINCREASESEXPRESSION'. Each gene is identified by its common name and gene symbol, which are essential for listing them clearly.
+  Cypher (1st attempt): MATCH (d:Drug {commonName: "Dextropropoxyphene"})-[r:CHEMICALINCREASESEXPRESSION]->(g:Gene) RETURN d, r, g
+  Cypher (final):       MATCH (d:Drug {commonName: "Dextropropoxyphene"})-[r:CHEMICALINCREASESEXPRESSION]->(g:Gene) RETURN d, g, r
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.000  recall=0.000  f1=0.000  jaccard=0.000  overlap=0.000
+  Missing (in expected, not in got): GHR, HERC6, HP, PAK1, RBKS, SGCB, SLC1A4, UBQLN2, XBP1
+  Extra (in got, not in expected):   HECT and RLD domain containing E3 ubiquitin protein ligase family member 6, X-box binding protein 1, growth hormone receptor, haptoglobin, p21 (RAC1) activated kinase 1, ribokinase, sarcoglycan beta, solute carrier family 1 member 4, ubiquilin 2
+
+Q [886eb639eb58]: List the genes subject to increased expression by the drug Mitomycin
+  Expected: LCAT, CDK2, RIOK3, EED, ZDHHC4, FAS, GTF2B, MBD1, CCDC92, PTGS2, IKBKB, PMAIP1, HLA-B, SNAI2, TAP1, CCDC90B, DDB2, POLR2K, PLK3, IER5, GABARAPL1, MARCHF2, INPP1, HLA-G, PUS3, CSNK2A2, UFM1, EOLA1, FOS, SUPT7L, TUSC2, CDK5R1, TUBB6, FBXL6, GTF2F1, UBE2A, TXNL4B, FOSL1, CCNL2, LDB1, IL1B, ABHD3, TXLNA, FDXR, MICB, PSMD2, MEA1, TFIP11, PPP2R5B, CDC37L1, PAQR3, CCNE1, TCEA2, FAM53C, TERF2IP, DUSP14, COQ8A, SPAG4, CXCR4, ST6GALNAC2, UBQLN2, NFATC4, SESN1, ZMYM6, TBP, PRPF4, FOXO4, CYCS, CXXC1, GPS2, ZMAT3, TRAPPC6A, ZNF12, SYK, EGF, STK19, DUSP3, ZNF200, TAF11, MAD2L1BP, RPS6KB2, SAMD9, LGMN, MLLT11, ULBP2, IRF9, SLC10A3, POLE3, POLR1C, COL11A1, VDR, ADO, PHKG2, ID2, PHF1, ABCB6, SCAND1, GPC1, LCMT2, NFKBIE, RMC1, UBXN6, RING1, PERP, CPSF4, CYB5R1, TCTN1, ZNF668, PLCB3, TBCCD1, TIGAR, TUFT1, SGCB, YJU2B, PSMB8, HLA-C, NFKB2, SLC25A14, RBM22, GLA, ABHD4, ZBTB48, TRMT1, KLHL21, TIMM22, NXF1, P4HTM, EAPP, PRKCQ, PNP, WDR45, THUMPD2, ADRB2, SLC31A2, KCTD5, IKZF1, ATP6V0B, KRT34, NENF, MIS12, FUCA1, TOE1, KHDC4, HLA-DMA, PIDD1, GAA, GADD45A, S100A13, CDKN2AIP, SRP14, HLA-A, CASP3, PSMC3IP, GNL2, ATF3, RELB, STAP2, YIPF3, MAP1LC3B, IFT25, CSRNP2, SNAP25, POMGNT1, GOLGA8B, BECN1, DSG2, SNRNP27, HIRIP3, ZDHHC11, CCP110, MCOLN1, TICAM1, MFAP1, H2BC21, CTSL, SLC12A4, C2CD2L, RRP8, DNTTIP2, LIN37, DLX2, WDR46, ANKRD10, CLDND1, ARHGAP1, TTC4, MRM2, MED17, GATA2, GSTM3, RXYLT1, ZNF45, ZNF274, RSRP1, ZNF318, ANKRA2, PRAF2, CCNE2, EMC7, ERF, TRIM26, E2F2, MEF2C, THAP7, CLP1, SCLY, TNFSF9, BLCAP, PCK2, ZSWIM8, UBE2Q1, GADD45B, RALGDS, AFG2B, EGR1, NISCH, BTG3, CDKN1A, DNAJB2, AKAP8L, POLR3F, DYRK3, GNPDA1, HERC6, SLC25A4, HLA-F, SFN, EML3, TESK1, TERT, ASB6, CLK2, GAMT, PSMB9, RGS2, AEN, ALDOC, GPER1, DAXX, TBXA2R, MINDY1, LSR, DMTF1, DNAJC4, CDC37, UTP14A, TSPYL2, PPM1D, TSC22D3, PSME2
+  Got:      UTP14A,GTF2F1,TRMT1,CXCR4,E2F2,YIPF3,RELB,NENF,PRKCQ,PSMD2,EED,CYB5R1,ABHD4,SLC25A14,EML3,IL1B,TERT,EGF,TRAPPC6A,INPP1,ZMAT3,FOS,MRM2,FBXL6,TSC22D3,BECN1,DUSP14,DLX2,ZDHHC4,GLA,THUMPD2,PUS3,CLK2,LCMT2,LDB1,ATF3,TIMM22,TXLNA,ADRB2,TOE1,IKZF1,P4HTM,MFAP1,ZMYM6,CLP1,PNP,GATA2,CDK2,SAMD9,TBCCD1,RIOK3,GADD45A,GPS2,IKBKB,TAP1,CPSF4,CSNK2A2,DYRK3,ZDHHC11,YJU2B,TAF11,MLLT11,CASP3,GPER1,PAQR3,PIDD1,HLA-B,EOLA1,EGR1,KRT34,PRPF4,PSMC3IP,STAP2,SNAI2,S100A13,GTF2B,CCP110,MIS12,ANKRA2,FAS,WDR45,PPP2R5B,DDB2,MEF2C,NFKB2,GNL2,FOSL1,GAMT,SESN1,POLR3F,FOXO4,DNTTIP2,BTG3,NFKBIE,ALDOC,BLCAP,TERF2IP,SUPT7L,POLR1C,CCNE2,TNFSF9,ZNF318,GABARAPL1,KCTD5,RBM22,DUSP3,ABHD3,ZBTB48,RXYLT1,TBXA2R,SLC10A3,ZSWIM8,TXNL4B,CSRNP2,HLA-A,LIN37,RALGDS,HLA-C,ANKRD10,PCK2,EAPP,SCLY,NISCH,DAXX,TUBB6,ZNF12,THAP7,PHKG2,LGMN,ATP6V0B,RING1,HLA-G,IRF9,MED17,POLE3,PHF1,RPS6KB2,TICAM1,SPAG4,DMTF1,PERP,KLHL21,CDC37,AFG2B,TIGAR,COQ8A,RGS2,RMC1,ABCB6,TBP,ERF,TESK1,AEN,GSTM3,CCDC92,SLC25A4,POLR2K,PTGS2,GADD45B,FUCA1,CCDC90B,POMGNT1,GPC1,KHDC4,SNRNP27,PPM1D,ASB6,LCAT,H2BC21,TCTN1,EMC7,PSME2,NXF1,FDXR,MARCHF2,CCNE1,SNAP25,STK19,CDK5R1,MINDY1,TSPYL2,LSR,COL11A1,MAD2L1BP,TFIP11,MICB,CCNL2,DSG2,UBE2Q1,ID2,DNAJC4,ST6GALNAC2,ZNF668,CTSL,GOLGA8B,UFM1,MBD1,SLC31A2,TUSC2,SCAND1,UBXN6,TTC4,HIRIP3,CDKN1A,CDC37L1,UBE2A,FAM53C,SRP14,TCEA2,GNPDA1,IER5,ARHGAP1,PSMB9,CLDND1,CDKN2AIP,MCOLN1,SLC12A4,CYCS,RRP8,RSRP1,SGCB,PRAF2,PSMB8,VDR,TUFT1,C2CD2L,CXXC1,PMAIP1,ULBP2,ZNF200,MAP1LC3B,WDR46,DNAJB2,ZNF274,TRIM26,SFN,IFT25,ZNF45,HLA-F,HLA-DMA,ADO,GAA,SYK,NFATC4,AKAP8L,MEA1,UBQLN2,PLK3,PLCB3
+  Thinking: The query retrieves genes that are subject to increased expression due to the drug Mitomycin. The results show a total of 250 genes that are linked to this drug through the relationship 'CHEMICALINCREASESEXPRESSION'. Each gene is represented by its common name and gene symbol, which allows for easy identification. The task is to compile these gene symbols into a comma-separated list for clarity and usability.
+  Cypher (1st attempt): MATCH (d:Drug {commonName: "Mitomycin"})-[r:CHEMICALINCREASESEXPRESSION]->(g:Gene) RETURN d, r, g
+  Cypher (final):       MATCH (d:Drug {commonName: "Mitomycin"})-[r:CHEMICALINCREASESEXPRESSION]->(g:Gene) RETURN d, g, r
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=1.000  recall=0.996  f1=0.998  jaccard=0.996  overlap=1.000
+  Missing (in expected, not in got): HERC6
+  Extra (in got, not in expected):   -
+
+Q [fa2a8ee1d624]: List the genes subject to decreased expression by the drug Methotrexate
+  Expected: CDK1, NCAPH, RAE1, SCARB1, CCDC86, ANKRD10, HSPA1A, DPH2, HDAC2, LMNB2, CDCA3, CENPE, NEK2, KIF14, KIF2C, KIF4A, ARL6IP1, NOL11, SPDL1, GTF2E2, PSRC1, HSD17B10, ZW10, NUP88, RPN1, PUF60, CCNA2, KIF23, HJURP, TMEM50A, UBE2C, SLC35F2, GRWD1, MKI67, NOP16, RPIA, TCERG1, BAG3, KIF20A, HMMR, RAN, ITGAE, SFPQ, GTF2A2, CDC20, RXYLT1, CDKN3, CCNB2, SMC4, AURKA, TPX2, UTP20, TACC3, GTSE1, KPNA2, CCNF, SACM1L, CCT5, CDCA8, JMJD6, CENPA, AGO2, TOP2A, PRC1, RRP12, HMGCS1, DEPDC1, LBR, RUVBL1, EBNA1BP2, DLGAP5, NOSIP, ASPM, NOP56, BIRC5, CKAP5, CCNB1, BUB1, H2BC12, COTL1, UBE2S, SRSF2, EIF5, PIMREG, PLK1, RPP38, PTTG1, CENPF, ELAVL1, KIF18A, NAA15, LRRC59, CDC25C, SPAG5, TROAP, CDC25B, KIF18B
+  Got:      EIF5,ITGAE,ARL6IP1,GTSE1,CENPF,SPAG5,CCDC86,RPN1,RAN,HSD17B10,CKAP5,AGO2,HMMR,CDC20,KIF18B,RUVBL1,CDC25B,SACM1L,CCT5,MKI67,UBE2S,TACC3,PUF60,GTF2A2,PTTG1,DEPDC1,KIF4A,BUB1,HMGCS1,EBNA1BP2,CCNF,UBE2C,RPP38,PSRC1,SLC35F2,SCARB1,PRC1,ANKRD10,GTF2E2,CCNB2,HSPA1A,KPNA2,UTP20,BIRC5,SRSF2,KIF18A,GRWD1,ASPM,DPH2,NOL11,TPX2,NOP16,NAA15,CDK1,KIF20A,CCNB1,KIF2C,CCNA2,CDKN3,SMC4,LBR,HJURP,BAG3,CENPA,ELAVL1,NOSIP,NCAPH,ZW10,SFPQ,LRRC59,CDCA8,JMJD6,TCERG1,COTL1,CDCA3,RPIA,CDC25C,PIMREG,H2BC12,RRP12,DLGAP5,TROAP,NOP56,PLK1,NEK2,HDAC2,RAE1,CENPE,RXYLT1,LMNB2,AURKA,SPDL1,TOP2A,KIF23,NUP88,KIF14
+  Thinking: The query retrieves genes that are subject to decreased expression due to the drug Methotrexate. The results include a list of gene symbols that are directly linked to the drug through a specific relationship indicating decreased expression. I will compile these gene symbols into a comma-separated list as required.
+  Cypher (1st attempt): MATCH (d:Drug {commonName: "Methotrexate"})-[r:CHEMICALDECREASESEXPRESSION]->(g:Gene) RETURN d, r, g
+  Cypher (final):       MATCH (d:Drug {commonName: "Methotrexate"})-[r:CHEMICALDECREASESEXPRESSION]->(g:Gene) RETURN d, g, r
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=1.000  recall=0.990  f1=0.995  jaccard=0.990  overlap=1.000
+  Missing (in expected, not in got): TMEM50A
+  Extra (in got, not in expected):   -
+
+Q [273f8f92e86b]: List the genes subject to decreased expression by the drug Fluvastatin
+  Expected: TBP, SIVA1, PUS7, CCNB2, NXT1, MRPL12, IGFBP3, TPM1, VRK1, PAICS, ABCE1, WDR43, ENOPH1, CDK1, NLE1, GNPDA1, WDR3, EED, PCNA, MRPL19, PLK1, PRPF4, NOP14, POLA2, EXOSC9, NUP85, GABPB1, PSMG1, SDHB, MAD2L1, NFKBIA, RRP15, PSMB8, GTF2A2, IFRD2, TEX10, PRMT1, KIF2C, ATF1, GINS2, TOMM34, NUP88, BIRC5, SPDL1, TIMELESS, TLCD3A, MCM2, TUBB6, EBNA1BP2, HSPA14, RAE1, EXOSC4, TIPIN, RFC3, KIF18B, SLC35B1, POLR1G, CYCS, CLTB, URB2, TMEM109, MTERF3, FOSL1, TRIP13, CCN1, RUVBL1, AURKA, ZWINT, FXN, RFC2, TOP2A, DTL, LMNB1, SNRPA1, LIG1, RRP1B, POLR3K, HDAC2, NOLC1, CCDC86, NME1, MRPS2, PRSS23, PARP1, CD320, HAT1, PSMA4, SPR, CDC20, RRS1, MCM7, TIMM9, CDC6, MYL9, COPS3, FHL2, CCNA2, EMC8, ATP1B1, CCDC85B, MCM6, TXNDC9, RFC5, NPM3, EXOSC2, GEMIN4, WDR77, POLE2, GTPBP8, RAD51, SUV39H1, WDR12, NOC3L, MCM3, MCMBP, MYC, CCND1, SRM, DDX10, DPH2, FEN1, TYMS, CDC25A, CDK4, CCT5, CTPS1, MRTO4, LSM6, BYSL, PPP2R3C, BAG3, CSE1L, ITGAE, CSRP1, NUP93, FAM216A, RPIA, SERPINE1, EZH2, CDC45, PAK1IP1, UBE2C, MCM10, ANAPC1, PARP2, PDSS1, NOP16, YTHDF1, PFAS
+  Got:      IFRD2,PARP2,NOP16,POLE2,CCT5,MCM2,PSMG1,PLK1,TPM1,SIVA1,SRM,ANAPC1,PCNA,TMEM109,DPH2,CDK4,NXT1,TRIP13,RAE1,NUP88,TBP,PARP1,CD320,LMNB1,TOMM34,RRP15,TOP2A,CCND1,FOSL1,RFC3,VRK1,SPR,MRTO4,CTPS1,SLC35B1,ATP1B1,KIF18B,CDK1,BIRC5,CCDC86,MAD2L1,PPP2R3C,CCNA2,CDC6,PRSS23,CYCS,NUP85,FXN,RFC2,PSMA4,EBNA1BP2,WDR3,EZH2,AURKA,HSPA14,CCN1,PUS7,LIG1,TYMS,ITGAE,EXOSC9,FAM216A,POLA2,POLR1G,LSM6,DDX10,TIMM9,GINS2,GABPB1,NME1,MTERF3,RRS1,WDR12,WDR93,TLCD3A,SERPINE1,ENOPH1,CDC45,MCM6,EXOSC2,NOLC1,COPS3,ATF1,MRPL19,RUVBL1,MCM10,SPDL1,BYSL,NOC3L,PRPF4,HAT1,PAICS,MCMBP,SUV39H1,GTPBP8,EXOSC4,POLR3K,CDC20,MRPS2,CCDC85B,EMC8,MCM7,CCNB2,KIF2C,ABCE1,NOP14,PFAS,RRP1B,TUBB6,NLE1,MRPL12,URB2,PAK1IP1,NFKBIA,EED,RF5,IGFBP3,YTHDF1,BAG3,SNRPA1,SDHB,TIPIN,GEMIN4,MCM3,MYC,WDR43,HDAC2,TIMELESS,UBE2C,PSMB8,PDSS1,GNPDA1,DTL,FHL2,RAD51,TEX10,NPM3,CSRP1,CLTB,CDC25A,WDR77,PRMT1,MYL9,RPIA,GTF2A2,TXNDC9,ZWINT,FEN1
+  Thinking: The query retrieves genes that are subject to decreased expression due to the drug Fluvastatin. The results show a total of 149 genes that are linked to this drug through the relationship 'CHEMICALDECREASESEXPRESSION'. Each gene is represented by its common name and gene symbol, which allows for easy identification. The task is to compile these gene symbols into a comma-separated list.
+  Cypher (1st attempt): MATCH (d:Drug {commonName: "Fluvastatin"})-[r:CHEMICALDECREASESEXPRESSION]->(g:Gene) RETURN d, r, g
+  Cypher (final):       MATCH (d:Drug {commonName: "Fluvastatin"})-[r:CHEMICALDECREASESEXPRESSION]->(g:Gene) RETURN d, g, r
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.986  recall=0.980  f1=0.983  jaccard=0.967  overlap=0.986
+  Missing (in expected, not in got): CSE1L, NUP93, RFC5
+  Extra (in got, not in expected):   RF5, WDR93
+
+Q [c17821067de9]: List the drugs which increase expression of the gene TSC22D3
+  Expected: Fulvestrant, Vemurafenib, Nonoxynol-9, Dabrafenib, Triclosan, Crizotinib, Iopanoic acid, Bosutinib, Niclosamide, Trametinib, Ponatinib, Pitavastatin, Afatinib, Thiothixene, Omacetaxine mepesuccinate, Donepezil, Tolazamide, Tacrolimus, Mitoxantrone, Clomifene, Fluvastatin, Prednicarbate, Budesonide, Sunitinib, Topotecan, Thalidomide, Fluocinonide, Pimozide, Perhexiline, Chloroxine, Rimexolone, Dexamethasone, Perphenazine, Hydrocortisone, Sirolimus, Dasatinib, Pentamidine, Flurandrenolide, Erlotinib, Fluorometholone, Thioridazine, Fluocinolone acetonide, Mitomycin, Simvastatin, Alitretinoin, Promazine, Gefitinib, Bortezomib, Sorafenib, Naltrexone, Betamethasone, Flunisolide, Triprolidine, Beclomethasone dipropionate, Triamcinolone, Fluticasone propionate, Toremifene, Desoximetasone, Ipratropium, Epinephrine, Treprostinil, Teniposide, Flutamide, Ketorolac, Amcinonide, Diflorasone, Cyclosporine, Raloxifene, Medrysone, Menadione, Ivermectin, Tamoxifen, Linezolid, Gemcitabine, Lovastatin, Reserpine, Econazole, Clobetasol propionate, Irbesartan, Orlistat, Tretinoin, Paroxetine, Azacitidine, Rosuvastatin, Cerulenin, Prednisolone, Isotretinoin, Methylprednisolone
+  Got:      Cyclosporine,Menadione,Bortezomib,Flunisolide,Naltrexone,Linezolid,Ivermectin,Triamcinolone,Tamoxifen,Thioridazine,Simvastatin,Epinephrine,Fluocinolone acetonide,Fluticasone propionate,Alitretinoin,Toremifene,Erlotinib,Desoximetasone,Raloxifene,Flutamide,Betamethasone,Teniposide,Gemcitabine,Ketorolac,Triprolidine,Promazine,Beclomethasone dipropionate,Sorafenib,Treprostinil,Gefitinib,Fluorometholone,Ipratropium,Mitomycin,Amcinonide,Medrysone,Reserpine,Diflorasone,Lovastatin,Methylprednisolone,Isotretinoin,Azacitidine,Fulvestrant,Tolazamide,Flurandrenolide,Donepezil,Perphenazine,Tacrolimus,Prednisolone,Sirolimus,Tretinoin,Orlistat,Rosuvastatin,Fluvastatin,Thalidomide,Fluocinonide,Perhexiline,Econazole,Prednicarbate,Pimozide,Clobetasol propionate,Irbesartan,Topotecan,Cerulenin,Thiothixene,Omacetaxine mepesuccinate,Nonoxynol-9,Niclosamide,Bosutinib,Afatinib,Trametinib,Dabrafenib,Iopanoic acid,Vemurafenib,Crizotinib,Pitavastatin,Ponatinib,Triclosan
+  Thinking: The query retrieves drugs that are known to increase the expression of the gene TSC22D3. The results include a comprehensive list of drugs linked to this gene through the relationship 'CHEMICALINCREASESEXPRESSION'. Since the question specifically asks for drugs that increase the expression of TSC22D3, I will compile all the drug names from the retrieved data into a single list, ensuring that I include all relevant entities without filtering for any specific conditions.
+  Cypher (1st attempt): MATCH (d:Drug)-[r:CHEMICALINCREASESEXPRESSION]->(g:Gene {geneSymbol: "TSC22D3"}) RETURN d, r, g
+  Cypher (final):       MATCH (d:Drug)-[r:CHEMICALINCREASESEXPRESSION]->(g:Gene {geneSymbol: "TSC22D3"}) RETURN d, g, r
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=1.000  recall=0.875  f1=0.933  jaccard=0.875  overlap=1.000
+  Missing (in expected, not in got): Budesonide, Chloroxine, Clomifene, Dasatinib, Dexamethasone, Hydrocortisone, Mitoxantrone, Paroxetine, Pentamidine, Rimexolone, Sunitinib
+  Extra (in got, not in expected):   -
+
+Q [0aebc3c813ab]: List the biological processes involving the gene VAV1
+  Expected: cell migration, regulation of GTPase activity, fibroblast growth factor receptor signaling pathway, activation of immune response, response to fibroblast growth factor, granulocyte chemotaxis, Fc receptor signaling pathway, cell-cell adhesion, reactive oxygen species metabolic process, leukocyte activation, response to wounding, regulation of immune response, regulation of small GTPase mediated signal transduction, taxis, immune effector process, positive regulation of immune system process, ERBB signaling pathway, homotypic cell-cell adhesion, neurotrophin signaling pathway, leukocyte cell-cell adhesion, neurotrophin TRK receptor signaling pathway, apoptotic signaling pathway, platelet activation, cell chemotaxis, positive regulation of leukocyte cell-cell adhesion, leukocyte migration, lymphocyte aggregation, regulation of T cell activation, Fc-gamma receptor signaling pathway, regulation of Ras protein signal transduction, vascular endothelial growth factor receptor signaling pathway, positive regulation of immune response, positive regulation of immune effector process, small GTPase mediated signal transduction, integrin-mediated signaling pathway, regulation of lymphocyte mediated immunity, regulation of leukocyte cell-cell adhesion, regulation of immune effector process, wound healing, positive regulation of cell adhesion, regulation of natural killer cell mediated immunity, positive regulation of cell killing, cellular response to growth factor stimulus, immune response-regulating signaling pathway, positive regulation of innate immune response, positive regulation of natural killer cell mediated immunity, regulation of defense response, immune response-regulating cell surface receptor signaling pathway involved in phagocytosis, positive regulation of leukocyte mediated cytotoxicity, single organism cell adhesion, endocytosis, hemostasis, Fc receptor mediated stimulatory signaling pathway, coagulation, immune response-regulating cell surface receptor signaling pathway, positive regulation of defense response, positive regulation of natural killer cell mediated cytotoxicity, lymphocyte activation, positive regulation of cell-cell adhesion, positive regulation of lymphocyte mediated immunity, cellular response to fibroblast growth factor stimulus, T cell activation, positive regulation of lymphocyte activation, chemotaxis, regulation of cell activation, positive regulation of leukocyte mediated immunity, positive regulation of cell death, cell motility, positive regulation of programmed cell death, positive regulation of GTPase activity, regulation of leukocyte activation, positive regulation of leukocyte activation, leukocyte chemotaxis, response to growth factor, Fc-gamma receptor signaling pathway involved in phagocytosis, regulation of homotypic cell-cell adhesion, T cell aggregation, regulation of Rho protein signal transduction, T cell costimulation, positive regulation of apoptotic process, blood coagulation, regulation of natural killer cell mediated cytotoxicity, immune response-activating cell surface receptor signaling pathway, phagocytosis, regulation of leukocyte mediated immunity, regulation of body fluid levels, transmembrane receptor protein tyrosine kinase signaling pathway, regulation of leukocyte mediated cytotoxicity, regulation of cell-cell adhesion, regulation of cell adhesion, cell activation, inositol lipid-mediated signaling, regulation of anatomical structure size, regulation of cellular component size, positive regulation of cell activation, positive regulation of T cell activation, single organismal cell-cell adhesion, leukocyte aggregation, regulation of innate immune response, positive regulation of homotypic cell-cell adhesion, epidermal growth factor receptor signaling pathway, regulation of lymphocyte activation, lymphocyte costimulation, Fc-epsilon receptor signaling pathway, immune response-activating signal transduction, regulation of cell size, neutrophil migration, granulocyte migration, phosphatidylinositol-mediated signaling, myeloid leukocyte migration, localization of cell, neutrophil chemotaxis, positive regulation of hydrolase activity, regulation of cell killing
+  Got:      reactive oxygen species metabolic process,single organism cell adhesion,granulocyte migration,positive regulation of cell death,positive regulation of leukocyte mediated immunity,cell migration,positive regulation of homotypic cell-cell adhesion,inositol lipid-mediated signaling,positive regulation of apoptotic process,neurotrophin TRK receptor signaling pathway,cell activation,phosphatidylinositol-mediated signaling,granulocyte chemotaxis,wound healing,regulation of cell adhesion,leukocyte chemotaxis,regulation of Ras protein signal transduction,Fc-epsilon receptor signaling pathway,leukocyte aggregation,lymphocyte costimulation,cell-cell adhesion,positive regulation of T cell activation,transmembrane receptor protein tyrosine kinase signaling pathway,vascular endothelial growth factor receptor signaling pathway,homotypic cell-cell adhesion,positive regulation of lymphocyte activation,positive regulation of cell activation,regulation of lymphocyte mediated immunity,regulation of leukocyte mediated immunity,positive regulation of leukocyte cell-cell adhesion,leukocyte migration,lymphocyte aggregation,immune response-activating signal transduction,coagulation,regulation of anatomical structure size,regulation of leukocyte mediated cytotoxicity,positive regulation of innate immune response,regulation of immune effector process,positive regulation of natural killer cell mediated immunity,immune response-regulating cell surface receptor signaling pathway,positive regulation of leukocyte mediated cytotoxicity,regulation of cellular component size,regulation of small GTPase mediated signal transduction,integrin-mediated signaling pathway,single organismal cell-cell adhesion,immune effector process,lymphocyte activation,phagocytosis,positive regulation of programmed cell death,positive regulation of GTPase activity,blood coagulation,regulation of lymphocyte activation,immune response-activating cell surface receptor signaling pathway,regulation of body fluid levels,leukocyte cell-cell adhesion,response to wounding,leukocyte activation,positive regulation of immune response,neurotrophin signaling pathway,chemotaxis,neutrophil chemotaxis,regulation of leukocyte activation,ERBB signaling pathway,response to fibroblast growth factor,positive regulation of cell killing,hemostasis,regulation of T cell activation,epidermal growth factor receptor signaling pathway,response to growth factor,regulation of GTPase activity,positive regulation of lymphocyte mediated immunity,platelet activation,small GTPase mediated signal transduction,endocytosis,activation of immune response,Fc-gamma receptor signaling pathway,immune response-regulating cell surface receptor signaling pathway involved in phagocytosis,T cell aggregation,positive regulation of leukocyte activation,positive regulation of defense response,positive regulation of natural killer cell mediated cytotoxicity,regulation of immune response,positive regulation of cell adhesion,neutrophil migration,regulation of cell size,positive regulation of immune system process,positive regulation of immune effector process
+  Thinking: The query retrieves biological processes that the gene VAV1 participates in. The results include a variety of processes related to immune response, cell adhesion, migration, and signaling pathways. Each biological process is identified by a unique identifier and a common name, which allows for a comprehensive list of the processes associated with VAV1.
+  Cypher (1st attempt): MATCH (g:Gene {geneSymbol: "VAV1"})-[r:GENEPARTICIPATESINBIOLOGICALPROCESS]->(bp:BiologicalProcess) RETURN g, r, bp
+  Cypher (final):       MATCH (g:Gene {geneSymbol: "VAV1"})-[r:GENEPARTICIPATESINBIOLOGICALPROCESS]->(bp:BiologicalProcess) RETURN bp, g, r
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=1.000  recall=0.763  f1=0.866  jaccard=0.763  overlap=1.000
+  Missing (in expected, not in got): Fc receptor mediated stimulatory signaling pathway, Fc receptor signaling pathway, Fc-gamma receptor signaling pathway involved in phagocytosis, T cell activation, T cell costimulation, apoptotic signaling pathway, cell chemotaxis, cell motility, cellular response to fibroblast growth factor stimulus, cellular response to growth factor stimulus, fibroblast growth factor receptor signaling pathway, immune response-regulating signaling pathway, localization of cell, myeloid leukocyte migration, positive regulation of cell-cell adhesion, positive regulation of hydrolase activity, regulation of Rho protein signal transduction, regulation of cell activation, regulation of cell killing, regulation of cell-cell adhesion, regulation of defense response, regulation of homotypic cell-cell adhesion, regulation of innate immune response, regulation of leukocyte cell-cell adhesion, regulation of natural killer cell mediated cytotoxicity, regulation of natural killer cell mediated immunity, taxis
+  Extra (in got, not in expected):   -
+
+Q [31ed27136e73]: List the biological processes involving the gene LDLRAP1
+  Expected: regulation of protein localization to cell periphery, cholesterol homeostasis, regulation of steroid metabolic process, positive regulation of lipid metabolic process, receptor-mediated endocytosis of low-density lipoprotein particle involved in cholesterol transport, positive regulation of steroid metabolic process, regulation of cholesterol metabolic process, lipid homeostasis, receptor-mediated endocytosis, low-density lipoprotein particle clearance, amyloid precursor protein metabolic process, organic hydroxy compound metabolic process, steroid metabolic process, sterol metabolic process, regulation of cellular protein localization, lipid transport, receptor internalization, intracellular lipid transport, receptor metabolic process, regulation of vesicle-mediated transport, regulation of lipid metabolic process, regulation of receptor-mediated endocytosis, intracellular sterol transport, chemical homeostasis, regulation of protein binding, regulation of binding, regulation of protein localization, endocytosis, positive regulation of receptor-mediated endocytosis, positive regulation of transport, positive regulation of cholesterol metabolic process, regulation of establishment of protein localization, plasma lipoprotein particle clearance, regulation of endocytosis, cholesterol transport, regulation of plasma lipoprotein particle levels, alcohol metabolic process, sterol transport, regulation of protein localization to plasma membrane, regulation of plasma membrane organization, secondary alcohol metabolic process, intracellular cholesterol transport, organic hydroxy compound transport, regulation of establishment of protein localization to plasma membrane, lipid localization, cholesterol metabolic process, sterol homeostasis, positive regulation of endocytosis
+  Got:      amyloid precursor protein metabolic process,intracellular sterol transport,receptor-mediated endocytosis,steroid metabolic process,low-density lipoprotein particle clearance,positive regulation of receptor-mediated endocytosis,regulation of binding,cholesterol metabolic process,receptor metabolic process,intracellular lipid transport,regulation of protein localization,endocytosis,chemical homeostasis,regulation of cellular protein localization,regulation of establishment of protein localization to plasma membrane,receptor internalization,lipid localization,lipid transport,positive regulation of lipid metabolic process,intracellular cholesterol transport,alcohol metabolic process,plasma lipoprotein particle clearance,lipid homeostasis,regulation of steroid metabolic process,secondary alcohol metabolic process,regulation of plasma lipoprotein particle levels,positive regulation of cholesterol metabolic process,regulation of vesicle-mediated transport,regulation of lipid metabolic process,regulation of protein localization to plasma membrane,organic hydroxy compound metabolic process,regulation of establishment of protein localization,sterol transport,receptor-mediated endocytosis of low-density lipoprotein particle involved in cholesterol transport,cholesterol transport,positive regulation of transport,sterol homeostasis,regulation of protein localization to cell periphery,positive regulation of steroid metabolic process,regulation of endocytosis,regulation of plasma membrane organization,organic hydroxy compound transport,regulation of cholesterol metabolic process,positive regulation of endocytosis
+  Thinking: The query retrieves biological processes associated with the gene LDLRAP1. The results include a variety of processes related to lipid metabolism, cholesterol transport, endocytosis, and regulation of various metabolic processes. Each biological process is linked to the gene through a specific relationship in the knowledge graph, indicating that LDLRAP1 plays a role in these processes. The answer lists all the unique biological processes that involve LDLRAP1, ensuring a comprehensive representation of its functional associations.
+  Cypher (1st attempt): MATCH (g:Gene {geneSymbol: "LDLRAP1"})-[r:GENEPARTICIPATESINBIOLOGICALPROCESS]->(bp:BiologicalProcess) RETURN g, r, bp
+  Cypher (final):       MATCH (g:Gene {geneSymbol: "LDLRAP1"})-[r:GENEPARTICIPATESINBIOLOGICALPROCESS]->(bp:BiologicalProcess) RETURN bp, g, r
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=1.000  recall=0.917  f1=0.957  jaccard=0.917  overlap=1.000
+  Missing (in expected, not in got): cholesterol homeostasis, regulation of protein binding, regulation of receptor-mediated endocytosis, sterol metabolic process
+  Extra (in got, not in expected):   -
+
+Q [b502d249763c]: List the pathways which contain the gene LAT
+  Expected: Axon guidance, SOS-mediated signalling, Prolonged ERK activation events, IRS-mediated signalling, Signaling by FGFR2, Signaling by Type 1 Insulin-like Growth Factor 1 Receptor (IGF1R), SHC1 events in ERBB4 signaling, Adaptive Immune System, Th17 cell differentiation, Frs2-mediated activation, Interleukin-2 family signaling, NF-kappa B signaling pathway - Homo sapiens (human), Signaling by SCF-KIT, Downstream signaling of activated FGFR3, Th1 and Th2 cell differentiation, Signaling by FGFR, SHC1 events in ERBB2 signaling, Signalling to p38 via RIT and RIN, IRS-related events triggered by IGF1R, JNK signaling in the CD4+ TCR pathway, FRS-mediated FGFR1 signaling, Signaling by Leptin, Interleukin-3, Interleukin-5 and GM-CSF signaling, Yersinia infection, VEGFA-VEGFR2 Pathway, FCERI mediated Ca+2 mobilization, SHC1 events in EGFR signaling, MAPK family signaling cascades, Immune System, TCR Signaling Pathway, NGF signalling via TRKA from the plasma membrane, Downstream signaling of activated FGFR1, Innate Immune System, FRS-mediated FGFR3 signaling, ARMS-mediated activation, TCR signaling in na&#xef;ve CD4+ T cells, Signaling by FGFR4, Developmental Biology, Generation of second messenger molecules, DAP12 signaling, RAF/MAP kinase cascade, Fc epsilon RI signaling pathway - Homo sapiens (human), Hemostasis, Signaling by PDGF, Insulin receptor signalling cascade, Downstream signaling of activated FGFR2, IGF1R signaling cascade, Downstream signaling of activated FGFR4, Class I PI3K signaling events, Ras signaling pathway - Homo sapiens (human), Platelet activation, signaling and aggregation, TCR signaling in na&#xef;ve CD8+ T cells, T cell receptor signaling pathway - Homo sapiens (human), FRS-mediated FGFR4 signaling, Fc gamma R-mediated phagocytosis - Homo sapiens (human), Signaling events mediated by PTP1B, Signalling to RAS, Signal Transduction, Interleukin receptor SHC signaling, Aminosugars metabolism, TCR, role of mef2d in t-cell apoptosis, Signaling by ERBB4, Fc epsilon receptor (FCERI) signaling, Fc-epsilon receptor I signaling in mast cells, FCERI mediated MAPK activation, GRB2 events in EGFR signaling, Cytokine Signaling in Immune system, VEGFR2 mediated cell proliferation, GPVI-mediated activation cascade, ras-independent pathway in nk cell-mediated cytotoxicity, MAPK1/MAPK3 signaling, Downstream signal transduction, Signaling by Insulin receptor, Signalling by NGF, t cell receptor signaling pathway, Signaling by FGFR3, Gastrin-CREB signalling pathway via PKC and MAPK, GRB2 events in ERBB2 signaling, Rap1 signaling pathway - Homo sapiens (human), Signaling by Interleukins, FRS-mediated FGFR2 signaling, Signalling to ERKs, PD-L1 expression and PD-1 checkpoint pathway in cancer, NCAM signaling for neurite out-growth, Natural killer cell mediated cytotoxicity - Homo sapiens (human), Signaling by VEGF, TCR signaling, Signaling by ERBB2, Signaling by GPCR, Signaling by EGFR, Signaling by FGFR1, DAP12 interactions, Fc Epsilon Receptor I Signaling in Mast Cells
+  Got:      IRS-related events triggered by IGF1R,IGF1R signaling cascade,NGF signalling via TRKA from the plasma membrane,Ras signaling pathway - Homo sapiens (human),Rap1 signaling pathway - Homo sapiens (human),Insulin receptor signalling cascade,Signaling by Insulin receptor,Axon guidance,MAPK1/MAPK3 signaling,NF-kappa B signaling pathway - Homo sapiens (human),Signaling by VEGF,Hemostasis,Developmental Biology,GRB2 events in ERBB2 signaling,Yersinia infection,VEGFR2 mediated cell proliferation,NCAM signaling for neurite out-growth,Signalling by NGF,Signaling by FGFR,Signaling by FGFR3,Signaling by FGFR4,Downstream signaling of activated FGFR4,FRS-mediated FGFR4 signaling,Downstream signaling of activated FGFR3,FRS-mediated FGFR3 signaling,FRS-mediated FGFR2 signaling,Signaling by FGFR2,Signaling by FGFR1,Signaling by Interleukins,Signaling by Leptin,Signaling by GPCR,Interleukin-3, Interleukin-5 and GM-CSF signaling,FRS-mediated FGFR1 signaling,Downstream signaling of activated FGFR2,Downstream signaling of activated FGFR1,GRB2 events in EGFR signaling,Gastrin-CREB signalling pathway via PKC and MAPK,SOS-mediated signalling,Signaling by ERBB4,Downstream signal transduction,Signaling by PDGF,Interleukin receptor SHC signaling,Signal Transduction,TCR,Signaling by Type 1 Insulin-like Growth Factor 1 Receptor (IGF1R),DAP12 signaling,Frs2-mediated activation,ARMS-mediated activation,SHC1 events in EGFR signaling,IRS-mediated signalling,Interleukin-2 family signaling,Signaling by ERBB2,SHC1 events in ERBB4 signaling,MAPK family signaling cascades,Signalling to p38 via RIT and RIN,Cytokine Signaling in Immune system,FCERI mediated MAPK activation,Prolonged ERK activation events,Signalling to ERKs,Immune System,Innate Immune System,SHC1 events in ERBB2 signaling,RAF/MAP kinase cascade,Signalling to RAS,Aminosugars metabolism,DAP12 interactions,VEGFA-VEGFR2 Pathway,Signaling by EGFR,Fc epsilon receptor (FCERI) signaling,Signaling by SCF-KIT,Platelet activation, signaling and aggregation,Fc Epsilon Receptor I Signaling in Mast Cells,PD-L1 expression and PD-1 checkpoint pathway in cancer,TCR signaling in nave CD8+ T cells,TCR Signaling Pathway,Signaling events mediated by PTP1B,GPVI-mediated activation cascade,Th17 cell differentiation,Th1 and Th2 cell differentiation,T cell receptor signaling pathway - Homo sapiens (human),Fc epsilon RI signaling pathway - Homo sapiens (human),Adaptive Immune System,Fc gamma R-mediated phagocytosis - Homo sapiens (human),TCR signaling in nave CD4+ T cells,Fc-epsilon receptor I signaling in mast cells,t cell receptor signaling pathway,Natural killer cell mediated cytotoxicity - Homo sapiens (human),Class I PI3K signaling events,ras-independent pathway in nk cell-mediated cytotoxicity,FCERI mediated Ca+2 mobilization,Generation of second messenger molecules,TCR signaling,role of mef2d in t-cell apoptosis,JNK signaling in the CD4+ TCR pathway
+  Thinking: The query retrieves pathways associated with the gene LAT. The results show a total of 94 pathways linked to LAT through the relationship 'GENEINPATHWAY'. Each pathway is identified by a unique ID and includes various signaling pathways, immune system pathways, and other biological processes. The answer lists these pathways in a comma-separated format, as required.
+  Cypher (1st attempt): MATCH (g:Gene {geneSymbol: "LAT"})-[r:GENEINPATHWAY]->(p:Pathway) RETURN g, r, p
+  Cypher (final):       MATCH (g:Gene {geneSymbol: "LAT"})-[r:GENEINPATHWAY]->(p:Pathway) RETURN g, p, r
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.979  recall=0.979  f1=0.979  jaccard=0.959  overlap=0.979
+  Missing (in expected, not in got): TCR signaling in na&#xef;ve CD4+ T cells, TCR signaling in na&#xef;ve CD8+ T cells
+  Extra (in got, not in expected):   TCR signaling in nave CD4+ T cells, TCR signaling in nave CD8+ T cells
+
+Q [0d75f8b70e6d]: List the pathways which contain the gene IFNAR1
+  Expected: Measles - Homo sapiens (human), Osteoclast Signaling, Human papillomavirus infection, Cytokine Signaling in Immune system, Natural killer cell mediated cytotoxicity - Homo sapiens (human), Immune System, Regulation of IFNA signaling, Downstream signaling in na&#xef;ve CD8+ T cells, Hepatitis B - Homo sapiens (human), bone remodeling, Interferon type I signaling pathways, Herpes simplex infection - Homo sapiens (human), Interferon Signaling, Toll-like receptor signaling pathway, Regulation of toll-like receptor signaling pathway, ifn alpha signaling pathway, Epstein-Barr virus infection - Homo sapiens (human), Cytokine-cytokine receptor interaction - Homo sapiens (human), PI3K-Akt signaling pathway - Homo sapiens (human), Kaposi sarcoma-associated herpesvirus infection, Pathways in cancer - Homo sapiens (human), Jak-STAT signaling pathway - Homo sapiens (human), Toll-like receptor signaling pathway - Homo sapiens (human), Necroptosis, Osteoclast differentiation - Homo sapiens (human), Hepatitis C - Homo sapiens (human), Aminosugars metabolism, NOD-like receptor signaling pathway - Homo sapiens (human), Influenza A - Homo sapiens (human), Interferon alpha/beta signaling
+  Got:      Interferon alpha/beta signaling,Cytokine-cytokine receptor interaction - Homo sapiens (human),Measles - Homo sapiens (human),Influenza A - Homo sapiens (human),Pathways in cancer - Homo sapiens (human),Necroptosis,Osteoclast differentiation - Homo sapiens (human),Osteoclast Signaling,Cytokine Signaling in Immune system,Immune System,Aminosugars metabolism,PI3K-Akt signaling pathway - Homo sapiens (human),Regulation of toll-like receptor signaling pathway,Hepatitis C - Homo sapiens (human),Hepatitis B - Homo sapiens (human),Human papillomavirus infection,Herpes simplex infection - Homo sapiens (human),Kaposi sarcoma-associated herpesvirus infection,Epstein-Barr virus infection - Homo sapiens (human),Toll-like receptor signaling pathway,Toll-like receptor signaling pathway - Homo sapiens (human),NOD-like receptor signaling pathway - Homo sapiens (human),Jak-STAT signaling pathway - Homo sapiens (human),Downstream signaling in naïve CD8+ T cells,Natural killer cell mediated cytotoxicity - Homo sapiens (human),Interferon type I signaling pathways,Interferon Signaling,bone remodeling,Regulation of IFNA signaling,ifn alpha signaling pathway
+  Thinking: The query retrieves pathways associated with the gene IFNAR1. The results include a variety of pathways, indicating the diverse roles of IFNAR1 in different biological processes. Each pathway is linked to the gene through a specific relationship in the knowledge graph, which allows us to compile a comprehensive list of pathways that involve IFNAR1.
+  Cypher (1st attempt): MATCH (g:Gene {geneSymbol: "IFNAR1"})-[r:GENEINPATHWAY]->(p:Pathway) RETURN g, r, p
+  Cypher (final):       MATCH (g:Gene {geneSymbol: "IFNAR1"})-[r:GENEINPATHWAY]->(p:Pathway) RETURN g, p, r
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.967  recall=0.967  f1=0.967  jaccard=0.935  overlap=0.967
+  Missing (in expected, not in got): Downstream signaling in na&#xef;ve CD8+ T cells
+  Extra (in got, not in expected):   Downstream signaling in naïve CD8+ T cells
+
+Q [25f03687693a]: List the genes which interact with the gene NDUFA1
+  Expected: GOLGB1, UBC, TRIM63, SMURF2
+  Got:      TRIM63,SMURF2,UBC
+  Thinking: The query retrieves genes that interact with the gene NDUFA1. The results show that NDUFA1 interacts with three specific genes: TRIM63, SMURF2, and UBC. Since the question asks for all genes that interact with NDUFA1, I will list all three genes as they are directly connected to NDUFA1 in the knowledge graph.
+  Cypher (1st attempt): MATCH (g:Gene {geneSymbol: "NDUFA1"})-[r:GENEINTERACTSWITHGENE]->(i:Gene) RETURN g, r, i
+  Cypher (final):       MATCH (g:Gene {geneSymbol: "NDUFA1"})-[r:GENEINTERACTSWITHGENE]->(i:Gene) RETURN g, i, r
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=1.000  recall=0.750  f1=0.857  jaccard=0.750  overlap=1.000
+  Missing (in expected, not in got): GOLGB1
+  Extra (in got, not in expected):   -
+
+Q [da0d1fcddf73]: List the genes which interact with the gene PACSIN2
+  Expected: APC, FASLG, CARS1, DNM2, DNM1, HSPA8, HSPA1A, MEOX2, SHBG, TERF1, UBC, WIPF1, WAS, SYNJ1, WASL, MAP4K4, KHDRBS1, ASAP1, ASB15, TRPV4, SBK1, VASN, PACSIN1, MICALL1, TERF2IP, PACSIN3, CYFIP2, APBB1IP, PLEKHF2
+  Got:      MICALL1,SBK1,VASN,APBB1IP,TRPV4,CYFIP2,ASB15,PACSIN1,TERF2IP,PACSIN3,PLEKHF2,ASAP1
+  Thinking: The query retrieves genes that interact with PACSIN2. The results show a total of 12 genes that have a direct interaction with PACSIN2. These genes are listed based on their unique identifiers and gene symbols, indicating their relationships in the knowledge graph.
+  Cypher (1st attempt): MATCH (g:Gene {geneSymbol: "PACSIN2"})-[r:GENEINTERACTSWITHGENE]->(i:Gene) RETURN g, r, i
+  Cypher (final):       MATCH (g:Gene {geneSymbol: "PACSIN2"})-[r:GENEINTERACTSWITHGENE]->(i:Gene) RETURN g, i, r
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=1.000  recall=0.414  f1=0.585  jaccard=0.414  overlap=1.000
+  Missing (in expected, not in got): APC, CARS1, DNM1, DNM2, FASLG, HSPA1A, HSPA8, KHDRBS1, MAP4K4, MEOX2, SHBG, SYNJ1, TERF1, UBC, WAS, WASL, WIPF1
+  Extra (in got, not in expected):   -
+
+Q [aba27886901e]: List the genes which interact with the gene PRF1
+  Expected: CALR, GZMB, KRT31, TRIM54, SRGN, DDX24
+  Got:      DDX24,SRGN,TRIM54
+  Thinking: The query retrieves genes that interact with the gene PRF1. The results show that PRF1 interacts with three specific genes: DDX24, SRGN, and TRIM54. Since the question asks for all genes that interact with PRF1, I will list these three genes as the answer.
+  Cypher (1st attempt): MATCH (g:Gene {geneSymbol: "PRF1"})-[r:GENEINTERACTSWITHGENE]->(i:Gene) RETURN g, r, i
+  Cypher (final):       MATCH (g:Gene {geneSymbol: "PRF1"})-[r:GENEINTERACTSWITHGENE]->(i:Gene) RETURN g, i, r
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=1.000  recall=0.500  f1=0.667  jaccard=0.500  overlap=1.000
+  Missing (in expected, not in got): CALR, GZMB, KRT31
+  Extra (in got, not in expected):   -
+
+Q [8b35c5a51817]: List the genes which interact with the gene TNFRSF18
+  Expected: TRAF1, TRAF3, TRAF2, LNX1, TNFSF18
+  Got:      TNFSF18,LNX1
+  Thinking: The query retrieves genes that interact with TNFRSF18. The results show that TNFRSF18 interacts with two other genes: TNFSF18 and LNX1. Since the question asks for genes that interact with TNFRSF18, I will list both of these genes as they are directly connected to TNFRSF18 in the knowledge graph.
+  Cypher (1st attempt): MATCH (g1:Gene {geneSymbol: "TNFRSF18"})-[r:GENEINTERACTSWITHGENE]->(g2:Gene) RETURN g1, r, g2
+  Cypher (final):       MATCH (g1:Gene {geneSymbol: "TNFRSF18"})-[r:GENEINTERACTSWITHGENE]->(g2:Gene) RETURN g1, g2, r
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=1.000  recall=0.400  f1=0.571  jaccard=0.400  overlap=1.000
+  Missing (in expected, not in got): TRAF1, TRAF2, TRAF3
+  Extra (in got, not in expected):   -
+
+Q [0677de4b7e91]: List the genes which interact with the gene DNAJB1
+  Expected: HSPA4, HSPA1A, HSPA8, HSF1, HSPA1B, A2M, AKT1, ANK2, APP, CENPE, CFTR, NQO1, CYP2C8, FANCC, FANCA, GLB1, GPR37, PSEN2, SEC61B, MAST1, CDC37, OTUD4, PHLDA1, PLEKHO1, ECSIT, BRMS1, NRAS, ISG15, MAP3K3, DNAJC3, ZNF16, PTGES3, PRKAA2, STIP1, PRKN, PRKCH, TERF1, UBC, STUB1, ATG2A, IKBKE, SERP1, TTC1, TELO2, CUL3, SOD1, WIPI2
+  Got:      PLEKHO1,BRMS1,OTUD4,UBC,ECSIT,STIP1,ISG15,PSEN2,TELO2,PRKAA2,PHLDA1,PTGES3,SOD1,MAP3K3,CDC37,ZNF16,IKBKE,PRKN,MAST1,CUL3,NRAS,WIPI2,ATG2A,DNAJC3,SERP1,PRKCH,TTC1,STUB1,TERF1,SEC61B
+  Thinking: The query retrieves all genes that interact with the gene DNAJB1. The results show a total of 30 genes that are connected to DNAJB1 through the relationship 'GENEINTERACTSWITHGENE'. I will list these genes based on their gene symbols as they are the most recognizable identifiers.
+  Cypher (1st attempt): MATCH (g:Gene {geneSymbol: "DNAJB1"})-[r:GENEINTERACTSWITHGENE]->(i:Gene) RETURN g, r, i
+  Cypher (final):       MATCH (g:Gene {geneSymbol: "DNAJB1"})-[r:GENEINTERACTSWITHGENE]->(i:Gene) RETURN g, i, r
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=1.000  recall=0.638  f1=0.779  jaccard=0.638  overlap=1.000
+  Missing (in expected, not in got): A2M, AKT1, ANK2, APP, CENPE, CFTR, CYP2C8, FANCA, FANCC, GLB1, GPR37, HSF1, HSPA1A, HSPA1B, HSPA4, HSPA8, NQO1
+  Extra (in got, not in expected):   -
+
+
+=== Dataset: OpenEnded_2hop.json | Type: open_ended | Mode: direct | Model: gpt-4o-mini ===
+Count: 450  |  Correct: 314  |  Accuracy: 0.698 [95% CI 0.654-0.738]
+Average set metrics: exact_match=0.698  precision=0.867  recall=0.864  f1=0.851  jaccard=0.839  overlap=0.891
+By |expected| size:
+  -    1: n=69    acc=0.870 f1=0.876
+  -  2-5: n=104   acc=0.904 f1=0.946
+  - 6-20: n=121   acc=0.876 f1=0.916
+  -  >20: n=156   acc=0.346 f1=0.725
+Telemetry:
+  - first attempt success rate: 0.949 (n=450)
+  - avg correction iterations: 0.082 (n=450)
+  - latency ms: mean=39981 p50=10026 p95=304995 (n=450)
+  - records with error: 0.000 (n=450)
+
+-- Incorrect Questions (136 total, showing 15) --
+Q [564dd56fd232]: List the drugs which commonly bind to the genes CYP3A4 and CYP2C19
+  Expected: Enzalutamide, Ketobemidone, Podofilox, Olanzapine, Nicardipine, Ethanol, Bromazepam, Quazepam, Nortriptyline, Oxiconazole, Oxcarbazepine, Aprepitant, Amitriptyline, Atomoxetine, Fluvoxamine, Tolterodine, Macitentan, Miconazole, Felbamate, Imatinib, Aminoglutethimide, Ospemifene, Amprenavir, Esomeprazole, Trabectedin, Loratadine, Acenocoumarol, Imipramine, Omeprazole, Sildenafil, Efavirenz, Valproic acid, Pimozide, Lapatinib, Sorafenib, Bicalutamide, Haloperidol, Clotiazepam, Apixaban, Tioconazole, Levomilnacipran, Zafirlukast, Trimipramine, Sitaxentan, Methimazole, Testosterone, Primidone, Artemether, Tamoxifen, Nilvadipine, Prednisone, Rabeprazole, Propofol, Simvastatin, Prasugrel, Perphenazine, Nicotine, Topiramate, Pentamidine, Bortezomib, Adinazolam, Amiodarone, Rilpivirine, Antipyrine, Modafinil, Pipotiazine, Zidovudine, Glyburide, Quetiapine, Pioglitazone, Venlafaxine, Clevidipine, Progesterone, Regorafenib, Ketoconazole, Clozapine, Atorvastatin, Tipranavir, Dronabinol, Ifosfamide, Brompheniramine, Luliconazole, Hexobarbital, Phenobarbital, Quinine, Eletriptan, Ritonavir, Fosphenytoin, Lopinavir, Meperidine, Tranylcypromine, Etravirine, Phenelzine, Azelastine, Voriconazole, Rifampicin, Praziquantel, Teniposide, Gemfibrozil, Methadone, Ranitidine, Norethisterone, Zolpidem, Warfarin, Carbinoxamine, Indinavir, Guanfacine, Aminophenazone, Diazepam, Temazepam, Nelfinavir, Fluvastatin, Dimethyl sulfoxide, Lovastatin, Almotriptan, Clarithromycin, Methazolamide, Promazine, Propranolol, Ticlopidine, Cisapride, Losartan, Flutamide, Clobazam, Fluconazole, Cholecalciferol, Desipramine, Sertraline, Dapsone, Clomipramine, Dextromethorphan, Probenecid, Rosuvastatin, Saquinavir, Pentobarbital, Cimetidine, Delavirdine, Diclofenac, Gefitinib, Phenytoin, Pantoprazole, Selegiline, Isoniazid, Vismodegib, Flunitrazepam, Proguanil, Bifonazole, Trimethadione, Carbamazepine, Doxepin, Bupivacaine, Chloramphenicol, Zonisamide, Escitalopram, Citalopram, Terbinafine, Verapamil, Ramelteon, Estradiol, Fluoxetine, Cyclosporine, Clopidogrel, Lansoprazole, Dexamethasone, Etoricoxib, Buprenorphine, Diltiazem, Cilostazol, Clotrimazole, Cyclophosphamide, Sulfanilamide
+  Got:      Cyclosporine,Cholecalciferol,Fluvoxamine,Nicotine,Bortezomib,Delavirdine,Methazolamide,Amprenavir,Cisapride,Imatinib,Nicardipine,Efavirenz,Testosterone,Tamoxifen,Losartan,Aprepitant,Warfarin,Prednisone,Simvastatin,Verapamil,Cimetidine,Haloperidol,Ritonavir,Carbamazepine,Propranolol,Diclofenac,Voriconazole,Dextromethorphan,Cyclophosphamide,Zafirlukast,Adinazolam,Nortriptyline,Dronabinol,Fluoxetine,Flutamide,Zidovudine,Chloramphenicol,Teniposide,Lansoprazole,Meperidine,Loratadine,Imipramine,Quinine,Zolpidem,Promazine,Sorafenib,Progesterone,Aminoglutethimide,Clozapine,Valproic acid,Pentobarbital,Gefitinib,Amitriptyline,Methadone,Olanzapine,Omeprazole,Trimethadione,Clobazam,Diltiazem,Fluconazole,Topiramate,Atomoxetine,Venlafaxine,Bupivacaine,Oxiconazole,Temazepam,Sulfanilamide,Clotrimazole,Dapsone,Phenytoin,Sildenafil,Ticlopidine,Citalopram,Pantoprazole,Eletriptan,Indinavir,Lovastatin,Nelfinavir,Isoniazid,Azelastine,Ramelteon,Almotriptan,Buprenorphine,Tipranavir,Felbamate,Zonisamide,Brompheniramine,Perphenazine,Terbinafine,Ranitidine,Propofol,Diazepam,Fosphenytoin,Hexobarbital,Ethanol,Norethisterone,Trimipramine,Pentamidine,Esomeprazole,Carbinoxamine,Modafinil,Cilostazol,Phenobarbital,Escitalopram,Podofilox,Ifosfamide,Gemfibrozil,Clomipramine,Lapatinib,Clarithromycin,Quetiapine,Dexamethasone,Saquinavir,Primidone,Tranylcypromine,Clopidogrel,Methimazole,Oxcarbazepine,Estradiol,Phenelzine,Rosuvastatin,Fluvastatin,Dimethyl sulfoxide,Rifampicin,Praziquantel,Atorvastatin,Bicalutamide,Rabeprazole,Proguanil,Pioglitazone,Doxepin,Desipramine,Pimozide,Amiodarone,Miconazole,Tioconazole,Guanfacine,Glyburide,Ketoconazole,Selegiline,Probenecid,Tolterodine,Trabectedin,Lopinavir,Etoricoxib,Pipotiazine,Quazepam,Flunitrazepam,Clotiazepam,Bromazepam,Sitaxentan,Prasugrel,Acenocoumarol,Aminophenazone,Antipyrine,Clevidipine,Ospemifene,Bifonazole,Ketobemidone,Artemether,Nilvadipine,Apixaban,Etravirine,Levomilnacipran,Luliconazole,Macitentan,Enzalutamide,Regorafenib,Rilpivirine,Vismodegib
+  Thinking: The question asks for drugs that bind to both CYP3A4 and CYP2C19 genes. The Cypher query executed on the knowledge graph retrieves drugs that have a binding relationship with both genes. The results show a list of drugs that are connected to both CYP3A4 and CYP2C19, which indicates they are involved in the metabolism or interaction with these genes. The intersection of drugs binding to both genes is what is required here.
+  Cypher (1st attempt): MATCH (d:Drug)-[r:CHEMICALBINDSGENE]->(g1:Gene {geneSymbol: "CYP3A4"}), (d)-[r2:CHEMICALBINDSGENE]->(g2:Gene {geneSymbol: "CYP2C19"}) RETURN d, r, g1, r2, g2
+  Cypher (final):       MATCH (d:Drug)-[r:CHEMICALBINDSGENE]->(g1:Gene {geneSymbol: "CYP3A4"}), (d)-[r2:CHEMICALBINDSGENE]->(g2:Gene {geneSymbol: "CYP2C19"}) RETURN d, g1, g2, r, r2
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=1.000  recall=0.994  f1=0.997  jaccard=0.994  overlap=1.000
+  Missing (in expected, not in got): Sertraline
+  Extra (in got, not in expected):   -
+
+Q [b2db04d580e6]: List the drugs which commonly increase expression of the genes IKBKB and CHN1
+  Expected: Temsirolimus, Tramadol, Acyclovir, Trioxsalen
+  Got:      Acyclovir,Temsirolimus
+  Thinking: To find the drugs that commonly increase the expression of both IKBKB and CHN1, we need to identify the intersection of drugs that increase the expression of each gene. The retrieved data shows that IKBKB is influenced by 42 different drugs, while CHN1 is influenced by 9 drugs. The intersection of these two sets will give us the drugs that increase the expression of both genes. By analyzing the lists, we find that the drugs common to both are: 1180 (Acyclovir) and 3359 (Temsirolimus).
+  Cypher (1st attempt): MATCH (d:Drug)-[r:CHEMICALINCREASESEXPRESSION]->(g:Gene) WHERE g.geneSymbol IN ['IKBKB', 'CHN1'] RETURN d, r, g
+  Cypher (final):       MATCH (d:Drug)-[r:CHEMICALINCREASESEXPRESSION]->(g:Gene) WHERE g.geneSymbol IN ['IKBKB', 'CHN1'] RETURN d, g, r
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=1.000  recall=0.500  f1=0.667  jaccard=0.500  overlap=1.000
+  Missing (in expected, not in got): Tramadol, Trioxsalen
+  Extra (in got, not in expected):   -
+
+Q [0336e90fe6e0]: List the genes commonly subject to increased expression by the drugs Vincristine and Podofilox
+  Expected: RALA, NECTIN2, KLHL21, SMTN, DUSP3, KPNA4, AXL, MAST2, DUSP14, CAV2, OXSR1, PPP1R15A, AXIN1, GLIPR1, DDA1, TRIP4, SYNGR3, ETS1, MARK3, ACOT9, NPC1, RNF19B, CSNK1E, TNFRSF12A, IKZF1, MICALL1, ACTN4, CDKN1A, SERPINE1, RELB, GADD45A, FHL2, PPP2CB, DHDDS, CCNB1, GRB10, DNAJB2, JMJD6, MICAL1, CDC42BPB, F3, FOSL1, TMEM184B, PPP1R13L, LAMC2, MAP7D1, TP53BP2, KCTD5, DAXX, EHD4, EREG, PLEKHM2, DRAP1, MYH9, KLF6, PRKAG2, CSRP1, DUSP8, KLF7, TPM1, MAFF, EPHA2, PSMD9, STK10, KIF5C, PSMD2, ILK, MFSD12, KCMF1, CAB39, CENPE, SPHK1, DLGAP4, INPP1, ACTR3, PMAIP1, MAPKAPK2, H2BC4, JUN, PEA15, PPARD, HOMER2, SRF, ZYX, TICAM1, MYO5A, PLAUR, MARK4, ATF3, SAP30BP, TUBB2A, PXN, ITGA5, NFKBIB, BIRC2, TXNRD1, DNTTIP2, HBEGF
+  Got:      39717,41089,38853,40965,37608,38815,37387,39606,40013,39654,38250,40125,40197,41033,42160,38056,38621,40708,39596,37047,37316,42001,39718,39044,42003,40594,40333,40875,37492,38131,36986,41835,38566,39663,37367,37654,37775,40153,39665,39779,37274,40348,39780,39783,42121,41209,40872,40323,39012,37549,37550,37036,40880,38749,38061,40239,37621,40227,36980,40226,37501,37208,41621,41379,38125,41839,37834,38556,40015,39345,40457,38184,39389,39388,37909,41189,37154,37156,38179,40456,37768,40481,37976,41151,37853,38623,37541,40580,37545,38351,39135,41385,39130,37885,40378,37521,37574,37265,41484,39116,40307,37750,39436,37738,39865,37737,37475,41216,39888,40625,37607,39699,41270,40401,38470,37611,39176,39774,37210,40478,37474,39866,40194,40444,41758,41070,39922,38447,38213,41095,40439,39638,41745,37342,41710,39381,41218,42335,39234,39281,38773,38721,39287,40547,41152,38389,37650,38398,39931,38848,38812,39807,41002,38463,40524,38053,37512,38982,38986,40954,38970,38459,38980,38049,39575,40793,38023,39988,38276,39426,39582,41864,37326,40158,38199,39504,38155,37117,40131,39167,37445,39731,40088,37876,37113,39648,39089,39533,39973,39528,42263,41449,37657,40751,39603,40891,38507,39367,36998,41578,40195,37602,42339,41085,41181,39919,38946,41245,42266,38690,38228,39247,40005,37115,37563,38613,40790,38562,37045,39518,36990,38330,40350,40349,41262
+  Thinking: The question asks for genes that are commonly subject to increased expression by both Vincristine and Podofilox. To find these genes, we need to identify the intersection of the genes that are increased by each drug. The data retrieved shows that Vincristine increases the expression of 130 genes, while Podofilox increases the expression of 225 genes. By comparing the two lists, we can find the genes that are present in both lists, which represent the common genes affected by both drugs.
+  Cypher (1st attempt): MATCH (d:Drug)-[r:CHEMICALINCREASESEXPRESSION]->(g:Gene) WHERE d.commonName IN ['Vincristine', 'Podofilox'] RETURN d, r, g
+  Cypher (final):       MATCH (d:Drug)-[r:CHEMICALINCREASESEXPRESSION]->(g:Gene) WHERE d.commonName IN ['Vincristine', 'Podofilox'] RETURN d, g, r
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.000  recall=0.000  f1=0.000  jaccard=0.000  overlap=0.000
+  Missing (in expected, not in got): ACOT9, ACTN4, ACTR3, ATF3, AXIN1, AXL, BIRC2, CAB39, CAV2, CCNB1, CDC42BPB, CDKN1A, CENPE, CSNK1E, CSRP1, DAXX, DDA1, DHDDS, DLGAP4, DNAJB2, DNTTIP2, DRAP1, DUSP14, DUSP3, DUSP8, EHD4, EPHA2, EREG, ETS1, F3, FHL2, FOSL1, GADD45A, GLIPR1, GRB10, H2BC4, HBEGF, HOMER2, IKZF1, ILK, INPP1, ITGA5, JMJD6, JUN, KCMF1, KCTD5, KIF5C, KLF6, KLF7, KLHL21, KPNA4, LAMC2, MAFF, MAP7D1, MAPKAPK2, MARK3, MARK4, MAST2, MFSD12, MICAL1, MICALL1, MYH9, MYO5A, NECTIN2, NFKBIB, NPC1, OXSR1, PEA15, PLAUR, PLEKHM2, PMAIP1, PPARD, PPP1R13L, PPP1R15A, PPP2CB, PRKAG2, PSMD2, PSMD9, PXN, RALA, RELB, RNF19B, SAP30BP, SERPINE1, SMTN, SPHK1, SRF, STK10, SYNGR3, TICAM1, TMEM184B, TNFRSF12A, TP53BP2, TPM1, TRIP4, TUBB2A, TXNRD1, ZYX
+  Extra (in got, not in expected):   36980, 36986, 36990, 36998, 37036, 37045, 37047, 37113, 37115, 37117, 37154, 37156, 37208, 37210, 37265, 37274, 37316, 37326, 37342, 37367, 37387, 37445, 37474, 37475, 37492, 37501, 37512, 37521, 37541, 37545, 37549, 37550, 37563, 37574, 37602, 37607, 37608, 37611, 37621, 37650, 37654, 37657, 37737, 37738, 37750, 37768, 37775, 37834, 37853, 37876, 37885, 37909, 37976, 38023, 38049, 38053, 38056, 38061, 38125, 38131, 38155, 38179, 38184, 38199, 38213, 38228, 38250, 38276, 38330, 38351, 38389, 38398, 38447, 38459, 38463, 38470, 38507, 38556, 38562, 38566, 38613, 38621, 38623, 38690, 38721, 38749, 38773, 38812, 38815, 38848, 38853, 38946, 38970, 38980, 38982, 38986, 39012, 39044, 39089, 39116, 39130, 39135, 39167, 39176, 39234, 39247, 39281, 39287, 39345, 39367, 39381, 39388, 39389, 39426, 39436, 39504, 39518, 39528, 39533, 39575, 39582, 39596, 39603, 39606, 39638, 39648, 39654, 39663, 39665, 39699, 39717, 39718, 39731, 39774, 39779, 39780, 39783, 39807, 39865, 39866, 39888, 39919, 39922, 39931, 39973, 39988, 40005, 40013, 40015, 40088, 40125, 40131, 40153, 40158, 40194, 40195, 40197, 40226, 40227, 40239, 40307, 40323, 40333, 40348, 40349, 40350, 40378, 40401, 40439, 40444, 40456, 40457, 40478, 40481, 40524, 40547, 40580, 40594, 40625, 40708, 40751, 40790, 40793, 40872, 40875, 40880, 40891, 40954, 40965, 41002, 41033, 41070, 41085, 41089, 41095, 41151, 41152, 41181, 41189, 41209, 41216, 41218, 41245, 41262, 41270, 41379, 41385, 41449, 41484, 41578, 41621, 41710, 41745, 41758, 41835, 41839, 41864, 42001, 42003, 42121, 42160, 42263, 42266, 42335, 42339
+
+Q [3f837aff7b1d]: List the genes commonly subject to increased expression by the drugs Trametinib and Thioridazine
+  Expected: VAT1, CEMIP2, WBP1L, MAGED2, SERPINA3, SATB1, KDM5B, HOOK2, NADSYN1, FOXO4, NFKBIA, COL16A1, HMOX1, TSC22D3, ABHD4, QPRT, CBLB, DDIT4, WIF1, IRF7, BACE2, TRAK2, ATF6, SQSTM1, MINDY1
+  Got:      Thioridazine,ATP2B1,HOOK2,SUSD6,LSS,NFIL3,MVK,TRIB3,TRIB1,MVD,SEC24D,TNFRSF1B,TP53BP2,CARS1,TRAK2,PDGFRL,NUCB2,ITGA10,RAP1GAP,HECA,BORCS6,WBP1L,KCNK1,CEACAM6,GARRE1,HDAC5,NPC1,INSIG1,IRF7,HMOX1,SLC2A6,HSPA13,KLHL24,SGCE,PCK2,NFKBIA,SCNN1A,PPARG,H2BC21,GFPT1,ZFP36,BHLHE40,EIF4EBP1,KLHDC2,DDIT3,DDIT4,MINDY1,INHBA,EDEM1,SC5D,EBP,ICAM1,WIPI1,SLC3A2,MARS1,ULK1,PRKCQ,HMGCS1,FOXO4,PSEN1,FOXO3,YARS1,MKNK2,PNRC1,HIVEP2,SERINC3,FZD7,CDK19,LMCD1,COL11A1,BACE2,DDR1,LIPA,NSDHL,HSD17B7,PDK4,PHGDH,BNIP3L,IGF2BP2,TF,SQSTM1,DHCR7,CD55,FADS1,FADS2,CCPG1,ASNS,MFAP5,TNIP1,KBTBD2,CTH,RAB31,CEBPB,MBNL2,CEBPD,CEBPG,SCD,S100A14,CLIC4,CCNG2,SARS1,TBC1D17,NEU1,EPRS1,TES,CALCOCO1,STXBP1,ATP6V0B,CBLB,MAP7,DUSP5,DUSP4,TWF2,HBP1,IKBKB,HMGCR,ITGB5,LIN37,MACO1,ABHD4,STAP2,LAMB3,PRR4,RAB6A,SOX4,TSC22D3,ADGRE5,HYOU1,NADSYN1,SLC43A1,HERPUD1,POLD4,PIK3IP1,MYO10,MAGED2,SERPINA1,NFKB2,SERPINA3,MTHFD2,LRP10,CCL2,RRAGC,COMP,POR,IFRD1,INPP1,PYCR1,TMEM41B,SOS2,XBP1,MAP1LC3B,MMP1,LPGAT1,ISG20,TMEM43,SLC7A11,CDKN1A,ERG28,ERCC5,PRSS23,SH3BP5,PNPLA3,WBP2,TMEM97,SHMT2,RNMT,DHCR24,CCDC28A,IGF2R,ELAPOR1,CDK7,GRB10,AARS1,INF2,GPR137B,ARHGEF2,IDI1,PSAT1,WIF1,ATF6,ATF4,VAT1,TARS1,CYP51A1,SREBF2,ACAT2,PPP2R5A,NTRK2,TRAPPC6A,TMEM140,ST6GALNAC2,TMEM39A,SQLE,MAST2,H2BC8,IGFBP3,CRISPLD2,WDR45,GARS1,ST3GAL5,HSD17B11,BAZ2B,NUPR1,CEMIP2,HSD17B14,SATB1,CBS,SMAD3,XPOT,KDM5B,AMDHD2,KDM5A,ICA1,ACSL3,ABCC5,DYRK3,ST7,ADRB2,SQOR,ENPP1,RELB,OGT,SESN1,SLC1A4,KDM3A,ALDOC,TFE3,TSPYL2,FDPS,VGLL4,BBC3,PAN2,QPRT,MSMO1,LDLR,COL16A1,TFF1,WDR13,ELOVL6,TAPBP,GRN,ACLY,LPIN1,FDFT1,TSKU,CTSD,DUSP22,TOMM34,INPP4B,MAPKAPK3,MAPKAPK2,Trametinib,MCOLN1,SLC50A1,SULT1A2,SULT1A1,TCTA,GAA,LPL,CREG1,BLVRA,MLLT11,CLPX,HLA-DMA,DHDDS,GDPD5,INPPL1,IL1R2,HDAC6,GSTZ1,GPC1,ARHGAP10,LAMB2,CRIP1,WFS1,IP6K2,TSPYL4,ADGRE1,MVP,BRD8,SLC35A3,ZW10,PIK3R3,PROS1,PKIG,RGS2,SYNE2,SRC,FBXO2,FASTKD5,INTS3,ZMIZ1,OSBPL9,DNAJB2,IGF1R,RIT1,HSPB2,HSPB1,HARS2,TCEAL4,MYLK,RBKS,HMGN3,METRN,MYL9,PDLIM1,CDKN1B,HSPG2,CDKN1C,COPG1,DMTF1,MAN2B1,BAMBI,CDH1,PSMD10,RABGAP1,PIK3C2B,KAT6B,COPB2,ANO10,TXNRD1,PBXIP1,MXRA8,STT3A,PPIC,TLE1,ARMCX3,CEBPA,DOK4,ACAA1,SMAP1,BMP1,ID2,CADM1,CRYAB,HNRNPH2,VAV3,DHRS7,WDTC1,PDIA5,MUC1,ATP1B1
+  Thinking: The LLM output reached the max-output-tokens limit while listing entities; the 342 entity names were extracted directly from the KG result set.
+  Cypher (1st attempt): MATCH (d:Drug)-[r:CHEMICALINCREASESEXPRESSION]->(g:Gene) WHERE d.commonName IN ['Trametinib', 'Thioridazine'] RETURN d, r, g
+  Cypher (final):       MATCH (d:Drug)-[r:CHEMICALINCREASESEXPRESSION]->(g:Gene) WHERE d.commonName IN ['Trametinib', 'Thioridazine'] RETURN d, g, r
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.073  recall=1.000  f1=0.136  jaccard=0.073  overlap=1.000
+  Missing (in expected, not in got): -
+  Extra (in got, not in expected):   AARS1, ABCC5, ACAA1, ACAT2, ACLY, ACSL3, ADGRE1, ADGRE5, ADRB2, ALDOC, AMDHD2, ANO10, ARHGAP10, ARHGEF2, ARMCX3, ASNS, ATF4, ATP1B1, ATP2B1, ATP6V0B, BAMBI, BAZ2B, BBC3, BHLHE40, BLVRA, BMP1, BNIP3L, BORCS6, BRD8, CADM1, CALCOCO1, CARS1, CBS, CCDC28A, CCL2, CCNG2, CCPG1, CD55, CDH1, CDK19, CDK7, CDKN1A, CDKN1B, CDKN1C, CEACAM6, CEBPA, CEBPB, CEBPD, CEBPG, CLIC4, CLPX, COL11A1, COMP, COPB2, COPG1, CREG1, CRIP1, CRISPLD2, CRYAB, CTH, CTSD, CYP51A1, DDIT3, DDR1, DHCR24, DHCR7, DHDDS, DHRS7, DMTF1, DNAJB2, DOK4, DUSP22, DUSP4, DUSP5, DYRK3, EBP, EDEM1, EIF4EBP1, ELAPOR1, ELOVL6, ENPP1, EPRS1, ERCC5, ERG28, FADS1, FADS2, FASTKD5, FBXO2, FDFT1, FDPS, FOXO3, FZD7, GAA, GARRE1, GARS1, GDPD5, GFPT1, GPC1, GPR137B, GRB10, GRN, GSTZ1, H2BC21, H2BC8, HARS2, HBP1, HDAC5, HDAC6, HECA, HERPUD1, HIVEP2, HLA-DMA, HMGCR, HMGCS1, HMGN3, HNRNPH2, HSD17B11, HSD17B14, HSD17B7, HSPA13, HSPB1, HSPB2, HSPG2, HYOU1, ICA1, ICAM1, ID2, IDI1, IFRD1, IGF1R, IGF2BP2, IGF2R, IGFBP3, IKBKB, IL1R2, INF2, INHBA, INPP1, INPP4B, INPPL1, INSIG1, INTS3, IP6K2, ISG20, ITGA10, ITGB5, KAT6B, KBTBD2, KCNK1, KDM3A, KDM5A, KLHDC2, KLHL24, LAMB2, LAMB3, LDLR, LIN37, LIPA, LMCD1, LPGAT1, LPIN1, LPL, LRP10, LSS, MACO1, MAN2B1, MAP1LC3B, MAP7, MAPKAPK2, MAPKAPK3, MARS1, MAST2, MBNL2, MCOLN1, METRN, MFAP5, MKNK2, MLLT11, MMP1, MSMO1, MTHFD2, MUC1, MVD, MVK, MVP, MXRA8, MYL9, MYLK, MYO10, NEU1, NFIL3, NFKB2, NPC1, NSDHL, NTRK2, NUCB2, NUPR1, OGT, OSBPL9, PAN2, PBXIP1, PCK2, PDGFRL, PDIA5, PDK4, PDLIM1, PHGDH, PIK3C2B, PIK3IP1, PIK3R3, PKIG, PNPLA3, PNRC1, POLD4, POR, PPARG, PPIC, PPP2R5A, PRKCQ, PROS1, PRR4, PRSS23, PSAT1, PSEN1, PSMD10, PYCR1, RAB31, RAB6A, RABGAP1, RAP1GAP, RBKS, RELB, RGS2, RIT1, RNMT, RRAGC, S100A14, SARS1, SC5D, SCD, SCNN1A, SEC24D, SERINC3, SERPINA1, SESN1, SGCE, SH3BP5, SHMT2, SLC1A4, SLC2A6, SLC35A3, SLC3A2, SLC43A1, SLC50A1, SLC7A11, SMAD3, SMAP1, SOS2, SOX4, SQLE, SQOR, SRC, SREBF2, ST3GAL5, ST6GALNAC2, ST7, STAP2, STT3A, STXBP1, SULT1A1, SULT1A2, SUSD6, SYNE2, TAPBP, TARS1, TBC1D17, TCEAL4, TCTA, TES, TF, TFE3, TFF1, TLE1, TMEM140, TMEM39A, TMEM41B, TMEM43, TMEM97, TNFRSF1B, TNIP1, TOMM34, TP53BP2, TRAPPC6A, TRIB1, TRIB3, TSKU, TSPYL2, TSPYL4, TWF2, TXNRD1, Thioridazine, Trametinib, ULK1, VAV3, VGLL4, WBP2, WDR13, WDR45, WDTC1, WFS1, WIPI1, XBP1, XPOT, YARS1, ZFP36, ZMIZ1, ZW10
+
+Q [6a2b843a706f]: List the genes commonly subject to increased expression by the drugs Vinblastine and Mebendazole
+  Expected: CDA, CAPN2, KLHL21, SMTN, NFKB2, DUSP3, PHLDA2, MAST2, STX1A, DUSP4, AXIN1, PLOD3, SYNGR3, MYDGF, IFRD1, MAP1B, CSNK1E, TNFRSF12A, ZDHHC18, GAL, MICALL1, ACTN4, RELB, GADD45A, FHL2, DHDDS, ERO1A, NFKBIE, GRB10, CLTB, DNAJB2, NFKB1, ICAM1, HGS, JMJD6, CDC42BPB, RALB, FOSL1, RSU1, PPP1R13L, TP53BP2, KCTD5, DAXX, EREG, TPD52L2, DRAP1, KLF6, ACTN1, PRKAG2, FLNA, LSR, GNA11, TPM1, SLC1A4, CLCF1, EPHA2, RAB35, PSMD9, KIF5C, PSMD2, MAFG, ILK, STK25, MFSD12, C2CD2, HOMER3, CAB39, PYGB, INPP1, IL4R, PMAIP1, LRP10, GFOD1, JUN, CAVIN1, AURKA, ZYX, PLAUR, PPARG, CDK7, IER3, EDEM1, TUBB2A, PXN, ITGA5, NFKBIB, MAP7D1, HBEGF
+  Got:      INPP1,TPM1,TP53BP2,PMAIP1,MAST2,LRP10,CDK7,DAXX,ZDHHC18,GRB10,MICALL1,IFRD1,NFKB2,NFKBIB,DUSP3,PLAUR,STK25,ICAM1,IER3,DNAJB2,AXIN1,KIF5C,CAVIN1,RELB,CAPN2,CLTB,FLNA,JMJD6,EDEM1,TPD52L2,STX1A,ACTN4,RSU1,CSNK1E,HOMER3,SYNGR3,RAB35,RALB,CAB39,PRKAG2,HBEGF,DRAP1,ACTN1,ITGA5,GNA11,DHDDS,CDC42BPB,PYGB,PLOD3,MAFG,MYDGF,C2CD2,LSR,FHL2,MAP7D1,JUN,IL4R,SMTN,GFOD1,AURKA,KLF6,GAL,HGS,MFSD12,GADD45A,TNFRSF12A,EREG,NFKB1,PSMD2,PXN,KCTD5,NFKBIE,ERO1A,ILK,KLHL21,CDA,DUSP4,EPHA2,PPARG,MAP1B,SLC1A4,FOSL1,PHLDA2,CLCF1,PPP1R13L,PSMD9,ZYX
+  Thinking: The question asks for genes that are commonly subject to increased expression by both Vinblastine and Mebendazole. The Cypher query executed on the knowledge graph retrieves genes that are connected to both drugs through the relationship 'CHEMICALINCREASESEXPRESSION'. The results show that both drugs have the same set of genes associated with them, indicating that all retrieved genes are indeed subject to increased expression by both drugs. Therefore, I will list all the genes that were found in the results as they represent the intersection of genes affected by both drugs.
+  Cypher (1st attempt): MATCH (d:Drug {commonName: "Vinblastine"})-[r1:CHEMICALINCREASESEXPRESSION]->(g:Gene), (d2:Drug {commonName: "Mebendazole"})-[r2:CHEMICALINCREASESEXPRESSION]->(g) RETURN g, r1, r2
+  Cypher (final):       MATCH (d:Drug {commonName: "Vinblastine"})-[r1:CHEMICALINCREASESEXPRESSION]->(g:Gene), (d2:Drug {commonName: "Mebendazole"})-[r2:CHEMICALINCREASESEXPRESSION]->(g) RETURN d, d2, g, r1, r2
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=1.000  recall=0.989  f1=0.994  jaccard=0.989  overlap=1.000
+  Missing (in expected, not in got): TUBB2A
+  Extra (in got, not in expected):   -
+
+Q [2257c2fc4321]: List the genes commonly subject to increased expression by the drugs Etacrynic acid and Betamethasone
+  Expected: CDKN1A, GPC1, RRP8, MVP, P4HA2
+  Got:      39835,38566,38315
+  Thinking: The question asks for genes that are commonly subject to increased expression by both Etacrynic acid and Betamethasone. To find these genes, we need to identify the intersection of the genes that are increased by each drug. The data retrieved shows that Betamethasone increases the expression of 196 genes, while Etacrynic acid increases the expression of 26 genes. By comparing these two sets, we can find the genes that are present in both lists. The common genes are: 39835 (ribosomal RNA processing 8), 38566 (cyclin dependent kinase inhibitor 1A), and 38315 (major vault protein).
+  Cypher (1st attempt): MATCH (d:Drug)-[r:CHEMICALINCREASESEXPRESSION]->(g:Gene) WHERE d.commonName IN ['Etacrynic acid', 'Betamethasone'] RETURN d, r, g
+  Cypher (final):       MATCH (d:Drug)-[r:CHEMICALINCREASESEXPRESSION]->(g:Gene) WHERE d.commonName IN ['Etacrynic acid', 'Betamethasone'] RETURN d, g, r
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.000  recall=0.000  f1=0.000  jaccard=0.000  overlap=0.000
+  Missing (in expected, not in got): CDKN1A, GPC1, MVP, P4HA2, RRP8
+  Extra (in got, not in expected):   38315, 38566, 39835
+
+Q [6e118558d986]: List the genes commonly subject to decreased expression by the drugs Tolbutamide and Terbinafine
+  Expected: CCDC86, SPRED2
+  Got:      SPRED2
+  Thinking: The question asks for genes that are commonly subject to decreased expression by both Tolbutamide and Terbinafine. The Cypher query results show that Tolbutamide affects 6 genes, while Terbinafine affects 146 genes. To find the common genes, we need to identify the intersection of these two sets. The genes affected by Tolbutamide are: 40727, 37222, 41197, 41048, 40690, and 37117. The genes affected by Terbinafine are a larger set, but we only need to check which of the 6 genes from Tolbutamide are also in the list of genes affected by Terbinafine. The only gene that appears in both lists is 37222. Therefore, the answer is the gene associated with that ID.
+  Cypher (1st attempt): MATCH (d:Drug)-[r:CHEMICALDECREASESEXPRESSION]->(g:Gene) WHERE d.commonName IN ['Tolbutamide', 'Terbinafine'] RETURN d, r, g
+  Cypher (final):       MATCH (d:Drug)-[r:CHEMICALDECREASESEXPRESSION]->(g:Gene) WHERE d.commonName IN ['Tolbutamide', 'Terbinafine'] RETURN d, g, r
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=1.000  recall=0.500  f1=0.667  jaccard=0.500  overlap=1.000
+  Missing (in expected, not in got): CCDC86
+  Extra (in got, not in expected):   -
+
+Q [e35a211098f3]: List the genes commonly subject to decreased expression by the drugs Daunorubicin and Topotecan
+  Expected: ADNP, TCERG1, CRK, POLE2, BAG3, TSKU, VAPA, HJURP, GPATCH8, SMC4, PUF60, DUSP4, NOL11, CDKN3, ZC3H11A, RAE1, TLE1, IST1, JADE2, GGNBP2, CCNF, PARP2, CNOT4, TASOR2, CDCA8, PLK1, CDCA4, USP1, ABL1, KIF14, SETD5, UBE2Z, CASC3, TACC3, NRIP1, CHD1, GTPBP8, RNF111, GLOD4, KAT6A, DDX42, TBPL1, C2CD5, CCNA2, TPX2, MKRN2, KPNA2, CANT1, KIF2A, ARFIP2, PDS5B, FHL2, CDC20, KIF20A, SUZ12, GABPB1, PUM1, CENPA, TDP1, CTCF, POLG2, JMJD6, PPP2R2A, CLPX, MTF2, KEAP1, DYRK1A, UBE2C, GTF2E1, DBF4, TP53BP2, CDC25A, NET1, RRP1B, ARID4B, CREBBP, TIMM9, STIL, CSTF1, GRWD1, MRPL12, DDX10, YTHDC1, WIPF2, WAPL, PSMG1, CCNB2, ABCF3, TBP, EED, RBM14, CLTC, TIPARP, FOXO3, SCAF8, OXA1L, HSPA8, NUP85, MAP3K4, FOXJ3, DLGAP5, USP22, CEBPZ, AURKA, LBR, EZH2, CDK7, ATP1B1, CDCA3, PSMG2, TEX10, MELK, TSC22D2, TOP2A, RPL36AL, TXNRD1, CDC25B
+  Got:      DYRK1A,CSTF1,GRWD1,WAPL,BAG3,TDP1,CDC20,PLK1,SMC4,ABL1,CEBPZ,RNF111,CTCF,PUF60,NUP85,KPNA2,CHD1,TSC22D2,RPL36AL,TSKU,DDX10,CCNF,KIF14,JADE2,RAE1,TCERG1,PARP2,KIF2A,ADNP,CDCA4,UBE2C,CASC3,MTF2,ATP1B1,PDS5B,GTPBP8,ABCF3,YTHDC1,POLE2,RRP1B,DDX42,DLGAP5,MAP3K4,USP1,TEX10,HSPA8,CDKN3,SETD5,CDK7,TBP,UBE2Z,TXNRD1,FHL2,POLG2,NOL11,CENPA,ZC3H11A,CREBBP,C2CD5,CDCA8,CLPX,FOXJ3,FOXO3,DUSP4,SCAF8,MKRN2,VAPA,CRK,WIPF2,STIL,PSMG1,OXA1L,CCNA2,MELK,ARID4B,CLTC,MRPL12,IST1,GTF2E1,TIPARP,DBF4,EED,NET1,GGNBP2,TOP2A,KEAP1,TBPL1,AURKA,LBR,KAT6A,TPX2,USP22,ARFIP2,NRIP1,CANT1,TP53BP2,CDC25A,TACC3,TIMM9,TASOR2,GABPB1,CNOT4,SUZ12,CCNB2,EZH2,GLOD4,PSMG2,GPATCH8,CDCA3,PPP2R2A,CDC25B,KIF20A,TLE1,PUM1,HJURP,RBM14
+  Thinking: The query retrieves genes that are commonly subject to decreased expression by both Daunorubicin and Topotecan. The results show that both drugs affect the same set of genes, which indicates that the intersection of genes affected by both drugs is the same. Therefore, I will list all the genes that are connected to both drugs as they are the same in this case.
+  Cypher (1st attempt): MATCH (d:Drug {commonName: "Daunorubicin"})-[r1:CHEMICALDECREASESEXPRESSION]->(g:Gene), (d2:Drug {commonName: "Topotecan"})-[r2:CHEMICALDECREASESEXPRESSION]->(g) RETURN g, r1, r2
+  Cypher (final):       MATCH (d:Drug {commonName: "Daunorubicin"})-[r1:CHEMICALDECREASESEXPRESSION]->(g:Gene), (d2:Drug {commonName: "Topotecan"})-[r2:CHEMICALDECREASESEXPRESSION]->(g) RETURN d, d2, g, r1, r2
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=1.000  recall=0.991  f1=0.996  jaccard=0.991  overlap=1.000
+  Missing (in expected, not in got): JMJD6
+  Extra (in got, not in expected):   -
+
+Q [404a1dbcc7c8]: List the genes commonly subject to decreased expression by the drugs Isotretinoin and Tretinoin
+  Expected: RALA, PCCB, TRIB3, CLIC4, UAP1L1, BAG3, DUSP14, HMGCS1, PUF60, SLC35A1, S100A4, ARID5B, PRR7, TLE1, PAFAH1B3, SMC1A, TUBA1A, DDAH1, VDAC1, NPDC1, PCMT1, GATA3, CEBPA, ST7, ICMT, CCDC86, CCDC85B, MYC, GAS2L1, ADH5, IARS2, NRAS, COBL, PXDN, CCNB1, MPC2, CD320, PIN1, CLTB, NT5DC2, ATP6V1D, ST6GALNAC2, ID2, MAPK9, ENOPH1, HSPB1, CNDP2, BLVRA, HMG20B, EFNA3, BDH1, IGFBP2, SLC25A4, EVL, GNB5, GOLT1B, DRAP1, DPYSL2, TYMS, POP4, RPS4Y1, H2BC12, HSPA1A, TUBB6, AKT1, HAT1, TIMM9, TSPAN4, SPDEF, STUB1, MRPS2, CRYZ, MBOAT7, BNIP3, PPP2R5A, YBX3, PDGFA, GLRX, DNM1L, RNH1, ANXA2, HSPA8, NUP85, UBE2S, NUCB2, ITGB1BP1, SLC35F2, GNAS, SLC7A5, GTF2A2, BCL2, MTHFD2, CDC25B
+  Got:      ICMT,GTF2A2,GATA3,ID2,PAFAH1B3,IARS2,COBL,HMGCS1,RNH1,HAT1,ATP6V1D,UBE2S,POP4,SPDEF,CCDC86,CRYZ,NRAS,MTHFD2,SLC35A1,ITGB1BP1,PRR7,VDAC1,STUB1,RPS4Y1,GAS2L1,TSPAN4,PCCB,EVL,TLE1,DPYSL2,MRPS2,NPDC1,UAP1L1,HSPA1A,CCNB1,CDC25B,YBX3,BCL2,MPC2,HSPA8,ANXA2,NUCB2,SLC7A5,CNDP2,HMG20B,PXD,PDGFA,ARID5B,AKT1,MBOAT7,TUBB6,TRIB3,NT5DC2,PIN1,DRAP1,SLC25A4,MYC,ST7,CLIC4,CEBPA,NUP85,SLC35F2,DDAH1,CLTB,CCDC85B,RALA,IGFBP2,GNB5,ST6GALNAC2,SMC1A,BDH1,PCMT1,BLVRA,DNM1L,GOLT1B,S100A4,CD320,PPP2R5A,BNIP3,TYMS,DUSP14,ADH5,EFNA3,PUF60,GNAS,TUBA1A,GLRX,HSPB1,TIMM9,BAG3,H2BC12,ENOPH1,MAPK9
+  Thinking: The question asks for genes that are commonly subject to decreased expression by both Isotretinoin and Tretinoin. The Cypher query results show that both drugs have a list of genes they affect. To find the common genes, we need to identify the intersection of the genes affected by both drugs. The results indicate that there are 93 genes affected by Isotretinoin and 93 genes affected by Tretinoin. By comparing the two lists, we can extract the genes that are present in both lists, which represent the genes commonly subject to decreased expression by both drugs.
+  Cypher (1st attempt): MATCH (d:Drug)-[r:CHEMICALDECREASESEXPRESSION]->(g:Gene) WHERE d.commonName IN ['Isotretinoin', 'Tretinoin'] RETURN d, r, g
+  Cypher (final):       MATCH (d:Drug)-[r:CHEMICALDECREASESEXPRESSION]->(g:Gene) WHERE d.commonName IN ['Isotretinoin', 'Tretinoin'] RETURN d, g, r
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.989  recall=0.989  f1=0.989  jaccard=0.979  overlap=0.989
+  Missing (in expected, not in got): PXDN
+  Extra (in got, not in expected):   PXD
+
+Q [7ac933df7056]: List the genes commonly subject to decreased expression by the drugs Clofarabine and Azacitidine
+  Expected: DAG1, HMG20B, CEP55, FOXM1, DLGAP5, TMEM109, NCAPH, CDK1, CCNA2, HSPA1A, CDC20, KIF20A, PRC1, LBR, GET1, SPC25, PIK3C2B, PAFAH1B3, CCNB2, BIRC5, CDCA3, TOP2A, CDC25B
+  Got:      CDK1,CCNB2,CDC25B,CDC25C,FOXM1,HMMR,KIF20A,KIF20B,KIF22,KIF4A,NCAPH,PAFAH1B3,SPC25
+  Thinking: The question asks for genes that are commonly subject to decreased expression by both Clofarabine and Azacitidine. The knowledge graph provides a list of genes associated with each drug. To find the common genes, I need to identify the intersection of the two lists of genes. Clofarabine affects a total of 86 genes, while Azacitidine affects 222 genes. By comparing these two sets, I can determine which genes are present in both lists.
+  Cypher (1st attempt): MATCH (d:Drug)-[r:CHEMICALDECREASESEXPRESSION]->(g:Gene) WHERE d.commonName IN ['Clofarabine', 'Azacitidine'] RETURN d, r, g
+  Cypher (final):       MATCH (d:Drug)-[r:CHEMICALDECREASESEXPRESSION]->(g:Gene) WHERE d.commonName IN ['Clofarabine', 'Azacitidine'] RETURN d, g, r
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.615  recall=0.348  f1=0.444  jaccard=0.286  overlap=0.615
+  Missing (in expected, not in got): BIRC5, CCNA2, CDC20, CDCA3, CEP55, DAG1, DLGAP5, GET1, HMG20B, HSPA1A, LBR, PIK3C2B, PRC1, TMEM109, TOP2A
+  Extra (in got, not in expected):   CDC25C, HMMR, KIF20B, KIF22, KIF4A
+
+Q [560f64280ec4]: List the genes commonly subject to decreased expression by the drugs Metrizamide and Terbinafine
+  Expected: METTL17, NUDT9, SLC25A13, OXA1L, COPS7A
+  Got:      37480,42140,38564
+  Thinking: The question asks for genes that are commonly subject to decreased expression by both Metrizamide and Terbinafine. To find these genes, we need to identify the genes associated with each drug and then find the intersection of these two sets. The data retrieved shows that Metrizamide affects 17 genes and Terbinafine affects 146 genes. By comparing these two lists, we can identify the genes that are common to both drugs. The common genes are: 37480, 42140, and 38564.
+  Cypher (1st attempt): MATCH (d:Drug)-[r:CHEMICALDECREASESEXPRESSION]->(g:Gene) WHERE d.commonName IN ['Metrizamide', 'Terbinafine'] RETURN d, r, g
+  Cypher (final):       MATCH (d:Drug)-[r:CHEMICALDECREASESEXPRESSION]->(g:Gene) WHERE d.commonName IN ['Metrizamide', 'Terbinafine'] RETURN d, g, r
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.000  recall=0.000  f1=0.000  jaccard=0.000  overlap=0.000
+  Missing (in expected, not in got): COPS7A, METTL17, NUDT9, OXA1L, SLC25A13
+  Extra (in got, not in expected):   37480, 38564, 42140
+
+Q [23f62bec1004]: List the genes commonly subject to decreased expression by the drugs Topotecan and Pitavastatin
+  Expected: TCERG1, MNAT1, POLE2, JARID2, ZMYM2, ORC2, NCK2, SMC4, PUF60, TOP2B, CDKN3, ATF1, RAE1, UBE3C, TLE1, USP6NL, VAPB, LSM8, ZC3H13, PLK1, CDCA4, CDC123, MCM3, AARS1, KIF14, PTPN12, IGF1R, TACC3, UGDH, NRIP1, ST7, CHD1, GTPBP8, MYO10, C2CD5, NCAPH, CCNA2, MKRN2, ZMIZ1, KPNA2, PDS5B, FHL2, CDC20, GABPB1, PDS5A, PPP2R3C, POLG2, JMJD6, PPP2R2A, UBE2C, DBF4, EXOSC8, TMEM97, RAN, ASCC3, RRP1B, PCLAF, XPO1, TIMM9, BLM, ANP32B, COTL1, MRPL12, DDX10, PSMG1, CCNB2, XPO6, HSPA8, OXA1L, PCM1, NUP85, CSTF3, MAP3K4, FOXJ3, DLGAP5, VRK1, MBNL1, RSRC1, USP34, USP22, RBM28, EXOSC9, KIF15, BLMH, NUP88, ANKRD17, MCM10, TSEN2, MELK, BRCA1, RPL36AL, TXNRD1, MTHFD2
+  Got:      MTHFD2,PTPN2,CDC20,CDC123,CDC25A,CDC25B,CDC45,CDCA3,CDCA4,CDCA8,CDK1,CDK4,CDK7,CDKN3,CREBBP,CTCF,CTPS1,DCK,DLD,DLGAP5,EXOSC8,EXOSC9,FBXW7,GRWD1,HNRNPA2B1,HNRNPU,JADE1,JADE2,MAP3K4,MCM3,MCM6,MCM7,MCM10,MCM2,MYC,NUP43,NUP54,NUP85,NUP93,PCNA,PLK1,PLK4,PPP2R2A,PPP2R3C,PPP6R3,RAN,RB1,RB1CC1,RB1CC2,RB1CC3,RB1CC4,RB1CC5,RB1CC6,RB1CC7,RB1CC8,RB1CC9,RB1CC10,RB1CC11,RB1CC12,RB1CC13,RB1CC14,RB1CC15,RB1CC16,RB1CC17,RB1CC18,RB1CC19,RB1CC20,RB1CC21,RB1CC22,RB1CC23,RB1CC24,RB1CC25,RB1CC26,RB1CC27,RB1CC28,RB1CC29,RB1CC30,RB1CC31,RB1CC32,RB1CC33,RB1CC34,RB1CC35,RB1CC36,RB1CC37,RB1CC38,RB1CC39,RB1CC40,RB1CC41,RB1CC42,RB1CC43,RB1CC44,RB1CC45,RB1CC46,RB1CC47,RB1CC48,RB1CC49,RB1CC50,RB1CC51,RB1CC52,RB1CC53,RB1CC54,RB1CC55,RB1CC56,RB1CC57,RB1CC58,RB1CC59,RB1CC60,RB1CC61,RB1CC62,RB1CC63,RB1CC64,RB1CC65,RB1CC66,RB1CC67,RB1CC68,RB1CC69,RB1CC70,RB1CC71,RB1CC72,RB1CC73,RB1CC74,RB1CC75,RB1CC76,RB1CC77,RB1CC78,RB1CC79,RB1CC80,RB1CC81,RB1CC82,RB1CC83,RB1CC84,RB1CC85,RB1CC86,RB1CC87,RB1CC88,RB1CC89,RB1CC90,RB1CC91,RB1CC92,RB1CC93,RB1CC94,RB1CC95,RB1CC96,RB1CC97,RB1CC98,RB1CC99,RB1CC100
+  Thinking: The question asks for genes that are commonly subject to decreased expression by both Topotecan and Pitavastatin. The Cypher query retrieves genes that are affected by each drug separately. To find the common genes, we need to identify the intersection of the two sets of genes returned for each drug. The results show that Topotecan affects a total of 250 genes, while Pitavastatin affects 248 genes. By comparing these two lists, we can find the genes that are present in both lists, indicating they are commonly affected by both drugs.
+  Cypher (1st attempt): MATCH (d:Drug)-[r:CHEMICALDECREASESEXPRESSION]->(g:Gene) WHERE d.commonName IN ['Topotecan', 'Pitavastatin'] RETURN d, r, g
+  Cypher (final):       MATCH (d:Drug)-[r:CHEMICALDECREASESEXPRESSION]->(g:Gene) WHERE d.commonName IN ['Topotecan', 'Pitavastatin'] RETURN d, g, r
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.109  recall=0.172  f1=0.133  jaccard=0.071  overlap=0.172
+  Missing (in expected, not in got): AARS1, ANKRD17, ANP32B, ASCC3, ATF1, BLM, BLMH, BRCA1, C2CD5, CCNA2, CCNB2, CHD1, COTL1, CSTF3, DBF4, DDX10, FHL2, FOXJ3, GABPB1, GTPBP8, HSPA8, IGF1R, JARID2, JMJD6, KIF14, KIF15, KPNA2, LSM8, MBNL1, MELK, MKRN2, MNAT1, MRPL12, MYO10, NCAPH, NCK2, NRIP1, NUP88, ORC2, OXA1L, PCLAF, PCM1, PDS5A, PDS5B, POLE2, POLG2, PSMG1, PTPN12, PUF60, RAE1, RBM28, RPL36AL, RRP1B, RSRC1, SMC4, ST7, TACC3, TCERG1, TIMM9, TLE1, TMEM97, TOP2B, TSEN2, TXNRD1, UBE2C, UBE3C, UGDH, USP22, USP34, USP6NL, VAPB, VRK1, XPO1, XPO6, ZC3H13, ZMIZ1, ZMYM2
+  Extra (in got, not in expected):   CDC25A, CDC25B, CDC45, CDCA3, CDCA8, CDK1, CDK4, CDK7, CREBBP, CTCF, CTPS1, DCK, DLD, FBXW7, GRWD1, HNRNPA2B1, HNRNPU, JADE1, JADE2, MCM2, MCM6, MCM7, MYC, NUP43, NUP54, NUP93, PCNA, PLK4, PPP6R3, PTPN2, RB1, RB1CC1, RB1CC10, RB1CC100, RB1CC11, RB1CC12, RB1CC13, RB1CC14, RB1CC15, RB1CC16, RB1CC17, RB1CC18, RB1CC19, RB1CC2, RB1CC20, RB1CC21, RB1CC22, RB1CC23, RB1CC24, RB1CC25, RB1CC26, RB1CC27, RB1CC28, RB1CC29, RB1CC3, RB1CC30, RB1CC31, RB1CC32, RB1CC33, RB1CC34, RB1CC35, RB1CC36, RB1CC37, RB1CC38, RB1CC39, RB1CC4, RB1CC40, RB1CC41, RB1CC42, RB1CC43, RB1CC44, RB1CC45, RB1CC46, RB1CC47, RB1CC48, RB1CC49, RB1CC5, RB1CC50, RB1CC51, RB1CC52, RB1CC53, RB1CC54, RB1CC55, RB1CC56, RB1CC57, RB1CC58, RB1CC59, RB1CC6, RB1CC60, RB1CC61, RB1CC62, RB1CC63, RB1CC64, RB1CC65, RB1CC66, RB1CC67, RB1CC68, RB1CC69, RB1CC7, RB1CC70, RB1CC71, RB1CC72, RB1CC73, RB1CC74, RB1CC75, RB1CC76, RB1CC77, RB1CC78, RB1CC79, RB1CC8, RB1CC80, RB1CC81, RB1CC82, RB1CC83, RB1CC84, RB1CC85, RB1CC86, RB1CC87, RB1CC88, RB1CC89, RB1CC9, RB1CC90, RB1CC91, RB1CC92, RB1CC93, RB1CC94, RB1CC95, RB1CC96, RB1CC97, RB1CC98, RB1CC99
+
+Q [e64bf1acb9f9]: List the genes commonly subject to decreased expression by the drugs Cyclosporine and Podofilox
+  Expected: SMC2, MSH6, NUSAP1, AURKB, UBE2C, RFC2, ASF1B, CCDC85B, SPR, TMEM109, RFC5, ADH5, TYMS, CDK1, HSPA1A, MCM5, PUF60, PCLAF, UNG, PCNA, TIMELESS, FANCI, SUZ12, FEN1, DTL, LIG1, MPC2, MRPL12, COG4, MCM6, CDC45, EED, EXOSC4, PIK3R4, MCM2, ZWINT, TOP2A, BRCA1, MCM3, THAP11, DLD, CDC25B, GINS1
+  Got:      Cyclosporine,KIF4A,DLD,EXO1,HMMR,DBF4,VRK1,MAD2L1,EED,LMNB2,CDCA3,RUVBL1,SUV39H1,ERCC6L,RPA1,MCM4,PUF60,PSMD2,CEP55,TUBB4B,PMPCA,NEIL3,DNA2,CDC25B,PLK4,CDK5R1,KIF14,TMEM109,MRE11,ADI1,GINS1,FASTKD5,DTL,BRCA1,CCNE2,TRAP1,MRPS2,MRPL12,HSPA8,STMN1,HPS6,KIFC1,AURKA,RAD51,CHERP,CDCA8,MCM6,TRIP13,STUB1,ATF5,BACE2,NCAPG,HACD3,UMPS,DERA,PNP,PBK,SMC2,LMNB1,DCK,CENPF,SRSF2,NEK2,PWP2,CENPN,CHAF1B,DHFR,ITGAE,PIK3R4,CDC20,CCNF,GTSE1,PLK1,SPDL1,RPA2,RRP1B,TIMELESS,MBOAT7,POLD1,DNMT1,RFC3,CSK,RPIA,EZH2,RPS6KA1,CCND3,EPB41L2,LIG1,UNG,TUBB6,GINS2,TACC3,MCM5,ELAC2,NCAPH,OIP5,PROS1,ESPL1,CCNB2,DNM1L,BUB1,CLTB,POLE2,WDR76,THAP11,NUP85,RGS2,CRYZ,RCC1L,LBR,TLCD3A,KIF18A,UBE2C,NUDT1,MRPL19,DCTPP1,CHAF1A,TK1,SLC25A4,MYBL2,CCNA2,TOP2A,CENPX,NUSAP1,PCLAF,NDC80,SLC25A10,CENPM,FBXO5,PPP2R5E,DEPDC1,CDC7,BIRC5,MELK,MCM10,ZDHHC6,CENPA,PIMREG,KIF11,TTK,CDC25C,RFC5,PDSS1,DTYMK,CDC25A,DLGAP5,MCM3,SPR,CKAP2,MKI67,HSPA1A,PCNA,CDCA4,PGAM1,KIF20A,PRC1,TFDP1,RACGAP1,CBR1,ITGB1BP1,MSH6,CDK1,KIF2C,ZWINT,IARS2,KIF15,ITGB5,VDAC3,IFRD2,ASF1B,AURKB,POLR3K,SDHB,POLA2,SURF2,PIN1,ATAD2,GFUS,GMNN,MYCBP,TSPAN4,PARPBP,DNTTIP2,HDAC2,SNRNP25,RFC2,GTF2A2,HMG20B,CD320,PSRC1,COG4,KIF23,GINS3,MRPS7,HSPB1,MCM2,TROAP,KPNA2,COQ3,KIF18B,TYMS,CCDC86,RAD54B,TPI1,CCDC85B,SPC25,NOC2L,POLQ,NCAPG2,ASPM,EXOSC9,SUZ12,SUMO4,EXOSC4,MRPS12,RBM12,RECQL4,DSCC1,GEMIN6,GEMIN4,HAT1,HJURP,POP4,POP1,TMEM160,TEX10,PAFAH1B3,MRPS34,FEN1,ADH5,RRM2,FOXM1,MPC2,TMPO,MTERF3,FANCI,MYD88,UBE2S,KIF20B,NOSIP,NUP62,TPX2,AKT1,CDK2,CCNB1,CDC45,SMC4,DNAJC9,HPRT1,GRWD1,ICMT,Podofilox,DET1,GCDH,NET1,PDIA6,EHHADH,TRMT5,ANG,KAT6A,ALG6,SKP2,PEG10,CAT,CRYL1,HMGA2,AGT,FIS1,PEMT,KHDC4,MCM7,SEPHS2,FZD4,SLC16A4,USP1,PRIM1,PAN2,PARP1,PSMB8,TMEM38B,CHEK2,SLC5A6,NDUFA2,B4GAT1,DDB2,PHGDH,MAP2K6,CPS1,CYBA,MST1,FAH,C5,COQ8A,BDH1,XBP1,MRPL3,ATP1B1,DUT,RPL22,STAT1,SLC37A4,RPS4Y1,GNPDA1,AHCY,BBS1,FZD7,FGFR4,LAGE3,ETFB,IDH1,WWOX,TIMM10B,PSME1,SUOX,EAPP,C3,ICAM3,POLG2,ATRAID,UGDH,DBP,AKR7A2,CPNE3,RPS8,KAT6B,CISD1,RNASE4,PAPSS2,EML4,HAUS4,SLC27A5,MTHFD2,TTC28,RBBP4,AKR1C3,CDK4,MINPP1,HLTF,TSPAN6,MDH1,OXA1L,HOXA10,TMEM168,TKFC,SKIC2,ALDH1A1,CRTAP,MFF,LACTB2,LYRM1,ALDH3A1,PAAF1,NFKBIA,PGM1,FMO5,PEX11B,HOXA5,IMP3,ABCF3,NUP210,CNNM3,KBTBD4,BRIP1,ATP5MC2,CEP76,CEBPA,BAMBI,PSIP1,ARL2,PSMG1,GAMT,TST,PPA2,ABCB6,SHMT1,PIK3C2B,NAT10,NOP53,FGA,POLR3B,NR1H3,UQCR10,ID2,C1S,PBLD,TTC38,HADH,SMARCA2,HMOX1,PAICS,PMPCB,C2CD5,PIGC,TMED10,NNT,CFI,BET1,RMI1,TBP,RPL34,ATF1,SLC11A2,MST1L,POLR2G,TXNDC9,DUSP6,ALDH6A1,NISCH,ISOC1,RWDD2B,NIPSNAP1,ATP5F1A,ERBB3,COG2,RAD9A,ERBB2,NSL1,HMGB2,UBR7,TP53,ARFIP2,APOM,C1R,NIT2,LY6E,GATD3,TMCO6,TM9SF2,ABCC6,ATF6,PCCB,MTHFD1,NFS1,HLF,TOMM70,TOPBP1,NUP88,MLEC,PRUNE1,MPPE1,CENPS,ALG8,PDHX,UBE2A,ELP1,DNPH1,SCP2,PSMG2,KLHDC2,WDR5B,GALE,MGST2,ABHD10,EML3,CYP4F3,TMEM97,SLC2A10,WFS1,SCAND1
+  Thinking: The LLM output reached the max-output-tokens limit while listing entities; the 459 entity names were extracted directly from the KG result set.
+  Cypher (1st attempt): MATCH (d:Drug)-[r:CHEMICALDECREASESEXPRESSION]->(g:Gene) WHERE d.commonName IN ['Cyclosporine', 'Podofilox'] RETURN d, r, g
+  Cypher (final):       MATCH (d:Drug)-[r:CHEMICALDECREASESEXPRESSION]->(g:Gene) WHERE d.commonName IN ['Cyclosporine', 'Podofilox'] RETURN d, g, r
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.094  recall=1.000  f1=0.171  jaccard=0.094  overlap=1.000
+  Missing (in expected, not in got): -
+  Extra (in got, not in expected):   ABCB6, ABCC6, ABCF3, ABHD10, ADI1, AGT, AHCY, AKR1C3, AKR7A2, AKT1, ALDH1A1, ALDH3A1, ALDH6A1, ALG6, ALG8, ANG, APOM, ARFIP2, ARL2, ASPM, ATAD2, ATF1, ATF5, ATF6, ATP1B1, ATP5F1A, ATP5MC2, ATRAID, AURKA, B4GAT1, BACE2, BAMBI, BBS1, BDH1, BET1, BIRC5, BRIP1, BUB1, C1R, C1S, C2CD5, C3, C5, CAT, CBR1, CCDC86, CCNA2, CCNB1, CCNB2, CCND3, CCNE2, CCNF, CD320, CDC20, CDC25A, CDC25C, CDC7, CDCA3, CDCA4, CDCA8, CDK2, CDK4, CDK5R1, CEBPA, CENPA, CENPF, CENPM, CENPN, CENPS, CENPX, CEP55, CEP76, CFI, CHAF1A, CHAF1B, CHEK2, CHERP, CISD1, CKAP2, CLTB, CNNM3, COG2, COQ3, COQ8A, CPNE3, CPS1, CRTAP, CRYL1, CRYZ, CSK, CYBA, CYP4F3, Cyclosporine, DBF4, DBP, DCK, DCTPP1, DDB2, DEPDC1, DERA, DET1, DHFR, DLGAP5, DNA2, DNAJC9, DNM1L, DNMT1, DNPH1, DNTTIP2, DSCC1, DTYMK, DUSP6, DUT, EAPP, EHHADH, ELAC2, ELP1, EML3, EML4, EPB41L2, ERBB2, ERBB3, ERCC6L, ESPL1, ETFB, EXO1, EXOSC9, EZH2, FAH, FASTKD5, FBXO5, FGA, FGFR4, FIS1, FMO5, FOXM1, FZD4, FZD7, GALE, GAMT, GATD3, GCDH, GEMIN4, GEMIN6, GFUS, GINS2, GINS3, GMNN, GNPDA1, GRWD1, GTF2A2, GTSE1, HACD3, HADH, HAT1, HAUS4, HDAC2, HJURP, HLF, HLTF, HMG20B, HMGA2, HMGB2, HMMR, HMOX1, HOXA10, HOXA5, HPRT1, HPS6, HSPA8, HSPB1, IARS2, ICAM3, ICMT, ID2, IDH1, IFRD2, IMP3, ISOC1, ITGAE, ITGB1BP1, ITGB5, KAT6A, KAT6B, KBTBD4, KHDC4, KIF11, KIF14, KIF15, KIF18A, KIF18B, KIF20A, KIF20B, KIF23, KIF2C, KIF4A, KIFC1, KLHDC2, KPNA2, LACTB2, LAGE3, LBR, LMNB1, LMNB2, LY6E, LYRM1, MAD2L1, MAP2K6, MBOAT7, MCM10, MCM4, MCM7, MDH1, MELK, MFF, MGST2, MINPP1, MKI67, MLEC, MPPE1, MRE11, MRPL19, MRPL3, MRPS12, MRPS2, MRPS34, MRPS7, MST1, MST1L, MTERF3, MTHFD1, MTHFD2, MYBL2, MYCBP, MYD88, NAT10, NCAPG, NCAPG2, NCAPH, NDC80, NDUFA2, NEIL3, NEK2, NET1, NFKBIA, NFS1, NIPSNAP1, NISCH, NIT2, NNT, NOC2L, NOP53, NOSIP, NR1H3, NSL1, NUDT1, NUP210, NUP62, NUP85, NUP88, OIP5, OXA1L, PAAF1, PAFAH1B3, PAICS, PAN2, PAPSS2, PARP1, PARPBP, PBK, PBLD, PCCB, PDHX, PDIA6, PDSS1, PEG10, PEMT, PEX11B, PGAM1, PGM1, PHGDH, PIGC, PIK3C2B, PIMREG, PIN1, PLK1, PLK4, PMPCA, PMPCB, PNP, POLA2, POLD1, POLE2, POLG2, POLQ, POLR2G, POLR3B, POLR3K, POP1, POP4, PPA2, PPP2R5E, PRC1, PRIM1, PROS1, PRUNE1, PSIP1, PSMB8, PSMD2, PSME1, PSMG1, PSMG2, PSRC1, PWP2, Podofilox, RACGAP1, RAD51, RAD54B, RAD9A, RBBP4, RBM12, RCC1L, RECQL4, RFC3, RGS2, RMI1, RNASE4, RPA1, RPA2, RPIA, RPL22, RPL34, RPS4Y1, RPS6KA1, RPS8, RRM2, RRP1B, RUVBL1, RWDD2B, SCAND1, SCP2, SDHB, SEPHS2, SHMT1, SKIC2, SKP2, SLC11A2, SLC16A4, SLC25A10, SLC25A4, SLC27A5, SLC2A10, SLC37A4, SLC5A6, SMARCA2, SMC4, SNRNP25, SPC25, SPDL1, SRSF2, STAT1, STMN1, STUB1, SUMO4, SUOX, SURF2, SUV39H1, TACC3, TBP, TEX10, TFDP1, TIMM10B, TK1, TKFC, TLCD3A, TM9SF2, TMCO6, TMED10, TMEM160, TMEM168, TMEM38B, TMEM97, TMPO, TOMM70, TOPBP1, TP53, TPI1, TPX2, TRAP1, TRIP13, TRMT5, TROAP, TSPAN4, TSPAN6, TST, TTC28, TTC38, TTK, TUBB4B, TUBB6, TXNDC9, UBE2A, UBE2S, UBR7, UGDH, UMPS, UQCR10, USP1, VDAC3, VRK1, WDR5B, WDR76, WFS1, WWOX, XBP1, ZDHHC6
+
+Q [958ff924a4e7]: List the genes commonly subject to decreased expression by the drugs Digoxin and Ouabain
+  Expected: POP5, PRUNE2, PHGDH, NIT2, KIFBP, GLT8D1, BAG3, ZNF32, RWDD2B, SCCPDH, CETN3, TWF2, GMPPA, SAMM50, TXNDC9, ARPC5, DNAJB1, LIPA, METTL13, PRR7, MRPL15, MRPL19, FKTN, NMRK1, PMVK, XBP1, UBE3C, BRCC3, TLE1, STOML2, RNF187, JADE2, SLC37A4, PAFAH1B3, TCEA2, FBXL15, APEX1, TEX264, TSR3, PIP4K2B, SPG21, AMZ2, GEMIN6, UBL4A, PLK1, SLC24A1, THAP11, AARS1, DLD, RPIA, UROS, CCT4, MSRB1, CCDC92, CCDC85B, DOLK, CTSL, GLOD4, GFUS, CENPB, RNASEH2A, HOXA10, ADH5, DCTPP1, WASHC3, IARS2, RXYLT1, ZW10, ADO, C2CD5, MDH1, CCNA2, CBR3, CANT1, LOXL1, MAT2A, PCNA, CDC20, RRAGA, HPF1, THYN1, PRSS23, SKIC8, DDIT4, IRAK1, CHMP7, PMS1, PAAF1, PIN1, RIOX1, PYGL, CSK, ALG6, TDP1, TST, PSIP1, ASB13, HADH, COG2, AKR7A2, NR2F6, ARHGAP1, CTBP1, RPA1, HSPB1, FUT8, SLC25A46, CBR1, SMARCAL1, RUVBL1, ACTR1B, CNDP2, BLVRA, IMPA2, KEAP1, HAX1, B4GAT1, NIF3L1, CYBC1, TMEM187, EPRS1, TTLL1, RRS1, MRPL24, PCBD1, DPYSL2, TYMS, TBC1D16, POP4, AKR1B10, XPOT, HSPA1A, RRP1B, PSMB8, MRPS16, NUP37, PWP1, PLGRKT, TIMM9, BCKDK, STUB1, NSMCE4A, OXSM, SUOX, PCYOX1L, SNX17, CRYZ, COASY, PPA2, BNIP3, ZDHHC6, ZFP64, GNPAT, PSMG1, PARP1, ATMIN, EIF4EBP1, ABCF3, ADSL, LSM2, STK25, SACM1L, AKR1B1, MKKS, TRAPPC12, GLRX, NTHL1, STAMBP, DAG1, DERA, INTS3, NIPSNAP1, HSPA8, OXA1L, MRPS33, SPR, ERBB2, CCDC51, RITA1, TCEAL4, MRPL58, ZBTB14, RDH14, KLHDC2, PRMT2, TARBP1, MPI, ANXA4, OXLD1, ZMYM3, PIK3C2B, PGM1, MTIF2, STARD7, MRPL34, TUBG1, LRRC20, TSEN2, POLR2I, IMP3, LCMT2, TRMT1L, IDH1, SAC3D1, TRAK2, OCEL1, BRCA1, EIF4ENIF1, COA3, UMPS, CDC25B
+  Got:      NMRK1,PPA2,STAMBP,AARS1,DNAJB1,MRPL58,SKIC8,MRPL34,RRP1B,NSMCE4A,PLGRKT,OXLD1,NUP37,IMPA2,IARS2,RITA1,RIOX1,PWP1,PRUNE2,PMVK,CTSL,LOXL1,BCKDK,TEX264,POP5,RPA1,UBL4A,GLRX,ALG6,PAFAH1B3,ADSL,C2CD5,MRPL19,TIMM9,TST,ARHGAP1,XBP1,HSPA1A,AKR7A2,OCEL1,PIP4K2B,ANXA4,BRCA1,DAG1,CENPB,CCDC92,TSEN2,ABCF3,ERBB2,CRYZ,CCDC51,AMZ2,KIFBP,ARPC5,BRCC3,PSIP1,RXYLT1,ASB13,EIF4ENIF1,METTL13,TCEAL4,PSMG1,CNDP2,NIPSNAP1,PGM1,SLC24A1,MAT2A,BAG3,PHGDH,STOML2,PYGL,TRMT1L,COG2,NR2F6,SNX17,RDH14,TBC1D16,SUOX,UBE3C,SPR,ZNF32,RNASEH2A,OXSM,DCTPP1,TRAPPC12,RUVBL1,CBR1,THYN1,MRPL15,CCT4,APEX1,PARP1,SAC3D1,TXNDC9,DLD,TSR3,XPOT,NIT2,RRAGA,KEAP1,HPF1,HADH,LIPA,PIK3C2B,PCNA,STARD7,PLK1,AKR1B1,MPI,OXA1L,PSMB8,HOXA10,SPG21,GMPPA,DPYSL2,CSK,WASHC3,NIF3L1,CYBC1,POLR2I,CBR3,IDH1,ADO,NTHL1,EIF4EBP1,GLT8D1,CETN3,SAMM50,LCMT2,B4GAT1,TWF2,RNF187,THAP11,COA3,CTBP1,MRPS33,PRMT2,ZMYM3,TLE1,BNIP3,TDP1,PRR7,CDC20,HAX1,TUBG1,MSRB1,PRSS23,TCEA2,ZFP64,SACM1L,TRAK2,PIN1,HSPA8,INTS3,GFUS,MKKS,TMEM187,TARBP1,GLOD4,BLVRA,RRS1,STUB1,ZBTB14,FKTN,IRAK1,PAAF1,PMS1,LRRC20,ACTR1B,KLHDC2,CCNA2,CDC25B,RPIA,SCCPDH,CHMP7,CCDC85B,RWDD2B,JADE2,UROS,SMARCAL1,MRPS16,LSM2,DERA,GEMIN6,FBXL15,ZDHHC6,IMP3,AKR1B10,MDH1,CANT1,ATMIN,PCYOX1L,SLC37A4,DOLK,EPRS1,SLC25A46,DDIT4,PCBD1,ADH5,ZW10,GNPAT,TTLL1,MTIF2,TYMS,COASY,POP4,STK25,UMPS,HSPB1,MRPL24
+  Thinking: The question asks for genes that are commonly subject to decreased expression by both Digoxin and Ouabain. The Cypher query executed on the knowledge graph retrieves genes that are connected to both drugs through the relationship 'CHEMICALDECREASESEXPRESSION'. The results show that both drugs affect the same set of genes, indicating that the intersection of genes affected by both drugs is the same. Therefore, I will list all the genes that are affected by either drug, as they are the same in this case.
+  Cypher (1st attempt): MATCH (d:Drug {commonName: "Digoxin"})-[r1:CHEMICALDECREASESEXPRESSION]->(g:Gene), (d2:Drug {commonName: "Ouabain"})-[r2:CHEMICALDECREASESEXPRESSION]->(g) RETURN g, r1, r2
+  Cypher (final):       MATCH (d:Drug {commonName: "Digoxin"})-[r1:CHEMICALDECREASESEXPRESSION]->(g:Gene), (d2:Drug {commonName: "Ouabain"})-[r2:CHEMICALDECREASESEXPRESSION]->(g) RETURN d, d2, g, r1, r2
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=1.000  recall=0.995  f1=0.998  jaccard=0.995  overlap=1.000
+  Missing (in expected, not in got): FUT8
+  Extra (in got, not in expected):   -
+
+Q [267566984c94]: List the genes commonly subject to decreased expression by the drugs Digitoxin and Quinacrine
+  Expected: PYCR1, KEAP1, MRPS27, HSPA8, CYBC1, SNUPN, PHGDH, NIT2, BDH1, CCDC85B, EPRS1, GLOD4, MRPL24, PRUNE1, C2CD5, CCNA2, XPOT, RPS4Y1, CANT1, HSPA1A, RRP1B, DNAJB1, MAT2A, MRPS16, CHEK2, PWP1, PCNA, TIMM9, MRPL15, STUB1, TARBP1, MPI, RBM34, PRAF2, TTC31, HAUS4, XBP1, DDIT4, PSMG1, PAFAH1B3, DLD, PARP1, PIK3C2B, CCNB2, EIF4EBP1, ABCF3, APEX1, CSK, LSM2, TSEN2, TDP1, POLR2I, IMP3, UBL4A, PLK1, NUDCD3, COG2, THAP11, AARS1, MTHFD2, CDC25B, SLC25A46
+  Got:      RPIA,RNASEH2A,CYBC1,G6PD,NUP37,PPA2,KIFBP,FAM89B,ADH5,RITA1,BRCC3,ABCF3,CENPB,DERA,LRRC20,BRCA1,CTSL,TST,SLC25A46,APEX1,TARBP1,CCDC92,PYGL,MRPL19,PAN2,SNUPN,TMEM187,STAMBP,CNDP2,SACM1L,CANT1,CCDC85B,SUV39H1,GEMIN6,CHMP7,MAT2A,ACTR1B,KEAP1,HAUS4,LCMT2,TCEA2,CCNA2,SAMM50,PRUNE2,SIRT5,PRMT2,NTHL1,OCEL1,PYCR1,RRAGA,THYN1,MRPL3,STOML2,TRMT1L,COG2,NR2F6,DNAJB1,HSPA1A,TIMM9,SLC24A1,PSMG1,MSRB1,NHERF1,ARPC5,B4GAT1,NT5DC2,SPATA20,NPDC1,BLVRA,PCNA,PRAF2,JADE2,PRR7,IMPA2,COQ9,PCYOX1L,DLD,CZIB,MDH1,RMND5B,AKR1B1,MRPS2,HSPB1,THAP11,ADO,MRPL34,SMARCAL1,SLC37A4,ARHGAP1,HADH,MAGEF1,PMS1,FBXL15,PHGDH,EPRS1,ERBB2,MKKS,TSEN2,GFUS,DDIT4,DPYSL2,RPA1,CETN3,CDC20,TDP1,NUDCD3,SPR,ALDH3A1,DAG1,IARS2,UNG,UBE3C,ATMIN,XBP1,GLT8D1,CBR3,CTBP1,BDH1,SUOX,MRPL17,NMRK1,RXYLT1,DCTPP1,PLGRKT,ATRAID,PCBD1,ANXA4,TTC31,PFKP,METTL13,TRAPPC12,RABEPK,LYPLA1,RRS1,TWF2,RPS4Y1,COPS7A,STK25,BNIP3,NIF3L1,PIK3C2B,POP4,GLOD4,THEM6,ZBTB14,INTS3,GMPPA,CEBPA,HSPA8,MRPL24,TEX264,DOLK,MRPS27,ELP1,PATZ1,GLRX,HPF1,CDC25B,WASHC3,SNX17,PWP1,ADSL,CCT4,NSMCE4A,PIP4K2B,CSK,CCNB2,FUT8,PAFAH1B3,AKT1,TTLL1,MPI,ZDHHC6,MTIF2,MRPS33,CRYZ,PRSS23,PSMB8,RBM34,TCFL5,LSM2,TRAK2,IRAK1,SMARCD2,TBC1D16,TUBB6,TYMS,PGM1,STARD7,PMVK,PARP1,ICAM3,MRPL58,TP53,TLE1,LIPA,PAAF1,ZNF32,POP5,CHEK2,NACC2,C2CD5,TRIOBP,MTHFD1,MTHFD2,UMPS,MRPL15,CCDC51,EIF4EBP1,POLR2I,IDH1,MRPS16,SUCLG1,METTL5,SCCPDH,HTATSF1,SKIC8,AMZ2,PRUNE1,COA3,RNF187,ASB13,ZFP64,NIPSNAP1,VAPB,DNPH1,SUPT16H,RHOG,ARHGDIA,IFRD2,SRM,EIF5,SLC25A6,BCL7B,SMAD1,SCAND1,GABPB1,GDI2,MTA1,CLTC,CEP250,MZT2B,PPRC1,KIF20A,EIF2S2,AMDHD2,MAP1A,NUDT9,POLG2,KIF1B,COQ4,CLNS1A,DDX42,TRAP1,RNMT,EXOSC2,SMC4,GARS1,PUF60,HUS1,DIMT1,SRI,TRAPPC3,NLE1,GMPPB,HMOX1,UTP14A,MCM3,WIPF2,DDX50,CHMP4A,KIF15,NOP53,TXLNA,WDR74,RSAD1,TCERG1,DNAJB2,OXA1L,CDCA4,PARP2,TIMELESS,FAHD2A,SKIC2,C1GALT1,TRPC4AP,AURKB
+  Thinking: The query retrieves genes that are subject to decreased expression by the drugs Digitoxin and Quinacrine. The results show that both drugs affect a number of genes, and we need to find the intersection of these genes to identify those that are commonly affected by both drugs. The intersection of the two sets of genes yields the final list of genes that are commonly subject to decreased expression by both drugs.
+  Cypher (1st attempt): MATCH (d:Drug)-[r:CHEMICALDECREASESEXPRESSION]->(g:Gene) WHERE d.commonName IN ['Digitoxin', 'Quinacrine'] RETURN d, r, g
+  Cypher (final):       MATCH (d:Drug)-[r:CHEMICALDECREASESEXPRESSION]->(g:Gene) WHERE d.commonName IN ['Digitoxin', 'Quinacrine'] RETURN d, g, r
+  Correction iters:     0
+  Metrics: exact_match=0.000  precision=0.188  recall=0.871  f1=0.309  jaccard=0.183  overlap=0.871
+  Missing (in expected, not in got): AARS1, IMP3, NIT2, PLK1, RRP1B, STUB1, UBL4A, XPOT
+  Extra (in got, not in expected):   ACTR1B, ADH5, ADO, ADSL, AKR1B1, AKT1, ALDH3A1, AMDHD2, AMZ2, ANXA4, ARHGAP1, ARHGDIA, ARPC5, ASB13, ATMIN, ATRAID, AURKB, B4GAT1, BCL7B, BLVRA, BNIP3, BRCA1, BRCC3, C1GALT1, CBR3, CCDC51, CCDC92, CCT4, CDC20, CDCA4, CEBPA, CENPB, CEP250, CETN3, CHMP4A, CHMP7, CLNS1A, CLTC, CNDP2, COA3, COPS7A, COQ4, COQ9, CRYZ, CTBP1, CTSL, CZIB, DAG1, DCTPP1, DDX42, DDX50, DERA, DIMT1, DNAJB2, DNPH1, DOLK, DPYSL2, EIF2S2, EIF5, ELP1, ERBB2, EXOSC2, FAHD2A, FAM89B, FBXL15, FUT8, G6PD, GABPB1, GARS1, GDI2, GEMIN6, GFUS, GLRX, GLT8D1, GMPPA, GMPPB, HADH, HMOX1, HPF1, HSPB1, HTATSF1, HUS1, IARS2, ICAM3, IDH1, IFRD2, IMPA2, INTS3, IRAK1, JADE2, KIF15, KIF1B, KIF20A, KIFBP, LCMT2, LIPA, LRRC20, LYPLA1, MAGEF1, MAP1A, MCM3, MDH1, METTL13, METTL5, MKKS, MRPL17, MRPL19, MRPL3, MRPL34, MRPL58, MRPS2, MRPS33, MSRB1, MTA1, MTHFD1, MTIF2, MZT2B, NACC2, NHERF1, NIF3L1, NIPSNAP1, NLE1, NMRK1, NOP53, NPDC1, NR2F6, NSMCE4A, NT5DC2, NTHL1, NUDT9, NUP37, OCEL1, OXA1L, PAAF1, PAN2, PARP2, PATZ1, PCBD1, PCYOX1L, PFKP, PGM1, PIP4K2B, PLGRKT, PMS1, PMVK, POLG2, POP4, POP5, PPA2, PPRC1, PRMT2, PRR7, PRSS23, PRUNE2, PSMB8, PUF60, PYGL, RABEPK, RHOG, RITA1, RMND5B, RNASEH2A, RNF187, RNMT, RPA1, RPIA, RRAGA, RRS1, RSAD1, RXYLT1, SACM1L, SAMM50, SCAND1, SCCPDH, SIRT5, SKIC2, SKIC8, SLC24A1, SLC25A6, SLC37A4, SMAD1, SMARCAL1, SMARCD2, SMC4, SNX17, SPATA20, SPR, SRI, SRM, STAMBP, STARD7, STK25, STOML2, SUCLG1, SUOX, SUPT16H, SUV39H1, TBC1D16, TCEA2, TCERG1, TCFL5, TEX264, THEM6, THYN1, TIMELESS, TLE1, TMEM187, TP53, TRAK2, TRAP1, TRAPPC12, TRAPPC3, TRIOBP, TRMT1L, TRPC4AP, TST, TTLL1, TUBB6, TWF2, TXLNA, TYMS, UBE3C, UMPS, UNG, UTP14A, VAPB, WASHC3, WDR74, WIPF2, ZBTB14, ZDHHC6, ZFP64, ZNF32
+
+
+=== Dataset: True_or_False_1hop.json | Type: tf | Mode: direct | Model: gpt-4o-mini ===
+Count: 560  |  Correct: 535  |  Accuracy: 0.955 [95% CI 0.935-0.970]
+Telemetry:
+  - first attempt success rate: 0.466 (n=560)
+  - avg correction iterations: 1.538 (n=560)
+  - latency ms: mean=24387 p50=19994 p95=34098 (n=560)
+  - records with error: 0.000 (n=560)
+
+-- Incorrect Questions (25 total, showing 15) --
+Q [82d15365174a]: True or False Question: PFAS binds to the drug L-Glutamine
+  Expected: True
+  Got:      False
+  Thinking: The query searched for a binding relationship between PFAS and L-Glutamine in the knowledge graph but found no matches. This indicates that PFAS does not bind to L-Glutamine according to the KG results.
+  Cypher (1st attempt): MATCH (d:Drug {commonName: "PFAS"})-[r:CHEMICALBINDSGENE]->(g:Gene)<-[r2:CHEMICALBINDSGENE]-(d2:Drug {commonName: "L-Glutamine"}) RETURN d, r, g, r2, d2
+  Cypher (final):       MATCH (d:Drug {commonName: "L-Glutamine"})-[r:BINDS]->(p:Drug {commonName: "PFAS"}) RETURN d, p, r
+  Correction iters:     3
+
+Q [7b93cd3d9388]: True or False Question: TREM2 is a gene associated with the disease Alzheimer's Disease, Focal Onset
+  Expected: True
+  Got:      False
+  Thinking: The KG results indicate that TREM2 is associated with Alzheimer's Disease, but there is no mention of 'Focal Onset' as a disease associated with TREM2. Therefore, the statement that TREM2 is associated with 'Alzheimer's Disease, Focal Onset' is not supported by the KG results.
+  Cypher (1st attempt): MATCH (g:Gene {geneSymbol: "TREM2"})-[r:GENEASSOCIATESWITHDISEASE]->(d:Disease) WHERE d.commonName IN ["Alzheimer's Disease", "Focal Onset"] RETURN g, r, d
+  Cypher (final):       MATCH (g:Gene {geneSymbol: "TREM2"})-[r:GENEASSOCIATESWITHDISEASE]->(d:Disease) WHERE d.commonName IN ["Alzheimer's Disease", "Focal Onset"] RETURN d, g, r
+  Correction iters:     0
+
+Q [c7075808bc5b]: True or False Question: PSEN2 is a gene associated with the disease Alzheimer's Disease, Focal Onset
+  Expected: True
+  Got:      False
+  Thinking: The KG results indicate that PSEN2 is associated with Alzheimer's Disease, but there is no mention of 'Focal Onset' as a specific type of Alzheimer's Disease in the retrieved data. Therefore, the statement that PSEN2 is associated with 'Alzheimer's Disease, Focal Onset' cannot be confirmed as true based on the provided information.
+  Cypher (1st attempt): MATCH (g:Gene {geneSymbol: "PSEN2"})-[r:GENEASSOCIATESWITHDISEASE]->(d:Disease {commonName: "Alzheimer's Disease"}), (g)-[r2:GENEASSOCIATESWITHDISEASE]->(d2:Disease {commonName: "Focal Onset"}) RETURN g, r, d, r2, d2
+  Cypher (final):       MATCH (g:Gene {geneSymbol: "PSEN2"})-[r:GENEASSOCIATESWITHDISEASE]->(d:Disease) WHERE d.commonName IN ["Alzheimer's Disease", "Focal Onset"] RETURN d, g, r
+  Correction iters:     0
+
+Q [c73193d8cfeb]: True or False Question: Decreased Parasympathetic Acetylcholine Activity includes the drug Clidinium
+  Expected: True
+  Got:      False
+  Thinking: The Cypher query did not return any results for the drug Clidinium in relation to decreased parasympathetic acetylcholine activity. This indicates that Clidinium is not associated with this specific activity in the knowledge graph.
+  Cypher (1st attempt): MATCH (d:Drug {commonName: "Clidinium"})-[r:CHEMICALDECREASESEXPRESSION]->(g:Gene) RETURN d, r, g
+  Cypher (final):       MATCH (d:Drug {commonName: "Clidinium"})-[r:CHEMICALDECREASESEXPRESSION]->(g:Gene) RETURN d, g, r
+  Correction iters:     3
+
+Q [cb14e4c5a5f4]: True or False Question: Ketolides includes the drug Telithromycin
+  Expected: True
+  Got:      False
+  Thinking: The knowledge graph confirms that Telithromycin is a drug, but it does not provide any information about its classification as a Ketolide. Therefore, I cannot definitively conclude that Ketolides includes Telithromycin based solely on the provided data.
+  Cypher (1st attempt): MATCH (d:Drug {commonName: "Ketolides"})-[:DRUGINCLASS]->(dc:DrugClass), (d2:Drug {commonName: "Telithromycin"}) RETURN d, dc, d2
+  Cypher (final):       MATCH (d:Drug {commonName: "Telithromycin"}) RETURN d
+  Correction iters:     0
+
+Q [4802f20e2244]: True or False Question: Integration of provirus contains the gene PPIAP22
+  Expected: True
+  Got:      False
+  Thinking: The query executed successfully but did not find any matching data for the gene PPIAP22 associated with the cellular component 'integration of provirus'. This indicates that PPIAP22 is not involved in the integration of provirus.
+  Cypher (1st attempt): MATCH (d:Disease {commonName: "integration of provirus"})-[:GENEASSOCIATESWITHDISEASE]->(g:Gene {geneSymbol: "PPIAP22"}) RETURN d, g
+  Cypher (final):       MATCH (g:Gene {geneSymbol: "PPIAP22"})-[r:GENEASSOCIATEDWITHCELLULARCOMPONENT]->(c:CellularComponent {commonName: "integration of provirus"}) RETURN c, g, r
+  Correction iters:     3
+
+Q [214f3f38a691]: True or False Question: Glycogenosis, Type VI. Hers disease contains the gene PGM2L1
+  Expected: True
+  Got:      False
+  Thinking: The query was executed to check if the gene PGM2L1 is associated with Glycogenosis, Type VI (Hers disease). However, the query returned no matching data, indicating that there is no association between PGM2L1 and this disease in the knowledge graph.
+  Cypher (1st attempt): MATCH (d:Disease {commonName: "Glycogenosis, Type VI (Hers disease)"})-[:GENEASSOCIATESWITHDISEASE]->(g:Gene {geneSymbol: "PGM2L1"}) RETURN d, g
+  Cypher (final):       MATCH (g:Gene {geneSymbol: "PGM2L1"})-[r:GENEASSOCIATESWITHDISEASE]->(d:Disease {commonName: "Glycogenosis, Type VI (Hers disease)"}) RETURN d, g, r
+  Correction iters:     3
+
+Q [8508a794eace]: True or False Question: RAGE receptor binding is attributed to S100A4
+  Expected: True
+  Got:      False
+  Thinking: The KG results indicate that the drug Trifluoperazine binds to the gene S100A4. However, there is no direct mention of RAGE receptor binding being attributed to S100A4 in the retrieved data. Therefore, we cannot conclude that RAGE receptor binding is attributed to S100A4 based solely on the provided information.
+  Cypher (1st attempt): MATCH (d:Drug)-[r:CHEMICALBINDSGENE]->(g:Gene {geneSymbol: "S100A4"}) RETURN d, r, g
+  Cypher (final):       MATCH (d:Drug)-[r:CHEMICALBINDSGENE]->(g:Gene {geneSymbol: "S100A4"}) RETURN d, g, r
+  Correction iters:     0
+
+Q [15ac7c0f1a47]: True or False Question: U4/U6 snRNP is linked to the gene PPIH
+  Expected: True
+  Got:      False
+  Thinking: The Cypher query was executed to check if there is a link between the gene PPIH and the biological process U4/U6 snRNP. However, the query returned no matching data, indicating that there is no known interaction or link between these two entities in the knowledge graph.
+  Cypher (1st attempt): MATCH (s:BiologicalProcess {commonName: "U4/U6 snRNP"})-[r:GENEPARTICIPATESINBIOLOGICALPROCESS]->(g:Gene {geneSymbol: "PPIH"}) RETURN s, r, g
+  Cypher (final):       MATCH (g:Gene {geneSymbol: "PPIH"})-[r:GENEINTERACTSWITHGENE]->(bp:BiologicalProcess {commonName: "U4/U6 snRNP"}) RETURN bp, g, r
+  Correction iters:     3
+
+Q [f21671534b99]: True or False Question: DUBm complex is linked to the gene ATXN7L3
+  Expected: True
+  Got:      False
+  Thinking: The retrieved data indicates that the gene ATXN7L3 is linked to three pathways, but there is no mention of the DUBm complex in the results. Therefore, we cannot confirm a link between the DUBm complex and the gene ATXN7L3 based on the provided information.
+  Cypher (1st attempt): MATCH (d:Gene {geneSymbol: "ATXN7L3"})-[r:GENEINPATHWAY]->(p:Pathway) RETURN d, r, p
+  Cypher (final):       MATCH (d:Gene {geneSymbol: "ATXN7L3"})-[r:GENEINPATHWAY]->(p:Pathway) RETURN d, p, r
+  Correction iters:     0
+
+Q [10b1428b9dc9]: True or False Question: nuclear transcription factor complex is linked to the gene PPARG
+  Expected: True
+  Got:      False
+  Thinking: The query executed successfully but found no matching data, indicating that there is no link between the nuclear transcription factor complex and the gene PPARG in the knowledge graph.
+  Cypher (1st attempt): MATCH (b:BiologicalProcess {commonName: "nuclear transcription factor complex"})-[r:GENEPARTICIPATESINBIOLOGICALPROCESS]->(g:Gene {geneSymbol: "PPARG"}) RETURN b, r, g
+  Cypher (final):       MATCH (g:Gene {geneSymbol: "PPARG"})-[r:LINKEDTO]->(bp:BiologicalProcess {commonName: "nuclear transcription factor complex"}) RETURN bp, g, r
+  Correction iters:     3
+
+Q [45f5f9794cd7]: True or False Question: Galantamine does not treat Alzheimer's Disease, Focal Onset
+  Expected: True
+  Got:      False
+  Thinking: The KG results indicate that Galantamine is linked to treating Alzheimer's Disease, as it has a relationship with that specific disease. However, there is no mention of Galantamine treating Focal Onset. Therefore, the statement that Galantamine does not treat Alzheimer's Disease is false, as it does treat that condition. The statement is asking about the treatment of Alzheimer's Disease specifically, not Focal Onset, which is not relevant to the truth of the statement regarding Alzheimer's Disease.
+  Cypher (1st attempt): MATCH (d:Drug {commonName: "Galantamine"})-[r:DRUGTREATSDISEASE]->(t:Disease) WHERE t.commonName IN ["Alzheimer's Disease", "Focal Onset"] RETURN d, r, t
+  Correction iters:     0
+
+Q [652241ddf80e]: True or False Question: APOE is not a gene associated with the disease Alzheimer Disease 7
+  Expected: True
+  Got:      False
+  Thinking: The KG results indicate that APOE is indeed associated with Alzheimer's Disease, as there is a direct relationship showing that the gene APOE (apolipoprotein E) associates with the disease. Therefore, the statement that APOE is not a gene associated with Alzheimer's Disease is false.
+  Cypher (1st attempt): MATCH (g:Gene {geneSymbol: "APOE"})-[r:GENEASSOCIATESWITHDISEASE]->(d:Disease {commonName: "Alzheimer Disease"}) RETURN g, r, d
+  Cypher (final):       MATCH (g:Gene {geneSymbol: "APOE"})-[r:GENEASSOCIATESWITHDISEASE]->(d:Disease {commonName: "Alzheimer's Disease"}) RETURN d, g, r
+  Correction iters:     1
+
+Q [362955317ad3]: True or False Question: Familial Alzheimer Disease (FAD) is not associated with the disease Alzheimer Disease, Late Onset
+  Expected: True
+  Got:      False
+  Thinking: The query executed successfully but found no matching data, indicating that there is no association between Familial Alzheimer Disease (FAD) and Alzheimer Disease, Late Onset in the knowledge graph.
+  Cypher (1st attempt): MATCH (d1:Disease {commonName: "Familial Alzheimer Disease (FAD)"})-[r:DISEASEASSOCIATESWITHDISEASET]->(d2:Disease {commonName: "Alzheimer Disease, Late Onset"}) RETURN d1, r, d2
+  Cypher (final):       MATCH (s:Disease)-[r:DISEASEASSOCIATESWITHDISEASET]->(t:Disease {commonName: "Alzheimer Disease, Late Onset"}) WHERE s.commonName = "Familial Alzheimer Disease (FAD)" RETURN r, s, t
+  Correction iters:     3
+
+Q [ca2b2ebcdace]: True or False Question: Alzheimer's Disease is not associated with the disease Alzheimer Disease, Early Onset
+  Expected: True
+  Got:      False
+  Thinking: The query searched for an association between 'Alzheimer's Disease' and 'Alzheimer Disease, Early Onset' but found no matching data in the knowledge graph. This indicates that there is no association between the two diseases as per the KG results.
+  Cypher (1st attempt): MATCH (d1:Disease {commonName: "Alzheimer's Disease"})-[r:DISEASEASSOCIATESWITHDISEASET]-(d2:Disease {commonName: "Alzheimer Disease, Early Onset"}) RETURN d1, r, d2
+  Cypher (final):       MATCH (d1:Disease {commonName: "Alzheimer's Disease"})-[r:DISEASEASSOCIATESWITHDISEASET]->(d2:Disease {commonName: "Alzheimer Disease, Early Onset"}) RETURN d1, d2, r
+  Correction iters:     3
+
+
+=== Dataset: True_or_False_2hop.json | Type: tf | Mode: direct | Model: gpt-4o-mini ===
+Count: 540  |  Correct: 499  |  Accuracy: 0.924 [95% CI 0.899-0.944]
+Telemetry:
+  - first attempt success rate: 0.546 (n=540)
+  - avg correction iterations: 1.248 (n=540)
+  - latency ms: mean=15467 p50=11116 p95=32187 (n=540)
+  - records with error: 0.000 (n=540)
+
+-- Incorrect Questions (41 total, showing 15) --
+Q [ab6338ebfa3c]: True or False Question: Decreased Sebaceous Gland Activity and Lincosamides are classes which commonly include the drug Clindamycin
+  Expected: True
+  Got:      False
+  Thinking: The query did not return any results, indicating that Clindamycin is not classified under Lincosamides or does not have an effect on Decreased Sebaceous Gland Activity according to the knowledge graph. Therefore, the statement is false.
+  Cypher (1st attempt): MATCH (d:Drug {commonName: "Clindamycin"})-[r1:DRUGINCLASS]->(dc1:DrugClass {commonName: "Lincosamides"}), (d)-[r2:DRUGCAUSESEFFECT]->(ds:Disease {commonName: "Decreased Sebaceous Gland Activity"}) RETURN d, r1, dc1, r2, ds
+  Cypher (final):       MATCH (d:Drug {commonName: "Clindamycin"})-[r1:DRUGINCLASS]->(dc1:DrugClass {commonName: "Lincosamides"}), (d)-[r2:DRUGCAUSESEFFECT]->(ds:Disease {commonName: "Decreased Sebaceous Gland Activity"}) RETURN d, dc1, ds, r1, r2
+  Correction iters:     3
+
+Q [2a0bbeffe4ea]: True or False Question: regulation of gene expression, epigenetic and carbohydrate transmembrane transport are biological processes commonly involving the gene SLC50A1
+  Expected: True
+  Got:      False
+  Thinking: The KG results indicate that the gene SLC50A1 participates in the biological process of carbohydrate transmembrane transport. However, there is no mention of its involvement in the processes of regulation of gene expression or epigenetic processes. Therefore, since SLC50A1 is not commonly associated with all three mentioned processes, the statement is false.
+  Cypher (1st attempt): MATCH (g:Gene {geneSymbol: "SLC50A1"})-[r1:GENEPARTICIPATESINBIOLOGICALPROCESS]->(bp1:BiologicalProcess {commonName: "regulation of gene expression"}), (g)-[r2:GENEPARTICIPATESINBIOLOGICALPROCESS]->(bp2:BiologicalProcess {commonName: "epigenetic"}), (g)-[r3:GENEPARTICIPATESINBIOLOGICALPROCESS]->(bp3:BiologicalProcess {commonName: "carbohydrate transmembrane transport"}) RETURN g, r1, bp1, r2, bp2, r3, bp3
+  Cypher (final):       MATCH (g:Gene {geneSymbol: "SLC50A1"})-[r:GENEPARTICIPATESINBIOLOGICALPROCESS]->(bp:BiologicalProcess) WHERE bp.commonName IN ["regulation of gene expression", "epigenetic", "carbohydrate transmembrane transport"] RETURN bp, g, r
+  Correction iters:     0
+
+Q [24cbc8570e50]: True or False Question: RUNX1 regulates genes involved in megakaryocyte differentiation and platelet function and Chromatin organization are pathways which commonly contain the gene SETD1A
+  Expected: True
+  Got:      False
+  Thinking: The KG results confirm that RUNX1 regulates at least one gene (HDAC1), and that this gene is involved in the pathway of Chromatin organization. However, the KG does not provide information about RUNX1's specific role in megakaryocyte differentiation and platelet function, nor does it confirm that SETD1A is involved in the Chromatin organization pathway. Therefore, the statement cannot be fully validated as true based on the provided information.
+  Cypher (1st attempt): MATCH (g1:Gene {geneSymbol: "RUNX1"})-[r1:GENEREGULATESGENE]->(g2:Gene)-[:GENEINPATHWAY]->(p:Pathway {commonName: "Chromatin organization"})
+WHERE g2 IN (
+  MATCH (g3:Gene)-[:GENEASSOCIATESWITHDISEASE]->(:Disease {commonName: "megakaryocyte differentiation"})
+  RETURN g3
+  UNION
+  MATCH (g4:Gene)-[:GENEASSOCIATESWITHDISEASE]->(:Disease {commonName: "platelet function"})
+  RETURN g4
+)
+RETURN g1, r1, g2, p
+  Cypher (final):       MATCH (g1:Gene {geneSymbol: "RUNX1"})-[r1:GENEREGULATESGENE]->(g2:Gene), (g2)-[r2:GENEINPATHWAY]->(p:Pathway {commonName: "Chromatin organization"}) RETURN g1, g2, p, r1, r2
+  Correction iters:     0
+
+Q [1b04198e295e]: True or False Question: Alzheimer's Disease, Focal Onset and Alzheimer Disease, Early Onset are diseases commonly associated with the gene HLA-DRB5
+  Expected: True
+  Got:      False
+  Thinking: The query executed successfully but found no matching data for the associations between the gene HLA-DRB5 and the diseases Alzheimer's Disease, Focal Onset, and Alzheimer Disease, Early Onset. This indicates that there is no evidence in the knowledge graph to support the claim that these diseases are commonly associated with the gene HLA-DRB5.
+  Cypher (1st attempt): MATCH (g:Gene {geneSymbol: "HLA-DRB5"})-[r1:GENEASSOCIATESWITHDISEASE]->(d1:Disease {commonName: "Alzheimer's Disease"}), (g)-[r2:GENEASSOCIATESWITHDISEASE]->(d2:Disease {commonName: "Focal Onset"}), (g)-[r3:GENEASSOCIATESWITHDISEASE]->(d3:Disease {commonName: "Alzheimer Disease, Early Onset"}) RETURN g, r1, d1, r2, d2, r3, d3
+  Cypher (final):       MATCH (g:Gene {geneSymbol: "HLA-DRB5"})-[r1:GENEASSOCIATESWITHDISEASE]->(d1:Disease {commonName: "Alzheimer's Disease"}), (g)-[r2:GENEASSOCIATESWITHDISEASE]->(d2:Disease {commonName: "Focal Onset"}), (g)-[r3:GENEASSOCIATESWITHDISEASE]->(d3:Disease {commonName: "Alzheimer Disease, Early Onset"}) RETURN d1, d2, d3, g, r1, r2, r3
+  Correction iters:     3
+
+Q [066ef8824539]: True or False Question: GABRA2 and PDS5B are not genes which commonly bind to the drug Temazepam
+  Expected: True
+  Got:      False
+  Thinking: The KG results indicate that Temazepam binds to the gene GABRA2, but there is no mention of PDS5B in the results. Since GABRA2 is confirmed to bind to Temazepam, the statement that GABRA2 and PDS5B are not genes which commonly bind to Temazepam is false. Therefore, the answer is False.
+  Cypher (1st attempt): MATCH (d:Drug {commonName: "Temazepam"})-[:CHEMICALBINDSGENE]->(g1:Gene {geneSymbol: "GABRA2"}), (d)-[:CHEMICALBINDSGENE]->(g2:Gene {geneSymbol: "PDS5B"}) RETURN d, g1, g2
+  Cypher (final):       MATCH (d:Drug {commonName: "Temazepam"})-[r:CHEMICALBINDSGENE]->(g:Gene) WHERE g.geneSymbol IN ["GABRA2", "PDS5B"] RETURN d, g, r
+  Correction iters:     2
+
+Q [1b9580994d34]: True or False Question: CYP1A1 and PDS5A are not genes which commonly bind to the drug Nitroprusside
+  Expected: True
+  Got:      False
+  Thinking: The KG results indicate that Nitroprusside binds to the gene CYP1A1, as there is a relationship established between Nitroprusside and CYP1A1 in the KG. However, there is no mention of PDS5A in the results, indicating that it does not bind to Nitroprusside. Therefore, the statement that CYP1A1 and PDS5A are not genes which commonly bind to Nitroprusside is false because CYP1A1 does bind to it.
+  Cypher (1st attempt): MATCH (d:Drug {commonName: "Nitroprusside"})-[:CHEMICALBINDSGENE]->(g1:Gene {geneSymbol: "CYP1A1"}), (d)-[:CHEMICALBINDSGENE]->(g2:Gene {geneSymbol: "PDS5A"}) RETURN d, g1, g2
+  Cypher (final):       MATCH (d:Drug {commonName: "Nitroprusside"})-[r:CHEMICALBINDSGENE]->(g:Gene) WHERE g.geneSymbol IN ["CYP1A1", "PDS5A"] RETURN d, g, r
+  Correction iters:     1
+
+Q [d1b55004aca0]: True or False Question: MPO and PDS5A are not genes which commonly bind to the drug Levocarnitine
+  Expected: True
+  Got:      False
+  Thinking: The KG results indicate that Levocarnitine binds to the gene MPO, as there is a relationship established between Levocarnitine and MPO in the KG. However, there is no mention of PDS5A in the results, indicating that it does not bind to Levocarnitine. Therefore, since MPO does bind to Levocarnitine, the statement that MPO and PDS5A are not genes which commonly bind to Levocarnitine is false because MPO does bind.
+  Cypher (1st attempt): MATCH (d:Drug {commonName: "Levocarnitine"})-[r1:CHEMICALBINDSGENE]->(g1:Gene {geneSymbol: "MPO"}), (d)-[r2:CHEMICALBINDSGENE]->(g2:Gene {geneSymbol: "PDS5A"}) RETURN d, r1, g1, r2, g2
+  Cypher (final):       MATCH (d:Drug {commonName: "Levocarnitine"})-[r:CHEMICALBINDSGENE]-(g:Gene) WHERE g.geneSymbol IN ["MPO", "PDS5A"] RETURN d, g, r
+  Correction iters:     1
+
+Q [20d6e9b3e1de]: True or False Question: CCR1 and CAD are not genes which commonly bind to the drug Raltegravir
+  Expected: True
+  Got:      False
+  Thinking: The KG results indicate that Raltegravir does bind to the gene CCR1, as there is a relationship showing that Raltegravir chemically binds to CCR1. However, there is no information indicating that Raltegravir binds to CAD. Since CCR1 is confirmed to bind to Raltegravir, the statement that CCR1 and CAD do not commonly bind to Raltegravir is false because CCR1 does bind to it.
+  Cypher (1st attempt): MATCH (d:Drug {commonName: "Raltegravir"})-[:CHEMICALBINDSGENE]->(g1:Gene {geneSymbol: "CCR1"}), (d)-[:CHEMICALBINDSGENE]->(g2:Gene {geneSymbol: "CAD"}) RETURN d, g1, g2
+  Cypher (final):       MATCH (d:Drug {commonName: "Raltegravir"})-[rel:CHEMICALBINDSGENE]->(g:Gene) WHERE g.geneSymbol IN ["CCR1", "CAD"] RETURN d, g, rel
+  Correction iters:     1
+
+Q [804e3a062f94]: True or False Question: RPS4Y1 and CAD are not genes commonly subject to decreased expression by the drug Canrenoic acid
+  Expected: True
+  Got:      False
+  Thinking: The KG results indicate that Canrenoic acid is associated with decreased expression of the gene RPS4Y1. However, there is no mention of the gene CAD in the results, which suggests that it is not affected by Canrenoic acid. Therefore, since RPS4Y1 is subject to decreased expression and CAD is not mentioned, the statement that RPS4Y1 and CAD are not genes commonly subject to decreased expression by Canrenoic acid is false.
+  Cypher (1st attempt): MATCH (d:Drug {commonName: "Canrenoic acid"})-[r1:CHEMICALDECREASESEXPRESSION]->(g1:Gene {geneSymbol: "RPS4Y1"}), (d)-[r2:CHEMICALDECREASESEXPRESSION]->(g2:Gene {geneSymbol: "CAD"}) RETURN d, r1, g1, r2, g2
+  Cypher (final):       MATCH (d:Drug {commonName: "Canrenoic acid"})-[r:CHEMICALDECREASESEXPRESSION]->(g:Gene) WHERE g.geneSymbol IN ["RPS4Y1", "CAD"] RETURN d, g, r
+  Correction iters:     1
+
+Q [3f14b902bc33]: True or False Question: RMI1 and TIPIN are not genes commonly subject to decreased expression by the drug Doxorubicin
+  Expected: True
+  Got:      False
+  Thinking: The query results indicate that Doxorubicin is associated with decreased expression of the gene TIPIN, as there is a relationship showing that Doxorubicin decreases the expression of TIPIN. However, there is no information provided about RMI1 in the results, which suggests that it is not commonly subject to decreased expression by Doxorubicin. Therefore, since TIPIN is affected and RMI1 is not mentioned, the statement that RMI1 and TIPIN are not commonly subject to decreased expression by Doxorubicin is false.
+  Cypher (1st attempt): MATCH (d:Drug {commonName: "Doxorubicin"})-[r:CHEMICALDECREASESEXPRESSION]->(g:Gene) WHERE g.geneSymbol IN ["RMI1", "TIPIN"] RETURN d, r, g
+  Cypher (final):       MATCH (d:Drug {commonName: "Doxorubicin"})-[r:CHEMICALDECREASESEXPRESSION]->(g:Gene) WHERE g.geneSymbol IN ["RMI1", "TIPIN"] RETURN d, g, r
+  Correction iters:     0
+
+Q [2e944a7fba4c]: True or False Question: RMI1 and XPO1 are not genes commonly subject to decreased expression by the drug Idarubicin
+  Expected: True
+  Got:      False
+  Thinking: The KG results indicate that Idarubicin is associated with decreased expression of the gene XPO1, as there is a direct relationship between Idarubicin and XPO1 showing that Idarubicin decreases the expression of XPO1. However, there is no information provided about RMI1 in relation to Idarubicin, which suggests that it is not commonly subject to decreased expression by this drug. Therefore, since XPO1 is affected and RMI1 is not mentioned, the statement that RMI1 and XPO1 are not commonly subject to decreased expression by Idarubicin is false.
+  Cypher (1st attempt): MATCH (d:Drug {commonName: "Idarubicin"})-[r:CHEMICALDECREASESEXPRESSION]->(g:Gene) WHERE g.geneSymbol IN ["RMI1", "XPO1"] RETURN d, r, g
+  Cypher (final):       MATCH (d:Drug {commonName: "Idarubicin"})-[r:CHEMICALDECREASESEXPRESSION]->(g:Gene) WHERE g.geneSymbol IN ["RMI1", "XPO1"] RETURN d, g, r
+  Correction iters:     0
+
+Q [51ec6f8af29e]: True or False Question: COPS7A and PDS5A are not genes commonly subject to decreased expression by the drug Nafcillin
+  Expected: True
+  Got:      False
+  Thinking: The KG results indicate that Nafcillin is associated with decreased expression of the gene COPS7A, as there is a direct relationship showing that Nafcillin decreases the expression of this gene. However, there is no information provided about PDS5A in relation to Nafcillin. Since COPS7A is affected by Nafcillin, the statement that COPS7A and PDS5A are not commonly subject to decreased expression by Nafcillin is false because COPS7A is indeed affected. Therefore, the statement is False.
+  Cypher (1st attempt): MATCH (d:Drug {commonName: "Nafcillin"})-[r1:CHEMICALDECREASESEXPRESSION]->(g1:Gene {geneSymbol: "COPS7A"}), (d)-[r2:CHEMICALDECREASESEXPRESSION]->(g2:Gene {geneSymbol: "PDS5A"}) RETURN d, r1, g1, r2, g2
+  Cypher (final):       MATCH (d:Drug {commonName: "Nafcillin"})-[r:CHEMICALDECREASESEXPRESSION]->(g:Gene) WHERE g.geneSymbol IN ["COPS7A", "PDS5A"] RETURN d, g, r
+  Correction iters:     0
+
+Q [577aa67ffd48]: True or False Question: Non-Nucleoside Reverse Transcriptase Inhibitors and GABA B Agonists are not classes which commonly include the drug Delavirdine
+  Expected: True
+  Got:      False
+  Thinking: The KG results indicate that Delavirdine is classified as a Non-Nucleoside Reverse Transcriptase Inhibitor. There is no mention of it being a GABA B Agonist. Therefore, the statement that Non-Nucleoside Reverse Transcriptase Inhibitors and GABA B Agonists are not classes which commonly include the drug Delavirdine is false, as Delavirdine is indeed included in the class of Non-Nucleoside Reverse Transcriptase Inhibitors.
+  Cypher (1st attempt): MATCH (d:Drug {commonName: "Delavirdine"})-[r:DRUGINCLASS]->(dc:DrugClass) RETURN d, r, dc
+  Cypher (final):       MATCH (d:Drug {commonName: "Delavirdine"})-[r:DRUGINCLASS]->(dc:DrugClass) RETURN d, dc, r
+  Correction iters:     0
+
+Q [d0953318aab3]: True or False Question: Barbiturates and GABA B Agonists are not classes which commonly include the drug Butalbital
+  Expected: True
+  Got:      False
+  Thinking: The KG results indicate that Butalbital is classified under the drug class 'Barbiturates'. There is no mention of GABA B Agonists in relation to Butalbital. Therefore, the statement that Barbiturates and GABA B Agonists are not classes which commonly include Butalbital is false because Barbiturates is indeed a class that includes Butalbital.
+  Cypher (1st attempt): MATCH (d:Drug {commonName: "Butalbital"})-[r:DRUGINCLASS]->(dc:DrugClass) RETURN d, r, dc
+  Cypher (final):       MATCH (d:Drug {commonName: "Butalbital"})-[r:DRUGINCLASS]->(dc:DrugClass) RETURN d, dc, r
+  Correction iters:     0
+
+Q [17505edd172d]: True or False Question: Psoralens and GABA B Agonists are not classes which commonly include the drug Trioxsalen
+  Expected: True
+  Got:      False
+  Thinking: The KG results indicate that Trioxsalen is classified under the drug class 'Psoralens'. However, there is no indication that it is classified under 'GABA B Agonists'. Therefore, it is true that Trioxsalen is not commonly included in the class of GABA B Agonists, but it is included in the class of Psoralens. The statement claims that both classes do not commonly include Trioxsalen, which is false because it is included in the Psoralens class.
+  Cypher (1st attempt): MATCH (d:Drug {commonName: "Trioxsalen"})-[:DRUGINCLASS]->(dc:DrugClass) WHERE dc.commonName IN ["Psoralens", "GABA B Agonists"] RETURN d, dc
+  Cypher (final):       MATCH (d:Drug {commonName: "Trioxsalen"})-[rel0:DRUGINCLASS]->(dc:DrugClass) WHERE dc.commonName IN ["Psoralens", "GABA B Agonists"] RETURN d, dc, rel0
+  Correction iters:     0
+
+
+=== Dataset: True_or_False_2hop_atleastone.json | Type: tf | Mode: direct | Model: gpt-4o-mini ===
+Count: 540  |  Correct: 517  |  Accuracy: 0.957 [95% CI 0.937-0.971]
+Telemetry:
+  - first attempt success rate: 0.667 (n=540)
+  - avg correction iterations: 0.935 (n=540)
+  - latency ms: mean=8964 p50=4078 p95=20751 (n=540)
+  - tokens: avg in=7286 out=726 | total in=3934484 out=391800
+  - records with error: 0.002 (n=540)
+
+-- Incorrect Questions (23 total, showing 15) --
+Q [61f999a8f0a4]: True or False Question: cell morphogenesis involved in differentiation and circulatory system development are biological processes commonly involving the gene VLDLR
+  Expected: True
+  Got:      False
+  Thinking: The KG results indicate that the gene VLDLR participates in the biological process of 'circulatory system development'. However, there is no mention of VLDLR being involved in 'cell morphogenesis' or 'differentiation'. Since the statement claims that VLDLR is commonly involved in both 'cell morphogenesis' and 'differentiation', and we only have evidence for its involvement in 'circulatory system development', the statement is false.
+  Cypher (1st attempt): MATCH (g:Gene {geneSymbol: "VLDLR"})-[r1:GENEPARTICIPATESINBIOLOGICALPROCESS]->(bp1:BiologicalProcess {commonName: "cell morphogenesis"}), (g)-[r2:GENEPARTICIPATESINBIOLOGICALPROCESS]->(bp2:BiologicalProcess {commonName: "differentiation"}), (g)-[r3:GENEPARTICIPATESINBIOLOGICALPROCESS]->(bp3:BiologicalProcess {commonName: "circulatory system development"}) RETURN g, r1, r2, r3, bp1, bp2, bp3
+  Cypher (final):       MATCH (g:Gene {geneSymbol: "VLDLR"})-[r:GENEPARTICIPATESINBIOLOGICALPROCESS]->(bp:BiologicalProcess) WHERE bp.commonName IN ["cell morphogenesis", "differentiation", "circulatory system development"] RETURN g, r, bp
+  Correction iters:     0
+
+Q [4627ce735269]: True or False Question: Signal Transduction and CDC42 signaling events are pathways which commonly contain the gene ARPC2
+  Expected: True
+  Got:      False
+  Thinking: The KG results indicate that the gene ARPC2 is associated with the pathway 'Signal Transduction' but there is no mention of it being associated with 'CDC42 signaling'. Therefore, it cannot be concluded that ARPC2 is commonly found in both pathways.
+  Cypher (1st attempt): MATCH (g:Gene {geneSymbol: "ARPC2"})-[:GENEINPATHWAY]->(p:Pathway) WHERE p.commonName IN ["Signal Transduction", "CDC42 signaling"] RETURN g, p
+  Cypher (final):       MATCH (g:Gene {geneSymbol: "ARPC2"})-[rel0:GENEINPATHWAY]->(p:Pathway) WHERE p.commonName IN ["Signal Transduction", "CDC42 signaling"] RETURN g, p, rel0
+  Correction iters:     0
+
+Q [24cbc8570e50]: True or False Question: RUNX1 regulates genes involved in megakaryocyte differentiation and platelet function and Chromatin organization are pathways which commonly contain the gene SETD1A
+  Expected: True
+  Got:      False
+  Thinking: The KG results confirm that RUNX1 regulates at least one gene (HDAC1) that is involved in the Chromatin organization pathway. However, there is no direct evidence in the KG results that RUNX1 specifically regulates genes involved in megakaryocyte differentiation and platelet function. Additionally, while SETD1A is mentioned in the context of Chromatin organization, it is not explicitly stated in the results. Therefore, the statement cannot be confirmed as true based on the provided KG results.
+  Cypher (1st attempt): MATCH (g1:Gene {geneSymbol: "RUNX1"})-[r1:GENEREGULATESGENE]->(g2:Gene)-[r2:GENEINPATHWAY]->(p:Pathway {commonName: "Chromatin organization"}) RETURN g1, r1, g2, r2, p
+  Correction iters:     0
+
+Q [7db59ea2d9d7]: True or False Question: transferase activity, transferring one-carbon groups and methyltransferase activity are molecular functions commonly attributed to the gene METTL23
+  Expected: True
+  Got:      False
+  Thinking: The KG results indicate that the gene METTL23 is associated with the molecular function 'methyltransferase activity'. However, there is no mention of 'transferase activity' or 'transferring one-carbon groups' in the retrieved data. Therefore, since not all the stated molecular functions are attributed to METTL23, the statement is false.
+  Cypher (1st attempt): MATCH (g:Gene {geneSymbol: "METTL23"})-[r1:GENEHASMOLECULARFUNCTION]->(mf1:MolecularFunction {commonName: "transferase activity"}), (g)-[r2:GENEHASMOLECULARFUNCTION]->(mf2:MolecularFunction {commonName: "transferring one-carbon groups"}), (g)-[r3:GENEHASMOLECULARFUNCTION]->(mf3:MolecularFunction {commonName: "methyltransferase activity"}) RETURN g, r1, mf1, r2, mf2, r3, mf3
+  Cypher (final):       MATCH (g:Gene {geneSymbol: "METTL23"})-[r:GENEHASMOLECULARFUNCTION]->(mf:MolecularFunction) WHERE mf.commonName IN ["transferase activity", "transferring one-carbon groups", "methyltransferase activity"] RETURN g, r, mf
+  Correction iters:     0
+
+Q [1b04198e295e]: True or False Question: Alzheimer's Disease, Focal Onset and Alzheimer Disease, Early Onset are diseases commonly associated with the gene HLA-DRB5
+  Expected: True
+  Got:      False
+  Thinking: The query was executed successfully but returned no matching data for the associations between the gene HLA-DRB5 and the diseases Alzheimer's Disease, Focal Onset, and Alzheimer Disease, Early Onset. This indicates that there is no evidence in the knowledge graph to support the claim that these diseases are commonly associated with the gene HLA-DRB5.
+  Cypher (1st attempt): MATCH (g:Gene {geneSymbol: "HLA-DRB5"})-[r1:GENEASSOCIATESWITHDISEASE]->(d1:Disease {commonName: "Alzheimer's Disease"}), (g)-[r2:GENEASSOCIATESWITHDISEASE]->(d2:Disease {commonName: "Focal Onset"}), (g)-[r3:GENEASSOCIATESWITHDISEASE]->(d3:Disease {commonName: "Alzheimer Disease, Early Onset"}) RETURN g, r1, d1, r2, d2, r3, d3
+  Correction iters:     3
+
+Q [9eaf49d2282f]: True or False Question: Ziprasidone and Naltrexone are drugs which commonly affect Alzheimer's Disease
+  Expected: True
+  Got:      False
+  Thinking: The KG results indicate that Ziprasidone has a direct effect on Alzheimer's Disease, as there is a relationship showing that it causes an effect on this disease. However, there is no information provided about Naltrexone in relation to Alzheimer's Disease. Since the statement claims both drugs commonly affect Alzheimer's Disease and we only have evidence for one of them (Ziprasidone), we cannot conclude that the statement is true. Therefore, the answer is False.
+  Cypher (1st attempt): MATCH (d:Drug)-[r1:DRUGTREATSDISEASE]->(ds:Disease {commonName: "Alzheimer's Disease"}) WHERE d.commonName IN ["Ziprasidone", "Naltrexone"] RETURN d, r1, ds
+  Cypher (final):       MATCH (d:Drug {commonName: "Ziprasidone"})-[r:DRUGCAUSESEFFECT]->(ds:Disease {commonName: "Alzheimer's Disease"}) RETURN d, r, ds
+  Correction iters:     1
+
+Q [48cccf256a74]: True or False Question: Cerebellar Ataxia and Blindness, Cortical are common symptoms of Familial Alzheimer Disease (FAD)
+  Expected: True
+  Got:      False
+  Thinking: The knowledge graph indicates that Cerebellar Ataxia is a symptom of Familial Alzheimer Disease (FAD), but there is no mention of Blindness, Cortical as a symptom associated with FAD. Since not both symptoms are confirmed, the statement is false.
+  Cypher (1st attempt): MATCH (s:Symptom)-[r:SYMPTOMMANIFESTATIONOFDISEASE]->(d:Disease {commonName: "Familial Alzheimer Disease (FAD)"}) WHERE s.commonName IN ["Cerebellar Ataxia", "Blindness", "Cortical"] RETURN s, r, d
+  Correction iters:     0
+
+Q [fb4157cc98e2]: True or False Question: MGAT4A and ACSS1 are genes which are commonly under-expressed in mammalian vulva
+  Expected: True
+  Got:      False
+  Thinking: The Cypher query was executed to check if the genes MGAT4A and ACSS1 are under-expressed in the mammalian vulva. However, the query returned no matching data, indicating that neither gene is commonly under-expressed in that body part.
+  Cypher (1st attempt): MATCH (g1:Gene {geneSymbol: "MGAT4A"})-[:BODYPARTUNDEREXPRESSESGENE]->(b:BodyPart {commonName: "mammalian vulva"}), (g2:Gene {geneSymbol: "ACSS1"})-[:BODYPARTUNDEREXPRESSESGENE]->(b) RETURN g1, b, g2
+  Cypher (final):       MATCH (g1:Gene {geneSymbol: "MGAT4A"})-[r1:BODYPARTUNDEREXPRESSESGENE]->(b:BodyPart {commonName: "mammalian vulva"}), (g2:Gene {geneSymbol: "ACSS1"})-[r2:BODYPARTUNDEREXPRESSESGENE]->(b) RETURN g1, r1, b, g2, r2
+  Correction iters:     3
+
+Q [aa613304f83f]: True or False Question: RNF126 and WIPF3 are genes which are commonly under-expressed in uterine cervix
+  Expected: True
+  Got:      False
+  Thinking: The query executed successfully but found no matching data, indicating that neither RNF126 nor WIPF3 are commonly under-expressed in the uterine cervix according to the knowledge graph.
+  Cypher (1st attempt): MATCH (g1:Gene {geneSymbol: "RNF126"})-[:BODYPARTUNDEREXPRESSESGENE]->(b:BodyPart {commonName: "uterine cervix"}), (g2:Gene {geneSymbol: "WIPF3"})-[:BODYPARTUNDEREXPRESSESGENE]->(b) RETURN g1, b, g2
+  Cypher (final):       MATCH (g1:Gene {geneSymbol: "RNF126"})-[r:BODYPARTUNDEREXPRESSESGENE]->(b:BodyPart {commonName: "uterine cervix"}), (g2:Gene {geneSymbol: "WIPF3"})-[r2:BODYPARTUNDEREXPRESSESGENE]->(b) RETURN g1, r, b, g2, r2
+  Correction iters:     3
+
+Q [173e557acdd0]: True or False Question: At least one of response to low-density lipoprotein particle and single-organism carbohydrate metabolic process is not biological processes commonly involving the gene LALBA
+  Expected: True
+  Got:      False
+  Thinking: The gene LALBA participates in several biological processes, including 'single-organism carbohydrate metabolic process' and 'lactose metabolic process'. Since both of these processes are included in the list of biological processes involving LALBA, the statement that at least one of these processes is not commonly involving LALBA is false.
+  Cypher (1st attempt): MATCH (g:Gene {geneSymbol: "LALBA"})-[r:GENEPARTICIPATESINBIOLOGICALPROCESS]->(bp:BiologicalProcess) RETURN g, r, bp
+  Correction iters:     0
+
+Q [1056fcf8ceab]: True or False Question: At least one of membrane organization and response to lipopolysaccharide is not biological processes commonly involving the gene NUP43
+  Expected: True
+  Got:      False
+  Thinking: The gene NUP43 is involved in various biological processes, including 'membrane organization' and 'response to lipopolysaccharide'. Since 'membrane organization' is explicitly listed as a biological process involving NUP43, it is confirmed that at least one of the mentioned processes is indeed a biological process commonly involving NUP43. Therefore, the statement that at least one of these processes is not commonly involving NUP43 is false.
+  Cypher (1st attempt): MATCH (g:Gene {geneSymbol: "NUP43"})-[r:GENEPARTICIPATESINBIOLOGICALPROCESS]->(bp:BiologicalProcess) RETURN g, r, bp
+  Correction iters:     0
+
+Q [876b0ad5816e]: True or False Question: At least one of response to low-density lipoprotein particle and lymphocyte differentiation is not biological processes commonly involving the gene ITFG2
+  Expected: True
+  Got:      False
+  Thinking: The gene ITFG2 is involved in multiple biological processes, including lymphocyte differentiation and various immune responses. Since the statement claims that at least one of the responses to low-density lipoprotein particle and lymphocyte differentiation is not commonly involving ITFG2, and given that ITFG2 is indeed involved in lymphocyte differentiation, the statement is false. There is no indication that ITFG2 is not involved in these processes based on the retrieved data.
+  Cypher (1st attempt): MATCH (g:Gene {geneSymbol: "ITFG2"})-[r:GENEPARTICIPATESINBIOLOGICALPROCESS]->(bp:BiologicalProcess) RETURN g, r, bp
+  Correction iters:     0
+
+Q [0e247e1f47ed]: True or False Question: At least one of amine biosynthetic process and cerebellar granular layer development is not biological processes commonly involving the gene PROX1
+  Expected: True
+  Got:      False
+  Thinking: The gene PROX1 is involved in various biological processes, including 'cerebellar granular layer development' and 'cerebellar granular layer morphogenesis'. Since both processes are related to the cerebellar granular layer, it indicates that PROX1 is indeed involved in these processes. Therefore, the statement that at least one of the mentioned processes is not commonly involving PROX1 is false.
+  Cypher (1st attempt): MATCH (g:Gene {geneSymbol: "PROX1"})-[r:GENEPARTICIPATESINBIOLOGICALPROCESS]->(bp:BiologicalProcess) RETURN g, r, bp
+  Correction iters:     0
+
+Q [4b1df340d873]: True or False Question: At least one of beta-Alanine metabolism - Homo sapiens (human) and The phototransduction cascade is not pathways which commonly contain the gene NMT1
+  Expected: True
+  Got:      False
+  Thinking: The KG results indicate that the gene NMT1 is associated with the pathway 'The phototransduction cascade', but there is no mention of it being associated with 'beta-Alanine metabolism - Homo sapiens'. Therefore, at least one of the pathways does contain the gene NMT1, specifically 'The phototransduction cascade'. The statement claims that at least one of the pathways does not contain NMT1, which is false because one of them does contain it.
+  Cypher (1st attempt): MATCH (g:Gene {geneSymbol: "NMT1"})-[r1:GENEINPATHWAY]->(p1:Pathway {commonName: "beta-Alanine metabolism - Homo sapiens"}), (g)-[r2:GENEINPATHWAY]->(p2:Pathway {commonName: "The phototransduction cascade"}) RETURN g, r1, p1, r2, p2
+  Cypher (final):       MATCH (g:Gene {geneSymbol: "NMT1"})-[r:GENEINPATHWAY]->(p:Pathway) WHERE p.commonName IN ["beta-Alanine metabolism - Homo sapiens", "The phototransduction cascade"] RETURN g, r, p
+  Correction iters:     0
+
+Q [997e79e88adc]: True or False Question: At least one of anchored component of membrane and podosome is not cellular components commonly linked to the gene CD160
+  Expected: True
+  Got:      False
+  Thinking: The gene CD160 is associated with two cellular components: 'anchored component of membrane' and 'anchored component of plasma membrane'. Both of these components are indeed linked to CD160. Therefore, the statement that at least one of these components is not commonly linked to CD160 is false.
+  Cypher (1st attempt): MATCH (g:Gene {geneSymbol: "CD160"})-[r:GENEASSOCIATEDWITHCELLULARCOMPONENT]->(c:CellularComponent) RETURN g, r, c
+  Correction iters:     0
+
+
+==== Overall Summary (record-weighted) ====
+
+Type: mcq | Mode: direct | Model: gpt-4o-mini
+  Total: 917  |  Correct: 848  |  Accuracy: 0.925 [95% CI 0.906-0.940]
+  - first attempt success rate: 0.968 (n=916)
+  - avg correction iterations: 0.055 (n=916)
+  - latency ms: mean=11820 p50=8035 p95=24053 (n=917)
+  - tokens: avg in=3179 out=292 | total in=3179 out=292
+  - records with error: 0.022 (n=917)
+
+Type: open_ended | Mode: direct | Model: gpt-4o-mini
+  Total: 958  |  Correct: 741  |  Accuracy: 0.773 [95% CI 0.746-0.799]
+  Avg set metrics: exact_match=0.773  precision=0.922  recall=0.913  f1=0.909  jaccard=0.901  overlap=0.933
+  - first attempt success rate: 0.965 (n=958)
+  - avg correction iterations: 0.061 (n=958)
+  - latency ms: mean=35363 p50=7838 p95=284345 (n=958)
+  - records with error: 0.000 (n=958)
+
+Type: tf | Mode: direct | Model: gpt-4o-mini
+  Total: 1640  |  Correct: 1551  |  Accuracy: 0.946 [95% CI 0.934-0.956]
+  - first attempt success rate: 0.559 (n=1640)
+  - avg correction iterations: 1.244 (n=1640)
+  - latency ms: mean=16372 p50=8420 p95=31392 (n=1640)
+  - tokens: avg in=7286 out=726 | total in=3934484 out=391800
+  - records with error: 0.001 (n=1640)
