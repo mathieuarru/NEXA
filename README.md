@@ -103,7 +103,7 @@ Open your browser at **http://localhost:8501**
 
 ## Manual Launch (Development)
 
-If you prefer to run the databases in Docker and the application locally:
+If you prefer to run the databases in Docker and the application locally (requires Python 3.13 and [Poetry](https://python-poetry.org)):
 
 ```bash
 # 1. Start databases only
@@ -112,7 +112,7 @@ docker compose -f docker-compose.linux.yml --profile db up -d
 # Mac / Windows:
 docker compose --profile db up -d
 
-# 2. Install dependencies
+# 2. Install dependencies (if your default Python is not 3.13, run `poetry env use python3.13` first)
 poetry install
 
 # 3. Configure environment (copy the template and fill in keys / connection strings)
